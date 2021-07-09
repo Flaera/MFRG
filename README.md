@@ -1,6 +1,5 @@
 # MFRG
 
-
 Estado: em desenvolvimento - protótipo finalizado.
 
 
@@ -32,5 +31,4 @@ Programas utilizados:
 - Krita;
 - Ubuntu Studio 16.04; e
 - Xubuntu 20.04.
-
 
