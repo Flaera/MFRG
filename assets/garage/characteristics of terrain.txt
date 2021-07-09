@@ -1,0 +1,5 @@
+Especifications of terrain:
+
+Type: road de earth or sand;
+Inclination: -3º.
+
