@@ -1,0 +1,1 @@
+http://geoserver.funai.gov.br:80/geoserver/Funai/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=Funai:ti_sirgas&CQL_FILTER=uf_sigla%20LIKE%20%27%25AL%25%27&outputFormat=SHAPE-ZIP

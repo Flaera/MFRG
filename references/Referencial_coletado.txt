@@ -1,0 +1,57 @@
+REFERENCIAL COLETADO ATÉ O MOMENTO:
+
+Nota/observação: qualquer alteração em algum referência que esteja também nas referências usadas deve ser...
+igualmente recortada e colada sob a referência do documento das referẽncias usadas.
+
+
+A EDUCAÇÃO ESCOLAR INDÍGENA COMO FORTALECIMENTO DA IDENTIDADE CULTURAL DOS POTIGUARA DA PARAÍBA/BRASIL – CONSIDERAÇÕES INICIAIS. Pedro Lôbo dos Santos e Eduardo Dias da Silva. pg. 2-3.
+Link: https://www.scielo.br/j/tla/a/zhFtBtt95P6bTVbwGGkvVmv/?lang=pt; acesso em 26/06/2021 às 01:58.
+
+A xawara e os mortos: os Yanomami, luto e luta na pandemia da Covid-19. Marcelo Moura Silva e Carlos Estellita-Lins. pg. 4-5, pg. 13-17.
+Link: https://www.scielo.br/j/tla/a/zhFtBtt95P6bTVbwGGkvVmv/?lang=pt; acesso em 26/06/2021 às 01:59.
+
+O Brasil indígena. IBGE.
+Link: https://www.gov.br/funai/pt-br/atuacao/povos-indigenas/o-brasil-indigena-ibge-1; acesso em 30/06/2021 às 11:53.
+
+Saberes ausentes da "Cidade Letrada". Por um iluminismo mestiço. Rogerio Mendes.
+Link: http://www.scielo.org.co/scielo.php?script=sci_arttext&pid=S0123-59312021000100121&lang=pt; acesso em 26/06/2021 às 01:54.
+
+A integração da narrativa mítica das mulheres Amazonas e sua função estética na trilogia sul-americana Amazonas, de Alfred Döblin. Elisângela Redel.
+Link: http://www.scielo.br/scielo.php?script=sci_arttext&pid=S1982-88372021000200188&lang=pt; acesso em 26/06/2021 às 01:56.
+
+A construção da cidadania indígena no Brasil e suas contribuições à Teoria Crítica Racial. Gabriela de Freitas Figueireido Rocha.
+Link: http://www.scielo.br/scielo.php?script=sci_arttext&pid=S2179-89662021000201242&lang=pt; acesso em 26/06/2021 às 02:00.
+
+
+Perspectivas sobre a "Terra sem Mal" na poesia comteporênea. Izabela Leal.
+Link: http://www.scielo.br/scielo.php?script=sci_arttext&pid=S1517-106X2021000100139&lang=pt; acesso em 26/06/2021 às 02:02.
+
+A terra como corpo: A "economia do cuidado" contra as cinzas do "povo da mercadoria". Ana Carolina Cernicchiaro.
+Link: http://www.scielo.br/scielo.php?script=sci_arttext&pid=S1517-106X2021000100122&lang=pt; acesso em 26/06/2021 às 02:08.
+
+Dos aldeamentos ao horto botânico: a apropriação de plantas de uso indígenana capitania dos Guayases, 1772-1806. Thiago Cancelier Dias e Cristina de Cássia Moraes.
+Link: https://www.scielo.br/j/hcsm/a/WDzjkqf4LTBZQX9TnJYtL3s/?lang=pt; acesso em 30/06/2021 às 12:22.
+
+Introdução aos jogos digitais: desenvolvimento, produção e design. Leonardo Tórtoro Pereira e Gil Barbosa Reis.
+Link: NOTA:PERGUNTAR AO LUCAS ONDE CONSEGUIU O LINK DESTE DOCUMENTO; acesso em 28/06/2021 às 10:45.
+
+Mapas de terras indígenas da Funai (Fundação Nacional do Índio):
+Link geral: https://www.gov.br/funai/pt-br/atuacao/terras-indigenas/geoprocessamento-e-mapas; acesso em 30/06/2021 às 14:52.
+
+	Terras indígenas do Brasil.
+	Link: https://www.gov.br/funai/pt-br/arquivos/conteudo/cggeo/pdf/terra-indigena.pdf
+
+	Jurisdicionamento das coordenações com terras indígenas:
+	Link: https://www.gov.br/funai/pt-br/arquivos/conteudo/cggeo/pdf/terra-indigena-coordenacao.pdf
+
+	Barreiras sanitárias no Brasil:
+	Link: https://www.gov.br/funai/pt-br/arquivos/conteudo/cggeo/pdf/barreiras-sanitarias_v5.pdf
+
+Dados de geoprocessamento do site da FUNAI:
+Link geral: https://www.gov.br/funai/pt-br/atuacao/terras-indigenas/geoprocessamento-e-mapas; acesso em 30/06/2021 às 19:23.
+	Link: http://geoserver.funai.gov.br/geoserver/Funai/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=Funai:ti_sirgas&CQL_FILTER=uf_sigla%20LIKE%20%27%25AL%25%27&outputFormat=SHAPE-ZIP
+
+Informações da C.R. Nordeste I(AL) no site da Funai.
+Link: https://www.gov.br/funai/pt-br/composicao/coordenacoes-regionais/cr-nordeste; acesso em 30/06/2021 às 21:42.
+
+
