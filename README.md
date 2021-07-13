@@ -31,9 +31,9 @@ eletrônico), Need for Speed Most Wanted (Jogo eletrônico), Litle Racers Street
 
 
 Como jogar (INCOMPLETO):
-Passo 1; Entre na pasta "build";
-Passo 2; e ... (COMPLETAR DE ACORDO COM O FINAL DO PROTÓTIPO);
-Passo 3; e ... (COMPLETAR DE ACORDO COM O FINAL DO PROTÓTIPO);
+- Passo 1; Entre na pasta "build";
+- Passo 2; e ... (COMPLETAR DE ACORDO COM O FINAL DO PROTÓTIPO);
+- Passo 3; e ... (COMPLETAR DE ACORDO COM O FINAL DO PROTÓTIPO);
 
 
 Referências bibliográficas:
