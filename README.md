@@ -20,33 +20,33 @@ cotidiano destes povos.
 
 
 Breve caracterização do projeto:
-    • Nome/Título do jogo: Consciente Ignição.
-    • Desenvolvedores:
-        ◦ Rafael Luiz dos Santos, e-mail: rafaelldsrock@gmail.com
-        ◦ Guilherme Santos Braz
-    • Definição rápida: jogo de corrida contra o tempo que procura retratar um pouco a realidade 
+- Nome/Título do jogo: Consciente Ignição.
+- Desenvolvedores:
+	- Rafael Luiz dos Santos, e-mail: rafaelldsrock@gmail.com
+    - Guilherme Santos Braz
+- Definição rápida: jogo de corrida contra o tempo que procura retratar um pouco a realidade 
 das comunidades pobres no Brasil.
-    • Algumas inspirações: O menino e o mundo (Filme), Afro-Samurai (Animação, anime), 
+- Algumas inspirações: O menino e o mundo (Filme), Afro-Samurai (Animação, anime), 
 Grand Theft Auto (GTA) San Andreas (Jogo eletrônico), Dandara (Jogo eletrônico), Berserk (Mangá), 
 Need for Speed Most Wanted (Jogo eletrônico), Little Racers Street (Jogo eletrônico).
-    • Gêneros: corrida, contra o tempo, 3D, low-poly, indie, BGE, Blender.
-    • Plataforma: PC – testado em Xubuntu 20.04 (Linux).
+- Gêneros: corrida, contra o tempo, 3D, low-poly, indie, BGE, Blender.
+- Plataforma: PC – testado em Xubuntu 20.04 (Linux).
 
 
 Como instalar e jogar (INCOMPLETO):
-Passo 1: Entre na pasta "build";
-Passo 2: e ... (COMPLETAR DE ACORDO COM O FINAL DO PROTÓTIPO);
-Passo 3: e ... (COMPLETAR DE ACORDO COM O FINAL DO PROTÓTIPO);
+- Passo 1: Entre na pasta "build";
+- Passo 2: e ... (COMPLETAR DE ACORDO COM O FINAL DO PROTÓTIPO);
+- Passo 3: e ... (COMPLETAR DE ACORDO COM O FINAL DO PROTÓTIPO);
 
 
 Programas utilizados:
-    • Blender 2.79;
-    • Gimp;
-    • Inkscape;
-    • Libre Office;
-    • Krita;
-    • Ubuntu Studio 16.04; e
-    • Xubuntu 20.04.
+- Blender 2.79;
+- Gimp;
+- Inkscape;
+- Libre Office;
+- Krita;
+- Ubuntu Studio 16.04; e
+- Xubuntu 20.04.
 
 
 Referências bibliográficas:
