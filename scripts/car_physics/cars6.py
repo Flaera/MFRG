@@ -67,7 +67,8 @@ class Car(types.KX_GameObject):
 
     def GearSelection(self):
         '''
-        It seleceted the gear correct at accord with velocity result.
+        It selected the gear correct at accord with velocity result.
+        By this way, the car not have switch gear
         '''
         if (self.velocity_result > float(0)):
             self.gear = int(1)
@@ -185,23 +186,20 @@ class Car(types.KX_GameObject):
 
     def SetAccelCentript(self):
         '''
-        DEPRECATED!!! THEY CAR ROTAION WAS MUCH LOW.
+        DEPRECATED!!! THE CAR ROTATION WAS MUCH LOW.
         It set the value correct in reference at acceleration centript in circular...
-         uniform movement, but I no know like manage the ray then this was simplify.
-        I thinked that ray decrease with low velocities and increase...
+         uniform movement, but I no know like manage the ray then this was simplify decprecated.
+        I thinked that ray to decrease with low velocities and increase...
          in high velocities. Because It was get with one linear function.
-        It's "gambiarra"! :D
         '''
         #ray = 440*self.velocity_y
         #self.rotation_z_inc = (self.velocity_y**2)/(440*self.velocity_y)
-        # PRECISO FAZER ISSO REALTIVO A VELOCIDADE DE ALGUMA FORMA: SEJA COM...
-        # SIMPLES FUNCAO LINEAR OU UTILIZANDO A FÓRMULA DE ACELERACAO CENTRÍPEDA! PARA AMANHÃ
         self.rotation_z_inc = (self.velocity_y)/(440)
 
 
     def ConvertRotationToGE(self, x):
         '''
-        It convert values of rotation for values able for game engine.
+        It convert values of rotation for values ableds for game engine.
         One time that values default case stranges effects.
         '''
         return (0.004*x)
@@ -210,11 +208,10 @@ class Car(types.KX_GameObject):
     def SupportRotationZAxis(self):
         '''
         In normal rotation if car rotation in z axis while this was in gears rears happen...
-        the car rotationed in inverted axis, rotationed for left same that user press...
+        the car is rotationed in inverted axis, rotationed for left same that user press...
         right button.
-        It function correct the axis in car at rotationed in z axis while .
+        It function correct the axis in car at rotated in z axis while...
         return the constant of multiplication that change direction of rotation in z axis.
-        #
         '''
         if (self.gear < 0): return -1
         else: return 1
@@ -262,16 +259,16 @@ class Car(types.KX_GameObject):
         Foi percebido que força de efeitos colisoes (impulsos) aplicadas em um objeto são fruto...
         de uma relação entre a área da colisão e quantidade de movimento/velocidade/força...
          no instante da colisão... 
-         NFSMH!!!! ARTIGOS LIDOS. DESCARTE PARA SIMPLIFICAÇÃO DO JOGO AFIM DE CUMPRIR COM O...
-          OBJETIVO: ME PREPARAR PARA UMA FÍSICA MELHOR.
-         POSSIBILIDADES DE IMPLEMENTAÇÃO ENCONTRADAS: VERTEX GROUPS, SENSORS OBJECTS AND...
-          GET VERTEX THAT COLLIDE WITH ONE TYPE OF OBJECT
-         INDENTIFICADORES OR SENSORS CHOICEDS!!!
+         O jogo NFSMH (Need for Speed Most Wanted) foi jogado para analise. Alguns artigos sobre...
+        física de carro em jogos de corrida foram lidos, mas como uma o objetivo era uma física...
+        simples, foi resolvido elaborar uma física mais simples.
+        Sendo assim, foi usada sensores de contato para identificar paredes e administrar as colisões...
+        na velocidade.
 
         It's fucntion control velocity and impulse in collisions laterals of left and right.
         It function use similities with the coeficient of friction (var: coef_friction)
         By It's var is possible control the value of decrement of the velocity in y axis
-        The velocity result is calculate with pitagora relation.
+        The velocity result is calculate with pitagora's relation.
         The amount movement that car run at collide with wall is set in variable...
         constant_accel, It basically multiply the value of acceleration
         '''
@@ -314,7 +311,7 @@ class Car(types.KX_GameObject):
 
     def ObstacleCollisions(self, sens_obj1, sens_obj2):
         '''
-        Id objects or identification os collissions with objects:
+        Id objects or identification of collissions with objects:
         - col_obj1 = cont.sensors["col_obj1"].positive:
         collisors that look like wall, but suffer with the impulse. It ...
         sensor search prop col_obj1;
@@ -357,9 +354,6 @@ class Car(types.KX_GameObject):
         the direction of rotation
         It's value 0.4 is coming of 40 degrees divide by 10 times, It's matter that
         at each 10 milesims of seconds 40 degrees the car turn
-        DEVO DOCUMENTAR MELHOR AMANHÃ!!!!!!!!!!! TANTO ISSO QUANTO A FUNÇÃO DE LO/JUMP E 
-        FAZER MAIS TESTES DE SALTOS PARA VERIFICAR REAÇÕES PINESPERADAS DO SISTEMA DE RESPOSTA
-        DA PRÓPRIA GAME ENGINE, PORQUE ESTE PODE INTERFERIR NA MINHA LÓGICA DE MANEIRA DRÁSTICA
         Perhaps in second condition the system of predictive collision will be thing best 
         in this case
         '''
@@ -382,8 +376,7 @@ class Car(types.KX_GameObject):
         I's function do support the function that make the lancement oblique.
         DEPRECATED! IT WAS DEPRECATED BECAUSE THE GAME CAN WAS HARD DEVELOPMENT...
         AND ONCE THAT OBJECTIVE IS A SIMPLE GAME. IT WAS DISCARD!!
-        ALL JUMPS IN GAME WAS SETUPS LIKE 30 GRAUS IN LANCAMENTS (PT-BR: CARA, EU TENHO...
-         CERTEZA QUE NÃO É ASSIM QUE SE ESCREVE LANCAMENT EM INGLÊS)
+        ALL JUMPS IN GAME WAS SETUPS LIKE 30 GRAUS IN JUMPS
         Parameters:
         - angle: It can be 30, 45 and 60!!
         - axis: sen(0), cossen(1) and tangent(2) - It's last no was implemented.
@@ -398,8 +391,8 @@ class Car(types.KX_GameObject):
 
     def JumpsAndLO(self, jumper, ground):
         '''
-        se jujmp aprouch true pre calcule coisas como velo initial
-        depois faca os calculos de lo com time_on_air.
+        If jump aprouching true precalculated anythings, like initial velocity,
+        after make the calcules of Jump Obliquo with time_on_air.
         Remenber It: the default jumps angles to set in 30 degrees!!
         '''
         sen30 = float(0.5)

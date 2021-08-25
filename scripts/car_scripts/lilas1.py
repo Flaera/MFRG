@@ -95,7 +95,4 @@ def Update(cont):
 
     #print("filhos de lilas", own.childrenRecursive)
 
-# AINDA HÁ OBJETOS INDIVIDUAIS COM A PROPRIEDAED PAREDE QUE NAO...
-# CORRESPODEM BEM AO SISTEMA DE COLISÃO. O CARRO AFUNDA E...
-# ATRAVESSA O CHAO E CAI NO ESPAÇO, POR EXEMPLO. Como os blocos de concreto.
 

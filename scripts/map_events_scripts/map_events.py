@@ -87,14 +87,9 @@ class MapEventsChildrens(types.KX_GameObject, ManagerScenes):
         self.loading_now = ManagerScenes().loading_now
 
         self.event_own = old_owner
-        #if (self["active"] == bool(True)):
-        # ACHO QUE VOU TER TIRAR ESA CONDICIO0NAL E MOVER ELA PARA O START MODULE...
-        # E INICIAR AS VARIAVEIS INDEPENDETE DA ACTIVE BOOL VALUE
         self.board_text = "Nível: {2}\nTempo: {0}min{1}".format(time_min, time_sec, lv)
         self.added_board = 0
         self.count_add_board = 0
-        #else:
-         #   print("It's active property no True. Verifying this. 'active' bool value: {0}".format(self["active"]))
         print("Evento 1, char 1, iniciado")
 
     def OpenCloseBoard(self, collision_sens, map_scene, empty_board_obj):

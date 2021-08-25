@@ -42,9 +42,7 @@ def Update(cont):
                    col_ground, col_wall, col_rampa,
                    col_wallLL, col_wallLR, col_wallF, col_wallR)
 
-    # DEVO APERFEIÇOAR ESTA CLASSE. INCLUINDO A FUNÇAO ADDOBJ DA API DA BGE E FAZENDO...
-    # A CLASSE EMITIR A PARTÍCULA CORRETA PARA O DETERMINADO CHAO (PROPRIEDADE COM O ...
-    # O VALOR 0 PARA DUST/POEIRA, 1 PARA ASFALTO E 2 PARA BARRO MOLHADO)
+
     # calling particle system:
     if (own["nitro"] == True):
         own["particle_nitro"].AddParticleObj(cont, [cont.actuators["act_nitro1"],
@@ -63,6 +61,4 @@ def Update(cont):
                                                        cont.actuators["act_dust3"],
                                                        cont.actuators["act_dust4"]])
 
-# AINDA HÁ OBJETOS INDIVIDUAIS COM A PROPRIEDAED PAREDE QUE NAO...
-# CORRESPODEM BEM AO SISTEMA DE COLISÃO. O CARRO AFUNDA E...
-# ATRAVESSA O CHAO E CAI NO ESPAÇO, POR EXEMPLO.
+
