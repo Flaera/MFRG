@@ -13,9 +13,13 @@ def Start(cont):
     path = "MFRG/data_files/"
     car_selected = open(path+"car_selected.txt", "r")
 
-    #print(("lilas_proxie" in current_scene.objectsInactive), "essa lista ae")
-    car_selected_obj = current_scene.objectsInactive[str(car_selected.read())]
+    string_car = car_selected.read()
+    print("car=", string_car, sep='-', end='-')
+    car_list = string_car.split('\n')
+    print("list of cars: ", car_list) 
+    car_selected_obj = current_scene.objectsInactive[car_list[0]]
 
+    
     current_scene.addObject(car_selected_obj, invoker, 0)
     # Activating flags:
     current_scene.objects["camera01"]["car_invoked"] = True
