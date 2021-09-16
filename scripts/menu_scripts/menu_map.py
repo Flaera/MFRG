@@ -27,16 +27,9 @@ def Update(cont):
     own.TimeChangeScene(confirm, own["dtime_menu_map"], 0.5)
 
     if (sys_res == [True, 0]):
-        pass
-        # DEPOIS TIRAR O PASS E COLOCAR A SCENE DA GARAGEM. AINDA NÃO FEITA.
-        # ESTE CÓDIGO DEVE SER USADO EM PARTE OU TOTALMENTE NAS OPTIONS FROM 0 AT...
-        # 3:
-        #own.TransitionLoadingScenes("loading", "main_menu_context",
-         #                           cont, [cont.actuators["re_map"],
-           #                                cont.actuators["re_map_smh"],
-            #                               cont.actuators["re_map_menu"],
-             #                              cont.actuators["re_loading"]])
-
+        own.TransitionLoadingScenes("loading", "like_garage",
+                                    cont, [cont.actuators["re_map"], cont.actuators["re_map_smh"],
+                                           cont.actuators["re_map_menu"], cont.actuators["re_loading"]])
     elif (sys_res == [True, 1]):
         pass  # IT'S TOO IN DEVELOPMENT!! OPTION TO SHOP CAR GAME.
     elif (sys_res == [True, 2]):

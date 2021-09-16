@@ -3,7 +3,7 @@ from scripts.data_manager import SearchAssetWithProxie
 from scripts.time_manager import TimeAction1
 
 
-def CallCarAsset(own):
+def CallCarAsset(invo):
     car = open("MFRG/data_files/car_selected.txt", "r")
     car_proxie_selected = car.readline()
     print("Car_proxie selected: -{}-".format(car_proxie_selected))
@@ -20,8 +20,8 @@ def CallCarAsset(own):
     car.close()
 
     if (car_selected in ina_objs):
-        car_asset_selected = curr_scene.addObject(car_selected, own, 0)
-        own["car_asset_selected"] = car_asset_selected
+        car_asset_selected = curr_scene.addObject(car_selected, invo, 0)
+        invo["car_asset_selected"] = car_asset_selected
         print("Car finded in inactive layers!")
     else:
         print("Car not find in inactive layers!")
@@ -45,11 +45,13 @@ def Start():
     # child[0].worldOrientation = [delta_rx, delta_ry, delta_rz]
 	own["child"].applyMovement([delta_px, own["delta_py"], own["delta_pz"]], 0)
 
-	CallCarAsset(own)
+	curr_scene = logic.getCurrentScene()
+	car_invokator = curr_scene.objects["car_invokator"]
+	CallCarAsset(car_invokator)
     
 	ground_inclination_x = float(-0.03)
 	ground_inclination_y = float(0.04)
-	own["car_asset_selected"].applyRotation([ground_inclination_x,
+	car_invokator["car_asset_selected"].applyRotation([ground_inclination_x,
 		ground_inclination_y, 0], 0)
 	
 	own["time_action"] = float(0.0)
@@ -66,6 +68,9 @@ def Start():
 	own["last_rot_x"] = float(0.0)
 	#own["time_rz"] = float(1.0)
 	print("max ang z=", own["max_ang_z"])
+
+	garage_ui = cont.actuators["in_garage_ui"]
+	cont.activate(garage_ui)
 
 
 def SetCamHeightZ(own, x):
