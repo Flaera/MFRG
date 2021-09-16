@@ -3,6 +3,9 @@ from scripts.menu_scripts.menu_horizontal import HardMenuHorizontal
 from scripts.manager_scenes import ManagerScenes
 
 
+cont = logic.getCurrentController()
+
+
 def Start(cont):
 	own = cont.owner
 	scene = logic.getCurrentScene()
@@ -30,7 +33,7 @@ def Start(cont):
 	except:
 		scene.objects["opt2_car_sel"]["Text"] = alert_hollow
 		own["pos2_ishollow"] = True
-	
+
 	garage_sel = scene.objects["garage_selector"]	
 	own["garage_menu"] = HardMenuHorizontal(garage_sel, 3, -1.94)
 	filec.close()
@@ -39,6 +42,11 @@ def Start(cont):
 	own["one_time"] = int(0)
 
 	own["manager_scenes"] = ManagerScenes()
+
+	garage_ui = cont.actuators["in_garage_ui"]
+	re_loading = cont.actuators["re_loading"]
+	cont.activate(re_loading)
+	cont.activate(garage_ui)
 
 
 def SwapCars(opts, own):
@@ -95,11 +103,11 @@ def Update(cont):
 	SwapCars(opts, own)
 	
 	#Loading and deleting the scenes:
-	own["manager_scenes"].TimeChangeScene(enter_key, own["delta_time"], 3.5)
+	own["manager_scenes"].TimeChangeScene(enter_key, own["dtime_garage"], 0.5)
 
 	re_like_garage = cont.actuators["re_like_garage"]
 	re_garage_ui = cont.actuators["re_garage_ui"]
-	re_loading = cont.actuators["loading"]
+	re_loading = cont.actuators["re_loading"]
 	if (opts[0] == True and own["pos0_ishollow"]==False):
 		own["manager_scenes"].TransitionLoadingScenes("loading", "map", cont, [re_like_garage, re_garage_ui, re_loading])
 	elif (opts[0] == True and own["pos1_ishollow"]==False):

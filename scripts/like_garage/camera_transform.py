@@ -4,7 +4,7 @@ from scripts.time_manager import TimeAction1
 
 
 def CallCarAsset(invo):
-    car = open("MFRG/data_files/car_selected.txt", "r")
+    car = open("MFRG/data_files/car_selected.txt", 'r')
     car_proxie_selected = car.readline()
     print("Car_proxie selected: -{}-".format(car_proxie_selected))
 
@@ -48,7 +48,7 @@ def Start():
 	curr_scene = logic.getCurrentScene()
 	car_invokator = curr_scene.objects["car_invokator"]
 	CallCarAsset(car_invokator)
-    
+
 	ground_inclination_x = float(-0.03)
 	ground_inclination_y = float(0.04)
 	car_invokator["car_asset_selected"].applyRotation([ground_inclination_x,
