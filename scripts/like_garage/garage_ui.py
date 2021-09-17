@@ -109,7 +109,8 @@ def Update(cont):
 	re_garage_ui = cont.actuators["re_garage_ui"]
 	re_loading = cont.actuators["re_loading"]
 	if (opts[0] == True and own["pos0_ishollow"]==False):
-		own["manager_scenes"].TransitionLoadingScenes("loading", "map", cont, [re_like_garage, re_garage_ui, re_loading])
+		own["manager_scenes"].OnlyRemoveScenes(cont, [re_like_garage, re_garage_ui, re_loading])
+		own["manager_scenes"].OnlyAddScene("map")
 	elif (opts[0] == True and own["pos1_ishollow"]==False):
 		own["manager_scenes"].TransitionLoadingScenes("loading", "map", cont, [re_like_garage, re_garage_ui, re_loading])
 	elif (opts[0] == True and own["pos2_ishollow"]==False):
