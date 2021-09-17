@@ -12,8 +12,14 @@ from scripts.manager_scenes import ManagerScenes
 def Start(cont):
     camera = cont.owner
 
-    camera["car_select"] = SearchObjProp("car") # It all car in scene have the...
+    try:
+        camera["car_select"] = SearchObjProp("car") # It all car in scene have the...
     # property "car"
+    except:
+        car = open(logic.expandPath("//data_files/car_selected.txt"), "r")
+        car_read = car.read()
+        camera["car_select"] = car_read.split("\n")[0]
+
     camera["nitro_activated"] = False
     camera["nitro_inc"] = float(0)  # It's to transform height and max_height at active nitro
     camera["height_max"] = float(48) # It's the same thing that before

@@ -4,8 +4,12 @@ from scripts.data_manager import SearchObjProp
 
 def Start(cont):
     sun = cont.owner
-
-    sun["car_select"] = SearchObjProp("car")
+    objs = logic.getCurrentScene().objects
+    try:
+        sun["car_select"] = SearchObjProp("car", objs)
+    except:
+        car = open(logic.expandPath("//data_files/car_selected.txt"), "r")
+        sun["car_select"] = car.split("\n")[0]
 
 
 def Update(cont):

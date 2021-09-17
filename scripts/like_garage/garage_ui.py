@@ -9,7 +9,7 @@ cont = logic.getCurrentController()
 def Start(cont):
 	own = cont.owner
 	scene = logic.getCurrentScene()
-	filec = open("MFRG/data_files/player_cars.txt", 'r')
+	filec = open(logic.expandPath("//data_files/player_cars.txt"), 'r')
 	file_cars = filec.readlines()
 	print("filescars:", file_cars)	
 	#cars = []
@@ -54,10 +54,10 @@ def SwapCars(opts, own):
 		scene_list = logic.getSceneList()
 		#print("scene_list: ", scene_list)
 
-		filec = open("MFRG/data_files/player_cars.txt", 'r')
+		filec = open(logic.expandPath("//data_files/player_cars.txt"), 'r')
 		file_cars = filec.readlines()
 		#deleta objeto:
-		file_car_sel = open("MFRG/data_files/car_selected.txt", 'r')
+		file_car_sel = open(logic.expandPath("//data_files/car_selected.txt"), 'r')
 		fcar_selected = file_car_sel.read()
 		print("fcar_selected:", fcar_selected)
 		index_garage = 0
@@ -70,7 +70,7 @@ def SwapCars(opts, own):
 		file_car_sel.close()
 		#reescre objeto:
 		if (opts[1] < len(file_cars)):
-			file_car_sel = open("MFRG/data_files/car_selected.txt", 'w')
+			file_car_sel = open(logic.expandPath("//data_files/car_selected.txt"), 'w')
 			file_car_sel.write(file_cars[opts[1]])
 			#chama objeto reescrito:
 			current_car_asset = file_cars[opts[1]].split("_")[0]+"_only_asset\0"

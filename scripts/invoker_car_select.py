@@ -4,14 +4,22 @@ from bge import logic, types
 def Start(cont):
     invoker = cont.owner
     current_scene = logic.getCurrentScene()
+
+    # deactivating flags:
+    current_scene.objects["camera01"]["car_invoked"] = False
+    current_scene.objects["sun01"]["car_invoked"] = False
+    current_scene.objects["invoker_dust0"]["car_invoked"] = False
+    current_scene.objects["invoker_dust1"]["car_invoked"] = False
+    current_scene.objects["invoker_dust2"]["car_invoked"] = False
+    current_scene.objects["invoker_dust3"]["car_invoked"] = False
+
     #print("invokername", type(invoker))
     # This code have the problem don't adapt at user path in OS from user.
     # I think that I to make the function to search the path correct in SO accord with...
     # type SO and name user from user
 
     # Calling car selected:
-    path = "MFRG/data_files/"
-    car_selected = open(path+"car_selected.txt", "r")
+    car_selected = open(logic.expandPath("//data_files/car_selected.txt"), "r")
 
     string_car = car_selected.read()
     print("car=", string_car, sep='-', end='-')
