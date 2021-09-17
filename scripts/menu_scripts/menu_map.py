@@ -27,9 +27,9 @@ def Update(cont):
     own.TimeChangeScene(confirm, own["dtime_menu_map"], 0.5)
 
     if (sys_res == [True, 0]):
+        own.OnlyAddScene("like_garage")
         own.OnlyRemoveScenes(cont, [cont.actuators["re_map"], cont.actuators["re_map_smh"],
                                     cont.actuators["re_map_menu"], cont.actuators["re_loading"]])
-        own.OnlyAddScene("like_garage")
     elif (sys_res == [True, 1]):
         pass  # IT'S TOO IN DEVELOPMENT!! OPTION TO SHOP CAR GAME.
     elif (sys_res == [True, 2]):

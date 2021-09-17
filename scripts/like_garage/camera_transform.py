@@ -1,10 +1,11 @@
+import bge
 from bge import logic, types
 from scripts.data_manager import SearchAssetWithProxie
 from scripts.time_manager import TimeAction1
 
 
 def CallCarAsset(invo):
-    car = open("MFRG/data_files/car_selected.txt", 'r')
+    car = open(bge.logic.expandPath("//data_files/car_selected.txt"), "r")
     car_proxie_selected = car.readline()
     print("Car_proxie selected: -{}-".format(car_proxie_selected))
 
