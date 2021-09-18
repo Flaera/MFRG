@@ -2,6 +2,7 @@ from bge import logic, events, types
 from scripts.car_physics.cars6 import Car
 from scripts.particle_system1 import ParticleSystem
 from scripts.data_manager import SearchPropValue
+from data_files.car_general_infos import cars 
 
 
 def Start():
@@ -14,7 +15,7 @@ def Start():
     # max 88, min 34
     # max 30, min 16
     # max 50, min 20
-    lilas = Car(own, 2.2, 52, 20, 30)
+    lilas = Car(own, cars['0'][2], cars['0'][3], cars['0'][4], cars['0'][5])
 
 
     #particle system:
