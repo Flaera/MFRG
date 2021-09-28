@@ -5,6 +5,10 @@ def Start(cont):
     pass
     
     
+def Percent(x, maxx):
+    return int((100*x)/maxx)
+
+
 def Update(cont):
     own = cont.owner
     curr_scene_objs = logic.getCurrentScene().objects
@@ -20,10 +24,10 @@ def Update(cont):
             act_nitro_fully = cont.actuators["act_nitro_fully"]
 
             #Change specifications.
-            curr_scene_objs["top_speed"]["top_speed"] = cars[2]
-            curr_scene_objs["accel"]["acceleration"] = cars[3]
-            curr_scene_objs["turning"]["turning"] = cars[4]
-            curr_scene_objs["nitro_fully"]["nitro_fully"] = cars[5]
+            curr_scene_objs["top_speed"]["top_speed"] = Percent(cars[2], float(5.1))
+            curr_scene_objs["accel"]["acceleration"] = Percent(cars[3], float(88))
+            curr_scene_objs["turning"]["turning"] = Percent(cars[4], float(30))
+            curr_scene_objs["nitro_fully"]["nitro_fully"] = Percent(cars[5], float(50))
             #Activated the actions:
             cont.activate(act_top_speed)
             cont.activate(act_acceleration)
