@@ -24,10 +24,10 @@ def Update(cont):
             act_nitro_fully = cont.actuators["act_nitro_fully"]
 
             #Change specifications.
-            curr_scene_objs["top_speed"]["top_speed"] = Percent(cars[2], float(5.1))
-            curr_scene_objs["accel"]["acceleration"] = Percent(cars[3], float(88))
-            curr_scene_objs["turning"]["turning"] = Percent(cars[4], float(30))
-            curr_scene_objs["nitro_fully"]["nitro_fully"] = Percent(cars[5], float(50))
+            curr_scene_objs["top_speed"]["top_speed"] = Percent(i[2], float(5.1))
+            curr_scene_objs["accel"]["acceleration"] = Percent(i[3], float(88))
+            curr_scene_objs["turning"]["turning"] = Percent(i[4], float(30))
+            curr_scene_objs["nitro_fully"]["nitro_fully"] = Percent(i[5], float(50))
             #Activated the actions:
             cont.activate(act_top_speed)
             cont.activate(act_acceleration)
