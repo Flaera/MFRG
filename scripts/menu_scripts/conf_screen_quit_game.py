@@ -1,6 +1,7 @@
 from bge import logic, events
 from scripts.menu_scripts.menu_horizontal import ConfirmationMenuScreen
 from scripts.manager_scenes import ManagerScenes
+from data_files.warnings import warnings
 
 def Start(cont):
     own = cont.owner
@@ -8,10 +9,7 @@ def Start(cont):
     current_scene = logic.getCurrentScene()
     text_obj = current_scene.objects["text_conf_screen"]
 
-    text = "AÉ!? VOCÊ QUER MESMO SAIR DO JOGO? " \
-           "\n\nTenha certeza que salvou o jogo dentro do mapa." \
-           "\nDados recentes poderão ser perdidos se você não tiver salvo." \
-           "\n\nSe liga!"
+    text = warnings['0']
 
     text_obj["Text"] = text
 

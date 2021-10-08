@@ -44,3 +44,13 @@ def SearchAssetWithProxie(car_proxie):
 	return car_proxie
 
 
+def IsEqualString(str1, str2):
+    if len(str1)>len(str2):
+        aux = str1
+        str1 = str2
+        str2 = aux
+        
+    for i in range(0, len(str1), 1):
+        #print('i:', i)
+        if str2[i]!=str1[i]: return False
+    return True

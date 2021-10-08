@@ -1,5 +1,6 @@
 from bge import logic
 from data_files.car_general_infos import cars
+from scripts.data_manager import IsEqualString
 
 def Start(cont):
     pass
@@ -7,19 +8,6 @@ def Start(cont):
     
 def Percent(x, maxx):
     return int((100*x)/maxx)
-
-
-def IsEqualString(str1, str2):
-    if len(str1)>len(str2):
-        aux = str1
-        str1 = str2
-        str2 = aux
-        
-    for i in range(0, len(str1), 1):
-        #print('i:', i)
-        if str2[i]!=str1[i]: return False
-    return True
-
 
 
 def Update(cont):

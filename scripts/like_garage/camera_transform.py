@@ -9,10 +9,7 @@ def CallCarAsset(invo):
     car_proxie_selected = car.readline()
     print("Car_proxie selected: -{}-".format(car_proxie_selected))
 
-    car_proxie_selected = car_proxie_selected.replace('\n', '\0')
-    print("edited - Car_proxie selected: -{}-".format(car_proxie_selected))
-
-    car_selected = SearchAssetWithProxie(car_proxie_selected)
+    car_selected = car_proxie_selected.split('_')[0]+"_only_asset\0"
     print("Car_selected -only asset-: -{}-".format(car_selected))
     curr_scene = logic.getCurrentScene()
     ina_objs = logic.getCurrentScene().objectsInactive

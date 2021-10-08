@@ -1,0 +1,26 @@
+# event_id: [type_of_bg, [name_object_of_character, that_char_talk_in_moment, position_id_obj: 0 (only_bg),1 (right), 2 (left)]]
+events_talks = {
+    "1": ["bg_zu_front_house", 
+    ["Zu_obj", "Não podemos competir contra os carros da polícia.\n Da última vez que eles vieram aqui eu perdi minha mulher.\n Eu não gosto deles. Todo ano, toda vez é isso.", 1], 
+    ["Anne_obj", "Eu ti entendo.\n Queria poder fazer algo, mas... num sei.", 1], 
+    ["Zu_obj", "Nem se preocupe com isso, não.\nTudo que cê tem que fazer agora é fazer o melhor tempo na corrida.\nBora se preparar?", 2],
+    ["Anne_obj", "Bora!", 1], 
+    ["Zu_obj", "Beleza!", 2]],
+    "2": [[]],
+    "3": ["bg_into_moacir_house", 
+    ["Anne_obj", "Não tendi porque ali assumiu seu machismo.\nMachismo é algo estrutural e ruim.\nDeveria ser mortalmente evitado.", 1], 
+    ["Moacir_obj", "Exatamente por isso. É algo que esta em todos os lugares, em mim e você.\n Antes de olhar para os outros, eu olhei para mim mesmo e...", 2], 
+    ["Moacir_obj", "vi que precisava melhorar também se eu quisesse que não existisse estas coisas más;\ncomo racismo e xenofobia...", 2], 
+    ["Moacir_obj", "Mais do que apontar o dedo na cara de alguém,\neu resolvi mudar a mim mesmo.", 2], 
+    ["Anne_obj", "Mas...", 1],
+    ["Moacir_obj", "Você procura evitar tratar destas questões com seus colegas?", 2], 
+    ["Anne_obj", "Não. É que...", 1],
+    ["Moacir_obj", "Seu mundo nunca mudará, jovem.", 2], 
+    ["Anne_obj", "Tendi o que cê fez. Desculpa.", 1], 
+    ["Moacir_obj", "Tudo bem. Olhe para minha idade.\nTou quase um pai de santo já, então saber destas coisas é fácil.", 2], 
+    ["Moacir_obj", "Além disso, ao sair do terreiro mais cedo vi você\nse impondo muito diante daquele jovem armado. Parabéns!"],
+    ["Anne_obj", "Brigada!",1],
+    ["Moacir_obj", "Depois vo ter que falar com ele, por sinal;\nmas vamos ao que interessa.\nGostei d’ocê e cê quer vencer, né?", 2], 
+    ["Anne_obj", "Claro!", 1], 
+    ["Moacir_obj", "Então vamos nos preparar.", 2]]
+}

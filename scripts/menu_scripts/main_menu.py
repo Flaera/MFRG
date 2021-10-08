@@ -27,28 +27,15 @@ def Update(cont):
     # Actuators of scene for delete:
     re_menu_context = cont.actuators["re_menu_context"]
     # Em KX_SCENE tem the comands for substitute It's actuators.
-    re_loading = cont.actuators["re_loading"]
     re_opt = cont.actuators["re_menu_opt"]
 
-    # To enter in map. First or second option. This is only scene that need loading...
-    # scenes:
-    own.TimeChangeScene(confirm, own["delta_time"], 0.5)
-
-    if ((sys_res[0] == True) and (sys_res[1] == 0))\
-            or ((sys_res[1] == 0) and (own.action_load == True)):
-        own.TransitionLoadingScenes("loading", "screen_selected_char",
-                                   cont, [re_menu_context, re_loading, re_opt])
-        # To enter in map. First or second option: I really, i probbly would to...
-        # adapter this code for get functions of saving and loading of game.
-        #scene = types.KX_SceneActuator("game_testes") I think that code to like class...
-        # base in class SceneActuator by eheirant(herança)
-    elif ((sys_res[0] == True) and (sys_res[1] == 1))\
-            or ((sys_res[1] == 1) and (own.action_load == True)):
-        own.TransitionLoadingScenes("loading", "screen_selected_char",
-                                   cont, [re_menu_context, re_loading, re_opt])
-        # At this point, It have that change because the load files have that to be...
-        # deleted in system. Probably, I will have delete this in globalDict.
-        # In both fates, It scene have change for map scene.
+    if ((sys_res[0] == True) and (sys_res[1] == 0)):
+        own.OnlyAddScene("screen_selected_char")
+        own.OnlyRemoveScenes(cont, [re_menu_context, re_opt])
+    elif ((sys_res[0] == True) and (sys_res[1] == 1)):
+        #caled confirmation screen:
+        own.OnlyAddScene("conf_screen_new_game")
+        own.OnlyPauseScene(cont, [cont.actuators["susp_mm_opt"]])
     elif ((sys_res[0] == True) and (sys_res[1] == 2)):
         own.OnlyAddScene("main_menu_settings")
         own.OnlyRemoveScenes(cont, [re_opt])

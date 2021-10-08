@@ -1,21 +1,17 @@
 from bge import logic
 from scripts.menu_scripts.menu_horizontal import HardMenuHorizontal
+from scripts.data_manager import IsEqualString
+
 
 def Start(cont):
     own = cont.owner
 
-    # ISSO É APENAS UM TESTE. O QUE DEVE SER FEITO É LER O ARQUIVO. NÃO ESCREVER...
-    # UM ARCHIVE.
-    # PRECISO FAZER EXERCÍCIOS DE "ARQUIVOS" E "Capítulo 9: Estudo de caso: jogos de...
-    # palavras" DO PENSEEMPYTHON2 ASSIM QU TERMINAR A PRIMEIRA BETA DO GAME
-    #char_status = open("char_status.txt", "w")
-    #char_status.write("True\nFalse\nFalse")
-
-    # A IDEIA E FAZER ESTAS PROPRIEDADES TEREM SEUS VALORES CARREGADOS DE UM ARQUIVO.
-    # ALGORITMO: NESTE CASO, DEVE SER LIDO UM AQRQUIVO NO INICIO PARA PROPRIESDADE.
-    own["char1"] = False
-    own["char2"] = True
-    own["char3"] = False
+    character = open(logic.expandPath("//data_files/progress_in_game.txt"), 'r')
+    char_list = character.read().split('\n')
+    print("char list-", char_list)
+    own["char1"] = char_list[0]
+    own["char2"] = char_list[1]
+    own["char3"] = char_list[2]
 
     # To support the function of movement of the selector and application of animation...
     # in the dark screen:
@@ -26,15 +22,14 @@ def Start(cont):
     locked_opt2 = current_scene.objects["locked_opt2"]
     locked_opt3 = current_scene.objects["locked_opt3"]
 
-    if (own["char1"] == True):
+    if IsEqualString(own["char1"], 'True') == True:
+        #print("AQUI!!!")
         own["n_options"] = 0
-        locked_opt1.playAction("screen_char_selected_opt_anima", 0, 60) # I like here...
-        # to work with alpha channel, but bge...
-        # only run animations of actions/movements.
-    elif (own["char2"] == True):
+        locked_opt1.playAction("screen_char_selected_opt_anima", 0, 60)
+    elif IsEqualString(own["char2"], 'True') == True:
         own["n_options"] = 1
         locked_opt2.playAction("screen_char_selected_opt_anima", 0, 60)
-    elif (own["char3"] == True):
+    elif IsEqualString(own["char3"], 'True') == True:
         own["n_options"] = 2
         locked_opt3.playAction("screen_char_selected_opt_anima", 0, 60)
 
@@ -42,8 +37,6 @@ def Start(cont):
     #selector = HardMenuHorizontal(own, 3, float(6.90754))
     # Abondoned, because It's don'st one menu horizontal, but surely one showd...
     # that presentation the character of the moment at least that player progress in game.
-
-    own["counter"] = int(0) # To help in the transition scenes.
 
     selector = HardMenuHorizontal(own) # To call the functions of transition for loading scene.
 
@@ -68,18 +61,6 @@ def Update(cont):
 
     LinearFuncMoveSelector(cont)
 
-    # For change fot map scene:
-    confirmation = False
-    if (float(2.9) <= own["dtime"] <= float(3.0)) and (own["counter"] == 0):
-        confirmation = True
-        own["counter"] += 1
-    elif (own["dtime"] > float(3)) or (own["counter"] == 1):
-        confirmation = False
-
-    own.TimeChangeScene(confirmation, own["dtime"], float(3.5))
-    # I liked one transition with fade-out and fade-in. Probably, It think that will...
-    # make in the future. I can manage make this with API of BGE in part of material.
-    if (own.action_load == True):
-        own.TransitionLoadingScenes("loading", "map", cont,
-                                   [cont.actuators["re_loading"],
-                                    cont.actuators["re_select_char"]])
+    if own["dtime"]>3.50:
+        own.OnlyAddScene("map")
+        own.OnlyRemoveScenes(cont, [cont.actuators["re_select_char"]])
