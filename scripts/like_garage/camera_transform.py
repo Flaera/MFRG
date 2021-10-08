@@ -72,6 +72,8 @@ def Start():
 
 	garage_ui = cont.actuators["in_garage_ui"]
 	cont.activate(garage_ui)
+	specs = cont.actuators["add_specs"]
+	cont.activate(specs)
 
 
 def SetCamHeightZ(own, x):

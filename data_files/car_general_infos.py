@@ -6,7 +6,7 @@
 #nitro_max (nitro_fully): max 50, min 20
 
 cars = {
-'0': ['lilas_proxie', 1200, 1.9, 34, 16, 20], 
-'1': ['nocturne_proxie', 4500, 2.2, 52, 20, 40], 
-'2': ['roots_proxie', 6500, 3.2, 65, 20, 30]
+'0': ['lilas_proxie\0', 1200, 1.9, 34, 16, 20], 
+'1': ['nocturne_proxie\0', 4500, 2.2, 52, 20, 40], 
+'2': ['roots_proxie\0', 6500, 3.2, 65, 20, 30]
 }

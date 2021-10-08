@@ -43,10 +43,11 @@ def Start(cont):
 
 	own["manager_scenes"] = ManagerScenes()
 
-	garage_ui = cont.actuators["in_garage_ui"]
-	re_loading = cont.actuators["re_loading"]
-	cont.activate(re_loading)
-	cont.activate(garage_ui)
+	#garage_ui = cont.actuators["in_garage_ui"]
+	#cont.activate(garage_ui)	
+	#re_loading = cont.actuators["re_loading"]
+	#cont.activate(re_loading)
+
 
 
 def SwapCars(opts, own):
