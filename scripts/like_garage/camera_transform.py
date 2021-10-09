@@ -5,7 +5,7 @@ from scripts.time_manager import TimeAction1
 
 
 def CallCarAsset(invo):
-    car = open(bge.logic.expandPath("//data_files/car_selected.txt"), "r")
+    car = open(bge.logic.expandPath("//data_files/car_selected.txt"), "r", encoding="utf-8")
     car_proxie_selected = car.readline()
     print("Car_proxie selected: -{}-".format(car_proxie_selected))
 

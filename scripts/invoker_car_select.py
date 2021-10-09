@@ -19,7 +19,7 @@ def Start(cont):
     # type SO and name user from user
 
     # Calling car selected:
-    car_selected = open(logic.expandPath("//data_files/car_selected.txt"), "r")
+    car_selected = open(logic.expandPath("//data_files/car_selected.txt"), "r", encoding="utf-8")
 
     string_car = car_selected.read()
     print("car=", string_car, sep='-', end='-')

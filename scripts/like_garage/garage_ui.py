@@ -9,7 +9,7 @@ cont = logic.getCurrentController()
 def Start(cont):
 	own = cont.owner
 	scene = logic.getCurrentScene()
-	filec = open(logic.expandPath("//data_files/player_cars.txt"), 'r')
+	filec = open(logic.expandPath("//data_files/player_cars.txt"), 'r', encoding="utf-8")
 	file_cars = filec.readlines()
 	print("filescars:", file_cars)	
 	#cars = []
@@ -25,6 +25,7 @@ def Start(cont):
 		scene.objects["opt1_car_sel"]["Text"] = file_cars[1].split('_')[0].upper()
 		own["pos1_ishollow"] = False
 	except:
+		print("AQUI PQ N!!!")
 		scene.objects["opt1_car_sel"]["Text"] = alert_hollow
 		own["pos1_ishollow"] = True
 	try:
@@ -55,10 +56,10 @@ def SwapCars(opts, own):
 		scene_list = logic.getSceneList()
 		#print("scene_list: ", scene_list)
 
-		filec = open(logic.expandPath("//data_files/player_cars.txt"), 'r')
+		filec = open(logic.expandPath("//data_files/player_cars.txt"), 'r', encoding="utf-8")
 		file_cars = filec.readlines()
 		#deleta objeto:
-		file_car_sel = open(logic.expandPath("//data_files/car_selected.txt"), 'r')
+		file_car_sel = open(logic.expandPath("//data_files/car_selected.txt"), 'r', encoding="utf-8")
 		fcar_selected = file_car_sel.read()
 		print("fcar_selected:", fcar_selected)
 		index_garage = 0
@@ -71,10 +72,11 @@ def SwapCars(opts, own):
 		file_car_sel.close()
 		#reescre objeto:
 		if (opts[1] < len(file_cars)):
-			file_car_sel = open(logic.expandPath("//data_files/car_selected.txt"), 'w')
+			file_car_sel = open(logic.expandPath("//data_files/car_selected.txt"), 'w', encoding="utf-8")
 			file_car_sel.write(file_cars[opts[1]])
 			#chama objeto reescrito:
 			current_car_asset = file_cars[opts[1]].split("_")[0]+"_only_asset\0"
+			print("curr car asset:-{}-".format(current_car_asset))
 			scene_list[index_garage].addObject(current_car_asset, "car_invokator")
 			file_car_sel.close()
 			own["old_index_car"] = opts[1]
@@ -103,9 +105,6 @@ def Update(cont):
 	opts = own["garage_menu"].ActiveHardMenuHoriControl(enter_key, left, right)
 	SwapCars(opts, own)
 	
-	#Loading and deleting the scenes:
-	own["manager_scenes"].TimeChangeScene(enter_key, own["dtime_garage"], 0.5)
-
 	re_like_garage = cont.actuators["re_like_garage"]
 	re_garage_ui = cont.actuators["re_garage_ui"]
 	re_specs = cont.actuators["re_specs"]

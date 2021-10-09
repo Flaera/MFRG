@@ -27,21 +27,18 @@ def Update(cont):
     left    = keys[events.LEFTARROWKEY] == tap
     right   = keys[events.RIGHTARROWKEY] == tap
 
+    car = open(logic.expandPath("//data_files/car_selected.txt"), "w", encoding="utf-8")
+    players_cars = open(logic.expandPath("//data_files/player_cars.txt"), "w", encoding="utf-8")
+    gold = open(logic.expandPath("//data_files/gold.txt"), "w", encoding="utf-8")
+    characters = open(logic.expandPath("//data_files/progress_in_game.txt"), "w", encoding="utf-8")
+    
     list_opt = own.ActiveMenuConfScreen(confirm, left, right)
     if list_opt == [True, 0]:
-        car = open(logic.expandPath("//data_files/car_selected.txt"), "w", encoding="utf-8")
         car.write("lilas_proxie")
-        players_cars = open(logic.expandPath("//data_files/players_cars.txt"), "w", encoding="utf-8")
-        players_cars.write("lilas_proxie")
-        gold = open(logic.expandPath("//data_files/gold.txt"), "w", encoding="utf-8")
+        players_cars.write("lilas_proxie\n")
         gold.write("3000")
-        characters = open(logic.expandPath("//data_files/progress_in_game.txt"), "w", encoding="utf-8")
         characters.write("True\nFalse\nFalse")
-        car.close()
-        players_cars.close()
-        gold.close()
-        characters.close()
-
+    
         re_conf_screen = cont.actuators["re_csng"]
         re_menu_context = cont.actuators["re_mmc"]
         re_opt = cont.actuators["re_mmopt"]
@@ -52,4 +49,8 @@ def Update(cont):
         own.OnlyResumeScene(cont, [cont.actuators["resu_mm_opt"]])
         curr_scene_act = cont.actuators["re_csng"]
         cont.activate(curr_scene_act)
-    #print("POR AQUI!!!")
+    
+    car.close()
+    players_cars.close()
+    gold.close()
+    characters.close()

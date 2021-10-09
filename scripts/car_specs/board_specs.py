@@ -14,7 +14,7 @@ def Update(cont):
     own = cont.owner
     curr_scene_objs = logic.getCurrentScene().objects
     
-    car = open(logic.expandPath("//data_files/car_selected.txt"), 'r')
+    car = open(logic.expandPath("//data_files/car_selected.txt"), 'r', encoding="utf-8")
     car_sel = car.read()
     car_sel2 = car_sel.split('\n')[0]+'\0'
     for i in cars.keys():
