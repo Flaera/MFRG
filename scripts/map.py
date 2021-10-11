@@ -20,14 +20,15 @@ def Start():
     # Add horizontal menu in scene and events:
     cursor_cam.OnlyAddScene("map_menu_hori_button")
 
-    # ANTES DEVO FAZER AS VARIABLES ABAIXO TEREM SEUS VALORES DE ACORDO COM STRINGS EM...
-    # UM ARQUIVO DE TEXTO SALVADO NO ÍNICIO DO JOGO. DEVO COLOCAR ESTE ARQUIVO NA ...
-    # PASTA DATA_FILES. PARA ISSO DEVO TRABALHAR COM OS EXERCICIOS...
-    # MENCIONADOS ANTERIORMENTE.
     char1 = True
     char2 = False
     char3 = False
-
+    with open(logic.expandPath("//data_files/progress_in_game.txt"), 'r') as chars_file:
+        chars = chars_file.read().split('\n')
+        char1 = bool(chars[0])
+        char2 = bool(chars[1])
+        char3 = bool(chars[2])
+    #Inserir ogica amanha aqui!!!!!!!!!!!!!1
     map_events = MapEventsFromChar().CallEventsInChars(char1, char2, char3,
                                    logic.getCurrentScene().objects["events_char1"],
                                    logic.getCurrentScene().objects["events_char2"],
