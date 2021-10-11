@@ -73,7 +73,7 @@ class MapEventsFromChar():
 
 
 class MapEventsChildrens(types.KX_GameObject, ManagerScenes):
-    def __init__(self, old_owner, lv, time_min, time_sec):
+    def __init__(self, old_owner, lv, gold):
         '''
         Constructor or initializaator.
         It's class reference at the units of events opens for the class...
@@ -87,7 +87,7 @@ class MapEventsChildrens(types.KX_GameObject, ManagerScenes):
         self.loading_now = ManagerScenes().loading_now
 
         self.event_own = old_owner
-        self.board_text = "Nível: {2}\nTempo: {0}min{1}".format(time_min, time_sec, lv)
+        self.board_text = "Nível: {1}\nGold: {0}".format(gold, lv)
         self.added_board = 0
         self.count_add_board = 0
         print("Evento 1, char 1, iniciado")

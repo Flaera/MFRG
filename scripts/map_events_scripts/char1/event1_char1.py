@@ -4,7 +4,7 @@ from scripts.map_events_scripts.map_events import MapEventsChildrens
 
 def Start(cont):
     own = cont.owner
-    event_children = MapEventsChildrens(own, 1, 3, 13)
+    event_children = MapEventsChildrens(own, 1, 1300) #There have modifications in each self script
 
 
 def Update(cont):
@@ -21,12 +21,8 @@ def Update(cont):
     keys = logic.keyboard.events
     confirm = keys[events.ENTERKEY] == logic.KX_INPUT_JUST_ACTIVATED
 
-    if ((confirm) and (col_cursor.positive == True) and (own["active"] == True)) \
-            or (own.action_load == True):
-        own.TimeChangeScene(confirm, current_scene.objects["empty_map"]["dtime_map"], 0.5)
-        own.TransitionLoadingScenes("loading", "event1_char1", cont,
-                                    [cont.actuators["re_map"],
-                                     cont.actuators["re_map_smh"],
-                                     cont.actuators["re_loading"]])
+    if ((confirm) and (col_cursor.positive == True) and (own["active"] == True)):
+        own.OnlyAddScene("talk_zu") #Name of talk scene 
+        own.OnlyRemoveScenes(cont, [cont.actuators["re_map"], cont.actuators["re_map_smh"]])
 
     elif (confirm): print("Oxi! Ta maluco! Não tem evento aqui.")
