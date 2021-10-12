@@ -23,6 +23,6 @@ def Update(cont):
         own.OnlyRemoveScenes(cont, [cont.actuators["re_pause"]])
     elif (opts[0]==True and opts[1]==1):
         own.OnlyAddScene("main_menu_context")
-        own.OnlyRemoveScenes(cont, [cont.actuators["re_event"], cont.actuators["re_pause"],
-         cont.actuators["re_event_ui"]])
+        own.OnlyRemoveScenes(cont, [cont.actuators["re_event"], cont.actuators["re_event_ui"],
+         cont.actuators["re_pause"]])
             

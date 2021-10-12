@@ -44,4 +44,8 @@ def Update(cont):
     if (keyboard.events[events.ENTERKEY]==tap) == True:
         own["manager_scenes"].OnlyAddScene("menu_pause_event1_char1")
         own["manager_scenes"].OnlyPauseScene(cont, [cont.actuators["pa_event1_char1"]])
-        
+
+    col_finish = cont.sensors["col_finish"].positive
+    if (col_finish==True):
+        own["manager_scenes"].OnlyAddScene("finish_event1_char1")
+        own["manager_scenes"].OnlyPauseScene(cont, [cont.actuators["pa_event1_char1"]])

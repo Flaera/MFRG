@@ -31,7 +31,8 @@ def SearchObjPropValue(prop_name, property_value, scene=logic.getCurrentScene().
     :param prop_name: property name at be searching.
     :return: str name of objects with that property.
     '''
-    for obj in scene:
+    #print("scene{}-".format(scene))
+    for obj in scene.objects:
         if (prop_name in obj) and (obj[prop_name] == property_value):
             return obj.name
 

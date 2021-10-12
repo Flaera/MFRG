@@ -1,10 +1,11 @@
 from bge import logic, types, events
 from scripts.map_events_scripts.map_events import MapEventsChildrens
+from data_files.prices_events import prices
 
 
 def Start(cont):
     own = cont.owner
-    event_children = MapEventsChildrens(own, 1, 1300) #There have modifications in each self script
+    event_children = MapEventsChildrens(own, 1, prices[0]) #There have modifications in each self script
 
 
 def Update(cont):

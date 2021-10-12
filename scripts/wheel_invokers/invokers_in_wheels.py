@@ -6,17 +6,18 @@ def Start(cont):
     own = cont.owner
     #I think to edit this, because I have adapt the script at difenrents types of wheels
     #It can make with conditionals
-    own["wheel0"] = logic.getCurrentScene().objects[SearchObjPropValue("wheel", 0)]
-    own["wheel1"] = logic.getCurrentScene().objects[SearchObjPropValue("wheel", 1)]
-    own["wheel2"] = logic.getCurrentScene().objects[SearchObjPropValue("wheel", 2)]
-    own["wheel3"] = logic.getCurrentScene().objects[SearchObjPropValue("wheel", 3)]
+    curr_scene = logic.getCurrentScene()
+    own["wheel0"] = logic.getCurrentScene().objects[SearchObjPropValue("wheel", 0, curr_scene)]
+    own["wheel1"] = logic.getCurrentScene().objects[SearchObjPropValue("wheel", 1, curr_scene)]
+    own["wheel2"] = logic.getCurrentScene().objects[SearchObjPropValue("wheel", 2, curr_scene)]
+    own["wheel3"] = logic.getCurrentScene().objects[SearchObjPropValue("wheel", 3, curr_scene)]
 
     own["delta_y"] = float(0)
     own["delta_z"] = float(-0.5)
     
-    own["others_wheel_invokers"] = [logic.getCurrentScene().objects["invoker_dust0"],
-     logic.getCurrentScene().objects["invoker_dust1"],
-     logic.getCurrentScene().objects["invoker_dust3"]]
+    own["others_wheel_invokers"] = [curr_scene.objects["invoker_dust0"],
+     curr_scene.objects["invoker_dust1"],
+     curr_scene.objects["invoker_dust3"]]
 
 
 def Update(cont):

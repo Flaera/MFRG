@@ -85,11 +85,11 @@ def Update(cont):
     
     #own.DebugCar()
     own.MainCarPhysics(keys[events.UPARROWKEY], keys[events.DOWNARROWKEY],
-                   keys[events.RIGHTARROWKEY], keys[events.LEFTARROWKEY],
-                   keys[events.ZKEY], keys[events.XKEY],  # brake and nitro
-                   col_ground, col_wall, col_rampa,
-                   col_wallLL, col_wallLR, col_wallF, col_wallR,
-                   col_obj1, col_obj2)
+                    keys[events.RIGHTARROWKEY], keys[events.LEFTARROWKEY],
+                    keys[events.ZKEY], keys[events.XKEY],  # brake and nitro
+                    col_ground, col_wall, col_rampa,
+                    col_wallLL, col_wallLR, col_wallF, col_wallR,
+                    col_obj1, col_obj2)
 
     # calling particle system:
     CallingParticles(own)
