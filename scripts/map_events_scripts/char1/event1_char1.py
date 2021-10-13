@@ -24,6 +24,6 @@ def Update(cont):
 
     if ((confirm) and (col_cursor.positive == True) and (own["active"] == True)):
         own.OnlyAddScene("talk_zu") #Name of talk scene 
-        own.OnlyRemoveScenes(cont, [cont.actuators["re_map"], cont.actuators["re_map_smh"]])
+        own.OnlyRemoveScenes(cont, [cont.actuators["re_map"], cont.actuators["re_map_smh"], cont.actuators["re_gold"]])
 
     elif (confirm): print("Oxi! Ta maluco! Não tem evento aqui.")

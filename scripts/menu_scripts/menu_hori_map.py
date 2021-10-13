@@ -24,7 +24,8 @@ def Update(cont):
     if (keys[events.ONEKEY] == tap):
         smh.OnlyAddScene("main_menu_context")
         smh.OnlyRemoveScenes(cont, [cont.actuators["re_map"],
-                                    cont.actuators["re_map_smh"]])
+                                    cont.actuators["re_map_smh"],
+                                    cont.actuators["re_gold"]])
     elif (keys[events.TWOKEY] == tap): #and (own["in_opt_two"] == False):
         #own["in_opt_two"] = True
         smh.OnlyAddScene("map_menu_list")

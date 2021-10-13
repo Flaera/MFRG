@@ -1,7 +1,7 @@
 from bge import logic, events
 from scripts.menu_scripts.menu_lista import MenuLista
 from scripts.map_events_scripts.map_events import MapEventsFromChar
-# IT'S IN DEVELOPMENT!!
+from scripts.time_manager import TimeAction1
 
 
 def Start():
@@ -14,9 +14,8 @@ def Start():
     own["deltax_cursor"] = float(0)
     own["deltay_cursor"] = float(0)
 
-    cursor_cam = MenuLista(own, 5) # I NO needed import the MenuLista, but all...
-    # right. No problem!!
-
+    cursor_cam = MenuLista(own, 5)
+    
     # Add horizontal menu in scene and events:
     cursor_cam.OnlyAddScene("map_menu_hori_button")
 
@@ -28,15 +27,16 @@ def Start():
         char1 = bool(chars[0])
         char2 = bool(chars[1])
         char3 = bool(chars[2])
-    #Inserir ogica amanha aqui!!!!!!!!!!!!!1
     map_events = MapEventsFromChar().CallEventsInChars(char1, char2, char3,
                                    logic.getCurrentScene().objects["events_char1"],
                                    logic.getCurrentScene().objects["events_char2"],
                                    logic.getCurrentScene().objects["events_char3"],
                                    logic.getCurrentScene())
 
+    cursor_cam.OnlyAddScene("gold_board")
 
-def SetVectorCamKeyboard(cursor_cam, up, down, left, right, x_max, y_max):
+
+def SetVectorCamKeyboard(cursor_cam, up, down, left, right, x_max, y_max, constant):
     '''
     It function define the direction of movement of map cursor, this cursor is mother...
      object from camera.
@@ -47,8 +47,8 @@ def SetVectorCamKeyboard(cursor_cam, up, down, left, right, x_max, y_max):
     :param right: key to move to right direction.
     :return: list/vector with directions of moves.
     '''
-    x_inc = x_max / 40
-    y_inc = y_max / 40
+    x_inc = x_max / constant
+    y_inc = y_max / constant
     x = 0
     y = 0
 
@@ -70,7 +70,7 @@ def SetVectorCamKeyboard(cursor_cam, up, down, left, right, x_max, y_max):
 
 
 def MoveCursorKeyboard(cursor_cam, x_max, y_max,
-                       up, down, left, right):
+                       up, down, left, right, constant):
     '''
     It manage the movements of the cursor in map.
     :param cursor_icon: object that move the cursor.
@@ -86,8 +86,8 @@ def MoveCursorKeyboard(cursor_cam, x_max, y_max,
     :param right: key to move to right direction.
     :return: list/vector with directions of moves.
     '''
-    x_inc = x_max / 40
-    y_inc = y_max / 40
+    x_inc = x_max / constant
+    y_inc = y_max / constant
     x = 0
     y = 0
     if (up) and (cursor_cam["deltay_cursor"] < y_max):
@@ -116,37 +116,39 @@ def Update(cont):
     left = keys[events.LEFTARROWKEY]
     right = keys[events.RIGHTARROWKEY]
 
-    x_max = 11
-    y_max = 8.3
-    vector_cursor = SetVectorCamKeyboard(own, up, down, left, right, x_max, y_max)
+    x_max = 222#158.78
+    y_max = 170#120.95
+    constant = 150
+    vector_cursor = SetVectorCamKeyboard(own, up, down, left, right, x_max, y_max, constant)
     #print("Como as coisas estão: ", vector_cursor,
      #     own["deltay"], own["deltax"], sep=", ")
 
     # To apply the movements of camera and cursor:
-    deltax_speed = float(0.26) #0.26# Speed research in each call of game...
+    deltax_speed = float(x_max/constant) #0.26# Speed research in each call of game...
     # engine for axis.
-    deltay_speed =float(0.19) #0.19
-    own.applyMovement([vector_cursor[0]*deltax_speed,
-                       vector_cursor[1]*deltay_speed, 0], True)
+    deltay_speed = float(y_max/constant) #0.19
+    timer_map = TimeAction1(own["timer_map"])
+    own["timer_map"] = timer_map[1]
+    if (timer_map[0]==True):
+        own.applyMovement([vector_cursor[0]*deltax_speed, vector_cursor[1]*deltay_speed, 0], True)
 
     # To move cursor if x or y vector are in maximum limite:
     current_scene = logic.getCurrentScene()
     cursor = current_scene.objects["cursor"]
-    vector_cursor_icon = MoveCursorKeyboard(own, x_max+(9.49), y_max+(6.84),
-                                            up, down, left, right)
-    #print("vector_cursor_icon: ", vector_cursor_icon,
-          #own["deltax_cursor"], own["deltay_cursor"],
-          #own["deltax"], own["deltay"], sep=", ")
     # Int he end, I think that for optimization can make only one function and manage...
     # the varaibles "x_inc" and "y_inc" in each function that movement of cursor to...
     # eliminate the "delta_speeds" variables.
-    cursor.applyMovement([vector_cursor_icon[0]*deltax_speed,
+    '''if (timer_map[0]==True):
+        vector_cursor_icon = MoveCursorKeyboard(own, x_max, y_max,
+                                            up, down, left, right, constant)
+        cursor.applyMovement([vector_cursor_icon[0]*deltax_speed,
                           vector_cursor_icon[1]*deltay_speed, 0], True)
-
+    '''
     # To call the animation of cursor:
     # It's code show me that animations putted in locals with...
     # logic (Principle logic of moves) can happen fixing, like functions of movement...
     # malfuntion of activities. It happened with It animation that stoped the function...
     # of movement of cursor at end of the map.
+    #current_scene = logic.getCurrentScene()
     current_scene.objects["cursor_icon"].playAction("cursor_map_anim", 1, 40, blendin=2)
 

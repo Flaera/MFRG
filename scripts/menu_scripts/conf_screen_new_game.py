@@ -43,6 +43,8 @@ def Update(cont):
         re_menu_context = cont.actuators["re_mmc"]
         re_opt = cont.actuators["re_mmopt"]
         own.OnlyAddScene("screen_selected_char")
+        with open(logic.expandPath("//data_files/intros.txt"), 'w', encoding="utf-8") as intros_file:
+            intros_file.write("True")
         own.OnlyRemoveScenes(cont, [re_menu_context, re_opt, re_conf_screen])
     elif list_opt == [True, 1]:
         #print("AQUI!!!")

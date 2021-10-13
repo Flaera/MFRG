@@ -22,5 +22,20 @@ events_talks = {
     ["Anne_obj", "Brigada!",1],
     ["Moacir_obj", "Depois vo ter que falar com ele, por sinal;\nmas vamos ao que interessa.\nGostei d’ocê e cê quer vencer, né?", 2], 
     ["Anne_obj", "Claro!", 1], 
-    ["Moacir_obj", "Então vamos nos preparar.", 2]]
+    ["Moacir_obj", "Então vamos nos preparar.", 2]],
+    "4": ["bg_carlos_intro", 
+    ["Carlos_obj", "Opa, gata! Tudo bom!?", 1], 
+    ["Anne_obj", "Tudo! Boa tarde!", 1], 
+    ["Carlos_obj", "Boa!", 2],
+    ["Traficante_Armado", "Quê que essa mulé quer, hein?\nSua bitch!?", 2], 
+    ["Anne_obj", "Sou puta de ninguém porque quero falar com outra pessoa de sexo oposto, não, e outra, eu tô falando com cê, por acaso?", 1], 
+    ["Traficante_Armado", "É o quê, quenga? Cê me respeite, viu?", 2], 
+    ["Anne_obj", "Se não vai fazer o quê? Me matar?\nAqui quem me faltô respeito foi você, viu?\nIsso é magoa.\nPorque na pista já ganhei de cê antes, otário.", 1], 
+    ["bg_only", "Os outros ao redor vaiam e é possível ouvir as falas\n“Carai! Nessa cê morreu Marquinhos!” e “Se fudeu!” ao fundo:\nUuuuuuuu! - vaia coletiva." 0], 
+    ["Traficante_Armado", "Oxi! Olha...", 2], 
+    ["Carlos_obj", "Ela tá certa. Vacilou feio, mano", 2], 
+    ["Carlos_obj", "Olha, meu nome é Carlos. Fala o que cê quer?", 2], 
+    ["Anne_obj", "É você que gerencia as corridas de nível 1.\nComo faço pra participar do RUA?", 1],
+    ["Carlos_obj", "Sou eu sim. Massa! Seja bem vinda.\nFique a vontade pra se enturmar com as meninas e meninos daqui.\nSó gente boa! Me dá seu nome compreto, celular e otras coisas.\nEu vou anotar e repassar pra Terceira, no fim das contas ela que manda.", 2], 
+    ["Anne_obj", "Beleza. Meu nome é Anne Gizza da Iara Bonita e Dandara.\nMeu número é...", 1]]
 }
