@@ -63,17 +63,17 @@ def Update(cont):
     intros_readed = []
     with open(logic.expandPath("//data_files/intros.txt"), 'r') as intros_file:
         intros_readed = intros_file.read().split('\n')
-    
-    if bool(intros_readed[0])==True:
+    print("intros_read:{}-".format(intros_readed))
+    if IsEqualString(intros_readed[0], "True") == True:
         with open(logic.expandPath("//data_files/intros.txt"), 'w') as intros_filew:
             intros_filew.write("False")
         mains_chars = []
         with open(logic.expandPath("//data_files/progress_in_game.txt"), 'r') as progress_file:
             mains_chars = progress_file.read().split('\n')
-        if bool(mains_chars[0])==True:
+        if IsEqualString(mains_chars[0], "True") == True: #Index change in order with main character
             own.OnlyAddScene("intro_talk_carlos")#Go to scene of introduction of carlos
             own.OnlyRemoveScenes(cont, [cont.actuators["re_select_char"]])
-    #At time create the scenes talks of introductions I can copy code above and setting in order
+        #At time create the scenes talks of introductions I can copy code above and setting in order
     elif own["dtime"]>3.50:
         own.OnlyAddScene("map")
         own.OnlyRemoveScenes(cont, [cont.actuators["re_select_char"]])

@@ -44,10 +44,13 @@ def Update(cont):
         is_have = False
         with open(logic.expandPath("//data_files/events_completes.txt"), 'r') as events_completes_file:
             list_events = events_completes_file.read().split('\n')
+            #print("list_events:{}-".format(list_events))
             for i in list_events:
+                #print("i:{}-".format(i))
                 if IsEqualString(i, name_event)==True:
                     is_have = True
                     break
+        #print("is_have:{}-".format(is_have))
         if (is_have==False):
             with open(logic.expandPath("//data_files/events_completes.txt"), 'a') as eca_file:
                 eca_file.append("\n"+name_event)
