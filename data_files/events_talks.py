@@ -43,7 +43,7 @@ events_talks = {
      ["Senher", "Eles então começaram\ncom essas cosas de mudar, de tirar, de obter posse; quando vimos\nchego aqui uma orde de juiz maldoso\n– tosse interrompe a fala dele por um momento.", 0],
      ["Senhor", "Esta orde dizia pra nôis sair de nossas casa,\nque aquelas casa nossa eles precisavam pegar e pegar o terreno.\nA maioria fico lá, como eu. Porque nascemo e crescemo e… e depois\n", 0],
      ["Senhor", "de tanto tempo – mais uma pausa inesperada por conta da\ntosse – deveríamos sair do lugar. Não pode. Isso tá errado.", 0],
-     ["Senhor", "Perdemo tudo. Foi tudo destruído.\nQuase morri na mão daqueles capangas deles que vestem aquelas farda.\nPerdemo… Perdemo mermo.", 0],
+     ["Senhor", "Perdemo tudo. Foi tudo destruído.\nQuase morri na mão daqueles capangas deles que vestem aquelas\nfarda. Perdemo… Perdemo mermo.", 0],
      ["Senhor", "Eu consigo me lembrar, até hoje! Até hoje!\nDaqueles carros, daquelas armaduras...\nmatano meu amor.", 0],
      ["Senhor", "Então subimo o morro e invadimo o lixão. Moramo aqui a...\nagora. Na Favela do Baixo do Reginaldo. Té quando eles vorta de novo.\nSei lá! Hoje sobrevivemo ainda da pesca, mas andamo muito\naté chegar lá, mas alguns sobrevive do lixo.", 0],
      ["Senhor", "Então veio esse doençero,\nesse lixo todo de computador, de carro, de comida, de tudo.\nTudo isso mata.", 0],
