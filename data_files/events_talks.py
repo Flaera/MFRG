@@ -37,5 +37,15 @@ events_talks = {
     ["Carlos_obj", "Olha, meu nome é Carlos. Fala o que cê quer?", 2], 
     ["Anne_obj", "É você que gerencia as corridas de nível 1.\nComo faço pra participar do RUA?", 1],
     ["Carlos_obj", "Sou eu sim. Massa! Seja bem vinda.\nFique a vontade pra se enturmar com as meninas e meninos daqui.\nSó gente boa! Me dá seu nome compreto, celular e otras coisas.\nEu vou anotar e repassar pra Terceira, no fim das contas ela que\nmanda.", 2], 
-    ["Anne_obj", "Beleza. Meu nome é Anne Gizza da Iara Bonita e Dandara.\nMeu número é...", 1]]
+    ["Anne_obj", "Beleza. Meu nome é Anne Gizza da Iara Bonita e Dandara.\nMeu número é...", 1]],
+    "5": ["bg_intro_game",
+     ["Senhor", "Faz muito tempo que a burguesia reclamava de uns incômodo\nadvindo das pessoas habitantes da comunidade\nribeirinha do Cortiço de Cabeça de Gato.\nEles recramava e recramava na rádia que nôis era doença e era feio.", 0],
+     ["Senher", "Eles então começaram\ncom essas cosas de mudar, de tirar, de obter posse; quando vimos\nchego aqui uma orde de juiz maldoso\n– tosse interrompe a fala dele por um momento.", 0],
+     ["Senhor", "Esta orde dizia pra nôis sair de nossas casa,\nque aquelas casa nossa eles precisavam pegar e pegar o terreno.\nA maioria fico lá, como eu. Porque nascemo e crescemo e… e depois\n", 0],
+     ["Senhor", "de tanto tempo – mais uma pausa inesperada por conta da\ntosse – deveríamos sair do lugar. Não pode. Isso tá errado.", 0],
+     ["Senhor", "Perdemo tudo. Foi tudo destruído.\nQuase morri na mão daqueles capangas deles que vestem aquelas farda.\nPerdemo… Perdemo mermo.", 0],
+     ["Senhor", "Eu consigo me lembrar, até hoje! Até hoje!\nDaqueles carros, daquelas armaduras...\nmatano meu amor.", 0],
+     ["Senhor", "Então subimo o morro e invadimo o lixão. Moramo aqui a...\nagora. Na Favela do Baixo do Reginaldo. Té quando eles vorta de novo.\nSei lá! Hoje sobrevivemo ainda da pesca, mas andamo muito\naté chegar lá, mas alguns sobrevive do lixo.", 0],
+     ["Senhor", "Então veio esse doençero,\nesse lixo todo de computador, de carro, de comida, de tudo.\nTudo isso mata.", 0],
+     ["Senhor", "Eu amava minha terra. Por que isso? De todo modo,\ntenho minhas filhas e netas... e\ntenho que continuar, né? Não posso parar antes de\nver elas florescer e fica bem.", 0]]
 }

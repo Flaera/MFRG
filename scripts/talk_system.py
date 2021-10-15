@@ -18,7 +18,8 @@ class TalkSystem(ManagerScenes):
         self.curr_scene = logic.getCurrentScene()
         #self.curr_scene_ina_objs = self.curr_scene.objectsInactive
         self.curr_scene.addObject(events_talks[self.id_event_talk][0], "bg", 0)
-        self.curr_char = self.curr_scene.addObject(events_talks[self.id_event_talk][1][0], "left", 0)
+        try: self.curr_char = self.curr_scene.addObject(events_talks[self.id_event_talk][1][0], "left", 0)
+        except: pass
         self.own["Text"] = events_talks[self.id_event_talk][1][1]
         self.curr_scene.objects["name"]["Text"] = events_talks[self.id_event_talk][1][0].split('_')[0]
         self.curr_steps += 1
