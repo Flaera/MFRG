@@ -27,8 +27,7 @@ def Start():
     # The correct value will be put 8. Because It make conditional with fps of animation.
 
     ground_type = SearchPropValue("chao")
-    #invokers = ["invoker_dust0", "invoker_dust1",
-     #"invoker_dust2", "invoker_dust3"]
+    #print("ground_type={}-".format(ground_type))
     invokers = ["invoker_dust2", "invoker_dust3"]
     lilas["particle_dust"] = ParticleSystem(current_scene, ["particle_dust_seco",
      "particle_dust_molhado", "particle_dust_asfalt"], ground_type, invokers, 15, 1)

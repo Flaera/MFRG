@@ -22,7 +22,7 @@ class ParticleSystem():
         :return: the object that reference at the particle in game.
         '''
         for i in self.invokers_list:
-            for p in [0, self.npdc]:
+            for p in range(0, self.npdc):
                 self.scene.addObject(self.particles_list[self.index_particle],
                                      i, self.life_time_fps)
 
