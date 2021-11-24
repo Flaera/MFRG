@@ -28,6 +28,7 @@ def Update(cont):
     re_menu_context = cont.actuators["re_menu_context"]
     # Em KX_SCENE tem the comands for substitute It's actuators.
     re_opt = cont.actuators["re_menu_opt"]
+    re_mp = cont.actuators["re_mp"]
 
     if ((sys_res[0] == True) and (sys_res[1] == 0)):
         own.OnlyAddScene("screen_selected_char")
@@ -40,18 +41,12 @@ def Update(cont):
         own.OnlyAddScene("main_menu_settings")
         own.OnlyRemoveScenes(cont, [re_opt])
     elif ((sys_res[0] == True) and (sys_res[1] == 3)):
-        # It's about. I WILL GO LOVE MAKE THIS.
         own.OnlyAddScene("main_menu_about")
         own.OnlyRemoveScenes(cont, [re_opt])
-    elif ((sys_res[0] == True) and (sys_res[1] == 4)):
-        # It's music player. Tooo I sense same about this. :D
-        own.OnlyAddScene("main_menu_musicplayer")
-        own.OnlyRemoveScenes(cont, [re_opt])
+    elif ((sys_res[0] == True) and (sys_res[1] == 4)):        
+        own.OnlyAddScene("music_player2")
+        own.OnlyRemoveScenes(cont, [re_opt, re_mp])
     elif ((sys_res[0] == True) and (sys_res[1] == 5)):
         own.OnlyAddScene("main_menu_conf_screen_quit")
         own.OnlyPauseScene(cont, [cont.actuators["susp_mm_opt"]])
         #own.OnlyRemoveScenes(cont, [re_opt])
-
-
-    #own.ActLoadScene(cont, game_testes) # To load scene at of actuator.
-    #own.DebugaAi() # Function of class MenuLista only debug of same.
