@@ -8,7 +8,14 @@ def Start(cont):
 
     scene_list = logic.getSceneList()
     event_scene = scene_list[0]
-    own["car_name"] = SearchObjProp("car", scene=event_scene.objects)
+    try:
+        car_file = open(logic.expandPath("//data_files/car_selected.txt"), "r")
+        car = car_file.read()
+        own["car_name"] = car.split('\n')[0]
+        print("car name:{}-".format(own["car_name"]))
+    except:
+        own["car_name"] = SearchObjProp("car", scene=event_scene.objects)
+
     
     own["cursor"] = logic.getCurrentScene().objects["EmptyPonteiro"]
     own["speed0"] = float(0)
@@ -25,7 +32,7 @@ def Update():
     own = cont.owner
 
     scene_list = logic.getSceneList()
-    event_scene = scene_list[0]
+    event_scene = scene_list[1]
     car = event_scene.objects[own["car_name"]]
     car_speed = car.speed_result
     logic.getCurrentScene().objects["speed"]["Text"] = int((3.6)*car_speed)

@@ -9,6 +9,7 @@ class MusicSystem():
         self.acc_main = 0
         self.max_musics = len(musics)
         print("max musics: ", self.max_musics)
+        self.only_time = True
 
 
     def OnlyPlay(self, cont):
@@ -20,8 +21,10 @@ class MusicSystem():
             cont.deactivate(musics[self.acc_main-1][0])
             own["timer_sound"] = float(0.0)
             print("acc_music:{}-".format(self.acc_main))
-        else:
+            self.only_time = True
+        elif self.only_time==True:
             cont.activate(musics[self.acc_main][0])
+            self.only_time = False
 
     
     def PlayList(self, cont):

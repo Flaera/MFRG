@@ -13,7 +13,7 @@ def Start(cont):
     own = cont.owner
 
     scene_list = logic.getSceneList()
-    id_scene_event = int(0)
+    id_scene_event = int(1)
     for i in range(len(scene_list)):
         if scene_list[i]=="event2_char1": # settings string in each self event
             id_scene_event = i
