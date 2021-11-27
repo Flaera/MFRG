@@ -62,7 +62,7 @@ def SwapCars(opts, own):
 		file_car_sel = open(logic.expandPath("//data_files/car_selected.txt"), 'r', encoding="utf-8")
 		fcar_selected = file_car_sel.read()
 		print("fcar_selected:", fcar_selected)
-		index_garage = 0
+		index_garage = int(1)
 		for i in range(0, len(scene_list)):
 			if scene_list[i]=="like_garage":
 				index_garage = i

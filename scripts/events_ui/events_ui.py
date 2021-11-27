@@ -32,7 +32,7 @@ def Update():
     own = cont.owner
 
     scene_list = logic.getSceneList()
-    event_scene = scene_list[1]
+    event_scene = scene_list[0]
     car = event_scene.objects[own["car_name"]]
     car_speed = car.speed_result
     logic.getCurrentScene().objects["speed"]["Text"] = int((3.6)*car_speed)

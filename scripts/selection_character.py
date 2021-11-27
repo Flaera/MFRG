@@ -40,6 +40,11 @@ def Start(cont):
 
     selector = HardMenuHorizontal(own) # To call the functions of transition for loading scene.
 
+    try:
+        selector.OnlyAddScene("music_player")
+    except:
+        pass
+
 
 def LinearFuncMoveSelector(cont): # I think that is best to make funtion of second degree.
     '''
