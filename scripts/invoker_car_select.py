@@ -34,7 +34,8 @@ def Start(cont):
 
     car_selected.close()
     invoker["manager_scenes"] = ManagerScenes()
-
+    
+    cont.activate(cont.actuators["negra_sim"])
 
 
 def Update(cont):

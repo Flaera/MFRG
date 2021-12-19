@@ -35,6 +35,7 @@ def Start(cont):
     car_selected.close()
     invoker["manager_scenes"] = ManagerScenes()
 
+    cont.activate(cont.actuators["dai_a_cesar_o_que_e_de_cesar"])
 
 
 def Update(cont):

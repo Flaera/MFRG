@@ -230,17 +230,22 @@ class Car(types.KX_GameObject):
         self.rotation_z = float(0)
         self.rotation_z_inc = float(0.001)
         '''
-        if (ground_trigger == True) and (self.gear != 0) and (left > 0) and (self.rotation_z < self.rotation_z_max):
+        if (ground_trigger == True) and (self.gear != 0) and (left > 0 or left==True) and (self.rotation_z < self.rotation_z_max):
             if ((self.rotation_z + self.rotation_z_inc) < self.rotation_z_max):
-                self.rotation_z += self.rotation_z_inc * self.SupportRotationZAxis()
+                self.rotation_z += self.rotation_z_inc
+                self.rotation_z *= self.SupportRotationZAxis()
             else:
-                self.rotation_z -= self.rotation_z_inc * self.SupportRotationZAxis()
+                self.rotation_z -= self.rotation_z_inc
+                self.rotation_z *= self.SupportRotationZAxis()
         
-        elif (ground_trigger == True) and (self.gear != 0) and (right > 0) and (self.rotation_z > -self.rotation_z_max):
+        elif (ground_trigger == True) and (self.gear != 0) and (right > 0 or right==True) and (self.rotation_z > -self.rotation_z_max):
+            #print("AQUI!!!")
             if ((self.rotation_z - self.rotation_z_inc) > -self.rotation_z_max):
-                self.rotation_z -= self.rotation_z_inc * self.SupportRotationZAxis()
+                self.rotation_z -= self.rotation_z_inc
+                self.rotation_z *= self.SupportRotationZAxis()
             else:
-                self.rotation_z += self.rotation_z_inc * self.SupportRotationZAxis()
+                self.rotation_z += self.rotation_z_inc
+                self.rotation_z *= self.SupportRotationZAxis()
         
         else: self.rotation_z = float(0)
         
