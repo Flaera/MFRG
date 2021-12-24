@@ -228,3 +228,8 @@ class HardMenuHorizontal(ConfirmationMenuScreen):
         return [self.ConfirmationUser(confirm), self.selector_index]
 
 
+    def SetInitPos(self):
+        self.applyMovement([self.deltax*(self.selector_pos-1), 0, 0], True)
+        self.selector_pos = 1
+        self.selector_index = self.selector_pos-1
+        return self.selector_index

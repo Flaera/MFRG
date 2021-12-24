@@ -7,6 +7,6 @@ warnings = {'0': "AÉ!? VOCÊ QUER MESMO SAIR DO JOGO? " \
            '3': "Ao jogar este jogo você concorda em ceder dados da sua jogatina\n" \
                 "aos desenvolvedores.\n" \
                 "Seus dados serão mantidos em sigilo e serão usados apenas para fins\n" \
-                "de pesquisa acadêmica.\n" \
+                "de pesquisa acadêmica.\n\n" \
                 "Quer continuar jogando?"
            }
