@@ -5,7 +5,7 @@ from scripts.menu_scripts.menu_lista import MenuLista
 def Start(cont):
     own = cont.owner
 
-    selector = MenuLista(own, 5)
+    selector = MenuLista(own, 3)
 
     # to active the animation of dar screen!!
     bg_dark_screen = logic.getCurrentScene().objects["mmap_dark_screen"]
@@ -28,15 +28,13 @@ def Update(cont):
 
     if (sys_res == [True, 0]):
         own.OnlyAddScene("like_garage")
-        own.OnlyRemoveScenes(cont, [cont.actuators["re_map"], cont.actuators["re_map_smh"],
-                                    cont.actuators["re_map_menu"], cont.actuators["re_gold"]])
+        own.OnlyRemoveScenes(cont, [cont.actuators["re_gold"], cont.actuators["re_map_smh"],
+                                    cont.actuators["re_map_menu"], cont.actuators["re_map"]])
     elif (sys_res == [True, 1]):
-        pass  # IT'S TOO IN DEVELOPMENT!! OPTION TO SHOP CAR GAME.
-    elif (sys_res == [True, 2]):
-        pass # IT'S TOO IN DEVELOPMENT!! OPTION TO SAVE GAME.
-    elif (sys_res == [True, 3]):
-        pass # IT'S TOO IN DEVELOPMENT. OPTION  TO LOAD GAME
-    elif (sys_res == [True, 4]) and (own.action_load == True):
+        own.OnlyAddScene("shop_cars")
+        own.OnlyRemoveScenes(cont, [cont.actuators["re_gold"], cont.actuators["re_map_smh"],
+                                    cont.actuators["re_map_menu"], cont.actuators["re_map"]])
+    elif (sys_res == [True, 2]) and (own.action_load == True):
         own.OnlyResumeScene(cont, [cont.actuators["res_map"],
                                    cont.actuators["res_map_smh"]])
         own.OnlyRemoveScenes(cont, [cont.actuators["re_map_menu"]])
