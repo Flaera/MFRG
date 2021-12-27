@@ -11,5 +11,6 @@ warnings = {'0': "AÉ!? VOCÊ QUER MESMO SAIR DO JOGO? " \
                 "Quer continuar jogando?",
            '4': "Tua garagem tá cheia.\nVenda um carro na garagem para abrir espaço\n" \
                 "para comprar um carro novo.",
-           '5': "Cê já tem este carro.\nNão dá pra comprar."
+           '5': "Cê já tem este carro.\nNão dá pra comprar.",
+           '6': "Sem dinheiro no bolso.\nNão fazemos fiado."
            }

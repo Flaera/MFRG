@@ -29,5 +29,6 @@ def Update(cont):
     #list_opt = own.ActiveMenuConfScreen(confirm, left, right)
 
     if (confirm==True):
-        ManagerScenes().OnlyResumeScene(cont, [cont.actuators["resu_shop_cars"]])
+        ManagerScenes().OnlyResumeScene(cont, [cont.actuators["resu_shop_cars"],
+         cont.actuators["resu_shop_cars_ui"]])
         ManagerScenes().OnlyRemoveScenes(cont, [cont.actuators["re_fully"]])
