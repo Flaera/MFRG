@@ -6,18 +6,15 @@ def Start(cont):
     #cont = logic.getCurrentController()
     own = cont.owner
 
-    ab_text = "(Esta versao da sessao Sobre " \
-              "ainda esta desenvolvimento)" \
+    ab_text = "(Esta versão desta sessão " \
+              "ainda esta em desenvolvimento)" \
               "\n\n\nDesenvolvedores:" \
-              "\nFlaera\nGuilherme Bras (PP)" \
+              "\nRafael Luiz dos Santos (Flaera)\nGuilherme dos Santos Bras " \
               "\n\n\nColaboradores:" \
-              "\nElias (falta o segundo nome, PP)" \
-              "\nElthon Oliveira (PP)" \
-              "\n\n\nTestadores (Beta testers):" \
-              "\nDevo adicionar algum quando tiver uma beta estável para testes." \
-              "\n\n\nTÓPICOS PARA REVISÃO DO DESENVOLVEDOR (ESTA..." \
-              "\nPARTE DEVE SER EXCLUÍDA DO TEXTO FINAL):" \
-              "\n- PP =  perguntar se posso colocar o nome."
+              "\nElias" \
+              "\nElthon Oliveira" \
+              "\nRoberta Lopes" \
+              "\n\n\n"
 
     own["Text"] = ab_text
 

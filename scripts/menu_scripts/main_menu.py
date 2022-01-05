@@ -38,8 +38,10 @@ def Update(cont):
         own.OnlyAddScene("conf_screen_new_game")
         own.OnlyPauseScene(cont, [cont.actuators["susp_mm_opt"]])
     elif ((sys_res[0] == True) and (sys_res[1] == 2)):
-        own.OnlyAddScene("main_menu_settings")
-        own.OnlyRemoveScenes(cont, [re_opt])
+        #Settings
+        #own.OnlyAddScene("main_menu_settings")
+        #own.OnlyRemoveScenes(cont, [re_opt])
+        pass
     elif ((sys_res[0] == True) and (sys_res[1] == 3)):
         own.OnlyAddScene("main_menu_about")
         own.OnlyRemoveScenes(cont, [re_opt])

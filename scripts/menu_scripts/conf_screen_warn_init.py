@@ -3,6 +3,7 @@ from scripts.menu_scripts.menu_horizontal import ConfirmationMenuScreen
 from scripts.manager_scenes import ManagerScenes
 from data_files.warnings import warnings
 
+
 def Start(cont):
     own = cont.owner
 
@@ -29,7 +30,12 @@ def Update(cont):
     list_opt = own.ActiveMenuConfScreen(confirm, left, right)
 
     if list_opt == [True, 1]:
-        logic.endGame()
+        with open(logic.expandPath("//data_files/data_permission.txt"), 'w') as data_file:
+            data_file.write('0')
+        ManagerScenes().OnlyAddScene("intro_game_scene")
+        ManagerScenes().OnlyRemoveScenes(cont, [cont.actuators["re_igw"]])
     elif list_opt == [True, 0]:
+        with open(logic.expandPath("//data_files/data_permission.txt"), 'w') as data_file:
+            data_file.write('1')
         ManagerScenes().OnlyAddScene("intro_game_scene")
         ManagerScenes().OnlyRemoveScenes(cont, [cont.actuators["re_igw"]])
