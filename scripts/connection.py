@@ -30,12 +30,26 @@ def Start():
                 with open(logic.expandPath("//data_files/events_completes.txt"), 'r') as events_completes:
                     events = events_completes.read().split('\n')
                 print("events={}-".format(events))
-                acc = int(0)
+
+                cursor.execute("SELECT * FROM mfrg_data.events_completes ORDER BY name_event DESC;")
                 lines = cursor.fetchall()
+                print("lines=", lines)
+
+                len_lines = len(lines)
+                len_events = len(events)
+                for j in range(0, len_events):
+                    if events[j]!='':
+                        print("j=", j)
+                        cursor.execute("UPDATE events_completes SET id = " + str(j))
+                        con_obj.commit()
+                
+                acc = int(2)
                 for i in lines:
-                    cursor.execute("UPDATE events_completes SET name_event = " + events[acc])
+                    print("i=", i[0], "acc=", acc)
+                    update = "UPDATE events_completes SET name_event="+events[acc]+" WHERE id="+str(acc)
+                    cursor.execute(update)
                     acc += 1
-                con_obj.commit()
+                    con_obj.commit()
         except Error as e:
             print("Não estabelida conexão. Erro: ", e)
         finally:
