@@ -7,10 +7,11 @@ class MusicSystem():
         self.music_player = music_player
         self.own = old_owner
         self.acc_main = 0
-        self.max_musics = len(musics)
+        self.max_musics = len(tm_player)
         print("max musics: ", self.max_musics)
         self.only_time = True
         self.type_music_player = tm_player
+        print("type music player: ", self.type_music_player)
 
 
     def OnlyPlay(self, cont):

@@ -8,5 +8,6 @@ info_musics = {
     "um_mundo_de_cada_vez": ["Um Mundo de Cada Vez", "Rashid - (feat. Drik Barbosa e Wesley Camilo)"],
     "liberdade": ["Liberdade", "Edi Rock - DJ Cia, Lourena e Morcego."],
     "negra_sim": ["Negra sim", "Preta Rara no Estúdio Showlivre por Festival Sonora 2018."],
-    "dai_a_cesar_o_que_e_de_cesar": ["“DAI A CESAR O QUE É DE CESAR” (Videoclipe Oficial).", "Cesar Mc"]
+    "dai_a_cesar_o_que_e_de_cesar": ["“DAI A CESAR O QUE É DE CESAR” (Videoclipe Oficial).", "Cesar Mc"],
+    "voz_ativa_2020": ["VOZ ATIVA 2020", "DEXTER PART. CORUJA BC1, DJ KL JAY E DJ WILL"]
 }

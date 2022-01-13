@@ -8,5 +8,6 @@ musics2 = [
     ["um_mundo_de_cada_vez", 326.76],
     ["liberdade", 199.72],
     ["negra_sim", 245.52],
-    ["dai_a_cesar_o_que_e_de_cesar", 309.66]
+    ["dai_a_cesar_o_que_e_de_cesar", 309.66],
+    ["voz_ativa_2020", 388.44]
     ]
