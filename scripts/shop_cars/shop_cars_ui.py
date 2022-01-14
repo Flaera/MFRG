@@ -14,8 +14,11 @@ def Start(cont):
 
     own["max_cars"] = len(cars)
     own["current_key"] = '0'
+
     first_car = cars[own["current_key"]][0].split('_')[0]+"_only_asset"
     own["current_car"] = scene_list[own["index_shop"]].addObject(first_car, "logic_point")
+    print("Duas vezes!!??")
+
     ManagerScenes().OnlyAddScene("gold_board")
 
 
@@ -68,8 +71,14 @@ def SwapCars(own):
 def Update(cont):
     own = cont.owner
     #print("current_car: ", own["current_car"])
-    own["Text"] = own["current_car"].name.split('_')[0].upper()
-
+    try:
+        own["Text"] = own["current_car"].name.split('_')[0].upper()
+    except:
+        own["Text"] = cars[own["current_key"]].split('_')[0].upper()
+    scene = logic.getCurrentScene()
+    scn_objs = scene.objects
+    scn_objs["car_price"]["Text"] = str(cars[own["current_key"]][1])
+    
     keyboard = logic.keyboard.events
     tap = logic.KX_INPUT_JUST_ACTIVATED
     enter = keyboard[events.ENTERKEY]==tap
