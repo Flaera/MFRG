@@ -21,20 +21,21 @@ def Start(cont):
 
     car_shop = CarShop(own, index_shop, current_key, current_car, max_cars)
     car_shop.OnlyAddScene("gold_board")
+    car_shop.OnlyAddScene("shop_specs")
 
 
 def Update(cont):
     own = cont.owner
     #print("current_car: ", own["current_car"])
-    #try:
     
-    #except:
-     #   own["Text"] = cars[own["current_key"]][0].split('_')[0].upper()
     scene = logic.getCurrentScene()
     scn_objs = scene.objects
     scn_objs["car_price"]["Text"] = str(cars[own.GetCurrentKey()][1])
     scn_objs["car_sel"]["Text"] = own.GetCurrentCar().name.split('_')[0].upper()
     
+    with open(logic.expandPath("//data_files/curr_key_car.txt"), 'w') as key_car_file:
+        key_car_file.write(own.GetCurrentKey())
+
     keyboard = logic.keyboard.events
     tap = logic.KX_INPUT_JUST_ACTIVATED
     enter = keyboard[events.ENTERKEY]==tap
@@ -45,7 +46,7 @@ def Update(cont):
     if (one==True):
         own.OnlyAddScene("map")
         own.OnlyRemoveScenes(cont, [cont.actuators["re_gb"], cont.actuators["re_shop"],
-         cont.actuators["re_shop_ui"]])
+         cont.actuators["re_shop_ui"], cont.actuators["re_shop_specs"]])
     elif (left==True):
         own.ToLeft()
         own.SwapCars()
