@@ -19,9 +19,12 @@ class Connection():
                     print("Conectado ao server MySQL, versão: ", db_info)
                     cursor = con_obj.cursor()
                     #print("name_event=", self.name_event)
-                    comand = "INSERT INTO events_completes (name_event) VALUES ("+self.name_event+")"
-                    cursor.execute(comand)
-                    #cursor.commit()
+                    comand0 = 'SELECT * events_completes;'
+                    cursor.execute(comand0)
+                    comand1 = 'INSERT INTO events_completes (`name_event`) VALUES ('+self.name_event+');'
+                    cursor.execute(comand1)
+                    
+                    cursor.commit()
             except Error as e:
                 print("Não estabelida conexão. Erro: ", e)
             finally:
