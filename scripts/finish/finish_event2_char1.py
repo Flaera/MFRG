@@ -2,6 +2,7 @@ from bge import logic, events
 from scripts.manager_scenes import ManagerScenes
 from data_files.prices_events import prices
 from scripts.data_manager import IsEqualString
+from scripts.connection import Connection
 
 
 def PriceAttribute(gain, time):
@@ -11,11 +12,14 @@ def PriceAttribute(gain, time):
 
 def Start(cont):
     own = cont.owner
+    name_event = "event2_char1"
+
+    con = Connection(name_event)
 
     scene_list = logic.getSceneList()
     id_scene_event = int(0)
     for i in range(len(scene_list)):
-        if scene_list[i]=="event2_char1": # settings string in each self event
+        if scene_list[i]==name_event: # settings string in each self event
             id_scene_event = i
     scene_event_objs = scene_list[id_scene_event].objects 
     time = scene_event_objs["car_invoker"]["timer_chalenger"]

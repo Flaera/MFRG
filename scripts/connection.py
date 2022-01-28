@@ -13,18 +13,22 @@ class Connection():
         
         if (is_conection==1):
             try:
-                con_obj = mysql.connector.connect(host="localhost", database="mfrg_data", user="mfrg", password="049Mf#30")
+                con_obj = mysql.connector.connect(host="localhost", database="mfrg_data", user="mfrg",               password="049Mf#30")
                 if (con_obj.is_connected()==True):
                     db_info = con_obj.get_server_info()
                     print("Conectado ao server MySQL, versão: ", db_info)
                     cursor = con_obj.cursor()
                     #print("name_event=", self.name_event)
-                    comand0 = 'SELECT * events_completes;'
-                    cursor.execute(comand0)
-                    comand1 = 'INSERT INTO events_completes (`name_event`) VALUES ('+self.name_event+');'
+                    #comand0 = """SELECT * events_completes;"""
+                    #cursor.execute(comand0)
+                    comand1 = """INSERT INTO 
+                                events_completes 
+                                (name_event)
+                                VALUES 
+                                ('"""+self.name_event+"""')"""
                     cursor.execute(comand1)
+                    con_obj.commit()
                     
-                    cursor.commit()
             except Error as e:
                 print("Não estabelida conexão. Erro: ", e)
             finally:
