@@ -1,36 +1,35 @@
 #PROJETO MFRG
 
-
 Status: em desenvolvimento – protótipo finalizado.
 
+1. Descrição resumida
 
-Descrição resumida
-
-
-Projeto independente, sem fins lucrativos e de software livre de jogo eletrônico 
-criado em Blender (BGE - Blender Game Engine) com python 2.
-O projeto tem o objetivo de divulgar minimamente via jogo eletrônico a realidade 
-carente de comunidades urbanas assoladas pela desigualdade no Brasil; como favelas, 
-guetos, bairros periféricos e outros espaços de moradia para pobres, negras(os), 
-indígenas e trabalhadoras(es) de muitas categorias. 
-Desta forma, pretende-se evidenciar a capacidade de jogos de difundir importantes 
-pensamentos que foram esquecidos ao longo da história e fazer estas populações à 
-margem social se sentirem representadas no jogo; com quase todos os modos de 
-expressão que são tão únicos no cotidiano dessas pessoas. Cumprindo este objetivo, o 
-projeto se torna exemplo de produção com crítica social neste meio de difusão de 
-informação, os jogos eletrônicos.
+Projeto independente, sem fins lucrativos e de software livre de jogo eletrônico criado em Blender (BGE - Blender Game Engine) com python 2.
+O projeto tem o objetivo de divulgar minimamente via jogo eletrônico a realidade carente de comunidades urbanas assoladas pela desigualdade no Brasil; como favelas, guetos, bairros periféricos e outros espaços de moradia para pobres, negras(os), indígenas e trabalhadoras(es) de muitas categorias. 
+Desta forma, pretende-se evidenciar a capacidade de jogos de difundir importantes pensamentos que foram esquecidos ao longo da história e fazer estas populações à margem social se sentirem representadas no jogo; com quase todos os modos de expressão que são tão únicos no cotidiano dessas pessoas. Cumprindo este objetivo, o projeto se torna exemplo de produção com crítica social neste meio de difusão de informação, os jogos eletrônicos.
 
 Breve caracterização do projeto:
+
     • Nome/Título do jogo: Consciente Ignição.
+      
     • Desenvolvedores:
+      
         ◦ Rafael Luiz dos Santos (Flaera), e-mail: rafael2mcont@gmail.com
+
         ◦ Guilherme Santos Braz.
+
     • Definição rápida: jogo de corrida contra o tempo que procura retratar um pouco a realidade das comunidades pobres no Brasil.
+
     • Algumas inspirações: O menino e o mundo (Filme, animação), Afro-Samurai (Animação, anime), Grand Theft Auto (GTA) San Andreas (Jogo eletrônico), Dandara (Jogo eletrônico), Berserk (Mangá), Need for Speed Most Wanted (Jogo eletrônico), Little Racers Street (Jogo eletrônico).
+
     • Gêneros: corrida, contra o tempo, 3D, low-poly, indie, BGE, Blender.
+
     • Plataforma:
+
         ◦ Especificações do computador (PC – termo popular para computador de mesa ou notebook):
+
             ▪ Testado em Xubuntu 20.04 (Linux) - 64 bits: Intel(R) Core(TM) 2 Duo, CPU 2,20Ghz, Mesa Mobile Intel GM45 Express Chipset (CTG), 4GB RAM, OpenGL 2.1+.
+
             ▪ Não testado, mas provavelmente funcione - Windows 10 - 64 bits:  Intel(R) Core i3 (TM) 2 Duo, CPU 2,20Ghz, Mobile Intel GM45 Express Chipset (CTG), 4GB RAM, OpenGL 2.1+.
 
 Como instalar e jogar:
@@ -70,3 +69,5 @@ Programas utilizados:
     • Xubuntu 20.04; e
 
     • BGArmor.
+
+Link do repositório: https://github.com/Flaera/MFRG.git
