@@ -21,7 +21,7 @@ def Update(cont):
     smh.InvokeRestart(current_scene.objects["restart_button.001"])
 
     #own = cont.owner
-    if (keys[events.ONEKEY] == tap):
+    if (keys[events.ONEKEY] == tap) or (keys[events.BACKSPACEKEY]==tap) or (keys[events.ESCKEY]==tap):
         smh.OnlyAddScene("main_menu_context")
         smh.OnlyRemoveScenes(cont, [cont.actuators["re_map"],
                                     cont.actuators["re_map_smh"],

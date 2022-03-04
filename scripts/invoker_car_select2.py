@@ -40,9 +40,9 @@ def Start(cont):
 
 def Update(cont):
     own = cont.owner
-    keyboard = logic.keyboard
+    keyboard = logic.keyboard.events
     tap = logic.KX_INPUT_JUST_ACTIVATED
-    if (keyboard.events[events.ENTERKEY]==tap) == True:
+    if (keyboard[events.ENTERKEY]==tap) or (keyboard[events.BACKSPACEKEY]==tap) or (keyboard[events.ESCKEY]==tap):
         own["manager_scenes"].OnlyAddScene("menu_pause_event3_char1")
         own["manager_scenes"].OnlyPauseScene(cont, [cont.actuators["pa_event3_char1"]])
 

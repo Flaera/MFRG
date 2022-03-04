@@ -48,7 +48,7 @@ def Update(cont):
     elif ((sys_res[0] == True) and (sys_res[1] == 4)):        
         own.OnlyAddScene("music_player2")
         own.OnlyRemoveScenes(cont, [re_opt, re_mp])
-    elif ((sys_res[0] == True) and (sys_res[1] == 5)):
+    elif (sys_res[0] == True and sys_res[1] == 5) or ((keys[events.BACKSPACEKEY]==tap or keys[events.ESCKEY]==tap)):
         own.OnlyAddScene("main_menu_conf_screen_quit")
         own.OnlyPauseScene(cont, [cont.actuators["susp_mm_opt"]])
         #own.OnlyRemoveScenes(cont, [re_opt])

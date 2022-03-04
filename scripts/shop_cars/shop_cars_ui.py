@@ -43,7 +43,7 @@ def Update(cont):
     right = keyboard[events.RIGHTARROWKEY]==tap
     one = keyboard[events.ONEKEY]==tap
 
-    if (one==True):
+    if (one==True) or (keys[events.BACKSPACEKEY]==tap) or (keys[events.ESCKEY]==tap):
         own.OnlyAddScene("map")
         own.OnlyRemoveScenes(cont, [cont.actuators["re_gb"], cont.actuators["re_shop"],
          cont.actuators["re_shop_ui"], cont.actuators["re_shop_specs"]])

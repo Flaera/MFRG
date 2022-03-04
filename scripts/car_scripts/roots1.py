@@ -1,8 +1,9 @@
-from bge import logic, events, types
+from bge import logic, types
 from scripts.car_physics.cars6 import Car
 from scripts.particle_system1 import ParticleSystem
 from scripts.data_manager import SearchPropValue
 from data_files.car_general_infos import cars
+from scripts.controls import Keys
 
 
 def Start():
@@ -65,12 +66,11 @@ def CallingParticles(own):
         own["particle_markbrake"].AddParticleObj()
 
 
+
 def Update(cont):
     own = cont.owner
 
-    keys = logic.keyboard.events
-    tap = logic.KX_INPUT_JUST_ACTIVATED
-
+   
     # Id objecs for identification collisions:
     col_wall = bool(cont.sensors["col_wall"].positive)
     col_wallLL = bool(cont.sensors["col_wallLL"].positive)
@@ -82,14 +82,16 @@ def Update(cont):
     #Id objects or identification os collissions with objects:
     col_obj1 = cont.sensors["col_obj1"].positive
     col_obj2 = cont.sensors["col_obj2"].positive
-    
+
+    controls = Keys()
+
     #own.DebugCar()
-    own.MainCarPhysics(keys[events.UPARROWKEY], keys[events.DOWNARROWKEY],
-                   keys[events.RIGHTARROWKEY], keys[events.LEFTARROWKEY],
-                   keys[events.ZKEY], keys[events.XKEY],  # brake and nitro
-                   col_ground, col_wall, col_rampa,
-                   col_wallLL, col_wallLR, col_wallF, col_wallR,
-                   col_obj1, col_obj2)
+    own.MainCarPhysics(controls[0], controls[1],
+                    controls[2], controls[3],
+                    controls[4], controls[5],  # brake and nitro
+                    col_ground, col_wall, col_rampa,
+                    col_wallLL, col_wallLR, col_wallF, col_wallR,
+                    col_obj1, col_obj2)
 
     # calling particle system:
     CallingParticles(own)
