@@ -43,8 +43,8 @@ def Update(cont):
         re_menu_context = cont.actuators["re_mmc"]
         re_opt = cont.actuators["re_mmopt"]
         own.OnlyAddScene("screen_selected_char")
-        with open(logic.expandPath("//data_files/intros.txt"), 'w', encoding="utf-8") as intros_file:
-            intros_file.write("True")
+        with open(logic.expandPath("//data_files/states_main_scenes.txt"), 'w', encoding="utf-8") as intros_file:
+            intros_file.write("0")
         with open(logic.expandPath("//data_files/events_completes.txt"), 'w', encoding="utf-8") as evc_file:
             evc_file.write("")
         own.OnlyRemoveScenes(cont, [re_menu_context, re_opt, re_conf_screen])

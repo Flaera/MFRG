@@ -59,5 +59,17 @@ events_talks = {
      ["Senhor", "Eu consigo me lembrar, até hoje! Até hoje!\nDaqueles carros, daquelas armaduras...\nmatano meu amor.", 0],
      ["Senhor", "Então subimo o morro e invadimo o lixão. Moramo aqui a...\nagora. Na Favela do Baixo do Reginaldo. Té quando eles vorta de novo.\nSei lá! Hoje sobrevivemo ainda da pesca, mas andamo muito\naté chegar lá, mas alguns sobrevive do lixo.", 0],
      ["Senhor", "Então veio esse doençero,\nesse lixo todo de computador, de carro, de comida, de tudo.\nTudo isso mata.", 0],
-     ["Senhor", "Eu amava minha terra. Por que isso? De todo modo,\ntenho minhas filhas e netas... e\ntenho que continuar, né? Não posso parar antes de\nver elas florescer e fica bem.", 0]]
+     ["Senhor", "Eu amava minha terra. Por que isso? De todo modo,\ntenho minhas filhas e netas... e\ntenho que continuar, né? Não posso parar antes de\nver elas florescer e fica bem.", 0]],
+     "6": ["bg_maria_intro", 
+     ["Carlos_obj", "Agora você sobe de nível.", 1],
+     ["Anne_obj", "O que isso significa?", 2],
+     ["Carlos_obj", "Que Maria te guiará a partir de agora. Ela é a Segunda e muito boa\npixadora, além de ser a ótima corredora. Quanto a você\nparabéns por ter melhorado e nunca deixe isso te cegar.\nNunca se esqueça de onde veio e quem são os seus.", 2],
+     ["Anne_obj", "Ahh, que fofo. Obrigada, nunca vou me esquecer das pessoas que\nconheci aqui na comunidade. A fama é o de menos\nquando se trata de ajudar a comunidade.", 1],
+     ["Carlos_obj", "Agora você me lembrou a Terceira. Ela é a melhor gestora e\ncorredora que já conheci,\nmas nunca deixou o RUA pelos campeonatos estaduais e\ninternacionais da grande cidade.", 2],
+     ["bg_only", "Maria chegando de quatro por quatro fala:", 0],
+     ["Maria_obj", "E ai, Carlos. Essa é a novata?", 1],
+     ["bg_only", "Ela sai do carro e a comprimenta.", 0],
+     ["Anne_obj", "Sim, sou eu.", 2],
+     ["Maria_obj", "Oxi! Então bora logo fazer umas pixações e correr por aí.", 1],
+     ["Anne_obj", "Hahaha! Bora!", 2]]
 }

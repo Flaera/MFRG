@@ -46,12 +46,12 @@ class MapEventsFromChar():
          in each event.
         :return: none
         '''
-        if char1 == True:
+        if (char1 == True and char2==False and char3==False):
             self.CallEventsOneChar(obj_char1, map_scene)
-        elif (char2 == True):
+        elif (char2 == True and char2==True and char3==False):
             self.CallEventsOneChar(obj_char1, map_scene)
             self.CallEventsOneChar(obj_char2, map_scene)
-        elif (char3 == True):
+        elif (char3 == True and char2==True and char3==True):
             self.CallEventsOneChar(obj_char1, map_scene)
             self.CallEventsOneChar(obj_char2, map_scene)
             self.CallEventsOneChar(obj_char3, map_scene)

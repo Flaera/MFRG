@@ -12,8 +12,9 @@ class Connection():
             is_conection = int(data_perm.read())
         
         if (is_conection==1):
+            connected = bool(False)
             try:
-                con_obj = mysql.connector.connect(host="localhost", database="mfrg_data", user="mfrg",               password="049Mf#30")
+                con_obj = mysql.connector.connect(host="localhost", database="mfrg_data", user="mfrg",               password="049Mf#30", auth_plugin="mysql_native_password")
                 if (con_obj.is_connected()==True):
                     db_info = con_obj.get_server_info()
                     print("Conectado ao server MySQL, versão: ", db_info)
@@ -28,12 +29,14 @@ class Connection():
                                 ('"""+self.name_event+"""')"""
                     cursor.execute(comand1)
                     con_obj.commit()
+                    connected = True
                     
             except Error as e:
                 print("Não estabelida conexão. Erro: ", e)
             finally:
-                if (con_obj.is_connected()==True):
-                    cursor.close()
-                    con_obj.close()
-                    print("Conexão ao MySQL encerrada.")
+                if (connected==True):
+                    if (con_obj.is_connected()==True):
+                        cursor.close()
+                        con_obj.close()
+                        print("Conexão ao MySQL encerrada.")
             
