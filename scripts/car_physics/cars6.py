@@ -434,6 +434,11 @@ class Car(types.KX_GameObject):
             self.jump_incoming = False
 
 
+    def GroundForce(self, ground):
+        if (ground==True):
+            self.applyMovement([0, 0, -0.0001], False)
+
+
     def MainCarPhysics(self, key_front, key_rear, key_right, key_left, 
      key_brake, key_nitro, 
       ground, wall, jump,
@@ -465,6 +470,7 @@ class Car(types.KX_GameObject):
         self.WallLateralCollisions(wall, col_wallLL, col_wallLR)
         self.WallCollisionsFrontRear(wall, col_wallF, col_wallR)
         self.ObstacleCollisions(col_obj1, col_obj2)
+        self.GroundForce(ground)
 
         #jumps:
         #print("jump in main={0}\n".format(jump))

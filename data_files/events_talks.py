@@ -66,9 +66,9 @@ events_talks = {
      ["Carlos_obj", "Que Maria te guiará a partir de agora. Ela é a Segunda e muito boa\npixadora, além de ser a ótima corredora. Quanto a você\nparabéns por ter melhorado e nunca deixe isso te cegar.\nNunca se esqueça de onde veio e quem são os seus.", 2],
      ["Anne_obj", "Ahh, que fofo. Obrigada, nunca vou me esquecer das pessoas que\nconheci aqui na comunidade. A fama é o de menos\nquando se trata de ajudar a comunidade.", 1],
      ["Carlos_obj", "Agora você me lembrou a Terceira. Ela é a melhor gestora e\ncorredora que já conheci,\nmas nunca deixou o RUA pelos campeonatos estaduais e\ninternacionais da grande cidade.", 2],
-     ["bg_only", "Maria chegando de quatro por quatro fala:", 0],
+     ["bg_only", "Maria chegando de carro fala:", 0],
      ["Maria_obj", "E ai, Carlos. Essa é a novata?", 1],
-     ["bg_only", "Ela sai do carro e a comprimenta.", 0],
+     ["bg_only", "Ela sai do carro e a cumprimenta.", 0],
      ["Anne_obj", "Sim, sou eu.", 2],
      ["Maria_obj", "Oxi! Então bora logo fazer umas pixações e correr por aí.", 1],
      ["Anne_obj", "Hahaha! Bora!", 2]]
