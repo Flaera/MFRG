@@ -436,7 +436,7 @@ class Car(types.KX_GameObject):
 
     def GroundForce(self, ground):
         if (ground==True):
-            self.applyMovement([0, 0, -0.0001], False)
+            self.applyMovement([0, 0, 0.0001], False)
 
 
     def MainCarPhysics(self, key_front, key_rear, key_right, key_left, 
