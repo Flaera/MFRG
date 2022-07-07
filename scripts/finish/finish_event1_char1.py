@@ -2,7 +2,7 @@ from bge import logic, events
 from scripts.manager_scenes import ManagerScenes
 from data_files.prices_events import prices
 from scripts.data_manager import IsEqualString
-from scripts.connection import Connection
+from scripts.sqlite3.connection_sqlite import DataBase
 
 
 def PriceAttribute(gain, time):
@@ -13,8 +13,6 @@ def PriceAttribute(gain, time):
 def Start(cont):
     own = cont.owner
     name_event = "event1_char1"
-
-    con = Connection(name_event)
 
     scene_list = logic.getSceneList()
     id_scene_event = int(0)
@@ -36,6 +34,9 @@ def Start(cont):
         gold_file.write(str(gfr_int))
 
     own["manager_scenes"] = ManagerScenes()
+
+
+    DataBase.InsertEvent(name_event)
 
 
 def Update(cont):

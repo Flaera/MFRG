@@ -14,7 +14,7 @@ def Start(cont):
 
     text_obj["Text"] = text
 
-    selector = ConfirmationMenuScreen(own)
+    ConfirmationMenuScreen(own)
 
 
 def Update(cont):
@@ -37,5 +37,5 @@ def Update(cont):
     elif list_opt == [True, 0]:
         with open(logic.expandPath("//data_files/data_permission.txt"), 'w') as data_file:
             data_file.write('1')
-        ManagerScenes().OnlyAddScene("intro_game_scene")
-        ManagerScenes().OnlyRemoveScenes(cont, [cont.actuators["re_igw"]])
+        ManagerScenes().OnlyAddScene("menu_group_choice")
+        ManagerScenes().OnlyPauseScene(cont, [cont.actuators["pau_igw"]])

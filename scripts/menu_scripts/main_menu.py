@@ -5,7 +5,7 @@ from scripts.menu_scripts.menu_lista import MenuLista
 def Start(cont):
     own = cont.owner
 
-    selector = MenuLista(own, 6)
+    MenuLista(own, 6)
     #manager_scene = selector.manager_scene()  # First research the init function
 
 
