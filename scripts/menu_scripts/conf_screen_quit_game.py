@@ -2,6 +2,8 @@ from bge import logic, events
 from scripts.menu_scripts.menu_horizontal import ConfirmationMenuScreen
 from scripts.manager_scenes import ManagerScenes
 from data_files.warnings import warnings
+from scripts.sqlite3.connection_sqlite import DataBase
+
 
 def Start(cont):
     own = cont.owner
@@ -13,7 +15,7 @@ def Start(cont):
 
     text_obj["Text"] = text
 
-    selector = ConfirmationMenuScreen(own)
+    ConfirmationMenuScreen(own)
 
 
 def Update(cont):
@@ -27,9 +29,11 @@ def Update(cont):
     right   = keys[events.RIGHTARROWKEY] == tap
 
     list_opt = own.ActiveMenuConfScreen(confirm, left, right)
-
+    #print("conf_list_opt:", list_opt)
     if list_opt == [True, 0]:
+        DataBase.SendDB()
         logic.endGame()
     elif list_opt == [True, 1]:
         ManagerScenes().OnlyResumeScene(cont, [cont.actuators["resu_mm_opt"]])
         ManagerScenes().OnlyRemoveScenes(cont, [cont.actuators["re_mcs"]])
+        

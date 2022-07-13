@@ -1,5 +1,10 @@
 from bge import logic
 import sqlite3 as sq3
+import socket
+#import errno
+#from signal import signal, SIGPIPE, SIG_DFL 
+#Ignore SIG_PIPE and don't throw exceptions on it... (http://docs.python.org/library/signal.html)
+#signal(SIGPIPE,SIG_DFL)
 
 
 class DataBase():
@@ -13,7 +18,7 @@ class DataBase():
         if (is_conection==1):
             #self.connected = bool(False)
 
-            conn = sq3.connect("MFRG.db")
+            conn = sq3.connect(logic.expandPath("//MFRG.db"))
             print("Obj_connection_create: ", conn)
             conn.execute("CREATE TABLE IF NOT EXISTS data (group_etn integer, name_event text, opnion text)")
             cursor = conn.cursor()
@@ -24,7 +29,7 @@ class DataBase():
                 try:
                     cursor.execute("INSERT INTO data (group_etn, name_event, opnion) VALUES (?,?,?)",(group_etn,"","",))
                     conn.commit()
-                    print("Dados inseridos.")
+                    print("Dados inseridos in table empty.")
                 except sq3.Error as e:
                     print("Não foi possivel inserir o grupo social. Erro:",e)
                 finally:
@@ -33,6 +38,7 @@ class DataBase():
                 try:
                     cursor.execute("UPDATE data SET group_etn=?, name_event=?, opnion=?",(group_etn,"","",))
                     conn.commit()
+                    print("Dados atualizados in table existing.")
                 except sq3.Error as e:
                     print("Não foi possivel atualizar os dados. Erro:",e)
                 finally:
@@ -51,7 +57,7 @@ class DataBase():
         if (is_conection==1):
             #connected = bool(False)
 
-            conn = sq3.connect("MFRG.db")
+            conn = sq3.connect(logic.expandPath("//MFRG.db"))
             cursor = conn.cursor()
             try:
                 print("Obj_connection_create: ", conn)
@@ -71,3 +77,24 @@ class DataBase():
                 conn.close()
                 print("Conexão ao sqlite3 encerrada.")
 
+
+    def SendDB():
+        my_ip = "127.0.0.1"
+        port = 51568
+
+        client = socket.socket(socket.AF_INET, #type of ip: IPv4
+                            socket.SOCK_STREAM) #Protocol TCP
+        client.connect((my_ip, port))
+
+        with open(logic.expandPath("//MFRG.db"), "rb") as file:
+            client.sendfile(file)
+            print("File of gameplay sended.")
+            """for data in file.readlines()
+                print("data=", data)
+                try:
+                    client.sendfile(data)
+                    #print("bytes enviados: ", bytes)
+                except IOError as e:
+                    if e.errno == errno.EPIPE:
+                        print("Falha ao enviar os dados, broken pipe. Erro: ", e)"""
+        client.close()

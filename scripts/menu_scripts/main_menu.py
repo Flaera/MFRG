@@ -2,6 +2,7 @@ from bge import logic, events, types
 from scripts.menu_scripts.menu_lista import MenuLista
 # IT'S IN DEVELOPMENT!!
 
+
 def Start(cont):
     own = cont.owner
 
