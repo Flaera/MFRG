@@ -15,6 +15,10 @@ def Start(cont):
 
     text_obj["Text"] = text
 
+    own["data_perm"] = int(0)
+    with open(logic.expandPath("//data_files/data_permission.txt"), 'r') as data_file:
+        own["data_perm"] = int(data_file.read())
+
     ConfirmationMenuScreen(own)
 
 
@@ -31,8 +35,11 @@ def Update(cont):
     list_opt = own.ActiveMenuConfScreen(confirm, left, right)
     #print("conf_list_opt:", list_opt)
     if list_opt == [True, 0]:
-        DataBase.SendDB()
-        logic.endGame()
+        try:
+            if (own["data_perm"]==1):
+                DataBase.SendDB()
+        finally:
+            logic.endGame()
     elif list_opt == [True, 1]:
         ManagerScenes().OnlyResumeScene(cont, [cont.actuators["resu_mm_opt"]])
         ManagerScenes().OnlyRemoveScenes(cont, [cont.actuators["re_mcs"]])
