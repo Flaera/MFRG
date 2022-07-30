@@ -5,21 +5,24 @@ import sqlite3 as sq3
 def InsertInDB(file_gameplay):
     with open("/home/flaera/MFRG/scripts/sqlite3/server/gameplay.db", "wb") as game_file:
         game_file.write(file_gameplay)
-
+    
     conn1 = sq3.connect("/home/flaera/MFRG/scripts/sqlite3/server/gameplay.db")
-    conn1.execute("SELECT * FROM data")
-    cursor1 = conn1.cursor().fetchall()
-    print("cursor=", cursor1)
-    params = (cursor1[0], cursor1[1], cursor1[2])
+    cursor1 = conn1.cursor()
+    cursor1.execute("""SELECT * FROM data""")
+    line = cursor1.fetchone()
+    print("line=", line)
+    cursor1.close()
 
+    params = (line[0], line[1], line[2])
     conn = sq3.connect("/home/flaera/MFRG/scripts/sqlite3/server/gameplays.db")
-    cursor = conn.execute("SELECT * FROM data")
-    cursor.execute("INSERT INTO group_etn, name_event, opnion VALUES (?, ?, ?)", (params,))
+    cursor = conn.cursor()
+    cursor.execute("""INSERT INTO data(group_etn, name_event, opnion) VALUES(?, ?, ?)""", params)
     conn.commit()
 
+    cursor.close()
     conn.close()
     conn1.close()
-    cursor1.close()
+    
 
 
 def main():
