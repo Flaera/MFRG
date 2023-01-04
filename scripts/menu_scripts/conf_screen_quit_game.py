@@ -34,13 +34,15 @@ def Update(cont):
 
     list_opt = own.ActiveMenuConfScreen(confirm, left, right)
     #print("conf_list_opt:", list_opt)
-    if list_opt == [True, 0]:
+    if (list_opt == [True, 0]
+     or (cont.sensors["mo_quit_yes"].positive and logic.mouse.events[events.LEFTMOUSE])):
         try:
             if (own["data_perm"]==1):
                 DataBase.SendDB()
         finally:
             logic.endGame()
-    elif list_opt == [True, 1]:
+    elif (list_opt == [True, 1]
+     or (cont.sensors["mo_quit_no"].positive and logic.mouse.events[events.LEFTMOUSE])):
         ManagerScenes().OnlyResumeScene(cont, [cont.actuators["resu_mm_opt"]])
         ManagerScenes().OnlyRemoveScenes(cont, [cont.actuators["re_mcs"]])
         

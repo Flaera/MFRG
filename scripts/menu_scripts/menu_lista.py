@@ -26,6 +26,11 @@ class MenuLista(types.KX_GameObject, ManagerScenes):
         self.deltay = deltay
 
 
+    def setPos(self, index):
+        self.selected_pos = index
+        self.selected_opt = index+1
+        
+
     def ConfirmationSelector(self, confirmation):
         '''
         Check if player confirmed the selected option.
@@ -72,9 +77,4 @@ class MenuLista(types.KX_GameObject, ManagerScenes):
             return [True, (self.selected_pos)]
         else:
             return [False, (self.selected_pos)]
-
-
-    def DebugaAi(self):
-        print("debug var/props: ", self.selected_pos, self.selected_opt, sep=", ")
-
 

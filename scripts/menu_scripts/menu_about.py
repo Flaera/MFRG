@@ -20,7 +20,9 @@ def Update(cont):
     remmabout = cont.actuators["remmabout"]
     re_mhs = cont.actuators["re_mhs"]
 
-    if (keys[events.ONEKEY] == tap) or (keys[events.BACKSPACEKEY]==tap) or (keys[events.ESCKEY]==tap):
+    if ((keys[events.ONEKEY] == tap)
+     or (keys[events.BACKSPACEKEY]==tap) or (keys[events.ESCKEY]==tap)
+      or (cont.sensors["mouse_over1"].positive and logic.mouse.events[events.LEFTMOUSE])):
         ManagerScenes().OnlyAddScene("main_menu_optmain")
         #cont.activate(cont.actuators["test"])
         ManagerScenes().OnlyRemoveScenes(cont, [remmabout, re_mhs])

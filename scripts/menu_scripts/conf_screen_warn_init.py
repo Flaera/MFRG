@@ -29,12 +29,14 @@ def Update(cont):
 
     list_opt = own.ActiveMenuConfScreen(confirm, left, right)
 
-    if list_opt == [True, 1]:
+    if (list_opt == [True, 1]
+     or (cont.sensors["mo_winit_yes"].positive and logic.mouse.events[events.LEFTMOUSE])):
         with open(logic.expandPath("//data_files/data_permission.txt"), 'w') as data_file:
             data_file.write('0')
         ManagerScenes().OnlyAddScene("intro_game_scene")
         ManagerScenes().OnlyRemoveScenes(cont, [cont.actuators["re_igw"]])
-    elif list_opt == [True, 0]:
+    elif (list_opt == [True, 0]
+     or (cont.sensors["mo_winit_no"].positive and logic.mouse.events[events.LEFTMOUSE])):
         with open(logic.expandPath("//data_files/data_permission.txt"), 'w') as data_file:
             data_file.write('1')
         ManagerScenes().OnlyAddScene("menu_group_choice")

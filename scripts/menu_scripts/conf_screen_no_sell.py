@@ -28,6 +28,7 @@ def Update(cont):
 
     #list_opt = own.ActiveMenuConfScreen(confirm, left, right)
 
-    if (confirm==True):
+    if (confirm==True
+     or (cont.sensors["mo_nosell"].positive and logic.mouse.events[events.LEFTMOUSE])):
         ManagerScenes().OnlyResumeScene(cont, [cont.actuators["resu_garage_ui"]])
         ManagerScenes().OnlyRemoveScenes(cont, [cont.actuators["re_no_sell"]])

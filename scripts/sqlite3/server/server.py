@@ -1,12 +1,13 @@
 import socket
 import sqlite3 as sq3
+PATH_DB = "/home/flaera/MFRG/scripts/sqlite3/server/gameplay.db"
 
 
 def InsertInDB(file_gameplay):
-    with open("/home/flaera/MFRG/scripts/sqlite3/server/gameplay.db", "wb") as game_file:
+    with open(PATH_DB, "wb") as game_file:
         game_file.write(file_gameplay)
     
-    conn1 = sq3.connect("/home/flaera/MFRG/scripts/sqlite3/server/gameplay.db")
+    conn1 = sq3.connect(PATH_DB)
     cursor1 = conn1.cursor()
     cursor1.execute("""SELECT * FROM data""")
     line = cursor1.fetchone()
@@ -14,7 +15,7 @@ def InsertInDB(file_gameplay):
     cursor1.close()
 
     params = (line[0], line[1], line[2])
-    conn = sq3.connect("/home/flaera/MFRG/scripts/sqlite3/server/gameplays.db")
+    conn = sq3.connect(PATH_DB)
     cursor = conn.cursor()
     cursor.execute("""INSERT INTO data(group_etn, name_event, opnion) VALUES(?, ?, ?)""", params)
     conn.commit()

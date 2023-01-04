@@ -33,7 +33,8 @@ def Update(cont):
     characters = open(logic.expandPath("//data_files/progress_in_game.txt"), "w", encoding="utf-8")
     
     list_opt = own.ActiveMenuConfScreen(confirm, left, right)
-    if list_opt == [True, 0]:
+    if (list_opt == [True, 0]
+     or (cont.sensors["mo_ng_yes"].positive and logic.mouse.events[events.LEFTMOUSE])):
         car.write("lilas_proxie")
         players_cars.write("lilas_proxie\n")
         gold.write("3000")
@@ -48,7 +49,8 @@ def Update(cont):
         with open(logic.expandPath("//data_files/events_completes.txt"), 'w', encoding="utf-8") as evc_file:
             evc_file.write("")
         own.OnlyRemoveScenes(cont, [re_menu_context, re_opt, re_conf_screen])
-    elif list_opt == [True, 1]:
+    elif (list_opt == [True, 1]
+     or (cont.sensors["mo_ng_no"].positive and logic.mouse.events[events.LEFTMOUSE])):
         #print("AQUI!!!")
         own.OnlyResumeScene(cont, [cont.actuators["resu_mm_opt"]])
         curr_scene_act = cont.actuators["re_csng"]
