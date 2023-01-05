@@ -2,11 +2,18 @@ from bge import logic, events
 # from scripts.manager_scenes import ManagerScenes
 from scripts.menu_scripts.menu_horizontal import HardMenuHorizontal
 from scripts.sqlite3.connection_sqlite import DataBase
+LEN_OPTIONS = 11
+
+
+def saveStyle(style_string):
+    with (logic.expandPath("//data_files/tyle.txt"),"w") as file_save_style:
+        file_save_style.write(style_string)
 
 
 def Start(cont):
     own = cont.owner
-    own["list_choice"] = HardMenuHorizontal(own, 11, 0.0)
+    own["list_choice"] = HardMenuHorizontal(own, LEN_OPTIONS, 0.0)
+    saveStyle("6")
 
 
 def CallDB_and_Scene(own, cont, data_type_char):
@@ -15,6 +22,18 @@ def CallDB_and_Scene(own, cont, data_type_char):
     own["list_choice"].OnlyRemoveScenes(cont, [cont.actuators["re_igw"],
         cont.actuators["re_mgc"]])
 
+
+def translateStyleAnne():
+    styles = []
+    scene_obj = logic.getCurrentController().objects
+    center = scene_obj["anne_empty"]
+    try:
+        center.children.endObject()
+    except:
+        id = ""
+        #LÓGICA GRANDE
+        ds = center.addObejct(id)
+        ds.setParent(center)
 
 
 def Update(cont):
@@ -29,22 +48,31 @@ def Update(cont):
 
     system_menu = own.ActiveHardMenuHoriControl(confirm, right, left)
 
-    if (system_menu[0]==True and system_menu[1]==0 and system_menu[1]==1):
+    #Controles de mouse:
+    left_mouse_over = cont.sensors["lmo"].positive
+    right_mouse_over = cont.sensors["rmo"].positive
+    center_mouse_over = cont.sensors["mo_sel"].positive
+    # if (left_mouse_over==True and logic.events.mouse[events.LEFTMOUSE]):
+    #     try:
+            
+    
+    if (system_menu[0]==True and (system_menu[1]==0 or system_menu[1]==1)):
         #indigenas:
-        CallDB_and_Scene(own, cont, 1)
-    elif (system_menu[0]==True and system_menu[1]==2 and system_menu[1]==3):
-        #mulheres:
-        CallDB_and_Scene(own, cont, 2)
-    elif (system_menu[0]==True and system_menu[1]==4 and system_menu[1]==5):
+        translateStyleAnne()
+        CallDB_and_Scene(own, cont, system_menu[1])
+    elif (system_menu[0]==True and (system_menu[1]==2 or system_menu[1]==3)):
+        #mulheres: 
+        CallDB_and_Scene(own, cont, system_menu[1])
+    elif (system_menu[0]==True and system_menu[1]==4 or system_menu[1]==5):
         #lgbtqia+:
-        CallDB_and_Scene(own, cont, 3)
-    elif (system_menu[0]==True and system_menu[1]==6 and system_menu[1]==7
-     and system_menu[1]==8 and system_menu[1]==9):
+        CallDB_and_Scene(own, cont, system_menu[1])
+    elif (system_menu[0]==True and (system_menu[1]==6 or system_menu[1]==7
+     or system_menu[1]==8 or system_menu[1]==9)):
         #negras e negros:
-        CallDB_and_Scene(own, cont, 4)
+        CallDB_and_Scene(own, cont, system_menu[1])
     elif (system_menu[0]==True and system_menu[1]==10):
         #outros:
-        CallDB_and_Scene(own, cont, 5)
+        CallDB_and_Scene(own, cont, system_menu[1])
     else:
         print("Erro. Nada selecionado.")
     
