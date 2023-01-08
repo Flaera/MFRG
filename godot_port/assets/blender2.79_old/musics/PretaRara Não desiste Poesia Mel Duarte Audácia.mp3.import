@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/PretaRara Não desiste Poesia Mel Duarte Audácia.mp3-2149d11fab1c9d837b26e364d1814741.mp3str"
+
+[deps]
+
+source_file="res://assets/blender2.79_old/musics/PretaRara Não desiste Poesia Mel Duarte Audácia.mp3"
+dest_files=[ "res://.import/PretaRara Não desiste Poesia Mel Duarte Audácia.mp3-2149d11fab1c9d837b26e364d1814741.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

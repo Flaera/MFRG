@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/y2mate.com - Negra sim Preta Rara no Estúdio Showlivre por Festival Sonora 2018.mp3-81b2ef182301ad8b5bbddd3343c8ce08.mp3str"
+
+[deps]
+
+source_file="res://assets/blender2.79_old/musics/race_musics/y2mate.com - Negra sim Preta Rara no Estúdio Showlivre por Festival Sonora 2018.mp3"
+dest_files=[ "res://.import/y2mate.com - Negra sim Preta Rara no Estúdio Showlivre por Festival Sonora 2018.mp3-81b2ef182301ad8b5bbddd3343c8ce08.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

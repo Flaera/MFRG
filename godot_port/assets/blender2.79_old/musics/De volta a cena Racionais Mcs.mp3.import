@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/De volta a cena Racionais Mcs.mp3-beeda7d648ece49846c42f603d56994c.mp3str"
+
+[deps]
+
+source_file="res://assets/blender2.79_old/musics/De volta a cena Racionais Mcs.mp3"
+dest_files=[ "res://.import/De volta a cena Racionais Mcs.mp3-beeda7d648ece49846c42f603d56994c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
