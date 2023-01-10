@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/intro_game_warning.escn-417c1c07aa51bde9ccb9a3adad7fe479.scn"
+path="res://.import/intro_game_warning.escn-a3a34bcd4ab27b42966dae9ff5ea054d.scn"
 
 [deps]
 
-source_file="res://intro_game_warning.escn"
-dest_files=[ "res://.import/intro_game_warning.escn-417c1c07aa51bde9ccb9a3adad7fe479.scn" ]
+source_file="res://scenes/intro_game_warning.escn"
+dest_files=[ "res://.import/intro_game_warning.escn-a3a34bcd4ab27b42966dae9ff5ea054d.scn" ]
 
 [params]
 
