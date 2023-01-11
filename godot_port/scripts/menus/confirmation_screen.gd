@@ -47,9 +47,9 @@ class ConfirmationScreen extends KinematicBody:
 		if (Input.is_action_just_pressed("ui_accept")):
 			confirm = true
 		
-		var index_return = 0
+		var index_return = 1
 		if (getIndex()%2==0):
-			index_return = 1
+			index_return = 0
 		return [confirm, index_return, pos3d]
 	
 	

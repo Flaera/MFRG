@@ -24,7 +24,7 @@ func _physics_process(delta):
 	#var mouse1 = get_node("Sprite3D/Viewport/Button_yes").is
 	if (sys_res[0]==true and sys_res[1]==0):
 		print("Primeira opção, selecionar estilo")
-		
+		#get_tree().change_scene()
 	elif (sys_res[0]==true and sys_res[1]==1):
 		print("Segunda opção, ir direto pra intro do game")
-
+		#get_tree().change_scene()
