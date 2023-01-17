@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/blender2.79_old/fonts/OstrichSans-Medium.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/warning_init_game.gd" type="Script" id=2]
-[ext_resource path="res://scripts/selector_confs002.gd" type="Script" id=3]
+[ext_resource path="res://scripts/intro_game_scene/selector_confs002.gd" type="Script" id=3]
 
 [sub_resource type="SpatialMaterial" id=5]
 flags_unshaded = true

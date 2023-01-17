@@ -1,0 +1,1586 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.79.0 commit date:2018-03-22, commit time:14:10, hash:f4dc9f9d68b</authoring_tool>
+    </contributor>
+    <created>2023-01-16T20:33:27</created>
+    <modified>2023-01-16T20:33:27</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_cameras>
+    <camera id="Camera_019-camera" name="Camera.023">
+      <optics>
+        <technique_common>
+          <orthographic>
+            <xmag sid="xmag">11</xmag>
+            <aspect_ratio>1.333333</aspect_ratio>
+            <znear sid="znear">0.1</znear>
+            <zfar sid="zfar">100</zfar>
+          </orthographic>
+        </technique_common>
+      </optics>
+      <extra>
+        <technique profile="blender">
+          <shiftx sid="shiftx" type="float">0</shiftx>
+          <shifty sid="shifty" type="float">0</shifty>
+          <YF_dofdist sid="YF_dofdist" type="float">0</YF_dofdist>
+        </technique>
+      </extra>
+    </camera>
+  </library_cameras>
+  <library_images>
+    <image id="Anne0_png" name="Anne0_png">
+      <init_from>Anne0.png</init_from>
+    </image>
+    <image id="arrow_png" name="arrow_png">
+      <init_from>arrow.png</init_from>
+    </image>
+    <image id="Anne1_png" name="Anne1_png">
+      <init_from>Anne1.png</init_from>
+    </image>
+    <image id="Anne2_png" name="Anne2_png">
+      <init_from>Anne2.png</init_from>
+    </image>
+    <image id="Anne3_png" name="Anne3_png">
+      <init_from>Anne3.png</init_from>
+    </image>
+    <image id="Anne4_png" name="Anne4_png">
+      <init_from>Anne4.png</init_from>
+    </image>
+    <image id="Anne5_png" name="Anne5_png">
+      <init_from>Anne5.png</init_from>
+    </image>
+    <image id="Anne6_png" name="Anne6_png">
+      <init_from>Anne6.png</init_from>
+    </image>
+    <image id="Anne7_png" name="Anne7_png">
+      <init_from>Anne7.png</init_from>
+    </image>
+    <image id="Anne8_png" name="Anne8_png">
+      <init_from>Anne8.png</init_from>
+    </image>
+    <image id="Anne9_png" name="Anne9_png">
+      <init_from>Anne9.png</init_from>
+    </image>
+    <image id="Anne10_png" name="Anne10_png">
+      <init_from>Anne10.png</init_from>
+    </image>
+  </library_images>
+  <library_effects>
+    <effect id="Anne0-effect">
+      <profile_COMMON>
+        <newparam sid="Anne0_png-surface">
+          <surface type="2D">
+            <init_from>Anne0_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="Anne0_png-sampler">
+          <sampler2D>
+            <source>Anne0_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">1 1 1 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="Anne0_png-sampler"/>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <transparent opaque="A_ONE">
+              <texture texture="Anne0_png-sampler"/>
+            </transparent>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="bg_dark_screen-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">1 1 1 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0 0 0 1</color>
+            </diffuse>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 0.4</color>
+            </transparent>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="quadro_about_003-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">1 1 1 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.730461 0.2746773 0.01298304 1</color>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="right_arrow-effect">
+      <profile_COMMON>
+        <newparam sid="arrow_png-surface">
+          <surface type="2D">
+            <init_from>arrow_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="arrow_png-sampler">
+          <sampler2D>
+            <source>arrow_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">1 1 1 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="arrow_png-sampler"/>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <transparent opaque="A_ONE">
+              <texture texture="arrow_png-sampler"/>
+            </transparent>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="left_arrow-effect">
+      <profile_COMMON>
+        <newparam sid="arrow_png-surface">
+          <surface type="2D">
+            <init_from>arrow_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="arrow_png-sampler">
+          <sampler2D>
+            <source>arrow_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">1 1 1 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="arrow_png-sampler"/>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <transparent opaque="A_ONE">
+              <texture texture="arrow_png-sampler"/>
+            </transparent>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="Anne1-effect">
+      <profile_COMMON>
+        <newparam sid="Anne1_png-surface">
+          <surface type="2D">
+            <init_from>Anne1_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="Anne1_png-sampler">
+          <sampler2D>
+            <source>Anne1_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">1 1 1 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="Anne1_png-sampler"/>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <transparent opaque="A_ONE">
+              <texture texture="Anne1_png-sampler"/>
+            </transparent>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="Anne2-effect">
+      <profile_COMMON>
+        <newparam sid="Anne2_png-surface">
+          <surface type="2D">
+            <init_from>Anne2_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="Anne2_png-sampler">
+          <sampler2D>
+            <source>Anne2_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">1 1 1 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="Anne2_png-sampler"/>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <transparent opaque="A_ONE">
+              <texture texture="Anne2_png-sampler"/>
+            </transparent>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="Anne3-effect">
+      <profile_COMMON>
+        <newparam sid="Anne3_png-surface">
+          <surface type="2D">
+            <init_from>Anne3_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="Anne3_png-sampler">
+          <sampler2D>
+            <source>Anne3_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">1 1 1 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="Anne3_png-sampler"/>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <transparent opaque="A_ONE">
+              <texture texture="Anne3_png-sampler"/>
+            </transparent>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="Anne4-effect">
+      <profile_COMMON>
+        <newparam sid="Anne4_png-surface">
+          <surface type="2D">
+            <init_from>Anne4_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="Anne4_png-sampler">
+          <sampler2D>
+            <source>Anne4_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">1 1 1 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="Anne4_png-sampler"/>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <transparent opaque="A_ONE">
+              <texture texture="Anne4_png-sampler"/>
+            </transparent>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="Anne5-effect">
+      <profile_COMMON>
+        <newparam sid="Anne5_png-surface">
+          <surface type="2D">
+            <init_from>Anne5_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="Anne5_png-sampler">
+          <sampler2D>
+            <source>Anne5_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">1 1 1 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="Anne5_png-sampler"/>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <transparent opaque="A_ONE">
+              <texture texture="Anne5_png-sampler"/>
+            </transparent>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="Anne6-effect">
+      <profile_COMMON>
+        <newparam sid="Anne6_png-surface">
+          <surface type="2D">
+            <init_from>Anne6_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="Anne6_png-sampler">
+          <sampler2D>
+            <source>Anne6_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">1 1 1 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="Anne6_png-sampler"/>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <transparent opaque="A_ONE">
+              <texture texture="Anne6_png-sampler"/>
+            </transparent>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="Anne7-effect">
+      <profile_COMMON>
+        <newparam sid="Anne7_png-surface">
+          <surface type="2D">
+            <init_from>Anne7_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="Anne7_png-sampler">
+          <sampler2D>
+            <source>Anne7_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">1 1 1 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="Anne7_png-sampler"/>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <transparent opaque="A_ONE">
+              <texture texture="Anne7_png-sampler"/>
+            </transparent>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="Anne8-effect">
+      <profile_COMMON>
+        <newparam sid="Anne8_png-surface">
+          <surface type="2D">
+            <init_from>Anne8_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="Anne8_png-sampler">
+          <sampler2D>
+            <source>Anne8_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">1 1 1 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="Anne8_png-sampler"/>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <transparent opaque="A_ONE">
+              <texture texture="Anne8_png-sampler"/>
+            </transparent>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="Anne9-effect">
+      <profile_COMMON>
+        <newparam sid="Anne9_png-surface">
+          <surface type="2D">
+            <init_from>Anne9_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="Anne9_png-sampler">
+          <sampler2D>
+            <source>Anne9_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">1 1 1 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="Anne9_png-sampler"/>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <transparent opaque="A_ONE">
+              <texture texture="Anne9_png-sampler"/>
+            </transparent>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="Anne10-effect">
+      <profile_COMMON>
+        <newparam sid="Anne10_png-surface">
+          <surface type="2D">
+            <init_from>Anne10_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="Anne10_png-sampler">
+          <sampler2D>
+            <source>Anne10_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">1 1 1 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="Anne10_png-sampler"/>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <transparent opaque="A_ONE">
+              <texture texture="Anne10_png-sampler"/>
+            </transparent>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="menu_selector_006-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">1 1 1 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.0275087 0.5683076 0.8000001 1</color>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="Anne0-material" name="Anne0">
+      <instance_effect url="#Anne0-effect"/>
+    </material>
+    <material id="bg_dark_screen-material" name="bg_dark_screen">
+      <instance_effect url="#bg_dark_screen-effect"/>
+    </material>
+    <material id="quadro_about_003-material" name="quadro_about_003">
+      <instance_effect url="#quadro_about_003-effect"/>
+    </material>
+    <material id="right_arrow-material" name="right_arrow">
+      <instance_effect url="#right_arrow-effect"/>
+    </material>
+    <material id="left_arrow-material" name="left_arrow">
+      <instance_effect url="#left_arrow-effect"/>
+    </material>
+    <material id="Anne1-material" name="Anne1">
+      <instance_effect url="#Anne1-effect"/>
+    </material>
+    <material id="Anne2-material" name="Anne2">
+      <instance_effect url="#Anne2-effect"/>
+    </material>
+    <material id="Anne3-material" name="Anne3">
+      <instance_effect url="#Anne3-effect"/>
+    </material>
+    <material id="Anne4-material" name="Anne4">
+      <instance_effect url="#Anne4-effect"/>
+    </material>
+    <material id="Anne5-material" name="Anne5">
+      <instance_effect url="#Anne5-effect"/>
+    </material>
+    <material id="Anne6-material" name="Anne6">
+      <instance_effect url="#Anne6-effect"/>
+    </material>
+    <material id="Anne7-material" name="Anne7">
+      <instance_effect url="#Anne7-effect"/>
+    </material>
+    <material id="Anne8-material" name="Anne8">
+      <instance_effect url="#Anne8-effect"/>
+    </material>
+    <material id="Anne9-material" name="Anne9">
+      <instance_effect url="#Anne9-effect"/>
+    </material>
+    <material id="Anne10-material" name="Anne10">
+      <instance_effect url="#Anne10-effect"/>
+    </material>
+    <material id="menu_selector_006-material" name="menu_selector_006">
+      <instance_effect url="#menu_selector_006-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Plane_387-mesh" name="Plane.387">
+      <mesh>
+        <source id="Plane_387-mesh-positions">
+          <float_array id="Plane_387-mesh-positions-array" count="12">-1 -1 0 1 -1 0 -1 1 0 1 1 0</float_array>
+          <technique_common>
+            <accessor source="#Plane_387-mesh-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_387-mesh-normals">
+          <float_array id="Plane_387-mesh-normals-array" count="3">0 0 1</float_array>
+          <technique_common>
+            <accessor source="#Plane_387-mesh-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_387-mesh-map-0">
+          <float_array id="Plane_387-mesh-map-0-array" count="12">0.9999001 9.998e-5 9.998e-5 0.9999001 1.0004e-4 9.998e-5 0.9999001 9.998e-5 0.9999001 0.9999001 9.998e-5 0.9999001</float_array>
+          <technique_common>
+            <accessor source="#Plane_387-mesh-map-0-array" count="6" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Plane_387-mesh-vertices">
+          <input semantic="POSITION" source="#Plane_387-mesh-positions"/>
+        </vertices>
+        <triangles material="Anne0-material" count="2">
+          <input semantic="VERTEX" source="#Plane_387-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Plane_387-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Plane_387-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 1 0 3 3 0 4 2 0 5</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="Plane_381-mesh" name="Plane.381">
+      <mesh>
+        <source id="Plane_381-mesh-positions">
+          <float_array id="Plane_381-mesh-positions-array" count="12">11.23209 11.23209 0 -11.23209 11.23209 0 11.23209 -11.23209 0 -11.23209 -11.23209 0</float_array>
+          <technique_common>
+            <accessor source="#Plane_381-mesh-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_381-mesh-normals">
+          <float_array id="Plane_381-mesh-normals-array" count="3">0 0 1</float_array>
+          <technique_common>
+            <accessor source="#Plane_381-mesh-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Plane_381-mesh-vertices">
+          <input semantic="POSITION" source="#Plane_381-mesh-positions"/>
+        </vertices>
+        <triangles material="bg_dark_screen-material" count="2">
+          <input semantic="VERTEX" source="#Plane_381-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Plane_381-mesh-normals" offset="1"/>
+          <p>2 0 1 0 3 0 2 0 0 0 1 0</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="Plane_382-mesh" name="Plane.382">
+      <mesh>
+        <source id="Plane_382-mesh-positions">
+          <float_array id="Plane_382-mesh-positions-array" count="12">9.931479 0.8206675 0 -9.931479 0.8206675 0 9.931479 -0.8206675 0 -9.931479 -0.8206675 0</float_array>
+          <technique_common>
+            <accessor source="#Plane_382-mesh-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_382-mesh-normals">
+          <float_array id="Plane_382-mesh-normals-array" count="3">0 0 1</float_array>
+          <technique_common>
+            <accessor source="#Plane_382-mesh-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Plane_382-mesh-vertices">
+          <input semantic="POSITION" source="#Plane_382-mesh-positions"/>
+        </vertices>
+        <triangles material="quadro_about_003-material" count="2">
+          <input semantic="VERTEX" source="#Plane_382-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Plane_382-mesh-normals" offset="1"/>
+          <p>2 0 1 0 3 0 2 0 0 0 1 0</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="Plane_384-mesh" name="Plane.384">
+      <mesh>
+        <source id="Plane_384-mesh-positions">
+          <float_array id="Plane_384-mesh-positions-array" count="12">-1 -1 0 1 -1 0 -1 1 0 1 1 0</float_array>
+          <technique_common>
+            <accessor source="#Plane_384-mesh-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_384-mesh-normals">
+          <float_array id="Plane_384-mesh-normals-array" count="3">0 0 1</float_array>
+          <technique_common>
+            <accessor source="#Plane_384-mesh-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_384-mesh-map-0">
+          <float_array id="Plane_384-mesh-map-0-array" count="12">0.9999001 9.998e-5 9.998e-5 0.9999001 1.0004e-4 9.998e-5 0.9999001 9.998e-5 0.9999001 0.9999001 9.998e-5 0.9999001</float_array>
+          <technique_common>
+            <accessor source="#Plane_384-mesh-map-0-array" count="6" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Plane_384-mesh-vertices">
+          <input semantic="POSITION" source="#Plane_384-mesh-positions"/>
+        </vertices>
+        <triangles material="right_arrow-material" count="2">
+          <input semantic="VERTEX" source="#Plane_384-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Plane_384-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Plane_384-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 1 0 3 3 0 4 2 0 5</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="Plane_385-mesh" name="Plane.385">
+      <mesh>
+        <source id="Plane_385-mesh-positions">
+          <float_array id="Plane_385-mesh-positions-array" count="12">1 1 0 -1 1 0 1 -1 0 -1 -1 0</float_array>
+          <technique_common>
+            <accessor source="#Plane_385-mesh-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_385-mesh-normals">
+          <float_array id="Plane_385-mesh-normals-array" count="3">0 0 1</float_array>
+          <technique_common>
+            <accessor source="#Plane_385-mesh-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_385-mesh-map-0">
+          <float_array id="Plane_385-mesh-map-0-array" count="12">0.9999001 9.998e-5 9.998e-5 0.9999001 1.0004e-4 9.998e-5 0.9999001 9.998e-5 0.9999001 0.9999001 9.998e-5 0.9999001</float_array>
+          <technique_common>
+            <accessor source="#Plane_385-mesh-map-0-array" count="6" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Plane_385-mesh-vertices">
+          <input semantic="POSITION" source="#Plane_385-mesh-positions"/>
+        </vertices>
+        <triangles material="left_arrow-material" count="2">
+          <input semantic="VERTEX" source="#Plane_385-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Plane_385-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Plane_385-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 1 0 3 3 0 4 2 0 5</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="Plane_388-mesh" name="Plane.388">
+      <mesh>
+        <source id="Plane_388-mesh-positions">
+          <float_array id="Plane_388-mesh-positions-array" count="12">-1 -1 0 1 -1 0 -1 1 0 1 1 0</float_array>
+          <technique_common>
+            <accessor source="#Plane_388-mesh-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_388-mesh-normals">
+          <float_array id="Plane_388-mesh-normals-array" count="3">0 0 1</float_array>
+          <technique_common>
+            <accessor source="#Plane_388-mesh-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_388-mesh-map-0">
+          <float_array id="Plane_388-mesh-map-0-array" count="12">0.9999001 9.998e-5 9.998e-5 0.9999001 1.0004e-4 9.998e-5 0.9999001 9.998e-5 0.9999001 0.9999001 9.998e-5 0.9999001</float_array>
+          <technique_common>
+            <accessor source="#Plane_388-mesh-map-0-array" count="6" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Plane_388-mesh-vertices">
+          <input semantic="POSITION" source="#Plane_388-mesh-positions"/>
+        </vertices>
+        <triangles material="Anne1-material" count="2">
+          <input semantic="VERTEX" source="#Plane_388-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Plane_388-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Plane_388-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 1 0 3 3 0 4 2 0 5</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="Plane_389-mesh" name="Plane.389">
+      <mesh>
+        <source id="Plane_389-mesh-positions">
+          <float_array id="Plane_389-mesh-positions-array" count="12">-1 -1 0 1 -1 0 -1 1 0 1 1 0</float_array>
+          <technique_common>
+            <accessor source="#Plane_389-mesh-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_389-mesh-normals">
+          <float_array id="Plane_389-mesh-normals-array" count="3">0 0 1</float_array>
+          <technique_common>
+            <accessor source="#Plane_389-mesh-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_389-mesh-map-0">
+          <float_array id="Plane_389-mesh-map-0-array" count="12">0.9999001 9.998e-5 9.998e-5 0.9999001 1.0004e-4 9.998e-5 0.9999001 9.998e-5 0.9999001 0.9999001 9.998e-5 0.9999001</float_array>
+          <technique_common>
+            <accessor source="#Plane_389-mesh-map-0-array" count="6" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Plane_389-mesh-vertices">
+          <input semantic="POSITION" source="#Plane_389-mesh-positions"/>
+        </vertices>
+        <triangles material="Anne2-material" count="2">
+          <input semantic="VERTEX" source="#Plane_389-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Plane_389-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Plane_389-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 1 0 3 3 0 4 2 0 5</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="Plane_390-mesh" name="Plane.390">
+      <mesh>
+        <source id="Plane_390-mesh-positions">
+          <float_array id="Plane_390-mesh-positions-array" count="12">-1 -1 0 1 -1 0 -1 1 0 1 1 0</float_array>
+          <technique_common>
+            <accessor source="#Plane_390-mesh-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_390-mesh-normals">
+          <float_array id="Plane_390-mesh-normals-array" count="3">0 0 1</float_array>
+          <technique_common>
+            <accessor source="#Plane_390-mesh-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_390-mesh-map-0">
+          <float_array id="Plane_390-mesh-map-0-array" count="12">0.9999001 9.998e-5 9.998e-5 0.9999001 1.0004e-4 9.998e-5 0.9999001 9.998e-5 0.9999001 0.9999001 9.998e-5 0.9999001</float_array>
+          <technique_common>
+            <accessor source="#Plane_390-mesh-map-0-array" count="6" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Plane_390-mesh-vertices">
+          <input semantic="POSITION" source="#Plane_390-mesh-positions"/>
+        </vertices>
+        <triangles material="Anne3-material" count="2">
+          <input semantic="VERTEX" source="#Plane_390-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Plane_390-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Plane_390-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 1 0 3 3 0 4 2 0 5</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="Plane_391-mesh" name="Plane.391">
+      <mesh>
+        <source id="Plane_391-mesh-positions">
+          <float_array id="Plane_391-mesh-positions-array" count="12">-1 -1 0 1 -1 0 -1 1 0 1 1 0</float_array>
+          <technique_common>
+            <accessor source="#Plane_391-mesh-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_391-mesh-normals">
+          <float_array id="Plane_391-mesh-normals-array" count="3">0 0 1</float_array>
+          <technique_common>
+            <accessor source="#Plane_391-mesh-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_391-mesh-map-0">
+          <float_array id="Plane_391-mesh-map-0-array" count="12">0.9999001 9.998e-5 9.998e-5 0.9999001 1.0004e-4 9.998e-5 0.9999001 9.998e-5 0.9999001 0.9999001 9.998e-5 0.9999001</float_array>
+          <technique_common>
+            <accessor source="#Plane_391-mesh-map-0-array" count="6" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Plane_391-mesh-vertices">
+          <input semantic="POSITION" source="#Plane_391-mesh-positions"/>
+        </vertices>
+        <triangles material="Anne4-material" count="2">
+          <input semantic="VERTEX" source="#Plane_391-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Plane_391-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Plane_391-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 1 0 3 3 0 4 2 0 5</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="Plane_392-mesh" name="Plane.392">
+      <mesh>
+        <source id="Plane_392-mesh-positions">
+          <float_array id="Plane_392-mesh-positions-array" count="12">-1 -1 0 1 -1 0 -1 1 0 1 1 0</float_array>
+          <technique_common>
+            <accessor source="#Plane_392-mesh-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_392-mesh-normals">
+          <float_array id="Plane_392-mesh-normals-array" count="3">0 0 1</float_array>
+          <technique_common>
+            <accessor source="#Plane_392-mesh-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_392-mesh-map-0">
+          <float_array id="Plane_392-mesh-map-0-array" count="12">0.9999001 9.998e-5 9.998e-5 0.9999001 1.0004e-4 9.998e-5 0.9999001 9.998e-5 0.9999001 0.9999001 9.998e-5 0.9999001</float_array>
+          <technique_common>
+            <accessor source="#Plane_392-mesh-map-0-array" count="6" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Plane_392-mesh-vertices">
+          <input semantic="POSITION" source="#Plane_392-mesh-positions"/>
+        </vertices>
+        <triangles material="Anne5-material" count="2">
+          <input semantic="VERTEX" source="#Plane_392-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Plane_392-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Plane_392-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 1 0 3 3 0 4 2 0 5</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="Plane_393-mesh" name="Plane.393">
+      <mesh>
+        <source id="Plane_393-mesh-positions">
+          <float_array id="Plane_393-mesh-positions-array" count="12">-1 -1 0 1 -1 0 -1 1 0 1 1 0</float_array>
+          <technique_common>
+            <accessor source="#Plane_393-mesh-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_393-mesh-normals">
+          <float_array id="Plane_393-mesh-normals-array" count="3">0 0 1</float_array>
+          <technique_common>
+            <accessor source="#Plane_393-mesh-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_393-mesh-map-0">
+          <float_array id="Plane_393-mesh-map-0-array" count="12">0.9999001 9.998e-5 9.998e-5 0.9999001 1.0004e-4 9.998e-5 0.9999001 9.998e-5 0.9999001 0.9999001 9.998e-5 0.9999001</float_array>
+          <technique_common>
+            <accessor source="#Plane_393-mesh-map-0-array" count="6" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Plane_393-mesh-vertices">
+          <input semantic="POSITION" source="#Plane_393-mesh-positions"/>
+        </vertices>
+        <triangles material="Anne6-material" count="2">
+          <input semantic="VERTEX" source="#Plane_393-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Plane_393-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Plane_393-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 1 0 3 3 0 4 2 0 5</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="Plane_394-mesh" name="Plane.394">
+      <mesh>
+        <source id="Plane_394-mesh-positions">
+          <float_array id="Plane_394-mesh-positions-array" count="12">-1 -1 0 1 -1 0 -1 1 0 1 1 0</float_array>
+          <technique_common>
+            <accessor source="#Plane_394-mesh-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_394-mesh-normals">
+          <float_array id="Plane_394-mesh-normals-array" count="3">0 0 1</float_array>
+          <technique_common>
+            <accessor source="#Plane_394-mesh-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_394-mesh-map-0">
+          <float_array id="Plane_394-mesh-map-0-array" count="12">0.9999001 9.998e-5 9.998e-5 0.9999001 1.0004e-4 9.998e-5 0.9999001 9.998e-5 0.9999001 0.9999001 9.998e-5 0.9999001</float_array>
+          <technique_common>
+            <accessor source="#Plane_394-mesh-map-0-array" count="6" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Plane_394-mesh-vertices">
+          <input semantic="POSITION" source="#Plane_394-mesh-positions"/>
+        </vertices>
+        <triangles material="Anne7-material" count="2">
+          <input semantic="VERTEX" source="#Plane_394-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Plane_394-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Plane_394-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 1 0 3 3 0 4 2 0 5</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="Plane_395-mesh" name="Plane.395">
+      <mesh>
+        <source id="Plane_395-mesh-positions">
+          <float_array id="Plane_395-mesh-positions-array" count="12">-1 -1 0 1 -1 0 -1 1 0 1 1 0</float_array>
+          <technique_common>
+            <accessor source="#Plane_395-mesh-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_395-mesh-normals">
+          <float_array id="Plane_395-mesh-normals-array" count="3">0 0 1</float_array>
+          <technique_common>
+            <accessor source="#Plane_395-mesh-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_395-mesh-map-0">
+          <float_array id="Plane_395-mesh-map-0-array" count="12">0.9999001 9.998e-5 9.998e-5 0.9999001 1.0004e-4 9.998e-5 0.9999001 9.998e-5 0.9999001 0.9999001 9.998e-5 0.9999001</float_array>
+          <technique_common>
+            <accessor source="#Plane_395-mesh-map-0-array" count="6" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Plane_395-mesh-vertices">
+          <input semantic="POSITION" source="#Plane_395-mesh-positions"/>
+        </vertices>
+        <triangles material="Anne8-material" count="2">
+          <input semantic="VERTEX" source="#Plane_395-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Plane_395-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Plane_395-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 1 0 3 3 0 4 2 0 5</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="Plane_396-mesh" name="Plane.396">
+      <mesh>
+        <source id="Plane_396-mesh-positions">
+          <float_array id="Plane_396-mesh-positions-array" count="12">-1 -1 0 1 -1 0 -1 1 0 1 1 0</float_array>
+          <technique_common>
+            <accessor source="#Plane_396-mesh-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_396-mesh-normals">
+          <float_array id="Plane_396-mesh-normals-array" count="3">0 0 1</float_array>
+          <technique_common>
+            <accessor source="#Plane_396-mesh-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_396-mesh-map-0">
+          <float_array id="Plane_396-mesh-map-0-array" count="12">0.9999001 9.998e-5 9.998e-5 0.9999001 1.0004e-4 9.998e-5 0.9999001 9.998e-5 0.9999001 0.9999001 9.998e-5 0.9999001</float_array>
+          <technique_common>
+            <accessor source="#Plane_396-mesh-map-0-array" count="6" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Plane_396-mesh-vertices">
+          <input semantic="POSITION" source="#Plane_396-mesh-positions"/>
+        </vertices>
+        <triangles material="Anne9-material" count="2">
+          <input semantic="VERTEX" source="#Plane_396-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Plane_396-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Plane_396-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 1 0 3 3 0 4 2 0 5</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="Plane_397-mesh" name="Plane.397">
+      <mesh>
+        <source id="Plane_397-mesh-positions">
+          <float_array id="Plane_397-mesh-positions-array" count="12">-1 -1 0 1 -1 0 -1 1 0 1 1 0</float_array>
+          <technique_common>
+            <accessor source="#Plane_397-mesh-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_397-mesh-normals">
+          <float_array id="Plane_397-mesh-normals-array" count="3">0 0 1</float_array>
+          <technique_common>
+            <accessor source="#Plane_397-mesh-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_397-mesh-map-0">
+          <float_array id="Plane_397-mesh-map-0-array" count="12">0.9999001 9.998e-5 9.998e-5 0.9999001 1.0004e-4 9.998e-5 0.9999001 9.998e-5 0.9999001 0.9999001 9.998e-5 0.9999001</float_array>
+          <technique_common>
+            <accessor source="#Plane_397-mesh-map-0-array" count="6" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Plane_397-mesh-vertices">
+          <input semantic="POSITION" source="#Plane_397-mesh-positions"/>
+        </vertices>
+        <triangles material="Anne10-material" count="2">
+          <input semantic="VERTEX" source="#Plane_397-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Plane_397-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Plane_397-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 1 0 3 3 0 4 2 0 5</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="Plane_398-mesh" name="Plane.398">
+      <mesh>
+        <source id="Plane_398-mesh-positions">
+          <float_array id="Plane_398-mesh-positions-array" count="0"/>
+          <technique_common>
+            <accessor source="#Plane_398-mesh-positions-array" count="0" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_398-mesh-normals">
+          <float_array id="Plane_398-mesh-normals-array" count="0"/>
+          <technique_common>
+            <accessor source="#Plane_398-mesh-normals-array" count="0" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Plane_398-mesh-vertices">
+          <input semantic="POSITION" source="#Plane_398-mesh-positions"/>
+        </vertices>
+      </mesh>
+    </geometry>
+    <geometry id="Plane_399-mesh" name="Plane.399">
+      <mesh>
+        <source id="Plane_399-mesh-positions">
+          <float_array id="Plane_399-mesh-positions-array" count="12">-3.679629 -5.753426 0 3.679629 -5.753426 0 -3.679629 5.753426 0 3.679629 5.753426 0</float_array>
+          <technique_common>
+            <accessor source="#Plane_399-mesh-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_399-mesh-normals">
+          <float_array id="Plane_399-mesh-normals-array" count="3">0 0 1</float_array>
+          <technique_common>
+            <accessor source="#Plane_399-mesh-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Plane_399-mesh-vertices">
+          <input semantic="POSITION" source="#Plane_399-mesh-positions"/>
+        </vertices>
+        <triangles material="menu_selector_006-material" count="2">
+          <input semantic="VERTEX" source="#Plane_399-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Plane_399-mesh-normals" offset="1"/>
+          <p>1 0 2 0 0 0 1 0 3 0 2 0</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="Plane_400-mesh" name="Plane.400">
+      <mesh>
+        <source id="Plane_400-mesh-positions">
+          <float_array id="Plane_400-mesh-positions-array" count="12">-4.472328 -1 0 4.472328 -1 0 -4.472328 1 0 4.472328 1 0</float_array>
+          <technique_common>
+            <accessor source="#Plane_400-mesh-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_400-mesh-normals">
+          <float_array id="Plane_400-mesh-normals-array" count="3">0 0 1</float_array>
+          <technique_common>
+            <accessor source="#Plane_400-mesh-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Plane_400-mesh-vertices">
+          <input semantic="POSITION" source="#Plane_400-mesh-positions"/>
+        </vertices>
+        <triangles material="quadro_about_003-material" count="2">
+          <input semantic="VERTEX" source="#Plane_400-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Plane_400-mesh-normals" offset="1"/>
+          <p>1 0 2 0 0 0 1 0 3 0 2 0</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_controllers/>
+  <library_visual_scenes>
+    <visual_scene id="menu_group_choice" name="menu_group_choice">
+      <node id="Anne0" name="Anne0" type="NODE">
+        <matrix sid="transform">1.566939 0 0 1.699312 0 1.566939 0 0 0 0 1.566939 1.423862 0 0 0 1</matrix>
+        <instance_geometry url="#Plane_387-mesh" name="Anne0">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Anne0-material" target="#Anne0-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="Camera_019" name="Camera_019" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 9.71483 0 0 0 1</matrix>
+        <instance_camera url="#Camera_019-camera"/>
+      </node>
+      <node id="bg_group_social" name="bg_group_social" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 -1.591025 0 0 0 1</matrix>
+        <instance_geometry url="#Plane_381-mesh" name="bg_group_social">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="bg_dark_screen-material" target="#bg_dark_screen-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="bg_group_social_001" name="bg_group_social_001" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 1 0 6.806083 0 0 1 -1.162672 0 0 0 1</matrix>
+        <instance_geometry url="#Plane_382-mesh" name="bg_group_social_001">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="quadro_about_003-material" target="#quadro_about_003-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="anne_empty" name="anne_empty" type="NODE">
+        <matrix sid="transform">3.752053 0 0 0 0 3.752053 0 0 0 0 3.752053 0.424693 0 0 0 1</matrix>
+      </node>
+      <node id="right_arrow" name="right_arrow" type="NODE">
+        <matrix sid="transform">1 0 0 5 0 1 0 -0.5392864 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#Plane_384-mesh" name="right_arrow">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="right_arrow-material" target="#right_arrow-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="left_arrow" name="left_arrow" type="NODE">
+        <matrix sid="transform">1 0 0 -5 0 1 0 -0.5392864 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#Plane_385-mesh" name="left_arrow">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="left_arrow-material" target="#left_arrow-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="Anne1" name="Anne1" type="NODE">
+        <matrix sid="transform">1.566939 0 0 5.699312 0 1.566939 0 0 0 0 1.566939 1.423862 0 0 0 1</matrix>
+        <instance_geometry url="#Plane_388-mesh" name="Anne1">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Anne1-material" target="#Anne1-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="Anne2" name="Anne2" type="NODE">
+        <matrix sid="transform">1.566939 0 0 9.699312 0 1.566939 0 0 0 0 1.566939 1.423862 0 0 0 1</matrix>
+        <instance_geometry url="#Plane_389-mesh" name="Anne2">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Anne2-material" target="#Anne2-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="Anne3" name="Anne3" type="NODE">
+        <matrix sid="transform">1.566939 0 0 13.69931 0 1.566939 0 0 0 0 1.566939 1.423862 0 0 0 1</matrix>
+        <instance_geometry url="#Plane_390-mesh" name="Anne3">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Anne3-material" target="#Anne3-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="Anne4" name="Anne4" type="NODE">
+        <matrix sid="transform">1.566939 0 0 17.69931 0 1.566939 0 0 0 0 1.566939 1.423862 0 0 0 1</matrix>
+        <instance_geometry url="#Plane_391-mesh" name="Anne4">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Anne4-material" target="#Anne4-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="Anne5" name="Anne5" type="NODE">
+        <matrix sid="transform">1.566939 0 0 21.69931 0 1.566939 0 0 0 0 1.566939 1.423862 0 0 0 1</matrix>
+        <instance_geometry url="#Plane_392-mesh" name="Anne5">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Anne5-material" target="#Anne5-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="Anne6" name="Anne6" type="NODE">
+        <matrix sid="transform">1.566939 0 0 25.69931 0 1.566939 0 0 0 0 1.566939 1.423862 0 0 0 1</matrix>
+        <instance_geometry url="#Plane_393-mesh" name="Anne6">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Anne6-material" target="#Anne6-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="Anne7" name="Anne7" type="NODE">
+        <matrix sid="transform">1.566939 0 0 29.69931 0 1.566939 0 0 0 0 1.566939 1.423862 0 0 0 1</matrix>
+        <instance_geometry url="#Plane_394-mesh" name="Anne7">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Anne7-material" target="#Anne7-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="Anne8" name="Anne8" type="NODE">
+        <matrix sid="transform">1.566939 0 0 33.69931 0 1.566939 0 0 0 0 1.566939 1.423862 0 0 0 1</matrix>
+        <instance_geometry url="#Plane_395-mesh" name="Anne8">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Anne8-material" target="#Anne8-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="Anne9" name="Anne9" type="NODE">
+        <matrix sid="transform">1.566939 0 0 37.69931 0 1.566939 0 0 0 0 1.566939 1.423862 0 0 0 1</matrix>
+        <instance_geometry url="#Plane_396-mesh" name="Anne9">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Anne9-material" target="#Anne9-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="Anne10" name="Anne10" type="NODE">
+        <matrix sid="transform">1.566939 0 0 41.69931 0 1.566939 0 0 0 0 1.566939 1.423862 0 0 0 1</matrix>
+        <instance_geometry url="#Plane_397-mesh" name="Anne10">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Anne10-material" target="#Anne10-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="Plane_002" name="Plane_002" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 1 0 -0.1165362 0 0 1 -0.3179072 0 0 0 1</matrix>
+        <instance_geometry url="#Plane_398-mesh" name="Plane_002"/>
+      </node>
+      <node id="Plane_003" name="Plane_003" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 1 0 -0.1165362 0 0 1 -0.3179072 0 0 0 1</matrix>
+        <instance_geometry url="#Plane_399-mesh" name="Plane_003">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="menu_selector_006-material" target="#menu_selector_006-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="Plane_004" name="Plane_004" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 1 0 -7.007946 0 0 1 0.4543984 0 0 0 1</matrix>
+        <instance_geometry url="#Plane_400-mesh" name="Plane_004">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="quadro_about_003-material" target="#quadro_about_003-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#menu_group_choice"/>
+  </scene>
+</COLLADA>
