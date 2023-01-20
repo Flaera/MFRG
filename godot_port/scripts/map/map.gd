@@ -8,4 +8,4 @@ func _ready():
 
 
 func _on_ButtonEvent0_pressed():
-	print("Amanhã é a física dos carrinhos. :D")
+	get_tree().change_scene("res://scenes/event1_char1/event1_char1_v2.scn")
