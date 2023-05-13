@@ -3,8 +3,8 @@ extends VehicleBody
 
 var axis: Vector2 = Vector2(0.0,0.0)
 var acceleration: Vector3
-var rotation_max: Vector3
-var speed_max: Vector3
+var rotation_z_max: Vector3
+var top_speed: Vector3
 var nitro_max: Vector3
 
 
@@ -40,7 +40,13 @@ func _ready():
 	#wheel1.wheel_friction_slip=7.8
 	#wheel2.wheel_friction_slip=7.8
 	#wheel3.wheel_friction_slip=7.8
-	pass
+	var file = File.new()
+	file.open("res://data_files/cars_specs.gd",File.READ)
+	var data = file.get_csv_line()
+	acceleration = Vector3(0, 0, data[2])
+	top_speed = Vector3(0, 0, data[3])
+	rotation_z_max = Vector3(0, data[4], 0)
+	nitro_max = Vector3(0,0,data[5])
 
 
 func _input(event):
@@ -67,17 +73,22 @@ func camTransform():
 	
 
 
+func getVelocity(ef, delta):
+	return (ef/delta)/1000
+
+
 func _process(delta):
-	#print(axis," ", engine_force)
-	if axis.y>0:
-		engine_force=120
+	print(axis," ", engine_force, " -- ", getVelocity(engine_force,delta))
+	if axis.y>0 and getVelocity(engine_force,  delta)<top_speed.z:
+		engine_force+=1000*acceleration.z*delta
 		brake=0.0
 	else:
-		if (axis.y<0):
-			brake = 0.8
+		if (axis.y<0 and (brake>0.8 or engine_force>0.0)):
+			engine_force -= 1000*acceleration.z*delta
+			brake += 1000*acceleration.z*delta
 		else:
+			engine_force = 0.0
 			brake = 0.0
-		engine_force=0.0
 	steering = deg2rad(axis.x*40)
 
 	camTransform()

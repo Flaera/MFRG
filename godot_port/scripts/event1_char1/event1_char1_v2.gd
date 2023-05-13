@@ -10,8 +10,3 @@ func _ready():
 	curr_car = lilas.instance()
 	get_node("car_invoker").add_child(curr_car)
 
-
-func _process(delta):
-	pass
-	
-

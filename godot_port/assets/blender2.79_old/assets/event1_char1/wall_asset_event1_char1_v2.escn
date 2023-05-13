@@ -1,0 +1,65 @@
+[gd_scene load_steps=1 format=2]
+
+[sub_resource id=1 type="SpatialMaterial"]
+
+resource_name = ""
+flags_unshaded = false
+flags_vertex_lighting = false
+flags_transparent = false
+vertex_color_use_as_albedo = false
+albedo_color = Color(0.842538, 0.450439, 0.220759, 1.0)
+subsurf_scatter_enabled = false
+
+[sub_resource id=2 type="SpatialMaterial"]
+
+resource_name = ""
+flags_unshaded = false
+flags_vertex_lighting = false
+flags_transparent = false
+vertex_color_use_as_albedo = false
+albedo_color = Color(0.903545, 0.903545, 0.903545, 1.0)
+subsurf_scatter_enabled = false
+
+[sub_resource id=3 type="ArrayMesh"]
+
+resource_name = "Cube043"
+surfaces/0 = {
+	"material":SubResource(1),
+	"primitive":4,
+	"arrays":[
+		Vector3Array(-0.3, 4.0, 2.0, -0.3, -1.0, -2.0, -0.3, -1.0, 2.0, 0.0515621, 4.0, -2.0, 0.0515621, -1.0, 2.0, 0.0515621, -1.0, -2.0, -0.3, 4.0, -2.0, 0.0515621, 4.0, 2.0, 0.0515621, 4.0, -2.0, -0.3, 4.0, -2.0, 0.0515621, 4.0, 2.0, -0.3, 4.0, 2.0),
+		Vector3Array(-1.0, 0.0, 0.0, -1.0, 0.0, 0.0, -1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, -1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0),
+		FloatArray(0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, -1.0, 1.0, 0.0, 0.0, -1.0, 1.0, 0.0, 0.0, -1.0, 1.0, -1.9535e-07, 0.0, -1.0, 1.0, -1.15469e-08, 0.0, -1.0, 1.0, -2.06897e-07, 0.0, -1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, -1.0, 1.0, 0.0, 0.0, -1.0, 1.0),
+		null, ; no Vertex Colors,
+		Vector2Array(0.999869, 0.378304, 0.500131, 0.996761, 0.999869, 0.996761, 0.499869, 0.378304, 0.0001311, 0.996761, 0.499869, 0.996761, 0.499869, 0.316286, 0.000131115, 0.341044, 0.499869, 0.341044, 0.500131, 0.378304, 0.0001311, 0.378304, 0.0001311, 0.316286),
+		null, ; No UV2,
+		null, ; No Bones,
+		null, ; No Weights,
+		IntArray(0, 2, 1, 3, 5, 4, 6, 8, 7, 0, 1, 9, 3, 4, 10, 6, 7, 11)
+	],
+	"morph_arrays":[]
+}
+surfaces/1 = {
+	"material":SubResource(2),
+	"primitive":4,
+	"arrays":[
+		Vector3Array(0.0515621, -1.0, 2.0, -0.3, 4.0, 2.0, -0.3, -1.0, 2.0, 0.0515621, 4.0, 2.0),
+		Vector3Array(0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0),
+		FloatArray(-6.88657e-07, 1.0, 0.0, 1.0, -1.45854e-07, 1.0, 0.0, 1.0, -7.15295e-07, 1.0, 0.0, 1.0, -1.19217e-07, 1.0, 0.0, 1.0),
+		null, ; no Vertex Colors,
+		Vector2Array(7.99997e-05, 0.115709, 1.00003, 0.0454012, 8.00295e-05, 0.0454004, 1.00003, 0.115709),
+		null, ; No UV2,
+		null, ; No Bones,
+		null, ; No Weights,
+		IntArray(0, 2, 1, 0, 1, 3)
+	],
+	"morph_arrays":[]
+}
+[node type="Spatial" name="event1_char1"]
+
+
+[node name="wall_bricks1_end" type="MeshInstance" parent="."]
+
+mesh = SubResource(3)
+visible = true
+transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 26.6566, -0.764384, -33.758)
