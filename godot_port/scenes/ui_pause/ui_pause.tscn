@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/themeMFRG.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/ui_pause/ui_pause.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://assets/fonts/BebasNeue-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+font_data = SubResource( 1 )
+
+[node name="ui_pause" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.501961 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -105.0
+margin_top = -34.0
+margin_right = 105.0
+margin_bottom = 34.0
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer"]
+margin_right = 210.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 2 )
+text = "Pause"
+align = 1
+
+[node name="resume" type="Button" parent="CanvasLayer/VBoxContainer"]
+margin_top = 24.0
+margin_right = 210.0
+margin_bottom = 44.0
+theme = ExtResource( 1 )
+text = "Resumir"
+
+[node name="quit_map" type="Button" parent="CanvasLayer/VBoxContainer"]
+margin_top = 48.0
+margin_right = 210.0
+margin_bottom = 68.0
+theme = ExtResource( 1 )
+text = "Voltar"
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/quit_map" to="." method="_on_quit_map_pressed"]
