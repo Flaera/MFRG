@@ -23,12 +23,20 @@ func _init(accel, rpmm, torque, nm, mv=true):
 	move = mv
 
 
+func getMove(): return move
+
+
 func mainCarPhys(axis, boost_button, back_wheel1, back_wheel2, brake_on,
  brake_force, steering, delta_time):
 	var rpm: float = 0.0
 	if (move==true):
 		steering = lerp(steering, axis.x*0.4, 5*delta_time)
 		var accel: float = axis.y * acceleration
+		
+		#gear reverse:
+		if (axis.y==-1):
+			accel/=4
+		
 		if (boost_button==true and fully_nitro>0.0):
 			accel = axis.y * (acceleration * 1000)
 			fully_nitro -= delta_nitro_dec * delta_time
