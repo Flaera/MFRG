@@ -8,5 +8,5 @@ func _ready():
 
 
 func _on_ButtonEvent0_pressed():
-	get_tree().change_scene("res://scenes/event1_char1/event1_char1_v3.scn")
+	get_tree().change_scene("res://scenes/dialog_event1_char1/dialog_event1_char1.scn")
 

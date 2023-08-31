@@ -23,7 +23,18 @@ func _init(accel, rpmm, torque, nm, mv=true):
 	move = mv
 
 
-func getMove(): return move
+func getMove():
+	var file = File.new()
+	file.open("res://data_files/play_car.txt", File.READ)
+	move = bool(file.get_line())
+	return move
+
+
+func setMove(var move_flag: bool):
+	var file = File.new()
+	file.open("res://data_files/play_car.txt", File.WRITE)
+	var move_add = file.store_line(move_flag)
+	move = move_add
 
 
 func mainCarPhys(axis, boost_button, back_wheel1, back_wheel2, brake_on,

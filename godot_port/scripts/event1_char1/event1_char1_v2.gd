@@ -5,6 +5,7 @@ var car_loaded: Object
 var curr_car: Object
 var camera: Object
 var curr_cam: Object
+var loser: bool = false
 
 
 func _ready():
@@ -19,6 +20,9 @@ func _ready():
 	camera = preload("res://scenes/camera/camera.scn")
 	curr_cam = camera.instance()
 	get_node("car_invoker").add_child(curr_cam)
+	
+	get_node("Timer").start(5.0) #time in seconds
+	get_node("CanvasLayer/Control/Control/AnimationPlayer").play("anim_init_event")
 
 
 func camTransform():
@@ -33,3 +37,13 @@ func camTransform():
 
 func _process(_delta):
 	camTransform()
+	var time = get_node("Timer").time_left
+	var minutes = String(int(time/60))
+	var seconds = String(int(time)%60)
+	get_node("CanvasLayer/Control/Label").text = minutes+":"+seconds
+
+	if (time<=0.0 and loser==false):
+		get_node("CanvasLayer/Control/Control/AnimationPlayer2").play()
+	elif (time<=0.0 and
+	!get_node("CanvasLayer/Control/Control/AnimationPlayer2").is_playing()):
+		get_tree().change_scene("res://scenes/map/map.scn")
