@@ -62,6 +62,12 @@ ui_up={
  ]
 }
 
+[locale]
+
+translation_remaps={
+}
+locale_filter=[ 0, [  ] ]
+
 [physics]
 
 common/enable_pause_aware_picking=true
