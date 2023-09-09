@@ -50,7 +50,7 @@ func mainCarPhys(axis, boost_button, back_wheel1, back_wheel2, brake_on,
 		
 		if (boost_button==true and fully_nitro>0.0):
 			accel = axis.y * (acceleration * 1000)
-			steering = lerp(steering, axis.y*0.4, 5*delta_time)
+			#steering = lerp(steering, axis.y, 5*delta_time)
 			fully_nitro -= delta_nitro_dec * delta_time
 		elif (fully_nitro<nitro_max):
 			fully_nitro += delta_nitro_inc * delta_time

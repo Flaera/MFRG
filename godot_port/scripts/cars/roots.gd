@@ -7,8 +7,8 @@ var brake_pedal = false
 var nitro: bool
 
 func _ready():
-	var data: Array = load("res://data_files/cars_specs.gd").new().specs["lilas"]
-	#print(data[2])
+	var data: Array = load("res://data_files/cars_specs.gd").new().specs["roots"]
+	print(data)
 	car_phys = Cars.new(float(data[1]),float(data[2]),float(data[3]),float(data[4]))
 	#cp_load.new(data[2],data[3],data[4],data[5])
 	get_node("Control/CanvasLayer").visible = car_phys.getMove()
@@ -52,15 +52,15 @@ func _physics_process(delta):
 		
 		#Nitro particles:
 		if (calc[2]>0.0 and nitro==true):
-			get_node("lilas_invoker_nitro/CPUParticles").lifetime = 5
-			get_node("lilas_invoker_nitro001/CPUParticles2").lifetime = 5
-			get_node("lilas_invoker_nitro").visible = true
-			get_node("lilas_invoker_nitro001").visible = true
+			get_node("roots_invoker_nitro/CPUParticles").lifetime = 5
+			get_node("roots_invoker_nitro2/CPUParticles").lifetime = 5
+			get_node("roots_invoker_nitro").visible = true
+			get_node("roots_invoker_nitro2").visible = true
 		else:
-			get_node("lilas_invoker_nitro/CPUParticles").lifetime = 0.01
-			get_node("lilas_invoker_nitro001/CPUParticles2").lifetime = 0.01
-			get_node("lilas_invoker_nitro").visible = false
-			get_node("lilas_invoker_nitro001").visible = false
+			get_node("roots_invoker_nitro/CPUParticles").lifetime = 0.01
+			get_node("roots_invoker_nitro2/CPUParticles").lifetime = 0.01
+			get_node("roots_invoker_nitro").visible = false
+			get_node("roots_invoker_nitro2").visible = false
 		#Dust particles:
 		if (rpm_medium>10):
 			get_node("FrontWheel/CPUParticles").visible = true
