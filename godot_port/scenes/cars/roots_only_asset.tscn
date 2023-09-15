@@ -12,6 +12,7 @@ points = PoolVector3Array( -0.122406, -0.171013, -3.80001, 2.03146, 0.289662, 3.
 [node name="roots_only_asset" instance=ExtResource( 2 )]
 
 [node name="roots_only_asset" parent="." index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 material/0 = SubResource( 1 )
 
 [node name="RigidBody" type="RigidBody" parent="roots_only_asset" index="0"]

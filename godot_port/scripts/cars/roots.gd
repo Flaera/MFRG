@@ -12,6 +12,7 @@ func _ready():
 	car_phys = Cars.new(float(data[1]),float(data[2]),float(data[3]),float(data[4]))
 	#cp_load.new(data[2],data[3],data[4],data[5])
 	get_node("Control/CanvasLayer").visible = car_phys.getMove()
+	weight = 1000
 
 
 func _input(event):

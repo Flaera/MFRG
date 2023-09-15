@@ -44,7 +44,7 @@ func mainCarPhys(axis, boost_button, back_wheel1, back_wheel2, brake_on,
 		steering = lerp(steering, axis.x*0.4, 5*delta_time)
 		var accel: float = axis.y * acceleration
 		
-		#gear reverse:
+		#pedal control:
 		if (axis.y==-1):
 			accel/=2
 		

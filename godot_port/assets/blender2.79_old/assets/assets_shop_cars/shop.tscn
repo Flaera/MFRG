@@ -1,0 +1,181 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/blender2.79_old/assets/assets_shop_cars/shop.escn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/shop/shop.gd" type="Script" id=2]
+[ext_resource path="res://scenes/themeMFRG.tres" type="Theme" id=3]
+[ext_resource path="res://scenes/specs/ui_specs.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/themeMFRGLabelDark.tres" type="Theme" id=5]
+[ext_resource path="res://scripts/ui_specs/ui_specs_shop.gd" type="Script" id=6]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/arrow.png-a4a34ea04551cddb834540c85fb39619.stex"
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.207843, 0.207843, 0.207843, 1 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.439216, 0.439216, 0.439216, 1 )
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.776471, 0.776471, 0.776471, 1 )
+
+[node name="shop" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Control" parent="." index="0" instance=ExtResource( 4 )]
+script = ExtResource( 6 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="1"]
+
+[node name="SELECT_CAR_BUY" type="Label" parent="CanvasLayer" index="0"]
+margin_top = 5.0
+margin_right = 640.0
+margin_bottom = 25.0
+theme = ExtResource( 3 )
+text = "COMPRAR CARRO"
+align = 1
+
+[node name="Control" type="Control" parent="CanvasLayer" index="1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ButtonQuit" type="Button" parent="CanvasLayer/Control" index="0"]
+margin_left = 232.0
+margin_top = 356.0
+margin_right = 332.0
+margin_bottom = 456.0
+rect_rotation = 180.0
+rect_scale = Vector2( 0.5, 0.5 )
+focus_neighbour_left = NodePath("../ButtonRightShop")
+focus_neighbour_bottom = NodePath("../ButtonConfirmShop")
+theme = ExtResource( 5 )
+icon = SubResource( 1 )
+
+[node name="ButtonLeftShop" type="Button" parent="CanvasLayer/Control" index="1"]
+margin_left = 100.0
+margin_top = 300.0
+margin_right = 200.0
+margin_bottom = 400.0
+rect_rotation = 180.0
+focus_neighbour_left = NodePath("../ButtonRightShop")
+focus_neighbour_bottom = NodePath("../ButtonConfirmShop")
+theme = ExtResource( 3 )
+icon = SubResource( 1 )
+
+[node name="ButtonRightShop" type="Button" parent="CanvasLayer/Control" index="2"]
+margin_left = 540.0
+margin_top = 200.0
+margin_right = 640.0
+margin_bottom = 300.0
+focus_neighbour_right = NodePath("../ButtonLeftShop")
+focus_neighbour_bottom = NodePath("../ButtonConfirmShop")
+theme = ExtResource( 3 )
+icon = SubResource( 1 )
+
+[node name="ButtonConfirmShop" type="Button" parent="CanvasLayer/Control" index="3"]
+margin_left = 236.0
+margin_top = 312.0
+margin_right = 421.0
+margin_bottom = 349.0
+theme = ExtResource( 3 )
+text = "Comprar"
+
+[node name="CAR_ALREYD_GARAGE" type="Label" parent="CanvasLayer" index="2"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -50.5
+margin_top = -10.0
+margin_right = 50.5
+margin_bottom = 10.0
+theme = ExtResource( 5 )
+text = "Carro já comprado."
+
+[node name="NO_SPACE_HOLLOW" type="Label" parent="CanvasLayer" index="3"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -89.0
+margin_top = -10.0
+margin_right = 89.0
+margin_bottom = 10.0
+theme = ExtResource( 5 )
+text = "Nenhum espaço vazio na garagem."
+align = 1
+
+[node name="CAR_BUIED" type="Label" parent="CanvasLayer" index="4"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -44.0
+margin_top = -10.0
+margin_right = 44.0
+margin_bottom = 10.0
+theme = ExtResource( 5 )
+text = "Carro comprado."
+
+[node name="NO_MONEY" type="Label" parent="CanvasLayer" index="5"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -51.0
+margin_top = -10.0
+margin_right = 51.0
+margin_bottom = 10.0
+theme = ExtResource( 5 )
+text = "Golds insuficiente."
+
+[node name="TimerWarning" type="Timer" parent="CanvasLayer" index="6"]
+wait_time = 8.0
+one_shot = true
+
+[node name="rot_cam" type="Spatial" parent="." index="2"]
+transform = Transform( 0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 0, 4.01583, 0 )
+
+[node name="Camera015" type="Camera" parent="rot_cam" index="0"]
+transform = Transform( -0.714007, 0.255656, -0.651793, -5.01999e-07, 0.930948, 0.365151, 0.700138, 0.260721, -0.664704, -8.34656, 1.5392, -8.90285 )
+current = true
+fov = 49.1343
+size = 6.0
+near = 0.1
+
+[node name="car_invoker" type="Spatial" parent="." index="3"]
+transform = Transform( 0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 0, 1.05988, 0 )
+
+[node name="Circle004" parent="." index="4"]
+material/0 = SubResource( 3 )
+
+[node name="Circle003" parent="." index="5"]
+material/0 = SubResource( 3 )
+
+[node name="Circle002" parent="." index="6"]
+material/0 = SubResource( 3 )
+
+[node name="Circle001" parent="." index="7"]
+material/0 = SubResource( 3 )
+
+[node name="Circle" parent="." index="8"]
+material/0 = SubResource( 3 )
+
+[node name="armario" parent="." index="9"]
+material/0 = SubResource( 2 )
+
+[node name="Cube001" parent="." index="11"]
+material/0 = SubResource( 4 )
+
+[node name="Camera015" parent="." index="12"]
+visible = false
+
+[connection signal="pressed" from="CanvasLayer/Control/ButtonQuit" to="." method="_on_ButtonQuit_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/ButtonLeftShop" to="." method="_on_ButtonLeftShop_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/ButtonRightShop" to="." method="_on_ButtonRightShop_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/ButtonConfirmShop" to="." method="_on_ButtonConfirmShop_pressed"]

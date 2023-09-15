@@ -13,7 +13,7 @@ bg_color = Color( 0.0745098, 0.721569, 0.909804, 1 )
 bg_color = Color( 0.054902, 0.619608, 0.694118, 1 )
 
 [sub_resource type="StyleBoxFlat" id=7]
-bg_color = Color( 0.933333, 0.419608, 0.0313726, 1 )
+bg_color = Color( 0, 0, 0, 0.501961 )
 
 [sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.231373, 0.231373, 0.231373, 1 )
