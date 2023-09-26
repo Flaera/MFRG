@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/blender2.79_old/assets/assets_shop_cars/shop.escn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/shop/shop.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scenes/specs/ui_specs.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/themeMFRGLabelDark.tres" type="Theme" id=5]
 [ext_resource path="res://scripts/ui_specs/ui_specs_shop.gd" type="Script" id=6]
+[ext_resource path="res://scenes/golds/golds.tscn" type="PackedScene" id=7]
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4
@@ -23,10 +24,12 @@ albedo_color = Color( 0.776471, 0.776471, 0.776471, 1 )
 [node name="shop" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
-[node name="Control" parent="." index="0" instance=ExtResource( 4 )]
+[node name="HBoxContainer" parent="." index="0" instance=ExtResource( 7 )]
+
+[node name="Control" parent="." index="1" instance=ExtResource( 4 )]
 script = ExtResource( 6 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." index="1"]
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="2"]
 
 [node name="SELECT_CAR_BUY" type="Label" parent="CanvasLayer" index="0"]
 margin_top = 5.0
@@ -138,7 +141,23 @@ text = "Golds insuficiente."
 wait_time = 8.0
 one_shot = true
 
-[node name="rot_cam" type="Spatial" parent="." index="2"]
+[node name="Control2" type="Control" parent="CanvasLayer" index="7"]
+margin_left = 236.0
+margin_top = 260.0
+margin_right = 419.0
+margin_bottom = 312.0
+
+[node name="LabelPrices" type="Label" parent="CanvasLayer/Control2" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 2.0
+margin_bottom = -3.0
+theme = ExtResource( 5 )
+text = "dasdasfas"
+align = 1
+valign = 1
+
+[node name="rot_cam" type="Spatial" parent="." index="3"]
 transform = Transform( 0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 0, 4.01583, 0 )
 
 [node name="Camera015" type="Camera" parent="rot_cam" index="0"]
@@ -148,31 +167,31 @@ fov = 49.1343
 size = 6.0
 near = 0.1
 
-[node name="car_invoker" type="Spatial" parent="." index="3"]
+[node name="car_invoker" type="Spatial" parent="." index="4"]
 transform = Transform( 0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 0, 1.05988, 0 )
 
-[node name="Circle004" parent="." index="4"]
+[node name="Circle004" parent="." index="5"]
 material/0 = SubResource( 3 )
 
-[node name="Circle003" parent="." index="5"]
+[node name="Circle003" parent="." index="6"]
 material/0 = SubResource( 3 )
 
-[node name="Circle002" parent="." index="6"]
+[node name="Circle002" parent="." index="7"]
 material/0 = SubResource( 3 )
 
-[node name="Circle001" parent="." index="7"]
+[node name="Circle001" parent="." index="8"]
 material/0 = SubResource( 3 )
 
-[node name="Circle" parent="." index="8"]
+[node name="Circle" parent="." index="9"]
 material/0 = SubResource( 3 )
 
-[node name="armario" parent="." index="9"]
+[node name="armario" parent="." index="10"]
 material/0 = SubResource( 2 )
 
-[node name="Cube001" parent="." index="11"]
+[node name="Cube001" parent="." index="12"]
 material/0 = SubResource( 4 )
 
-[node name="Camera015" parent="." index="12"]
+[node name="Camera015" parent="." index="13"]
 visible = false
 
 [connection signal="pressed" from="CanvasLayer/Control/ButtonQuit" to="." method="_on_ButtonQuit_pressed"]

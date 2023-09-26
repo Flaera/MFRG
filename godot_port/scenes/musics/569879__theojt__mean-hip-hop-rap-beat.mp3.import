@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/569879__theojt__mean-hip-hop-rap-beat.mp3-c6b32ece95a1597ac4095829e89ff498.mp3str"
+
+[deps]
+
+source_file="res://scenes/musics/569879__theojt__mean-hip-hop-rap-beat.mp3"
+dest_files=[ "res://.import/569879__theojt__mean-hip-hop-rap-beat.mp3-c6b32ece95a1597ac4095829e89ff498.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

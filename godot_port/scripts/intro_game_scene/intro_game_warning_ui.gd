@@ -13,6 +13,8 @@ func saveStyleDefault():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	MusicController.music_play()
+	
 	saveStyleDefault()
 	get_node("VBoxContainer/LabelText").text = w['3']
 	get_node("VBoxContainer/LabelText").align = true

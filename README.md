@@ -1,5 +1,5 @@
 #PROJETO MFRG
-       
+
     1. STATUS: FASE 3 EM ANDAMENTO – EXPORTAÇÃO PARA GODOT.
        
     2. DESCRIÇÃO RESUMIDA
@@ -26,9 +26,11 @@ Gêneros: corrida, contra o tempo, 3D, low-poly, indie, BGE, Blender.
 
 Plataforma:
 
-Especificações do computador (PC – termo popular para computador de mesa ou notebook):
+Especificações do computador (PC – termo popular para Personal Computer, computador de mesa ou notebook):
 
-Testado em Xubuntu 20.04 (Linux) - 64 bits: Intel(R) Core(TM) 2 Duo, CPU 2.20Ghz, Mesa Mobile Intel GM45 Express Chipset (CTG), 4GB RAM, OpenGL 2.1+.
+Testado em Ubuntu 22.04 (Linux) - 64 bits. Intel® Core™  2 Duo, CPU 2.20Ghz, Mesa Mesa Mobile Intel GM45 Express Chipset (CTG), 3.8GB RAM, OpenGL ES 2+. Memória de vídeo de 256 MB.
+
+Testado em Xubuntu 20.04 (Linux) - 64 bits: Intel(R) Core(TM) 2 Duo, CPU 2.20Ghz, Mesa Mobile Intel GM45 Express Chipset (CTG), 3.8GB RAM, OpenGL ES 2+. Memória de vídeo de 256 MB.
 
 Windows 10 - 64 bits:  Intel(R) Core i3 (TM) Quadcore, CPU 3.0Ghz, Placa de vídeo: Geforce G210 1GB, 6GB RAM, OpenGL 2.1+.
 

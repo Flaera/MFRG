@@ -11,6 +11,7 @@ var delta_inc: float = 0.0
 
 
 func _ready():
+	
 	bg = preload("res://assets/blender2.79_old/assets/talk_scenes/backgrounds/bg_intro_scene.png") 
 	talk = preload("res://data_files/events_talks.gd").new().events_talks
 	index_dic = '5'

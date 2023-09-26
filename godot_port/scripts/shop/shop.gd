@@ -28,7 +28,8 @@ func loadCarList():
 func loadMoney():
 	var file = File.new()
 	file.open("res://data_files/gold.txt", File.READ)
-	money = file.get_16()
+	money = int(file.get_csv_line()[0])
+	file.close()
 	print(money)
 	
 
@@ -41,16 +42,19 @@ func _ready():
 		prices.append(cars[i][0])
 	car_loaded = load("res://scenes/cars/"+cars_list[acc]+"_only_asset.tscn")
 	get_node("car_invoker").add_child(car_loaded.instance())
+	get_node("CanvasLayer/Control2/LabelPrices").text = "Price:\n"+String(prices[acc])
 	
 	var file2 = File.new()
 	file2.open("res://data_files/player_cars.txt", File.READ)
 	player_cars = file2.get_as_text().rsplit("\n")
+	loadMoney()
 
 
 func changeCar(var index: int):
 	get_node("car_invoker").get_child(0).queue_free()
 	car_loaded = load("res://scenes/cars/"+cars_list[index]+"_only_asset.tscn")
 	get_node("car_invoker").add_child(car_loaded.instance())
+	get_node("CanvasLayer/Control2/LabelPrices").text = "Price:\n"+String(prices[acc])
 
 
 func _process(_delta):
@@ -66,6 +70,9 @@ func _process(_delta):
 		get_node("CanvasLayer/CAR_BUIED").visible=false
 		get_node("CanvasLayer/NO_MONEY").visible=false
 
+	if Input.is_action_just_pressed("ui_cancel"):
+		get_tree().change_scene("res://scenes/map/map.scn")
+
 
 func _on_ButtonLeftShop_pressed():
 	acc -= 1
@@ -80,6 +87,13 @@ func _on_ButtonRightShop_pressed():
 	changeCar(acc)
 
 
+func saveMoney(var less_money: int):
+	var file: File = File.new()
+	money -= less_money
+	file.open("res://data_files/gold.txt", File.WRITE)
+	file.store_16(money)
+
+
 func _on_ButtonConfirmShop_pressed():
 	print("--",cars_list,"--",player_cars)
 	if (cars_list[acc] in player_cars):
@@ -91,9 +105,10 @@ func _on_ButtonConfirmShop_pressed():
 		get_node("CanvasLayer/NO_SPACE_HOLLOW").visible=true
 		get_node("CanvasLayer/TimerWarning").start(5)
 	elif (prices[acc]>money):
+		print("DEBUGGER: ", money, "--", prices[acc])
 		get_node("CanvasLayer/NO_MONEY").visible=true
 		get_node("CanvasLayer/TimerWarning").start(5)
-	elif (("VAZIO" in player_cars) and (prices[acc]<money)):
+	elif (("VAZIO" in player_cars) and (prices[acc]<=money)):
 		print("Carro comprado")
 		for i in range(len(player_cars)):
 			if (player_cars[i]=="VAZIO"):
@@ -107,6 +122,7 @@ func _on_ButtonConfirmShop_pressed():
 			elif (acc1==2):
 				file.store_string(j)
 			acc1+=1
+		saveMoney(prices[acc])
 		loadCarList()
 		loadMoney()
 		print("Update cars_list=",cars_list)

@@ -21,6 +21,11 @@ func _ready():
 	file.close()
 	curr_car = car_loaded.instance()
 	get_node("car_invoker").add_child(curr_car)
+	#load enemy:
+	var car_loaded_enemy: Object = load("res://scenes/cars/"+car+"_enemy.scn")
+	var curr_car_enemy: Object = car_loaded_enemy.instance()
+	get_node("car_invoker_enemy").add_child(curr_car_enemy)
+	
 
 	camera = preload("res://scenes/camera/camera.scn")
 	curr_cam = camera.instance()
@@ -42,7 +47,6 @@ func camTransform():
 
 
 func winPlay(_delta):
-	print("time_end=",time_end)
 	if (win==1 and !get_node("CanvasLayer/Control/Control/Label/AnimationPlayer").is_playing()):
 		print("AQUI ENTROU")
 		get_node("CanvasLayer/Control/Control/Label/AnimationPlayer").play("anim_you_win")
