@@ -91,7 +91,8 @@ func saveMoney(var less_money: int):
 	var file: File = File.new()
 	money -= less_money
 	file.open("res://data_files/gold.txt", File.WRITE)
-	file.store_16(money)
+	file.store_string(String(money))
+	file.close()
 
 
 func _on_ButtonConfirmShop_pressed():
