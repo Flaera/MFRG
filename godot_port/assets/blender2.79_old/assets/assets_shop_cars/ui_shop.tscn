@@ -1,0 +1,149 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/themeMFRGLabelDark.tres" type="Theme" id=1]
+[ext_resource path="res://scenes/themeMFRG.tres" type="Theme" id=2]
+[ext_resource path="res://scripts/ui_specs/ui_specs_shop.gd" type="Script" id=4]
+[ext_resource path="res://scenes/golds/golds.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/specs/ui_specs.tscn" type="PackedScene" id=6]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/arrow.png-a4a34ea04551cddb834540c85fb39619.stex"
+
+[node name="UI_SHOP" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Control" parent="." instance=ExtResource( 6 )]
+script = ExtResource( 4 )
+
+[node name="HBoxContainer" parent="." instance=ExtResource( 5 )]
+margin_bottom = 24.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SELECT_CAR_BUY" type="Label" parent="CanvasLayer"]
+margin_top = 5.0
+margin_right = 640.0
+margin_bottom = 25.0
+theme = ExtResource( 2 )
+text = "COMPRAR CARRO"
+align = 1
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ButtonQuit" type="Button" parent="CanvasLayer/Control"]
+margin_left = 232.0
+margin_top = 356.0
+margin_right = 332.0
+margin_bottom = 456.0
+rect_rotation = 180.0
+rect_scale = Vector2( 0.5, 0.5 )
+focus_neighbour_left = NodePath("../ButtonRightShop")
+focus_neighbour_bottom = NodePath("../ButtonConfirmShop")
+theme = ExtResource( 1 )
+icon = SubResource( 1 )
+
+[node name="ButtonLeftShop" type="Button" parent="CanvasLayer/Control"]
+margin_left = 100.0
+margin_top = 300.0
+margin_right = 200.0
+margin_bottom = 400.0
+rect_rotation = 180.0
+focus_neighbour_left = NodePath("../ButtonRightShop")
+focus_neighbour_bottom = NodePath("../ButtonConfirmShop")
+theme = ExtResource( 2 )
+icon = SubResource( 1 )
+
+[node name="ButtonRightShop" type="Button" parent="CanvasLayer/Control"]
+margin_left = 540.0
+margin_top = 200.0
+margin_right = 640.0
+margin_bottom = 300.0
+focus_neighbour_right = NodePath("../ButtonLeftShop")
+focus_neighbour_bottom = NodePath("../ButtonConfirmShop")
+theme = ExtResource( 2 )
+icon = SubResource( 1 )
+
+[node name="ButtonConfirmShop" type="Button" parent="CanvasLayer/Control"]
+margin_left = 236.0
+margin_top = 312.0
+margin_right = 421.0
+margin_bottom = 349.0
+theme = ExtResource( 2 )
+text = "Comprar"
+
+[node name="CAR_ALREYD_GARAGE" type="Label" parent="CanvasLayer"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -50.5
+margin_top = -10.0
+margin_right = 50.5
+margin_bottom = 10.0
+theme = ExtResource( 1 )
+text = "Carro já comprado."
+
+[node name="NO_SPACE_HOLLOW" type="Label" parent="CanvasLayer"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -89.0
+margin_top = -10.0
+margin_right = 89.0
+margin_bottom = 10.0
+theme = ExtResource( 1 )
+text = "Nenhum espaço vazio na garagem."
+align = 1
+
+[node name="CAR_BUIED" type="Label" parent="CanvasLayer"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -44.0
+margin_top = -10.0
+margin_right = 44.0
+margin_bottom = 10.0
+theme = ExtResource( 1 )
+text = "Carro comprado."
+
+[node name="NO_MONEY" type="Label" parent="CanvasLayer"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -51.0
+margin_top = -10.0
+margin_right = 51.0
+margin_bottom = 10.0
+theme = ExtResource( 1 )
+text = "Golds insuficiente."
+
+[node name="TimerWarning" type="Timer" parent="CanvasLayer"]
+wait_time = 8.0
+one_shot = true
+
+[node name="Control2" type="Control" parent="CanvasLayer"]
+margin_left = 236.0
+margin_top = 260.0
+margin_right = 419.0
+margin_bottom = 312.0
+
+[node name="LabelPrices" type="Label" parent="CanvasLayer/Control2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 2.0
+margin_bottom = -3.0
+theme = ExtResource( 1 )
+text = "dasdasfas"
+align = 1
+valign = 1

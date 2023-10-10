@@ -16,3 +16,15 @@ material/0 = SubResource( 1 )
 
 [node name="monte_lixo2001" parent="." index="1"]
 material/0 = SubResource( 2 )
+
+[node name="Cube014" parent="." index="32"]
+transform = Transform( 0.530831, 0, -0.847478, 0, 1, 0, 0.847478, 0, 0.530831, -49.9625, -6.14226, -223.526 )
+
+[node name="Cube013" parent="." index="33"]
+transform = Transform( 0.530831, 0, -0.847478, 0, 1, 0, 0.847478, 0, 0.530831, -46.568, -5.693, -218.123 )
+
+[node name="Cube012" parent="." index="34"]
+transform = Transform( 0.530831, 0, -0.847478, 0, 1, 0, 0.847478, 0, 0.530831, -42.8361, -5.693, -212.454 )
+
+[node name="Cube011" parent="." index="35"]
+transform = Transform( 0.530831, 0, -0.847478, 0, 1, 0, 0.847478, 0, 0.530831, -39.5521, -6.02905, -207.466 )

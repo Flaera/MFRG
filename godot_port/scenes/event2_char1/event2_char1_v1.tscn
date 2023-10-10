@@ -57,7 +57,7 @@ directional_shadow_depth_range = 1
 visible = false
 
 [node name="rampa_event1_char1_v2" parent="." index="7" instance=ExtResource( 7 )]
-transform = Transform( 0.416106, 0, -0.909316, 0, 1, 0, 0.909316, 0, 0.416106, -36.0154, -6.17823, -163.326 )
+transform = Transform( 0.404516, 0.234379, -0.883987, -0.0975264, 0.972145, 0.213124, 0.909316, 0, 0.416106, -41.0459, -13.1367, -163.326 )
 
 [node name="no_collision_v2_event2_char1_v1" parent="." index="8" instance=ExtResource( 9 )]
 

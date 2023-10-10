@@ -20,37 +20,33 @@ func _ready():
 
 
 func getDistance(var point: Vector3):
-	#print("point=", point)
-	#var res: int = sqrt(pow(point[0]-translation[0],2)+
-	#	pow(point[1]-translation[1],2)+
-	#	pow(point[2]-translation[2],2))
-	var res: int = point[0]
-	return res
+	pass
 
 
 func actions():
 	
-	var dist_r90: int = getDistance((get_node("RayCastR90").get_collision_point()))
-	var dist_l90: int = getDistance(get_node("RayCastL90").get_collision_point())
+	var dist_r90: int = get_node("RayCast/RayCastR90").get_collision_point()[0]
+	var dist_l90: int = get_node("RayCast/RayCastL90").get_collision_point()[0]
 	#if (!get_node("RayCastR90").is_colliding()):
 	#	dist_r90 = INFINITY
 	#if (!get_node("RayCastL90").is_colliding()):
 	#	dist_l90 = INFINITY
-	print("dists:", dist_l90, "-", dist_r90, "-")
+	print("dists:", dist_l90, "-", dist_r90, "-",
+	 get_node("RayCast/RayCastFront").get_collider())
 	if (dist_r90<dist_l90):
 		print("AQUI1-")
 		axis.x = 1.0 # turn in left
-	if (dist_r90>dist_l90):
+	elif (dist_r90>dist_l90):
 		print("AQUI2-")
 		axis.x = -1.0
-	if (dist_r90<dist_l90 and dist_r90>dist_l90):
+	else:
 		print("AQUI3-")
 		axis.x = 0.0
 	
 	#forever forward:
 	axis.y=1.0
 	brake_pedal=false
-	if (!(get_node("RayCastFront").is_colliding())):
+	if (!(get_node("RayCast/RayCastFront").is_colliding())):
 		nitro = true
 	else: nitro = false
 	return
