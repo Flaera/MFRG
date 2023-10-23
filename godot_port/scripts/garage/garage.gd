@@ -58,6 +58,9 @@ func _process(_delta):
 	get_node("CanvasLayer/VBoxContainer/HBoxContainer1/B_CARRO_2").text = cars_list[1]
 	get_node("CanvasLayer/VBoxContainer/HBoxContainer2/B_CARRO_3").text = cars_list[2]
 
+	if (Input.is_action_just_pressed("ui_cancel")):
+		get_tree().change_scene("res://scenes/map/map.scn")
+
 
 func _on_B_CARRO_1_pressed():
 	if (cars_list[0]!="VAZIO"):

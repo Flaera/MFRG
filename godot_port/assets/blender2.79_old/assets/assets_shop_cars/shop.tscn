@@ -48,7 +48,7 @@ margin_top = 5.0
 margin_right = 640.0
 margin_bottom = 25.0
 theme = ExtResource( 2 )
-text = "COMPRAR CARRO"
+text = "L_SHOP_CARS"
 align = 1
 
 [node name="Control" type="Control" parent="CanvasLayer" index="1"]
@@ -94,7 +94,7 @@ margin_top = 312.0
 margin_right = 421.0
 margin_bottom = 349.0
 theme = ExtResource( 2 )
-text = "Comprar"
+text = "B_Buy_Car"
 
 [node name="CAR_ALREYD_GARAGE" type="Label" parent="CanvasLayer" index="2"]
 visible = false
@@ -107,7 +107,7 @@ margin_top = -10.0
 margin_right = 50.5
 margin_bottom = 10.0
 theme = ExtResource( 6 )
-text = "Carro já comprado."
+text = "CAR_ALREYD_GARAGE"
 
 [node name="NO_SPACE_HOLLOW" type="Label" parent="CanvasLayer" index="3"]
 visible = false
@@ -120,7 +120,7 @@ margin_top = -10.0
 margin_right = 89.0
 margin_bottom = 10.0
 theme = ExtResource( 6 )
-text = "Nenhum espaço vazio na garagem."
+text = "NO_SPACE_HOLLOW"
 align = 1
 
 [node name="CAR_BUIED" type="Label" parent="CanvasLayer" index="4"]
@@ -134,7 +134,7 @@ margin_top = -10.0
 margin_right = 44.0
 margin_bottom = 10.0
 theme = ExtResource( 6 )
-text = "Carro comprado."
+text = "CAR_BUIED"
 
 [node name="NO_MONEY" type="Label" parent="CanvasLayer" index="5"]
 visible = false
@@ -147,7 +147,7 @@ margin_top = -10.0
 margin_right = 51.0
 margin_bottom = 10.0
 theme = ExtResource( 6 )
-text = "Golds insuficiente."
+text = "NO_MONEY"
 
 [node name="TimerWarning" type="Timer" parent="CanvasLayer" index="6"]
 wait_time = 8.0
@@ -162,10 +162,19 @@ margin_bottom = 312.0
 [node name="LabelPrices" type="Label" parent="CanvasLayer/Control2" index="0"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = 23.0
 margin_right = 2.0
-margin_bottom = -3.0
+margin_bottom = -9.0
 theme = ExtResource( 6 )
 text = "dasdasfas"
+align = 1
+valign = 1
+
+[node name="LabelTitlePrices" type="Label" parent="CanvasLayer/Control2" index="1"]
+anchor_right = 1.0
+margin_bottom = 20.0
+theme = ExtResource( 2 )
+text = "L_Prices"
 align = 1
 valign = 1
 

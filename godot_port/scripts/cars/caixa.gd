@@ -28,9 +28,9 @@ func _input(event):
 		axis.x=0.0
 	if (event.is_action_released("ui_down") or event.is_action_released("ui_up")):
 		axis.y=0.0
-	if (event.is_action_pressed("ui_cancel")):
+	if (event.is_action_pressed("ui_brake")):
 		brake_pedal=true
-	if (event.is_action_released("ui_cancel")):
+	if (event.is_action_released("ui_brake")):
 		brake_pedal=false
 	if (event.is_action_pressed("ui_select")): nitro = true
 	if (event.is_action_released("ui_select")): nitro = false

@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/themeMFRG.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/select_lang/select_lang.gd" type="Script" id=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="."]
+margin_left = 6.0
+margin_top = 6.0
+margin_right = 629.0
+margin_bottom = 28.0
+theme = ExtResource( 1 )
+text = "Label_Lang"
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -108.5
+margin_top = -22.5
+margin_right = 108.5
+margin_bottom = 22.5
+
+[node name="Button_EN" type="Button" parent="VBoxContainer"]
+margin_right = 217.0
+margin_bottom = 20.0
+theme = ExtResource( 1 )
+text = "B_Lang_EN"
+icon_align = 1
+
+[node name="Button_PT_BR" type="Button" parent="VBoxContainer"]
+margin_top = 24.0
+margin_right = 217.0
+margin_bottom = 44.0
+theme = ExtResource( 1 )
+text = "B_Lang_PT_BR"
+icon_align = 1
+
+[connection signal="focus_entered" from="VBoxContainer/Button_EN" to="." method="_on_Button_EN_focus_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/Button_EN" to="." method="_on_Button_EN_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Button_EN" to="." method="_on_Button_EN_pressed"]
+[connection signal="focus_entered" from="VBoxContainer/Button_PT_BR" to="." method="_on_Button_PT_BR_focus_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/Button_PT_BR" to="." method="_on_Button_PT_BR_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Button_PT_BR" to="." method="_on_Button_PT_BR_pressed"]

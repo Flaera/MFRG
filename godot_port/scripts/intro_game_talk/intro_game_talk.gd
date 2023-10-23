@@ -19,21 +19,26 @@ func _ready():
 	lenght = len(talk[index_dic])
 
 	get_node("CanvasLayer/Sprite/TextureRectBG").set_texture(bg)
-	get_node("CanvasLayer/ColorRect/VBoxContainer2/HBoxContainer/Button").align=true
-	get_node("CanvasLayer/ColorRect/VBoxContainer2/HBoxContainer/Button").grab_focus()
+	get_node("CanvasLayer/ColorRect/VBoxContainer2/HBoxContainer/ButtonContinue").align=true
+	get_node("CanvasLayer/ColorRect/VBoxContainer2/HBoxContainer/ButtonContinue").grab_focus()
+
+
+func changeScene():
+	if index==lenght:
+		index=-1
+		get_tree().change_scene("res://scenes/main_menu/main_menu.scn")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	#print("index=", index, "len=",lenght)
-	if index==lenght:
-		index=-1
-		get_tree().change_scene("res://scenes/main_menu/main_menu.scn")
-	
+	changeScene()
+
 	get_node("CanvasLayer/ColorRect/VBoxContainer2/HBoxContainer/LabelNameCharacter").text=talk[index_dic][index][0]
 	var text_char = get_node("CanvasLayer/ColorRect/VBoxContainer2/LabelText")
-	text_char.text=talk[index_dic][index][1]
-	
+	text_char.text="DiagSir"+String(index)
+	print("index=",index)
+
 	if (delta_time<0.5):
 		delta_time += _delta
 	elif (delta_time>=0.5 and delta_inc<1.0):
@@ -41,13 +46,17 @@ func _process(_delta):
 	else:
 		delta_time = float(0.0)
 	text_char.percent_visible = delta_inc
-	print("delta_inc=",delta_inc)
 
 
-func _on_Button_pressed():
+func _on_ButtonContinue_pressed():
 	if (delta_inc<1.0):
 		delta_time = float(0.0)
 		delta_inc = float(1.0)
 	elif (delta_inc>=1.0 and index<lenght):
 		index+=1
 		delta_inc = float(0.0)
+
+
+func _on_ButtonSkip_pressed():
+	index = lenght
+	changeScene()

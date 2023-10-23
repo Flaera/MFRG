@@ -1,0 +1,39 @@
+,pt_BR,en_US
+LabelTitle,Aviso,Warning
+LabelText,"Ao jogar este jogo você concorda em ceder dados da sua jogatina\nas(aos) desenvolvedoras(es). Seus dados serão mantidos em sigilo e serão\nusadas(os) apenas para fins de pesquisa acadêmica, mas poderá jogar sem essa se não concordar com isso.\n\nVocê deseja ter seus dados enviados?",By playing this game you agree to transfer your game data\nto the developers. Your data will be kept confidential and will be\nused only for academic research purposes.\n\nYou wish to have your data sent?
+ButtonYes,Sim,Yes
+ButtonNo,Não,No
+ButtonContinue,Próximo,Next
+ButtonSkip,Pular,Skip
+LabelSir,Senhor,Sr.
+DiagSir0,Faz muito tempo que a burguesia reclamava de uns incômodo\nadvindo das pessoas habitantes da comunidade\nribeirinha do Cortiço de Cabeça de Gato.\nEles recramava e recramava na rádia que nôis era doença e era feio.,"For a long time now, the bourgeoisie has been complaining about some inconveniences\nacoming from the people who live in the\nriverside community of Cortiço de Cabeça de Gato.\nThey repeated and repeated on the radio that we were sick and ugly."
+DiagSir1,"print(index="",index)","They then began\nwith these things of changing, of taking away, of obtaining possession; when we saw\ncome here an order from a malicious judge\n (Coughing interrupts his speech for a moment)."
+DiagSir2,"Esta orde dizia pra nôis sair de nossas casa,\nque aquelas casa nossa eles precisavam pegar e pegar o terreno.\nA maioria fico lá, como eu. Porque nascemo e crescemo e… e depois\n","This order told us to leave our houses,\nthat our houses they needed to take and get the land.\nMost of them stay there, like me. Because we are born and we grow and… and then\n"
+DiagSir3,de tanto tempo (Mais uma pausa inesperada por conta da\ntosse) deveríamos sair do lugar. Não pode. Isso tá errado.,after so much time (Another unexpected break due to\ntosse) we should leave the place. It cannot. This is wrong.
+DiagSir4,Perdemo tudo. Foi tudo destruído.\nQuase morri na mão daqueles capangas deles que vestem aquelas\nfarda. Perdemo… Perdemo mermo.,We lost everything. Everything was destroyed.\nI almost died at the hands of those henchmen wearing those\nuniforms. We lost... We really lost.
+DiagSir5,"Eu consigo me lembrar, até hoje! Até hoje!\nDaqueles carros, daquelas armaduras...\nmatano meu amor.","I can remember, to this day! Until today!\nThose cars, those armor...\nit kills me, my love."
+DiagSir6,"Então subimo o morro e invadimo o lixão. Moramo aqui a...\nagora. Na Favela do Baixo do Reginaldo. Té quando eles vorta de novo.\nSei lá! Hoje sobrevivemo ainda da pesca, mas andamo muito\naté chegar lá, mas alguns sobrevive do lixo.","So we went up the hill and invaded the dump. We live here for...\nnow. In the Baixo do Reginaldo Favela. Until they come back again.\nI don't know! Today we still survive by fishing, but we walk a lot\nato get there, but some survive on garbage."
+DiagSir7,"Então veio esse doençero,\nesse lixo todo de computador, de carro, de comida, de tudo.\nTudo isso mata.","Then this disease came along,\nall this rubbish of computers, cars, food, everything.\nAll of this kills."
+DiagSir8,"Eu amava minha terra. Por que isso? De todo modo,\ntenho minhas filhas e netas... e\ntenho que continuar, né? Não posso parar antes de\nver elas florescer e fica bem.","I loved my land. Why that? Anyway,\I have my daughters and granddaughters... and\I have to continue, right? I can't stop until\nI see them bloom and it looks good."
+Choice_Style,Escolha um estilo para Anne,Choose a style for Anne
+Button_Style_Con,Quer este estilo? Clique aqui.,Do you want this style? Click here.
+Label_Lang,Selecione a linguagem,Select the language
+B_Lang_EN,Inglês – EUA,English – EUA
+B_Lang_PT_BR,Português – Brasil,Portuguese – Brazil
+B_Buy_Car,Comprar carro,Buy car
+L_SHOP_CARS,Loja de carros usados,Used car store
+CAR_ALREYD_GARAGE,Carro já comprado,Car already purchased
+NO_SPACE_HOLLOW,Nenhum espaço vazio na garagem,No empty space in the garage
+CAR_BUIED,Carro comprado,Car purchased
+NO_MONEY,Golds insuficiente,Not enough Golds
+SPECS_ACCEL,Aceleração,Acceleration
+SPECS_RPM,RPM,RPM
+SPECS_TORQUE,Torque,Torque
+SPECS_NITRO,Nitro,Nitro
+L_Prices,Preço,Price
+L_Garage_Select_Car,Selecione um carro,Select a car
+B_Sell_Car, Vender carro , Sell car 
+lilas,Lilás,Lilac
+roots,Raízes,Roots
+caixa,Caixa,Box
+noturno,Noturno,Nocturne

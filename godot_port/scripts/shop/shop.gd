@@ -31,7 +31,10 @@ func loadMoney():
 	money = int(file.get_csv_line()[0])
 	file.close()
 	print(money)
-	
+
+
+func updatePrice():
+	get_node("CanvasLayer/Control2/LabelPrices").text = String(prices[acc])
 
 
 func _ready():
@@ -42,7 +45,7 @@ func _ready():
 		prices.append(cars[i][0])
 	car_loaded = load("res://scenes/cars/"+cars_list[acc]+"_only_asset.tscn")
 	get_node("car_invoker").add_child(car_loaded.instance())
-	get_node("CanvasLayer/Control2/LabelPrices").text = "Price:\n"+String(prices[acc])
+	updatePrice()
 	
 	var file2 = File.new()
 	file2.open("res://data_files/player_cars.txt", File.READ)
@@ -54,7 +57,7 @@ func changeCar(var index: int):
 	get_node("car_invoker").get_child(0).queue_free()
 	car_loaded = load("res://scenes/cars/"+cars_list[index]+"_only_asset.tscn")
 	get_node("car_invoker").add_child(car_loaded.instance())
-	get_node("CanvasLayer/Control2/LabelPrices").text = "Price:\n"+String(prices[acc])
+	updatePrice()
 
 
 func _process(_delta):
@@ -111,9 +114,12 @@ func _on_ButtonConfirmShop_pressed():
 		get_node("CanvasLayer/TimerWarning").start(5)
 	elif (("VAZIO" in player_cars) and (prices[acc]<=money)):
 		print("Carro comprado")
+		get_node("CanvasLayer/CAR_BUIED").visible=true
+		get_node("CanvasLayer/TimerWarning").start(5)
 		for i in range(len(player_cars)):
 			if (player_cars[i]=="VAZIO"):
 				player_cars[i] = cars_list[acc]
+				break
 		var file = File.new()
 		file.open("res://data_files/player_cars.txt", File.WRITE)
 		var acc1: int = 0

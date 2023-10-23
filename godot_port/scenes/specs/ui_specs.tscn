@@ -38,7 +38,7 @@ margin_top = 1.0
 margin_right = 157.0
 margin_bottom = 21.0
 theme = ExtResource( 2 )
-text = "ACELERAÇÂO"
+text = "SPECS_ACCEL"
 align = 2
 
 [node name="TextureProgressACCEL" type="TextureProgress" parent="CanvasLayer/Control/VBoxContainer"]
@@ -57,7 +57,7 @@ margin_top = 39.0
 margin_right = 157.0
 margin_bottom = 59.0
 theme = ExtResource( 2 )
-text = "RPM"
+text = "SPECS_RPM"
 align = 2
 
 [node name="TextureProgressRPM" type="TextureProgress" parent="CanvasLayer/Control/VBoxContainer"]
@@ -76,7 +76,7 @@ margin_top = 77.0
 margin_right = 157.0
 margin_bottom = 97.0
 theme = ExtResource( 2 )
-text = "TORQUE"
+text = "SPECS_TORQUE"
 align = 2
 
 [node name="TextureProgressTORQUE" type="TextureProgress" parent="CanvasLayer/Control/VBoxContainer"]
@@ -95,7 +95,7 @@ margin_top = 115.0
 margin_right = 157.0
 margin_bottom = 135.0
 theme = ExtResource( 2 )
-text = "NITRO"
+text = "SPECS_NITRO"
 align = 2
 
 [node name="TextureProgressNITRO" type="TextureProgress" parent="CanvasLayer/Control/VBoxContainer"]
