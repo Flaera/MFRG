@@ -65,16 +65,19 @@ func _ready():
 	path_event = "res://scenes/event1_char1/event1_char1_v3.scn"
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	#print("index=", index, "len=",lenght)
+func changeScene():
 	if index==lenght:
 		index=-1
 		get_tree().change_scene(path_event)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta):
+	#print("index=", index, "len=",lenght)
+	changeScene()
 	
 	get_node("CanvasLayer/ColorRect/VBoxContainer2/HBoxContainer/LabelNameCharacter").text=talk[index_dic][index][0]
 	var text_char = get_node("CanvasLayer/ColorRect/VBoxContainer2/LabelText")
-	text_char.text=talk[index_dic][index][1]
+	text_char.text="DiagZu"+String(index)
 	
 	if (delta_time<0.5):
 		delta_time += _delta
@@ -96,3 +99,7 @@ func _on_D_Button_CONTINUE_pressed():
 		index+=1
 		delta_inc = float(0.0)
 
+
+func _on_ButtonSkip_pressed():
+	index = lenght
+	changeScene()

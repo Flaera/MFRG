@@ -6,6 +6,7 @@ var axis: Vector2 = Vector2(0.0,0.0)
 var brake_pedal = false
 var nitro: bool
 var INFINITY: int = 1000
+var delta_time_fps: float = 0.0
 
 
 func _ready():
@@ -23,8 +24,7 @@ func getDistance(var point: Vector3):
 	pass
 
 
-func actions():
-	
+func actions(delta):
 	var dist_r90: int = get_node("RayCast/RayCastR90").get_collision_point()[0]
 	var dist_l90: int = get_node("RayCast/RayCastL90").get_collision_point()[0]
 	#if (!get_node("RayCastR90").is_colliding()):
@@ -32,17 +32,13 @@ func actions():
 	#if (!get_node("RayCastL90").is_colliding()):
 	#	dist_l90 = INFINITY
 	print("dists:", dist_l90, "-", dist_r90, "-",
-	 get_node("RayCast/RayCastFront").get_collider())
+	get_node("RayCast/RayCastL90").get_collider())
 	if (dist_r90<dist_l90):
 		print("AQUI1-")
 		axis.x = 1.0 # turn in left
 	elif (dist_r90>dist_l90):
 		print("AQUI2-")
 		axis.x = -1.0
-	else:
-		print("AQUI3-")
-		axis.x = 0.0
-	
 	#forever forward:
 	axis.y=1.0
 	brake_pedal=false
@@ -53,7 +49,7 @@ func actions():
 
 
 func _physics_process(delta):
-	actions()
+	actions(delta)
 	var calc = car_phys.mainCarPhys(axis, nitro, get_node("BackWheel"), get_node("BackWheel2"),
 	 brake_pedal, brake, steering, delta)
 	brake = calc[0]
