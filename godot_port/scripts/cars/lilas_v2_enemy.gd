@@ -25,8 +25,17 @@ func getDistance(var point: Vector3):
 
 
 func actions(delta):
-	var dist_r90: int = get_node("RayCast/RayCastR90").get_collision_point()[0]
-	var dist_l90: int = get_node("RayCast/RayCastL90").get_collision_point()[0]
+	var dist_r90: int
+	var dist_l90: int
+	if (get_node("RayCast/RayCastR90").get_collider()!=null):
+		dist_r90 = get_node("RayCast/RayCastR90").get_collision_point()[0]
+	else:
+		dist_r90 = 60
+	if (get_node("RayCast/RayCastL90").get_collider()!=null):
+		dist_l90 = get_node("RayCast/RayCastL90").get_collision_point()[0]
+	else:
+		dist_l90 = 60
+		
 	#if (!get_node("RayCastR90").is_colliding()):
 	#	dist_r90 = INFINITY
 	#if (!get_node("RayCastL90").is_colliding()):

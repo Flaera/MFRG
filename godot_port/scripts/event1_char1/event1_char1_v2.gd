@@ -22,9 +22,9 @@ func _ready():
 	curr_car = car_loaded.instance()
 	get_node("car_invoker").add_child(curr_car)
 	#load enemy:
-	#var car_loaded_enemy: Object = load("res://scenes/cars/"+car+"_enemy.scn")
-	#var curr_car_enemy: Object = car_loaded_enemy.instance()
-	#get_node("car_invoker_enemy").add_child(curr_car_enemy)
+	var car_loaded_enemy: Object = load("res://scenes/cars/"+car+"_enemy.scn")
+	var curr_car_enemy: Object = car_loaded_enemy.instance()
+	get_node("car_invoker_enemy").add_child(curr_car_enemy)
 
 
 	camera = preload("res://scenes/camera/camera.scn")
