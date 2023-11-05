@@ -45,21 +45,25 @@ func mainCarPhys(axis, boost_button, back_wheel1, back_wheel2, brake_on,
 		var accel: float = axis.y * acceleration
 		
 		#pedal control:
-		if (axis.y==-1):
-			accel/=2
+		#if (axis.y==-1):
+		#	accel/=2
 		
-		if (boost_button==true and fully_nitro>0.0):
+		if (boost_button==true and fully_nitro>0.0 and axis.y>0.0):
 			accel = axis.y * (acceleration * 1000)
 			#steering = lerp(steering, axis.y, 5*delta_time)
 			fully_nitro -= delta_nitro_dec * delta_time
 		elif (fully_nitro<nitro_max):
 			fully_nitro += delta_nitro_inc * delta_time
 		#print(" -- ", accel, " -- ", 33.02*0.001885*max_rpm)
-		rpm = back_wheel1.get_rpm()
-		back_wheel1.engine_force = accel * max_torque * (1-rpm/max_rpm)
-		rpm = back_wheel2.get_rpm()
-		back_wheel2.engine_force = accel * max_torque * (1-rpm/max_rpm)
-
+		var rpm0 = back_wheel1.get_rpm()
+		var rpm1 = back_wheel2.get_rpm()
+		#if (rpm0>=max_torque or rpm1>=max_torque):
+		#	back_wheel1.engine_force = max_torque
+		#	back_wheel2.engine_force = max_torque
+		#else:
+		back_wheel1.engine_force = accel * max_torque * (1-rpm0/max_rpm)
+		back_wheel2.engine_force = accel * max_torque * (1-rpm1/max_rpm)
+		#print("|", rpm0)
 		if (brake_on==true):
 			brake_force += 1000*(acceleration/2)*delta_time
 		else:

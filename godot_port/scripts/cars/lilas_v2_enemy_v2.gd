@@ -8,7 +8,6 @@ var nitro: bool
 var INFINITY: int = 1000
 var delta_time_fps: float = 0.0
 #var delta_rot: float = 0.0
-var centrelized: bool = false
 var ray_signal: float = 1.0
 
 
@@ -24,46 +23,45 @@ func _ready():
 
 
 func look_at_checkpoint(var target: Node):
-	#var rotl: float = 1.0
-	#var rotr: float = -1.0
-	#f (abs(axis.x)<=rot_inc):
-	#	var distance_or_radius: float = translation.distance_to(target_vector3)
-	#	var angle: float = translation.angle_to(target_vector3)
-	#	print("dist: ", distance_or_radius, "| angle: ", angle)
-	#	var tmpl: float = rotl*angle#(angle*3.1415*distance_or_radius)/180
-	#	var tmpr: float = rotr*angle#(angle*3.1415*distance_or_radius)/180
-	#	if (abs(tmpr)<abs(tmpl)):
-	#		axis.x = tmpr
-	#	else: axis.x = tmpl
-	#elif (abs(axis.x)>0.0):
-	#	axis.x = axis.x-(rot_inc*delta)#rotation_degrees[1] += (rot_inc*delta)
-	if (axis.x<=1.0):
-		centrelized = true
-	else: centrelized = false
+	var danger_zones: Array = [0,0,0,0,0,0,0]
 	var raycast_l90: RayCast = get_node("RayCast/RayCastL90")
 	var raycast_l30: RayCast = get_node("RayCast/RayCastL30")
 	var raycast_l60: RayCast = get_node("RayCast/RayCastL60")
 	var raycast_r90: RayCast = get_node("RayCast/RayCastR90")
 	var raycast_r30: RayCast = get_node("RayCast/RayCastR30")
 	var raycast_r60: RayCast = get_node("RayCast/RayCastR60")
-	if (raycast_l90.get_collider()==target
-	 or raycast_l30.get_collider()==target
-	 or raycast_l60.get_collider()==target):
-		print("L")
-		ray_signal = 1.0
-	elif (raycast_r90.get_collider()==target
-	 or raycast_r30.get_collider()==target
-	 or raycast_r60.get_collider()==target):
-		print("R")		
-		ray_signal = -1.0
-	var angle_to: float = translation.angle_to(target.translation) * ray_signal
-	axis.x = angle_to
-	print("| axisx: ",axis.x)
+	var raycast_front: RayCast = get_node("RayCast/RayCastFront")
+	if (raycast_front.get_collider()==target):
+		axis.x = 0.0
+	else:
+		if (raycast_l90.get_collider()!=null): danger_zones[0]=1
+		if (raycast_l30.get_collider()!=null): danger_zones[1]=1
+		if (raycast_l60.get_collider()!=null): danger_zones[2]=1
+		if (raycast_r90.get_collider()!=null): danger_zones[3]=1
+		if (raycast_r30.get_collider()!=null): danger_zones[4]=1
+		if (raycast_r60.get_collider()!=null): danger_zones[5]=1
+		if (raycast_front.get_collider()!=null): danger_zones[6]=1
+		var acc_left: int = 0
+		var acc_right: int = 0
+		var acc_general: int = 0
+		for i in danger_zones:
+			if (acc_general<3 and i==1):
+				acc_left+=1
+			if (acc_general>=3 and acc_general<6 and i==1):
+				acc_right+=1
+			acc_general+=1
+		if (acc_right>acc_left):
+			axis.x = 1.0
+		elif (acc_right<acc_left):
+			axis.x = -1.0
+		else:
+			axis.x = -1.0
+	#print(raycast_front.get_collider(), "|", target, "| axisx: ",axis.x)
 
 
 func actions():
 	#print("trans=",get_node("/root/event1_char1_v2/checkpoint0").translation)
-	look_at_checkpoint(get_node("/root/event1_char1_v2/checkpoint0"))
+	look_at_checkpoint(get_node("/root/event1_char1_v2/checkpoint0/StaticBody"))
 	
 	#forever forward:
 	axis.y=1.0
@@ -91,22 +89,22 @@ func _physics_process(delta):
 		if (calc[2]>0.0 and nitro==true):
 			get_node("lilas_invoker_nitro/CPUParticles").lifetime = 5
 			get_node("lilas_invoker_nitro001/CPUParticles2").lifetime = 5
-			get_node("lilas_invoker_nitro").visible = true
-			get_node("lilas_invoker_nitro001").visible = true
+			get_node("lilas_invoker_nitro/CPUParticles").emitting = true
+			get_node("lilas_invoker_nitro001/CPUParticles2").emitting = true
 		else:
 			get_node("lilas_invoker_nitro/CPUParticles").lifetime = 0.01
 			get_node("lilas_invoker_nitro001/CPUParticles2").lifetime = 0.01
-			get_node("lilas_invoker_nitro").visible = false
-			get_node("lilas_invoker_nitro001").visible = false
+			get_node("lilas_invoker_nitro/CPUParticles").emitting = false
+			get_node("lilas_invoker_nitro001/CPUParticles2").emitting = false
 		#Dust particles:
 		if (rpm_medium>10):
-			get_node("FrontWheel/CPUParticles").visible = true
-			get_node("FrontWheel2/CPUParticles").visible = true
-			get_node("BackWheel/CPUParticles").visible = true
-			get_node("BackWheel2/CPUParticles").visible = true
+			get_node("FrontWheel/CPUParticles").emitting = true
+			get_node("FrontWheel2/CPUParticles").emitting = true
+			get_node("BackWheel/CPUParticles").emitting = true
+			get_node("BackWheel2/CPUParticles").emitting = true
 		else:
-			get_node("FrontWheel/CPUParticles").visible = false
-			get_node("FrontWheel2/CPUParticles").visible = false
-			get_node("BackWheel/CPUParticles").visible = false
-			get_node("BackWheel2/CPUParticles").visible = false
+			get_node("FrontWheel/CPUParticles").emitting = false
+			get_node("FrontWheel2/CPUParticles").emitting = false
+			get_node("BackWheel/CPUParticles").emitting = false
+			get_node("BackWheel2/CPUParticles").emitting = false
 

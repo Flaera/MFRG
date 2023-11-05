@@ -55,22 +55,22 @@ func _physics_process(delta):
 		if (calc[2]>0.0 and nitro==true):
 			get_node("lilas_invoker_nitro/CPUParticles").lifetime = 5
 			get_node("lilas_invoker_nitro001/CPUParticles2").lifetime = 5
-			get_node("lilas_invoker_nitro").visible = true
-			get_node("lilas_invoker_nitro001").visible = true
+			get_node("lilas_invoker_nitro/CPUParticles").emitting = true
+			get_node("lilas_invoker_nitro001/CPUParticles2").emitting = true
 		else:
 			get_node("lilas_invoker_nitro/CPUParticles").lifetime = 0.01
 			get_node("lilas_invoker_nitro001/CPUParticles2").lifetime = 0.01
-			get_node("lilas_invoker_nitro").visible = false
-			get_node("lilas_invoker_nitro001").visible = false
+			get_node("lilas_invoker_nitro/CPUParticles").emitting = false
+			get_node("lilas_invoker_nitro001/CPUParticles2").emitting = false
 		#Dust particles:
 		if (rpm_medium>10):
-			get_node("FrontWheel/CPUParticles").visible = true
-			get_node("FrontWheel2/CPUParticles").visible = true
-			get_node("BackWheel/CPUParticles").visible = true
-			get_node("BackWheel2/CPUParticles").visible = true
+			get_node("FrontWheel/CPUParticles").emitting = true
+			get_node("FrontWheel2/CPUParticles").emitting = true
+			get_node("BackWheel/CPUParticles").emitting = true
+			get_node("BackWheel2/CPUParticles").emitting = true
 		else:
-			get_node("FrontWheel/CPUParticles").visible = false
-			get_node("FrontWheel2/CPUParticles").visible = false
-			get_node("BackWheel/CPUParticles").visible = false
-			get_node("BackWheel2/CPUParticles").visible = false
+			get_node("FrontWheel/CPUParticles").emitting = false
+			get_node("FrontWheel2/CPUParticles").emitting = false
+			get_node("BackWheel/CPUParticles").emitting = false
+			get_node("BackWheel2/CPUParticles").emitting = false
 
