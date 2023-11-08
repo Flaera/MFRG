@@ -11,6 +11,9 @@ var timer: float
 var win: int = 0
 var golds: int = 0.0
 var time_end: float = 0.0
+var curr_car_enemy: Object
+var checkpoints: int = 6
+var index_cp: int = 0
 
 
 func _ready():
@@ -23,9 +26,11 @@ func _ready():
 	get_node("car_invoker").add_child(curr_car)
 	#load enemy:
 	var car_loaded_enemy: Object = load("res://scenes/cars/"+car+"_enemy.scn")
-	var curr_car_enemy: Object = car_loaded_enemy.instance()
+	curr_car_enemy = car_loaded_enemy.instance()
 	get_node("car_invoker_enemy").add_child(curr_car_enemy)
-
+	var file_enemy = File.new()
+	file_enemy.open("res://data_files/cp_enemy.txt", File.WRITE)
+	file_enemy.store_16(0)
 
 	camera = preload("res://scenes/camera/camera.scn")
 	curr_cam = camera.instance()
@@ -88,3 +93,12 @@ func _on_Area_body_entered(body):
 		pts = get_node("Timer").time_left*100
 		get_node("CanvasLayer/Control/Control/Label").text = "Você venceu!\n\n0.0 golds"
 		win = 1
+
+
+func _on_Area0_body_entered(body):
+	if (body==curr_car_enemy):
+		index_cp+=1
+		var file = File.new()
+		file.open("res://data_files/cp_enemy.txt",File.WRITE)
+		file.store_string(String(index_cp))
+		file.close()

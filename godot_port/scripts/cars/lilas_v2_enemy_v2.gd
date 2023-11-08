@@ -9,6 +9,7 @@ var INFINITY: int = 1000
 var delta_time_fps: float = 0.0
 #var delta_rot: float = 0.0
 var ray_signal: float = 1.0
+var index_checkpoint: int = 0
 
 
 func _ready():
@@ -22,8 +23,9 @@ func _ready():
 	weight = 1000
 
 
-func look_at_checkpoint(var target: Node):
-	var danger_zones: Array = [0,0,0,0,0,0,0]
+func look_at_checkpoint(var target: Spatial):
+	var interest_zones: Array = [0,0,0,0,0,0]
+	var target_node: Area = target.get_node("Area0")
 	var raycast_l90: RayCast = get_node("RayCast/RayCastL90")
 	var raycast_l30: RayCast = get_node("RayCast/RayCastL30")
 	var raycast_l60: RayCast = get_node("RayCast/RayCastL60")
@@ -31,38 +33,60 @@ func look_at_checkpoint(var target: Node):
 	var raycast_r30: RayCast = get_node("RayCast/RayCastR30")
 	var raycast_r60: RayCast = get_node("RayCast/RayCastR60")
 	var raycast_front: RayCast = get_node("RayCast/RayCastFront")
-	if (raycast_front.get_collider()==target):
+	if (raycast_front.get_collider()==target_node):
+		print("ACHOU!!")
 		axis.x = 0.0
 	else:
-		if (raycast_l90.get_collider()!=null): danger_zones[0]=1
-		if (raycast_l30.get_collider()!=null): danger_zones[1]=1
-		if (raycast_l60.get_collider()!=null): danger_zones[2]=1
-		if (raycast_r90.get_collider()!=null): danger_zones[3]=1
-		if (raycast_r30.get_collider()!=null): danger_zones[4]=1
-		if (raycast_r60.get_collider()!=null): danger_zones[5]=1
-		if (raycast_front.get_collider()!=null): danger_zones[6]=1
+		if (raycast_l90.get_collider()==target_node): interest_zones[0]=1
+		if (raycast_l30.get_collider()==target_node): interest_zones[1]=1
+		if (raycast_l60.get_collider()==target_node): interest_zones[2]=1
+		if (raycast_r90.get_collider()==target_node): interest_zones[3]=1
+		if (raycast_r30.get_collider()==target_node): interest_zones[4]=1
+		if (raycast_r60.get_collider()==target_node): interest_zones[5]=1
 		var acc_left: int = 0
 		var acc_right: int = 0
 		var acc_general: int = 0
-		for i in danger_zones:
+		for i in interest_zones:
 			if (acc_general<3 and i==1):
 				acc_left+=1
 			if (acc_general>=3 and acc_general<6 and i==1):
 				acc_right+=1
 			acc_general+=1
+		#print("accr=",acc_right," accl=",acc_left)
 		if (acc_right>acc_left):
-			axis.x = 1.0
+			axis.x = -1.0#translation.angle_to(target.global_translation)
 		elif (acc_right<acc_left):
-			axis.x = -1.0
+			axis.x = 1.0
 		else:
-			axis.x = -1.0
+			axis.x = 0.0
 	#print(raycast_front.get_collider(), "|", target, "| axisx: ",axis.x)
 
 
 func actions():
 	#print("trans=",get_node("/root/event1_char1_v2/checkpoint0").translation)
-	look_at_checkpoint(get_node("/root/event1_char1_v2/checkpoint0/StaticBody"))
-	
+	var file = File.new()
+	file.open("res://data_files/cp_enemy.txt",File.READ)
+	index_checkpoint = int(file.get_csv_line()[0])
+	file.close()
+	print("cp=",index_checkpoint)
+	var checkpoint = get_node("/root/event1_char1_v2/checkpoint"+String(index_checkpoint))
+	look_at_checkpoint(checkpoint)
+	#look_at(-car_test.translation, Vector3(0,1,0))
+	#look_at(get_node("/root/event1_char1_v2/checkpoint"+String(index_checkpoint)).translation,Vector3.UP)
+	#var steering_target = get_node("/root/event1_char1_v2/checkpoint"+String(index_checkpoint))
+	#var fwd = self.linear_velocity.normalized()
+	#var target_vector = (steering_target - global_translation)
+	#var distance = target_vector.length()
+	#axis.x = fwd.cross(target_vector.normalized()).y
+	#look_at(steering_target.translation, Vector3(0,1,0))
+	#var direction = steering_target - self.global_translation
+	#var angleto = translation.angle_to(direction)
+	#axis.x = angleto
+	#print("axis.x=",axis.x)
+	#if (steering_value>0.0):
+	#	axis.x = 1.0
+	#else:
+	#	axis.x = -1.0
 	#forever forward:
 	axis.y=1.0
 	brake_pedal=false
