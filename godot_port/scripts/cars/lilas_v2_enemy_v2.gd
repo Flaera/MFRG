@@ -8,8 +8,8 @@ var nitro: bool
 var INFINITY: int = 1000
 var delta_time_fps: float = 0.0
 #var delta_rot: float = 0.0
-var ray_signal: float = 1.0
 var index_checkpoint: int = 0
+var event_name: String
 
 
 func _ready():
@@ -21,6 +21,10 @@ func _ready():
 	car_phys = Cars.new(float(data[1]),float(data[2]),float(data[3]),float(data[4]))
 	#cp_load.new(data[2],data[3],data[4],data[5])
 	weight = 1000
+	var file_event = File.new()
+	file_event.open("res://data_files/event_name.txt", File.READ)
+	event_name = file_event.get_as_text()
+	file_event.close()
 
 
 func look_at_checkpoint(var target: Spatial):
@@ -34,7 +38,7 @@ func look_at_checkpoint(var target: Spatial):
 	var raycast_r60: RayCast = get_node("RayCast/RayCastR60")
 	var raycast_front: RayCast = get_node("RayCast/RayCastFront")
 	if (raycast_front.get_collider()==target_node):
-		print("ACHOU!!")
+		#print("ACHOU!!")
 		axis.x = 0.0
 	else:
 		if (raycast_l90.get_collider()==target_node): interest_zones[0]=1
@@ -68,8 +72,8 @@ func actions():
 	file.open("res://data_files/cp_enemy.txt",File.READ)
 	index_checkpoint = int(file.get_csv_line()[0])
 	file.close()
-	print("cp=",index_checkpoint)
-	var checkpoint = get_node("/root/event1_char1_v2/checkpoint"+String(index_checkpoint))
+	#print("cp=",index_checkpoint)
+	var checkpoint = get_node("/root/"+event_name+"/checkpoint"+String(index_checkpoint))
 	look_at_checkpoint(checkpoint)
 	#look_at(-car_test.translation, Vector3(0,1,0))
 	#look_at(get_node("/root/event1_char1_v2/checkpoint"+String(index_checkpoint)).translation,Vector3.UP)

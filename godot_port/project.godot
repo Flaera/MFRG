@@ -21,7 +21,8 @@ _global_script_class_icons={
 [application]
 
 config/name="MFRG"
-run/main_scene="res://scenes/select_lang/select_lang.tscn"
+run/main_scene="res://scenes/main_intro_game/main_intro_game.tscn"
+boot_splash/show_image=false
 config/icon="res://icon.png"
 
 [autoload]

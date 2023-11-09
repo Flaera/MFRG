@@ -37,7 +37,7 @@ margin_bottom = 34.0
 margin_right = 210.0
 margin_bottom = 20.0
 custom_fonts/font = SubResource( 2 )
-text = "Pause"
+text = "MENU_PAUSE"
 align = 1
 
 [node name="resume" type="Button" parent="CanvasLayer/VBoxContainer"]
@@ -46,7 +46,7 @@ margin_right = 210.0
 margin_bottom = 44.0
 focus_neighbour_top = NodePath("../quit_map")
 theme = ExtResource( 1 )
-text = "Resumir"
+text = "B_BACK"
 
 [node name="quit_map" type="Button" parent="CanvasLayer/VBoxContainer"]
 margin_top = 48.0
@@ -54,7 +54,7 @@ margin_right = 210.0
 margin_bottom = 68.0
 focus_neighbour_bottom = NodePath("../resume")
 theme = ExtResource( 1 )
-text = "Voltar"
+text = "B_MAP"
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/quit_map" to="." method="_on_quit_map_pressed"]

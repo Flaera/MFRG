@@ -50,7 +50,7 @@ DiagZu3,Quem é Maria?,Who's Maria?
 DiagZu4,Logo tu conhece. Tudo que cê tem que fazer agora é fazer o melhor tempo na corrida.\nBora se preparar?,Soon you know. All you have to do now is set the best time in the race.\nLet's get ready?
 DiagZu5,Bora!,Let's go!
 DiagZu6,Beleza!,Okay!
-DiagIua0,"Embora o terreno seja difícil, temos algumas pistas no início da\nfloresta..","Although the terrain is difficult, we have some tracks at the beginning of the forest."
+DiagIua0,"Embora o terreno seja difícil, temos algumas pistas no início da\nfloresta.","Although the terrain is difficult, we have some tracks at the beginning of the forest."
 DiagIua1,Sério? Isso num sabia.,Serious? I didn't know that.
 DiagIua2,Tome cuidado com os espíritos da floresta. Eles podem trazer algum\nmal. Antigas e antigos indígenas que não\ntiveramenterros dignos vagam pela floresta\ne podem te causar algum mau.,Be careful with the forest spirits. They can bring some harm. Ancient and ancient indigenous people who don\nt have any worthy errors roam the forest\n and can cause you some harm.
 DiagIua3,Nem se preocupe! Eu não tenho medo!,Don't even worry! I'm not afraid!
@@ -62,3 +62,10 @@ DiagIua8,"Infelizmente, os home branco foram lá e mataram elas e eles\npor terr
 DiagIua9,Que triste. Eles vagam sem rumo e sem saber pra onde vão…,That sad. They wander aimlessly and without knowing where they are going…
 DiagIua10,"Tudo bem, amiga. A mãe terra esta com a gente. As coisa vão mudar.",Okay friend. Mother Earth is with us. Things will change.
 DiagIua11,Tá certo.,All right!
+RUN_TIME,Corra antes do tempo acabar!,Run before time over!
+YOU_LOSE,Você perdeu!,You lose!
+YOU_WIN,Você venceu!,You win!
+LABEL_RESOLUTION,Resolução da tela,Screen resolution
+B_BACK,Voltar,Back
+MENU_PAUSE,Pausado,Pause
+B_MAP,Ir para mapa,Go to map

@@ -14,7 +14,9 @@ func _on_ButtonContinue_pressed():
 
 
 func _on_ButtonSettings_pressed():
-	pass # Replace with function body.
+	var settings_load = load("res://scenes/main_menu/main_settings.tscn")
+	var settings = settings_load.instance()
+	add_child(settings)
 
 
 func _on_ButtonAbout_pressed():
@@ -23,3 +25,4 @@ func _on_ButtonAbout_pressed():
 
 func _on_ButtonQuit_pressed():
 	get_tree().quit()
+
