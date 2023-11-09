@@ -12,7 +12,7 @@ var win: int = 0
 var golds: int = 0.0
 var time_end: float = 0.0
 var curr_car_enemy: Object
-var checkpoints: int = 6
+var len_checkpoints: int = 15
 var index_cp: int = 0
 
 
@@ -31,6 +31,7 @@ func _ready():
 	var file_enemy = File.new()
 	file_enemy.open("res://data_files/cp_enemy.txt", File.WRITE)
 	file_enemy.store_16(0)
+	file_enemy.close()
 
 	camera = preload("res://scenes/camera/camera.scn")
 	curr_cam = camera.instance()
@@ -53,7 +54,6 @@ func camTransform():
 
 func winPlay(_delta):
 	if (win==1 and !get_node("CanvasLayer/Control/Control/Label/AnimationPlayer").is_playing()):
-		print("AQUI ENTROU")
 		get_node("CanvasLayer/Control/Control/Label/AnimationPlayer").play("anim_you_win")
 		win=2
 	elif (get_node("CanvasLayer/Control/Control/Label/AnimationPlayer").is_playing()):
@@ -66,6 +66,25 @@ func winPlay(_delta):
 	get_node("CanvasLayer/Control/Control/Label").text = "Você venceu!\n\n"+String(golds)+" golds"
 
 
+func playerLoserOrWin(_delta, var time: float):
+	#Loser by oponent first:
+	if (loser==true and !get_node("CanvasLayer/Control/Control/Label3/AnimationPlayer").is_playing()):
+		get_node("CanvasLayer/Control/Control/Label3/AnimationPlayer").play("anim_loser_event")
+	elif (loser==true and get_node("CanvasLayer/Control/Control/Label3/AnimationPlayer").is_playing()):
+		time_end+=_delta
+		if (time_end>=1.5):
+			get_tree().change_scene("res://scenes/map/map.scn")
+	#Loser per time out:
+	if (time<=0.0 and loser==false):
+		get_node("CanvasLayer/Control/Control/Label3/AnimationPlayer").play("anim_loser_event")
+		loser = true
+	elif (time<=0.0 and loser==true and
+	!get_node("CanvasLayer/Control/Control/Label3/AnimationPlayer").is_playing()):
+		get_tree().change_scene("res://scenes/map/map.scn")
+	
+	winPlay(_delta)
+
+
 func _process(_delta):
 	camTransform()
 	var time = get_node("Timer").time_left
@@ -74,29 +93,22 @@ func _process(_delta):
 	get_node("CanvasLayer/Control/Label").text = minutes+":"+seconds
 
 	get_node("Area/AnimationPlayer").play("anim_end_event")
-	
-	if (time<=0.0 and loser==false):
-		get_node("CanvasLayer/Control/Control/Label3/AnimationPlayer").play("anim_loser_event")
-		loser = true
-		print("Step1")
-	elif (time<=0.0 and loser==true and
-	!get_node("CanvasLayer/Control/Control/Label3/AnimationPlayer").is_playing()):
-		get_tree().change_scene("res://scenes/map/map.scn")
-		print("Step2")
-	
-	winPlay(_delta)
+
+	playerLoserOrWin(_delta, time)
 
 
 func _on_Area_body_entered(body):
-	if (get_node("Timer").time_left<timer-0.05):
+	if (get_node("Timer").time_left<timer-0.05 and (body==curr_car)):
 		get_node("Timer").paused = true
 		pts = get_node("Timer").time_left*100
 		get_node("CanvasLayer/Control/Control/Label").text = "Você venceu!\n\n0.0 golds"
 		win = 1
+	elif (body==curr_car_enemy):
+		loser=true
 
 
 func _on_Area0_body_entered(body):
-	if (body==curr_car_enemy):
+	if (body==curr_car_enemy and index_cp<len_checkpoints):
 		index_cp+=1
 		var file = File.new()
 		file.open("res://data_files/cp_enemy.txt",File.WRITE)

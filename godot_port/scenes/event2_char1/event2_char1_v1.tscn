@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/blender2.79_old/assets/event2_char1/event2_char1_color_map.png" type="Texture" id=1]
 [ext_resource path="res://scenes/event2_char1/event2_char1_v1.escn" type="PackedScene" id=2]
@@ -15,6 +15,8 @@ albedo_texture = ExtResource( 1 )
 
 [sub_resource type="ConvexPolygonShape" id=2]
 points = PoolVector3Array( -40.6876, -0.578596, 119.693, 167.979, -0.578596, 155.511, 108.254, -0.701616, 207.14, 47.8065, -4.79394, -295.507, 92.0536, -4.79394, 260.828, 115.245, -0.578596, -303.942, -108.153, -2.68627, 149.214, -21.713, -4.79394, -278.638, 52.0231, -0.578596, -299.725, -61.7435, -4.79394, -110.004, -82.8534, -2.68627, 218.713, 113.109, -4.79394, 220.793, 132.111, -0.578596, -299.725, 73.052, -2.68627, 281.914, -20.3936, -0.713041, 164.496, -108.153, -2.68627, 140.722, 89.9453, -2.68627, -308.159, 81.4851, -2.68627, 279.835, -40.6876, -0.578596, 132.345, 79.4309, -2.68627, -308.159, -76.5286, -2.68627, 222.93, 49.9148, -4.79394, -284.935, 134.219, -0.578596, -276.558, -44.9042, -2.68627, 235.582, -87.07, -2.68627, 208.141, 70.9977, -2.68627, -306.022, 104.73, -4.79394, 237.662 )
+
+[sub_resource type="BoxShape" id=3]
 
 [node name="event2_char1_v1" instance=ExtResource( 2 )]
 script = ExtResource( 8 )
@@ -39,7 +41,10 @@ shape = SubResource( 2 )
 [node name="car_invoker" parent="." index="4"]
 transform = Transform( -0.652958, 0, -0.757394, 0, 1, 0, 0.757394, 0, -0.652958, -8.71952, 2.34642, -7.22627 )
 
-[node name="sun01" type="DirectionalLight" parent="." index="5"]
+[node name="car_invoker_enemy" type="Spatial" parent="." index="5"]
+transform = Transform( -0.147292, 0, 0.989093, 0, 1, 0, -0.989093, 0, -0.147292, -4.68187, 4.69284, -1.41266 )
+
+[node name="sun01" type="DirectionalLight" parent="." index="6"]
 transform = Transform( 0.938046, -0.0907127, 0.334425, -0.34651, -0.245571, 0.905332, 0, -0.965125, -0.26179, -9.13218, 32.4818, -6.08812 )
 light_color = Color( 1, 0.989059, 0.882005, 1 )
 light_energy = 0.262
@@ -53,14 +58,24 @@ directional_shadow_normal_bias = 0.0
 directional_shadow_bias_split_scale = 0.0
 directional_shadow_depth_range = 1
 
-[node name="wall_event2_char1_v1" parent="." index="6" instance=ExtResource( 3 )]
+[node name="wall_event2_char1_v1" parent="." index="7" instance=ExtResource( 3 )]
 visible = false
 
-[node name="rampa_event1_char1_v2" parent="." index="7" instance=ExtResource( 7 )]
+[node name="rampa_event1_char1_v2" parent="." index="8" instance=ExtResource( 7 )]
 transform = Transform( 0.404516, 0.234379, -0.883987, -0.0975264, 0.972145, 0.213124, 0.909316, 0, 0.416106, -41.0459, -5.07262, -163.326 )
 
-[node name="no_collision_v2_event2_char1_v1" parent="." index="8" instance=ExtResource( 9 )]
+[node name="no_collision_v2_event2_char1_v1" parent="." index="9" instance=ExtResource( 9 )]
 
-[node name="no_collision_v3_event2_char1_v1" parent="." index="9" instance=ExtResource( 4 )]
+[node name="no_collision_v3_event2_char1_v1" parent="." index="10" instance=ExtResource( 4 )]
+
+[node name="checkpoint0" type="Spatial" parent="." index="11"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5652, 1.14434, -16.4472 )
+
+[node name="Area0" type="Area" parent="checkpoint0" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="checkpoint0/Area0" index="0"]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
+shape = SubResource( 3 )
 
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
+[connection signal="body_entered" from="checkpoint0/Area0" to="." method="_on_Area0_body_entered"]
