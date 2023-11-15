@@ -1,0 +1,9 @@
+[gd_resource type="SpatialMaterial" load_steps=2 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/galho1_tex.png-e289bcefbfb13b36969261b015ea762f.stex"
+
+[resource]
+flags_transparent = true
+albedo_texture = SubResource( 1 )

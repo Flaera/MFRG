@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/blender2.79_old/assets/assets_event1_char1/planta1_material.tres" type="Material" id=1]
+[ext_resource path="res://assets/blender2.79_old/assets/assets_event1_char1/planta1.escn" type="PackedScene" id=2]
+
+[node name="planta1" instance=ExtResource( 2 )]
+
+[node name="planta1" parent="." index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.615, 0 )
+
+[node name="Plane" parent="planta1" index="0"]
+material/0 = ExtResource( 1 )
+
+[node name="Plane002" parent="planta1" index="1"]
+transform = Transform( -0.368063, -0.565928, 0.415716, -3.16519e-09, 0.46936, 0.638957, -0.702207, 0.296632, -0.217898, 0.92075, 0.0185627, -0.507591 )
+material/0 = ExtResource( 1 )
+
+[node name="Plane003" parent="planta1" index="2"]
+transform = Transform( -0.71508, 0.463624, -0.340565, 8.12935e-08, 0.543322, 0.739643, 0.575267, 0.576303, -0.423337, -0.694344, 0.0804932, -0.825089 )
+material/0 = ExtResource( 1 )
+
+[node name="Plane004" parent="planta1" index="3"]
+material/0 = ExtResource( 1 )
+
+[node name="Plane005" parent="planta1" index="4"]
+material/0 = ExtResource( 1 )
+
+[node name="Plane006" parent="planta1" index="5"]
+material/0 = ExtResource( 1 )
+
+[node name="Plane007" parent="planta1" index="6"]
+material/0 = ExtResource( 1 )
+
+[node name="Plane008" parent="planta1" index="7"]
+material/0 = ExtResource( 1 )

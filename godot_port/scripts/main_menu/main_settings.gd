@@ -14,6 +14,10 @@ func _ready():
 	get_node("CanvasLayer/VBoxContainer/OptionButton").add_item("Full HD - 1920x1080",2)
 	get_node("CanvasLayer/VBoxContainer/OptionButton").add_item("4K - 3840x2160",3)
 	get_node("CanvasLayer/VBoxContainer/OptionButton").grab_focus()
+	var file_screen = File.new()
+	file_screen.open("res://data_files/size_screen.txt", File.READ)
+	var index: int = int(file_screen.get_csv_line()[0])
+	get_node("CanvasLayer/VBoxContainer/OptionButton").selected = index
 
 
 func quit():

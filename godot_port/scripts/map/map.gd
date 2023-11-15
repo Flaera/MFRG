@@ -2,9 +2,82 @@ extends Control
 
 
 func _ready():
-	#Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
-	get_node("PivotButtons/ButtonEvent0").grab_focus()
-	get_node("PivotButtons/AnimationPlayer").play("anim_buttons_map")
+	get_node("PivotIcons/AnimationPlayer").play("anim_buttons_map")
+	var unconfirmed: Object = preload("res://assets/blender2.79_old/textures/event_icons/unconfirmed_icon.png")
+	var confirmed: Object = preload("res://assets/blender2.79_old/textures/event_icons/confirmed_icon.png")
+	var events: Array = []
+	var acc_events: int = 0
+	var acc_events_five = 1
+	var acc_char_three = 1
+	for j in range(0,15,1):
+		var file_events = File.new()
+		file_events.open("res://data_files/event"+String(acc_events_five)+"_char"+String(acc_char_three)+".txt", File.READ)
+		var event_info: int = int(file_events.get_csv_line()[0])
+		file_events.close()
+		events.append(event_info)
+		print("Processing accs=", acc_events, "-", acc_char_three, "-", acc_events_five)
+		if (acc_events!=0 and acc_events_five%5==0):
+			acc_char_three += 1
+			acc_events_five = 1
+		else:
+			acc_events_five += 1
+		acc_events += 1
+	print("event array=", events)
+	var condition0: bool = events[0]==1 and events[1]==1 and events[2]==1 and events[3]==1 and events[4]==1
+	var condition1: bool = events[5]==1 and events[6]==1 and events[7]==1 and events[8]==1 and events[9]==1
+	var condition2: bool = events[10]==1 and events[11]==1 and events[12]==1 and events[13]==1 and events[14]==1
+	if (condition0==true and condition1==false and condition2==false):
+		#Colocar cutscene
+		pass
+	elif (condition0==true and condition1==true and condition2==false):
+		#Colocar cutscene
+		pass
+	elif (condition0==true and condition1==true and condition2==true):
+		#Colocar cutscene
+		pass
+	var acc: int = 0
+	var constant: float = 0.125
+	var file_state = File.new()
+	file_state.open("res://data_files/progress_in_game.txt", File.READ)
+	var state: int = int(file_state.get_csv_line()[0])
+	file_state.close()
+	for i in get_node("PivotIcons/PivotButtons").get_children():
+		if (state==1):
+			if (acc==0):
+				i.get_node("Sprite/TextureRect").set_texture(unconfirmed)
+				i.get_node("Sprite/TextureRect").rect_scale = Vector2(constant,constant)
+				i.visible = true
+			else:
+				i.visible = false
+		elif (state==3 or state==4):
+			if (acc>=0 and acc<=4):
+				i.visible = true
+				if (events[acc]==0):
+					i.get_node("Sprite/TextureRect").set_texture(unconfirmed)
+				else:
+					i.get_node("Sprite/TextureRect").set_texture(confirmed)
+				i.get_node("Sprite/TextureRect").rect_scale = Vector2(constant,constant)
+			else:
+				i.visible = false
+		elif (state==5 or state==6):
+			if (acc>=0 and acc<=9):
+				if (events[acc]==0):
+					i.get_node("Sprite/TextureRect").set_texture(unconfirmed)
+				else:
+					i.get_node("Sprite/TextureRect").set_texture(confirmed)
+				i.get_node("Sprite/TextureRect").rect_scale = Vector2(constant,constant)
+				i.visible = true
+			else:
+				i.visible = false
+		if (state>=7):
+			if (acc>=0 and acc<=14):
+				if (events[acc]==0):
+					i.get_node("Sprite/TextureRect").set_texture(unconfirmed)
+				else:
+					i.get_node("Sprite/TextureRect").set_texture(confirmed)
+			i.visible = true
+			i.get_node("Sprite/TextureRect").rect_scale = Vector2(constant,constant)
+		acc+=1
 
 
 func _process(_delta):
@@ -22,7 +95,6 @@ func _on_ButtonEvent1_pressed():
 
 func _on_ButtonShop_pressed():
 	get_tree().change_scene("res://assets/blender2.79_old/assets/assets_shop_cars/shop.tscn")
-
 
 
 func _on_ButtonGarage_pressed():

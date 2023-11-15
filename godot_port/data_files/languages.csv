@@ -7,7 +7,7 @@ ButtonContinue,Próximo,Next
 ButtonSkip,Pular,Skip
 LabelSir,Senhor,Sr.
 DiagSir0,Faz muito tempo que a burguesia reclamava de uns incômodo\nadvindo das pessoas habitantes da comunidade\nribeirinha do Cortiço de Cabeça de Gato.\nEles recramava e recramava na rádia que nôis era doença e era feio.,"For a long time now, the bourgeoisie has been complaining about some inconveniences\nacoming from the people who live in the\nriverside community of Cortiço de Cabeça de Gato.\nThey repeated and repeated on the radio that we were sick and ugly."
-DiagSir1,"print(index="",index)","They then began\nwith these things of changing, of taking away, of obtaining possession; when we saw\ncome here an order from a malicious judge\n (Coughing interrupts his speech for a moment)."
+DiagSir1,"Eles então começaram com essas cosas de mudar, de tirar, de obter posse; quando vimos chego\naqui uma orde de juiz maldoso – tosse interrompe\na fala dele por um momento.","They then began\nwith these things of changing, of taking away, of obtaining possession; when we saw\ncome here an order from a malicious judge\n (Coughing interrupts his speech for a moment)."
 DiagSir2,"Esta orde dizia pra nôis sair de nossas casa,\nque aquelas casa nossa eles precisavam pegar e pegar o terreno.\nA maioria fico lá, como eu. Porque nascemo e crescemo e… e depois\n","This order told us to leave our houses,\nthat our houses they needed to take and get the land.\nMost of them stay there, like me. Because we are born and we grow and… and then\n"
 DiagSir3,de tanto tempo (Mais uma pausa inesperada por conta da\ntosse) deveríamos sair do lugar. Não pode. Isso tá errado.,after so much time (Another unexpected break due to\ntosse) we should leave the place. It cannot. This is wrong.
 DiagSir4,Perdemo tudo. Foi tudo destruído.\nQuase morri na mão daqueles capangas deles que vestem aquelas\nfarda. Perdemo… Perdemo mermo.,We lost everything. Everything was destroyed.\nI almost died at the hands of those henchmen wearing those\nuniforms. We lost... We really lost.
@@ -45,7 +45,7 @@ B_QUIT,Sair,Quit
 LabelZu,Zu,Zu
 DiagZu0,"Não podemos competir contra os carros da polícia.\nDa última vez que eles vieram aqui eu perdi minha mulher.\nEu não gosto deles. Todo ano, toda vez é isso.","We can't compete against police cars.\nThe last time they came here I lost my wife.\nI don't like them. This is it every year, every time."
 DiagZu1,"Eu ti entendo.\nQueria poder fazer algo, mas... num sei.","I understand.\nI wish I could do something, but... I don't know."
-DiagZu2,"Nem se preocupe com isso, não.\nTemos a Maria ela pode contra qualquier carro da polícia.","Don't worry about that, no.\nWe have Maria, she can take on any police car."
+DiagZu2,"Nem se preocupe com isso, não.\nTemos a Maria ela pode contra qualquer carro da polícia.","Don't worry about that, no.\nWe have Maria, she can take on any police car."
 DiagZu3,Quem é Maria?,Who's Maria?
 DiagZu4,Logo tu conhece. Tudo que cê tem que fazer agora é fazer o melhor tempo na corrida.\nBora se preparar?,Soon you know. All you have to do now is set the best time in the race.\nLet's get ready?
 DiagZu5,Bora!,Let's go!
