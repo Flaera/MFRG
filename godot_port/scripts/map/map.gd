@@ -23,27 +23,40 @@ func _ready():
 			acc_events_five += 1
 		acc_events += 1
 	print("event array=", events)
-	var condition0: bool = events[0]==1 and events[1]==1 and events[2]==1 and events[3]==1 and events[4]==1
-	var condition1: bool = events[5]==1 and events[6]==1 and events[7]==1 and events[8]==1 and events[9]==1
-	var condition2: bool = events[10]==1 and events[11]==1 and events[12]==1 and events[13]==1 and events[14]==1
-	if (condition0==true and condition1==false and condition2==false):
-		#Colocar cutscene
-		pass
-	elif (condition0==true and condition1==true and condition2==false):
-		#Colocar cutscene
-		pass
-	elif (condition0==true and condition1==true and condition2==true):
-		#Colocar cutscene
-		pass
-	var acc: int = 0
-	var constant: float = 0.125
 	var file_state = File.new()
 	file_state.open("res://data_files/progress_in_game.txt", File.READ)
 	var state: int = int(file_state.get_csv_line()[0])
 	file_state.close()
+	var condition0: bool = events[0]==1 and events[1]==1 and events[2]==1 and events[3]==1 and events[4]==1
+	var condition1: bool = events[5]==1 and events[6]==1 and events[7]==1 and events[8]==1 and events[9]==1
+	var condition2: bool = events[10]==1 and events[11]==1 and events[12]==1 and events[13]==1 and events[14]==1
+	if (events[0]==0 and state==0):
+		#Colocar cutscene de prologo da Anne, persona principal, e cutscene da entrada da Anne no RUA
+		var file_state0 = File.new()
+		file_state0.open("res://data_files/progress_in_game.txt", File.WRITE)
+		file_state0.store_string("1")
+		file_state0.close()
+	elif (condition0==true and condition1==true and condition2==false and state==1):
+		#Colocar cutscene
+		var file_state0 = File.new()
+		file_state0.open("res://data_files/progress_in_game.txt", File.WRITE)
+		file_state0.store_string("2")
+		file_state0.close()
+	elif (condition0==true and condition1==true and condition2==true and state==2):
+		#Colocar cutscene
+		var file_state0 = File.new()
+		file_state0.open("res://data_files/progress_in_game.txt", File.WRITE)
+		file_state0.store_string("3")
+		file_state0.close()
+	var acc: int = 0
+	var constant: float = 0.125
 	for i in get_node("PivotIcons/PivotButtons").get_children():
-		if (state==1):
-			if (acc==0):
+		if (state==0 or state==1 or state==2):
+			if (acc==0 and events[0]==0):
+				i.get_node("Sprite/TextureRect").set_texture(unconfirmed)
+				i.get_node("Sprite/TextureRect").rect_scale = Vector2(constant,constant)
+				i.visible = true
+			elif (events[0]==1 and acc>=0 and acc<=4):
 				i.get_node("Sprite/TextureRect").set_texture(unconfirmed)
 				i.get_node("Sprite/TextureRect").rect_scale = Vector2(constant,constant)
 				i.visible = true

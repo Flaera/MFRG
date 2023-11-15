@@ -14,10 +14,12 @@ var time_end: float = 0.0
 var curr_car_enemy: Object
 var len_checkpoints: int = 15
 var index_cp: int = 0
+onready var event_name0: String
 
 
 func _ready():
 	var event_name: String = "event1_char1_v3" # Deve ser mesmo nome do node e do file
+	event_name0 = "event1_char1" # Deve ser o nome para progressao do game
 	var file_event = File.new()
 	file_event.open("res://data_files/event_name.txt", File.WRITE)
 	file_event.store_string(event_name)
@@ -80,6 +82,12 @@ func winPlay(_delta):
 			file_golds1.open("res://data_files/gold.txt", File.WRITE)
 			file_golds1.store_string(String(curr_golds))
 			file_golds1.close()
+			
+			var file_event = File.new()
+			file_event.open("res://data_files/"+event_name0+".txt", File.WRITE)
+			file_event.store_string("1")
+			file_event.close()
+			
 			get_tree().change_scene("res://scenes/map/map.scn")
 		get_node("CanvasLayer/Control/Control/Label4").text = String(golds)+" golds"
 
