@@ -23,6 +23,8 @@ func saveStyle(var index: int):
 
 
 func _ready():
+	MusicController.music_play()
+	
 	index_anne = 9
 	get_node("ButtonLeft").grab_focus()
 

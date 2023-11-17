@@ -69,3 +69,6 @@ LABEL_RESOLUTION,Resolução da tela,Screen resolution
 B_BACK,Voltar,Back
 MENU_PAUSE,Pausado,Pause
 B_MAP,Ir para mapa,Go to map
+LEVEL_LABEL,Nível atual,Current level
+LOADING_LABEL,Carregando…,Loading…
+LABEL_NEW_GAME,Quer iniciar uma nova jogatina?,Do you want to start a new game?

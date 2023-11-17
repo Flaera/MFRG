@@ -21,7 +21,7 @@ func _on_ButtonYes_pressed():
 	file.open("res://data_files/data_permission.txt", File.WRITE)
 	file.store_string("1")
 	file.close()
-	get_tree().change_scene("res://scenes/intro_game_talk/intro_game_talk.scn")
+	get_tree().change_scene("res://scenes/menu_group_choice/menu_group_choice2.scn")
 
 
 func _on_ButtonNo_pressed():
@@ -29,4 +29,4 @@ func _on_ButtonNo_pressed():
 	file.open("res://data_files/data_permission.txt", File.WRITE)
 	file.store_string("0")
 	file.close()
-	get_tree().change_scene("res://scenes/intro_game_talk/intro_game_talk.scn")
+	get_tree().change_scene("res://scenes/menu_group_choice/menu_group_choice2.scn")

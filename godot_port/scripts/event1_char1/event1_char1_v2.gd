@@ -88,7 +88,7 @@ func winPlay(_delta):
 			file_event.store_string("1")
 			file_event.close()
 			
-			get_tree().change_scene("res://scenes/map/map.scn")
+			get_tree().change_scene("res://scenes/progress_game/progress_game.tscn")
 		get_node("CanvasLayer/Control/Control/Label4").text = String(golds)+" golds"
 
 
@@ -99,14 +99,14 @@ func playerLoserOrWin(_delta, var time: float):
 	elif (loser==true and get_node("CanvasLayer/Control/Control/Label3/AnimationPlayer").is_playing()):
 		time_end+=_delta
 		if (time_end>=1.5):
-			get_tree().change_scene("res://scenes/map/map.scn")
+			get_tree().change_scene("res://scenes/progress_game/progress_game.tscn")
 	#Loser per time out:
 	if (time<=0.0 and loser==false):
 		get_node("CanvasLayer/Control/Control/Label3/AnimationPlayer").play("anim_loser_event")
 		loser = true
 	elif (time<=0.0 and loser==true and
 	!get_node("CanvasLayer/Control/Control/Label3/AnimationPlayer").is_playing()):
-		get_tree().change_scene("res://scenes/map/map.scn")
+		get_tree().change_scene("res://scenes/progress_game/progress_game.tscn")
 	
 	winPlay(_delta)
 

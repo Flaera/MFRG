@@ -5,6 +5,7 @@ var rotate_y: float = 0.0
 var car_loaded: Object
 var cars_list = []
 var acc: int
+var cars: Dictionary = {}
 
 
 func loadCarList():
@@ -25,6 +26,7 @@ func loadCarList():
 
 
 func _ready():
+	cars = preload("res://data_files/cars_specs.gd").new().specs
 	loadCarList()	
 	print("acc=",acc)
 	car_loaded = load("res://scenes/cars/"+cars_list[acc]+"_only_asset.tscn")
@@ -142,6 +144,15 @@ func sellCar(var index: int):
 					file.store_string(j)
 			acc2+=1
 		file.close()
+		var file_gold = File.new()
+		file_gold.open("res://data_files/gold.txt", File.READ)
+		var curr_gold: int = int(file_gold.get_csv_line()[0])
+		file_gold.close()
+		curr_gold = curr_gold+int(cars[cars_list[index]][0]/2)
+		var file_gold2 = File.new()
+		file_gold2.open("res://data_files/gold.txt", File.WRITE)
+		file_gold2.store_string(String( (curr_gold) ))
+		file_gold2.close()
 		loadCarList()
 		carSelect(acc)
 		changeCar(acc)

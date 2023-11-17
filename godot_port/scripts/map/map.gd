@@ -53,44 +53,43 @@ func _ready():
 	for i in get_node("PivotIcons/PivotButtons").get_children():
 		if (state==0 or state==1 or state==2):
 			if (acc==0 and events[0]==0):
-				i.get_node("Sprite/TextureRect").set_texture(unconfirmed)
-				i.get_node("Sprite/TextureRect").rect_scale = Vector2(constant,constant)
 				i.visible = true
 			elif (events[0]==1 and acc>=0 and acc<=4):
-				i.get_node("Sprite/TextureRect").set_texture(unconfirmed)
-				i.get_node("Sprite/TextureRect").rect_scale = Vector2(constant,constant)
 				i.visible = true
 			else:
 				i.visible = false
 		elif (state==3 or state==4):
-			if (acc>=0 and acc<=4):
+			if (acc>=0 and acc<=9):
 				i.visible = true
-				if (events[acc]==0):
-					i.get_node("Sprite/TextureRect").set_texture(unconfirmed)
-				else:
-					i.get_node("Sprite/TextureRect").set_texture(confirmed)
-				i.get_node("Sprite/TextureRect").rect_scale = Vector2(constant,constant)
 			else:
 				i.visible = false
 		elif (state==5 or state==6):
-			if (acc>=0 and acc<=9):
-				if (events[acc]==0):
-					i.get_node("Sprite/TextureRect").set_texture(unconfirmed)
-				else:
-					i.get_node("Sprite/TextureRect").set_texture(confirmed)
-				i.get_node("Sprite/TextureRect").rect_scale = Vector2(constant,constant)
+			if (acc>=0 and acc<=14):
 				i.visible = true
 			else:
 				i.visible = false
 		if (state>=7):
-			if (acc>=0 and acc<=14):
-				if (events[acc]==0):
-					i.get_node("Sprite/TextureRect").set_texture(unconfirmed)
-				else:
-					i.get_node("Sprite/TextureRect").set_texture(confirmed)
 			i.visible = true
-			i.get_node("Sprite/TextureRect").rect_scale = Vector2(constant,constant)
 		acc+=1
+	
+	##############################################
+	var file_event1_char1 = File.new()
+	file_event1_char1.open("res://data_files/event1_char1.txt", File.READ)
+	if int(file_event1_char1.get_csv_line()[0])==1:
+		get_node("PivotIcons/PivotButtons/ButtonEvent0/Sprite/TextureRect").set_texture(confirmed)
+	else:get_node("PivotIcons/PivotButtons/ButtonEvent0/Sprite/TextureRect").set_texture(unconfirmed)
+	get_node("PivotIcons/PivotButtons/ButtonEvent0/Sprite/TextureRect").rect_scale = Vector2(constant, constant)
+	file_event1_char1.close()
+	
+	var file_event2_char1 = File.new()
+	file_event2_char1.open("res://data_files/event2_char1.txt", File.READ)
+	if int(file_event2_char1.get_csv_line()[0])==1:
+		get_node("PivotIcons/PivotButtons/ButtonEvent1/Sprite/TextureRect").set_texture(confirmed)
+	else:get_node("PivotIcons/PivotButtons/ButtonEvent1/Sprite/TextureRect").set_texture(unconfirmed)
+	get_node("PivotIcons/PivotButtons/ButtonEvent1/Sprite/TextureRect").rect_scale = Vector2(constant, constant)
+	file_event2_char1.close()
+	
+	##############################################
 
 
 func _process(_delta):

@@ -1,0 +1,82 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/themeMFRG.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/progress_game/progress_game.gd" type="Script" id=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/tri_lv1.png-9c3bbdd89b84925a2809be86612ba052.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/tri_lv2.png-8b7598851a9246487f27549840d271bf.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/tri_lv3.png-59bb37fe8feeebc96666318747d6b9e2.stex"
+
+[node name="progress_game" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -145.37
+margin_right = 978.0
+margin_bottom = 696.63
+rect_scale = Vector2( 0.633, 0.67 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+margin_right = 1618.0
+margin_bottom = 882.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+margin_right = 338.0
+margin_bottom = 882.0
+texture = SubResource( 1 )
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+margin_left = 342.0
+margin_right = 676.0
+margin_bottom = 882.0
+texture = SubResource( 2 )
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+margin_left = 680.0
+margin_right = 1018.0
+margin_bottom = 882.0
+texture = SubResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.490196 )
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchor_right = 1.0
+margin_left = 12.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = 34.0
+theme = ExtResource( 1 )
+text = "LEVEL_LABEL"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -144.0
+margin_top = -30.0
+margin_right = 144.0
+margin_bottom = -10.0
+theme = ExtResource( 1 )
+text = "LOADING_LABEL"
+align = 1
+valign = 1

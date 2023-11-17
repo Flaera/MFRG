@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/blender2.79_old/assets/garage/garage_v2.escn" type="PackedScene" id=1]
 [ext_resource path="res://assets/blender2.79_old/assets/garage/vila/color_map.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://scripts/garage/garage.gd" type="Script" id=7]
 [ext_resource path="res://scenes/themeMFRG.tres" type="Theme" id=8]
 [ext_resource path="res://scenes/specs/ui_specs.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/golds/golds.tscn" type="PackedScene" id=10]
 
 [sub_resource type="SpatialMaterial" id=7]
 
@@ -45,7 +46,9 @@ script = ExtResource( 7 )
 
 [node name="Control" parent="." index="0" instance=ExtResource( 9 )]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." index="1"]
+[node name="HBoxContainer" parent="." index="1" instance=ExtResource( 10 )]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="2"]
 
 [node name="SELECT_CAR" type="Label" parent="CanvasLayer" index="0"]
 margin_top = 5.0
@@ -121,10 +124,10 @@ margin_bottom = 20.0
 theme = ExtResource( 8 )
 text = "B_Sell_Car"
 
-[node name="invoker" type="Spatial" parent="." index="2"]
+[node name="invoker" type="Spatial" parent="." index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11472, 0 )
 
-[node name="Spatial" type="Spatial" parent="." index="3"]
+[node name="Spatial" type="Spatial" parent="." index="4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11472, 0 )
 
 [node name="Spatial" type="Spatial" parent="Spatial" index="0"]
@@ -136,86 +139,86 @@ size = 7.31429
 near = 0.1
 far = 200.0
 
-[node name="guindaste001" parent="." index="4"]
+[node name="guindaste001" parent="." index="5"]
 visible = false
 
-[node name="monte_lixo1001" parent="." index="5"]
+[node name="monte_lixo1001" parent="." index="6"]
 visible = false
 material/0 = SubResource( 7 )
 
-[node name="guindaste" parent="." index="6"]
+[node name="guindaste" parent="." index="7"]
 visible = false
 
-[node name="bg_morro_florest018" parent="." index="30"]
+[node name="bg_morro_florest018" parent="." index="31"]
 material/0 = SubResource( 8 )
 
-[node name="bg_morro_florest017" parent="." index="31"]
+[node name="bg_morro_florest017" parent="." index="32"]
 material/0 = SubResource( 8 )
 
-[node name="bg_morro_florest016" parent="." index="32"]
+[node name="bg_morro_florest016" parent="." index="33"]
 material/0 = SubResource( 8 )
 
-[node name="bg_morro_florest015" parent="." index="33"]
+[node name="bg_morro_florest015" parent="." index="34"]
 material/0 = SubResource( 8 )
 
-[node name="bg_morro_florest014" parent="." index="34"]
+[node name="bg_morro_florest014" parent="." index="35"]
 material/0 = SubResource( 8 )
 
-[node name="bg_morro_florest013" parent="." index="35"]
+[node name="bg_morro_florest013" parent="." index="36"]
 material/0 = SubResource( 8 )
 
-[node name="bg_morro_florest012" parent="." index="36"]
+[node name="bg_morro_florest012" parent="." index="37"]
 material/0 = SubResource( 8 )
 
-[node name="bg_morro_florest011" parent="." index="37"]
+[node name="bg_morro_florest011" parent="." index="38"]
 material/0 = SubResource( 8 )
 
-[node name="bg_morro_florest010" parent="." index="38"]
+[node name="bg_morro_florest010" parent="." index="39"]
 material/0 = SubResource( 8 )
 
-[node name="bg_morro_florest009" parent="." index="39"]
+[node name="bg_morro_florest009" parent="." index="40"]
 material/0 = SubResource( 8 )
 
-[node name="bg_morro_florest008" parent="." index="40"]
+[node name="bg_morro_florest008" parent="." index="41"]
 material/0 = SubResource( 8 )
 
-[node name="bg_morro_florest007" parent="." index="41"]
+[node name="bg_morro_florest007" parent="." index="42"]
 material/0 = SubResource( 8 )
 
-[node name="bg_morro_florest006" parent="." index="42"]
+[node name="bg_morro_florest006" parent="." index="43"]
 material/0 = SubResource( 8 )
 
-[node name="bg_morro_florest005" parent="." index="43"]
+[node name="bg_morro_florest005" parent="." index="44"]
 material/0 = SubResource( 8 )
 
-[node name="bg_morro_florest004" parent="." index="44"]
+[node name="bg_morro_florest004" parent="." index="45"]
 material/0 = SubResource( 8 )
 
-[node name="bg_morro_florest003" parent="." index="45"]
+[node name="bg_morro_florest003" parent="." index="46"]
 material/0 = SubResource( 8 )
 
-[node name="bg_morro_florest002" parent="." index="46"]
+[node name="bg_morro_florest002" parent="." index="47"]
 material/0 = SubResource( 8 )
 
-[node name="bg_morro_florest001" parent="." index="47"]
+[node name="bg_morro_florest001" parent="." index="48"]
 material/0 = SubResource( 8 )
 
-[node name="bg_morro_florest" parent="." index="48"]
+[node name="bg_morro_florest" parent="." index="49"]
 material/0 = SubResource( 8 )
 
-[node name="large_calcada002" parent="." index="81"]
+[node name="large_calcada002" parent="." index="82"]
 material/0 = SubResource( 1 )
 
-[node name="vila" parent="." index="92"]
+[node name="vila" parent="." index="93"]
 material/0 = SubResource( 2 )
 
-[node name="large_calcada001" parent="." index="101"]
+[node name="large_calcada001" parent="." index="102"]
 material/0 = SubResource( 1 )
 
-[node name="calcada001" parent="." index="103"]
+[node name="calcada001" parent="." index="104"]
 material/0 = SubResource( 3 )
 
-[node name="calcada" parent="." index="104"]
+[node name="calcada" parent="." index="105"]
 material/0 = SubResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="calcada" index="0"]
@@ -223,7 +226,7 @@ material/0 = SubResource( 1 )
 [node name="CollisionShape" type="CollisionShape" parent="calcada/StaticBody" index="0"]
 shape = SubResource( 9 )
 
-[node name="ground" parent="." index="106"]
+[node name="ground" parent="." index="107"]
 material/0 = SubResource( 4 )
 
 [node name="StaticBody" type="StaticBody" parent="ground" index="0"]
@@ -231,25 +234,25 @@ material/0 = SubResource( 4 )
 [node name="CollisionShape" type="CollisionShape" parent="ground/StaticBody" index="0"]
 shape = SubResource( 10 )
 
-[node name="house_main" parent="." index="107"]
+[node name="house_main" parent="." index="108"]
 material/0 = SubResource( 6 )
 
 [node name="house_fundation002" parent="house_main" index="2"]
 material/0 = SubResource( 1 )
 
-[node name="Sun" parent="." index="108"]
+[node name="Sun" parent="." index="109"]
 light_color = Color( 0.498039, 0.498039, 0.254902, 1 )
 
-[node name="lilas_garage" parent="." index="111"]
+[node name="lilas_garage" parent="." index="112"]
 material/0 = SubResource( 5 )
 
-[node name="monte_lixo1002" parent="." index="113"]
+[node name="monte_lixo1002" parent="." index="114"]
 visible = false
 
-[node name="monte_lixo2001" parent="." index="114"]
+[node name="monte_lixo2001" parent="." index="115"]
 visible = false
 
-[node name="monte_lixo1" parent="." index="118"]
+[node name="monte_lixo1" parent="." index="119"]
 visible = false
 
 [connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/HBoxContainer0/B_CARRO_1" to="." method="_on_B_CARRO_1_mouse_entered"]
