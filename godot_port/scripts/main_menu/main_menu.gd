@@ -1,18 +1,32 @@
 extends Control
 
 
+var ng_load: Object
+
+
 func _ready():
-	get_node("VBoxContainer/ButtonNG").grab_focus()
+	ng_load = preload("res://scenes/main_menu/new_game_conf_screen.tscn")
+	var file_state = File.new()
+	file_state.open("res://data_files/progress_in_game.txt", File.READ)
+	if (int(file_state.get_csv_line()[0])==0):
+		get_node("VBoxContainer/ButtonNG").grab_focus()
+	else:
+		get_node("VBoxContainer/ButtonContinue").grab_focus()
 
 
 func _on_ButtonNG_pressed():
-	var ng_load = load("res://scenes/main_menu/new_game_conf_screen.tscn")
 	var ng = ng_load.instance()
 	add_child(ng)
 
 
 func _on_ButtonContinue_pressed():
-	get_tree().change_scene("res://scenes/progress_game/progress_game.tscn")
+	var file_state = File.new()
+	file_state.open("res://data_files/progress_in_game.txt", File.READ)
+	if (int(file_state.get_csv_line()[0])==0):
+		var ng = ng_load.instance()
+		add_child(ng)
+	else:
+		get_tree().change_scene("res://scenes/progress_game/progress_game.tscn")
 
 
 

@@ -48,5 +48,5 @@ func _on_B_YES_pressed():
 		else:
 			acc_events += 1
 
-	get_tree().change_scene("res://scenes/progress_game/progress_game.tscn")
+	get_tree().change_scene("res://scenes/ng_prologue/ng_prologue.tscn")
 

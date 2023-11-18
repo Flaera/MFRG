@@ -31,7 +31,9 @@ func _ready():
 	var condition1: bool = events[5]==1 and events[6]==1 and events[7]==1 and events[8]==1 and events[9]==1
 	var condition2: bool = events[10]==1 and events[11]==1 and events[12]==1 and events[13]==1 and events[14]==1
 	if (events[0]==0 and state==0):
-		#Colocar cutscene de prologo da Anne, persona principal, e cutscene da entrada da Anne no RUA
+		#cutscene da entrada da Anne no RUA
+		var scene: Object = preload("res://scenes/dialog_carlos_intro/dialog_carlos_intro.scn")
+		add_child(scene.instance())
 		var file_state0 = File.new()
 		file_state0.open("res://data_files/progress_in_game.txt", File.WRITE)
 		file_state0.store_string("1")

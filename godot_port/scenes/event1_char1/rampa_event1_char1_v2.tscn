@@ -41,4 +41,5 @@ material/0 = SubResource( 3 )
 shape = SubResource( 4 )
 
 [node name="rampa2_30g" parent="." index="1"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
 visible = false
