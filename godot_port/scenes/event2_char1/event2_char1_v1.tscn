@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/blender2.79_old/assets/event2_char1/event2_char1_color_map.png" type="Texture" id=1]
 [ext_resource path="res://scenes/event2_char1/event2_char1_v1.escn" type="PackedScene" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://scenes/event1_char1/rampa_event1_char1_v2.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scripts/event2_char1/event2_char1_v1.gd" type="Script" id=8]
 [ext_resource path="res://scenes/event2_char1/no_collision_v2_event2_char1_v1.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/blender2.79_old/assets/assets_event1_char1/car_abandoned2.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/blender2.79_old/assets/assets_event1_char1/car_abandoned1.tscn" type="PackedScene" id=11]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 1 )
@@ -284,6 +286,27 @@ shape = SubResource( 3 )
 
 [node name="rampa_event1_char1_v2" parent="." index="34" instance=ExtResource( 7 )]
 transform = Transform( 0.275352, 0, -0.961343, 0, 1, 0, 0.961343, 0, 0.275352, -38.57, -4.5759, -154.376 )
+
+[node name="RigidBody" parent="." index="35" instance=ExtResource( 11 )]
+transform = Transform( 0.750688, 0, -0.660657, 0, 1, 0, 0.660657, 0, 0.750688, 8.11332, -5.1363, 7.96992 )
+
+[node name="RigidBody5" parent="." index="36" instance=ExtResource( 11 )]
+transform = Transform( 0.750688, 0, -0.660657, 0, 1, 0, 0.660657, 0, 0.750688, -46.4992, -2.22, -38.5111 )
+
+[node name="RigidBody7" parent="." index="37" instance=ExtResource( 11 )]
+transform = Transform( -0.561607, 0, 0.827404, 0, 1, 0, -0.827404, 0, -0.561607, -102.639, -2.06267, -348.104 )
+
+[node name="RigidBody3" parent="." index="38" instance=ExtResource( 11 )]
+transform = Transform( 0.891054, 0, -0.453897, 0, 1, 0, 0.453897, 0, 0.891054, -3.39532, -5.1363, -19.7741 )
+
+[node name="RigidBody2" parent="." index="39" instance=ExtResource( 10 )]
+transform = Transform( 0.851352, 0, -0.524595, 0, 1, 0, 0.524595, 0, 0.851352, -5.17079, -3.19634, 6.078 )
+
+[node name="RigidBody4" parent="." index="40" instance=ExtResource( 10 )]
+transform = Transform( 0.665712, 0, -0.746208, 0, 1, 0, 0.746208, 0, 0.665712, -47.615, -2.0059, -34.985 )
+
+[node name="RigidBody6" parent="." index="41" instance=ExtResource( 10 )]
+transform = Transform( 0.665712, 0, -0.746208, 0, 1, 0, 0.746208, 0, 0.665712, -40.7065, -1.3503, -112.357 )
 
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
 [connection signal="body_entered" from="checkpoint0/Area0" to="." method="_on_Area0_body_entered"]
