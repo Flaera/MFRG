@@ -47,7 +47,7 @@ func _physics_process(delta):
 		get_node("Control/CanvasLayer/ProgressBar").value = calc[2]
 		var rpm_medium = (get_node("BackWheel").get_rpm()+get_node("BackWheel2").get_rpm())/2
 		var velocity = abs(int((rpm_medium)/1.785714286))#abs(int(33.02*0.001885*rpm_medium))
-		#print(" --- ",velocity)
+		
 		get_node("Control/CanvasLayer/velo").text = String(velocity)
 		get_node("Control/CanvasLayer/pointer").rotation_degrees = ((2*velocity)/2.307)-130 
 		
