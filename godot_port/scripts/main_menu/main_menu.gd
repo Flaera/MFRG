@@ -37,9 +37,14 @@ func _on_ButtonSettings_pressed():
 
 
 func _on_ButtonAbout_pressed():
-	pass # Replace with function body.
+	var about_load = load("res://scenes/main_menu/about_main_menu.tscn")
+	add_child(about_load.instance())
 
 
 func _on_ButtonQuit_pressed():
 	get_tree().quit()
 
+
+
+func _on_VideoPlayer_finished():
+	get_node("VideoPlayer").play()

@@ -23,7 +23,8 @@ _global_script_class_icons={
 config/name="MFRG"
 run/main_scene="res://scenes/main_intro_game/main_intro_game.tscn"
 boot_splash/show_image=false
-config/icon="res://icon.png"
+config/icon="res://assets/blender2.79_old/textures/icon_project/icon_v3.png"
+config/windows_native_icon="res://assets/blender2.79_old/textures/icon_project/icon_v2.ico"
 
 [autoload]
 
@@ -33,9 +34,11 @@ MusicController="*res://scenes/musics/music_controller.tscn"
 
 window/size/width=640
 window/size/height=360
+window/size/fullscreen=true
 window/size/test_width=640
 window/size/test_height=360
 window/handheld/orientation="portrait"
+mouse_cursor/custom_image="res://assets/blender2.79_old/textures/icon_project/mouse_icon.png"
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 

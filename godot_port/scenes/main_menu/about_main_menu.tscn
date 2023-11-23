@@ -1,0 +1,69 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/themeMFRG.tres" type="Theme" id=1]
+[ext_resource path="res://scenes/themeMFRGLabelDark.tres" type="Theme" id=2]
+[ext_resource path="res://scripts/main_menu/about_main_menu.gd" type="Script" id=3]
+
+[node name="ControlAbout" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -300.0
+margin_top = -150.0
+margin_right = 300.0
+margin_bottom = 150.0
+theme = ExtResource( 2 )
+color = Color( 0, 0, 0, 0.509804 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -284.0
+margin_top = -142.0
+margin_right = 284.0
+margin_bottom = 143.0
+
+[node name="LabelTitle" type="Label" parent="CanvasLayer/ColorRect/VBoxContainer"]
+margin_right = 568.0
+margin_bottom = 20.0
+theme = ExtResource( 1 )
+text = "L_ABOUT_TITLE"
+align = 1
+valign = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/ColorRect/VBoxContainer"]
+margin_top = 24.0
+margin_right = 568.0
+margin_bottom = 244.0
+rect_min_size = Vector2( 0, 220 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer"]
+margin_right = 568.0
+margin_bottom = 20.0
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_right = 568.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 568, 0 )
+theme = ExtResource( 1 )
+text = "ABOUT_TEXT"
+autowrap = true
+
+[node name="B_BACK" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
+margin_top = 248.0
+margin_right = 568.0
+margin_bottom = 268.0
+theme = ExtResource( 1 )
+text = "B_BACK"
+
+[connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/B_BACK" to="." method="_on_B_NO_pressed"]
