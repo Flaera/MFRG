@@ -8,7 +8,7 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	get_node("CanvasLayer/ColorRect/VBoxContainer/B_NO").grab_focus()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -16,6 +16,7 @@ func _ready():
 
 
 func _on_B_NO_pressed():
+	get_node("/root/ControlMenu/VBoxContainer/ButtonNG").grab_focus()
 	queue_free()
 
 
@@ -25,6 +26,11 @@ func _on_B_YES_pressed():
 	file_init_car.open("res://data_files/car_selected.txt", File.WRITE)
 	file_init_car.store_string("lilas")
 	file_init_car.close()
+	
+	var file_cars = File.new()
+	file_cars.open("res://data_files/player_cars.txt", File.WRITE)
+	file_cars.store_string("lilas\nVAZIO\nVAZIO")
+	file_cars.close()
 	
 	var file_golds = File.new()
 	file_golds.open("res://data_files/gold.txt", File.WRITE)
