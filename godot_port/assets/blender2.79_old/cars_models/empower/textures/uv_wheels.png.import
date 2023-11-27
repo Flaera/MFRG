@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/color_map_main.png-c398226081b95ae81fd39ce13090b2fa.stex"
+path="res://.import/uv_wheels.png-d17305bbdcc92f7b149862eadb48f5db.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/blender2.79_old/cars_models/no_named/textures/color_map_main.png"
-dest_files=[ "res://.import/color_map_main.png-c398226081b95ae81fd39ce13090b2fa.stex" ]
+source_file="res://assets/blender2.79_old/cars_models/empower/textures/uv_wheels.png"
+dest_files=[ "res://.import/uv_wheels.png-d17305bbdcc92f7b149862eadb48f5db.stex" ]
 
 [params]
 

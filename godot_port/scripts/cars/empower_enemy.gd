@@ -115,11 +115,11 @@ func _physics_process(delta):
 		
 		#Nitro particles:
 		if (calc[2]>0.0 and nitro==true):
-			get_node("roots_invoker_nitro/CPUParticles").emitting = true
-			get_node("roots_invoker_nitro2/CPUParticles").emitting = true
+			get_node("empower_invoker_nitro/CPUParticles").emitting = true
+			get_node("empower_invoker_nitro001/CPUParticles").emitting = true
 		else:
-			get_node("roots_invoker_nitro/CPUParticles").emitting = false
-			get_node("roots_invoker_nitro2/CPUParticles").emitting = false
+			get_node("empower_invoker_nitro/CPUParticles").emitting = false
+			get_node("empower_invoker_nitro001/CPUParticles").emitting = false
 		#Dust particles:
 		if (rpm_medium>10):
 			get_node("FrontWheel/CPUParticles").emitting = true
