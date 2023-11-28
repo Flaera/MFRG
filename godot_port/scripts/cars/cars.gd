@@ -61,7 +61,7 @@ func mainCarPhys(axis, boost_button, back_wheel1, back_wheel2, brake_on,
 		#	back_wheel1.engine_force = max_torque
 		#	back_wheel2.engine_force = max_torque
 		#else:
-		if (axis.y>0.0 and back_wheel1.engine_force<max_rpm):
+		if (axis.y>0.0 and back_wheel1.engine_force<max_rpm and -rpm0<max_rpm):
 			back_wheel1.engine_force = accel * max_torque * (1-rpm0/max_rpm)
 			back_wheel2.engine_force = accel * max_torque * (1-rpm1/max_rpm)
 		elif (axis.y<0.0 and back_wheel1.engine_force>-100):
@@ -70,7 +70,7 @@ func mainCarPhys(axis, boost_button, back_wheel1, back_wheel2, brake_on,
 		else:
 			back_wheel1.engine_force = 0
 			back_wheel2.engine_force = 0
-		print("|", back_wheel1.engine_force, "|",max_rpm)
+		#print("|", back_wheel1.engine_force, "|",rpm0)
 		if (brake_on==true):
 			brake_force += 1000*(acceleration/2)*delta_time
 		else:
