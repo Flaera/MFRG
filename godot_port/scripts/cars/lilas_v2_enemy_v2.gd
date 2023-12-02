@@ -63,7 +63,7 @@ func look_at_checkpoint(var target: Spatial):
 			axis.x = 1.0
 		else:
 			axis.x = 0.0
-	print(raycast_front.get_collider(), "|", target, "| axisx: ",axis.x)
+	#print(raycast_front.get_collider(), "|", target, "| axisx: ",axis.x)
 
 
 func actions():
