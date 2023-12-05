@@ -3,3 +3,4 @@ noturno
 roots
 caixa
 empower
+solo

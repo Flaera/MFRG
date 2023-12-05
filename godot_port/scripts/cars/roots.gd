@@ -53,13 +53,9 @@ func _physics_process(delta):
 		
 		#Nitro particles:
 		if (calc[2]>0.0 and nitro==true):
-			get_node("roots_invoker_nitro/CPUParticles").lifetime = 5
-			get_node("roots_invoker_nitro2/CPUParticles").lifetime = 5
 			get_node("roots_invoker_nitro/CPUParticles").emitting = true
 			get_node("roots_invoker_nitro2/CPUParticles").emitting = true
 		else:
-			get_node("roots_invoker_nitro/CPUParticles").lifetime = 0.01
-			get_node("roots_invoker_nitro2/CPUParticles").lifetime = 0.01
 			get_node("roots_invoker_nitro/CPUParticles").emitting = false
 			get_node("roots_invoker_nitro2/CPUParticles").emitting = false
 		#Dust particles:
