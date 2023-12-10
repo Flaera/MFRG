@@ -13,10 +13,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="Label" type="Label" parent="."]
-margin_left = 6.0
-margin_top = 6.0
-margin_right = 629.0
-margin_bottom = 28.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -949.0
+margin_top = 16.0
+margin_right = 950.0
+margin_bottom = 71.0
 theme = ExtResource( 1 )
 text = "Label_Lang"
 align = 1
@@ -28,21 +30,21 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -108.5
-margin_top = -22.5
+margin_top = -58.0
 margin_right = 108.5
-margin_bottom = 22.5
+margin_bottom = 58.0
 
 [node name="Button_EN" type="Button" parent="VBoxContainer"]
 margin_right = 217.0
-margin_bottom = 20.0
+margin_bottom = 56.0
 theme = ExtResource( 1 )
 text = "B_Lang_EN"
 icon_align = 1
 
 [node name="Button_PT_BR" type="Button" parent="VBoxContainer"]
-margin_top = 24.0
+margin_top = 60.0
 margin_right = 217.0
-margin_bottom = 44.0
+margin_bottom = 116.0
 theme = ExtResource( 1 )
 text = "B_Lang_PT_BR"
 icon_align = 1

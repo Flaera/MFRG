@@ -3,9 +3,11 @@ extends Control
 
 var time: float = 0.0
 var Res: Dictionary = {"640x360": Vector2(640,360),
-"HD - 1280x720": Vector2(1280,720),
-"Full HD - 1920x1080": Vector2(1920,1080),
-"4K - 3840x2160": Vector2(3840,2160)}
+"1280x720": Vector2(1280,720),
+"1920x1080": Vector2(1920,1080)}
+var res_array: Array = [Vector2(640,360),
+	Vector2(1280,720),
+	Vector2(1920,1080)]
 
 
 # Called when the node enters the scene tree for the first time.
@@ -17,12 +19,10 @@ func _ready():
 	if (size==0):
 		OS.set_window_size(Res["640x360"])
 	elif (size==1):
-		OS.set_window_size(Res["HD - 1280x720"])
+		OS.set_window_size(Res["1280x720"])
 	elif (size==2):
-		OS.set_window_size(Res["Full HD - 1920x1080"])
-	elif (size==3):
-		OS.set_window_size(Res["4K - 3840x2160"])
-
+		OS.set_window_size(Res["1920x1080"])
+	#get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_VIEWPORT,SceneTree.STRETCH_ASPECT_KEEP,res_array[size])
 
 func _process(_delta):
 	time += _delta

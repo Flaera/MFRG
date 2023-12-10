@@ -1,9 +1,10 @@
-[gd_resource type="Theme" load_steps=18 format=2]
+[gd_resource type="Theme" load_steps=24 format=2]
 
 [ext_resource path="res://assets/blender2.79_old/fonts/Conviva.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/fonts/BebasNeue-Regular.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="DynamicFont" id=1]
+size = 46
 font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxFlat" id=5]
@@ -18,7 +19,26 @@ bg_color = Color( 0.933333, 0.419608, 0.0313726, 1 )
 [sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.231373, 0.231373, 0.231373, 1 )
 
+[sub_resource type="StreamTexture" id=18]
+flags = 4
+load_path = "res://.import/icon_settings2.png-14d44832ff6a77cceadea9623717640c.stex"
+
+[sub_resource type="StreamTexture" id=20]
+flags = 4
+load_path = "res://.import/icon_settings4.png-9b02de608800ee2401a81204ddc151ef.stex"
+
+[sub_resource type="StreamTexture" id=21]
+flags = 4
+load_path = "res://.import/icon_settings3.png-e1193a519410491970c9abd90a12d81d.stex"
+
+[sub_resource type="StyleBoxFlat" id=22]
+bg_color = Color( 0.0588235, 0.611765, 0.611765, 1 )
+
+[sub_resource type="StyleBoxFlat" id=23]
+bg_color = Color( 0.933333, 0.419608, 0.0313726, 1 )
+
 [sub_resource type="DynamicFont" id=2]
+size = 32
 font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxFlat" id=9]
@@ -38,6 +58,10 @@ bg_color = Color( 0.933333, 0.419608, 0.0313726, 1 )
 
 [sub_resource type="StyleBoxFlat" id=14]
 bg_color = Color( 0.231373, 0.231373, 0.231373, 1 )
+
+[sub_resource type="StreamTexture" id=17]
+flags = 4
+load_path = "res://.import/icon_ssettings1_116x116.png-eeb616667f167c818216b74a67aabff0.stex"
 
 [sub_resource type="DynamicFont" id=4]
 font_data = ExtResource( 1 )
@@ -61,6 +85,11 @@ Button/styles/focus = SubResource( 5 )
 Button/styles/hover = SubResource( 6 )
 Button/styles/normal = SubResource( 7 )
 Button/styles/pressed = SubResource( 8 )
+HSlider/icons/grabber = SubResource( 18 )
+HSlider/icons/grabber_disabled = SubResource( 20 )
+HSlider/icons/grabber_highlight = SubResource( 21 )
+HSlider/styles/grabber_area = SubResource( 22 )
+HSlider/styles/grabber_area_highlight = SubResource( 23 )
 Label/colors/font_color = Color( 1, 1, 1, 1 )
 Label/colors/font_color_shadow = Color( 0.933333, 0.419608, 0.0313726, 0 )
 Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
@@ -78,6 +107,7 @@ MenuButton/styles/focus = SubResource( 11 )
 MenuButton/styles/hover = SubResource( 12 )
 MenuButton/styles/normal = SubResource( 13 )
 MenuButton/styles/pressed = SubResource( 14 )
+OptionButton/icons/arrow = SubResource( 17 )
 Panel/fonts/font = SubResource( 4 )
 ProgressBar/styles/bg = SubResource( 15 )
 ProgressBar/styles/fg = SubResource( 16 )

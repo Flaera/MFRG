@@ -32,8 +32,8 @@ MusicController="*res://scenes/musics/music_controller.tscn"
 
 [display]
 
-window/size/width=640
-window/size/height=360
+window/size/width=1920
+window/size/height=1080
 window/size/test_width=640
 window/size/test_height=360
 window/handheld/orientation="portrait"

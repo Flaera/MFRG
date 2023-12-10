@@ -21,11 +21,13 @@ texture = SubResource( 1 )
 expand = true
 
 [node name="Label" type="Label" parent="CanvasLayer"]
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-margin_top = -30.0
-margin_bottom = -10.0
+margin_left = -960.0
+margin_top = -86.0
+margin_right = 960.0
 theme = ExtResource( 2 )
 text = "Drive with councious in respect at laws of transit."
 align = 1

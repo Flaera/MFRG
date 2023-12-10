@@ -19,7 +19,7 @@ bg_color = Color( 0.933333, 0.419608, 0.0313726, 1 )
 bg_color = Color( 0.231373, 0.231373, 0.231373, 1 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 32
+size = 75
 font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=9]

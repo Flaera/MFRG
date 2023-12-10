@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scripts/shop/shop.gd" type="Script" id=1]
 [ext_resource path="res://scenes/themeMFRG.tres" type="Theme" id=2]
@@ -7,10 +7,27 @@
 [ext_resource path="res://scenes/golds/golds.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/themeMFRGLabelDark.tres" type="Theme" id=6]
 [ext_resource path="res://scenes/specs/ui_specs_shop.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/fonts/BebasNeue-Regular.ttf" type="DynamicFontData" id=8]
+
+[sub_resource type="DynamicFont" id=8]
+size = 50
+font_data = ExtResource( 8 )
 
 [sub_resource type="StreamTexture" id=7]
 flags = 4
 load_path = "res://.import/arrow.png-a4a34ea04551cddb834540c85fb39619.stex"
+
+[sub_resource type="DynamicFont" id=9]
+size = 68
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 68
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 68
+font_data = ExtResource( 8 )
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 4 )
@@ -36,6 +53,9 @@ data = PoolVector3Array( -9.3882, -0.1784, -9.3882, -9.3882, -0.1784, 9.3882, -9
 
 [node name="shop" instance=ExtResource( 3 )]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [ 961.0 ]
+}
 
 [node name="Control" parent="." index="0" instance=ExtResource( 7 )]
 
@@ -44,10 +64,10 @@ script = ExtResource( 1 )
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="2"]
 
 [node name="SELECT_CAR_BUY" type="Label" parent="CanvasLayer" index="0"]
-margin_top = 5.0
-margin_right = 640.0
-margin_bottom = 25.0
+anchor_right = 1.0
+margin_bottom = 39.0
 theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 8 )
 text = "L_SHOP_CARS"
 align = 1
 
@@ -56,44 +76,58 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="ButtonQuit" type="Button" parent="CanvasLayer/Control" index="0"]
-margin_left = 232.0
-margin_top = 356.0
-margin_right = 332.0
-margin_bottom = 456.0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -227.0
+margin_top = -40.0
+margin_right = -127.0
+margin_bottom = 60.0
 rect_rotation = 180.0
-rect_scale = Vector2( 0.5, 0.5 )
 focus_neighbour_left = NodePath("../ButtonRightShop")
 focus_neighbour_bottom = NodePath("../ButtonConfirmShop")
 theme = ExtResource( 6 )
 icon = SubResource( 7 )
 
 [node name="ButtonLeftShop" type="Button" parent="CanvasLayer/Control" index="1"]
-margin_left = 100.0
-margin_top = 300.0
-margin_right = 200.0
-margin_bottom = 400.0
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 200.0
+margin_right = 300.0
+margin_bottom = 100.0
 rect_rotation = 180.0
+rect_scale = Vector2( 2, 2 )
 focus_neighbour_left = NodePath("../ButtonRightShop")
 focus_neighbour_bottom = NodePath("../ButtonConfirmShop")
 theme = ExtResource( 2 )
 icon = SubResource( 7 )
 
 [node name="ButtonRightShop" type="Button" parent="CanvasLayer/Control" index="2"]
-margin_left = 540.0
-margin_top = 200.0
-margin_right = 640.0
-margin_bottom = 300.0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -200.0
+margin_top = -200.0
+margin_right = -100.0
+margin_bottom = -100.0
+rect_scale = Vector2( 2, 2 )
 focus_neighbour_right = NodePath("../ButtonLeftShop")
 focus_neighbour_bottom = NodePath("../ButtonConfirmShop")
 theme = ExtResource( 2 )
 icon = SubResource( 7 )
 
 [node name="ButtonConfirmShop" type="Button" parent="CanvasLayer/Control" index="3"]
-margin_left = 236.0
-margin_top = 312.0
-margin_right = 421.0
-margin_bottom = 349.0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -215.0
+margin_top = -83.0
+margin_right = 215.0
 theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 9 )
 text = "B_Buy_Car"
 
 [node name="CAR_ALREYD_GARAGE" type="Label" parent="CanvasLayer" index="2"]
@@ -102,10 +136,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -50.5
-margin_top = -10.0
-margin_right = 50.5
-margin_bottom = 10.0
+margin_left = -151.5
+margin_top = -29.0
+margin_right = 151.5
+margin_bottom = 29.0
 theme = ExtResource( 6 )
 text = "CAR_ALREYD_GARAGE"
 
@@ -115,10 +149,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -89.0
-margin_top = -10.0
-margin_right = 89.0
-margin_bottom = 10.0
+margin_left = -136.0
+margin_top = -29.0
+margin_right = 136.0
+margin_bottom = 29.0
 theme = ExtResource( 6 )
 text = "NO_SPACE_HOLLOW"
 align = 1
@@ -129,10 +163,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -44.0
-margin_top = -10.0
-margin_right = 44.0
-margin_bottom = 10.0
+margin_left = -76.5
+margin_top = -29.0
+margin_right = 76.5
+margin_bottom = 29.0
 theme = ExtResource( 6 )
 text = "CAR_BUIED"
 
@@ -142,10 +176,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -51.0
-margin_top = -10.0
-margin_right = 51.0
-margin_bottom = 10.0
+margin_left = -76.5
+margin_top = -29.0
+margin_right = 76.5
+margin_bottom = 29.0
 theme = ExtResource( 6 )
 text = "NO_MONEY"
 
@@ -160,20 +194,31 @@ margin_right = 419.0
 margin_bottom = 312.0
 
 [node name="LabelPrices" type="Label" parent="CanvasLayer/Control2" index="0"]
-anchor_right = 1.0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-margin_top = 23.0
-margin_right = 2.0
-margin_bottom = -9.0
+margin_left = 417.5
+margin_top = 590.0
+margin_right = 847.5
+margin_bottom = 673.0
 theme = ExtResource( 6 )
+custom_fonts/font = SubResource( 10 )
 text = "dasdasfas"
 align = 1
 valign = 1
 
 [node name="LabelTitlePrices" type="Label" parent="CanvasLayer/Control2" index="1"]
-anchor_right = 1.0
-margin_bottom = 20.0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 419.5
+margin_top = 500.0
+margin_right = 845.5
+margin_bottom = 583.0
 theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 11 )
 text = "L_Prices"
 align = 1
 valign = 1

@@ -4,7 +4,7 @@ extends Control
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-onready var delta_black: float = 640/15
+onready var delta_black: float = 1920/15
 var delta_time: float = 0.0
 
 # Called when the node enters the scene tree for the first time.

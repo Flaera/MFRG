@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/themeMFRGLabelDarkLargeText.tres" type="Theme" id=1]
 
@@ -14,7 +14,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [ Vector2( -2100, 0 ) ]
 }
 
 [sub_resource type="Animation" id=101]
@@ -30,7 +30,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.4, 1.6, 2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 665.5, 0 ), Vector2( 665.5, 0 ), Vector2( 1300, 0 ) ]
+"values": [ Vector2( -2100, 0 ), Vector2( 90, 0 ), Vector2( 90, 0 ), Vector2( 2100, 0 ) ]
 }
 
 [sub_resource type="Animation" id=102]
@@ -45,7 +45,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [ Vector2( -700, 0 ) ]
 }
 
 [sub_resource type="Animation" id=103]
@@ -61,23 +61,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.4, 1.1, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 665.5, 0 ), Vector2( 665.5, 0 ), Vector2( 1300, 0 ) ]
-}
-
-[sub_resource type="Animation" id=104]
-resource_name = "anim_run_init_event"
-length = 1.5
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:rect_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4, 1.1, 1.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 665.5, 0 ), Vector2( 665.5, 0 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( -700, 0 ), Vector2( 665.5, 0 ), Vector2( 665.5, 0 ), Vector2( 2000, 0 ) ]
 }
 
 [sub_resource type="Animation" id=105]
@@ -92,7 +76,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [ Vector2( -700, 0 ) ]
 }
 
 [sub_resource type="Animation" id=106]
@@ -107,7 +91,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 665.5, 0 ) ]
+"values": [ Vector2( -700, 0 ), Vector2( 665.5, 0 ) ]
 }
 
 [sub_resource type="Animation" id=107]
@@ -122,7 +106,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [ Vector2( -700, 0 ) ]
 }
 
 [sub_resource type="Animation" id=108]
@@ -152,7 +136,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 100 ), Vector2( 665.5, 100 ) ]
+"values": [ Vector2( -700, 100 ), Vector2( 665.5, 100 ) ]
 }
 
 [node name="CanvasLayer" type="CanvasLayer"]
@@ -172,12 +156,12 @@ margin_right = -371.0
 margin_bottom = 44.5
 
 [node name="Label2" type="Label" parent="Control/Control"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_right = 589.0
-margin_bottom = 89.0
+anchor_left = -3.565
+anchor_right = -0.63
+anchor_bottom = 3.146
+margin_left = -0.215088
+margin_right = 0.065155
+margin_bottom = 0.00598145
 theme = ExtResource( 1 )
 text = "RUN_TIME"
 align = 1
@@ -188,8 +172,9 @@ anims/RESET = SubResource( 100 )
 anims/anim_run_init_event = SubResource( 101 )
 
 [node name="Label3" type="Label" parent="Control/Control"]
-margin_right = 589.0
-margin_bottom = 89.0
+margin_left = -700.0
+margin_right = -111.0
+margin_bottom = 91.0
 theme = ExtResource( 1 )
 text = "YOU_LOSE"
 align = 1
@@ -198,11 +183,11 @@ valign = 1
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Control/Label3"]
 anims/RESET = SubResource( 102 )
 anims/anim_loser_event = SubResource( 103 )
-anims/anim_run_init_event = SubResource( 104 )
 
 [node name="Label" type="Label" parent="Control/Control"]
-margin_right = 589.0
-margin_bottom = 89.0
+margin_left = -700.0
+margin_right = -111.0
+margin_bottom = 91.0
 theme = ExtResource( 1 )
 text = "YOU_WIN"
 align = 1
@@ -212,8 +197,9 @@ anims/RESET = SubResource( 105 )
 anims/anim_you_win = SubResource( 106 )
 
 [node name="Label4" type="Label" parent="Control/Control"]
-margin_right = 589.0
-margin_bottom = 89.0
+margin_left = -700.0
+margin_right = -111.0
+margin_bottom = 91.0
 theme = ExtResource( 1 )
 align = 1
 
@@ -225,8 +211,8 @@ anims/anim_you_win_golds = SubResource( 109 )
 [node name="Label" type="Label" parent="Control"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -100.0
-margin_bottom = 39.0
+margin_left = -206.0
+margin_bottom = 91.0
 theme = ExtResource( 1 )
 text = "0:00"
 align = 1

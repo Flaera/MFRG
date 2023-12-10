@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/themeMFRG.tres" type="Theme" id=1]
 [ext_resource path="res://scripts/progress_game/progress_game.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/BebasNeue-Regular.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4
@@ -15,6 +16,14 @@ load_path = "res://.import/tri_lv2.png-8b7598851a9246487f27549840d271bf.stex"
 flags = 4
 load_path = "res://.import/tri_lv3.png-59bb37fe8feeebc96666318747d6b9e2.stex"
 
+[sub_resource type="DynamicFont" id=4]
+size = 73
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 96
+font_data = ExtResource( 3 )
+
 [node name="progress_game" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -22,33 +31,24 @@ script = ExtResource( 2 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -145.37
-margin_right = 978.0
-margin_bottom = 696.63
-rect_scale = Vector2( 0.633, 0.67 )
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
-margin_right = 1618.0
-margin_bottom = 882.0
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 margin_right = 338.0
 margin_bottom = 882.0
+rect_scale = Vector2( 1.846, 1.232 )
 texture = SubResource( 1 )
 
-[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
-margin_left = 342.0
-margin_right = 676.0
-margin_bottom = 882.0
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
+margin_left = 640.0
+margin_right = 974.0
+margin_bottom = 1080.0
+rect_scale = Vector2( 1.866, 1.268 )
 texture = SubResource( 2 )
 
-[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
-margin_left = 680.0
-margin_right = 1018.0
-margin_bottom = 882.0
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer"]
+margin_left = 1280.0
+margin_right = 1618.0
+margin_bottom = 1080.0
+rect_scale = Vector2( 1.897, 1.249 )
 texture = SubResource( 3 )
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
@@ -63,6 +63,7 @@ margin_top = 10.0
 margin_right = -10.0
 margin_bottom = 34.0
 theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 4 )
 text = "LEVEL_LABEL"
 align = 1
 valign = 1
@@ -72,11 +73,11 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -144.0
-margin_top = -30.0
-margin_right = 144.0
-margin_bottom = -10.0
+margin_left = -227.0
+margin_top = -116.0
+margin_right = 227.0
 theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 5 )
 text = "LOADING_LABEL"
 align = 1
 valign = 1
