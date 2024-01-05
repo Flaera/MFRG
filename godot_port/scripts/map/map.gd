@@ -108,6 +108,7 @@ func _on_ButtonEvent1_pressed():
 
 
 func _on_ButtonShop_pressed():
+	print("HERE - AQUI FOI E AÌ!!")
 	get_tree().change_scene("res://assets/blender2.79_old/assets/assets_shop_cars/shop.tscn")
 
 
