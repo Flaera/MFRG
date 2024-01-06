@@ -1,0 +1,159 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scenes/themeMFRGLabelDark.tres" type="Theme" id=1]
+[ext_resource path="res://scenes/golds/golds.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/map/map.gd" type="Script" id=3]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/map.png-eaa3faba15e1dfedbfeff2aa94a0d190.stex"
+
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "map_anim_buttons2"
+length = 1.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -10 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/keys_tex.png-ec7acfb83ed06eeb833a64403f3baaf6.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/garage_tex.png-cd0dfff0a76e366fde273d668a51cd07.stex"
+
+[sub_resource type="StreamTexture" id=4]
+flags = 4
+load_path = "res://.import/event_tex.png-2ca0e6338afe4cc6b35f9417396346ab.stex"
+
+[sub_resource type="StreamTexture" id=5]
+flags = 4
+load_path = "res://.import/event_tex.png-2ca0e6338afe4cc6b35f9417396346ab.stex"
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+margin_top = -335.0
+margin_right = 2048.0
+margin_bottom = 1713.0
+rect_scale = Vector2( 0.944, 0.692 )
+mouse_filter = 2
+texture = SubResource( 1 )
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -58.0
+margin_right = 293.0
+theme = ExtResource( 1 )
+text = "PRESS_ESC_TO_BACK"
+
+[node name="HBoxContainer" parent="CanvasLayer" instance=ExtResource( 2 )]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+root_node = NodePath("../PivotButtons")
+anims/RESET = SubResource( 6 )
+anims/map_anim_buttons2 = SubResource( 7 )
+
+[node name="PivotButtons" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 5760.0
+margin_bottom = 3240.0
+mouse_filter = 2
+
+[node name="PivotFuncButtons" type="Control" parent="CanvasLayer/PivotButtons"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="ButtonShop" type="Button" parent="CanvasLayer/PivotButtons/PivotFuncButtons"]
+margin_left = 185.0
+margin_top = 612.0
+margin_right = 453.0
+margin_bottom = 874.0
+rect_scale = Vector2( 0.3, 0.3 )
+icon = SubResource( 2 )
+flat = true
+icon_align = 1
+
+[node name="ButtonGarage" type="Button" parent="CanvasLayer/PivotButtons/PivotFuncButtons"]
+margin_left = 385.0
+margin_top = 863.0
+margin_right = 397.0
+margin_bottom = 883.0
+rect_scale = Vector2( 0.3, 0.3 )
+icon = SubResource( 3 )
+flat = true
+icon_align = 1
+
+[node name="PivotEvents" type="Control" parent="CanvasLayer/PivotButtons"]
+margin_right = 40.0
+margin_bottom = 40.0
+mouse_filter = 2
+
+[node name="ButtonEvent0" type="Button" parent="CanvasLayer/PivotButtons/PivotEvents"]
+margin_left = 1325.0
+margin_top = 540.0
+margin_right = 1593.0
+margin_bottom = 802.0
+rect_scale = Vector2( 0.3, 0.3 )
+icon = SubResource( 4 )
+flat = true
+icon_align = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/PivotButtons/PivotEvents/ButtonEvent0"]
+margin_right = 100.0
+margin_bottom = 100.0
+mouse_filter = 2
+
+[node name="ButtonEvent1" type="Button" parent="CanvasLayer/PivotButtons/PivotEvents"]
+margin_left = 276.0
+margin_top = 248.0
+margin_right = 544.0
+margin_bottom = 510.0
+rect_scale = Vector2( 0.3, 0.3 )
+icon = SubResource( 5 )
+flat = true
+icon_align = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/PivotButtons/PivotEvents/ButtonEvent1"]
+margin_right = 100.0
+margin_bottom = 100.0
+mouse_filter = 2
+
+[connection signal="pressed" from="CanvasLayer/PivotButtons/PivotFuncButtons/ButtonShop" to="." method="_on_ButtonShop_pressed"]
+[connection signal="pressed" from="CanvasLayer/PivotButtons/PivotFuncButtons/ButtonGarage" to="." method="_on_ButtonGarage_pressed"]
+[connection signal="pressed" from="CanvasLayer/PivotButtons/PivotEvents/ButtonEvent0" to="." method="_on_ButtonEvent0_pressed"]
+[connection signal="pressed" from="CanvasLayer/PivotButtons/PivotEvents/ButtonEvent1" to="." method="_on_ButtonEvent1_pressed"]

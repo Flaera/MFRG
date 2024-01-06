@@ -2,14 +2,17 @@ extends Control
 
 
 func _ready():
-	get_node("PivotIcons/AnimationPlayer").play("anim_buttons_map")
+	
+	
+	get_node("CanvasLayer/AnimationPlayer").play("map_anim_buttons2")
+	#get_node("CanvasLayer/PivotButtons/PivotFuncButtons/ButtonShop").grab_focus()
 	var unconfirmed: Object = preload("res://assets/blender2.79_old/textures/event_icons/unconfirmed_icon.png")
 	var confirmed: Object = preload("res://assets/blender2.79_old/textures/event_icons/confirmed_icon.png")
 	var events: Array = []
 	var acc_events: int = 0
 	var acc_events_five = 1
 	var acc_char_three = 1
-	for j in range(0,15,1):
+	for _j in range(0,15,1):
 		var file_events = File.new()
 		file_events.open("res://data_files/event"+String(acc_events_five)+"_char"+String(acc_char_three)+".txt", File.READ)
 		var event_info: int = int(file_events.get_csv_line()[0])
@@ -52,7 +55,7 @@ func _ready():
 		file_state0.close()
 	var acc: int = 0
 	var constant: float = 0.125
-	for i in get_node("PivotIcons/PivotButtons").get_children():
+	for i in get_node("CanvasLayer/PivotButtons/PivotEvents").get_children():
 		if (state==0 or state==1 or state==2):
 			if (acc==0 and events[0]==0):
 				i.visible = true
@@ -78,20 +81,24 @@ func _ready():
 	var file_event1_char1 = File.new()
 	file_event1_char1.open("res://data_files/event1_char1.txt", File.READ)
 	if int(file_event1_char1.get_csv_line()[0])==1:
-		get_node("PivotIcons/PivotButtons/ButtonEvent0/Sprite/TextureRect").set_texture(confirmed)
-	else:get_node("PivotIcons/PivotButtons/ButtonEvent0/Sprite/TextureRect").set_texture(unconfirmed)
-	get_node("PivotIcons/PivotButtons/ButtonEvent0/Sprite/TextureRect").rect_scale = Vector2(constant, constant)
+		get_node("CanvasLayer/PivotButtons/PivotEvents/ButtonEvent0/TextureRect").set_texture(confirmed)
+	else:get_node("CanvasLayer/PivotButtons/PivotEvents/ButtonEvent0/TextureRect").set_texture(unconfirmed)
+	get_node("CanvasLayer/PivotButtons/PivotEvents/ButtonEvent0/TextureRect").rect_scale = Vector2(constant, constant)
 	file_event1_char1.close()
 	
 	var file_event2_char1 = File.new()
 	file_event2_char1.open("res://data_files/event2_char1.txt", File.READ)
 	if int(file_event2_char1.get_csv_line()[0])==1:
-		get_node("PivotIcons/PivotButtons/ButtonEvent1/Sprite/TextureRect").set_texture(confirmed)
-	else:get_node("PivotIcons/PivotButtons/ButtonEvent1/Sprite/TextureRect").set_texture(unconfirmed)
-	get_node("PivotIcons/PivotButtons/ButtonEvent1/Sprite/TextureRect").rect_scale = Vector2(constant, constant)
+		get_node("CanvasLayer/PivotButtons/PivotEvents/ButtonEvent1/TextureRect").set_texture(confirmed)
+	else:get_node("CanvasLayer/PivotButtons/PivotEvents/ButtonEvent1/TextureRect").set_texture(unconfirmed)
+	get_node("CanvasLayer/PivotButtons/PivotEvents/ButtonEvent1/TextureRect").rect_scale = Vector2(constant, constant)
 	file_event2_char1.close()
 	
 	##############################################
+
+
+func _input(event):
+	get_tree().set_input_as_handled()
 
 
 func _process(_delta):

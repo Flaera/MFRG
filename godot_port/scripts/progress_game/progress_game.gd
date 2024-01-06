@@ -34,4 +34,4 @@ func _ready():
 func _process(delta):
 	delta_time+=delta
 	if (delta_time>=5):
-		get_tree().change_scene("res://scenes/map/map.scn")
+		get_tree().change_scene("res://scenes/map/map2.tscn")
