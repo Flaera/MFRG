@@ -74,7 +74,7 @@ func _process(_delta):
 		get_node("CanvasLayer/NO_MONEY").visible=false
 
 	if Input.is_action_just_pressed("ui_cancel"):
-		get_tree().change_scene("res://scenes/map/map.scn")
+		get_tree().change_scene("res://scenes/map/map2.tscn")
 
 
 func _on_ButtonLeftShop_pressed():
@@ -136,4 +136,4 @@ func _on_ButtonConfirmShop_pressed():
 
 
 func _on_ButtonQuit_pressed():
-	get_tree().change_scene("res://scenes/map/map.scn")
+	get_tree().change_scene("res://scenes/map/map2.tscn")

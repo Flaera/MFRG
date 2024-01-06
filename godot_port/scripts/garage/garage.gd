@@ -61,25 +61,25 @@ func _process(_delta):
 	get_node("CanvasLayer/VBoxContainer/HBoxContainer2/B_CARRO_3").text = cars_list[2]
 
 	if (Input.is_action_just_pressed("ui_cancel")):
-		get_tree().change_scene("res://scenes/map/map.scn")
+		get_tree().change_scene("res://scenes/map/map2.tscn")
 
 
 func _on_B_CARRO_1_pressed():
 	if (cars_list[0]!="VAZIO"):
 		carSelect(0)
-		get_tree().change_scene("res://scenes/map/map.scn")
+		get_tree().change_scene("res://scenes/map/map2.tscn")
 
 
 func _on_B_CARRO_2_pressed():
 	if (cars_list[1]!="VAZIO"):
 		carSelect(1)
-		get_tree().change_scene("res://scenes/map/map.scn")
+		get_tree().change_scene("res://scenes/map/map2.tscn")
 
 
 func _on_B_CARRO_3_pressed():
 	if (cars_list[2]!="VAZIO"):
 		carSelect(2)
-		get_tree().change_scene("res://scenes/map/map.scn")
+		get_tree().change_scene("res://scenes/map/map2.tscn")
 
 
 func _on_B_CARRO_1_mouse_entered():

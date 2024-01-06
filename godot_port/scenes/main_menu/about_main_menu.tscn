@@ -16,25 +16,23 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -300.0
-margin_top = -150.0
-margin_right = 300.0
-margin_bottom = 150.0
+margin_left = -940.0
+margin_top = -520.0
+margin_right = 940.0
+margin_bottom = 520.0
 theme = ExtResource( 2 )
 color = Color( 0, 0, 0, 0.509804 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ColorRect"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -284.0
-margin_top = -142.0
-margin_right = 284.0
-margin_bottom = 143.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 120.0
+margin_top = 120.0
+margin_right = -120.0
+margin_bottom = -120.0
 
 [node name="LabelTitle" type="Label" parent="CanvasLayer/ColorRect/VBoxContainer"]
-margin_right = 568.0
+margin_right = 1640.0
 margin_bottom = 39.0
 theme = ExtResource( 1 )
 text = "L_ABOUT_TITLE"
@@ -43,16 +41,17 @@ valign = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/ColorRect/VBoxContainer"]
 margin_top = 43.0
-margin_right = 568.0
-margin_bottom = 263.0
-rect_min_size = Vector2( 0, 220 )
+margin_right = 1640.0
+margin_bottom = 663.0
+rect_min_size = Vector2( 0, 620 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer"]
-margin_right = 568.0
+margin_right = 1640.0
 margin_bottom = 39.0
+rect_min_size = Vector2( 1640, 0 )
 
 [node name="Label" type="Label" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer"]
-margin_right = 568.0
+margin_right = 1640.0
 margin_bottom = 39.0
 rect_min_size = Vector2( 568, 0 )
 theme = ExtResource( 1 )
@@ -60,9 +59,9 @@ text = "ABOUT_TEXT"
 autowrap = true
 
 [node name="B_BACK" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
-margin_top = 267.0
-margin_right = 568.0
-margin_bottom = 323.0
+margin_top = 667.0
+margin_right = 1640.0
+margin_bottom = 723.0
 theme = ExtResource( 1 )
 text = "B_BACK"
 

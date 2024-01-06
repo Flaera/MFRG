@@ -1,13 +1,16 @@
 extends Control
 
 
+onready var unconfirmed: Object = load("res://assets/blender2.79_old/textures/event_icons/unconfirmed_icon.png")
+onready var confirmed: Object = load("res://assets/blender2.79_old/textures/event_icons/confirmed_icon.png")
+onready var intro_carlos_anne: Object = load("res://scenes/dialog_carlos_intro/dialog_carlos_intro.scn")
+
+
 func _ready():
 	
-	
+	print("get_path=",get_node("CanvasLayer/AnimationPlayer"))
 	get_node("CanvasLayer/AnimationPlayer").play("map_anim_buttons2")
 	#get_node("CanvasLayer/PivotButtons/PivotFuncButtons/ButtonShop").grab_focus()
-	var unconfirmed: Object = preload("res://assets/blender2.79_old/textures/event_icons/unconfirmed_icon.png")
-	var confirmed: Object = preload("res://assets/blender2.79_old/textures/event_icons/confirmed_icon.png")
 	var events: Array = []
 	var acc_events: int = 0
 	var acc_events_five = 1
@@ -35,8 +38,7 @@ func _ready():
 	var condition2: bool = events[10]==1 and events[11]==1 and events[12]==1 and events[13]==1 and events[14]==1
 	if (events[0]==0 and state==0):
 		#cutscene da entrada da Anne no RUA
-		var scene: Object = preload("res://scenes/dialog_carlos_intro/dialog_carlos_intro.scn")
-		add_child(scene.instance())
+		add_child(intro_carlos_anne.instance())
 		var file_state0 = File.new()
 		file_state0.open("res://data_files/progress_in_game.txt", File.WRITE)
 		file_state0.store_string("1")
@@ -97,13 +99,18 @@ func _ready():
 	##############################################
 
 
-func _input(event):
+#func _input(event):
+	#get_tree().set_input_as_handled()
+
+
+func _unhandled_input(event):
 	get_tree().set_input_as_handled()
 
 
 func _process(_delta):
 	if (Input.is_action_just_pressed("ui_cancel")):
 		get_tree().change_scene("res://scenes/main_menu/main_menu.scn")
+	
 
 
 func _on_ButtonEvent0_pressed():
