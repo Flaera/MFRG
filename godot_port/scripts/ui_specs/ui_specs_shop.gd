@@ -20,3 +20,4 @@ func _process(delta):
 	get_node("CanvasLayer/Control/VBoxContainer/TextureProgressTORQUE").value=rulerThree(250,specs[car_str][3])
 	get_node("CanvasLayer/Control/VBoxContainer/TextureProgressNITRO").value=specs[car_str][4]
 	file.close()
+	get_node("CanvasLayer/Control/VBoxContainer/L_CAR_NAME").text = car_str
