@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/fonts/BebasNeue-Regular.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="DynamicFont" id=1]
-size = 46
+size = 70
 font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxFlat" id=5]
@@ -38,7 +38,7 @@ bg_color = Color( 0.0588235, 0.611765, 0.611765, 1 )
 bg_color = Color( 0.933333, 0.419608, 0.0313726, 1 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 32
+size = 70
 font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxFlat" id=9]
@@ -64,6 +64,7 @@ flags = 4
 load_path = "res://.import/icon_ssettings1_116x116.png-eeb616667f167c818216b74a67aabff0.stex"
 
 [sub_resource type="DynamicFont" id=4]
+size = 70
 font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=15]
