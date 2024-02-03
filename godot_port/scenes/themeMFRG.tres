@@ -1,6 +1,5 @@
-[gd_resource type="Theme" load_steps=24 format=2]
+[gd_resource type="Theme" load_steps=23 format=2]
 
-[ext_resource path="res://assets/blender2.79_old/fonts/Conviva.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/fonts/BebasNeue-Regular.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="DynamicFont" id=1]
@@ -65,7 +64,7 @@ load_path = "res://.import/icon_ssettings1_116x116.png-eeb616667f167c818216b74a6
 
 [sub_resource type="DynamicFont" id=4]
 size = 70
-font_data = ExtResource( 1 )
+font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxFlat" id=15]
 bg_color = Color( 0.231373, 0.231373, 0.231373, 1 )

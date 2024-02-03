@@ -58,7 +58,7 @@ autowrap = true
 [node name="Button" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
 margin_top = 147.0
 margin_right = 1217.0
-margin_bottom = 203.0
+margin_bottom = 231.0
 theme = ExtResource( 4 )
 text = "ButtonContinue"
 

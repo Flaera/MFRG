@@ -1,7 +1,6 @@
-[gd_resource type="Theme" load_steps=11 format=2]
+[gd_resource type="Theme" load_steps=10 format=2]
 
 [ext_resource path="res://assets/fonts/BebasNeue-Regular.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://assets/blender2.79_old/fonts/Conviva.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
@@ -26,7 +25,7 @@ font_data = ExtResource( 1 )
 bg_color = Color( 0, 0, 0, 0.501961 )
 
 [sub_resource type="DynamicFont" id=4]
-font_data = ExtResource( 2 )
+font_data = ExtResource( 1 )
 
 [resource]
 Button/colors/font_color = Color( 1, 1, 1, 1 )
