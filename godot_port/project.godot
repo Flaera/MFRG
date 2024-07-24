@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "Cars",
 "language": "GDScript",
 "path": "res://scripts/cars/cars.gd"
+}, {
+"base": "Resource",
+"class": "EntityCar",
+"language": "GDScript",
+"path": "res://scripts/Resources/entity_car.gd"
 } ]
 _global_script_class_icons={
-"Cars": ""
+"Cars": "",
+"EntityCar": ""
 }
 
 [application]
