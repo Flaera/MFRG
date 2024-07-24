@@ -5,6 +5,7 @@ var car_phys: Cars
 var axis: Vector2 = Vector2(0.0,0.0)
 var brake_pedal = false
 var nitro: bool
+export var car_data: EntityCar
 
 func _ready():
 	var data: Array = load("res://data_files/cars_specs.gd").new().specs["caixa"]
