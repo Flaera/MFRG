@@ -7,33 +7,6 @@ onready var intro_carlos_anne: Object = load("res://scenes/dialog_carlos_intro/d
 export var saved_manager: Resource
 
 
-"""func save():
-	var save_dict: Dictionary = {
-		"car_selected": car_selected,
-		
-		"event1_char1":event1_char1,
-		"event2_char1":event2_char1,
-		"event3_char1":event3_char1,
-		"event4_char1":event4_char1,
-		"event5_char1":event5_char1,
-
-		"event1_char2":event1_char2,
-		"event2_char2":event2_char2,
-		"event3_char2":event3_char2,
-		"event4_char2":event4_char2,
-		"event5_char2":event5_char2,
-
-		"event1_char3":event1_char3,
-		"event2_char3":event2_char3,
-		"event3_char3":event3_char3,
-		"event4_char3":event4_char3,
-		"event5_char3":event5_char3,
-
-		"state":state
-	}"""
-	
-
-
 func _ready():
 	
 	print("get_path=",get_node("CanvasLayer/AnimationPlayer"))
@@ -67,23 +40,27 @@ func _ready():
 	var condition0: bool = saved_manager.event1_char1 and saved_manager.event1_char2 and saved_manager.event1_char3 and saved_manager.event1_char4 and saved_manager.event1_char5
 	var condition1: bool = saved_manager.event2_char1 and saved_manager.event2_char2 and saved_manager.event2_char3 and saved_manager.event2_char4 and saved_manager.event2_char5
 	var condition2: bool = saved_manager.event3_char1 and saved_manager.event3_char2 and saved_manager.event3_char3 and saved_manager.event3_char4 and saved_manager.event3_char5
-	if (saved_manager.event1_char1==false and saved_manager.state==0):
-		#cutscene da entrada da Anne no RUA
+	#print("event1char1=",saved_manager.event1_char1,";state=",saved_manager.state)
+	#print("condition1=",saved_manager.event1_char1==false)
+	#print("condition2=",int(saved_manager.state)==int(0))
+	if (saved_manager.event1_char1==false and int(saved_manager.state)==int(0)):
+		#cutscene da entrada da Anne no RUA e torna-la visible=true
 		add_child(intro_carlos_anne.instance())
+		get_node("Control").visible=true
 		saved_manager.state = 1
 		#var file_state0 = File.new()
 		#file_state0.open("res://data_files/progress_in_game.txt", File.WRITE)
 		#file_state0.store_string("1")
 		#file_state0.close()
 	elif (condition0==true and condition1==true and condition2==false and saved_manager.state==1):
-		#Colocar cutscene
+		#Colocar cutscene e torna-la visible=true
 		"""var file_state0 = File.new()
 		file_state0.open("res://data_files/progress_in_game.txt", File.WRITE)
 		file_state0.store_string("2")
 		file_state0.close()"""
 		saved_manager.state = 2
 	elif (condition0==true and condition1==true and condition2==true and saved_manager.state==2):
-		#Colocar cutscene
+		#Colocar cutscene  e torna-la visible=true
 		#var file_state0 = File.new()
 		#file_state0.open("res://data_files/progress_in_game.txt", File.WRITE)
 		#file_state0.store_string("3")
@@ -157,7 +134,6 @@ func _on_ButtonEvent1_pressed():
 
 
 func _on_ButtonShop_pressed():
-	print("HERE - AQUI FOI E AÌ!!")
 	get_tree().change_scene("res://assets/blender2.79_old/assets/assets_shop_cars/shop.tscn")
 
 

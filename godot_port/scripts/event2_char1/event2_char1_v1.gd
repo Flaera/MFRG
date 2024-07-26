@@ -20,18 +20,18 @@ var save_file: Resource
 
 func _ready():
 	# MUDAR O NOME DA VAR DO SAVED FILE RESOURCE LÀ EMBAIXO EM winPlay()!!
-	#var event_name: String = "event2_char1_v1" # Deve ser mesmo nome do node e do file
+	var event_name: String = "event2_char1_v1" # Deve ser mesmo nome do node e do file
 	#event_name0 = "event2_char1" # Deve ser o nome para progressao do game
-	#var file_event = File.new()
-	#file_event.open("res://data_files/event_name.txt", File.WRITE)
-	#file_event.store_string(event_name)
-	#file_event.close()
+	var file_event = File.new()
+	file_event.open("res://data_files/event_name.txt", File.WRITE)
+	file_event.store_string(event_name)
+	file_event.close()
 	save_file = SaveFile.new()
 
 	#var file = File.new()
 	#file.open("res://data_files/car_selected.txt",File.READ)
 	#var car = file.get_csv_line()[0]
-	save_file = ResourceLoader.load("res://resource/saved_game/saved_game.tres")
+	save_file = ResourceLoader.load("res://resources/saved_game/saved_game.tres")
 	car_loaded = load("res://scenes/cars/"+save_file.car_selected+".scn")
 	#file.close()
 	curr_car = car_loaded.instance()
@@ -89,10 +89,10 @@ func winPlay(_delta):
 			#file_golds1.store_string(String(curr_golds))
 			#file_golds1.close()
 			save_file.gold = curr_golds
-			ResourceSaver.save("res://resource/saved_game/saved_game.tres", save_file)
+			#ResourceSaver.save("res://resources/saved_game/saved_game.tres", save_file)
 			
 			var save_file: Resource = load("res://resources/saved_game/saved_game.tres")
-			save_file.event1_char1 = true
+			save_file.event2_char1 = true #MUDAR AQUI O NOME DA VARIAVEL NO RESOURCE!!
 			ResourceSaver.save("res://resources/saved_game/saved_game.tres", save_file)
 			"""var file_event = File.new()
 			file_event.open("res://data_files/"+event_name0+".txt", File.WRITE)

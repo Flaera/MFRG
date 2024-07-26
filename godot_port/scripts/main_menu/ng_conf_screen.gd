@@ -77,6 +77,6 @@ func _on_B_YES_pressed():
 	save_file.event4_char3 = 0
 	save_file.event5_char3 = 0
 
-	ResourceSaver.save("res://resources/saved_game/saved_game.tres", save_file)
+	var save_status = ResourceSaver.save("res://resources/saved_game/saved_game.tres", save_file)
 	get_tree().change_scene("res://scenes/ng_prologue/ng_prologue.tscn")
 
