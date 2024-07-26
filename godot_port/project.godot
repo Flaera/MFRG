@@ -18,10 +18,22 @@ _global_script_classes=[ {
 "class": "EntityCar",
 "language": "GDScript",
 "path": "res://scripts/Resources/entity_car.gd"
+}, {
+"base": "Node",
+"class": "GamaManager",
+"language": "GDScript",
+"path": "res://scripts/autoload_game_manager/game_manager.gd"
+}, {
+"base": "Resource",
+"class": "SaveFile",
+"language": "GDScript",
+"path": "res://scripts/Resources/entity_saved_manager.gd"
 } ]
 _global_script_class_icons={
 "Cars": "",
-"EntityCar": ""
+"EntityCar": "",
+"GamaManager": "",
+"SaveFile": ""
 }
 
 [application]

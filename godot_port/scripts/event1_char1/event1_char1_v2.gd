@@ -15,21 +15,25 @@ var curr_car_enemy: Object
 var len_checkpoints: int = 15
 var index_cp: int = 0
 onready var event_name0: String
+var save_file: Resource
 
 
 func _ready():
-	var event_name: String = "event1_char1_v3" # Deve ser mesmo nome do node e do file
-	event_name0 = "event1_char1" # Deve ser o nome para progressao do game
-	var file_event = File.new()
-	file_event.open("res://data_files/event_name.txt", File.WRITE)
-	file_event.store_string(event_name)
-	file_event.close()
+	# MUDAR O NOME DA VAR DO SAVED FILE RESOURCE LÀ EMBAIXO EM winPlay()!!
+	#var event_name: String = "event1_char1_v3" # Deve ser mesmo nome do node e do file
+	#event_name0 = "event1_char1" # Deve ser o nome para progressao do game
+	save_file = SaveFile.new()
+	#var file_event = File.new()
+	#file_event.open("res://data_files/event_name.txt", File.WRITE)
+	#file_event.store_string(event_name)
+	#file_event.close()
 
-	var file = File.new()
-	file.open("res://data_files/car_selected.txt",File.READ)
-	var car = file.get_csv_line()[0]
-	car_loaded = load("res://scenes/cars/"+car+".scn")
-	file.close()
+	#var file = File.new()
+	#file.open("res://data_files/car_selected.txt",File.READ)
+	#var car = file.get_csv_line()[0]
+	save_file = ResourceLoader.load("res://resource/saved_game/saved_game.tres")
+	car_loaded = load("res://scenes/cars/"+save_file.car_selected+".scn")
+	#file.close()
 	curr_car = car_loaded.instance()
 	get_node("car_invoker").add_child(curr_car)
 	#load enemy:
@@ -37,7 +41,7 @@ func _ready():
 	file_enemy.open("res://data_files/cp_enemy.txt", File.WRITE)
 	file_enemy.store_string("0")
 	file_enemy.close()
-	var car_loaded_enemy: Object = load("res://scenes/cars/"+car+"_enemy.scn")
+	var car_loaded_enemy: Object = load("res://scenes/cars/"+save_file.car_selected+"_enemy.scn")
 	curr_car_enemy = car_loaded_enemy.instance()
 	get_node("car_invoker_enemy").add_child(curr_car_enemy)
 
@@ -73,20 +77,27 @@ func winPlay(_delta):
 		time_end += _delta
 		if (time_end>=7.0):
 			var curr_golds: int = 0
-			var file_golds = File.new()
-			file_golds.open("res://data_files/gold.txt", File.READ)
-			curr_golds = int(file_golds.get_csv_line()[0])+golds
+			#var file_golds = File.new()
+			#file_golds.open("res://data_files/gold.txt", File.READ)
+			#curr_golds = int(file_golds.get_csv_line()[0])+golds
+			curr_golds = save_file.gold+golds
 			print(curr_golds)
-			file_golds.close()
-			var file_golds1 = File.new()
-			file_golds1.open("res://data_files/gold.txt", File.WRITE)
-			file_golds1.store_string(String(curr_golds))
-			file_golds1.close()
+			#file_golds.close()
+			#var file_golds1 = File.new()
+			#file_golds1.open("res://data_files/gold.txt", File.WRITE)
+			#file_golds1.store_string(String(curr_golds))
+			#file_golds1.close()
+			save_file.gold = curr_golds
+			ResourceSaver.save("res://resource/saved_game/saved_game.tres", save_file)
 			
-			var file_event = File.new()
+			
+			var save_file: Resource = load("res://resources/saved_game/saved_game.tres")
+			save_file.event1_char1 = true
+			ResourceSaver.save("res://resources/saved_game/saved_game.tres", save_file)
+			"""var file_event = File.new()
 			file_event.open("res://data_files/"+event_name0+".txt", File.WRITE)
 			file_event.store_string("1")
-			file_event.close()
+			file_event.close()"""
 			
 			get_tree().change_scene("res://scenes/progress_game/progress_game.tscn")
 		get_node("CanvasLayer/Control/Control/Label4").text = String(golds)+" golds"

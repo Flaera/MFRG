@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/themeMFRGLabelDark.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/golds/golds.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/map/map.gd" type="Script" id=3]
+[ext_resource path="res://resources/saved_game/saved_game.tres" type="Resource" id=4]
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4
@@ -60,6 +61,7 @@ load_path = "res://.import/event_tex.png-2ca0e6338afe4cc6b35f9417396346ab.stex"
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 3 )
+saved_manager = ExtResource( 4 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

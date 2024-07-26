@@ -1,0 +1,27 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://scripts/Resources/entity_saved_manager.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+car_selected = ""
+car0_in_garage = ""
+car1_in_garage = ""
+car2_in_garage = ""
+gold = 0
+event1_char1 = true
+event2_char1 = false
+event3_char1 = false
+event4_char1 = false
+event5_char1 = false
+event1_char2 = false
+event2_char2 = false
+event3_char2 = false
+event4_char2 = false
+event5_char2 = false
+event1_char3 = false
+event2_char3 = false
+event3_char3 = false
+event4_char3 = false
+event5_char3 = false
+state = 0
