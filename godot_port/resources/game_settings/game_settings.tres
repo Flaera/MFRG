@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://scripts/Resources/entity_game_settings.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+index_resolution = 1
+sound_and_music_volume = -27
+color_legend = Color( 0.368627, 0.129412, 0.129412, 1 )

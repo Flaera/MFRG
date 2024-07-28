@@ -24,7 +24,6 @@ anne7,anne8,anne9,anne10]
 var char_load: Object
 var char_name: String
 var anne_id: int
-var path_event: String
 
 
 func setCharText(anne_id,
@@ -65,13 +64,12 @@ func _ready():
 	char_name = "Carlos"
 	print("talk=",talk[index_dic][index][0])
 	setCharText(anne_id, char_load, talk[index_dic][index][2])
-	path_event = "res://scenes/map/map.scn"
 
 
 func changeScene():
 	if index==lenght:
 		index=-1
-		queue_free()#get_tree().change_scene(path_event)
+		get_tree().change_scene("res://scenes/map/map2.tscn")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

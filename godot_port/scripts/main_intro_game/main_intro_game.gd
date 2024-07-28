@@ -12,10 +12,12 @@ var res_array: Array = [Vector2(640,360),
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var file_screen = File.new()
-	file_screen.open("res://data_files/size_screen.txt", File.READ)
-	var size = int(file_screen.get_csv_line()[0])
-	file_screen.close()
+	var save_settings = load("res://resources/game_settings/game_settings.tres")
+	#var file_screen = File.new()
+	#file_screen.open("res://data_files/size_screen.txt", File.READ)
+	var size = save_settings.index_resolution#int(file_screen.get_csv_line()[0])
+	#file_screen.close()
+	AudioServer.set_bus_volume_db(1,save_settings.sound_and_music_volume)
 	if (size==0):
 		OS.set_window_size(Res["640x360"])
 	elif (size==1):
@@ -23,6 +25,7 @@ func _ready():
 	elif (size==2):
 		OS.set_window_size(Res["1920x1080"])
 	#get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_VIEWPORT,SceneTree.STRETCH_ASPECT_KEEP,res_array[size])
+	
 	
 	
 

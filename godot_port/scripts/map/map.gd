@@ -3,7 +3,7 @@ extends Control
 
 onready var unconfirmed: Object = load("res://assets/blender2.79_old/textures/event_icons/unconfirmed_icon.png")
 onready var confirmed: Object = load("res://assets/blender2.79_old/textures/event_icons/confirmed_icon.png")
-onready var intro_carlos_anne: Object = load("res://scenes/dialog_carlos_intro/dialog_carlos_intro.scn")
+onready var intro_carlos_anne_scene_name: String = "res://scenes/dialog_carlos_intro/dialog_carlos_intro.scn"
 export var saved_manager: Resource
 
 
@@ -44,28 +44,31 @@ func _ready():
 	#print("condition1=",saved_manager.event1_char1==false)
 	#print("condition2=",int(saved_manager.state)==int(0))
 	if (saved_manager.event1_char1==false and int(saved_manager.state)==int(0)):
-		#cutscene da entrada da Anne no RUA e torna-la visible=true
-		add_child(intro_carlos_anne.instance())
-		get_node("Control").visible=true
 		saved_manager.state = 1
+		ResourceSaver.save("res://resources/saved_game/saved_game.tres", saved_manager)
+		#cutscene da entrada da Anne no RUA
+		get_tree().change_scene(intro_carlos_anne_scene_name)
+		#add_child(intro_carlos_anne.instance())
 		#var file_state0 = File.new()
 		#file_state0.open("res://data_files/progress_in_game.txt", File.WRITE)
 		#file_state0.store_string("1")
 		#file_state0.close()
 	elif (condition0==true and condition1==true and condition2==false and saved_manager.state==1):
-		#Colocar cutscene e torna-la visible=true
+		saved_manager.state = 2
+		ResourceSaver.save("res://resources/saved_game/saved_game.tres", saved_manager)
+		#Colocar cutscene
 		"""var file_state0 = File.new()
 		file_state0.open("res://data_files/progress_in_game.txt", File.WRITE)
 		file_state0.store_string("2")
 		file_state0.close()"""
-		saved_manager.state = 2
 	elif (condition0==true and condition1==true and condition2==true and saved_manager.state==2):
-		#Colocar cutscene  e torna-la visible=true
+		saved_manager.state = 3
+		ResourceSaver.save("res://resources/saved_game/saved_game.tres", saved_manager)
+		#Colocar cutscene
 		#var file_state0 = File.new()
 		#file_state0.open("res://data_files/progress_in_game.txt", File.WRITE)
 		#file_state0.store_string("3")
 		#file_state0.close()
-		saved_manager.state = 3
 	var acc: int = 0
 	var constant: float = 0.125
 	for i in get_node("CanvasLayer/PivotButtons/PivotEvents").get_children():
