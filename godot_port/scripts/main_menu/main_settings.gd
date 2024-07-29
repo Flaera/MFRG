@@ -18,6 +18,8 @@ func _ready():
 	get_node("CanvasLayer/HBoxContainer/VBoxContainer/OptionButton").selected = index
 	AudioServer.set_bus_volume_db(1,save_settings.sound_and_music_volume)
 	get_node("CanvasLayer/HBoxContainer/VBoxContainer/HSlider").value = save_settings.sound_and_music_volume
+	
+	SelectLang.new().textInAllNodes(get_node("."))
 
 
 func quit():

@@ -21,6 +21,10 @@ func _ready():
 	get_node("CanvasLayer/Sprite/TextureRectBG").set_texture(bg)
 	get_node("CanvasLayer/ColorRect/VBoxContainer2/HBoxContainer/ButtonContinue").align=true
 	get_node("CanvasLayer/ColorRect/VBoxContainer2/HBoxContainer/ButtonContinue").grab_focus()
+	
+	#COLOCANDO COR PREDEFINIDA NA LEGENDA:
+	var select_lang = SelectLang.new()
+	select_lang.textInAllNodes(get_node("."))
 
 
 func changeScene():

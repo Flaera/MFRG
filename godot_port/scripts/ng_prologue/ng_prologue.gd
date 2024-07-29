@@ -9,6 +9,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node("CanvasLayer/Control/VBoxContainer/Button").grab_focus()
+	SelectLang.new().textInAllNodes(get_node("."))
 
 
 func _process(delta):

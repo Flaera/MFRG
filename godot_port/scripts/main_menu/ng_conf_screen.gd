@@ -8,6 +8,8 @@ var save_file: Resource
 func _ready():
 	get_node("CanvasLayer/ColorRect/VBoxContainer/B_NO").grab_focus()
 	save_file = preload("res://resources/saved_game/saved_game.tres")
+	
+	SelectLang.new().textInAllNodes(get_node("."))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

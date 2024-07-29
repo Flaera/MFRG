@@ -7,6 +7,7 @@ onready var intro_carlos_anne_scene_name: String = "res://scenes/dialog_carlos_i
 export var saved_manager: Resource
 
 
+
 func _ready():
 	
 	print("get_path=",get_node("CanvasLayer/AnimationPlayer"))
@@ -112,6 +113,8 @@ func _ready():
 	#file_event2_char1.close()
 	
 	##############################################
+	
+	SelectLang.new().textInAllNodes(get_node("."))
 
 
 #func _input(event):
