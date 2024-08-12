@@ -68,3 +68,7 @@ func _on_HSlider_value_changed(value):
 func _on_ColorPickerButton_color_changed(color):
 	save_settings.color_legend = color
 	ResourceSaver.save("res://resources/game_settings/game_settings.tres", save_settings)
+
+
+func _on_HSliderContrast_value_changed(value):
+	pass

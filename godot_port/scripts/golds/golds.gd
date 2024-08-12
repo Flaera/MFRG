@@ -4,6 +4,10 @@ extends HBoxContainer
 onready var save_file: Resource = preload("res://resources/saved_game/saved_game.tres")
 
 
+func _ready():
+	SelectLang.new().textInAllNodes(get_node("."))
+
+
 func _process(_delta):
 	#var file = File.new()
 	#file.open("res://data_files/gold.txt",File.READ)

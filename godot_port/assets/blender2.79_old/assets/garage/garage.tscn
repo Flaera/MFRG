@@ -75,60 +75,60 @@ alignment = 1
 
 [node name="HBoxContainer0" type="HBoxContainer" parent="CanvasLayer/VBoxContainer" index="0"]
 margin_right = 1920.0
-margin_bottom = 56.0
+margin_bottom = 84.0
 alignment = 1
 
 [node name="B_CARRO_1" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer0" index="0"]
-margin_left = 815.0
-margin_right = 932.0
-margin_bottom = 56.0
+margin_left = 743.0
+margin_right = 921.0
+margin_bottom = 84.0
 theme = ExtResource( 8 )
 text = "carro 1"
 
 [node name="B_CAR_SELL1" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer0" index="1"]
-margin_left = 936.0
-margin_right = 1104.0
-margin_bottom = 56.0
+margin_left = 925.0
+margin_right = 1177.0
+margin_bottom = 84.0
 theme = ExtResource( 8 )
 text = "B_Sell_Car"
 
 [node name="HBoxContainer1" type="HBoxContainer" parent="CanvasLayer/VBoxContainer" index="1"]
-margin_top = 60.0
+margin_top = 88.0
 margin_right = 1920.0
-margin_bottom = 116.0
+margin_bottom = 172.0
 alignment = 1
 
 [node name="B_CARRO_2" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer1" index="0"]
-margin_left = 815.0
-margin_right = 932.0
-margin_bottom = 56.0
+margin_left = 743.0
+margin_right = 921.0
+margin_bottom = 84.0
 theme = ExtResource( 8 )
 text = "carro 2"
 
 [node name="B_CAR_SELL2" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer1" index="1"]
-margin_left = 936.0
-margin_right = 1104.0
-margin_bottom = 56.0
+margin_left = 925.0
+margin_right = 1177.0
+margin_bottom = 84.0
 theme = ExtResource( 8 )
 text = "B_Sell_Car"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/VBoxContainer" index="2"]
-margin_top = 120.0
+margin_top = 176.0
 margin_right = 1920.0
-margin_bottom = 176.0
+margin_bottom = 260.0
 alignment = 1
 
 [node name="B_CARRO_3" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer2" index="0"]
-margin_left = 815.0
-margin_right = 932.0
-margin_bottom = 56.0
+margin_left = 743.0
+margin_right = 921.0
+margin_bottom = 84.0
 theme = ExtResource( 8 )
 text = "carro 3"
 
 [node name="B_CAR_SELL3" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer2" index="1"]
-margin_left = 936.0
-margin_right = 1104.0
-margin_bottom = 56.0
+margin_left = 925.0
+margin_right = 1177.0
+margin_bottom = 84.0
 theme = ExtResource( 8 )
 text = "B_Sell_Car"
 

@@ -63,6 +63,8 @@ func _ready():
 	print("talk=",talk[index_dic][index][0])
 	setCharText(anne_id, char_load, talk[index_dic][index][2])
 	path_event = "res://scenes/event2_char1/event2_char1_v1.tscn"
+	
+	SelectLang.new().textInAllNodes(get_node("."))
 
 
 func changeScene():

@@ -34,14 +34,15 @@ func _ready():
 	save_file = ResourceLoader.load("res://resources/saved_game/saved_game.tres")
 	car_loaded = load("res://scenes/cars/"+save_file.car_selected+".scn")
 	#file.close()
+	#print("car_res=",car_loaded)
 	curr_car = car_loaded.instance()
-	get_node("car_invoker").add_child(curr_car)
+	#get_node("car_invoker").add_child(curr_car)
 	#load enemy:
 	var file_enemy = File.new()
 	file_enemy.open("res://data_files/cp_enemy.txt", File.WRITE)
 	file_enemy.store_string("0")
 	file_enemy.close()
-	var car_loaded_enemy: Object = load("res://scenes/cars/"+save_file.car_selected+"_enemy.scn")
+	var car_loaded_enemy: Object = load("res://scenes/cars/"+save_file.car_selected+".scn")
 	curr_car_enemy = car_loaded_enemy.instance()
 	get_node("car_invoker_enemy").add_child(curr_car_enemy)
 
@@ -52,6 +53,8 @@ func _ready():
 	timer = 55.0
 	get_node("Timer").start(timer) #time in seconds
 	get_node("CanvasLayer/Control/Control/Label2/AnimationPlayer").play("anim_run_init_event")
+	
+	SelectLang.new().textInAllNodes(get_node("."))
 
 
 func camTransform():

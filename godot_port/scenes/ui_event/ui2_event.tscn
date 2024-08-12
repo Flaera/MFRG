@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/themeMFRGLabelDarkLargeText.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/ui_event/ui2_event.gd" type="Script" id=2]
 
 [sub_resource type="Animation" id=100]
 length = 0.001
@@ -30,7 +31,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.4, 1.6, 2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -2100, 0 ), Vector2( 90, 0 ), Vector2( 90, 0 ), Vector2( 2100, 0 ) ]
+"values": [ Vector2( -700, 0 ), Vector2( 665.5, 0 ), Vector2( 665.5, 0 ), Vector2( 2100, 0 ) ]
 }
 
 [sub_resource type="Animation" id=102]
@@ -140,28 +141,25 @@ tracks/0/keys = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource( 2 )
 
 [node name="Control" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="Control" type="Control" parent="Control"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+
+[node name="Label2" type="Label" parent="Control/Control"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -960.0
-margin_top = -44.5
-margin_right = -371.0
-margin_bottom = 44.5
-
-[node name="Label2" type="Label" parent="Control/Control"]
-anchor_left = -3.565
-anchor_right = -0.63
-anchor_bottom = 3.146
-margin_left = -0.215088
-margin_right = 0.065155
-margin_bottom = 0.00598145
+margin_left = -2100.0
+margin_right = -1511.0
+margin_bottom = 91.0
 theme = ExtResource( 1 )
 text = "RUN_TIME"
 align = 1
@@ -197,6 +195,8 @@ anims/RESET = SubResource( 105 )
 anims/anim_you_win = SubResource( 106 )
 
 [node name="Label4" type="Label" parent="Control/Control"]
+anchor_top = 0.5
+anchor_bottom = 0.5
 margin_left = -700.0
 margin_right = -111.0
 margin_bottom = 91.0

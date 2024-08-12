@@ -3,6 +3,8 @@ extends Control
 var specs: Dictionary
 func _ready():
 	specs = preload("res://data_files/cars_specs.gd").new().specs
+	
+	SelectLang.new().textInAllNodes(get_node("."))
 
 
 func rulerThree(var maxim: float, var current: float):

@@ -1,6 +1,10 @@
 extends Control
 
 
+func _ready():
+	SelectLang.new().textInAllNodes(get_node("."))
+
+
 func resume():
 	get_node("CanvasLayer").visible = false
 	get_parent().get_tree().paused = false

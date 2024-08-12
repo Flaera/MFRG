@@ -52,6 +52,8 @@ func _ready():
 	timer = 60.0
 	get_node("Timer").start(timer) #time in seconds
 	get_node("CanvasLayer/Control/Control/Label2/AnimationPlayer").play("anim_run_init_event")
+	
+	SelectLang.new().textInAllNodes(get_node("."))
 
 
 func camTransform():

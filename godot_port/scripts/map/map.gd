@@ -38,9 +38,9 @@ func _ready():
 	#file_state.open("res://data_files/progress_in_game.txt", File.READ)
 	#var state: int = int(file_state.get_csv_line()[0])
 	#file_state.close()
-	var condition0: bool = saved_manager.event1_char1 and saved_manager.event1_char2 and saved_manager.event1_char3 and saved_manager.event1_char4 and saved_manager.event1_char5
-	var condition1: bool = saved_manager.event2_char1 and saved_manager.event2_char2 and saved_manager.event2_char3 and saved_manager.event2_char4 and saved_manager.event2_char5
-	var condition2: bool = saved_manager.event3_char1 and saved_manager.event3_char2 and saved_manager.event3_char3 and saved_manager.event3_char4 and saved_manager.event3_char5
+	var condition0: bool = saved_manager.event1_char1 and saved_manager.event2_char1 and saved_manager.event3_char1 and saved_manager.event4_char1 and saved_manager.event5_char1
+	var condition1: bool = saved_manager.event1_char2 and saved_manager.event2_char2 and saved_manager.event3_char2 and saved_manager.event4_char2 and saved_manager.event5_char2
+	var condition2: bool = saved_manager.event1_char3 and saved_manager.event2_char3 and saved_manager.event3_char3 and saved_manager.event4_char3 and saved_manager.event5_char3
 	#print("event1char1=",saved_manager.event1_char1,";state=",saved_manager.state)
 	#print("condition1=",saved_manager.event1_char1==false)
 	#print("condition2=",int(saved_manager.state)==int(0))

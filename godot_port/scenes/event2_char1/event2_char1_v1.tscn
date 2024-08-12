@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/blender2.79_old/assets/event2_char1/event2_char1_color_map.png" type="Texture" id=1]
 [ext_resource path="res://scenes/event2_char1/event2_char1_v1.escn" type="PackedScene" id=2]
@@ -19,6 +19,13 @@ albedo_texture = ExtResource( 1 )
 points = PoolVector3Array( -40.6876, -0.578596, 119.693, 167.979, -0.578596, 155.511, 108.254, -0.701616, 207.14, 47.8065, -4.79394, -295.507, 92.0536, -4.79394, 260.828, 115.245, -0.578596, -303.942, -108.153, -2.68627, 149.214, -21.713, -4.79394, -278.638, 52.0231, -0.578596, -299.725, -61.7435, -4.79394, -110.004, -82.8534, -2.68627, 218.713, 113.109, -4.79394, 220.793, 132.111, -0.578596, -299.725, 73.052, -2.68627, 281.914, -20.3936, -0.713041, 164.496, -108.153, -2.68627, 140.722, 89.9453, -2.68627, -308.159, 81.4851, -2.68627, 279.835, -40.6876, -0.578596, 132.345, 79.4309, -2.68627, -308.159, -76.5286, -2.68627, 222.93, 49.9148, -4.79394, -284.935, 134.219, -0.578596, -276.558, -44.9042, -2.68627, 235.582, -87.07, -2.68627, 208.141, 70.9977, -2.68627, -306.022, 104.73, -4.79394, 237.662 )
 
 [sub_resource type="BoxShape" id=3]
+
+[sub_resource type="ProceduralSky" id=4]
+
+[sub_resource type="Environment" id=5]
+background_mode = 3
+background_sky = SubResource( 4 )
+adjustment_enabled = true
 
 [node name="event2_char1_v1" instance=ExtResource( 2 )]
 script = ExtResource( 8 )
@@ -307,6 +314,9 @@ transform = Transform( 0.665712, 0, -0.746208, 0, 1, 0, 0.746208, 0, 0.665712, -
 
 [node name="RigidBody6" parent="." index="41" instance=ExtResource( 10 )]
 transform = Transform( 0.665712, 0, -0.746208, 0, 1, 0, 0.746208, 0, 0.665712, -40.7065, -1.3503, -112.357 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="42"]
+environment = SubResource( 5 )
 
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
 [connection signal="body_entered" from="checkpoint0/Area0" to="." method="_on_Area0_body_entered"]

@@ -32,6 +32,8 @@ func _ready():
 	car_loaded = load("res://scenes/cars/"+cars_list[acc]+"_only_asset.tscn")
 	get_node("invoker").add_child(car_loaded.instance())
 	get_node("CanvasLayer/VBoxContainer/HBoxContainer"+String(acc)+"/B_CARRO_"+String(acc+1)).grab_focus()
+	
+	SelectLang.new().textInAllNodes(get_node("."))
 
 
 func carSelect(var index: int):
