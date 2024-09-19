@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "VehicleBody",
+"class": "Car",
+"language": "GDScript",
+"path": "res://scripts/base_scripts/car.gd"
+}, {
 "base": "Reference",
 "class": "Cars",
 "language": "GDScript",
@@ -40,6 +45,7 @@ _global_script_classes=[ {
 "path": "res://scripts/select_lang/select_lang.gd"
 } ]
 _global_script_class_icons={
+"Car": "",
 "Cars": "",
 "EntityCar": "",
 "GamaManager": "",

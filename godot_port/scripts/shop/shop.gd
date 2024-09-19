@@ -1,8 +1,19 @@
 extends Spatial
 
+onready var car_invoker = $car_invoker
+onready var label_prices = $CanvasLayer/Control2/LabelPrices
+onready var button_right = $CanvasLayer/Control/ButtonRightShop
+onready var rot_cam = $rot_cam
+onready var timer_warning = $CanvasLayer/TimerWarning
+onready var car_already_garage = $CanvasLayer/CAR_ALREYD_GARAGE
+onready var no_space_hollow = $CanvasLayer/NO_SPACE_HOLLOW
+onready var car_bought = $CanvasLayer/CAR_BUIED
+onready var no_money = $CanvasLayer/NO_MONEY
+onready var UI = $Control
 
 var cars: Dictionary
-var car_loaded: Object
+var car_loaded: Car
+var car_unloaded: Car
 var cars_list: Array = []
 var player_cars: Array = []
 var car_in_shop: String
@@ -10,20 +21,31 @@ var acc: int = 0
 var final_acc: int
 var prices: Array = []
 var money: int
+var cars_folder_path = "res://scenes/cars_updated"
 
 
 func loadCarList():
-	var file = File.new()
-	file.open("res://data_files/cars_list.txt", File.READ_WRITE)
-	for i in cars.keys():
-		file.store_string((i+"\n"))
-		acc+=1
-	cars_list = file.get_as_text().rsplit("\n")
-	file.close()
-	#print(cars_list)
-	final_acc = acc-1
-	acc = 0
+	var directory = Directory.new()
+	if directory.open(cars_folder_path) == OK:
+		directory.list_dir_begin()
+		var file_name = directory.get_next()
+		
+		while file_name != "":
+			if file_name.ends_with(".tscn"):
+				var file_path = cars_folder_path + "/" + file_name
+				cars_list.append(load(file_path).instance() as Car)
+				
+			file_name = directory.get_next()
+		
+		directory.list_dir_end()
+		
+		spawnCars()
 
+func spawnCars():
+	for car in cars_list:
+		car.disable()
+		car_invoker.add_child(car)
+	changeCar(0, cars_list.size()-1)
 
 func loadMoney():
 	var file = File.new()
@@ -34,17 +56,17 @@ func loadMoney():
 
 
 func updatePrice():
-	get_node("CanvasLayer/Control2/LabelPrices").text = String(prices[acc])
+	label_prices.text = String(car_loaded.price)
 
 
 func _ready():
-	get_node("CanvasLayer/Control/ButtonRightShop").grab_focus()
+	button_right.grab_focus()
 	cars = preload("res://data_files/cars_specs.gd").new().specs
 	loadCarList()
 	for i in cars.keys():
 		prices.append(cars[i][0])
-	car_loaded = load("res://scenes/cars/"+cars_list[acc]+"_only_asset.tscn")
-	get_node("car_invoker").add_child(car_loaded.instance())
+	car_loaded = cars_list[acc]
+	car_invoker.add_child(car_loaded)
 	updatePrice()
 	
 	var file2 = File.new()
@@ -53,25 +75,27 @@ func _ready():
 	loadMoney()
 
 
-func changeCar(var index: int):
-	get_node("car_invoker").get_child(0).queue_free()
-	car_loaded = load("res://scenes/cars/"+cars_list[index]+"_only_asset.tscn")
-	get_node("car_invoker").add_child(car_loaded.instance())
+func changeCar(var index: int, var previous_index: int):
+	car_loaded = cars_list[index]
+	car_loaded.transform = car_invoker.transform
+	car_loaded.enable()
+	car_unloaded = cars_list[previous_index]
+	car_unloaded.disable()
+	car_unloaded.transform = car_invoker.transform
 	updatePrice()
+	UI.changeUIProperties(cars_list[index])
+	
 
 
 func _process(_delta):
-	get_node("rot_cam").rotation_degrees.y += _delta*10
-	var file = File.new()
-	file.open("res://data_files/car_in_shop.txt", File.WRITE)
-	file.store_string(cars_list[acc])
+	rot_cam.rotation_degrees.y += _delta*10
 	
 	#print(get_node("CanvasLayer/TimerWarning").time_left)
-	if (get_node("CanvasLayer/TimerWarning").time_left<=0.0):
-		get_node("CanvasLayer/CAR_ALREYD_GARAGE").visible=false
-		get_node("CanvasLayer/NO_SPACE_HOLLOW").visible=false
-		get_node("CanvasLayer/CAR_BUIED").visible=false
-		get_node("CanvasLayer/NO_MONEY").visible=false
+	if (timer_warning.time_left<=0.0):
+		car_already_garage.visible=false
+		no_space_hollow.visible=false
+		car_bought.visible=false
+		no_money.visible=false
 
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().change_scene("res://scenes/map/map2.tscn")
@@ -79,15 +103,15 @@ func _process(_delta):
 
 func _on_ButtonLeftShop_pressed():
 	acc -= 1
-	if (acc<0):
-		acc = final_acc
-	changeCar(acc)
+	if (acc<0): acc = cars_list.size()-1
+	changeCar(acc, acc+1)
 
 
 func _on_ButtonRightShop_pressed():
 	acc+=1
-	if (acc>final_acc): acc = 0
-	changeCar(acc)
+	print("ACC: ", acc)
+	if (acc>cars_list.size()-1): acc = 0
+	changeCar(acc, acc-1)
 
 
 func saveMoney(var less_money: int):
@@ -100,25 +124,25 @@ func saveMoney(var less_money: int):
 
 func _on_ButtonConfirmShop_pressed():
 	print("--",cars_list,"--",player_cars)
-	if (cars_list[acc] in player_cars):
+	if (cars_list[acc].name in player_cars):
 		print("Carro já comprado")
-		get_node("CanvasLayer/CAR_ALREYD_GARAGE").visible=true
-		get_node("CanvasLayer/TimerWarning").start(5)
+		car_already_garage.visible=true
+		timer_warning.start(5)
 	elif (len(player_cars)>=3 and not("VAZIO" in player_cars)):
 		print("Não há espaço vazio para carros na sua garagem")
-		get_node("CanvasLayer/NO_SPACE_HOLLOW").visible=true
-		get_node("CanvasLayer/TimerWarning").start(5)
+		no_space_hollow.visible=true
+		timer_warning.start(5)
 	elif (prices[acc]>money):
 		print("DEBUGGER: ", money, "--", prices[acc])
-		get_node("CanvasLayer/NO_MONEY").visible=true
-		get_node("CanvasLayer/TimerWarning").start(5)
+		no_money.visible=true
+		timer_warning.start(5)
 	elif (("VAZIO" in player_cars) and (prices[acc]<=money)):
 		print("Carro comprado")
-		get_node("CanvasLayer/CAR_BUIED").visible=true
-		get_node("CanvasLayer/TimerWarning").start(5)
+		car_bought.visible=true
+		timer_warning.start(5)
 		for i in range(len(player_cars)):
 			if (player_cars[i]=="VAZIO"):
-				player_cars[i] = cars_list[acc]
+				player_cars[i] = cars_list[acc].name
 				break
 		var file = File.new()
 		file.open("res://data_files/player_cars.txt", File.WRITE)
