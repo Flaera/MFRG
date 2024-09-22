@@ -9,12 +9,15 @@ func _ready():
 	ng_load = preload("res://scenes/main_menu/new_game_conf_screen.tscn")
 	var file_state = save_file.state
 	if (file_state==0):
-		get_node("VBoxContainer/ButtonNG").grab_focus()
+		get_node("ViewportContainer/Viewport/VBoxContainer/ButtonNG").grab_focus()
 	else:
-		get_node("VBoxContainer/ButtonContinue").grab_focus()
+		get_node("ViewportContainer/Viewport/VBoxContainer/ButtonContinue").grab_focus()
 
 	var select_lang = SelectLang.new()
 	select_lang.textInAllNodes(get_node("."))
+	
+	select_lang.contrast_in_texturesrects(get_node("."))
+	
 
 
 func _on_ButtonNG_pressed():
@@ -49,4 +52,4 @@ func _on_ButtonQuit_pressed():
 
 
 func _on_VideoPlayer_finished():
-	get_node("VideoPlayer").play()
+	get_node("ViewportContainer/Viewport/VideoPlayer").play()

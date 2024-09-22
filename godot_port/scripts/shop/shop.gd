@@ -22,6 +22,8 @@ var final_acc: int
 var prices: Array = []
 var money: int
 var cars_folder_path = "res://scenes/cars_updated"
+var res_savegame = ResourceLoader.load("res://resources/saved_game/saved_game.tres")
+
 
 
 func loadCarList():
@@ -38,8 +40,10 @@ func loadCarList():
 			file_name = directory.get_next()
 		
 		directory.list_dir_end()
-		
+		for car in cars_list:
+			car.MODES.STATIC
 		spawnCars()
+
 
 func spawnCars():
 	for car in cars_list:
@@ -47,11 +51,13 @@ func spawnCars():
 		car_invoker.add_child(car)
 	changeCar(0, cars_list.size()-1)
 
+
 func loadMoney():
-	var file = File.new()
-	file.open("res://data_files/gold.txt", File.READ)
-	money = int(file.get_csv_line()[0])
-	file.close()
+	#var file = File.new()
+	#file.open("res://data_files/gold.txt", File.READ)
+	#money = int(file.get_csv_line()[0])
+	#file.close()
+	money = res_savegame.gold
 	print(money)
 
 
@@ -69,10 +75,20 @@ func _ready():
 	car_invoker.add_child(car_loaded)
 	updatePrice()
 	
-	var file2 = File.new()
-	file2.open("res://data_files/player_cars.txt", File.READ)
-	player_cars = file2.get_as_text().rsplit("\n")
+	#var file2 = File.new()
+	#file2.open("res://data_files/player_cars.txt", File.READ)
+	#player_cars = file2.get_as_text().rsplit("\n")
+	player_cars = [res_savegame.car0_in_garage,res_savegame.car1_in_garage,res_savegame.car2_in_garage]
+	
 	loadMoney()
+	
+	var select_lang = SelectLang.new()
+	select_lang.textInAllNodes(get_node("."))
+	
+	select_lang.contrast_in_texturesrects(get_node("."))
+	
+	Contrast3D.new().contrast_3d(get_node("."))
+
 
 
 func changeCar(var index: int, var previous_index: int):
@@ -103,7 +119,10 @@ func _process(_delta):
 
 func _on_ButtonLeftShop_pressed():
 	acc -= 1
-	if (acc<0): acc = cars_list.size()-1
+	if (acc<0):
+		acc = cars_list.size()-1
+		changeCar(acc,0)
+		return
 	changeCar(acc, acc+1)
 
 
@@ -115,11 +134,12 @@ func _on_ButtonRightShop_pressed():
 
 
 func saveMoney(var less_money: int):
-	var file: File = File.new()
-	money -= less_money
-	file.open("res://data_files/gold.txt", File.WRITE)
-	file.store_string(String(money))
-	file.close()
+	#var file: File = File.new()
+	res_savegame.gold = money-less_money
+	#file.open("res://data_files/gold.txt", File.WRITE)
+	#file.store_string(String(money))
+	#file.close()
+	ResourceSaver.save("res://resources/saved_game/saved_game.tres", res_savegame)
 
 
 func _on_ButtonConfirmShop_pressed():
@@ -144,15 +164,19 @@ func _on_ButtonConfirmShop_pressed():
 			if (player_cars[i]=="VAZIO"):
 				player_cars[i] = cars_list[acc].name
 				break
-		var file = File.new()
-		file.open("res://data_files/player_cars.txt", File.WRITE)
-		var acc1: int = 0
-		for j in player_cars:
-			if (acc1<2):
-				file.store_string(j+"\n")
-			elif (acc1==2):
-				file.store_string(j)
-			acc1+=1
+		res_savegame.car0_in_garage = player_cars[0]
+		res_savegame.car1_in_garage = player_cars[1]
+		res_savegame.car2_in_garage = player_cars[2]
+		ResourceSaver.save("res://resources/saved_game/saved_game.tres", res_savegame)
+		#var file = File.new()
+		#file.open("res://data_files/player_cars.txt", File.WRITE)
+		#var acc1: int = 0
+		#for j in player_cars:
+		#	if (acc1<2):
+		#		file.store_string(j+"\n")
+		#	elif (acc1==2):
+		#		file.store_string(j)
+		#	acc1+=1
 		saveMoney(prices[acc])
 		loadCarList()
 		loadMoney()

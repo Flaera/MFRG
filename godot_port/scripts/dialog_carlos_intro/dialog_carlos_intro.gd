@@ -43,6 +43,11 @@ func setCharText(anne_id,
 	elif (talk[index_dic][index][0]=="Traficante_Armado" and pos==2):
 		get_node("CanvasLayer/Right/TextureRectBG").set_texture(character)
 
+	var select_lang = SelectLang.new()
+	select_lang.textInAllNodes(get_node("."))
+	
+	select_lang.contrast_in_texturesrects(get_node("."))
+
 
 func _ready():
 	char_load = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Carlos.png")

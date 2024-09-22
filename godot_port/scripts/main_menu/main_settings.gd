@@ -1,6 +1,7 @@
 extends Control
 
 onready var save_settings: Resource = preload("res://resources/game_settings/game_settings.tres")
+onready var select_lang = SelectLang.new()
 var Res: Dictionary = {"640x360": Vector2(640,360),
 "1280x720": Vector2(1280,720),
 "1920x1080": Vector2(1920,1080)}
@@ -8,22 +9,27 @@ var Res: Dictionary = {"640x360": Vector2(640,360),
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	get_node("CanvasLayer/HBoxContainer/VBoxContainer/OptionButton").add_item("640x360",0)
-	get_node("CanvasLayer/HBoxContainer/VBoxContainer/OptionButton").add_item("1280x720",1)
-	get_node("CanvasLayer/HBoxContainer/VBoxContainer/OptionButton").add_item("1920x1080",2)
-	get_node("CanvasLayer/HBoxContainer/VBoxContainer/OptionButton").grab_focus()
+	get_node("ViewportContainer/Viewport/CanvasLayer/HBoxContainer/VBoxContainer/OptionButton").add_item("640x360",0)
+	get_node("ViewportContainer/Viewport/CanvasLayer/HBoxContainer/VBoxContainer/OptionButton").add_item("1280x720",1)
+	get_node("ViewportContainer/Viewport/CanvasLayer/HBoxContainer/VBoxContainer/OptionButton").add_item("1920x1080",2)
+	get_node("ViewportContainer/Viewport/CanvasLayer/HBoxContainer/VBoxContainer/OptionButton").grab_focus()
 	#var file_screen = File.new()
 	#file_screen.open("res://data_files/size_screen.txt", File.READ)
 	var index: int = save_settings.index_resolution#int(file_screen.get_csv_line()[0])
-	get_node("CanvasLayer/HBoxContainer/VBoxContainer/OptionButton").selected = index
+	get_node("ViewportContainer/Viewport/CanvasLayer/HBoxContainer/VBoxContainer/OptionButton").selected = index
 	AudioServer.set_bus_volume_db(1,save_settings.sound_and_music_volume)
-	get_node("CanvasLayer/HBoxContainer/VBoxContainer/HSlider").value = save_settings.sound_and_music_volume
+	get_node("ViewportContainer/Viewport/CanvasLayer/HBoxContainer/VBoxContainer/HSlider").value = save_settings.sound_and_music_volume
 	
-	SelectLang.new().textInAllNodes(get_node("."))
+	select_lang.textInAllNodes(get_node("."))
+	
+	get_node("ViewportContainer/Viewport/CanvasLayer/HBoxContainer/VBoxContainer2/HSliderContrastMenu").value = save_settings.contrast_tex
+	select_lang.contrast_in_texturesrects(get_node("."))
+
+	get_node("ViewportContainer/Viewport/CanvasLayer/HBoxContainer/VBoxContainer2/HSliderContrastMenu2").value = save_settings.contrast_3d
 
 
 func quit():
-	get_node("/root/ControlMenu/VBoxContainer/ButtonNG").grab_focus()
+	get_node("/root/ControlMenu/ViewportContainer/Viewport/VBoxContainer/ButtonNG").grab_focus()
 	queue_free()
 
 
@@ -33,7 +39,7 @@ func _process(_delta):
 
 
 func _on_OptionButton_item_selected(index):
-	var size = Res[get_node("CanvasLayer/HBoxContainer/VBoxContainer/OptionButton").get_item_text(index)]
+	var size = Res[get_node("ViewportContainer/Viewport/CanvasLayer/HBoxContainer/VBoxContainer/OptionButton").get_item_text(index)]
 	#var file_size = File.new()
 	#file_size.open("res://data_files/size_screen.txt", File.WRITE)
 	#file_size.store_string(String(index))
@@ -71,4 +77,11 @@ func _on_ColorPickerButton_color_changed(color):
 
 
 func _on_HSliderContrast_value_changed(value):
-	pass
+	save_settings.contrast_tex = value
+	ResourceSaver.save("res://resources/game_settings/game_settings.tres", save_settings)
+	select_lang.contrast_in_texturesrects(get_node("."))
+	get_node("/root/ControlMenu").call("_ready")
+
+func _on_HSliderContrastMenu2_value_changed(value):
+	save_settings.contrast_3d = value
+	ResourceSaver.save("res://resources/game_settings/game_settings.tres", save_settings)

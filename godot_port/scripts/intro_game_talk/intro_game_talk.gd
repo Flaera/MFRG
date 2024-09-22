@@ -18,13 +18,15 @@ func _ready():
 	index = 0
 	lenght = len(talk[index_dic])
 
-	get_node("CanvasLayer/Sprite/TextureRectBG").set_texture(bg)
-	get_node("CanvasLayer/ColorRect/VBoxContainer2/HBoxContainer/ButtonContinue").align=true
-	get_node("CanvasLayer/ColorRect/VBoxContainer2/HBoxContainer/ButtonContinue").grab_focus()
+	get_node("ViewportContainer/Viewport/CanvasLayer/Sprite/TextureRectBG").set_texture(bg)
+	get_node("ViewportContainer/Viewport/CanvasLayer/ColorRect/VBoxContainer2/HBoxContainer/ButtonContinue").align=true
+	get_node("ViewportContainer/Viewport/CanvasLayer/ColorRect/VBoxContainer2/HBoxContainer/ButtonContinue").grab_focus()
 	
 	#COLOCANDO COR PREDEFINIDA NA LEGENDA:
 	var select_lang = SelectLang.new()
 	select_lang.textInAllNodes(get_node("."))
+	
+	select_lang.contrast_in_texturesrects(get_node("."))
 
 
 func changeScene():
@@ -38,8 +40,8 @@ func _process(_delta):
 	#print("index=", index, "len=",lenght)
 	changeScene()
 
-	get_node("CanvasLayer/ColorRect/VBoxContainer2/HBoxContainer/LabelNameCharacter").text=talk[index_dic][index][0]
-	var text_char = get_node("CanvasLayer/ColorRect/VBoxContainer2/LabelText")
+	get_node("ViewportContainer/Viewport/CanvasLayer/ColorRect/VBoxContainer2/HBoxContainer/LabelNameCharacter").text=talk[index_dic][index][0]
+	var text_char = get_node("ViewportContainer/Viewport/CanvasLayer/ColorRect/VBoxContainer2/LabelText")
 	text_char.text="DiagSir"+String(index)
 	print("index=",index)
 

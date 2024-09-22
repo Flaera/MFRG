@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scripts/shop/shop.gd" type="Script" id=1]
 [ext_resource path="res://scenes/themeMFRG.tres" type="Theme" id=2]
@@ -50,6 +50,14 @@ albedo_texture = ExtResource( 4 )
 
 [sub_resource type="ConcavePolygonShape" id=6]
 data = PoolVector3Array( -9.3882, -0.1784, -9.3882, -9.3882, -0.1784, 9.3882, -9.3882, 8.2473, 9.3882, 9.3882, -0.1784, -9.3882, -9.3882, -0.1784, -9.3882, -9.3882, 8.2473, -9.3882, 9.3882, -0.1784, 9.3882, 9.3882, -0.1784, -9.3882, 9.3882, 8.2473, -9.3882, -9.3882, -0.1784, 9.3882, 9.3882, -0.1784, 9.3882, 9.3882, 8.2473, 9.3882, -9.3882, -0.1784, 9.3882, -9.3882, -0.1784, -9.3882, 9.3882, -0.1784, -9.3882, 9.3882, 8.2473, 9.3882, 9.3882, 8.2473, -9.3882, -9.3882, 8.2473, -9.3882, -9.3882, -0.1784, -9.3882, -9.3882, 8.2473, 9.3882, -9.3882, 8.2473, -9.3882, 9.3882, -0.1784, -9.3882, -9.3882, 8.2473, -9.3882, 9.3882, 8.2473, -9.3882, 9.3882, -0.1784, 9.3882, 9.3882, 8.2473, -9.3882, 9.3882, 8.2473, 9.3882, -9.3882, -0.1784, 9.3882, 9.3882, 8.2473, 9.3882, -9.3882, 8.2473, 9.3882, -9.3882, -0.1784, 9.3882, 9.3882, -0.1784, -9.3882, 9.3882, -0.1784, 9.3882, 9.3882, 8.2473, 9.3882, -9.3882, 8.2473, -9.3882, -9.3882, 8.2473, 9.3882 )
+
+[sub_resource type="ProceduralSky" id=12]
+
+[sub_resource type="Environment" id=13]
+background_mode = 3
+background_sky = SubResource( 12 )
+adjustment_enabled = true
+adjustment_contrast = 0.85
 
 [node name="shop" instance=ExtResource( 3 )]
 script = ExtResource( 1 )
@@ -301,6 +309,9 @@ visible = false
 
 [node name="car_invoker" type="Spatial" parent="." index="17"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.02238, 0 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="18"]
+environment = SubResource( 13 )
 
 [connection signal="pressed" from="CanvasLayer/Control/ButtonQuit" to="." method="_on_ButtonQuit_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/ButtonLeftShop" to="." method="_on_ButtonLeftShop_pressed"]

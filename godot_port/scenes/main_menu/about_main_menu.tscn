@@ -1,17 +1,29 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/themeMFRG.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/themeMFRGLabelDark.tres" type="Theme" id=2]
 [ext_resource path="res://scripts/main_menu/about_main_menu.gd" type="Script" id=3]
+
+[sub_resource type="ViewportTexture" id=1]
+viewport_path = NodePath("ViewportContainer/Viewport")
 
 [node name="ControlAbout" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 3 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="ViewportContainer" type="ViewportContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="Viewport" type="Viewport" parent="ViewportContainer"]
+size = Vector2( 1920, 1080 )
+render_target_v_flip = true
+render_target_update_mode = 3
+
+[node name="CanvasLayer" type="CanvasLayer" parent="ViewportContainer/Viewport"]
+
+[node name="ColorRect" type="ColorRect" parent="ViewportContainer/Viewport/CanvasLayer"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -23,7 +35,7 @@ margin_bottom = 520.0
 theme = ExtResource( 2 )
 color = Color( 0, 0, 0, 0.509804 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ColorRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ViewportContainer/Viewport/CanvasLayer/ColorRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 120.0
@@ -31,7 +43,7 @@ margin_top = 120.0
 margin_right = -120.0
 margin_bottom = -120.0
 
-[node name="LabelTitle" type="Label" parent="CanvasLayer/ColorRect/VBoxContainer"]
+[node name="LabelTitle" type="Label" parent="ViewportContainer/Viewport/CanvasLayer/ColorRect/VBoxContainer"]
 margin_right = 1640.0
 margin_bottom = 84.0
 theme = ExtResource( 1 )
@@ -39,18 +51,18 @@ text = "L_ABOUT_TITLE"
 align = 1
 valign = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/ColorRect/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="ViewportContainer/Viewport/CanvasLayer/ColorRect/VBoxContainer"]
 margin_top = 88.0
 margin_right = 1640.0
 margin_bottom = 708.0
 rect_min_size = Vector2( 0, 620 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ViewportContainer/Viewport/CanvasLayer/ColorRect/VBoxContainer/ScrollContainer"]
 margin_right = 1640.0
 margin_bottom = 84.0
 rect_min_size = Vector2( 1640, 0 )
 
-[node name="Label" type="Label" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="ViewportContainer/Viewport/CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer"]
 margin_right = 1640.0
 margin_bottom = 84.0
 rect_min_size = Vector2( 568, 0 )
@@ -58,11 +70,16 @@ theme = ExtResource( 1 )
 text = "ABOUT_TEXT"
 autowrap = true
 
-[node name="B_BACK" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
+[node name="B_BACK" type="Button" parent="ViewportContainer/Viewport/CanvasLayer/ColorRect/VBoxContainer"]
 margin_top = 712.0
 margin_right = 1640.0
 margin_bottom = 796.0
 theme = ExtResource( 1 )
 text = "B_BACK"
 
-[connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/B_BACK" to="." method="_on_B_NO_pressed"]
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = SubResource( 1 )
+
+[connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/ColorRect/VBoxContainer/B_BACK" to="." method="_on_B_NO_pressed"]

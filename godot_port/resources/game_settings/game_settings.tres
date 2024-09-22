@@ -6,6 +6,6 @@
 script = ExtResource( 1 )
 index_resolution = 1
 sound_and_music_volume = -27
-color_legend = Color( 0.278431, 0.0823529, 0.0823529, 1 )
+color_legend = Color( 1, 1, 1, 1 )
 contrast_tex = 0.7
 contrast_3d = 1.0

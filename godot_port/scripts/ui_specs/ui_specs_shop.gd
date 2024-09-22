@@ -12,6 +12,12 @@ var acc: int
 func _ready():
 	specs = preload("res://data_files/cars_specs.gd").new().specs
 	acc = 0
+	
+	var select_lang = SelectLang.new()
+	select_lang.textInAllNodes(get_node("."))
+	
+	select_lang.contrast_in_texturesrects(get_node("."))
+
 
 
 func rulerThree(var maxim: float, var current: float):

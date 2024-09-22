@@ -64,7 +64,11 @@ func _ready():
 	setCharText(anne_id, char_load, talk[index_dic][index][2])
 	path_event = "res://scenes/event1_char1/event1_char1_v3.scn"
 	
-	SelectLang.new().textInAllNodes(get_node("."))
+	var select_lang = SelectLang.new()
+	select_lang.textInAllNodes(get_node("."))
+
+	select_lang.contrast_in_texturesrects(get_node("."))
+
 
 
 func changeScene():

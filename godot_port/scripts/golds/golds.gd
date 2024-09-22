@@ -5,7 +5,11 @@ onready var save_file: Resource = preload("res://resources/saved_game/saved_game
 
 
 func _ready():
-	SelectLang.new().textInAllNodes(get_node("."))
+	var select_lang = SelectLang.new()
+	select_lang.textInAllNodes(get_node("."))
+	
+	select_lang.contrast_in_texturesrects(get_node("."))
+
 
 
 func _process(_delta):

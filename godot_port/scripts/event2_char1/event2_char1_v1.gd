@@ -54,7 +54,12 @@ func _ready():
 	get_node("Timer").start(timer) #time in seconds
 	get_node("CanvasLayer/Control/Control/Label2/AnimationPlayer").play("anim_run_init_event")
 	
-	SelectLang.new().textInAllNodes(get_node("."))
+	var select_lang = SelectLang.new()
+	select_lang.textInAllNodes(get_node("."))
+	
+	select_lang.contrast_in_texturesrects(get_node("."))
+
+	Contrast3D.new().contrast_3d(get_node("."))
 
 
 func camTransform():

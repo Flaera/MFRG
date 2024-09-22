@@ -33,7 +33,12 @@ func _ready():
 	get_node("invoker").add_child(car_loaded.instance())
 	get_node("CanvasLayer/VBoxContainer/HBoxContainer"+String(acc)+"/B_CARRO_"+String(acc+1)).grab_focus()
 	
-	SelectLang.new().textInAllNodes(get_node("."))
+	var select_lang = SelectLang.new()
+	select_lang.textInAllNodes(get_node("."))
+	
+	select_lang.contrast_in_texturesrects(get_node("."))
+
+	Contrast3D.new().contrast_3d(get_node("."))
 
 
 func carSelect(var index: int):

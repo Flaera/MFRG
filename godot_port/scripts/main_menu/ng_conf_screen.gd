@@ -6,10 +6,14 @@ var save_file: Resource
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	get_node("CanvasLayer/ColorRect/VBoxContainer/B_NO").grab_focus()
+	get_node("ViewportContainer/Viewport/CanvasLayer/ColorRect/VBoxContainer/B_NO").grab_focus()
 	save_file = preload("res://resources/saved_game/saved_game.tres")
 	
-	SelectLang.new().textInAllNodes(get_node("."))
+	var select_lang = SelectLang.new()
+	select_lang.textInAllNodes(get_node("."))
+
+	select_lang.contrast_in_texturesrects(get_node("."))
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

@@ -35,13 +35,16 @@ func _ready():
 		if (i==true):
 			amount_events_complete+=1
 			
-	SelectLang.new().textInAllNodes(get_node("."))
+	var select_lang = SelectLang.new()
+	select_lang.textInAllNodes(get_node("."))
+	
+	select_lang.contrast_in_texturesrects(get_node("."))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	delta_black = lerp(delta_black, amount_events_complete*delta_black_part, delta)
-	get_node("CanvasLayer/ColorRect").rect_position.x = delta_black
+	get_node("ViewportContainer/Viewport/CanvasLayer/ColorRect").rect_position.x = delta_black
 	delta_time+=delta
 	if (delta_time>=max_time_in_scene):
 		get_tree().change_scene("res://scenes/map/map2.tscn")

@@ -25,7 +25,6 @@ points = PoolVector3Array( -40.6876, -0.578596, 119.693, 167.979, -0.578596, 155
 [sub_resource type="Environment" id=5]
 background_mode = 3
 background_sky = SubResource( 4 )
-adjustment_enabled = true
 
 [node name="event2_char1_v1" instance=ExtResource( 2 )]
 script = ExtResource( 8 )

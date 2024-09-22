@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://assets/blender2.79_old/assets/garage/garage_v2.escn" type="PackedScene" id=1]
 [ext_resource path="res://assets/blender2.79_old/assets/garage/vila/color_map.png" type="Texture" id=2]
@@ -45,6 +45,12 @@ albedo_texture = ExtResource( 5 )
 
 [sub_resource type="SpatialMaterial" id=5]
 albedo_texture = ExtResource( 4 )
+
+[sub_resource type="ProceduralSky" id=12]
+
+[sub_resource type="Environment" id=13]
+background_mode = 3
+background_sky = SubResource( 12 )
 
 [node name="garage_v2" instance=ExtResource( 1 )]
 script = ExtResource( 7 )
@@ -262,6 +268,9 @@ visible = false
 
 [node name="monte_lixo1" parent="." index="119"]
 visible = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="123"]
+environment = SubResource( 13 )
 
 [connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/HBoxContainer0/B_CARRO_1" to="." method="_on_B_CARRO_1_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer0/B_CARRO_1" to="." method="_on_B_CARRO_1_pressed"]

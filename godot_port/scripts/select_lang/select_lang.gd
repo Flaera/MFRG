@@ -26,6 +26,7 @@ func contrast_in_texturesrects(mother_node):
 			node.material.set_shader_param("contrast", save_settings.contrast_tex)
 			#print("n=",get("material").shader)
 
+
 func _ready():
 	TranslationServer.set_locale("en_ES")
 	get_node("ViewportContainer/Viewport/ColorRect2/VBoxContainer/Button_EN").grab_focus()

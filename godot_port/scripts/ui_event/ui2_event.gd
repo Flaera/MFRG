@@ -13,4 +13,8 @@ func _ready():
 	get_node("Control/Control/Label4").add_color_override("font_color",text_color)
 	get_node("Control/Label").add_color_override("font_color",text_color)
 
+	var select_lang = SelectLang.new()
+	select_lang.textInAllNodes(get_node("."))
+	
+	select_lang.contrast_in_texturesrects(get_node("."))
 

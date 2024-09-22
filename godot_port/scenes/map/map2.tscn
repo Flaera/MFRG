@@ -4,10 +4,7 @@
 [ext_resource path="res://scenes/golds/golds.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/map/map.gd" type="Script" id=3]
 [ext_resource path="res://resources/saved_game/saved_game.tres" type="Resource" id=4]
-
-[sub_resource type="StreamTexture" id=1]
-flags = 4
-load_path = "res://.import/map.png-eaa3faba15e1dfedbfeff2aa94a0d190.stex"
+[ext_resource path="res://assets/blender2.79_old/textures/map/map.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=6]
 length = 0.001
@@ -71,7 +68,7 @@ margin_right = 2048.0
 margin_bottom = 1713.0
 rect_scale = Vector2( 0.944, 0.692 )
 mouse_filter = 2
-texture = SubResource( 1 )
+texture = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 anchor_top = 1.0
@@ -91,8 +88,8 @@ anims/map_anim_buttons2 = SubResource( 7 )
 [node name="PivotButtons" type="Control" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 24960.0
-margin_bottom = 14040.0
+margin_right = 40320.0
+margin_bottom = 22680.0
 mouse_filter = 2
 
 [node name="PivotFuncButtons" type="Control" parent="CanvasLayer/PivotButtons"]
