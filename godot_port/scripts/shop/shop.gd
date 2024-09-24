@@ -1,15 +1,15 @@
 extends Spatial
 
-onready var car_invoker = $car_invoker
-onready var label_prices = $CanvasLayer/Control2/LabelPrices
-onready var button_right = $CanvasLayer/Control/ButtonRightShop
-onready var rot_cam = $rot_cam
-onready var timer_warning = $CanvasLayer/TimerWarning
-onready var car_already_garage = $CanvasLayer/CAR_ALREYD_GARAGE
-onready var no_space_hollow = $CanvasLayer/NO_SPACE_HOLLOW
-onready var car_bought = $CanvasLayer/CAR_BUIED
-onready var no_money = $CanvasLayer/NO_MONEY
-onready var UI = $Control
+onready var car_invoker = $ViewportContainer/Viewport/car_invoker
+onready var label_prices = $ViewportContainer/Viewport/CanvasLayer/Control2/LabelPrices
+onready var button_right = $ViewportContainer/Viewport/CanvasLayer/Control/ButtonRightShop
+onready var rot_cam = $ViewportContainer/Viewport/rot_cam
+onready var timer_warning = $ViewportContainer/Viewport/CanvasLayer/TimerWarning
+onready var car_already_garage = $ViewportContainer/Viewport/CanvasLayer/CAR_ALREYD_GARAGE
+onready var no_space_hollow = $ViewportContainer/Viewport/CanvasLayer/NO_SPACE_HOLLOW
+onready var car_bought = $ViewportContainer/Viewport/CanvasLayer/CAR_BUIED
+onready var no_money = $ViewportContainer/Viewport/CanvasLayer/NO_MONEY
+onready var UI = $ViewportContainer/Viewport/Control
 
 var cars: Dictionary
 var car_loaded: Car

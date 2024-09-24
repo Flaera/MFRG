@@ -10,8 +10,8 @@ export var saved_manager: Resource
 
 func _ready():
 	
-	print("get_path=",get_node("CanvasLayer/AnimationPlayer"))
-	get_node("CanvasLayer/AnimationPlayer").play("map_anim_buttons2")
+	#print("get_path=",get_node("CanvasLayer/AnimationPlayer"))
+	get_node("ViewportContainer/Viewport/CanvasLayer/AnimationPlayer").play("map_anim_buttons2")
 	#get_node("CanvasLayer/PivotButtons/PivotFuncButtons/ButtonShop").grab_focus()
 	"""
 	var events: Array = []
@@ -72,7 +72,7 @@ func _ready():
 		#file_state0.close()
 	var acc: int = 0
 	var constant: float = 0.125
-	for i in get_node("CanvasLayer/PivotButtons/PivotEvents").get_children():
+	for i in get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents").get_children():
 		if (saved_manager.state==0 or saved_manager.state==1 or saved_manager.state==2):
 			if (acc==0 and saved_manager.event1_char1==false):
 				i.visible = true
@@ -99,17 +99,17 @@ func _ready():
 	#file_event1_char1.open("res://data_files/event1_char1.txt", File.READ)
 	#if int(file_event1_char1.get_csv_line()[0])==1:
 	if (int(saved_manager.event1_char1)):
-		get_node("CanvasLayer/PivotButtons/PivotEvents/ButtonEvent0/TextureRect").set_texture(confirmed)
-	else:get_node("CanvasLayer/PivotButtons/PivotEvents/ButtonEvent0/TextureRect").set_texture(unconfirmed)
-	get_node("CanvasLayer/PivotButtons/PivotEvents/ButtonEvent0/TextureRect").rect_scale = Vector2(constant, constant)
+		get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent0/TextureRect").set_texture(confirmed)
+	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent0/TextureRect").set_texture(unconfirmed)
+	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent0/TextureRect").rect_scale = Vector2(constant, constant)
 	#file_event1_char1.close()
 	
 	#var file_event2_char1 = File.new()
 	#file_event2_char1.open("res://data_files/event2_char1.txt", File.READ)
 	if int(saved_manager.event2_char1):
-		get_node("CanvasLayer/PivotButtons/PivotEvents/ButtonEvent1/TextureRect").set_texture(confirmed)
-	else:get_node("CanvasLayer/PivotButtons/PivotEvents/ButtonEvent1/TextureRect").set_texture(unconfirmed)
-	get_node("CanvasLayer/PivotButtons/PivotEvents/ButtonEvent1/TextureRect").rect_scale = Vector2(constant, constant)
+		get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent1/TextureRect").set_texture(confirmed)
+	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent1/TextureRect").set_texture(unconfirmed)
+	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent1/TextureRect").rect_scale = Vector2(constant, constant)
 	#file_event2_char1.close()
 	
 	##############################################

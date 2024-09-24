@@ -1,6 +1,7 @@
 extends Resource
 class_name SaveFile
 
+export var anne_id: int = 0
 export var car_selected: String
 export var car0_in_garage: String
 export var car1_in_garage: String

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/themeMFRGLabelDark.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/golds/golds.tscn" type="PackedScene" id=2]
@@ -54,15 +54,28 @@ load_path = "res://.import/event_tex.png-2ca0e6338afe4cc6b35f9417396346ab.stex"
 flags = 4
 load_path = "res://.import/event_tex.png-2ca0e6338afe4cc6b35f9417396346ab.stex"
 
+[sub_resource type="ViewportTexture" id=8]
+viewport_path = NodePath("ViewportContainer/Viewport")
+
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 3 )
 saved_manager = ExtResource( 4 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="ViewportContainer" type="ViewportContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+[node name="Viewport" type="Viewport" parent="ViewportContainer"]
+size = Vector2( 1920, 1080 )
+handle_input_locally = false
+render_target_v_flip = true
+render_target_update_mode = 3
+
+[node name="CanvasLayer" type="CanvasLayer" parent="ViewportContainer/Viewport"]
+
+[node name="TextureRect" type="TextureRect" parent="ViewportContainer/Viewport/CanvasLayer"]
 margin_top = -335.0
 margin_right = 2048.0
 margin_bottom = 1713.0
@@ -70,7 +83,7 @@ rect_scale = Vector2( 0.944, 0.692 )
 mouse_filter = 2
 texture = ExtResource( 5 )
 
-[node name="Label" type="Label" parent="CanvasLayer"]
+[node name="Label" type="Label" parent="ViewportContainer/Viewport/CanvasLayer"]
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -58.0
@@ -78,26 +91,26 @@ margin_right = 293.0
 theme = ExtResource( 1 )
 text = "PRESS_ESC_TO_BACK"
 
-[node name="HBoxContainer" parent="CanvasLayer" instance=ExtResource( 2 )]
+[node name="HBoxContainer" parent="ViewportContainer/Viewport/CanvasLayer" instance=ExtResource( 2 )]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ViewportContainer/Viewport/CanvasLayer"]
 root_node = NodePath("../PivotButtons")
 anims/RESET = SubResource( 6 )
 anims/map_anim_buttons2 = SubResource( 7 )
 
-[node name="PivotButtons" type="Control" parent="CanvasLayer"]
+[node name="PivotButtons" type="Control" parent="ViewportContainer/Viewport/CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 40320.0
-margin_bottom = 22680.0
+margin_right = 55680.0
+margin_bottom = 31320.0
 mouse_filter = 2
 
-[node name="PivotFuncButtons" type="Control" parent="CanvasLayer/PivotButtons"]
+[node name="PivotFuncButtons" type="Control" parent="ViewportContainer/Viewport/CanvasLayer/PivotButtons"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
-[node name="ButtonShop" type="Button" parent="CanvasLayer/PivotButtons/PivotFuncButtons"]
+[node name="ButtonShop" type="Button" parent="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotFuncButtons"]
 margin_left = 185.0
 margin_top = 612.0
 margin_right = 453.0
@@ -107,7 +120,7 @@ icon = SubResource( 2 )
 flat = true
 icon_align = 1
 
-[node name="ButtonGarage" type="Button" parent="CanvasLayer/PivotButtons/PivotFuncButtons"]
+[node name="ButtonGarage" type="Button" parent="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotFuncButtons"]
 margin_left = 385.0
 margin_top = 863.0
 margin_right = 397.0
@@ -117,12 +130,12 @@ icon = SubResource( 3 )
 flat = true
 icon_align = 1
 
-[node name="PivotEvents" type="Control" parent="CanvasLayer/PivotButtons"]
+[node name="PivotEvents" type="Control" parent="ViewportContainer/Viewport/CanvasLayer/PivotButtons"]
 margin_right = 40.0
 margin_bottom = 40.0
 mouse_filter = 2
 
-[node name="ButtonEvent0" type="Button" parent="CanvasLayer/PivotButtons/PivotEvents"]
+[node name="ButtonEvent0" type="Button" parent="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents"]
 margin_left = 1325.0
 margin_top = 540.0
 margin_right = 1593.0
@@ -132,12 +145,12 @@ icon = SubResource( 4 )
 flat = true
 icon_align = 1
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/PivotButtons/PivotEvents/ButtonEvent0"]
+[node name="TextureRect" type="TextureRect" parent="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent0"]
 margin_right = 100.0
 margin_bottom = 100.0
 mouse_filter = 2
 
-[node name="ButtonEvent1" type="Button" parent="CanvasLayer/PivotButtons/PivotEvents"]
+[node name="ButtonEvent1" type="Button" parent="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents"]
 margin_left = 276.0
 margin_top = 248.0
 margin_right = 544.0
@@ -147,12 +160,17 @@ icon = SubResource( 5 )
 flat = true
 icon_align = 1
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/PivotButtons/PivotEvents/ButtonEvent1"]
+[node name="TextureRect" type="TextureRect" parent="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent1"]
 margin_right = 100.0
 margin_bottom = 100.0
 mouse_filter = 2
 
-[connection signal="pressed" from="CanvasLayer/PivotButtons/PivotFuncButtons/ButtonShop" to="." method="_on_ButtonShop_pressed"]
-[connection signal="pressed" from="CanvasLayer/PivotButtons/PivotFuncButtons/ButtonGarage" to="." method="_on_ButtonGarage_pressed"]
-[connection signal="pressed" from="CanvasLayer/PivotButtons/PivotEvents/ButtonEvent0" to="." method="_on_ButtonEvent0_pressed"]
-[connection signal="pressed" from="CanvasLayer/PivotButtons/PivotEvents/ButtonEvent1" to="." method="_on_ButtonEvent1_pressed"]
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 8 )
+
+[connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotFuncButtons/ButtonShop" to="." method="_on_ButtonShop_pressed"]
+[connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotFuncButtons/ButtonGarage" to="." method="_on_ButtonGarage_pressed"]
+[connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent0" to="." method="_on_ButtonEvent0_pressed"]
+[connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent1" to="." method="_on_ButtonEvent1_pressed"]

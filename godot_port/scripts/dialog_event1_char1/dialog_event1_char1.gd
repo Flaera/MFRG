@@ -29,16 +29,16 @@ var path_event: String
 
 func setCharText(anne_id,
  var character: Object, var pos: int):
-	get_node("CanvasLayer/Left/TextureRectBG").set_texture(null)
-	get_node("CanvasLayer/Right/TextureRectBG").set_texture(null)
+	get_node("ViewportContainer/Viewport/CanvasLayer/Left/TextureRectBG").set_texture(null)
+	get_node("ViewportContainer/Viewport/CanvasLayer/Right/TextureRectBG").set_texture(null)
 	if (talk[index_dic][index][0]==char_name and pos==1):
-		get_node("CanvasLayer/Left/TextureRectBG").set_texture(character)
+		get_node("ViewportContainer/Viewport/CanvasLayer/Left/TextureRectBG").set_texture(character)
 	elif (talk[index_dic][index][0]=="Anne" and pos==1):
-		get_node("CanvasLayer/Left/TextureRectBG").set_texture(anne[anne_id])
+		get_node("ViewportContainer/Viewport/CanvasLayer/Left/TextureRectBG").set_texture(anne[anne_id])
 	elif (talk[index_dic][index][0]==char_name and pos==2):
-		get_node("CanvasLayer/Right/TextureRectBG").set_texture(character)
+		get_node("ViewportContainer/Viewport/CanvasLayer/Right/TextureRectBG").set_texture(character)
 	elif (talk[index_dic][index][0]=="Anne" and pos==2):
-		get_node("CanvasLayer/Right/TextureRectBG").set_texture(anne[anne_id])
+		get_node("ViewportContainer/Viewport/CanvasLayer/Right/TextureRectBG").set_texture(anne[anne_id])
 	
 
 
@@ -50,15 +50,17 @@ func _ready():
 	index = 0
 	lenght = len(talk[index_dic])
 
-	get_node("CanvasLayer/BG/TextureRectBG").set_texture(bg)
-	var bt = get_node("CanvasLayer/ColorRect/VBoxContainer2/HBoxContainer/D_Button_CONTINUE")
+	get_node("ViewportContainer/Viewport/CanvasLayer/BG/TextureRectBG").set_texture(bg)
+	var bt = get_node("ViewportContainer/Viewport/CanvasLayer/ColorRect/VBoxContainer2/HBoxContainer/D_Button_CONTINUE")
 	bt.align=true
 	bt.grab_focus()
 
-	var file = File.new()
-	file.open("res://data_files/style.txt", File.READ)
-	anne_id = file.get_8()
-	file.close()
+	#var file = File.new()
+	#file.open("res://data_files/style.txt", File.READ)
+	#anne_id = file.get_8()
+	#file.close()
+	var res = ResourceLoader.load("res://resources/saved_game/saved_game.tres")
+	anne_id = res.anne_id
 	char_name = "Zu"
 	print("talk=",talk[index_dic][index][0])
 	setCharText(anne_id, char_load, talk[index_dic][index][2])
@@ -81,8 +83,8 @@ func _process(_delta):
 	#print("index=", index, "len=",lenght)
 	changeScene()
 	
-	get_node("CanvasLayer/ColorRect/VBoxContainer2/HBoxContainer/LabelNameCharacter").text=talk[index_dic][index][0]
-	var text_char = get_node("CanvasLayer/ColorRect/VBoxContainer2/LabelText")
+	get_node("ViewportContainer/Viewport/CanvasLayer/ColorRect/VBoxContainer2/HBoxContainer/LabelNameCharacter").text=talk[index_dic][index][0]
+	var text_char = get_node("ViewportContainer/Viewport/CanvasLayer/ColorRect/VBoxContainer2/LabelText")
 	text_char.text="DiagZu"+String(index)
 	
 	if (delta_time<0.5):

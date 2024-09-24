@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/themeMFRGLabelDarkLargeText.tres" type="Theme" id=1]
 [ext_resource path="res://scripts/ui_event/ui2_event.gd" type="Script" id=2]
@@ -140,6 +140,9 @@ tracks/0/keys = {
 "values": [ Vector2( -700, 100 ), Vector2( 665.5, 100 ) ]
 }
 
+[sub_resource type="ViewportTexture" id=110]
+viewport_path = NodePath("ViewportContainer/Viewport")
+
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource( 2 )
 
@@ -157,8 +160,8 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -3060.0
-margin_right = -2471.0
+margin_left = -2100.0
+margin_right = -1511.0
 margin_bottom = 91.0
 theme = ExtResource( 1 )
 text = "RUN_TIME"
@@ -216,3 +219,20 @@ margin_bottom = 91.0
 theme = ExtResource( 1 )
 text = "0:00"
 align = 1
+
+[node name="ViewportContainer" type="ViewportContainer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Viewport" type="Viewport" parent="ViewportContainer"]
+size = Vector2( 1920, 1080 )
+handle_input_locally = false
+render_target_v_flip = true
+render_target_update_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 110 )

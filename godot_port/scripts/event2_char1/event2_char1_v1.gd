@@ -32,27 +32,29 @@ func _ready():
 	#file.open("res://data_files/car_selected.txt",File.READ)
 	#var car = file.get_csv_line()[0]
 	save_file = ResourceLoader.load("res://resources/saved_game/saved_game.tres")
-	car_loaded = load("res://scenes/cars/"+save_file.car_selected+".scn")
+	#Load car player:
+	car_loaded = load("res://scenes/cars_updated/"+save_file.car_selected+".tscn")
 	#file.close()
 	#print("car_res=",car_loaded)
 	curr_car = car_loaded.instance()
-	#get_node("car_invoker").add_child(curr_car)
+	curr_car.MODES.PLAYER
+	get_node("ViewportContainer/Viewport/car_invoker").add_child(curr_car)
 	#load enemy:
 	var file_enemy = File.new()
 	file_enemy.open("res://data_files/cp_enemy.txt", File.WRITE)
 	file_enemy.store_string("0")
 	file_enemy.close()
-	var car_loaded_enemy: Object = load("res://scenes/cars/"+save_file.car_selected+".scn")
+	var car_loaded_enemy: Object = load("res://scenes/cars_updated/"+save_file.car_selected+".tscn")
 	curr_car_enemy = car_loaded_enemy.instance()
-	get_node("car_invoker_enemy").add_child(curr_car_enemy)
-
-	camera = preload("res://scenes/camera/camera.scn")
-	curr_cam = camera.instance()
-	get_node("car_invoker").add_child(curr_cam)
+	get_node("ViewportContainer/Viewport/car_invoker_enemy").add_child(curr_car_enemy)
+	curr_car_enemy.MODES.AI
+	#camera = preload("res://scenes/camera/camera.scn")
+	#curr_cam = camera.instance()
+	curr_cam = $ViewportContainer/Viewport/car_invoker/Camera
 	
 	timer = 55.0
-	get_node("Timer").start(timer) #time in seconds
-	get_node("CanvasLayer/Control/Control/Label2/AnimationPlayer").play("anim_run_init_event")
+	get_node("ViewportContainer/Viewport/Timer").start(timer) #time in seconds
+	get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label2/AnimationPlayer").play("anim_run_init_event")
 	
 	var select_lang = SelectLang.new()
 	select_lang.textInAllNodes(get_node("."))
@@ -74,11 +76,11 @@ func camTransform():
 
 func winPlay(_delta):
 	#print("time_end=",time_end)
-	if (loser==false and win==1 and !get_node("CanvasLayer/Control/Control/Label/AnimationPlayer").is_playing()):
-		get_node("CanvasLayer/Control/Control/Label/AnimationPlayer").play("anim_you_win")
-		get_node("CanvasLayer/Control/Control/Label4/AnimationPlayer").play("anim_you_win_golds")
+	if (loser==false and win==1 and !get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label/AnimationPlayer").is_playing()):
+		get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label/AnimationPlayer").play("anim_you_win")
+		get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label4/AnimationPlayer").play("anim_you_win_golds")
 		win=2
-	elif (loser==false and get_node("CanvasLayer/Control/Control/Label/AnimationPlayer").is_playing()):
+	elif (loser==false and get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label/AnimationPlayer").is_playing()):
 		golds = lerp(golds,pts,0.1)
 		win=3
 	elif (loser==false and win==3):
@@ -108,23 +110,23 @@ func winPlay(_delta):
 			file_event.close()"""
 			
 			get_tree().change_scene("res://scenes/progress_game/progress_game.tscn")
-		get_node("CanvasLayer/Control/Control/Label4").text = String(golds)+" golds"
+		get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label4").text = String(golds)+" golds"
 
 
 func playerLoserOrWin(_delta, var time: float):
 	#Loser by oponent first:
-	if (loser==true and !get_node("CanvasLayer/Control/Control/Label3/AnimationPlayer").is_playing()):
-		get_node("CanvasLayer/Control/Control/Label3/AnimationPlayer").play("anim_loser_event")
-	elif (loser==true and get_node("CanvasLayer/Control/Control/Label3/AnimationPlayer").is_playing()):
+	if (loser==true and !get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label3/AnimationPlayer").is_playing()):
+		get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label3/AnimationPlayer").play("anim_loser_event")
+	elif (loser==true and get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label3/AnimationPlayer").is_playing()):
 		time_end+=_delta
 		if (time_end>=1.5):
 			get_tree().change_scene("res://scenes/progress_game/progress_game.tscn")
 	#Loser per time out:
 	if (time<=0.0 and loser==false):
-		get_node("CanvasLayer/Control/Control/Label3/AnimationPlayer").play("anim_loser_event")
+		get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label3/AnimationPlayer").play("anim_loser_event")
 		loser = true
 	elif (time<=0.0 and loser==true and
-	!get_node("CanvasLayer/Control/Control/Label3/AnimationPlayer").is_playing()):
+	!get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label3/AnimationPlayer").is_playing()):
 		get_tree().change_scene("res://scenes/progress_game/progress_game.tscn")
 	
 	winPlay(_delta)
@@ -132,20 +134,20 @@ func playerLoserOrWin(_delta, var time: float):
 
 func _process(_delta):
 	camTransform()
-	var time = get_node("Timer").time_left
+	var time = get_node("ViewportContainer/Viewport/Timer").time_left
 	var minutes = String(int(time/60))
 	var seconds = String(int(time)%60)
-	get_node("CanvasLayer/Control/Label").text = minutes+":"+seconds
+	get_node("ViewportContainer/Viewport/CanvasLayer/Control/Label").text = minutes+":"+seconds
 
-	get_node("Area/AnimationPlayer").play("anim_end_event")
+	get_node("ViewportContainer/Viewport/Area/AnimationPlayer").play("anim_end_event")
 	
 	playerLoserOrWin(_delta, time)
 
 
 func _on_Area_body_entered(body):
-	if (get_node("Timer").time_left<timer-0.05 and (body==curr_car)):
-		get_node("Timer").paused = true
-		pts = get_node("Timer").time_left*100
+	if (get_node("ViewportContainer/Viewport/Timer").time_left<timer-0.05 and (body==curr_car)):
+		get_node("ViewportContainer/Viewport/Timer").paused = true
+		pts = get_node("ViewportContainer/Viewport/Timer").time_left*100
 		win = 1
 	elif (body==curr_car_enemy and win==0):
 		loser=true
