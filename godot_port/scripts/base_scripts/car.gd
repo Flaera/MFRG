@@ -47,13 +47,21 @@ func _ready():
 			disable_input()
 	
 	weight = WEIGHT
+	gravity_scale = 2.0
+	set_process_input(true)
+	set_process(true)
+	set_process_internal(true)
+	set_physics_process(true)
 
 
 func _input(event):
 	axis.x = Input.get_axis("ui_right", "ui_left")
-	axis.y = Input.get_axis("ui_down", "ui_up")
+	axis.y = Input.get_axis("ui_up", "ui_down")
+	#axis = Input.get_vector("ui_right","ui_left","ui_down","ui_up")
 	brake_pedal = event.is_action_pressed("ui_brake")
 	nitro = event.is_action_pressed("ui_select")
+	#print("axis=",axis)
+
 
 
 func _physics_process(delta):
@@ -77,6 +85,7 @@ func _physics_process(delta):
 		#Dust particles:
 		for particle in wheelParticles:
 			particle.emitting = rpm_medium > 10
+
 
 func look_at_checkpoint(var target: Spatial):
 	var interest_zones: Array = [0,0,0,0,0,0]

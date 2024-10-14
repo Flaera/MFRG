@@ -41,15 +41,15 @@ func mainCarPhys(axis, boost_button, back_wheel1, back_wheel2, brake_on,
  brake_force, steering, delta_time):
 	var rpm: float = 0.0
 	if (move==true):
-		steering = lerp(steering, axis.x*0.4, 5*delta_time)
-		var accel: float = axis.y * acceleration
+		steering = lerp(steering, axis.x*1, 3*delta_time)
+		var accel_dir: float = axis.y * acceleration * delta_time
 		
 		#pedal control:
 		#if (axis.y==-1):
 		#	accel/=2
 		
 		if (boost_button==true and fully_nitro>0.0 and axis.y>0.0):
-			accel = axis.y * (acceleration * 1000)
+			accel_dir = axis.y * (acceleration * 1000)
 			#steering = lerp(steering, axis.y, 5*delta_time)
 			fully_nitro -= delta_nitro_dec * delta_time
 		elif (fully_nitro<nitro_max):
@@ -61,16 +61,21 @@ func mainCarPhys(axis, boost_button, back_wheel1, back_wheel2, brake_on,
 		#	back_wheel1.engine_force = max_torque
 		#	back_wheel2.engine_force = max_torque
 		#else:
-		if (axis.y>0.0 and back_wheel1.engine_force<max_rpm and -rpm0<max_rpm):
-			back_wheel1.engine_force = accel * max_torque * (1-rpm0/max_rpm)
-			back_wheel2.engine_force = accel * max_torque * (1-rpm1/max_rpm)
-		elif (axis.y<0.0 and back_wheel1.engine_force>-100):
-			back_wheel1.engine_force = accel * max_torque * (1-rpm0/max_rpm)
-			back_wheel2.engine_force = accel * max_torque * (1-rpm1/max_rpm)
+		#GEAR REVERSE:
+		if (axis.y>0.0 and abs(rpm0)<self.max_torque/2):
+			back_wheel1.engine_force = 1 * abs(accel_dir) * max_torque * abs(1-rpm0/max_rpm)
+			back_wheel2.engine_force = 1 * abs(accel_dir) * max_torque * abs(1-rpm1/max_rpm)
+		#ACCELERATION:
+		elif (axis.y<0.0 and abs(rpm0)<self.max_torque):
+			back_wheel1.engine_force = -1 * abs(accel_dir) * max_torque * abs(1-rpm0/max_rpm)
+			back_wheel2.engine_force = -1 * abs(accel_dir) * max_torque * abs(1-rpm1/max_rpm)
+		#TO STOP THE CAR:
 		else:
 			back_wheel1.engine_force = 0
 			back_wheel2.engine_force = 0
-		#print("|", back_wheel1.engine_force, "|",rpm0)
+		#print("|", rpm0, "|", max_rpm, "|", axis, "|")
+
+
 		if (brake_on==true):
 			brake_force += 1000*(acceleration/2)*delta_time
 		else:
