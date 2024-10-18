@@ -71,7 +71,7 @@ material/0 = SubResource( 6 )
 
 [node name="FrontLeftWheel" parent="." index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, -1, -1.411, -0.91, -1.761 )
-wheel_radius = 0.753
+wheel_radius = 0.742
 
 [node name="WheelMesh" parent="FrontLeftWheel" index="0"]
 mesh = SubResource( 4 )
@@ -79,7 +79,7 @@ material/0 = SubResource( 8 )
 
 [node name="BackLeftWheel" parent="." index="4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, -1, 1.411, -0.91, 2.522 )
-wheel_radius = 0.753
+wheel_radius = 0.742
 
 [node name="WheelMesh" parent="BackLeftWheel" index="0"]
 transform = Transform( -1, 0, 0, 0, -1, 0, 0, 0, -1, 0, 0, 0 )
@@ -88,7 +88,7 @@ material/0 = SubResource( 8 )
 
 [node name="FrontRightWheel" parent="." index="5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, -1, 1.411, -0.91, -1.761 )
-wheel_radius = 0.753
+wheel_radius = 0.742
 
 [node name="WheelMesh" parent="FrontRightWheel" index="0"]
 mesh = SubResource( 4 )
@@ -96,7 +96,7 @@ material/0 = SubResource( 8 )
 
 [node name="BackRightWheel" parent="." index="6"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, -1, -1.411, -0.91, 2.522 )
-wheel_radius = 0.753
+wheel_radius = 0.742
 
 [node name="WheelMesh" parent="BackRightWheel" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )

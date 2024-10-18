@@ -121,7 +121,7 @@ material/0 = SubResource( 10 )
 
 [node name="FrontLeftWheel" parent="." index="3"]
 transform = Transform( 1, 8.74228e-08, -8.74228e-08, -8.74228e-08, 1, -8.74228e-08, -8.74228e-08, -8.74228e-08, -1, -1.145, -0.484, -1.769 )
-wheel_radius = 0.5
+wheel_radius = 0.419
 damping_compression = 0.4
 damping_relaxation = 0.6
 
@@ -131,7 +131,7 @@ mesh = SubResource( 8 )
 
 [node name="BackLeftWheel" parent="." index="4"]
 transform = Transform( 1, 8.74228e-08, -8.74228e-08, -8.74228e-08, 1, -8.74228e-08, -8.74228e-08, -8.74228e-08, -1, -1.145, -0.484, 1.235 )
-wheel_radius = 0.5
+wheel_radius = 0.419
 damping_compression = 0.4
 damping_relaxation = 0.6
 
@@ -141,7 +141,7 @@ mesh = SubResource( 8 )
 
 [node name="FrontRightWheel" parent="." index="5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, -1, 1.145, -0.484, -1.769 )
-wheel_radius = 0.5
+wheel_radius = 0.419
 damping_compression = 0.4
 damping_relaxation = 0.6
 
@@ -151,7 +151,7 @@ mesh = SubResource( 8 )
 
 [node name="BackRightWheel" parent="." index="6"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, -1, 1.145, -0.484, 1.235 )
-wheel_radius = 0.5
+wheel_radius = 0.419
 damping_compression = 0.4
 damping_relaxation = 0.6
 

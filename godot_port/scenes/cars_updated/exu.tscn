@@ -44,7 +44,7 @@ delta_nitro_inc = 2.0
 delta_nitro_dec = 15.0
 
 [node name="CarMesh" parent="." index="2"]
-transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 0, 0 )
+transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, -0.183071, 0 )
 mesh = SubResource( 1 )
 
 [node name="FrontLeftWheel" parent="." index="3"]
@@ -86,7 +86,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.566171, -0.802086, 2.43991 )
 transform = Transform( 1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -0.485218, -0.802086, 2.43991 )
 
 [node name="CollisionShape" parent="." index="9"]
-transform = Transform( 2.052, 0, 0, 0, 1.088, 0, 0, 0, 3.359, 0, -0.079042, 0.225809 )
+transform = Transform( 2.052, 0, 0, 0, 1.088, 0, 0, 0, 3.359, 0, -0.262113, 0.225809 )
 
 [node name="car2001" type="MeshInstance" parent="." index="11"]
 transform = Transform( 1.52243, 0, 0, 0, -6.65475e-08, -1.52243, 0, 1.52243, -6.65475e-08, 0.276156, 0.826529, 0.000753091 )

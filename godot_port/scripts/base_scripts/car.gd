@@ -39,16 +39,21 @@ const WEIGHT = 1000
 func _ready():
 	match car_mode:
 		MODES.PLAYER:
-			car_phys = Cars.new(price, acceleration, max_rpm, max_torque)
+			car_phys = Cars.new(acceleration, max_rpm, max_torque, fully_nitro)
 			canvas_layer.visible = car_phys.getMove()
 		MODES.AI:
 			set_raycasts()
-			car_phys = Cars.new(price, acceleration, max_rpm, max_torque)
+			car_phys = Cars.new(acceleration, max_rpm, max_torque, fully_nitro)
 			disable_input()
 	
-	weight = WEIGHT
+	#weight = WEIGHT
 	gravity_scale = 2.0
+	if (ResourceLoader.load("res://resources/saved_game/saved_game.tres").car_selected=="solo"):
+		gravity_scale=4.0
+		#weight=4.0
 	set_process_input(true)
+	#set_process_unhandled_input(true)
+	#set_process_unhandled_key_input(true)
 	set_process(true)
 	set_process_internal(true)
 	set_physics_process(true)
@@ -58,8 +63,8 @@ func _input(event):
 	axis.x = Input.get_axis("ui_right", "ui_left")
 	axis.y = Input.get_axis("ui_up", "ui_down")
 	#axis = Input.get_vector("ui_right","ui_left","ui_down","ui_up")
-	brake_pedal = event.is_action_pressed("ui_brake")
-	nitro = event.is_action_pressed("ui_select")
+	brake_pedal = Input.is_action_pressed("ui_brake")
+	nitro = Input.is_action_pressed("ui_select")
 	#print("axis=",axis)
 
 
@@ -80,11 +85,15 @@ func _physics_process(delta):
 		pointer.rotation_degrees = ((2*velocity)/2.307)-130
 
 		#Nitro particles:
+		#print("calc[2]=",calc[2])
+		#$NitroParticles.particles.emitting=true
 		for particle in nitroParticles:
-			particle.emitting = calc[2] > 0.0 and nitro == true
+			particle.emitting = calc[3]
+			#print("NITRO ON|",particle.emitting,"|",calc[3])
+		#return
 		#Dust particles:
 		for particle in wheelParticles:
-			particle.emitting = rpm_medium > 10
+			particle.emitting = abs(rpm_medium) > 10
 
 
 func look_at_checkpoint(var target: Spatial):
@@ -109,6 +118,7 @@ func look_at_checkpoint(var target: Spatial):
 		else:
 			axis.x = 0.0
 	#print(raycast_front.get_collider(), "|", target, "| axisx: ",axis.x)
+
 
 func set_raycasts():
 	interest_zones.resize(raycasts.size()-1)

@@ -389,8 +389,8 @@ spot_range = 21.054
 
 [node name="Sun002" type="DirectionalLight" parent="ViewportContainer/Viewport" index="13"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7.60428, 0 )
-visible = false
 light_color = Color( 0.67808, 0.850388, 1, 1 )
+light_energy = 0.07
 light_specular = 0.0
 shadow_enabled = true
 shadow_color = Color( 0.242899, 0.24173, 0.199601, 1 )

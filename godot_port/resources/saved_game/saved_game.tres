@@ -5,11 +5,11 @@
 [resource]
 script = ExtResource( 1 )
 anne_id = 0
-car_selected = "exu"
+car_selected = "lilas"
 car0_in_garage = "lilas"
 car1_in_garage = "VAZIO"
 car2_in_garage = "VAZIO"
-gold = 18447
+gold = 30595
 event1_char1 = true
 event2_char1 = true
 event3_char1 = false
