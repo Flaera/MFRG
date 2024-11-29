@@ -13,23 +13,14 @@ var anne1: Object = preload("res://assets/blender2.79_old/assets/talk_scenes/cha
 var anne2: Object = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Anne2.png")
 var anne3: Object = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Anne3.png")
 var anne4: Object = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Anne4.png")
-var anne5: Object = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Anne5.png")
-var anne6: Object = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Anne6.png")
-var anne7: Object = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Anne7.png")
-var anne8: Object = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Anne8.png")
-var anne9: Object = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Anne9.png")
-var anne10: Object = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Anne10.png")
-var anne = [anne0,anne1,anne2,anne3,anne4,anne5,anne6,
-anne7,anne8,anne9,anne10]
+var anne = [anne0,anne1,anne2,anne3,anne4]
 var char_load: Object
 var char_name: String
 var anne_id: int
+var anne_obj: Object
 
 
-func setCharText(anne_id,
- var character: Object, var pos: int):
-	get_node("ViewportContainer/Viewport/CanvasLayer/Left/TextureRectBG").set_texture(null)
-	get_node("ViewportContainer/Viewport/CanvasLayer/Right/TextureRectBG").set_texture(null)
+func setCharLocation(var character: Object, var pos: int):
 	if (talk[index_dic][index][0]==char_name and pos==1):
 		get_node("ViewportContainer/Viewport/CanvasLayer/Left/TextureRectBG").set_texture(character)
 	elif (talk[index_dic][index][0]=="Anne" and pos==1):
@@ -50,7 +41,7 @@ func setCharText(anne_id,
 
 
 func _ready():
-	char_load = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Carlos.png")
+	char_load = #COLOCAR ANIM DO CARLOS##preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Carlos.png")
 	bg = preload("res://assets/blender2.79_old/assets/talk_scenes/backgrounds/bg_carlos_intro.png") 
 	talk = preload("res://data_files/events_talks.gd").new().events_talks
 	index_dic = '4'
@@ -68,9 +59,16 @@ func _ready():
 	#file.close()
 	var res = ResourceLoader.load("res://resources/saved_game/saved_game.tres")
 	anne_id = res.anne_id
+	var acc_anne: int = 0
+	for a in $CanvasLayer/ControlAnne.get_children():
+		a.visible=false
+		if (acc_anne==anne_id):
+			a.visible=true
+			anne_obj = a
+		acc_anne+=1
 	char_name = "Carlos"
 	print("talk=",talk[index_dic][index][0])
-	setCharText(anne_id, char_load, talk[index_dic][index][2])
+	setCharLocation(char_load, talk[index_dic][index][2])
 
 	var select_lang = SelectLang.new()
 	select_lang.textInAllNodes(get_node("."))
@@ -102,10 +100,12 @@ func _process(_delta):
 	text_char.percent_visible = delta_inc
 	
 	if (talk[index_dic][index][0]=="Traficante_Armado"):
-		char_load = load("res://assets/blender2.79_old/assets/talk_scenes/characters/Traficante_armado.png")
+		pass#COLOCAR VISIBLE TRUE NA ANIM DO CARLOS
+		#TIRAR VISIBILIDADE DAS ANIM DOS OUTROS
 	else:
-		char_load = load("res://assets/blender2.79_old/assets/talk_scenes/characters/Carlos.png")
-	setCharText(anne_id,char_load,talk[index_dic][index][2])
+		pass#COLOCAR VISIBLE TRUE NA ANIM DO CARLOS#char_load = load("res://assets/blender2.79_old/assets/talk_scenes/characters/Carlos.png")
+		#TIRAR VISIBILIDADE DAS ANIM DOS OUTROS
+	setCharLocation(anne_id,char_load,talk[index_dic][index][2])
 
 
 func _on_D_Button_CONTINUE_pressed():

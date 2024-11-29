@@ -25,6 +25,13 @@ func contrast_in_texturesrects(mother_node):
 			node.material.shader=shader_contrast
 			node.material.set_shader_param("contrast", save_settings.contrast_tex)
 			#print("n=",get("material").shader)
+	
+	"""var node: TextureRect = get_node("TextureRect")
+	if (node!=null):
+		node.material = ShaderMaterial.new()
+		node.material.shader=shader_contrast
+		node.material.set_shader_param("contrast", save_settings.contrast_tex)
+	"""
 
 
 func _ready():
@@ -40,12 +47,12 @@ func _ready():
 
 func _on_Button_EN_pressed():
 	#get_tree().change_scene("res://scenes/intro_game_scene/intro_game_scene1.scn")
-	get_tree().change_scene("res://scenes/intro_game_talk/intro_game_talk.scn")
+	get_tree().change_scene("res://scenes/menu_group_choice/menu_group_choice2.scn")
 
 
 func _on_Button_PT_BR_pressed():
 	#get_tree().change_scene("res://scenes/intro_game_scene/intro_game_scene1.scn")
-	get_tree().change_scene("res://scenes/intro_game_talk/intro_game_talk.scn")
+	get_tree().change_scene("res://scenes/menu_group_choice/menu_group_choice2.scn")
 
 
 func _on_Button_EN_focus_entered():

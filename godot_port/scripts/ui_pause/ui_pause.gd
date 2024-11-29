@@ -2,16 +2,24 @@ extends Control
 
 
 func _ready():
+	
 	var select_lang = SelectLang.new()
 	select_lang.textInAllNodes(get_node("."))
 	
 	select_lang.contrast_in_texturesrects(get_node("."))
+	
+	
 
+
+
+func _process(_delta):
+	pass#print("SCENE PAUSE MENU=",get_tree().paused)
 
 
 func resume():
-	get_node("CanvasLayer").visible = false
-	get_parent().get_tree().paused = false
+	print("RESUME!!")
+	get_node("CanvasLayer").visible=false
+	get_tree().paused = false
 	get_parent().get_node("CanvasLayer/button_pause").grab_focus()
 
 
@@ -21,7 +29,9 @@ func _on_resume_pressed():
 
 func _on_quit_map_pressed():
 	#print("voltar para o mapa")
-	get_parent().get_tree().paused = false
+	get_tree().paused = false
 	get_node("CanvasLayer").visible = true
 	get_parent().get_tree().change_scene("res://scenes/map/map2.tscn")
+
+
 

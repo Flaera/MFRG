@@ -387,15 +387,30 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7.60
 shadow_enabled = true
 spot_range = 21.054
 
-[node name="Sun002" type="DirectionalLight" parent="ViewportContainer/Viewport" index="13"]
+[node name="sun01" type="DirectionalLight" parent="ViewportContainer/Viewport" index="13"]
+transform = Transform( 0.938046, -0.0907128, 0.334426, 1.51464e-08, -0.965125, -0.26179, 0.34651, 0.245571, -0.905332, -9.13218, 1.51616, -32.4818 )
+light_color = Color( 1, 0.989059, 0.882005, 1 )
+light_energy = 0.262
+light_specular = 0.0
+shadow_enabled = true
+shadow_color = Color( 0.192157, 0.196078, 0.129412, 1 )
+directional_shadow_split_1 = 0.0
+directional_shadow_split_2 = 0.0
+directional_shadow_split_3 = 0.0
+directional_shadow_normal_bias = 0.0
+directional_shadow_bias_split_scale = 0.0
+directional_shadow_depth_range = 1
+
+[node name="Sun002" type="DirectionalLight" parent="ViewportContainer/Viewport" index="14"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7.60428, 0 )
+visible = false
 light_color = Color( 0.67808, 0.850388, 1, 1 )
 light_energy = 0.07
 light_specular = 0.0
 shadow_enabled = true
 shadow_color = Color( 0.242899, 0.24173, 0.199601, 1 )
 
-[node name="Cube001" type="MeshInstance" parent="ViewportContainer/Viewport" index="14"]
+[node name="Cube001" type="MeshInstance" parent="ViewportContainer/Viewport" index="15"]
 mesh = SubResource( 5 )
 skeleton = NodePath("../../..")
 material/0 = SubResource( 19 )
@@ -405,7 +420,7 @@ material/0 = SubResource( 19 )
 [node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/Cube001/StaticBody" index="0"]
 shape = SubResource( 6 )
 
-[node name="rot_cam" type="Spatial" parent="ViewportContainer/Viewport" index="15"]
+[node name="rot_cam" type="Spatial" parent="ViewportContainer/Viewport" index="16"]
 
 [node name="Camera015" type="Camera" parent="ViewportContainer/Viewport/rot_cam" index="0"]
 transform = Transform( -0.714007, 0.255656, -0.651793, -5.01999e-07, 0.930948, 0.365151, 0.700138, 0.260721, -0.664704, -8.34656, 5.55503, -8.90285 )
@@ -414,20 +429,20 @@ fov = 49.1343
 size = 6.0
 near = 0.1
 
-[node name="Camera015" type="Camera" parent="ViewportContainer/Viewport" index="16"]
+[node name="Camera015" type="Camera" parent="ViewportContainer/Viewport" index="17"]
 transform = Transform( -0.714007, 0.255656, -0.651793, -5.01999e-07, 0.930948, 0.365151, 0.700138, 0.260721, -0.664704, -8.34656, 5.55503, -8.90285 )
 visible = false
 fov = 49.1343
 size = 6.0
 near = 0.1
 
-[node name="car_invoker" type="Spatial" parent="ViewportContainer/Viewport" index="17"]
+[node name="car_invoker" type="Spatial" parent="ViewportContainer/Viewport" index="18"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.02238, 0 )
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="ViewportContainer/Viewport" index="18"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="ViewportContainer/Viewport" index="19"]
 environment = SubResource( 13 )
 
-[node name="StaticBody" type="StaticBody" parent="ViewportContainer/Viewport" index="19"]
+[node name="StaticBody" type="StaticBody" parent="ViewportContainer/Viewport" index="20"]
 
 [node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/StaticBody" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0385498, 0 )

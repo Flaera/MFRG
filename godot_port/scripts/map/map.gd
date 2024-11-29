@@ -9,7 +9,7 @@ export var saved_manager: Resource
 
 
 func _ready():
-	
+	$ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotFuncButtons/ButtonShop.grab_focus()
 	#print("get_path=",get_node("CanvasLayer/AnimationPlayer"))
 	get_node("ViewportContainer/Viewport/CanvasLayer/AnimationPlayer").play("map_anim_buttons2")
 	#get_node("CanvasLayer/PivotButtons/PivotFuncButtons/ButtonShop").grab_focus()
@@ -54,7 +54,7 @@ func _ready():
 		#file_state0.open("res://data_files/progress_in_game.txt", File.WRITE)
 		#file_state0.store_string("1")
 		#file_state0.close()
-	elif (condition0==true and condition1==true and condition2==false and saved_manager.state==1):
+	elif (condition0==true and condition1==false and condition2==false and saved_manager.state==1):
 		saved_manager.state = 2
 		ResourceSaver.save("res://resources/saved_game/saved_game.tres", saved_manager)
 		#Colocar cutscene
@@ -62,7 +62,7 @@ func _ready():
 		file_state0.open("res://data_files/progress_in_game.txt", File.WRITE)
 		file_state0.store_string("2")
 		file_state0.close()"""
-	elif (condition0==true and condition1==true and condition2==true and saved_manager.state==2):
+	elif (condition0==true and condition1==true and condition2==false and saved_manager.state==2):
 		saved_manager.state = 3
 		ResourceSaver.save("res://resources/saved_game/saved_game.tres", saved_manager)
 		#Colocar cutscene
@@ -70,6 +70,10 @@ func _ready():
 		#file_state0.open("res://data_files/progress_in_game.txt", File.WRITE)
 		#file_state0.store_string("3")
 		#file_state0.close()
+	elif (condition0==true and condition1==true and condition2==true):
+		saved_manager.state = 4
+		ResourceSaver.save("res://resources/saved_game/saved_game.tres", saved_manager)
+		#Colocar cutscene final
 	var acc: int = 0
 	var constant: float = 0.125
 	for i in get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents").get_children():
@@ -90,7 +94,7 @@ func _ready():
 				i.visible = true
 			else:
 				i.visible = false
-		if (saved_manager.state>=7):
+		elif (saved_manager.state>=7):
 			i.visible = true
 		acc+=1
 	
@@ -111,6 +115,16 @@ func _ready():
 	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent1/TextureRect").set_texture(unconfirmed)
 	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent1/TextureRect").rect_scale = Vector2(constant, constant)
 	#file_event2_char1.close()
+	
+	if int(saved_manager.event3_char1):
+		get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent2/TextureRect").set_texture(confirmed)
+	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent2/TextureRect").set_texture(unconfirmed)
+	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent2/TextureRect").rect_scale = Vector2(constant, constant)
+	
+	if int(saved_manager.event4_char2):
+		get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent3/TextureRect").set_texture(confirmed)
+	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent3/TextureRect").set_texture(unconfirmed)
+	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent3/TextureRect").rect_scale = Vector2(constant, constant)
 	
 	##############################################
 	
@@ -134,6 +148,15 @@ func _process(_delta):
 	
 
 
+func _on_ButtonShop_pressed():
+	get_tree().change_scene("res://assets/blender2.79_old/assets/assets_shop_cars/shop.tscn")
+
+
+func _on_ButtonGarage_pressed():
+	get_tree().change_scene("res://assets/blender2.79_old/assets/garage/garage.tscn")
+
+
+
 func _on_ButtonEvent0_pressed():
 	get_tree().change_scene("res://scenes/dialog_event1_char1/dialog_event1_char1.scn")
 
@@ -142,10 +165,9 @@ func _on_ButtonEvent1_pressed():
 	get_tree().change_scene("res://scenes/dialog_event2_char1/dialog_event2_char1.scn")
 
 
-func _on_ButtonShop_pressed():
-	get_tree().change_scene("res://assets/blender2.79_old/assets/assets_shop_cars/shop.tscn")
+func _on_ButtonEvent2_pressed():
+	get_tree().change_scene("res://scenes/event3_char1/event3_char1.tscn")
 
 
-func _on_ButtonGarage_pressed():
-	get_tree().change_scene("res://assets/blender2.79_old/assets/garage/garage.tscn")
-
+func _on_ButtonEvent3_pressed():
+	get_tree().change_scene("res://scenes/event4_char2/event4_char2.tscn")

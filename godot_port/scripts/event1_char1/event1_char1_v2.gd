@@ -133,6 +133,12 @@ func playerLoserOrWin(_delta, var time: float):
 	winPlay(_delta)
 
 
+func _input(event):
+	if ((event is InputEventKey and event.scancode==KEY_ENTER) or (event is InputEventJoypadButton) and event.button_index==JOY_START):
+		get_tree().change_scene("res://scenes/progress_game/progress_game.tscn")
+		
+
+
 func _process(_delta):
 	camTransform()
 	var time = get_node("ViewportContainer/Viewport/Timer").time_left

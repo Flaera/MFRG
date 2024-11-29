@@ -1,5 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
+[ext_resource path="res://assets/blender2.79_old/textures/lata_lixo_grande_color.png" type="Texture" id=1]
+
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.152318, 0.284291, 0.734411, 1 )
 
@@ -18,12 +20,8 @@ surfaces/0 = {
 "vertex_count": 456
 }
 
-[sub_resource type="StreamTexture" id=3]
-flags = 4
-load_path = "res://.import/lata_lixo_grande_color.png-ec9532282d3451b226f76f7a98303f54.stex"
-
 [sub_resource type="SpatialMaterial" id=4]
-albedo_texture = SubResource( 3 )
+albedo_texture = ExtResource( 1 )
 
 [sub_resource type="ConvexPolygonShape" id=5]
 points = PoolVector3Array( 2.80142, 1.89039, -1.54456, 2.60618, 0.94909, 1.2975, 2.80142, 0.887631, 1.48303, 2.80142, -1.36245, -1.26862, -2.80142, 1.89039, -1.54456, -2.60672, 0.94909, 1.2975, 2.80142, -1.36245, 1.29216, -2.80142, 0.887631, 1.48303, -2.80142, -1.36245, -1.26862, -2.80142, -1.36245, 1.29216 )

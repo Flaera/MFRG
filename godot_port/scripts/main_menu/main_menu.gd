@@ -5,6 +5,7 @@ var ng_load: Object
 
 
 func _ready():
+	#$ViewportContainer/Viewport/VBoxContainer.visible=true
 	save_file.state
 	ng_load = preload("res://scenes/main_menu/new_game_conf_screen.tscn")
 	var file_state = save_file.state
@@ -38,7 +39,9 @@ func _on_ButtonContinue_pressed():
 func _on_ButtonSettings_pressed():
 	var settings_load = load("res://scenes/main_menu/main_settings.tscn")
 	var settings = settings_load.instance()
-	add_child(settings)
+	$ViewportContainer/Viewport/VBoxContainer.visible=false
+	$ViewportContainer/Viewport.add_child(settings)
+	$ViewportContainer/Viewport/ControlSettings/CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/ButtonEN.grab_focus()
 
 
 func _on_ButtonAbout_pressed():

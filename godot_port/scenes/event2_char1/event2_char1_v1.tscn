@@ -11,6 +11,8 @@
 [ext_resource path="res://scenes/event2_char1/no_collision_v2_event2_char1_v1.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/blender2.79_old/assets/assets_event1_char1/car_abandoned2.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/blender2.79_old/assets/assets_event1_char1/car_abandoned1.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/themeMFRGLabelDark.tres" type="Theme" id=12]
+[ext_resource path="res://resources/env/enviroment.tres" type="Environment" id=13]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.903545, 0.903545, 0.903545, 1 )
@@ -38,13 +40,7 @@ points = PoolVector3Array( -40.6876, -0.578596, 119.693, 167.979, -0.578596, 155
 
 [sub_resource type="BoxShape" id=3]
 
-[sub_resource type="ProceduralSky" id=4]
-
-[sub_resource type="Environment" id=5]
-background_mode = 3
-background_sky = SubResource( 4 )
-
-[sub_resource type="ViewportTexture" id=8]
+[sub_resource type="ViewportTexture" id=10]
 viewport_path = NodePath("ViewportContainer/Viewport")
 
 [node name="event2_char1_v1" instance=ExtResource( 2 )]
@@ -60,16 +56,24 @@ handle_input_locally = false
 render_target_v_flip = true
 render_target_update_mode = 3
 
-[node name="CanvasLayer" parent="ViewportContainer/Viewport" index="0" instance=ExtResource( 5 )]
+[node name="L_BACK_MAP" type="Label" parent="ViewportContainer/Viewport" index="0"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -58.0
+margin_right = 347.0
+theme = ExtResource( 12 )
+text = "BACK_TO_MAP_IN_EVENT"
 
-[node name="Timer" type="Timer" parent="ViewportContainer/Viewport" index="1"]
+[node name="CanvasLayer" parent="ViewportContainer/Viewport" index="1" instance=ExtResource( 5 )]
+
+[node name="Timer" type="Timer" parent="ViewportContainer/Viewport" index="2"]
 one_shot = true
 autostart = true
 
-[node name="Area" parent="ViewportContainer/Viewport" index="2" instance=ExtResource( 6 )]
+[node name="Area" parent="ViewportContainer/Viewport" index="3" instance=ExtResource( 6 )]
 transform = Transform( 8.09201, 0, 0, 0, 8.09201, 0, 0, 0, 8.09201, -99.7277, 0, -363.796 )
 
-[node name="track_conection001" type="MeshInstance" parent="ViewportContainer/Viewport" index="3"]
+[node name="track_conection001" type="MeshInstance" parent="ViewportContainer/Viewport" index="4"]
 transform = Transform( -0.868621, 0, -0.495477, 0, 1, 0, 0.495477, 0, -0.868621, -60.4141, -3.00188, -208.292 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../../..")
@@ -80,22 +84,22 @@ material/0 = SubResource( 6 )
 [node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/track_conection001/StaticBody" index="0"]
 shape = SubResource( 7 )
 
-[node name="car_invoker" type="Spatial" parent="ViewportContainer/Viewport" index="4"]
+[node name="car_invoker" type="Spatial" parent="ViewportContainer/Viewport" index="5"]
 transform = Transform( 0.652958, 0, 0.757394, 0, 1, 0, -0.757394, 0, 0.652958, -8.71952, 2.34642, -7.22627 )
 
 [node name="Camera" type="Camera" parent="ViewportContainer/Viewport/car_invoker" index="0"]
 current = true
 
-[node name="car_invoker_enemy" type="Spatial" parent="ViewportContainer/Viewport" index="5"]
+[node name="car_invoker_enemy" type="Spatial" parent="ViewportContainer/Viewport" index="6"]
 transform = Transform( 0.243683, 0, 0.969855, 0, 1, 0, -0.969855, 0, 0.243683, -2.35359, 4.69284, -14.0518 )
 
-[node name="sun01" type="DirectionalLight" parent="ViewportContainer/Viewport" index="6"]
+[node name="sun01" type="DirectionalLight" parent="ViewportContainer/Viewport" index="7"]
 transform = Transform( 0.938046, -0.0907128, 0.334426, -0.34651, -0.245571, 0.905332, 0, -0.965125, -0.26179, -9.13218, 32.4818, -6.08812 )
 light_color = Color( 1, 0.989059, 0.882005, 1 )
 light_energy = 0.262
 light_specular = 0.0
 shadow_enabled = true
-shadow_color = Color( 0.382381, 0.386784, 0.309309, 1 )
+shadow_color = Color( 0.192157, 0.196078, 0.129412, 1 )
 directional_shadow_split_1 = 0.0
 directional_shadow_split_2 = 0.0
 directional_shadow_split_3 = 0.0
@@ -103,14 +107,13 @@ directional_shadow_normal_bias = 0.0
 directional_shadow_bias_split_scale = 0.0
 directional_shadow_depth_range = 1
 
-[node name="wall_event2_char1_v1" parent="ViewportContainer/Viewport" index="7" instance=ExtResource( 3 )]
-visible = false
+[node name="wall_event2_char1_v1" parent="ViewportContainer/Viewport" index="8" instance=ExtResource( 3 )]
 
-[node name="no_collision_v2_event2_char1_v1" parent="ViewportContainer/Viewport" index="8" instance=ExtResource( 9 )]
+[node name="no_collision_v2_event2_char1_v1" parent="ViewportContainer/Viewport" index="9" instance=ExtResource( 9 )]
 
-[node name="no_collision_v3_event2_char1_v1" parent="ViewportContainer/Viewport" index="9" instance=ExtResource( 4 )]
+[node name="no_collision_v3_event2_char1_v1" parent="ViewportContainer/Viewport" index="10" instance=ExtResource( 4 )]
 
-[node name="checkpoint0" type="Spatial" parent="ViewportContainer/Viewport" index="10"]
+[node name="checkpoint0" type="Spatial" parent="ViewportContainer/Viewport" index="11"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.056, -1.41652, -19.4851 )
 
 [node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint0" index="0"]
@@ -119,7 +122,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.056, -1.41652, -19.4851 )
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 shape = SubResource( 3 )
 
-[node name="checkpoint1" type="Spatial" parent="ViewportContainer/Viewport" index="11"]
+[node name="checkpoint1" type="Spatial" parent="ViewportContainer/Viewport" index="12"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28.0434, -1.41652, -33.7783 )
 
 [node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint1" index="0"]
@@ -128,7 +131,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28.0434, -1.41652, -33.7783 )
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 shape = SubResource( 3 )
 
-[node name="checkpoint2" type="Spatial" parent="ViewportContainer/Viewport" index="12"]
+[node name="checkpoint2" type="Spatial" parent="ViewportContainer/Viewport" index="13"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37.7123, -1.41652, -49.753 )
 
 [node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint2" index="0"]
@@ -137,7 +140,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37.7123, -1.41652, -49.753 )
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 shape = SubResource( 3 )
 
-[node name="checkpoint3" type="Spatial" parent="ViewportContainer/Viewport" index="13"]
+[node name="checkpoint3" type="Spatial" parent="ViewportContainer/Viewport" index="14"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44.0181, -1.41652, -69.6514 )
 
 [node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint3" index="0"]
@@ -146,7 +149,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44.0181, -1.41652, -69.6514 )
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 shape = SubResource( 3 )
 
-[node name="checkpoint4" type="Spatial" parent="ViewportContainer/Viewport" index="14"]
+[node name="checkpoint4" type="Spatial" parent="ViewportContainer/Viewport" index="15"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37.9131, -1.41652, -89.9337 )
 
 [node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint4" index="0"]
@@ -155,7 +158,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37.9131, -1.41652, -89.9337 )
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 shape = SubResource( 3 )
 
-[node name="checkpoint5" type="Spatial" parent="ViewportContainer/Viewport" index="15"]
+[node name="checkpoint5" type="Spatial" parent="ViewportContainer/Viewport" index="16"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.6526, -1.41652, -109.53 )
 
 [node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint5" index="0"]
@@ -164,7 +167,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.6526, -1.41652, -109.53 )
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 shape = SubResource( 3 )
 
-[node name="checkpoint6" type="Spatial" parent="ViewportContainer/Viewport" index="16"]
+[node name="checkpoint6" type="Spatial" parent="ViewportContainer/Viewport" index="17"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.7911, -1.41652, -127.973 )
 
 [node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint6" index="0"]
@@ -173,7 +176,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.7911, -1.41652, -127.973 )
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 shape = SubResource( 3 )
 
-[node name="checkpoint7" type="Spatial" parent="ViewportContainer/Viewport" index="17"]
+[node name="checkpoint7" type="Spatial" parent="ViewportContainer/Viewport" index="18"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.7462, -1.41652, -144.617 )
 
 [node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint7" index="0"]
@@ -182,7 +185,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.7462, -1.41652, -144.617 )
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 shape = SubResource( 3 )
 
-[node name="checkpoint8" type="Spatial" parent="ViewportContainer/Viewport" index="18"]
+[node name="checkpoint8" type="Spatial" parent="ViewportContainer/Viewport" index="19"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30.6977, -1.41652, -162.553 )
 
 [node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint8" index="0"]
@@ -191,7 +194,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30.6977, -1.41652, -162.553 )
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 shape = SubResource( 3 )
 
-[node name="checkpoint9" type="Spatial" parent="ViewportContainer/Viewport" index="19"]
+[node name="checkpoint9" type="Spatial" parent="ViewportContainer/Viewport" index="20"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39.0614, -1.41652, -179.462 )
 
 [node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint9" index="0"]
@@ -200,7 +203,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39.0614, -1.41652, -179.462 )
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 shape = SubResource( 3 )
 
-[node name="checkpoint10" type="Spatial" parent="ViewportContainer/Viewport" index="20"]
+[node name="checkpoint10" type="Spatial" parent="ViewportContainer/Viewport" index="21"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.4965, -1.41652, -193.761 )
 
 [node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint10" index="0"]
@@ -209,7 +212,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.4965, -1.41652, -193.761 )
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 shape = SubResource( 3 )
 
-[node name="checkpoint11" type="Spatial" parent="ViewportContainer/Viewport" index="21"]
+[node name="checkpoint11" type="Spatial" parent="ViewportContainer/Viewport" index="22"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -54.5036, -1.41652, -210.347 )
 
 [node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint11" index="0"]
@@ -218,7 +221,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -54.5036, -1.41652, -210.347 )
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 shape = SubResource( 3 )
 
-[node name="checkpoint12" type="Spatial" parent="ViewportContainer/Viewport" index="22"]
+[node name="checkpoint12" type="Spatial" parent="ViewportContainer/Viewport" index="23"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -64.989, -1.41652, -229.03 )
 
 [node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint12" index="0"]
@@ -227,7 +230,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -64.989, -1.41652, -229.03 )
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 shape = SubResource( 3 )
 
-[node name="checkpoint13" type="Spatial" parent="ViewportContainer/Viewport" index="23"]
+[node name="checkpoint13" type="Spatial" parent="ViewportContainer/Viewport" index="24"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -76.809, -1.41652, -242.184 )
 
 [node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint13" index="0"]
@@ -236,7 +239,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -76.809, -1.41652, -242.184 )
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 shape = SubResource( 3 )
 
-[node name="checkpoint14" type="Spatial" parent="ViewportContainer/Viewport" index="24"]
+[node name="checkpoint14" type="Spatial" parent="ViewportContainer/Viewport" index="25"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -92.8231, -1.41652, -252.098 )
 
 [node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint14" index="0"]
@@ -245,7 +248,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -92.8231, -1.41652, -252.098 )
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 shape = SubResource( 3 )
 
-[node name="checkpoint15" type="Spatial" parent="ViewportContainer/Viewport" index="25"]
+[node name="checkpoint15" type="Spatial" parent="ViewportContainer/Viewport" index="26"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -105.406, -1.41652, -256.673 )
 
 [node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint15" index="0"]
@@ -254,7 +257,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -105.406, -1.41652, -256.673 )
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 shape = SubResource( 3 )
 
-[node name="checkpoint16" type="Spatial" parent="ViewportContainer/Viewport" index="26"]
+[node name="checkpoint16" type="Spatial" parent="ViewportContainer/Viewport" index="27"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -110.934, -1.41652, -273.831 )
 
 [node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint16" index="0"]
@@ -263,7 +266,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -110.934, -1.41652, -273.831 )
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 shape = SubResource( 3 )
 
-[node name="checkpoint17" type="Spatial" parent="ViewportContainer/Viewport" index="27"]
+[node name="checkpoint17" type="Spatial" parent="ViewportContainer/Viewport" index="28"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -111.316, -1.41652, -287.558 )
 
 [node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint17" index="0"]
@@ -272,7 +275,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -111.316, -1.41652, -287.558 )
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 shape = SubResource( 3 )
 
-[node name="checkpoint18" type="Spatial" parent="ViewportContainer/Viewport" index="28"]
+[node name="checkpoint18" type="Spatial" parent="ViewportContainer/Viewport" index="29"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -103.499, -1.41652, -303.763 )
 
 [node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint18" index="0"]
@@ -281,7 +284,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -103.499, -1.41652, -303.763 )
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 shape = SubResource( 3 )
 
-[node name="checkpoint19" type="Spatial" parent="ViewportContainer/Viewport" index="29"]
+[node name="checkpoint19" type="Spatial" parent="ViewportContainer/Viewport" index="30"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -93.2044, -1.41652, -319.586 )
 
 [node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint19" index="0"]
@@ -290,7 +293,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -93.2044, -1.41652, -319.586 )
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 shape = SubResource( 3 )
 
-[node name="checkpoint20" type="Spatial" parent="ViewportContainer/Viewport" index="30"]
+[node name="checkpoint20" type="Spatial" parent="ViewportContainer/Viewport" index="31"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -86.7161, -1.41652, -331.711 )
 
 [node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint20" index="0"]
@@ -299,7 +302,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -86.7161, -1.41652, -331.711 )
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 shape = SubResource( 3 )
 
-[node name="checkpoint21" type="Spatial" parent="ViewportContainer/Viewport" index="31"]
+[node name="checkpoint21" type="Spatial" parent="ViewportContainer/Viewport" index="32"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -83.4815, -1.41652, -347.039 )
 
 [node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint21" index="0"]
@@ -309,7 +312,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.51577, 0, 1.2579 )
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 shape = SubResource( 3 )
 
-[node name="checkpoint22" type="Spatial" parent="ViewportContainer/Viewport" index="32"]
+[node name="checkpoint22" type="Spatial" parent="ViewportContainer/Viewport" index="33"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -88.898, -1.41652, -356.818 )
 
 [node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint22" index="0"]
@@ -318,7 +321,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -88.898, -1.41652, -356.818 )
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 shape = SubResource( 3 )
 
-[node name="checkpoint23" type="Spatial" parent="ViewportContainer/Viewport" index="33"]
+[node name="checkpoint23" type="Spatial" parent="ViewportContainer/Viewport" index="34"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -100.399, -1.41652, -366.342 )
 
 [node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint23" index="0"]
@@ -327,37 +330,43 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -100.399, -1.41652, -366.342 )
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 shape = SubResource( 3 )
 
-[node name="rampa_event1_char1_v2" parent="ViewportContainer/Viewport" index="34" instance=ExtResource( 7 )]
+[node name="rampa_event1_char1_v2" parent="ViewportContainer/Viewport" index="35" instance=ExtResource( 7 )]
 transform = Transform( 0.275352, 0, -0.961343, 0, 1, 0, 0.961343, 0, 0.275352, -38.57, -4.5759, -154.376 )
 
-[node name="RigidBody" parent="ViewportContainer/Viewport" index="35" instance=ExtResource( 11 )]
+[node name="RigidBody" parent="ViewportContainer/Viewport" index="36" instance=ExtResource( 11 )]
 transform = Transform( 0.750688, 0, -0.660657, 0, 1, 0, 0.660657, 0, 0.750688, 8.11332, -5.1363, 7.96992 )
 
-[node name="RigidBody5" parent="ViewportContainer/Viewport" index="36" instance=ExtResource( 11 )]
+[node name="RigidBody5" parent="ViewportContainer/Viewport" index="37" instance=ExtResource( 11 )]
 transform = Transform( 0.750688, 0, -0.660657, 0, 1, 0, 0.660657, 0, 0.750688, -46.4992, -2.22, -38.5111 )
 
-[node name="RigidBody7" parent="ViewportContainer/Viewport" index="37" instance=ExtResource( 11 )]
+[node name="RigidBody7" parent="ViewportContainer/Viewport" index="38" instance=ExtResource( 11 )]
 transform = Transform( -0.561607, 0, 0.827404, 0, 1, 0, -0.827404, 0, -0.561607, -102.639, -2.06267, -348.104 )
 
-[node name="RigidBody3" parent="ViewportContainer/Viewport" index="38" instance=ExtResource( 11 )]
+[node name="RigidBody3" parent="ViewportContainer/Viewport" index="39" instance=ExtResource( 11 )]
 transform = Transform( 0.891054, 0, -0.453897, 0, 1, 0, 0.453897, 0, 0.891054, -3.39532, -5.1363, -19.7741 )
 
-[node name="RigidBody2" parent="ViewportContainer/Viewport" index="39" instance=ExtResource( 10 )]
+[node name="RigidBody2" parent="ViewportContainer/Viewport" index="40" instance=ExtResource( 10 )]
 transform = Transform( 0.851352, 0, -0.524595, 0, 1, 0, 0.524595, 0, 0.851352, -5.17079, -3.19634, 6.078 )
 
-[node name="RigidBody4" parent="ViewportContainer/Viewport" index="40" instance=ExtResource( 10 )]
+[node name="RigidBody4" parent="ViewportContainer/Viewport" index="41" instance=ExtResource( 10 )]
 transform = Transform( 0.665712, 0, -0.746208, 0, 1, 0, 0.746208, 0, 0.665712, -47.615, -2.0059, -34.985 )
 
-[node name="RigidBody6" parent="ViewportContainer/Viewport" index="41" instance=ExtResource( 10 )]
+[node name="RigidBody6" parent="ViewportContainer/Viewport" index="42" instance=ExtResource( 10 )]
 transform = Transform( 0.665712, 0, -0.746208, 0, 1, 0, 0.746208, 0, 0.665712, -40.7065, -1.3503, -112.357 )
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="ViewportContainer/Viewport" index="42"]
-environment = SubResource( 5 )
+[node name="WorldEnvironment" type="WorldEnvironment" parent="ViewportContainer/Viewport" index="43"]
+environment = ExtResource( 13 )
 
 [node name="TextureRect" type="TextureRect" parent="." index="1"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = SubResource( 8 )
+texture = SubResource( 10 )
+
+[node name="track_conection001" parent="." index="2"]
+visible = false
+
+[node name="car_invoker" parent="." index="3"]
+visible = false
 
 [connection signal="body_entered" from="ViewportContainer/Viewport/Area" to="." method="_on_Area_body_entered"]
 [connection signal="body_entered" from="ViewportContainer/Viewport/checkpoint0/Area0" to="." method="_on_Area0_body_entered"]

@@ -60,11 +60,11 @@ func _ready():
 
 
 func _input(event):
-	axis.x = Input.get_axis("ui_right", "ui_left")
-	axis.y = Input.get_axis("ui_up", "ui_down")
+	axis.x = Input.get_axis("g_right", "g_left")
+	axis.y = Input.get_axis("g_up", "g_down")
 	#axis = Input.get_vector("ui_right","ui_left","ui_down","ui_up")
-	brake_pedal = Input.is_action_pressed("ui_brake")
-	nitro = Input.is_action_pressed("ui_select")
+	brake_pedal = Input.is_action_pressed("g_brake")
+	nitro = Input.is_action_pressed("g_nitro")
 	#print("axis=",axis)
 
 

@@ -4,6 +4,7 @@
 [ext_resource path="res://scenes/cars/noturno_only_asset.escn" type="PackedScene" id=2]
 [ext_resource path="res://assets/blender2.79_old/cars_models/noturno/textures/nocturne_maps.png" type="Texture" id=3]
 
+
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.634226, 0.634226, 0.634226, 1 )
 

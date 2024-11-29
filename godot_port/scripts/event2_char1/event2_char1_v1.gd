@@ -64,6 +64,7 @@ func _ready():
 	Contrast3D.new().contrast_3d(get_node("."))
 
 
+
 func camTransform():
 	#var cam = get_node("Camera")
 	curr_cam.translation[0] = curr_car.translation[0]
@@ -130,6 +131,14 @@ func playerLoserOrWin(_delta, var time: float):
 		get_tree().change_scene("res://scenes/progress_game/progress_game.tscn")
 	
 	winPlay(_delta)
+
+
+func _input(event):
+	if ((event is InputEventKey and event.scancode==KEY_ENTER) or (event is InputEventJoypadButton) and event.button_index==JOY_START):
+		get_tree().change_scene("res://scenes/progress_game/progress_game.tscn")
+		
+
+
 
 
 func _process(_delta):
