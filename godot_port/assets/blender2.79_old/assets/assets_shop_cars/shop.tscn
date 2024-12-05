@@ -1,35 +1,34 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://scripts/shop/shop.gd" type="Script" id=1]
 [ext_resource path="res://scenes/themeMFRG.tres" type="Theme" id=2]
-[ext_resource path="res://assets/blender2.79_old/assets/assets_shop_cars/shop.escn" type="PackedScene" id=3]
 [ext_resource path="res://assets/blender2.79_old/assets/assets_shop_cars/color_map_shop.png" type="Texture" id=4]
 [ext_resource path="res://scenes/golds/golds.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/themeMFRGLabelDark.tres" type="Theme" id=6]
 [ext_resource path="res://scenes/specs/ui_specs_shop.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/fonts/BebasNeue-Regular.ttf" type="DynamicFontData" id=8]
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=19]
 size = 50
 font_data = ExtResource( 8 )
 
-[sub_resource type="StreamTexture" id=7]
+[sub_resource type="StreamTexture" id=20]
 flags = 4
 load_path = "res://.import/arrow.png-a4a34ea04551cddb834540c85fb39619.stex"
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=21]
 size = 68
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=22]
 size = 68
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=23]
 size = 68
 font_data = ExtResource( 8 )
 
-[sub_resource type="ArrayMesh" id=1]
+[sub_resource type="ArrayMesh" id=24]
 resource_name = "Cylinder"
 surfaces/0 = {
 "aabb": AABB( -0.389711, -0.6, -0.45, 0.779422, 1.50391, 0.9 ),
@@ -43,10 +42,10 @@ surfaces/0 = {
 "vertex_count": 176
 }
 
-[sub_resource type="SpatialMaterial" id=15]
+[sub_resource type="SpatialMaterial" id=25]
 albedo_texture = ExtResource( 4 )
 
-[sub_resource type="ArrayMesh" id=2]
+[sub_resource type="ArrayMesh" id=26]
 resource_name = "Circle"
 surfaces/0 = {
 "aabb": AABB( -1, 0, -1, 2.00001, 0.59666, 2 ),
@@ -60,13 +59,13 @@ surfaces/0 = {
 "vertex_count": 206
 }
 
-[sub_resource type="SpatialMaterial" id=16]
+[sub_resource type="SpatialMaterial" id=27]
 albedo_texture = ExtResource( 4 )
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=28]
 albedo_texture = ExtResource( 4 )
 
-[sub_resource type="ArrayMesh" id=17]
+[sub_resource type="ArrayMesh" id=29]
 resource_name = "Cube009"
 surfaces/0 = {
 "aabb": AABB( -1, -1, -1, 2, 3.40131, 2 ),
@@ -80,7 +79,7 @@ surfaces/0 = {
 "vertex_count": 54
 }
 
-[sub_resource type="SpatialMaterial" id=4]
+[sub_resource type="SpatialMaterial" id=30]
 albedo_texture = ExtResource( 4 )
 metallic = 1.0
 metallic_specular = 0.75
@@ -90,7 +89,7 @@ transmission = Color( 0.913725, 0.380392, 0.380392, 1 )
 [sub_resource type="SpatialMaterial" id=18]
 albedo_color = Color( 0.903545, 0.903545, 0.903545, 1 )
 
-[sub_resource type="ArrayMesh" id=5]
+[sub_resource type="ArrayMesh" id=31]
 resource_name = "Cube008"
 surfaces/0 = {
 "aabb": AABB( -9.38819, -0.178404, -9.38819, 18.7764, 8.42567, 18.7764 ),
@@ -105,61 +104,58 @@ surfaces/0 = {
 "vertex_count": 24
 }
 
-[sub_resource type="SpatialMaterial" id=19]
+[sub_resource type="SpatialMaterial" id=32]
 albedo_texture = ExtResource( 4 )
 
-[sub_resource type="ConcavePolygonShape" id=6]
+[sub_resource type="ConcavePolygonShape" id=33]
 data = PoolVector3Array( -9.3882, -0.1784, -9.3882, -9.3882, -0.1784, 9.3882, -9.3882, 8.2473, 9.3882, 9.3882, -0.1784, -9.3882, -9.3882, -0.1784, -9.3882, -9.3882, 8.2473, -9.3882, 9.3882, -0.1784, 9.3882, 9.3882, -0.1784, -9.3882, 9.3882, 8.2473, -9.3882, -9.3882, -0.1784, 9.3882, 9.3882, -0.1784, 9.3882, 9.3882, 8.2473, 9.3882, -9.3882, -0.1784, 9.3882, -9.3882, -0.1784, -9.3882, 9.3882, -0.1784, -9.3882, 9.3882, 8.2473, 9.3882, 9.3882, 8.2473, -9.3882, -9.3882, 8.2473, -9.3882, -9.3882, -0.1784, -9.3882, -9.3882, 8.2473, 9.3882, -9.3882, 8.2473, -9.3882, 9.3882, -0.1784, -9.3882, -9.3882, 8.2473, -9.3882, 9.3882, 8.2473, -9.3882, 9.3882, -0.1784, 9.3882, 9.3882, 8.2473, -9.3882, 9.3882, 8.2473, 9.3882, -9.3882, -0.1784, 9.3882, 9.3882, 8.2473, 9.3882, -9.3882, 8.2473, 9.3882, -9.3882, -0.1784, 9.3882, 9.3882, -0.1784, -9.3882, 9.3882, -0.1784, 9.3882, 9.3882, 8.2473, 9.3882, -9.3882, 8.2473, -9.3882, -9.3882, 8.2473, 9.3882 )
 
 [sub_resource type="ProceduralSky" id=12]
 
-[sub_resource type="Environment" id=13]
+[sub_resource type="Environment" id=34]
 background_mode = 3
 background_sky = SubResource( 12 )
 adjustment_enabled = true
 adjustment_contrast = 0.85
 
-[sub_resource type="BoxShape" id=20]
+[sub_resource type="BoxShape" id=35]
 extents = Vector3( 9.40172, 0.095104, 9.35985 )
 
-[sub_resource type="ViewportTexture" id=14]
+[sub_resource type="ViewportTexture" id=36]
 viewport_path = NodePath("ViewportContainer/Viewport")
 
-[node name="shop" instance=ExtResource( 3 )]
+[node name="shop" type="Spatial"]
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_vertical_guides_": [ 961.0 ]
-}
 
-[node name="ViewportContainer" type="ViewportContainer" parent="." index="0"]
+[node name="ViewportContainer" type="ViewportContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="Viewport" type="Viewport" parent="ViewportContainer" index="0"]
+[node name="Viewport" type="Viewport" parent="ViewportContainer"]
 size = Vector2( 1920, 1080 )
 handle_input_locally = false
 render_target_v_flip = true
 render_target_update_mode = 3
 
-[node name="Control" parent="ViewportContainer/Viewport" index="0" instance=ExtResource( 7 )]
+[node name="Control" parent="ViewportContainer/Viewport" instance=ExtResource( 7 )]
 
-[node name="HBoxContainer" parent="ViewportContainer/Viewport" index="1" instance=ExtResource( 5 )]
+[node name="HBoxContainer" parent="ViewportContainer/Viewport" instance=ExtResource( 5 )]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="ViewportContainer/Viewport" index="2"]
+[node name="CanvasLayer" type="CanvasLayer" parent="ViewportContainer/Viewport"]
 
-[node name="SELECT_CAR_BUY" type="Label" parent="ViewportContainer/Viewport/CanvasLayer" index="0"]
+[node name="SELECT_CAR_BUY" type="Label" parent="ViewportContainer/Viewport/CanvasLayer"]
 anchor_right = 1.0
 margin_bottom = 39.0
 theme = ExtResource( 2 )
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 19 )
 text = "L_SHOP_CARS"
 align = 1
 
-[node name="Control" type="Control" parent="ViewportContainer/Viewport/CanvasLayer" index="1"]
+[node name="Control" type="Control" parent="ViewportContainer/Viewport/CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="ButtonQuit" type="Button" parent="ViewportContainer/Viewport/CanvasLayer/Control" index="0"]
+[node name="ButtonQuit" type="Button" parent="ViewportContainer/Viewport/CanvasLayer/Control"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -172,9 +168,9 @@ rect_rotation = 180.0
 focus_neighbour_left = NodePath("../ButtonRightShop")
 focus_neighbour_bottom = NodePath("../ButtonConfirmShop")
 theme = ExtResource( 6 )
-icon = SubResource( 7 )
+icon = SubResource( 20 )
 
-[node name="ButtonLeftShop" type="Button" parent="ViewportContainer/Viewport/CanvasLayer/Control" index="1"]
+[node name="ButtonLeftShop" type="Button" parent="ViewportContainer/Viewport/CanvasLayer/Control"]
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 200.0
@@ -185,9 +181,9 @@ rect_scale = Vector2( 2, 2 )
 focus_neighbour_left = NodePath("../ButtonRightShop")
 focus_neighbour_bottom = NodePath("../ButtonConfirmShop")
 theme = ExtResource( 2 )
-icon = SubResource( 7 )
+icon = SubResource( 20 )
 
-[node name="ButtonRightShop" type="Button" parent="ViewportContainer/Viewport/CanvasLayer/Control" index="2"]
+[node name="ButtonRightShop" type="Button" parent="ViewportContainer/Viewport/CanvasLayer/Control"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -200,9 +196,9 @@ rect_scale = Vector2( 2, 2 )
 focus_neighbour_right = NodePath("../ButtonLeftShop")
 focus_neighbour_bottom = NodePath("../ButtonConfirmShop")
 theme = ExtResource( 2 )
-icon = SubResource( 7 )
+icon = SubResource( 20 )
 
-[node name="ButtonConfirmShop" type="Button" parent="ViewportContainer/Viewport/CanvasLayer/Control" index="3"]
+[node name="ButtonConfirmShop" type="Button" parent="ViewportContainer/Viewport/CanvasLayer/Control"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -211,10 +207,10 @@ margin_left = -215.0
 margin_top = -83.0
 margin_right = 215.0
 theme = ExtResource( 2 )
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 21 )
 text = "B_Buy_Car"
 
-[node name="CAR_ALREYD_GARAGE" type="Label" parent="ViewportContainer/Viewport/CanvasLayer" index="2"]
+[node name="CAR_ALREYD_GARAGE" type="Label" parent="ViewportContainer/Viewport/CanvasLayer"]
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -227,7 +223,7 @@ margin_bottom = 29.0
 theme = ExtResource( 6 )
 text = "CAR_ALREYD_GARAGE"
 
-[node name="NO_SPACE_HOLLOW" type="Label" parent="ViewportContainer/Viewport/CanvasLayer" index="3"]
+[node name="NO_SPACE_HOLLOW" type="Label" parent="ViewportContainer/Viewport/CanvasLayer"]
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -241,7 +237,7 @@ theme = ExtResource( 6 )
 text = "NO_SPACE_HOLLOW"
 align = 1
 
-[node name="CAR_BUIED" type="Label" parent="ViewportContainer/Viewport/CanvasLayer" index="4"]
+[node name="CAR_BUIED" type="Label" parent="ViewportContainer/Viewport/CanvasLayer"]
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -254,7 +250,7 @@ margin_bottom = 29.0
 theme = ExtResource( 6 )
 text = "CAR_BUIED"
 
-[node name="NO_MONEY" type="Label" parent="ViewportContainer/Viewport/CanvasLayer" index="5"]
+[node name="NO_MONEY" type="Label" parent="ViewportContainer/Viewport/CanvasLayer"]
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -267,17 +263,17 @@ margin_bottom = 29.0
 theme = ExtResource( 6 )
 text = "NO_MONEY"
 
-[node name="TimerWarning" type="Timer" parent="ViewportContainer/Viewport/CanvasLayer" index="6"]
+[node name="TimerWarning" type="Timer" parent="ViewportContainer/Viewport/CanvasLayer"]
 wait_time = 8.0
 one_shot = true
 
-[node name="Control2" type="Control" parent="ViewportContainer/Viewport/CanvasLayer" index="7"]
+[node name="Control2" type="Control" parent="ViewportContainer/Viewport/CanvasLayer"]
 margin_left = 236.0
 margin_top = 260.0
 margin_right = 419.0
 margin_bottom = 312.0
 
-[node name="LabelPrices" type="Label" parent="ViewportContainer/Viewport/CanvasLayer/Control2" index="0"]
+[node name="LabelPrices" type="Label" parent="ViewportContainer/Viewport/CanvasLayer/Control2"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -287,12 +283,12 @@ margin_top = 590.0
 margin_right = 847.5
 margin_bottom = 673.0
 theme = ExtResource( 6 )
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 22 )
 text = "dasdasfas"
 align = 1
 valign = 1
 
-[node name="LabelTitlePrices" type="Label" parent="ViewportContainer/Viewport/CanvasLayer/Control2" index="1"]
+[node name="LabelTitlePrices" type="Label" parent="ViewportContainer/Viewport/CanvasLayer/Control2"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -302,93 +298,93 @@ margin_top = 500.0
 margin_right = 845.5
 margin_bottom = 583.0
 theme = ExtResource( 2 )
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 23 )
 text = "L_Prices"
 align = 1
 valign = 1
 
-[node name="Cylinder002" type="MeshInstance" parent="ViewportContainer/Viewport" index="3"]
+[node name="Cylinder003" type="MeshInstance" parent="ViewportContainer/Viewport"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.94869, 5.63815, 0.0344524 )
-mesh = SubResource( 1 )
+mesh = SubResource( 24 )
 skeleton = NodePath("../../..")
-material/0 = SubResource( 15 )
+material/0 = SubResource( 25 )
 
-[node name="SpotLight" type="SpotLight" parent="ViewportContainer/Viewport/Cylinder002" index="0"]
+[node name="SpotLight" type="SpotLight" parent="ViewportContainer/Viewport/Cylinder003"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
 light_color = Color( 0.937255, 0.92549, 0.0705882, 1 )
 shadow_enabled = true
 shadow_color = Color( 0.176471, 0.160784, 0.0352941, 1 )
 spot_range = 9.259
 
-[node name="Cylinder001" type="MeshInstance" parent="ViewportContainer/Viewport" index="4"]
+[node name="Cylinder004" type="MeshInstance" parent="ViewportContainer/Viewport"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.91773, 5.63815, 0.0344524 )
-mesh = SubResource( 1 )
+mesh = SubResource( 24 )
 skeleton = NodePath("../../..")
-material/0 = SubResource( 15 )
+material/0 = SubResource( 25 )
 
-[node name="SpotLight" type="SpotLight" parent="ViewportContainer/Viewport/Cylinder001" index="0"]
+[node name="SpotLight" type="SpotLight" parent="ViewportContainer/Viewport/Cylinder004"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
 light_color = Color( 0.937255, 0.92549, 0.0705882, 1 )
 shadow_enabled = true
 shadow_color = Color( 0.176471, 0.160784, 0.0352941, 1 )
 spot_range = 9.259
 
-[node name="Cylinder" type="MeshInstance" parent="ViewportContainer/Viewport" index="5"]
+[node name="Cylinder2" type="MeshInstance" parent="ViewportContainer/Viewport"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.63815, -8.72845 )
-mesh = SubResource( 1 )
+mesh = SubResource( 24 )
 skeleton = NodePath("../../..")
-material/0 = SubResource( 15 )
+material/0 = SubResource( 25 )
 
-[node name="SpotLight" type="SpotLight" parent="ViewportContainer/Viewport/Cylinder" index="0"]
+[node name="SpotLight" type="SpotLight" parent="ViewportContainer/Viewport/Cylinder2"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
 light_color = Color( 0.937255, 0.92549, 0.0705882, 1 )
 shadow_enabled = true
 shadow_color = Color( 0.176471, 0.160784, 0.0352941, 1 )
 spot_range = 9.259
 
-[node name="Circle004" type="MeshInstance" parent="ViewportContainer/Viewport" index="6"]
+[node name="Circle005" type="MeshInstance" parent="ViewportContainer/Viewport"]
 transform = Transform( 1.45996, 0, 0, 0, 1.45996, 0, 0, 0, 1.45996, 8.04427, 2.42911, -7.87924 )
-mesh = SubResource( 2 )
+mesh = SubResource( 26 )
 skeleton = NodePath("../../..")
-material/0 = SubResource( 16 )
+material/0 = SubResource( 27 )
 
-[node name="Circle003" type="MeshInstance" parent="ViewportContainer/Viewport" index="7"]
+[node name="Circle006" type="MeshInstance" parent="ViewportContainer/Viewport"]
 transform = Transform( 1.45996, 0, 0, 0, 1.45996, 0, 0, 0, 1.45996, 8.04427, 1.53601, -7.87924 )
-mesh = SubResource( 2 )
+mesh = SubResource( 26 )
 skeleton = NodePath("../../..")
-material/0 = SubResource( 16 )
+material/0 = SubResource( 27 )
 
-[node name="Circle002" type="MeshInstance" parent="ViewportContainer/Viewport" index="8"]
+[node name="Circle007" type="MeshInstance" parent="ViewportContainer/Viewport"]
 transform = Transform( 1.45996, 0, 0, 0, 1.45996, 0, 0, 0, 1.45996, 8.04427, 0.642912, -7.87924 )
-mesh = SubResource( 2 )
+mesh = SubResource( 26 )
 skeleton = NodePath("../../..")
-material/0 = SubResource( 16 )
+material/0 = SubResource( 27 )
 
-[node name="Circle001" type="MeshInstance" parent="ViewportContainer/Viewport" index="9"]
+[node name="Circle008" type="MeshInstance" parent="ViewportContainer/Viewport"]
 transform = Transform( 1.45996, 0, 0, 0, 1.45996, 0, 0, 0, 1.45996, 8.04427, -0.23034, -7.87924 )
-mesh = SubResource( 2 )
+mesh = SubResource( 26 )
 skeleton = NodePath("../../..")
-material/0 = SubResource( 16 )
+material/0 = SubResource( 27 )
 
-[node name="Circle" type="MeshInstance" parent="ViewportContainer/Viewport" index="10"]
+[node name="Circle2" type="MeshInstance" parent="ViewportContainer/Viewport"]
 transform = Transform( 1.45996, 0, 0, 0, 1.45996, 0, 0, 0, 1.45996, -6.92025, -0.23034, -3.29673 )
-mesh = SubResource( 2 )
+mesh = SubResource( 26 )
 skeleton = NodePath("../../..")
-material/0 = SubResource( 3 )
+material/0 = SubResource( 28 )
 
-[node name="armario" type="MeshInstance" parent="ViewportContainer/Viewport" index="11"]
+[node name="armario2" type="MeshInstance" parent="ViewportContainer/Viewport"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.3794, 0.738111, 0 )
-mesh = SubResource( 17 )
+mesh = SubResource( 29 )
 skeleton = NodePath("../../..")
-material/0 = SubResource( 4 )
+material/0 = SubResource( 30 )
 
-[node name="SpotLight" type="SpotLight" parent="ViewportContainer/Viewport" index="12"]
+[node name="SpotLight" type="SpotLight" parent="ViewportContainer/Viewport"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7.60428, 0 )
 shadow_enabled = true
 spot_range = 21.054
 
-[node name="sun01" type="DirectionalLight" parent="ViewportContainer/Viewport" index="13"]
-transform = Transform( 0.938046, -0.0907128, 0.334426, 1.51464e-08, -0.965125, -0.26179, 0.34651, 0.245571, -0.905332, -9.13218, 1.51616, -32.4818 )
+[node name="sun01" type="DirectionalLight" parent="ViewportContainer/Viewport"]
+transform = Transform( 0.295715, -0.864676, -0.406064, -0.334195, -0.491855, 0.803985, -0.894911, -0.102046, -0.43442, -5.1044, 6.16883, -5.64924 )
 light_color = Color( 1, 0.989059, 0.882005, 1 )
 light_energy = 0.262
 light_specular = 0.0
@@ -401,93 +397,41 @@ directional_shadow_normal_bias = 0.0
 directional_shadow_bias_split_scale = 0.0
 directional_shadow_depth_range = 1
 
-[node name="Sun002" type="DirectionalLight" parent="ViewportContainer/Viewport" index="14"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7.60428, 0 )
-visible = false
-light_color = Color( 0.67808, 0.850388, 1, 1 )
-light_energy = 0.07
-light_specular = 0.0
-shadow_enabled = true
-shadow_color = Color( 0.242899, 0.24173, 0.199601, 1 )
-
-[node name="Cube001" type="MeshInstance" parent="ViewportContainer/Viewport" index="15"]
-mesh = SubResource( 5 )
+[node name="Cube002" type="MeshInstance" parent="ViewportContainer/Viewport"]
+mesh = SubResource( 31 )
 skeleton = NodePath("../../..")
-material/0 = SubResource( 19 )
+material/0 = SubResource( 32 )
 
-[node name="StaticBody" type="StaticBody" parent="ViewportContainer/Viewport/Cube001" index="0"]
+[node name="StaticBody" type="StaticBody" parent="ViewportContainer/Viewport/Cube002"]
 
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/Cube001/StaticBody" index="0"]
-shape = SubResource( 6 )
+[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/Cube002/StaticBody"]
+shape = SubResource( 33 )
 
-[node name="rot_cam" type="Spatial" parent="ViewportContainer/Viewport" index="16"]
+[node name="rot_cam" type="Spatial" parent="ViewportContainer/Viewport"]
 
-[node name="Camera015" type="Camera" parent="ViewportContainer/Viewport/rot_cam" index="0"]
+[node name="Camera015" type="Camera" parent="ViewportContainer/Viewport/rot_cam"]
 transform = Transform( -0.714007, 0.255656, -0.651793, -5.01999e-07, 0.930948, 0.365151, 0.700138, 0.260721, -0.664704, -8.34656, 5.55503, -8.90285 )
 current = true
 fov = 49.1343
 size = 6.0
 near = 0.1
 
-[node name="Camera015" type="Camera" parent="ViewportContainer/Viewport" index="17"]
-transform = Transform( -0.714007, 0.255656, -0.651793, -5.01999e-07, 0.930948, 0.365151, 0.700138, 0.260721, -0.664704, -8.34656, 5.55503, -8.90285 )
-visible = false
-fov = 49.1343
-size = 6.0
-near = 0.1
-
-[node name="car_invoker" type="Spatial" parent="ViewportContainer/Viewport" index="18"]
+[node name="car_invoker" type="Spatial" parent="ViewportContainer/Viewport"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.02238, 0 )
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="ViewportContainer/Viewport" index="19"]
-environment = SubResource( 13 )
+[node name="WorldEnvironment" type="WorldEnvironment" parent="ViewportContainer/Viewport"]
+environment = SubResource( 34 )
 
-[node name="StaticBody" type="StaticBody" parent="ViewportContainer/Viewport" index="20"]
+[node name="StaticBody" type="StaticBody" parent="ViewportContainer/Viewport"]
 
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/StaticBody" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0385498, 0 )
-shape = SubResource( 20 )
+shape = SubResource( 35 )
 
-[node name="TextureRect" type="TextureRect" parent="." index="1"]
+[node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = SubResource( 14 )
-
-[node name="Cylinder002" parent="." index="2"]
-visible = false
-
-[node name="Cylinder001" parent="." index="3"]
-visible = false
-
-[node name="Cylinder" parent="." index="4"]
-visible = false
-
-[node name="Circle004" parent="." index="5"]
-visible = false
-
-[node name="Circle003" parent="." index="6"]
-visible = false
-
-[node name="Circle002" parent="." index="7"]
-visible = false
-
-[node name="Circle001" parent="." index="8"]
-visible = false
-
-[node name="Circle" parent="." index="9"]
-visible = false
-
-[node name="armario" parent="." index="10"]
-visible = false
-
-[node name="Sun002" parent="." index="11"]
-visible = false
-
-[node name="Cube001" parent="." index="12"]
-visible = false
-
-[node name="Camera015" parent="." index="13"]
-visible = false
+texture = SubResource( 36 )
 
 [connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/Control/ButtonQuit" to="." method="_on_ButtonQuit_pressed"]
 [connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/Control/ButtonLeftShop" to="." method="_on_ButtonLeftShop_pressed"]

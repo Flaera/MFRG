@@ -1823,7 +1823,7 @@ transform = Transform( 0.195132, 0, 0.795235, 0, 0.933841, 0, -0.795235, 0, 0.19
 mesh = SubResource( 5 )
 
 [node name="laje2007" type="MeshInstance" parent="."]
-transform = Transform( -0.780603, 0, 0.247252, 0, 0.933841, 0, -0.247252, 0, -0.780603, -74.1045, -0.245211, -116.786 )
+transform = Transform( -0.780603, 0, 0.247252, 0, 0.933841, 0, -0.247252, 0, -0.780603, -73.9439, -0.245211, -116.671 )
 mesh = SubResource( 5 )
 
 [node name="laje2006" type="MeshInstance" parent="."]
