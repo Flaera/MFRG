@@ -34,9 +34,12 @@ func _ready():
 	#print("save=",save_file)
 	#Load car player:
 	car_loaded = load("res://scenes/cars_updated/"+save_file.car_selected+".tscn")
+	#car_loaded.MODES.PLAYER
 	#file.close()
 	curr_car = car_loaded.instance()
-	curr_car.MODES.PLAYER
+	curr_car.car_mode=0
+	#curr_car.car_mode
+	#curr_car._ready()
 	get_node("ViewportContainer/Viewport/car_invoker").add_child(curr_car)
 	#load enemy:
 	var file_enemy = File.new()
@@ -44,8 +47,10 @@ func _ready():
 	file_enemy.store_string("0")
 	file_enemy.close()
 	var car_loaded_enemy: Object = load("res://scenes/cars_updated/"+save_file.car_selected+".tscn")
+	#car_loaded_enemy.MODES.AI
 	curr_car_enemy = car_loaded_enemy.instance()
-	curr_car_enemy.MODES.AI
+	curr_car_enemy.car_mode=1
+	#curr_car_enemy._ready()
 	get_node("ViewportContainer/Viewport/car_invoker_enemy").add_child(curr_car_enemy)
 
 	#camera = preload("res://scenes/camera/camera.scn")
@@ -53,7 +58,7 @@ func _ready():
 	#get_node("ViewportContainer/Viewport/car_invoker").add_child(curr_cam)
 	curr_cam = $ViewportContainer/Viewport/car_invoker/Camera
 	
-	timer = 50.0
+	timer = 60.0
 	get_node("ViewportContainer/Viewport/Timer").start(timer) #time in seconds
 	get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label2/AnimationPlayer").play("anim_run_init_event")
 	
@@ -103,7 +108,7 @@ func winPlay(_delta):
 			
 			
 			#var save_file: Resource = load("res://resources/saved_game/saved_game.tres")
-			save_file.event4_char2 = true
+			save_file.event1_char1 = true
 			ResourceSaver.save("res://resources/saved_game/saved_game.tres", save_file)
 			"""var file_event = File.new()
 			file_event.open("res://data_files/"+event_name0+".txt", File.WRITE)
@@ -134,7 +139,7 @@ func playerLoserOrWin(_delta, var time: float):
 
 
 func _input(event):
-	if ((event is InputEventKey and event.scancode==KEY_ENTER) or (event is InputEventJoypadButton) and event.button_index==JOY_START):
+	if ((event is InputEventKey and event.scancode==KEY_ENTER) or (event is InputEventJoypadButton and event.button_index==JOY_START)):
 		get_tree().change_scene("res://scenes/progress_game/progress_game.tscn")
 		
 

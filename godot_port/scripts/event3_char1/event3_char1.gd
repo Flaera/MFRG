@@ -1,43 +1,45 @@
 extends Spatial
 
 
-var car_loaded: Object
-var curr_car: Object
-var camera: Object
-var curr_cam: Object
-var loser: bool = false
-var pts: float = 0.0
-var timer: float
-var win: int = 0
-var golds: int = 0.0
-var time_end: float = 0.0
-var curr_car_enemy: Object
-var len_checkpoints: int = 31
-var index_cp: int = 0
+onready var car_loaded
+onready var curr_car
+onready var camera
+onready var curr_cam
+onready var loser: bool = false
+onready var pts: float = 0.0
+onready var timer: float
+onready var win: int = 0
+onready var golds: int = 0.0
+onready var time_end: float = 0.0
+onready var curr_car_enemy
+onready var len_checkpoints: int = 31
+onready var index_cp: int = 0
 onready var event_name0: String
-var save_file: Resource
+onready var save_file: Resource
 
 
 func _ready():
 	# MUDAR O NOME DA VAR DO SAVED FILE RESOURCE LÀ EMBAIXO EM winPlay()!!
 	var event_name: String = "event3_char1" # Deve ser mesmo nome do node e do file
-	#event_name0 = "event2_char1" # Deve ser o nome para progressao do game
+	#event_name0 = "event1_char1" # Deve ser o nome para progressao do game
 	var file_event = File.new()
 	file_event.open("res://data_files/event_name.txt", File.WRITE)
 	file_event.store_string(event_name)
 	file_event.close()
-	save_file = SaveFile.new()
 
 	#var file = File.new()
 	#file.open("res://data_files/car_selected.txt",File.READ)
 	#var car = file.get_csv_line()[0]
-	save_file = ResourceLoader.load("res://resources/saved_game/saved_game.tres")
+	save_file = preload("res://resources/saved_game/saved_game.tres")
+	#print("save=",save_file)
 	#Load car player:
 	car_loaded = load("res://scenes/cars_updated/"+save_file.car_selected+".tscn")
+	#car_loaded.MODES.PLAYER
 	#file.close()
-	#print("car_res=",car_loaded)
 	curr_car = car_loaded.instance()
-	curr_car.MODES.PLAYER
+	curr_car.car_mode=0
+	#curr_car.car_mode
+	#curr_car._ready()
 	get_node("ViewportContainer/Viewport/car_invoker").add_child(curr_car)
 	#load enemy:
 	var file_enemy = File.new()
@@ -45,14 +47,18 @@ func _ready():
 	file_enemy.store_string("0")
 	file_enemy.close()
 	var car_loaded_enemy: Object = load("res://scenes/cars_updated/"+save_file.car_selected+".tscn")
+	#car_loaded_enemy.MODES.AI
 	curr_car_enemy = car_loaded_enemy.instance()
+	curr_car_enemy.car_mode=1
+	#curr_car_enemy._ready()
 	get_node("ViewportContainer/Viewport/car_invoker_enemy").add_child(curr_car_enemy)
-	curr_car_enemy.MODES.AI
+
 	#camera = preload("res://scenes/camera/camera.scn")
 	#curr_cam = camera.instance()
+	#get_node("ViewportContainer/Viewport/car_invoker").add_child(curr_cam)
 	curr_cam = $ViewportContainer/Viewport/car_invoker/Camera
 	
-	timer = 125.0
+	timer = 120.0
 	get_node("ViewportContainer/Viewport/Timer").start(timer) #time in seconds
 	get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label2/AnimationPlayer").play("anim_run_init_event")
 	
@@ -62,7 +68,6 @@ func _ready():
 	select_lang.contrast_in_texturesrects(get_node("."))
 
 	Contrast3D.new().contrast_3d(get_node("."))
-
 
 
 func camTransform():
@@ -76,7 +81,6 @@ func camTransform():
 
 
 func winPlay(_delta):
-	#print("time_end=",time_end)
 	if (loser==false and win==1 and !get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label/AnimationPlayer").is_playing()):
 		get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label/AnimationPlayer").play("anim_you_win")
 		get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label4/AnimationPlayer").play("anim_you_win_golds")
@@ -102,8 +106,9 @@ func winPlay(_delta):
 			save_file.gold = curr_golds
 			#ResourceSaver.save("res://resources/saved_game/saved_game.tres", save_file)
 			
-			var save_file: Resource = load("res://resources/saved_game/saved_game.tres")
-			save_file.event3_char1 = true #MUDAR AQUI O NOME DA VARIAVEL NO RESOURCE!!
+			
+			#var save_file: Resource = load("res://resources/saved_game/saved_game.tres")
+			save_file.event1_char1 = true
 			ResourceSaver.save("res://resources/saved_game/saved_game.tres", save_file)
 			"""var file_event = File.new()
 			file_event.open("res://data_files/"+event_name0+".txt", File.WRITE)
@@ -134,11 +139,9 @@ func playerLoserOrWin(_delta, var time: float):
 
 
 func _input(event):
-	if ((event is InputEventKey and event.scancode==KEY_ENTER) or (event is InputEventJoypadButton) and event.button_index==JOY_START):
+	if ((event is InputEventKey and event.scancode==KEY_ENTER) or (event is InputEventJoypadButton and event.button_index==JOY_START)):
 		get_tree().change_scene("res://scenes/progress_game/progress_game.tscn")
 		
-
-
 
 
 func _process(_delta):
@@ -149,7 +152,7 @@ func _process(_delta):
 	get_node("ViewportContainer/Viewport/CanvasLayer/Control/Label").text = minutes+":"+seconds
 
 	get_node("ViewportContainer/Viewport/Area/AnimationPlayer").play("anim_end_event")
-	
+
 	playerLoserOrWin(_delta, time)
 
 

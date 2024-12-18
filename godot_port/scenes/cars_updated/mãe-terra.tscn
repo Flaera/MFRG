@@ -135,7 +135,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.581395, -0.602244, 2.72556 )
 transform = Transform( 1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -0.573398, -0.602244, 2.73744 )
 
 [node name="CollisionShape" parent="." index="9"]
-transform = Transform( 2.052, 0, 0, 0, 1.088, 0, 0, 0, 3.359, 0, 0.0562679, 0.0127705 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0562679, 0.0127705 )
 
 [editable path="FrontLeftWheel"]
 [editable path="BackLeftWheel"]

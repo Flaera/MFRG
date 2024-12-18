@@ -27,6 +27,7 @@ onready var canvas_layer = $Control/CanvasLayer
 onready var progress_bar = $Control/CanvasLayer/ProgressBar
 onready var velocimeter = $Control/CanvasLayer/velo
 onready var pointer = $Control/CanvasLayer/pointer
+onready var prev_pos: Vector3
 
 var car_phys: Cars
 var axis: Vector2 = Vector2(0.0,0.0)
@@ -36,27 +37,45 @@ var raycasts_by_name: Dictionary
 
 const WEIGHT = 1000
 
+
+func disable_particles():
+	$FrontLeftWheel/CPUParticles.visible=false
+	$FrontRightWheel/CPUParticles.visible=false
+	$BackLeftWheel/CPUParticles.visible=false
+	$BackRightWheel/CPUParticles.visible=false
+	$NitroParticles/CPUParticles.visible=false
+	$NitroParticles2/CPUParticles.visible=false
+
+
 func _ready():
 	match car_mode:
 		MODES.PLAYER:
 			car_phys = Cars.new(acceleration, max_rpm, max_torque, fully_nitro)
-			canvas_layer.visible = car_phys.getMove()
+			canvas_layer.visible = true
 		MODES.AI:
 			set_raycasts()
+			canvas_layer.visible=false
+			disable_particles()
 			car_phys = Cars.new(acceleration, max_rpm, max_torque, fully_nitro)
 			disable_input()
-	
+		MODES.STATIC:
+			canvas_layer.visible=false
+			disable_particles()
+			visible=false
+			car_phys = Cars.new(acceleration, max_rpm, max_torque, fully_nitro)
+			disable_input()
+			
 	#weight = WEIGHT
 	gravity_scale = 2.0
 	if (ResourceLoader.load("res://resources/saved_game/saved_game.tres").car_selected=="solo"):
 		gravity_scale=4.0
 		#weight=4.0
-	set_process_input(true)
+	#set_process_input(true)
 	#set_process_unhandled_input(true)
 	#set_process_unhandled_key_input(true)
-	set_process(true)
-	set_process_internal(true)
-	set_physics_process(true)
+	#set_process(true)
+	#set_process_internal(true)
+	#set_physics_process(true)
 
 
 func _input(event):
@@ -72,17 +91,16 @@ func _input(event):
 func _physics_process(delta):
 	var calc = car_phys.mainCarPhys(axis, nitro, backLeftWheel, backRightWheel,
 	 brake_pedal, brake, steering, delta)
+	print("calc4=",calc[4])
 	brake = calc[0]
 	steering = calc[1]
 
-	#UI:
-	if car_phys.getMove()==true:
+	
+	if car_phys.move==true:
 		progress_bar.value = calc[2]
-		var rpm_medium = (backLeftWheel.get_rpm()+backRightWheel.get_rpm())/2
-		var velocity = abs(int((rpm_medium)/1.785714286))#abs(int(33.02*0.001885*rpm_medium))
-		#print(" --- ",velocity)
-		velocimeter.text = String(velocity)
-		pointer.rotation_degrees = ((2*velocity)/2.307)-130
+		var car_velocity = calc[4]
+		velocimeter.text = String(car_velocity)
+		pointer.rotation_degrees = ((2*car_velocity)/2.307)-130
 
 		#Nitro particles:
 		#print("calc[2]=",calc[2])
@@ -93,7 +111,8 @@ func _physics_process(delta):
 		#return
 		#Dust particles:
 		for particle in wheelParticles:
-			particle.emitting = abs(rpm_medium) > 10
+			particle.emitting = abs(car_velocity) > 5
+		prev_pos=translation
 
 
 func look_at_checkpoint(var target: Spatial):
@@ -159,7 +178,7 @@ func disable():
 	self.set_process_unhandled_input(false)
 	self.set_process_unhandled_key_input(false)
 	self.visible = false
-	mode = RigidBody.MODE_STATIC
+	mode = self.MODE_STATIC
 	collider.set_deferred("disabled", true)
 
 func enable():
@@ -174,4 +193,4 @@ func enable():
 	self.set_process_unhandled_key_input(true)
 	self.visible = true
 	collider.set_deferred("disabled", false)
-	mode = RigidBody.MODE_RIGID
+	mode = self.MODE_RIGID

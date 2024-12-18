@@ -12,7 +12,7 @@ onready var win: int = 0
 onready var golds: int = 0.0
 onready var time_end: float = 0.0
 onready var curr_car_enemy
-onready var len_checkpoints: int = 15
+onready var len_checkpoints: int = 34
 onready var index_cp: int = 0
 onready var event_name0: String
 onready var save_file: Resource
@@ -20,7 +20,7 @@ onready var save_file: Resource
 
 func _ready():
 	# MUDAR O NOME DA VAR DO SAVED FILE RESOURCE LÀ EMBAIXO EM winPlay()!!
-	var event_name: String = "event1_char1_v3" # Deve ser mesmo nome do node e do file
+	var event_name: String = "event1_char1_v4" # Deve ser mesmo nome do node e do file
 	#event_name0 = "event1_char1" # Deve ser o nome para progressao do game
 	var file_event = File.new()
 	file_event.open("res://data_files/event_name.txt", File.WRITE)
@@ -34,9 +34,12 @@ func _ready():
 	#print("save=",save_file)
 	#Load car player:
 	car_loaded = load("res://scenes/cars_updated/"+save_file.car_selected+".tscn")
+	#car_loaded.MODES.PLAYER
 	#file.close()
 	curr_car = car_loaded.instance()
-	curr_car.MODES.PLAYER
+	curr_car.car_mode=0
+	#curr_car.car_mode
+	#curr_car._ready()
 	get_node("ViewportContainer/Viewport/car_invoker").add_child(curr_car)
 	#load enemy:
 	var file_enemy = File.new()
@@ -44,8 +47,10 @@ func _ready():
 	file_enemy.store_string("0")
 	file_enemy.close()
 	var car_loaded_enemy: Object = load("res://scenes/cars_updated/"+save_file.car_selected+".tscn")
+	#car_loaded_enemy.MODES.AI
 	curr_car_enemy = car_loaded_enemy.instance()
-	curr_car_enemy.MODES.AI
+	curr_car_enemy.car_mode=1
+	#curr_car_enemy._ready()
 	get_node("ViewportContainer/Viewport/car_invoker_enemy").add_child(curr_car_enemy)
 
 	#camera = preload("res://scenes/camera/camera.scn")
@@ -134,7 +139,7 @@ func playerLoserOrWin(_delta, var time: float):
 
 
 func _input(event):
-	if ((event is InputEventKey and event.scancode==KEY_ENTER) or (event is InputEventJoypadButton) and event.button_index==JOY_START):
+	if ((event is InputEventKey and event.scancode==KEY_ENTER) or (event is InputEventJoypadButton and event.button_index==JOY_START)):
 		get_tree().change_scene("res://scenes/progress_game/progress_game.tscn")
 		
 

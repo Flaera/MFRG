@@ -10,6 +10,7 @@ onready var no_space_hollow = $ViewportContainer/Viewport/CanvasLayer/NO_SPACE_H
 onready var car_bought = $ViewportContainer/Viewport/CanvasLayer/CAR_BUIED
 onready var no_money = $ViewportContainer/Viewport/CanvasLayer/NO_MONEY
 onready var UI = $ViewportContainer/Viewport/Control
+onready var pre_car_invoker = $ViewportContainer/Viewport/pre_car_invoker
 
 var cars: Dictionary
 var car_loaded: Car
@@ -41,13 +42,15 @@ func loadCarList():
 		
 		directory.list_dir_end()
 		for car in cars_list:
-			car.MODES.STATIC
+			car.car_mode=2
+			car._ready()
 		spawnCars()
 
 
 func spawnCars():
 	for car in cars_list:
-		car.disable()
+		#car.get_node("CollisionShape").disabled=true
+		car.transform = pre_car_invoker.transform
 		car_invoker.add_child(car)
 	changeCar(0, cars_list.size()-1)
 
@@ -58,7 +61,7 @@ func loadMoney():
 	#money = int(file.get_csv_line()[0])
 	#file.close()
 	money = res_savegame.gold
-	print(money)
+	#print(money)
 
 
 func updatePrice():
@@ -94,10 +97,16 @@ func _ready():
 func changeCar(var index: int, var previous_index: int):
 	car_loaded = cars_list[index]
 	car_loaded.transform = car_invoker.transform
-	car_loaded.enable()
+	#car_loaded.disable_input()
+	#car_loaded.enable()
+	car_loaded.visible=true
+	#car_loaded.get_node("CollisionShape").disabled=false
 	car_unloaded = cars_list[previous_index]
-	car_unloaded.disable()
-	car_unloaded.transform = car_invoker.transform
+	#car_unloaded.disable_input()
+	#car_unloaded.disable()
+	car_unloaded.visible=false
+	#car_unloaded.get_node("CollisionShape").disabled=true
+	car_unloaded.transform = pre_car_invoker.transform
 	updatePrice()
 	UI.changeUIProperties(cars_list[index])
 	
@@ -128,7 +137,7 @@ func _on_ButtonLeftShop_pressed():
 
 func _on_ButtonRightShop_pressed():
 	acc+=1
-	print("ACC: ", acc)
+	#print("ACC: ", acc)
 	if (acc>cars_list.size()-1): acc = 0
 	changeCar(acc, acc-1)
 
