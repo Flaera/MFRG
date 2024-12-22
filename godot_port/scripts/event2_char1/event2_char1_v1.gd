@@ -12,7 +12,7 @@ onready var win: int = 0
 onready var golds: int = 0.0
 onready var time_end: float = 0.0
 onready var curr_car_enemy
-onready var len_checkpoints: int = 23
+onready var len_checkpoints: int = len($ViewportContainer/Viewport/checkpoints.get_children())
 onready var index_cp: int = 0
 onready var event_name0: String
 onready var save_file: Resource
@@ -42,10 +42,6 @@ func _ready():
 	#curr_car._ready()
 	get_node("ViewportContainer/Viewport/car_invoker").add_child(curr_car)
 	#load enemy:
-	var file_enemy = File.new()
-	file_enemy.open("res://data_files/cp_enemy.txt", File.WRITE)
-	file_enemy.store_string("0")
-	file_enemy.close()
 	var car_loaded_enemy: Object = load("res://scenes/cars_updated/"+save_file.car_selected+".tscn")
 	#car_loaded_enemy.MODES.AI
 	curr_car_enemy = car_loaded_enemy.instance()
@@ -108,7 +104,7 @@ func winPlay(_delta):
 			
 			
 			#var save_file: Resource = load("res://resources/saved_game/saved_game.tres")
-			save_file.event1_char1 = true
+			save_file.event2_char1 = true
 			ResourceSaver.save("res://resources/saved_game/saved_game.tres", save_file)
 			"""var file_event = File.new()
 			file_event.open("res://data_files/"+event_name0+".txt", File.WRITE)
@@ -165,10 +161,9 @@ func _on_Area_body_entered(body):
 		loser=true
 
 
+
+
 func _on_Area0_body_entered(body):
-	if (body==curr_car_enemy and index_cp<len_checkpoints):
-		index_cp+=1
-		var file = File.new()
-		file.open("res://data_files/cp_enemy.txt",File.WRITE)
-		file.store_string(String(index_cp))
-		file.close()
+	if (curr_car_enemy.index_checkpoints<len_checkpoints and body==curr_car_enemy):
+		#print("body=",body)
+		curr_car_enemy.index_checkpoints+=1

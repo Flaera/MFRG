@@ -175,7 +175,8 @@ surfaces/0 = {
 "vertex_count": 20
 }
 
-[sub_resource type="BoxShape" id=17]
+[sub_resource type="SphereShape" id=21]
+radius = 0.5
 
 [sub_resource type="ViewportTexture" id=20]
 viewport_path = NodePath("ViewportContainer/Viewport")
@@ -493,257 +494,161 @@ transform = Transform( 0.0672052, 0, 0.947994, 0, 0.950373, 0, -0.947994, 0, 0.0
 mesh = SubResource( 7 )
 skeleton = NodePath("../../..")
 
-[node name="checkpoint0" type="Spatial" parent="ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5089, -1.41652, -1.71407 )
+[node name="checkpoints" type="Spatial" parent="ViewportContainer/Viewport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5089, 1.15718, -1.71407 )
 
-[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint0"]
+[node name="checkpoint0" type="Spatial" parent="ViewportContainer/Viewport/checkpoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.21773, -1.41652, 3.67435 )
 
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoint0/Area0"]
+[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoints/checkpoint0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoints/checkpoint0/Area0"]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
-shape = SubResource( 17 )
+shape = SubResource( 21 )
 
-[node name="checkpoint1" type="Spatial" parent="ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.9705, -1.41652, 32.7894 )
+[node name="checkpoint1" type="Spatial" parent="ViewportContainer/Viewport/checkpoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.451641, -1.41652, 33.1873 )
 
-[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint1"]
+[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoints/checkpoint1"]
 
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoint1/Area0"]
+[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoints/checkpoint1/Area0"]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
-shape = SubResource( 17 )
+shape = SubResource( 21 )
 
-[node name="checkpoint2" type="Spatial" parent="ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3658, -1.41652, 50.1511 )
+[node name="checkpoint2" type="Spatial" parent="ViewportContainer/Viewport/checkpoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9679, -1.41652, 67.6596 )
 
-[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint2"]
+[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoints/checkpoint2"]
 
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoint2/Area0"]
+[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoints/checkpoint2/Area0"]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
-shape = SubResource( 17 )
+shape = SubResource( 21 )
 
-[node name="checkpoint3" type="Spatial" parent="ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.6728, -1.41652, 57.1836 )
+[node name="checkpoint3" type="Spatial" parent="ViewportContainer/Viewport/checkpoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40.6312, -1.41652, 51.6127 )
 
-[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint3"]
+[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoints/checkpoint3"]
 
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoint3/Area0"]
+[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoints/checkpoint3/Area0"]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
-shape = SubResource( 17 )
+shape = SubResource( 21 )
 
-[node name="checkpoint4" type="Spatial" parent="ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44.6728, -1.41652, 57.1836 )
+[node name="checkpoint4" type="Spatial" parent="ViewportContainer/Viewport/checkpoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44.2749, -1.41652, 12.2187 )
 
-[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint4"]
+[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoints/checkpoint4"]
 
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoint4/Area0"]
+[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoints/checkpoint4/Area0"]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
-shape = SubResource( 17 )
+shape = SubResource( 21 )
 
-[node name="checkpoint5" type="Spatial" parent="ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -52.8042, -1.41652, 52.3488 )
+[node name="checkpoint5" type="Spatial" parent="ViewportContainer/Viewport/checkpoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.9706, -1.41652, -18.083 )
 
-[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint5"]
+[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoints/checkpoint5"]
 
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoint5/Area0"]
+[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoints/checkpoint5/Area0"]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
-shape = SubResource( 17 )
+shape = SubResource( 21 )
 
-[node name="checkpoint6" type="Spatial" parent="ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59.617, -1.41652, 42.679 )
+[node name="checkpoint6" type="Spatial" parent="ViewportContainer/Viewport/checkpoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4047, -1.41652, -45.3583 )
 
-[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint6"]
+[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoints/checkpoint6"]
 
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoint6/Area0"]
+[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoints/checkpoint6/Area0"]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
-shape = SubResource( 17 )
+shape = SubResource( 21 )
 
-[node name="checkpoint7" type="Spatial" parent="ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59.617, -1.41652, 30.8115 )
+[node name="checkpoint7" type="Spatial" parent="ViewportContainer/Viewport/checkpoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -33.789, -1.41652, -64.2254 )
 
-[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint7"]
+[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoints/checkpoint7"]
 
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoint7/Area0"]
+[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoints/checkpoint7/Area0"]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
-shape = SubResource( 17 )
+shape = SubResource( 21 )
 
-[node name="checkpoint8" type="Spatial" parent="ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.5182, -1.41652, 18.5045 )
+[node name="checkpoint8" type="Spatial" parent="ViewportContainer/Viewport/checkpoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.9985, -1.41652, -65.2483 )
 
-[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint8"]
+[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoints/checkpoint8"]
 
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoint8/Area0"]
+[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoints/checkpoint8/Area0"]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
-shape = SubResource( 17 )
+shape = SubResource( 21 )
 
-[node name="checkpoint9" type="Spatial" parent="ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55.4414, -1.41652, 6.19756 )
+[node name="checkpoint9" type="Spatial" parent="ViewportContainer/Viewport/checkpoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -62.7134, -1.41652, -49.2197 )
 
-[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint9"]
+[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoints/checkpoint9"]
 
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoint9/Area0"]
+[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoints/checkpoint9/Area0"]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
-shape = SubResource( 17 )
+shape = SubResource( 21 )
 
-[node name="checkpoint10" type="Spatial" parent="ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -48.4414, -1.41652, -4.80244 )
+[node name="checkpoint10" type="Spatial" parent="ViewportContainer/Viewport/checkpoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -73.2663, -1.41652, -29.1259 )
 
-[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint10"]
+[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoints/checkpoint10"]
 
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoint10/Area0"]
+[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoints/checkpoint10/Area0"]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
-shape = SubResource( 17 )
+shape = SubResource( 21 )
 
-[node name="checkpoint11" type="Spatial" parent="ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.0356, -1.41652, -26.1199 )
+[node name="checkpoint11" type="Spatial" parent="ViewportContainer/Viewport/checkpoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -92.4981, -1.41652, -4.51717 )
 
-[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint11"]
+[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoints/checkpoint11"]
 
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoint11/Area0"]
+[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoints/checkpoint11/Area0"]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
-shape = SubResource( 17 )
+shape = SubResource( 21 )
 
-[node name="checkpoint12" type="Spatial" parent="ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.7391, -1.41652, -40.185 )
+[node name="checkpoint12" type="Spatial" parent="ViewportContainer/Viewport/checkpoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -104.834, -1.41652, 18.7205 )
 
-[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint12"]
+[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoints/checkpoint12"]
 
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoint12/Area0"]
+[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoints/checkpoint12/Area0"]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
-shape = SubResource( 17 )
+shape = SubResource( 21 )
 
-[node name="checkpoint13" type="Spatial" parent="ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36.7937, -1.41652, -55.1292 )
+[node name="checkpoint13" type="Spatial" parent="ViewportContainer/Viewport/checkpoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -114.403, -1.41652, 41.3985 )
 
-[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint13"]
+[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoints/checkpoint13"]
 
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoint13/Area0"]
+[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoints/checkpoint13/Area0"]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
-shape = SubResource( 17 )
+shape = SubResource( 21 )
 
-[node name="checkpoint14" type="Spatial" parent="ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -50.1996, -1.41652, -65.0188 )
+[node name="checkpoint14" type="Spatial" parent="ViewportContainer/Viewport/checkpoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -128.271, -1.41652, 66.8187 )
 
-[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint14"]
+[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoints/checkpoint14"]
 
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoint14/Area0"]
+[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoints/checkpoint14/Area0"]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
-shape = SubResource( 17 )
+shape = SubResource( 21 )
 
-[node name="checkpoint15" type="Spatial" parent="ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -71.0775, -1.41652, -64.5792 )
+[node name="checkpoint15" type="Spatial" parent="ViewportContainer/Viewport/checkpoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -131.31, -1.41652, 82.2385 )
 
-[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint15"]
+[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoints/checkpoint15"]
 
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoint15/Area0"]
+[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoints/checkpoint15/Area0"]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
-shape = SubResource( 17 )
+shape = SubResource( 21 )
 
-[node name="checkpoint16" type="Spatial" parent="ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -77.6705, -1.41652, -51.8327 )
+[node name="checkpoint16" type="Spatial" parent="ViewportContainer/Viewport/checkpoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -128.868, -1.41652, 90.4675 )
 
-[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint16"]
+[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoints/checkpoint16"]
 
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoint16/Area0"]
+[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoints/checkpoint16/Area0"]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
-shape = SubResource( 17 )
-
-[node name="checkpoint17" type="Spatial" parent="ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -77.4507, -1.41652, -38.4269 )
-
-[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint17"]
-
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoint17/Area0"]
-transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
-shape = SubResource( 17 )
-
-[node name="checkpoint18" type="Spatial" parent="ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -87.9996, -1.41652, -26.1199 )
-
-[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint18"]
-
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoint18/Area0"]
-transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
-shape = SubResource( 17 )
-
-[node name="checkpoint19" type="Spatial" parent="ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -106, -1.41652, -15.1199 )
-
-[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint19"]
-
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoint19/Area0"]
-transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
-shape = SubResource( 17 )
-
-[node name="checkpoint20" type="Spatial" parent="ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -113.252, -1.41652, 0.0440655 )
-
-[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint20"]
-
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoint20/Area0"]
-transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
-shape = SubResource( 17 )
-
-[node name="checkpoint21" type="Spatial" parent="ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -122.702, -1.41652, 15.6476 )
-
-[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint21"]
-
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoint21/Area0"]
-transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
-shape = SubResource( 17 )
-
-[node name="checkpoint22" type="Spatial" parent="ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -128.855, -1.41652, 32.7894 )
-
-[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint22"]
-
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoint22/Area0"]
-transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
-shape = SubResource( 17 )
-
-[node name="checkpoint23" type="Spatial" parent="ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -128.855, -1.41652, 32.7894 )
-
-[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint23"]
-
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoint23/Area0"]
-transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
-shape = SubResource( 17 )
-
-[node name="checkpoint24" type="Spatial" parent="ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -136.108, -1.41652, 46.1953 )
-
-[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint24"]
-
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoint24/Area0"]
-transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
-shape = SubResource( 17 )
-
-[node name="checkpoint25" type="Spatial" parent="ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -140.63, -1.41652, 59.7612 )
-
-[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint25"]
-
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoint25/Area0"]
-transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
-shape = SubResource( 17 )
-
-[node name="checkpoint26" type="Spatial" parent="ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -144.586, -1.41652, 72.7618 )
-
-[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint26"]
-
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoint26/Area0"]
-transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
-shape = SubResource( 17 )
-
-[node name="checkpoint27" type="Spatial" parent="ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -151.746, -1.41652, 84.8204 )
-
-[node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoint27"]
-
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/checkpoint27/Area0"]
-transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
-shape = SubResource( 17 )
+shape = SubResource( 21 )
 
 [node name="block_event1_char1_v2" parent="ViewportContainer/Viewport" instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.57593 )
@@ -855,31 +760,20 @@ margin_bottom = 40.0
 texture = SubResource( 20 )
 
 [connection signal="body_entered" from="ViewportContainer/Viewport/Area" to="." method="_on_Area_body_entered"]
-[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoint0/Area0" to="." method="_on_Area0_body_entered"]
-[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoint1/Area0" to="." method="_on_Area0_body_entered"]
-[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoint2/Area0" to="." method="_on_Area0_body_entered"]
-[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoint3/Area0" to="." method="_on_Area0_body_entered"]
-[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoint4/Area0" to="." method="_on_Area0_body_entered"]
-[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoint5/Area0" to="." method="_on_Area0_body_entered"]
-[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoint6/Area0" to="." method="_on_Area0_body_entered"]
-[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoint7/Area0" to="." method="_on_Area0_body_entered"]
-[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoint8/Area0" to="." method="_on_Area0_body_entered"]
-[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoint9/Area0" to="." method="_on_Area0_body_entered"]
-[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoint10/Area0" to="." method="_on_Area0_body_entered"]
-[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoint11/Area0" to="." method="_on_Area0_body_entered"]
-[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoint12/Area0" to="." method="_on_Area0_body_entered"]
-[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoint13/Area0" to="." method="_on_Area0_body_entered"]
-[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoint14/Area0" to="." method="_on_Area0_body_entered"]
-[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoint15/Area0" to="." method="_on_Area0_body_entered"]
-[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoint16/Area0" to="." method="_on_Area0_body_entered"]
-[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoint17/Area0" to="." method="_on_Area0_body_entered"]
-[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoint18/Area0" to="." method="_on_Area0_body_entered"]
-[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoint19/Area0" to="." method="_on_Area0_body_entered"]
-[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoint20/Area0" to="." method="_on_Area0_body_entered"]
-[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoint21/Area0" to="." method="_on_Area0_body_entered"]
-[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoint22/Area0" to="." method="_on_Area0_body_entered"]
-[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoint23/Area0" to="." method="_on_Area0_body_entered"]
-[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoint24/Area0" to="." method="_on_Area0_body_entered"]
-[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoint25/Area0" to="." method="_on_Area0_body_entered"]
-[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoint26/Area0" to="." method="_on_Area0_body_entered"]
-[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoint27/Area0" to="." method="_on_Area0_body_entered"]
+[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoints/checkpoint0/Area0" to="." method="_on_Area0_body_entered"]
+[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoints/checkpoint1/Area0" to="." method="_on_Area0_body_entered"]
+[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoints/checkpoint2/Area0" to="." method="_on_Area0_body_entered"]
+[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoints/checkpoint3/Area0" to="." method="_on_Area0_body_entered"]
+[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoints/checkpoint4/Area0" to="." method="_on_Area0_body_entered"]
+[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoints/checkpoint5/Area0" to="." method="_on_Area0_body_entered"]
+[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoints/checkpoint6/Area0" to="." method="_on_Area0_body_entered"]
+[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoints/checkpoint7/Area0" to="." method="_on_Area0_body_entered"]
+[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoints/checkpoint8/Area0" to="." method="_on_Area0_body_entered"]
+[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoints/checkpoint9/Area0" to="." method="_on_Area0_body_entered"]
+[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoints/checkpoint10/Area0" to="." method="_on_Area0_body_entered"]
+[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoints/checkpoint11/Area0" to="." method="_on_Area0_body_entered"]
+[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoints/checkpoint12/Area0" to="." method="_on_Area0_body_entered"]
+[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoints/checkpoint13/Area0" to="." method="_on_Area0_body_entered"]
+[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoints/checkpoint14/Area0" to="." method="_on_Area0_body_entered"]
+[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoints/checkpoint15/Area0" to="." method="_on_Area0_body_entered"]
+[connection signal="body_entered" from="ViewportContainer/Viewport/checkpoints/checkpoint16/Area0" to="." method="_on_Area0_body_entered"]

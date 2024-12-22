@@ -57,7 +57,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0562679, -0.342492 )
 shape = SubResource( 10 )
 
 [node name="RayCast" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.573992, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.426986, -2.72278 )
 
 [node name="0" parent="RayCast" instance=ExtResource( 1 )]
 

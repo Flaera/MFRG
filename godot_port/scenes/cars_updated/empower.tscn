@@ -114,6 +114,9 @@ direction = Vector3( 0, 0, -1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 15 )
 
+[node name="RayCast" parent="." index="10"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
 [editable path="FrontLeftWheel"]
 [editable path="BackLeftWheel"]
 [editable path="FrontRightWheel"]

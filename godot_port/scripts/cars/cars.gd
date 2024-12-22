@@ -39,11 +39,34 @@ func setMove(var move_flag: bool):
 	move = move_add
 
 
+func move_car(axis, accel_dir,
+ rpm0, rpm1, back_wheel1, back_wheel2):
+	if (axis.y>0.0 and abs(rpm0)<max_torque/2):
+		back_wheel1.engine_force += 1 * abs(accel_dir) * max_torque * abs(1-rpm0/max_rpm)
+		back_wheel2.engine_force += 1 * abs(accel_dir) * max_torque * abs(1-rpm1/max_rpm)
+		#last_gear = axis.y
+	#ACCELERATION:
+	elif (axis.y<0.0 and abs(rpm0)<max_torque*2.3):
+		back_wheel1.engine_force += -1 * abs(accel_dir) * max_torque * abs(1-rpm0/max_rpm)
+		back_wheel2.engine_force += -1 * abs(accel_dir) * max_torque * abs(1-rpm1/max_rpm)
+		#last_gear = axis.y
+	#TO STOP THE CAR:
+	else:
+		back_wheel1.engine_force = 0#last_gear * abs(accel_dir) * max_torque * abs(1-rpm1/max_rpm)
+		back_wheel2.engine_force = 0#last_gear * abs(accel_dir) * max_torque * abs(1-rpm1/max_rpm)
+	#print("|", abs(rpm0), "|", max_torque, "|", "|")
+
+
+
 func mainCarPhys(axis, boost_button, back_wheel1, back_wheel2, brake_on,
- brake_force, steering, delta_time):
+ brake_force, steering, delta_time, car_mode):
 	var rpm: float = 0.0
 	var cast_particles_nitro: bool = false
-	if (move==true):
+	
+	var rpm0 = back_wheel1.get_rpm()
+	var rpm1 = back_wheel2.get_rpm()
+	
+	if (move==true and car_mode==0):
 		steering = lerp(steering, axis.x*0.6, 6*delta_time)
 		var accel_dir: float = axis.y * acceleration * delta_time
 		
@@ -61,8 +84,7 @@ func mainCarPhys(axis, boost_button, back_wheel1, back_wheel2, brake_on,
 			cast_particles_nitro = false
 			fully_nitro += delta_nitro_inc * delta_time
 		#print(" -- ", accel, " -- ", 33.02*0.001885*max_rpm)
-		var rpm0 = back_wheel1.get_rpm()
-		var rpm1 = back_wheel2.get_rpm()
+		
 		var rpm_medium = (rpm0+rpm1)/2
 		car_velocity = abs(int((rpm_medium)/1.785714286))#abs(int(33.02*0.001885*rpm_medium))
 		#if (rpm0>=max_torque or rpm1>=max_torque):
@@ -71,28 +93,21 @@ func mainCarPhys(axis, boost_button, back_wheel1, back_wheel2, brake_on,
 		#else:
 		#GEAR REVERSE:
 		#var last_gear: int = 1
-		if (axis.y>0.0 and abs(rpm0)<max_torque/2):
-			back_wheel1.engine_force += 1 * abs(accel_dir) * max_torque * abs(1-rpm0/max_rpm)
-			back_wheel2.engine_force += 1 * abs(accel_dir) * max_torque * abs(1-rpm1/max_rpm)
-			#last_gear = axis.y
-		#ACCELERATION:
-		elif (axis.y<0.0 and abs(rpm0)<max_torque*2.3):
-			back_wheel1.engine_force += -1 * abs(accel_dir) * max_torque * abs(1-rpm0/max_rpm)
-			back_wheel2.engine_force += -1 * abs(accel_dir) * max_torque * abs(1-rpm1/max_rpm)
-			#last_gear = axis.y
-		#TO STOP THE CAR:
-		else:
-			back_wheel1.engine_force = 0#last_gear * abs(accel_dir) * max_torque * abs(1-rpm1/max_rpm)
-			back_wheel2.engine_force = 0#last_gear * abs(accel_dir) * max_torque * abs(1-rpm1/max_rpm)
-		#print("|", abs(rpm0), "|", max_torque, "|", "|")
-
+		move_car(axis, accel_dir,
+		 rpm0, rpm1, back_wheel1, back_wheel2)
 		#print("|",rpm0,"|")
 		if (brake_on==true):
 			brake_force += 1000*(acceleration/2)*delta_time
 		else:
 			brake_force = 0.0
+		#print("PLAYER")
+	elif (move==true and car_mode==1):
+		var accel_dir: float = axis.y * acceleration * delta_time
+		move_car(axis, accel_dir,
+		 rpm0, rpm1, back_wheel1, back_wheel2)
+		#print("Accelating IA")
 
-	print(" --- ",car_velocity,"|")
+	#print(" --- ",car_velocity,"|")
 	var result = [brake_force, steering,
 	 fully_nitro, cast_particles_nitro,
 	 car_velocity]

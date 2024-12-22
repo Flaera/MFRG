@@ -1,19 +1,7 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/base_scenes/car.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/blender2.79_old/cars_models/lilas/textures/lilas_colormap.png" type="Texture" id=2]
-
-[sub_resource type="SpatialMaterial" id=1]
-albedo_color = Color( 0.565962, 0.161624, 0.903545, 1 )
-
-[sub_resource type="SpatialMaterial" id=2]
-albedo_color = Color( 0.97244, 0.125684, 0.114773, 1 )
-
-[sub_resource type="SpatialMaterial" id=3]
-albedo_color = Color( 0.903545, 0.814923, 0.0955709, 1 )
-
-[sub_resource type="SpatialMaterial" id=4]
-albedo_color = Color( 1, 0.974544, 0.824806, 1 )
 
 [sub_resource type="ArrayMesh" id=5]
 resource_name = "Cube032"
@@ -24,7 +12,6 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 2194711,
 "index_count": 7788,
-"material": SubResource( 1 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 7556
@@ -36,7 +23,6 @@ surfaces/1 = {
 "blend_shape_data": [  ],
 "format": 2194711,
 "index_count": 132,
-"material": SubResource( 2 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 124
@@ -48,7 +34,6 @@ surfaces/2 = {
 "blend_shape_data": [  ],
 "format": 2194711,
 "index_count": 120,
-"material": SubResource( 3 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 120
@@ -60,7 +45,6 @@ surfaces/3 = {
 "blend_shape_data": [  ],
 "format": 2194711,
 "index_count": 96,
-"material": SubResource( 4 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 96
@@ -168,6 +152,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.778, -0.627, 2.394 )
 [node name="CollisionShape" parent="." index="9"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 11 )
+
+[node name="RayCast" parent="." index="10"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [editable path="FrontLeftWheel"]
 [editable path="BackLeftWheel"]

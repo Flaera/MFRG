@@ -21,13 +21,19 @@ onready var backRightWheel = $BackRightWheel
 onready var nitroParticles = [$NitroParticles/CPUParticles, $NitroParticles2/CPUParticles]
 onready var wheelParticles = [$FrontLeftWheel/CPUParticles, $BackLeftWheel/CPUParticles, $FrontRightWheel/CPUParticles, $BackRightWheel/CPUParticles]
 onready var raycasts: Array = $RayCast.get_children()
-onready var interest_zones: Array
+#onready var interest_zones: Array
 onready var collider = $CollisionShape
 onready var canvas_layer = $Control/CanvasLayer
 onready var progress_bar = $Control/CanvasLayer/ProgressBar
 onready var velocimeter = $Control/CanvasLayer/velo
 onready var pointer = $Control/CanvasLayer/pointer
-onready var prev_pos: Vector3
+onready var interest: Array = [0,0,0,0,0,0,0]
+onready var danger: Array = [0,0,0,0,0,0,0]
+onready var event = get_parent().get_parent().get_parent().get_parent()
+onready var index_checkpoints: int = 0
+onready var checkpoints = event.get_node("ViewportContainer/Viewport/checkpoints").get_children()
+onready var curr_checkpoint = checkpoints[0].get_node("Area0")
+onready var index2: int = 0
 
 var car_phys: Cars
 var axis: Vector2 = Vector2(0.0,0.0)
@@ -36,6 +42,8 @@ var nitro: bool
 var raycasts_by_name: Dictionary
 
 const WEIGHT = 1000
+const MAX_DISTANCE = 100000
+const NO_COLLIDE = 200000
 
 
 func disable_particles():
@@ -53,7 +61,7 @@ func _ready():
 			car_phys = Cars.new(acceleration, max_rpm, max_torque, fully_nitro)
 			canvas_layer.visible = true
 		MODES.AI:
-			set_raycasts()
+			#set_raycasts()
 			canvas_layer.visible=false
 			disable_particles()
 			car_phys = Cars.new(acceleration, max_rpm, max_torque, fully_nitro)
@@ -63,6 +71,7 @@ func _ready():
 			disable_particles()
 			visible=false
 			car_phys = Cars.new(acceleration, max_rpm, max_torque, fully_nitro)
+			#set_raycasts()
 			disable_input()
 			
 	#weight = WEIGHT
@@ -70,12 +79,15 @@ func _ready():
 	if (ResourceLoader.load("res://resources/saved_game/saved_game.tres").car_selected=="solo"):
 		gravity_scale=4.0
 		#weight=4.0
+		
+	
 	#set_process_input(true)
 	#set_process_unhandled_input(true)
 	#set_process_unhandled_key_input(true)
 	#set_process(true)
 	#set_process_internal(true)
 	#set_physics_process(true)
+
 
 
 func _input(event):
@@ -90,14 +102,15 @@ func _input(event):
 
 func _physics_process(delta):
 	var calc = car_phys.mainCarPhys(axis, nitro, backLeftWheel, backRightWheel,
-	 brake_pedal, brake, steering, delta)
-	print("calc4=",calc[4])
-	brake = calc[0]
-	steering = calc[1]
-
+	 brake_pedal, brake, steering, delta, car_mode)
 	
-	if car_phys.move==true:
+	if car_phys.move==true and car_mode==0:
+		#print("calc=",calc[1])
+		brake = calc[0]
+		steering = calc[1]
+		#print("steering=",steering)
 		progress_bar.value = calc[2]
+		
 		var car_velocity = calc[4]
 		velocimeter.text = String(car_velocity)
 		pointer.rotation_degrees = ((2*car_velocity)/2.307)-130
@@ -112,60 +125,72 @@ func _physics_process(delta):
 		#Dust particles:
 		for particle in wheelParticles:
 			particle.emitting = abs(car_velocity) > 5
-		prev_pos=translation
+		#prev_pos=translation
+	elif (car_mode==1):
+		look_at_checkpoint(delta)
+		axis.y = -1.0
+		
 
 
-func look_at_checkpoint(var target: Spatial):
-	var interest_zones: Array = [0,0,0,0,0,0]
-	var target_node: Area = target.get_node("Area0")
-	
-	if interest_zones.has(1):
-		var acc_left: int = 0
-		var acc_right: int = 0
-		var acc_general: int = 0
-		for i in interest_zones:
-			if (acc_general<3 and i==1):
-				acc_left+=1
-			if (acc_general>=3 and acc_general<6 and i==1):
-				acc_right+=1
-			acc_general+=1
-		#print("accr=",acc_right," accl=",acc_left)
-		if (acc_right>acc_left):
-			axis.x = -1.0#translation.angle_to(target.global_translation)
-		elif (acc_right<acc_left):
-			axis.x = 1.0
+
+func distance_2(origin: Vector3, target: Vector3):
+	var vec0 = Vector2(origin.x, origin.z)
+	var vec1 = Vector2(target.x, target.z)
+	var result = vec0.distance_to(vec1)
+	return result
+
+
+func set_interest():
+	interest = [-MAX_DISTANCE,-MAX_DISTANCE,
+	-MAX_DISTANCE,-MAX_DISTANCE,
+	-MAX_DISTANCE,-MAX_DISTANCE,
+	-MAX_DISTANCE]
+	#print(len(raycasts))
+	for rc in range(0,len(raycasts)):
+		if (raycasts[rc].is_colliding()==false):
+			interest[rc]=NO_COLLIDE
 		else:
-			axis.x = 0.0
-	#print(raycast_front.get_collider(), "|", target, "| axisx: ",axis.x)
+			var point_collider = raycasts[rc].get_collision_point().distance_to(translation)
+			interest[rc]=point_collider
+	
 
 
-func set_raycasts():
-	interest_zones.resize(raycasts.size()-1)
-	interest_zones.fill(0)
-	for raycast in raycasts:
-		raycast.connect("colliding", self, "_on_raycast_colliding")
-		raycast.connect("non_colliding", self, "_on_raycast_non_colliding")
-		raycasts_by_name[raycast.name] = raycast
+func set_danger():
+	danger=[0,0,0,0,0,0,0]
+	for rc in range(0, len(raycasts)):
+		if (raycasts[rc].is_colliding()==false):
+			danger[rc]=NO_COLLIDE
+		else:
+			var point_collider = raycasts[rc].get_collision_point().distance_to(translation)
+			danger[rc]=point_collider
 
 
-func _on_raycast_colliding(raycast):
-	var raycast_index = raycasts.find(raycast)
-	if raycast_index != 0:
-		interest_zones[raycast_index-1] = 1
-		return
-	axis.x = 0.0
+
+func look_at_checkpoint(_delta):
+	var index_in_array_rc = 0
+	for rc in range(0,len(raycasts)):
+		if (curr_checkpoint==raycasts[rc].get_collider()):
+			index_in_array_rc=rc
+			if (index_in_array_rc==0):
+				steering=0.0
+			elif (index_in_array_rc>0 and index_in_array_rc<4):
+				steering = 0.6
+			elif (index_in_array_rc>3 and index_in_array_rc<7):
+				steering = -0.6
+			print("RC=",raycasts[rc].get_collider().get_parent().name,"|ST=", steering)
+	
+	#var dist = translation.distance_to(curr_checkpoint.translation)
+	#if (dist<5 and index2<len(checkpoints)-1): index2+=1
+	curr_checkpoint=checkpoints[index_checkpoints].get_node("Area0")
+	print("|curr=",curr_checkpoint.get_parent().name)
 
 
-func _on_raycast_non_colliding(raycast):
-	var raycast_index = raycasts.find(raycast)
-	if raycast_index != 0:
-		interest_zones[raycast_index-1] = 0
-		return
 
 func disable_input():
 	self.set_process_input(false)
 	self.set_process_unhandled_input(false)
 	self.set_process_unhandled_key_input(false)
+
 
 func disable():
 	if collider == null:
@@ -181,6 +206,7 @@ func disable():
 	mode = self.MODE_STATIC
 	collider.set_deferred("disabled", true)
 
+
 func enable():
 	if collider == null:
 		collider = $CollisionShape
@@ -194,3 +220,6 @@ func enable():
 	self.visible = true
 	collider.set_deferred("disabled", false)
 	mode = self.MODE_RIGID
+
+
+

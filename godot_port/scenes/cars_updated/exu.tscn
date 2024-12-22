@@ -88,6 +88,9 @@ transform = Transform( 1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0.508008,
 [node name="CollisionShape" parent="." index="9"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.284377, -0.110075 )
 
+[node name="RayCast" parent="." index="10"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
 [editable path="FrontLeftWheel"]
 [editable path="BackLeftWheel"]
 [editable path="FrontRightWheel"]
