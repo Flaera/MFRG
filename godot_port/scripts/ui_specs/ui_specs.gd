@@ -25,7 +25,7 @@ func rulerThree(var maxim: float, var current: float):
 	return (100*current)/maxim
 
 
-func _process(delta):
+func change_car_props(car_instance):
 	#var file = File.new()
 	#file.open("res://data_files/car_selected.txt", File.READ)
 	#var car_str = file.get_csv_line()[0]
@@ -35,8 +35,6 @@ func _process(delta):
 	#get_node("CanvasLayer/Control/VBoxContainer/TextureProgressTORQUE").value=rulerThree(250,specs[car_str][3])
 	#get_node("CanvasLayer/Control/VBoxContainer/TextureProgressNITRO").value=specs[car_str][4]
 	#file.close()
-	var current_selected_car = load("res://scenes/cars_updated/"+res_savegame.car_selected+".tscn")
-	var car_instance = current_selected_car.instance()
 	acceleration_texture.value=rulerThree(5.1, car_instance.acceleration)
 	RPM_texture.value=rulerThree(500, car_instance.max_rpm)
 	torque_texture.value=rulerThree(250, car_instance.max_torque)

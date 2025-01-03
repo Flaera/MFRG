@@ -52,7 +52,7 @@ albedo_texture = ExtResource( 2 )
 [sub_resource type="BoxShape" id=15]
 extents = Vector3( 1.6604, 0.758293, 3.40496 )
 
-[node name="Empower" instance=ExtResource( 1 )]
+[node name="empower" instance=ExtResource( 1 )]
 price = 80500.0
 acceleration = 3.6
 max_torque = 220.0

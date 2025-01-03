@@ -66,10 +66,10 @@ func convert_actions2bnames(action):
 			return name_controller+" "+"RIGHT AXIS BUTTON"
 		elif (action.button_index==8):
 			return name_controller+" "+"LEFT AXIS BUTTON"
-		elif (action.button_index==6):
-			return name_controller+" "+"L1"
-		elif (action.button_index==7):
-			return name_controller+" "+"R1"
+		elif (action.button_index==4):
+			return name_controller+" "+"L2"
+		elif (action.button_index==5):
+			return name_controller+" "+"R2"
 		else:
 			return name_controller+" "+"UNABLE INPUT. TRY AGAIN."
 	elif (action is InputEventJoypadMotion):
@@ -91,10 +91,10 @@ func convert_actions2bnames(action):
 			return name_controller+" "+"LEFT IN LEFT AXIS"
 		elif (action.axis==0 and action.axis_value>STATIC_AXIS_VALUE):
 			return name_controller+" "+"RIGHT IN LEFT AXIS"
-		elif (action.button_index==4):
-			return name_controller+" "+"L2"
-		elif (action.button_index==5):
-			return name_controller+" "+"R2"
+		elif (action.axis==6 and action.axis_value==1):
+			return name_controller+" "+"L1"
+		elif (action.axis==7 and action.axis_value==1):
+			return name_controller+" "+"R1"
 	elif (action is InputEventKey):
 		return action.as_text()
 	else:

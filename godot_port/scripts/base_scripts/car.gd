@@ -29,10 +29,10 @@ onready var velocimeter = $Control/CanvasLayer/velo
 onready var pointer = $Control/CanvasLayer/pointer
 onready var interest: Array = [0,0,0,0,0,0,0]
 onready var danger: Array = [0,0,0,0,0,0,0]
-onready var event = get_parent().get_parent().get_parent().get_parent()
+onready var event
 onready var index_checkpoints: int = 0
-onready var checkpoints = event.get_node("ViewportContainer/Viewport/checkpoints").get_children()
-onready var curr_checkpoint = checkpoints[0].get_node("Area0")
+onready var checkpoints
+onready var curr_checkpoint
 onready var index2: int = 0
 
 var car_phys: Cars
@@ -61,6 +61,9 @@ func _ready():
 			car_phys = Cars.new(acceleration, max_rpm, max_torque, fully_nitro)
 			canvas_layer.visible = true
 		MODES.AI:
+			event = get_parent().get_parent().get_parent().get_parent()
+			checkpoints = event.get_node("ViewportContainer/Viewport/checkpoints").get_children()
+			curr_checkpoint = checkpoints[0].get_node("Area0")
 			#set_raycasts()
 			canvas_layer.visible=false
 			disable_particles()
@@ -69,15 +72,15 @@ func _ready():
 		MODES.STATIC:
 			canvas_layer.visible=false
 			disable_particles()
-			visible=false
+			#visible=false
 			car_phys = Cars.new(acceleration, max_rpm, max_torque, fully_nitro)
 			#set_raycasts()
 			disable_input()
 			
 	#weight = WEIGHT
-	gravity_scale = 2.0
-	if (ResourceLoader.load("res://resources/saved_game/saved_game.tres").car_selected=="solo"):
-		gravity_scale=4.0
+	#gravity_scale = 2.0
+	#if (ResourceLoader.load("res://resources/saved_game/saved_game.tres").car_selected=="solo"):
+	#	gravity_scale=4.0
 		#weight=4.0
 		
 	

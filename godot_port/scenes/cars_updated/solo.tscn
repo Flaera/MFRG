@@ -55,7 +55,7 @@ albedo_texture = SubResource( 30 )
 [sub_resource type="BoxShape" id=5]
 extents = Vector3( 1.37684, 1, 3.14952 )
 
-[node name="Solo" instance=ExtResource( 1 )]
+[node name="solo" instance=ExtResource( 1 )]
 price = 90000.0
 acceleration = 3.6
 max_torque = 130.0

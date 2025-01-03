@@ -495,10 +495,10 @@ mesh = SubResource( 7 )
 skeleton = NodePath("../../..")
 
 [node name="checkpoints" type="Spatial" parent="ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5089, 1.15718, -1.71407 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5089, 1.86119, -1.71407 )
 
 [node name="checkpoint0" type="Spatial" parent="ViewportContainer/Viewport/checkpoints"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.21773, -1.41652, 3.67435 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.80165, -1.41652, 18.1708 )
 
 [node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoints/checkpoint0"]
 

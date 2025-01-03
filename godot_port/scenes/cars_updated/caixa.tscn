@@ -45,7 +45,7 @@ albedo_texture = ExtResource( 2 )
 
 [sub_resource type="BoxShape" id=10]
 
-[node name="Caixa" instance=ExtResource( 1 )]
+[node name="caixa" instance=ExtResource( 1 )]
 price = 77500.0
 acceleration = 3.5
 max_torque = 210.0

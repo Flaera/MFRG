@@ -84,6 +84,13 @@ rect_scale = Vector2( 0.944, 0.692 )
 mouse_filter = 2
 texture = ExtResource( 5 )
 
+[node name="LabelCar" type="Label" parent="ViewportContainer/Viewport/CanvasLayer"]
+margin_left = 5.0
+margin_top = 100.0
+margin_right = 425.0
+margin_bottom = 158.0
+theme = ExtResource( 1 )
+
 [node name="Label" type="Label" parent="ViewportContainer/Viewport/CanvasLayer"]
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -102,8 +109,8 @@ anims/map_anim_buttons2 = SubResource( 7 )
 [node name="PivotButtons" type="Control" parent="ViewportContainer/Viewport/CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 61440.0
-margin_bottom = 34560.0
+margin_right = 72960.0
+margin_bottom = 41040.0
 mouse_filter = 2
 
 [node name="PivotFuncButtons" type="Control" parent="ViewportContainer/Viewport/CanvasLayer/PivotButtons"]

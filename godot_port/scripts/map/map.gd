@@ -9,6 +9,8 @@ export var saved_manager: Resource
 
 
 func _ready():
+	$ViewportContainer/Viewport/CanvasLayer/LabelCar.text=saved_manager.car_selected
+	print("O que é:",$ViewportContainer/Viewport/CanvasLayer/LabelCar.text, "|",saved_manager.car_selected)
 	$ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotFuncButtons/ButtonShop.grab_focus()
 	#print("get_path=",get_node("CanvasLayer/AnimationPlayer"))
 	get_node("ViewportContainer/Viewport/CanvasLayer/AnimationPlayer").play("map_anim_buttons2")
