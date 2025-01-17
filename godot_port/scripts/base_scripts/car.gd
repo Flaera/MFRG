@@ -32,6 +32,7 @@ onready var danger: Array = [0,0,0,0,0,0,0]
 onready var event
 onready var index_checkpoints: int = 0
 onready var checkpoints
+onready var len_checkpoints: int
 onready var curr_checkpoint
 onready var index2: int = 0
 
@@ -63,10 +64,11 @@ func _ready():
 		MODES.AI:
 			event = get_parent().get_parent().get_parent().get_parent()
 			checkpoints = event.get_node("ViewportContainer/Viewport/checkpoints").get_children()
+			len_checkpoints = len(checkpoints)
 			curr_checkpoint = checkpoints[0].get_node("Area0")
 			#set_raycasts()
 			canvas_layer.visible=false
-			disable_particles()
+			#disable_particles()
 			car_phys = Cars.new(acceleration, max_rpm, max_torque, fully_nitro)
 			disable_input()
 		MODES.STATIC:
@@ -170,7 +172,7 @@ func set_danger():
 
 
 func look_at_checkpoint(_delta):
-	var index_in_array_rc = 0
+	var index_in_array_rc = -1
 	for rc in range(0,len(raycasts)):
 		if (curr_checkpoint==raycasts[rc].get_collider()):
 			index_in_array_rc=rc
@@ -181,10 +183,13 @@ func look_at_checkpoint(_delta):
 			elif (index_in_array_rc>3 and index_in_array_rc<7):
 				steering = -0.6
 			print("RC=",raycasts[rc].get_collider().get_parent().name,"|ST=", steering)
+	if (index_in_array_rc==-1):
+		steering=0.0
 	
 	#var dist = translation.distance_to(curr_checkpoint.translation)
 	#if (dist<5 and index2<len(checkpoints)-1): index2+=1
-	curr_checkpoint=checkpoints[index_checkpoints].get_node("Area0")
+	if (index_checkpoints<len_checkpoints):
+		curr_checkpoint=checkpoints[index_checkpoints].get_node("Area0")
 	print("|curr=",curr_checkpoint.get_parent().name)
 
 

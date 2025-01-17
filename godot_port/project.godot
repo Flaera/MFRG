@@ -245,8 +245,8 @@ _global_script_class_icons={
 config/name="MFRG"
 run/main_scene="res://scenes/main_intro_game/main_intro_game.tscn"
 boot_splash/show_image=false
-config/icon="res://assets/blender2.79_old/textures/icon_project/icon_v3.png"
-config/windows_native_icon="res://assets/blender2.79_old/textures/icon_project/icon_v2.ico"
+config/icon="res://assets/blender2.79_old/assets/talk_scenes/characters/anne/indigena/new_icon.png"
+config/windows_native_icon="res://assets/blender2.79_old/assets/talk_scenes/characters/anne/indigena/new_icon.ico"
 
 [autoload]
 

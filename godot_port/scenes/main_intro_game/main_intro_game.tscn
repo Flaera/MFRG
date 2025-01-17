@@ -29,3 +29,17 @@ theme = ExtResource( 2 )
 text = "Drive with councious in respect at laws of transit."
 align = 1
 valign = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -960.0
+margin_top = -150.0
+margin_right = 960.0
+margin_bottom = -64.0009
+theme = ExtResource( 2 )
+text = "Dirija com consciência em respeito as leis de trânsito."
+align = 1
+valign = 1

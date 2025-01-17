@@ -1056,7 +1056,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.302641, 0.26625, -10.1244 )
 shape = SubResource( 66 )
 
 [node name="checkpoint14" type="Spatial" parent="ViewportContainer/Viewport/checkpoints"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.187942, 0.26625, -7.65828 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.187947, 0.26625, -7.41485 )
 
 [node name="Area0" type="Area" parent="ViewportContainer/Viewport/checkpoints/checkpoint14"]
 
