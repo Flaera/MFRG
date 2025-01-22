@@ -12,10 +12,14 @@ onready var win: int = 0
 onready var golds: int = 0.0
 onready var time_end: float = 0.0
 onready var curr_car_enemy
-onready var len_checkpoints: int = len($ViewportContainer/Viewport/checkpoints.get_children())
+onready var checkpoints = $ViewportContainer/Viewport/checkpoints.get_children()
+onready var len_checkpoints: int = len(checkpoints)
 onready var index_cp: int = 0
 onready var event_name0: String
 onready var save_file: Resource
+onready var tutorial_step: int = 0
+onready var ctuto = $ViewportContainer/Viewport/checkpoints_tutorial.get_children()
+onready var controls = ControlsSettings.new()
 
 
 func _ready():
@@ -49,7 +53,7 @@ func _ready():
 	#get_node("ViewportContainer/Viewport/car_invoker").add_child(curr_cam)
 	curr_cam = $ViewportContainer/Viewport/car_invoker/Camera
 	
-	timer = 60.0
+	timer = 120.0
 	get_node("ViewportContainer/Viewport/Timer").start(timer) #time in seconds
 	get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label2/AnimationPlayer").play("anim_run_init_event")
 	
@@ -59,6 +63,7 @@ func _ready():
 	select_lang.contrast_in_texturesrects(get_node("."))
 
 	Contrast3D.new().contrast_3d(get_node("."))
+	
 
 
 func camTransform():
@@ -66,9 +71,9 @@ func camTransform():
 	curr_cam.translation[0] = curr_car.translation[0]
 	curr_cam.translation[2] = curr_car.translation[2]
 	curr_cam.translation[1] = 38.0
-	curr_cam.rotation_degrees[0] = -90.0
-	curr_cam.rotation_degrees[1] = 180.0
-	curr_cam.rotation_degrees[2] = 0.0
+	#curr_cam.rotation_degrees[0] = -90.0
+	#curr_cam.rotation_degrees[1] = 180.0
+	#curr_cam.rotation_degrees[2] = 0.0
 
 
 func winPlay(_delta):
@@ -135,6 +140,50 @@ func _input(event):
 		
 
 
+func tutorial(delta):
+	if curr_car.car_mode==0:
+		print("TUTO=", curr_car.translation.distance_to(ctuto[0].translation))
+		if (tutorial_step==0):
+			var action = InputMap.get_action_list("g_up")[0]
+			$ViewportContainer/Viewport/ColorRect/TutoVBoxContainer/LabelTutorial3.text=controls.convert_actions2bnames(action)
+			$ViewportContainer/Viewport/ColorRect/TutoVBoxContainer/LabelTutorial4.text="TUTO0"
+			if (Input.is_action_just_pressed("g_up")):
+				tutorial_step+=1
+		if (tutorial_step==1):# and curr_car.translation.distance_to(ctuto[1].translation)<11):
+			var action0 = InputMap.get_action_list("g_right")[0]
+			var action1 = InputMap.get_action_list("g_left")[0]
+			$ViewportContainer/Viewport/ColorRect/TutoVBoxContainer/LabelTutorial3.text=controls.convert_actions2bnames(action0)+"/"+controls.convert_actions2bnames(action1)
+			$ViewportContainer/Viewport/ColorRect/TutoVBoxContainer/LabelTutorial4.text="TUTO1"
+			if (curr_car.velocity>0.0 and (Input.is_action_just_pressed("g_right") or Input.is_action_just_pressed("g_left"))):
+				tutorial_step+=1
+		if (tutorial_step==2):
+			var action = InputMap.get_action_list("g_down")[0]
+			$ViewportContainer/Viewport/ColorRect/TutoVBoxContainer/LabelTutorial3.text=controls.convert_actions2bnames(action)
+			$ViewportContainer/Viewport/ColorRect/TutoVBoxContainer/LabelTutorial4.text="TUTO2"
+			if (Input.is_action_just_pressed("g_down")):
+				tutorial_step+=1
+		if (tutorial_step==3):
+			var action = InputMap.get_action_list("g_brake")[0]
+			$ViewportContainer/Viewport/ColorRect/TutoVBoxContainer/LabelTutorial3.text=controls.convert_actions2bnames(action)
+			$ViewportContainer/Viewport/ColorRect/TutoVBoxContainer/LabelTutorial4.text="TUTO3"
+			if (Input.is_action_just_pressed("g_brake")):
+				tutorial_step+=1
+		if (tutorial_step==4):
+			var action = InputMap.get_action_list("g_nitro")[0]
+			$ViewportContainer/Viewport/ColorRect/TutoVBoxContainer/LabelTutorial3.text=controls.convert_actions2bnames(action)
+			$ViewportContainer/Viewport/ColorRect/TutoVBoxContainer/LabelTutorial4.text="TUTO4"
+			if (Input.is_action_just_pressed("g_nitro")):
+				tutorial_step+=1
+		if (tutorial_step==5):
+			$ViewportContainer/Viewport/ColorRect/TutoVBoxContainer/LabelTutorial3.text=""
+			$ViewportContainer/Viewport/ColorRect/TutoVBoxContainer/LabelTutorial2.text=""
+			$ViewportContainer/Viewport/ColorRect/TutoVBoxContainer/LabelTutorial4.text="TUTO5"
+			if (curr_car.translation.distance_to(ctuto[2].translation)<11):
+				tutorial_step=6
+		if (tutorial_step==6):
+			$ViewportContainer/Viewport/ColorRect.rect_position[1]=lerp($ViewportContainer/Viewport/ColorRect.rect_position[1],-620,2*delta)
+
+
 func _process(_delta):
 	camTransform()
 	var time = get_node("ViewportContainer/Viewport/Timer").time_left
@@ -145,6 +194,8 @@ func _process(_delta):
 	get_node("ViewportContainer/Viewport/Area/AnimationPlayer").play("anim_end_event")
 
 	playerLoserOrWin(_delta, time)
+
+	tutorial(_delta)
 
 
 func _on_Area_body_entered(body):

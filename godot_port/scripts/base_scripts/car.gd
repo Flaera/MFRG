@@ -117,6 +117,7 @@ func _physics_process(delta):
 		progress_bar.value = calc[2]
 		
 		var car_velocity = calc[4]
+		velocity = calc[4]
 		velocimeter.text = String(car_velocity)
 		pointer.rotation_degrees = ((2*car_velocity)/2.307)-130
 
@@ -182,7 +183,7 @@ func look_at_checkpoint(_delta):
 				steering = 0.6
 			elif (index_in_array_rc>3 and index_in_array_rc<7):
 				steering = -0.6
-			print("RC=",raycasts[rc].get_collider().get_parent().name,"|ST=", steering)
+			#print("RC=",raycasts[rc].get_collider().get_parent().name,"|ST=", steering)
 	if (index_in_array_rc==-1):
 		steering=0.0
 	
@@ -190,7 +191,7 @@ func look_at_checkpoint(_delta):
 	#if (dist<5 and index2<len(checkpoints)-1): index2+=1
 	if (index_checkpoints<len_checkpoints):
 		curr_checkpoint=checkpoints[index_checkpoints].get_node("Area0")
-	print("|curr=",curr_checkpoint.get_parent().name)
+	#print("|curr=",curr_checkpoint.get_parent().name)
 
 
 

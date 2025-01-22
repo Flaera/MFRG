@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=2]
+[gd_scene load_steps=109 format=2]
 
 [ext_resource path="res://resources/env/enviroment.tres" type="Environment" id=1]
 [ext_resource path="res://scenes/themeMFRGLabelDark.tres" type="Theme" id=2]
@@ -45,6 +45,7 @@
 [ext_resource path="res://scenes/event1_char1/rampa_event1_char1_v2.tscn" type="PackedScene" id=43]
 [ext_resource path="res://assets/blender2.79_old/assets/assets_event1_char1/chegada_v2-Area-.tscn" type="PackedScene" id=44]
 [ext_resource path="res://assets/blender2.79_old/assets/event1_char1/block_event1_char1_v2.scn" type="PackedScene" id=45]
+[ext_resource path="res://themeAlphaTransTotal.tres" type="Theme" id=46]
 
 [sub_resource type="SphereShape" id=66]
 radius = 0.5
@@ -892,6 +893,62 @@ handle_input_locally = false
 render_target_v_flip = true
 render_target_update_mode = 3
 
+[node name="ColorRect" type="ColorRect" parent="ViewportContainer/Viewport"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -463.0
+margin_top = 69.0
+margin_right = 464.0
+margin_bottom = 414.0
+theme = ExtResource( 2 )
+color = Color( 0, 0, 0, 0.501961 )
+
+[node name="TutoVBoxContainer" type="VBoxContainer" parent="ViewportContainer/Viewport/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="LabelTutorial" type="Label" parent="ViewportContainer/Viewport/ColorRect/TutoVBoxContainer"]
+margin_right = 927.0
+margin_bottom = 54.0
+theme = ExtResource( 46 )
+text = "TUTORIAL"
+align = 1
+valign = 1
+
+[node name="LabelTutorial5" type="Label" parent="ViewportContainer/Viewport/ColorRect/TutoVBoxContainer"]
+margin_top = 58.0
+margin_right = 927.0
+margin_bottom = 112.0
+theme = ExtResource( 46 )
+align = 1
+valign = 1
+
+[node name="LabelTutorial2" type="Label" parent="ViewportContainer/Viewport/ColorRect/TutoVBoxContainer"]
+margin_top = 116.0
+margin_right = 927.0
+margin_bottom = 170.0
+theme = ExtResource( 46 )
+text = "TUTO_PRESS"
+align = 1
+valign = 1
+
+[node name="LabelTutorial3" type="Label" parent="ViewportContainer/Viewport/ColorRect/TutoVBoxContainer"]
+margin_top = 174.0
+margin_right = 927.0
+margin_bottom = 228.0
+theme = ExtResource( 46 )
+align = 1
+valign = 1
+autowrap = true
+
+[node name="LabelTutorial4" type="Label" parent="ViewportContainer/Viewport/ColorRect/TutoVBoxContainer"]
+margin_top = 232.0
+margin_right = 927.0
+margin_bottom = 286.0
+theme = ExtResource( 46 )
+align = 1
+valign = 1
+
 [node name="L_BACK_MAP" type="Label" parent="ViewportContainer/Viewport"]
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -911,7 +968,7 @@ autostart = true
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13.0525, 1.09299, -2.7589 )
 
 [node name="Camera" type="Camera" parent="ViewportContainer/Viewport/car_invoker"]
-transform = Transform( -0.26179, -0.965125, -6.7469e-08, 0.905332, -0.245571, 0.34651, -0.334426, 0.0907129, 0.938047, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
 current = true
 
 [node name="car_invoker_enemy" type="Spatial" parent="ViewportContainer/Viewport"]
@@ -939,6 +996,18 @@ environment = ExtResource( 1 )
 
 [node name="Area" parent="ViewportContainer/Viewport" instance=ExtResource( 44 )]
 transform = Transform( 8.09201, 0, 0, 0, 8.09201, 0, 0, 0, 8.09201, 107, 0, 8 )
+
+[node name="checkpoints_tutorial" type="Spatial" parent="ViewportContainer/Viewport"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16.13, 1.35924, -13.2512 )
+
+[node name="tuto0" type="Spatial" parent="ViewportContainer/Viewport/checkpoints_tutorial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -98.1367, 7.62939e-06, 18.6206 )
+
+[node name="tuto1" type="Spatial" parent="ViewportContainer/Viewport/checkpoints_tutorial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -105.983, 7.62939e-06, -89.8178 )
+
+[node name="tuto2" type="Spatial" parent="ViewportContainer/Viewport/checkpoints_tutorial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.2148, 7.62939e-06, -90.5276 )
 
 [node name="checkpoints" type="Spatial" parent="ViewportContainer/Viewport"]
 transform = Transform( 8.09201, 0, 0, 0, 8.09201, 0, 0, 0, 8.09201, 107, -0.892754, 8 )

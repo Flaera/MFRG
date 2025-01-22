@@ -71,9 +71,9 @@ func camTransform():
 	curr_cam.translation[0] = curr_car.translation[0]
 	curr_cam.translation[2] = curr_car.translation[2]
 	curr_cam.translation[1] = 38.0
-	curr_cam.rotation_degrees[0] = -90.0
-	curr_cam.rotation_degrees[1] = 180.0
-	curr_cam.rotation_degrees[2] = 0.0
+	#curr_cam.rotation_degrees[0] = -90.0
+	#curr_cam.rotation_degrees[1] = 180.0
+	#curr_cam.rotation_degrees[2] = 0.0
 
 
 func winPlay(_delta):

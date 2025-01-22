@@ -136,3 +136,10 @@ CONTROLLER L1,CONTROLE L1,CONTROLLER L1
 CONTROLLER R2,CONTROLE R2,CONTROLLER R2
 CONTROLLER L2,CONTROLE L2,CONTROLLER L2
 BACK_TO_MAP_IN_EVENT,PRESSIONE ENTER OU START PARA VOLTAR PARA O MAPA,PRESS ENTER OR START TO BACK MAP
+TUTO_PRESS,Pressione,Press
+TUTO0,para acelerar.,to accelerate.
+TUTO1,para controlar o carro.,to control the car.
+TUTO2,se bateu para dar marcha ré.,if hit to make gear reverse.
+TUTO3,se precisar frear.,if need brake the car.
+TUTO4,impulsionar o carro com o nitro.,to impulse the car with nitro fully.
+TUTO5,Vá e vença a corrida,Go and win the race.

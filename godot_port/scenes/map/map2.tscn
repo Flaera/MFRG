@@ -7,7 +7,7 @@
 [ext_resource path="res://assets/blender2.79_old/textures/map/map.png" type="Texture" id=5]
 [ext_resource path="res://scenes/themeMFRG.tres" type="Theme" id=6]
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=9]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
@@ -22,7 +22,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=10]
 resource_name = "map_anim_buttons2"
 length = 1.5
 loop = true
@@ -103,8 +103,8 @@ text = "PRESS_ESC_TO_BACK"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ViewportContainer/Viewport/CanvasLayer"]
 root_node = NodePath("../PivotButtons")
-anims/RESET = SubResource( 6 )
-anims/map_anim_buttons2 = SubResource( 7 )
+anims/RESET = SubResource( 9 )
+anims/map_anim_buttons2 = SubResource( 10 )
 
 [node name="PivotButtons" type="Control" parent="ViewportContainer/Viewport/CanvasLayer"]
 anchor_right = 1.0
@@ -203,6 +203,21 @@ margin_right = 100.0
 margin_bottom = 100.0
 mouse_filter = 2
 
+[node name="ButtonEvent4" type="Button" parent="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents"]
+margin_left = 773.0
+margin_top = 129.0
+margin_right = 1041.0
+margin_bottom = 391.0
+rect_scale = Vector2( 0.3, 0.3 )
+theme = ExtResource( 6 )
+icon = SubResource( 5 )
+icon_align = 1
+
+[node name="TextureRect" type="TextureRect" parent="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent4"]
+margin_right = 100.0
+margin_bottom = 100.0
+mouse_filter = 2
+
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -214,3 +229,4 @@ texture = SubResource( 8 )
 [connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent1" to="." method="_on_ButtonEvent1_pressed"]
 [connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent2" to="." method="_on_ButtonEvent2_pressed"]
 [connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent3" to="." method="_on_ButtonEvent3_pressed"]
+[connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent4" to="." method="_on_ButtonEvent4_pressed"]

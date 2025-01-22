@@ -1,4 +1,5 @@
 extends Control
+class_name ControlsSettings
 
 
 onready var actions_list = $CanvasLayer/PainelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList
@@ -8,7 +9,6 @@ onready var b_right: bool = false
 onready var b_left: bool = false
 onready var b_nitro: bool = false
 onready var b_brake: bool = false
-onready var name_controller: String = "CONTROLLER"
 onready var res_settings: Resource
 const STATIC_AXIS_VALUE: float = 0.00000
 
@@ -40,6 +40,7 @@ func set_actions_names():
 
 
 func convert_actions2bnames(action):
+	var name_controller: String = "CONTROLLER"
 	if (action is InputEventJoypadButton):
 		print("act=",action.button_index)
 		if (action.button_index==JOY_START):

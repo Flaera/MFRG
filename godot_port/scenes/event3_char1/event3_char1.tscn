@@ -164,6 +164,7 @@ shape = SubResource( 13 )
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.90323, 1.71839, -9.37906 )
 
 [node name="Camera" type="Camera" parent="ViewportContainer/Viewport/car_invoker"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
 current = true
 
 [node name="car_invoker_enemy" type="Spatial" parent="ViewportContainer/Viewport"]
