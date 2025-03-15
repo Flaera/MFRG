@@ -8,19 +8,9 @@ var lenght: int
 var bg: Object
 var delta_time: float = 0.0
 var delta_inc: float = 0.0
-var anne0: Object = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Anne0.png")
-var anne1: Object = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Anne1.png")
-var anne2: Object = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Anne2.png")
-var anne3: Object = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Anne3.png")
-var anne4: Object = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Anne4.png")
-var anne5: Object = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Anne5.png")
-var anne6: Object = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Anne6.png")
-var anne7: Object = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Anne7.png")
-var anne8: Object = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Anne8.png")
-var anne9: Object = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Anne9.png")
-var anne10: Object = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Anne10.png")
-var anne = [anne0,anne1,anne2,anne3,anne4,anne5,anne6,
-anne7,anne8,anne9,anne10]
+onready var anne = [preload("res://assets/blender2.79_old/assets/talk_scenes/characters/anne/indigena/08.png"),
+			preload("res://assets/blender2.79_old/assets/talk_scenes/characters/anne/lgbtqiapn+/Sprite-0002.png"),
+			preload("res://assets/blender2.79_old/assets/talk_scenes/characters/anne/afrodescendente/Sprite-001.png")]
 var char_load: Object
 var char_name: String
 var anne_id: int

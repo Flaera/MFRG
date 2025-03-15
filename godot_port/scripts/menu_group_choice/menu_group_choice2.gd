@@ -2,8 +2,8 @@ extends Control
 
 
 onready var res_savefile: Resource = preload("res://resources/saved_game/saved_game.tres")
-onready var max_index: int = 5
-onready var anne_array = [0,1,2,3,4]
+onready var max_index: int = 3
+onready var anne_array = [0,1,2]
 onready var index_anne: int = 0
 
 
@@ -13,13 +13,11 @@ func saveStyle(var index: int):
 
 
 func _ready():
-	MusicController.music_play()
 	
-	anne_array[0]=$ViewportContainer/Viewport/ControlAnneIndigena
-	anne_array[1]=$ViewportContainer/Viewport/ControlAnneIndigena2
-	anne_array[2]=$ViewportContainer/Viewport/ControlAnneIndigena3
-	anne_array[3]=$ViewportContainer/Viewport/ControlAnneIndigena4
-	anne_array[4]=$ViewportContainer/Viewport/ControlAnneIndigena5
+	
+	anne_array[0]=$ViewportContainer/Viewport/ControlAnneIndigena/SpriteAnneIndigena
+	anne_array[1]=$ViewportContainer/Viewport/ControlAnneIndigena/SpriteAnneIndigena2
+	anne_array[2]=$ViewportContainer/Viewport/ControlAnneIndigena/SpriteAnneIndigena3
 
 	get_node("ViewportContainer/Viewport/ButtonLeft").grab_focus()
 	
@@ -36,6 +34,7 @@ func _process(delta):
 			anne_array[i].visible=true
 		else:
 			anne_array[i].visible=false
+			print("i=",i)
 
 
 func _on_ButtonLeft_pressed():
@@ -56,4 +55,4 @@ func _on_ButtonRight_pressed():
 
 func _on_ButtonConfirm_pressed():
 	saveStyle(index_anne)
-	get_tree().change_scene("res://scenes/intro_game_talk/intro_game_talk.scn")
+	get_tree().change_scene("res://scenes/ng_prologue/ng_prologue.tscn")

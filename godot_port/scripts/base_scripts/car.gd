@@ -79,10 +79,10 @@ func _ready():
 			#set_raycasts()
 			disable_input()
 			
-	#weight = WEIGHT
+	weight = WEIGHT
 	#gravity_scale = 2.0
-	#if (ResourceLoader.load("res://resources/saved_game/saved_game.tres").car_selected=="solo"):
-	#	gravity_scale=4.0
+	if (ResourceLoader.load("res://resources/saved_game/saved_game.tres").car_selected=="solo"):
+		gravity_scale=4.0
 		#weight=4.0
 		
 	

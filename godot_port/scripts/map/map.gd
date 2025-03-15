@@ -124,14 +124,24 @@ func _ready():
 	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent2/TextureRect").rect_scale = Vector2(constant, constant)
 	
 	if int(saved_manager.event4_char1):
+		get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent3/TextureRect").set_texture(confirmed)
+	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent3/TextureRect").set_texture(unconfirmed)
+	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent3/TextureRect").rect_scale = Vector2(constant, constant)
+	
+	if int(saved_manager.event5_char1):
 		get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent4/TextureRect").set_texture(confirmed)
 	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent4/TextureRect").set_texture(unconfirmed)
 	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent4/TextureRect").rect_scale = Vector2(constant, constant)
 	
 	if int(saved_manager.event4_char2):
-		get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent3/TextureRect").set_texture(confirmed)
-	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent3/TextureRect").set_texture(unconfirmed)
-	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent3/TextureRect").rect_scale = Vector2(constant, constant)
+		get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent5/TextureRect").set_texture(confirmed)
+	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent5/TextureRect").set_texture(unconfirmed)
+	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent5/TextureRect").rect_scale = Vector2(constant, constant)
+	
+	if int(saved_manager.event1_char2):
+		get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent6/TextureRect").set_texture(confirmed)
+	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent6/TextureRect").set_texture(unconfirmed)
+	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent6/TextureRect").rect_scale = Vector2(constant, constant)
 	
 	##############################################
 	
@@ -183,3 +193,11 @@ func _on_ButtonEvent4_pressed():
 func _on_ButtonEvent3_pressed():
 	get_tree().change_scene("res://scenes/event4_char2/event4_char2.tscn")
 
+
+
+func _on_ButtonEvent5_pressed():
+	get_tree().change_scene("res://scenes/event5_char1/event5_char1_v1.tscn")
+
+
+func _on_ButtonEvent6_pressed():
+	get_tree().change_scene("res://scenes/event1_char2/event1_char2.tscn")

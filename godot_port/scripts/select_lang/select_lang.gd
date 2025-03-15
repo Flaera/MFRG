@@ -35,6 +35,8 @@ func contrast_in_texturesrects(mother_node):
 
 
 func _ready():
+	MusicController.music_play()
+	
 	TranslationServer.set_locale("en_ES")
 	get_node("ViewportContainer/Viewport/ColorRect2/VBoxContainer/Button_EN").grab_focus()
 	
@@ -47,12 +49,12 @@ func _ready():
 
 func _on_Button_EN_pressed():
 	#get_tree().change_scene("res://scenes/intro_game_scene/intro_game_scene1.scn")
-	get_tree().change_scene("res://scenes/menu_group_choice/menu_group_choice2.scn")
+	get_tree().change_scene("res://scenes/intro_game_talk/intro_game_talk.scn")
 
 
 func _on_Button_PT_BR_pressed():
 	#get_tree().change_scene("res://scenes/intro_game_scene/intro_game_scene1.scn")
-	get_tree().change_scene("res://scenes/menu_group_choice/menu_group_choice2.scn")
+	get_tree().change_scene("res://scenes/intro_game_talk/intro_game_talk.scn")
 
 
 func _on_Button_EN_focus_entered():
