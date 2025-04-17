@@ -12,16 +12,17 @@ onready var anne = [preload("res://assets/blender2.79_old/assets/talk_scenes/cha
 					preload("res://assets/blender2.79_old/assets/talk_scenes/characters/anne/lgbtqiapn+/Sprite-0002.png"),
 					preload("res://assets/blender2.79_old/assets/talk_scenes/characters/anne/afrodescendente/Sprite-001.png")]
 var char_load: Object
+var char_name: String
 var anne_id: int
 var anne_obj: Object
-onready var traf = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Traficante_armado.png")
+onready var carlos = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Carlos.png")
 
 
 func setCharLocation(var character: Object, var pos: int):
-	if (talk[index_dic][index][0]=="Carlos" and pos==1):
+	if (talk[index_dic][index][0]=="Maria" and pos==1):
 		$CanvasLayer/Left.set_texture(character)
 		$CanvasLayer/Right.set_texture(null)
-	elif (talk[index_dic][index][0]=="Carlos" and pos==2):
+	elif (talk[index_dic][index][0]=="Maria" and pos==2):
 		$CanvasLayer/Right.set_texture(character)
 		$CanvasLayer/Left.set_texture(null)
 	elif (talk[index_dic][index][0]=="Anne" and pos==1):
@@ -30,21 +31,22 @@ func setCharLocation(var character: Object, var pos: int):
 	elif (talk[index_dic][index][0]=="Anne" and pos==2):
 		$CanvasLayer/Right.set_texture(anne[anne_id])
 		$CanvasLayer/Left.set_texture(null)
-	elif (talk[index_dic][index][0]=="Traficante_Armado" and pos==1):
-		$CanvasLayer/Left.set_texture(traf)
+	elif (talk[index_dic][index][0]=="Carlos" and pos==1):
+		$CanvasLayer/Left.set_texture(carlos)
 		$CanvasLayer/Right.set_texture(null)
-	elif (talk[index_dic][index][0]=="Traficante_Armado" and pos==2):
-		$CanvasLayer/Right.set_texture(traf)
+	elif (talk[index_dic][index][0]=="Carlos" and pos==2):
+		$CanvasLayer/Right.set_texture(carlos)
 		$CanvasLayer/Left.set_texture(null)
 	elif (talk[index_dic][index][0]=="bg_only"):
 		$CanvasLayer/Right.set_texture(null)
 		$CanvasLayer/Left.set_texture(null)
 
+
 func _ready():
-	char_load = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Carlos.png")
-	bg = preload("res://assets/blender2.79_old/assets/talk_scenes/backgrounds/bg_carlos_intro.png") 
+	char_load = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Maria.png")
+	bg = preload("res://assets/blender2.79_old/assets/talk_scenes/backgrounds/bg_maria_intro.png") 
 	talk = preload("res://data_files/events_talks.gd").new().events_talks
-	index_dic = '4'
+	index_dic = '7'
 	index = 0
 	lenght = len(talk[index_dic])
 
@@ -59,6 +61,7 @@ func _ready():
 	#file.close()
 	var res = ResourceLoader.load("res://resources/saved_game/saved_game.tres")
 	anne_id = res.anne_id
+	char_name = "Maria"
 	print("talk=",talk[index_dic][index][0])
 	setCharLocation(char_load, talk[index_dic][index][2])
 
@@ -81,7 +84,7 @@ func _process(_delta):
 	
 	$CanvasLayer/ColorRect/VBoxContainer2/HBoxContainer/LabelNameCharacter.text=talk[index_dic][index][0]
 	var text_char = $CanvasLayer/ColorRect/VBoxContainer2/LabelText
-	text_char.text="DiagCarlos"+String(index)
+	text_char.text="DiagMaria"+String(index)
 	
 	if (delta_time<0.5):
 		delta_time += _delta

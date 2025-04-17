@@ -4,6 +4,7 @@ extends Control
 onready var unconfirmed: Object = load("res://assets/blender2.79_old/textures/event_icons/unconfirmed_icon.png")
 onready var confirmed: Object = load("res://assets/blender2.79_old/textures/event_icons/confirmed_icon.png")
 onready var intro_carlos_anne_scene_name: String = "res://scenes/dialog_carlos_intro/dialog_carlos_intro.scn"
+onready var intro_maria_anne_scene_name: String = "res://scenes/dialog_maria_intro/dialog_maria_intro.tscn"
 export var saved_manager: Resource
 
 
@@ -15,26 +16,7 @@ func _ready():
 	#print("get_path=",get_node("CanvasLayer/AnimationPlayer"))
 	get_node("ViewportContainer/Viewport/CanvasLayer/AnimationPlayer").play("map_anim_buttons2")
 	#get_node("CanvasLayer/PivotButtons/PivotFuncButtons/ButtonShop").grab_focus()
-	"""
-	var events: Array = []
-	var acc_events: int = 0
-	var acc_events_five = 1
-	var acc_char_three = 1
-	for _j in range(0,15,1):
-		var file_events = File.new()
-		file_events.open("res://data_files/event"+String(acc_events_five)+"_char"+String(acc_char_three)+".txt", File.READ)
-		var event_info: int = int(file_events.get_csv_line()[0])
-		file_events.close()
-		events.append(event_info)
-		print("Processing accs=", acc_events, "-", acc_char_three, "-", acc_events_five)
-		if (acc_events!=0 and acc_events_five%5==0):
-			acc_char_three += 1
-			acc_events_five = 1
-		else:
-			acc_events_five += 1
-		acc_events += 1
-	print("event array=", events)
-	"""
+	
 	saved_manager = ResourceLoader.load("res://resources/saved_game/saved_game.tres")
 	#var file_state = File.new()
 	#file_state.open("res://data_files/progress_in_game.txt", File.READ)
@@ -59,11 +41,8 @@ func _ready():
 	elif (condition0==true and condition1==false and condition2==false and saved_manager.state==1):
 		saved_manager.state = 2
 		ResourceSaver.save("res://resources/saved_game/saved_game.tres", saved_manager)
-		#Colocar cutscene
-		"""var file_state0 = File.new()
-		file_state0.open("res://data_files/progress_in_game.txt", File.WRITE)
-		file_state0.store_string("2")
-		file_state0.close()"""
+		#cutscene:
+		get_tree().change_scene(intro_maria_anne_scene_name)
 	elif (condition0==true and condition1==true and condition2==false and saved_manager.state==2):
 		saved_manager.state = 3
 		ResourceSaver.save("res://resources/saved_game/saved_game.tres", saved_manager)
@@ -79,14 +58,14 @@ func _ready():
 	var acc: int = 0
 	var constant: float = 0.125
 	for i in get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents").get_children():
-		if (saved_manager.state==0 or saved_manager.state==1 or saved_manager.state==2):
+		if (saved_manager.state==0 or saved_manager.state==1):
 			if (acc==0 and saved_manager.event1_char1==false):
 				i.visible = true
 			elif (saved_manager.event1_char1==true and acc>=0 and acc<=4):
 				i.visible = true
 			else:
 				i.visible = false
-		elif (saved_manager.state==3 or saved_manager.state==4):
+		elif (saved_manager.state==2 or saved_manager.state==3 or saved_manager.state==4):
 			if (acc>=0 and acc<=9):
 				i.visible = true
 			else:
@@ -124,24 +103,29 @@ func _ready():
 	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent2/TextureRect").rect_scale = Vector2(constant, constant)
 	
 	if int(saved_manager.event4_char1):
-		get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent3/TextureRect").set_texture(confirmed)
-	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent3/TextureRect").set_texture(unconfirmed)
-	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent3/TextureRect").rect_scale = Vector2(constant, constant)
-	
-	if int(saved_manager.event5_char1):
 		get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent4/TextureRect").set_texture(confirmed)
 	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent4/TextureRect").set_texture(unconfirmed)
 	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent4/TextureRect").rect_scale = Vector2(constant, constant)
 	
-	if int(saved_manager.event4_char2):
+	if int(saved_manager.event5_char1):
 		get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent5/TextureRect").set_texture(confirmed)
 	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent5/TextureRect").set_texture(unconfirmed)
 	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent5/TextureRect").rect_scale = Vector2(constant, constant)
+	
+	if int(saved_manager.event4_char2):
+		get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent3/TextureRect").set_texture(confirmed)
+	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent3/TextureRect").set_texture(unconfirmed)
+	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent3/TextureRect").rect_scale = Vector2(constant, constant)
 	
 	if int(saved_manager.event1_char2):
 		get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent6/TextureRect").set_texture(confirmed)
 	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent6/TextureRect").set_texture(unconfirmed)
 	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent6/TextureRect").rect_scale = Vector2(constant, constant)
+	
+	if int(saved_manager.event2_char2):
+		get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent7/TextureRect").set_texture(confirmed)
+	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent7/TextureRect").set_texture(unconfirmed)
+	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent7/TextureRect").rect_scale = Vector2(constant, constant)
 	
 	##############################################
 	
@@ -190,14 +174,20 @@ func _on_ButtonEvent4_pressed():
 	get_tree().change_scene("res://scenes/event4_char1/event4_char1.tscn")
 
 
-func _on_ButtonEvent3_pressed():
-	get_tree().change_scene("res://scenes/event4_char2/event4_char2.tscn")
-
-
-
 func _on_ButtonEvent5_pressed():
 	get_tree().change_scene("res://scenes/event5_char1/event5_char1_v1.tscn")
 
 
 func _on_ButtonEvent6_pressed():
 	get_tree().change_scene("res://scenes/event1_char2/event1_char2.tscn")
+
+
+func _on_ButtonEvent7_pressed():
+	get_tree().change_scene("res://scenes/event2_char2/event2_char2.tscn")
+	
+	
+func _on_ButtonEvent3_pressed():
+	get_tree().change_scene("res://scenes/event4_char2/event4_char2.tscn")
+
+
+##falta o 3 e o 5 da parte 2, o diogo ficou responsavel por essas pistas

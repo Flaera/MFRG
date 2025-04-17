@@ -121,8 +121,8 @@ anims/map_anim_buttons2 = SubResource( 10 )
 [node name="PivotButtons" type="Control" parent="ViewportContainer/Viewport/CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 82560.0
-margin_bottom = 46440.0
+margin_right = 90240.0
+margin_bottom = 50760.0
 mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": true
@@ -233,27 +233,6 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="ButtonEvent3" type="Button" parent="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents"]
-margin_left = 912.0
-margin_top = 652.0
-margin_right = 1180.0
-margin_bottom = 914.0
-rect_scale = Vector2( 0.3, 0.3 )
-theme = ExtResource( 6 )
-icon = SubResource( 5 )
-icon_align = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="TextureRect" type="TextureRect" parent="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent3"]
-margin_right = 100.0
-margin_bottom = 100.0
-mouse_filter = 2
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
 [node name="ButtonEvent4" type="Button" parent="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents"]
 margin_left = 773.0
 margin_top = 129.0
@@ -317,6 +296,52 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
+[node name="ButtonEvent7" type="Button" parent="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents"]
+anchor_left = -13.275
+anchor_top = -13.75
+anchor_right = -13.275
+anchor_bottom = -13.75
+margin_left = 674.0
+margin_top = 882.0
+margin_right = 942.0
+margin_bottom = 1144.0
+rect_scale = Vector2( 0.3, 0.3 )
+theme = ExtResource( 6 )
+icon = SubResource( 5 )
+icon_align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent7"]
+margin_right = 100.0
+margin_bottom = 100.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ButtonEvent3" type="Button" parent="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents"]
+margin_left = 912.0
+margin_top = 652.0
+margin_right = 1180.0
+margin_bottom = 914.0
+rect_scale = Vector2( 0.3, 0.3 )
+theme = ExtResource( 6 )
+icon = SubResource( 5 )
+icon_align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent3"]
+margin_right = 100.0
+margin_bottom = 100.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -327,7 +352,8 @@ texture = SubResource( 8 )
 [connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent0" to="." method="_on_ButtonEvent0_pressed"]
 [connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent1" to="." method="_on_ButtonEvent1_pressed"]
 [connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent2" to="." method="_on_ButtonEvent2_pressed"]
-[connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent3" to="." method="_on_ButtonEvent3_pressed"]
 [connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent4" to="." method="_on_ButtonEvent4_pressed"]
 [connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent5" to="." method="_on_ButtonEvent5_pressed"]
 [connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent6" to="." method="_on_ButtonEvent6_pressed"]
+[connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent7" to="." method="_on_ButtonEvent7_pressed"]
+[connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent3" to="." method="_on_ButtonEvent3_pressed"]
