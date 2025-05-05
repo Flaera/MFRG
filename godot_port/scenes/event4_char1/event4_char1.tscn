@@ -883,20 +883,6 @@ transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -177.56
 [node name="Area" parent="ViewportContainer/Viewport" instance=ExtResource( 21 )]
 transform = Transform( 8.09201, 0, 0, 0, 8.09201, 0, 0, 0, 8.09201, 99.2144, 2.23526, 122.174 )
 
-[node name="sun01" type="DirectionalLight" parent="ViewportContainer/Viewport"]
-transform = Transform( 0.938046, -0.0907128, 0.334426, -0.34651, -0.245571, 0.905332, 0, -0.965125, -0.26179, -9.13218, 32.4818, -6.08812 )
-light_color = Color( 1, 0.989059, 0.882005, 1 )
-light_energy = 0.262
-light_specular = 0.0
-shadow_enabled = true
-shadow_color = Color( 0.192157, 0.196078, 0.129412, 1 )
-directional_shadow_split_1 = 0.0
-directional_shadow_split_2 = 0.0
-directional_shadow_split_3 = 0.0
-directional_shadow_normal_bias = 0.0
-directional_shadow_bias_split_scale = 0.0
-directional_shadow_depth_range = 1
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="ViewportContainer/Viewport"]
 environment = ExtResource( 3 )
 
@@ -1729,6 +1715,12 @@ transform = Transform( 0.0901807, 0, -0.995925, 0, 1, 0, 0.995925, 0, 0.0901807,
 
 [node name="saco_lixo_yellow15" parent="ViewportContainer/Viewport" instance=ExtResource( 16 )]
 transform = Transform( 0.0901807, 0, -0.995925, 0, 1, 0, 0.995925, 0, 0.0901807, -154.779, 0, -209.977 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="ViewportContainer/Viewport"]
+transform = Transform( 0.938046, -0.0907128, 0.334425, -0.288893, -0.737665, 0.610239, 0.191337, -0.669046, -0.71817, -9.13218, 32.4818, -6.08812 )
+light_color = Color( 0.854902, 0.796078, 0.560784, 1 )
+shadow_enabled = true
+shadow_color = Color( 0.0980392, 0.0980392, 0.00784314, 1 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 40.0

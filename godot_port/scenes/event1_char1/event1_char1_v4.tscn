@@ -974,22 +974,14 @@ current = true
 [node name="car_invoker_enemy" type="Spatial" parent="ViewportContainer/Viewport"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13.0525, 1.09299, -5.7589 )
 
+[node name="DirectionalLight" type="DirectionalLight" parent="ViewportContainer/Viewport"]
+transform = Transform( 0.938046, -0.090713, 0.334425, -0.288893, -0.737665, 0.610239, 0.191337, -0.669046, -0.71817, -9.13218, 32.4818, -6.08812 )
+light_color = Color( 0.854902, 0.796078, 0.560784, 1 )
+shadow_enabled = true
+shadow_color = Color( 0.0980392, 0.0980392, 0.00784314, 1 )
+
 [node name="Camera2" type="Camera" parent="ViewportContainer/Viewport"]
 transform = Transform( -0.0595038, -0.881179, -0.469023, 0.983321, -0.13264, 0.124446, -0.17187, -0.453795, 0.874374, 12.5879, 1.5582, 2.2411 )
-
-[node name="sun01" type="DirectionalLight" parent="ViewportContainer/Viewport"]
-transform = Transform( 0.938046, -0.0907128, 0.334426, -0.34651, -0.245571, 0.905332, 0, -0.965125, -0.26179, -9.13218, 32.4818, -6.08812 )
-light_color = Color( 1, 0.989059, 0.882005, 1 )
-light_energy = 0.262
-light_specular = 0.0
-shadow_enabled = true
-shadow_color = Color( 0.192157, 0.196078, 0.129412, 1 )
-directional_shadow_split_1 = 0.0
-directional_shadow_split_2 = 0.0
-directional_shadow_split_3 = 0.0
-directional_shadow_normal_bias = 0.0
-directional_shadow_bias_split_scale = 0.0
-directional_shadow_depth_range = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="ViewportContainer/Viewport"]
 environment = ExtResource( 1 )

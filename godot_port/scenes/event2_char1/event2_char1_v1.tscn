@@ -95,27 +95,13 @@ current = true
 [node name="car_invoker_enemy" type="Spatial" parent="ViewportContainer/Viewport" index="6"]
 transform = Transform( 0.243683, 0, 0.969855, 0, 1, 0, -0.969855, 0, 0.243683, -2.35359, 4.69284, -14.0518 )
 
-[node name="sun01" type="DirectionalLight" parent="ViewportContainer/Viewport" index="7"]
-transform = Transform( 0.938046, -0.0907128, 0.334426, -0.34651, -0.245571, 0.905332, 0, -0.965125, -0.26179, -9.13218, 32.4818, -6.08812 )
-light_color = Color( 1, 0.989059, 0.882005, 1 )
-light_energy = 0.262
-light_specular = 0.0
-shadow_enabled = true
-shadow_color = Color( 0.192157, 0.196078, 0.129412, 1 )
-directional_shadow_split_1 = 0.0
-directional_shadow_split_2 = 0.0
-directional_shadow_split_3 = 0.0
-directional_shadow_normal_bias = 0.0
-directional_shadow_bias_split_scale = 0.0
-directional_shadow_depth_range = 1
+[node name="wall_event2_char1_v1" parent="ViewportContainer/Viewport" index="7" instance=ExtResource( 3 )]
 
-[node name="wall_event2_char1_v1" parent="ViewportContainer/Viewport" index="8" instance=ExtResource( 3 )]
+[node name="no_collision_v2_event2_char1_v1" parent="ViewportContainer/Viewport" index="8" instance=ExtResource( 9 )]
 
-[node name="no_collision_v2_event2_char1_v1" parent="ViewportContainer/Viewport" index="9" instance=ExtResource( 9 )]
+[node name="no_collision_v3_event2_char1_v1" parent="ViewportContainer/Viewport" index="9" instance=ExtResource( 4 )]
 
-[node name="no_collision_v3_event2_char1_v1" parent="ViewportContainer/Viewport" index="10" instance=ExtResource( 4 )]
-
-[node name="checkpoints" type="Spatial" parent="ViewportContainer/Viewport" index="11"]
+[node name="checkpoints" type="Spatial" parent="ViewportContainer/Viewport" index="10"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.056, -1.41652, -19.4851 )
 
 [node name="checkpoint0" type="Spatial" parent="ViewportContainer/Viewport/checkpoints" index="0"]
@@ -335,32 +321,38 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -100.399, -1.41652, -366.342 )
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 shape = SubResource( 11 )
 
-[node name="rampa_event1_char1_v2" parent="ViewportContainer/Viewport" index="12" instance=ExtResource( 7 )]
+[node name="rampa_event1_char1_v2" parent="ViewportContainer/Viewport" index="11" instance=ExtResource( 7 )]
 transform = Transform( 0.275352, 0, -0.961343, 0, 1, 0, 0.961343, 0, 0.275352, -38.57, -4.5759, -154.376 )
 
-[node name="RigidBody" parent="ViewportContainer/Viewport" index="13" instance=ExtResource( 11 )]
+[node name="RigidBody" parent="ViewportContainer/Viewport" index="12" instance=ExtResource( 11 )]
 transform = Transform( 0.750688, 0, -0.660657, 0, 1, 0, 0.660657, 0, 0.750688, 8.11332, -5.1363, 7.96992 )
 
-[node name="RigidBody5" parent="ViewportContainer/Viewport" index="14" instance=ExtResource( 11 )]
+[node name="RigidBody5" parent="ViewportContainer/Viewport" index="13" instance=ExtResource( 11 )]
 transform = Transform( 0.750688, 0, -0.660657, 0, 1, 0, 0.660657, 0, 0.750688, -46.4992, -2.22, -38.5111 )
 
-[node name="RigidBody7" parent="ViewportContainer/Viewport" index="15" instance=ExtResource( 11 )]
+[node name="RigidBody7" parent="ViewportContainer/Viewport" index="14" instance=ExtResource( 11 )]
 transform = Transform( -0.561607, 0, 0.827404, 0, 1, 0, -0.827404, 0, -0.561607, -102.639, -2.06267, -348.104 )
 
-[node name="RigidBody3" parent="ViewportContainer/Viewport" index="16" instance=ExtResource( 11 )]
+[node name="RigidBody3" parent="ViewportContainer/Viewport" index="15" instance=ExtResource( 11 )]
 transform = Transform( 0.891054, 0, -0.453897, 0, 1, 0, 0.453897, 0, 0.891054, -3.39532, -5.1363, -19.7741 )
 
-[node name="RigidBody2" parent="ViewportContainer/Viewport" index="17" instance=ExtResource( 10 )]
+[node name="RigidBody2" parent="ViewportContainer/Viewport" index="16" instance=ExtResource( 10 )]
 transform = Transform( 0.851352, 0, -0.524595, 0, 1, 0, 0.524595, 0, 0.851352, -5.17079, -3.19634, 6.078 )
 
-[node name="RigidBody4" parent="ViewportContainer/Viewport" index="18" instance=ExtResource( 10 )]
+[node name="RigidBody4" parent="ViewportContainer/Viewport" index="17" instance=ExtResource( 10 )]
 transform = Transform( 0.665712, 0, -0.746208, 0, 1, 0, 0.746208, 0, 0.665712, -47.615, -2.0059, -34.985 )
 
-[node name="RigidBody6" parent="ViewportContainer/Viewport" index="19" instance=ExtResource( 10 )]
+[node name="RigidBody6" parent="ViewportContainer/Viewport" index="18" instance=ExtResource( 10 )]
 transform = Transform( 0.665712, 0, -0.746208, 0, 1, 0, 0.746208, 0, 0.665712, -40.7065, -1.3503, -112.357 )
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="ViewportContainer/Viewport" index="20"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="ViewportContainer/Viewport" index="19"]
 environment = ExtResource( 13 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="ViewportContainer/Viewport" index="20"]
+transform = Transform( 0.938046, -0.0907128, 0.334425, -0.288893, -0.737665, 0.610239, 0.191337, -0.669046, -0.71817, -9.13218, 32.4818, -6.08812 )
+light_color = Color( 0.854902, 0.796078, 0.560784, 1 )
+shadow_enabled = true
+shadow_color = Color( 0.0980392, 0.0980392, 0.00784314, 1 )
 
 [node name="TextureRect" type="TextureRect" parent="." index="1"]
 anchor_right = 1.0
