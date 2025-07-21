@@ -43,7 +43,7 @@ func _process(_delta):
 	get_node("ViewportContainer/Viewport/CanvasLayer/ColorRect/VBoxContainer2/HBoxContainer/LabelNameCharacter").text=talk[index_dic][index][0]
 	var text_char = get_node("ViewportContainer/Viewport/CanvasLayer/ColorRect/VBoxContainer2/LabelText")
 	text_char.text="DiagSir"+String(index)
-	print("index=",index)
+	#print("index=",index)
 
 	if (delta_time<0.5):
 		delta_time += _delta

@@ -1,0 +1,49 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://scenes/event3_char2/part5.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/event3_char2/part9.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/event3_char2/part0.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/event3_char2/part8.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/event3_char2/part3.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/event3_char2/part1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/event3_char2/part2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/event3_char2/part7.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/event3_char2/part10.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/event3_char2/part6.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/event3_char2/part4.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/event3_char2/event3_char2_bridge_collision.tscn" type="PackedScene" id=12]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 392.619, 0.748361, 179.916 )
+
+[node name="event3_char2" type="Spatial"]
+
+[node name="StaticBody" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.444543, 0 )
+shape = SubResource( 1 )
+
+[node name="event3_char2_bridge" parent="." instance=ExtResource( 12 )]
+
+[node name="part10" parent="." instance=ExtResource( 9 )]
+
+[node name="part9" parent="." instance=ExtResource( 2 )]
+
+[node name="part8" parent="." instance=ExtResource( 4 )]
+
+[node name="part7" parent="." instance=ExtResource( 8 )]
+
+[node name="part6" parent="." instance=ExtResource( 10 )]
+
+[node name="part5" parent="." instance=ExtResource( 1 )]
+
+[node name="part4" parent="." instance=ExtResource( 11 )]
+
+[node name="part3" parent="." instance=ExtResource( 5 )]
+
+[node name="part2" parent="." instance=ExtResource( 7 )]
+
+[node name="part1" parent="." instance=ExtResource( 6 )]
+
+[node name="part0" parent="." instance=ExtResource( 3 )]

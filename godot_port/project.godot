@@ -262,12 +262,17 @@ MusicController="*res://scenes/musics/music_controller.tscn"
 
 window/size/width=1920
 window/size/height=1080
+window/size/fullscreen=true
 window/size/test_width=640
 window/size/test_height=360
 window/handheld/orientation="portrait"
 mouse_cursor/custom_image="res://assets/blender2.79_old/textures/icon_project/mouse_icon.png"
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
+
+[global]
+
+zoom=false
 
 [gui]
 

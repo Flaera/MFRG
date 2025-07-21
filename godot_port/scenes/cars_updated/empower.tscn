@@ -99,13 +99,13 @@ mesh = SubResource( 31 )
 material/0 = SubResource( 10 )
 
 [node name="NitroParticles" parent="." index="7"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.736095, -0.633496, 3.69823 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.736095, -0.649045, 3.69823 )
 
 [node name="CPUParticles" parent="NitroParticles" index="0"]
 direction = Vector3( 0, 0, -1 )
 
 [node name="NitroParticles2" parent="." index="8"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.738672, -0.62726, 3.69414 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.738672, -0.642809, 3.69414 )
 
 [node name="CPUParticles" parent="NitroParticles2" index="0"]
 direction = Vector3( 0, 0, -1 )

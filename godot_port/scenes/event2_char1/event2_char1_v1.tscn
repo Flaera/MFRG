@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://assets/blender2.79_old/assets/event2_char1/event2_char1_color_map.png" type="Texture" id=1]
 [ext_resource path="res://scenes/event2_char1/event2_char1_v1.escn" type="PackedScene" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://assets/blender2.79_old/assets/assets_event1_char1/car_abandoned1.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/themeMFRGLabelDark.tres" type="Theme" id=12]
 [ext_resource path="res://resources/env/enviroment.tres" type="Environment" id=13]
+[ext_resource path="res://assets/blender2.79_old/assets/event1_char1/galho1_001.material" type="Material" id=14]
+[ext_resource path="res://assets/blender2.79_old/assets/event1_char1/wood1_001.material" type="Material" id=15]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.903545, 0.903545, 0.903545, 1 )
@@ -35,11 +37,41 @@ surfaces/0 = {
 [sub_resource type="SpatialMaterial" id=6]
 albedo_texture = ExtResource( 1 )
 
-[sub_resource type="ConvexPolygonShape" id=7]
-points = PoolVector3Array( -40.6876, -0.578596, 119.693, 167.979, -0.578596, 155.511, 108.254, -0.701616, 207.14, 47.8065, -4.79394, -295.507, 92.0536, -4.79394, 260.828, 115.245, -0.578596, -303.942, -108.153, -2.68627, 149.214, -21.713, -4.79394, -278.638, 52.0231, -0.578596, -299.725, -61.7435, -4.79394, -110.004, -82.8534, -2.68627, 218.713, 113.109, -4.79394, 220.793, 132.111, -0.578596, -299.725, 73.052, -2.68627, 281.914, -20.3936, -0.713041, 164.496, -108.153, -2.68627, 140.722, 89.9453, -2.68627, -308.159, 81.4851, -2.68627, 279.835, -40.6876, -0.578596, 132.345, 79.4309, -2.68627, -308.159, -76.5286, -2.68627, 222.93, 49.9148, -4.79394, -284.935, 134.219, -0.578596, -276.558, -44.9042, -2.68627, 235.582, -87.07, -2.68627, 208.141, 70.9977, -2.68627, -306.022, 104.73, -4.79394, 237.662 )
+[sub_resource type="BoxShape" id=12]
+extents = Vector3( 155.757, 0.57752, 318.014 )
 
 [sub_resource type="SphereShape" id=11]
 radius = 0.5
+
+[sub_resource type="ArrayMesh" id=13]
+resource_name = "event1_char1_Cube058"
+surfaces/0 = {
+"aabb": AABB( -0.15397, -1.73455, -0.169189, 0.45357, 1.36251, 0.457335 ),
+"array_data": PoolByteArray( 88, 162, 130, 189, 173, 5, 222, 191, 64, 72, 123, 61, 1, 128, 0, 0, 88, 162, 130, 189, 173, 5, 222, 191, 64, 72, 123, 61, 0, 0, 1, 128, 88, 162, 130, 189, 173, 5, 222, 191, 64, 72, 123, 61, 0, 0, 0, 0, 88, 162, 130, 189, 50, 253, 52, 191, 64, 72, 123, 61, 1, 128, 0, 0, 88, 162, 130, 189, 50, 253, 52, 191, 64, 72, 123, 61, 74, 160, 184, 223, 88, 162, 130, 189, 50, 253, 52, 191, 64, 72, 123, 61, 0, 0, 246, 194, 88, 162, 130, 189, 50, 253, 52, 191, 64, 72, 123, 61, 0, 0, 0, 0, 88, 162, 130, 189, 173, 5, 222, 191, 216, 159, 137, 189, 1, 128, 0, 0, 88, 162, 130, 189, 173, 5, 222, 191, 216, 159, 137, 189, 0, 0, 1, 128, 88, 162, 130, 189, 173, 5, 222, 191, 216, 159, 137, 189, 255, 127, 255, 127, 88, 162, 130, 189, 50, 253, 52, 191, 216, 159, 137, 189, 1, 128, 0, 0, 88, 162, 130, 189, 50, 253, 52, 191, 216, 159, 137, 189, 41, 155, 217, 228, 88, 162, 130, 189, 50, 253, 52, 191, 216, 159, 137, 189, 53, 100, 1, 128, 88, 162, 130, 189, 50, 253, 52, 191, 216, 159, 137, 189, 255, 127, 255, 127, 161, 161, 132, 61, 50, 253, 52, 191, 64, 72, 123, 61, 0, 0, 19, 212, 161, 161, 132, 61, 50, 253, 52, 191, 64, 72, 123, 61, 0, 0, 0, 0, 161, 161, 132, 61, 50, 253, 52, 191, 64, 72, 123, 61, 211, 98, 213, 226, 161, 161, 132, 61, 50, 253, 52, 191, 64, 72, 123, 61, 255, 127, 0, 0, 161, 161, 132, 61, 50, 253, 52, 191, 216, 159, 137, 189, 150, 97, 1, 128, 161, 161, 132, 61, 50, 253, 52, 191, 216, 159, 137, 189, 255, 127, 255, 127, 161, 161, 132, 61, 50, 253, 52, 191, 216, 159, 137, 189, 135, 74, 137, 202, 161, 161, 132, 61, 50, 253, 52, 191, 216, 159, 137, 189, 255, 127, 0, 0, 88, 162, 130, 189, 50, 253, 52, 191, 132, 187, 63, 187, 1, 128, 0, 0, 88, 162, 130, 189, 50, 253, 52, 191, 132, 187, 63, 187, 41, 155, 217, 228, 88, 162, 130, 189, 50, 253, 52, 191, 132, 187, 63, 187, 74, 160, 184, 223, 88, 162, 130, 189, 50, 253, 52, 191, 132, 187, 63, 187, 0, 0, 224, 40, 88, 162, 130, 189, 50, 253, 52, 191, 132, 187, 63, 187, 251, 58, 255, 127, 161, 161, 132, 61, 50, 253, 52, 191, 132, 187, 63, 187, 0, 0, 29, 43, 161, 161, 132, 61, 50, 253, 52, 191, 132, 187, 63, 187, 107, 72, 255, 127, 161, 161, 132, 61, 50, 253, 52, 191, 132, 187, 63, 187, 135, 74, 137, 202, 161, 161, 132, 61, 50, 253, 52, 191, 132, 187, 63, 187, 211, 98, 213, 226, 161, 161, 132, 61, 50, 253, 52, 191, 132, 187, 63, 187, 255, 127, 0, 0, 176, 164, 255, 57, 173, 5, 222, 191, 216, 159, 137, 189, 0, 0, 1, 128, 176, 164, 255, 57, 173, 5, 222, 191, 216, 159, 137, 189, 255, 127, 255, 127, 176, 164, 255, 57, 50, 253, 52, 191, 216, 159, 137, 189, 31, 189, 29, 61, 176, 164, 255, 57, 50, 253, 52, 191, 216, 159, 137, 189, 150, 97, 1, 128, 176, 164, 255, 57, 50, 253, 52, 191, 216, 159, 137, 189, 53, 100, 1, 128, 176, 164, 255, 57, 50, 253, 52, 191, 216, 159, 137, 189, 255, 127, 255, 127, 176, 164, 255, 57, 50, 253, 52, 191, 216, 159, 137, 189, 152, 87, 102, 40, 161, 161, 132, 61, 173, 5, 222, 191, 64, 72, 123, 61, 0, 0, 1, 128, 161, 161, 132, 61, 173, 5, 222, 191, 64, 72, 123, 61, 0, 0, 0, 0, 161, 161, 132, 61, 173, 5, 222, 191, 64, 72, 123, 61, 255, 127, 0, 0, 176, 164, 255, 57, 50, 253, 52, 191, 64, 72, 123, 61, 228, 172, 226, 44, 176, 164, 255, 57, 50, 253, 52, 191, 64, 72, 123, 61, 0, 0, 246, 194, 176, 164, 255, 57, 50, 253, 52, 191, 64, 72, 123, 61, 0, 0, 19, 212, 176, 164, 255, 57, 50, 253, 52, 191, 64, 72, 123, 61, 0, 0, 0, 0, 176, 164, 255, 57, 50, 253, 52, 191, 64, 72, 123, 61, 54, 80, 200, 47, 176, 164, 255, 57, 50, 253, 52, 191, 132, 187, 63, 187, 228, 172, 226, 44, 176, 164, 255, 57, 50, 253, 52, 191, 132, 187, 63, 187, 31, 189, 29, 61, 176, 164, 255, 57, 50, 253, 52, 191, 132, 187, 63, 187, 0, 0, 224, 40, 176, 164, 255, 57, 50, 253, 52, 191, 132, 187, 63, 187, 0, 0, 29, 43, 176, 164, 255, 57, 50, 253, 52, 191, 132, 187, 63, 187, 107, 72, 255, 127, 176, 164, 255, 57, 50, 253, 52, 191, 132, 187, 63, 187, 251, 58, 255, 127, 176, 164, 255, 57, 50, 253, 52, 191, 132, 187, 63, 187, 54, 80, 200, 47, 176, 164, 255, 57, 50, 253, 52, 191, 132, 187, 63, 187, 152, 87, 102, 40, 161, 161, 132, 61, 173, 5, 222, 191, 216, 159, 137, 189, 0, 0, 1, 128, 161, 161, 132, 61, 173, 5, 222, 191, 216, 159, 137, 189, 255, 127, 255, 127, 161, 161, 132, 61, 173, 5, 222, 191, 216, 159, 137, 189, 255, 127, 0, 0, 46, 101, 153, 62, 140, 97, 194, 190, 220, 63, 45, 190, 31, 189, 29, 61, 46, 101, 153, 62, 140, 97, 194, 190, 220, 63, 45, 190, 150, 97, 1, 128, 46, 101, 153, 62, 140, 97, 194, 190, 220, 63, 45, 190, 0, 0, 29, 43, 46, 101, 153, 62, 140, 97, 194, 190, 220, 63, 45, 190, 135, 74, 137, 202, 92, 161, 17, 62, 94, 157, 227, 190, 220, 63, 75, 62, 228, 172, 226, 44, 92, 161, 17, 62, 94, 157, 227, 190, 220, 63, 75, 62, 0, 0, 19, 212, 92, 161, 17, 62, 94, 157, 227, 190, 220, 63, 75, 62, 107, 72, 255, 127, 92, 161, 17, 62, 94, 157, 227, 190, 220, 63, 75, 62, 211, 98, 213, 226, 92, 170, 29, 190, 246, 123, 190, 190, 220, 235, 35, 190, 41, 155, 217, 228, 92, 170, 29, 190, 246, 123, 190, 190, 220, 235, 35, 190, 53, 100, 1, 128, 92, 170, 29, 190, 246, 123, 190, 190, 220, 235, 35, 190, 0, 0, 224, 40, 92, 170, 29, 190, 246, 123, 190, 190, 220, 235, 35, 190, 152, 87, 102, 40, 220, 63, 23, 190, 130, 156, 234, 190, 238, 135, 147, 62, 74, 160, 184, 223, 220, 63, 23, 190, 130, 156, 234, 190, 238, 135, 147, 62, 0, 0, 246, 194, 220, 63, 23, 190, 130, 156, 234, 190, 238, 135, 147, 62, 251, 58, 255, 127, 220, 63, 23, 190, 130, 156, 234, 190, 238, 135, 147, 62, 54, 80, 200, 47 ),
+"array_index_data": PoolByteArray( 7, 0, 10, 0, 22, 0, 33, 0, 19, 0, 37, 0, 33, 0, 56, 0, 19, 0, 57, 0, 17, 0, 31, 0, 57, 0, 41, 0, 17, 0, 40, 0, 6, 0, 45, 0, 40, 0, 2, 0, 6, 0, 24, 0, 70, 0, 4, 0, 11, 0, 66, 0, 23, 0, 57, 0, 31, 0, 21, 0, 0, 0, 22, 0, 3, 0, 0, 0, 7, 0, 22, 0, 8, 0, 55, 0, 32, 0, 29, 0, 61, 0, 20, 0, 28, 0, 64, 0, 51, 0, 8, 0, 39, 0, 55, 0, 8, 0, 1, 0, 39, 0, 40, 0, 45, 0, 15, 0, 9, 0, 37, 0, 13, 0, 9, 0, 33, 0, 37, 0, 44, 0, 63, 0, 14, 0, 18, 0, 59, 0, 35, 0, 50, 0, 60, 0, 27, 0, 34, 0, 58, 0, 48, 0, 25, 0, 68, 0, 49, 0, 16, 0, 65, 0, 30, 0, 47, 0, 62, 0, 42, 0, 52, 0, 72, 0, 26, 0, 54, 0, 69, 0, 38, 0, 36, 0, 67, 0, 12, 0, 5, 0, 71, 0, 43, 0, 46, 0, 73, 0, 53, 0 ),
+"blend_shape_data": [  ],
+"format": 2194691,
+"index_count": 96,
+"material": ExtResource( 15 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 74
+}
+
+[sub_resource type="ArrayMesh" id=14]
+resource_name = "event1_char1_Plane358"
+surfaces/0 = {
+"aabb": AABB( -1, -0.505968, -1.05135, 2, 1.01194, 2.10269 ),
+"array_data": PoolByteArray( 0, 0, 128, 191, 38, 135, 1, 191, 42, 213, 74, 63, 218, 49, 166, 34, 225, 59, 10, 44, 0, 0, 128, 63, 38, 135, 1, 191, 42, 213, 74, 63, 38, 49, 188, 80, 86, 35, 10, 44, 0, 0, 128, 191, 64, 171, 74, 61, 128, 146, 134, 191, 206, 77, 179, 38, 225, 59, 221, 59, 0, 0, 128, 63, 64, 171, 74, 61, 128, 146, 134, 191, 50, 77, 181, 87, 86, 35, 221, 59, 0, 0, 128, 191, 128, 4, 93, 61, 120, 154, 14, 191, 206, 77, 179, 38, 225, 59, 18, 58, 0, 0, 128, 191, 128, 4, 93, 61, 120, 154, 14, 191, 211, 69, 178, 37, 225, 59, 18, 58, 0, 0, 128, 191, 0, 39, 222, 188, 80, 226, 140, 189, 211, 69, 175, 36, 225, 59, 53, 56, 0, 0, 128, 191, 0, 39, 222, 188, 80, 226, 140, 189, 215, 63, 172, 36, 225, 59, 53, 56, 0, 0, 128, 191, 100, 28, 60, 190, 170, 247, 206, 62, 218, 49, 167, 34, 225, 59, 184, 52, 0, 0, 128, 191, 100, 28, 60, 190, 170, 247, 206, 62, 215, 63, 170, 35, 225, 59, 184, 52, 0, 0, 0, 191, 144, 213, 118, 190, 232, 184, 121, 63, 218, 49, 164, 34, 204, 57, 10, 44, 0, 0, 0, 191, 144, 213, 118, 190, 232, 184, 121, 63, 237, 62, 150, 47, 204, 57, 10, 44, 0, 0, 0, 0, 160, 119, 6, 190, 131, 146, 134, 63, 237, 62, 149, 47, 252, 55, 10, 44, 0, 0, 0, 0, 160, 119, 6, 190, 131, 146, 134, 63, 19, 62, 162, 73, 252, 55, 10, 44, 0, 0, 0, 63, 144, 213, 118, 190, 232, 184, 121, 63, 19, 62, 162, 73, 107, 52, 10, 44, 0, 0, 0, 63, 144, 213, 118, 190, 232, 184, 121, 63, 38, 49, 188, 81, 107, 52, 10, 44, 0, 0, 128, 63, 100, 28, 60, 190, 170, 247, 206, 62, 41, 63, 187, 82, 86, 35, 184, 52, 0, 0, 128, 63, 100, 28, 60, 190, 170, 247, 206, 62, 38, 49, 188, 81, 86, 35, 184, 52, 0, 0, 128, 63, 0, 39, 222, 188, 80, 226, 140, 189, 41, 63, 186, 83, 86, 35, 59, 56, 0, 0, 128, 63, 0, 39, 222, 188, 80, 226, 140, 189, 45, 69, 186, 85, 86, 35, 59, 56, 0, 0, 128, 63, 128, 4, 93, 61, 120, 154, 14, 191, 45, 69, 184, 86, 86, 35, 18, 58, 0, 0, 128, 63, 128, 4, 93, 61, 120, 154, 14, 191, 50, 77, 182, 87, 86, 35, 18, 58, 0, 0, 0, 63, 24, 60, 190, 62, 128, 146, 134, 191, 26, 100, 156, 76, 107, 52, 221, 59, 0, 0, 0, 63, 24, 60, 190, 62, 128, 146, 134, 191, 50, 77, 179, 88, 107, 52, 221, 59, 0, 0, 0, 0, 4, 69, 1, 63, 128, 146, 134, 191, 230, 100, 156, 50, 4, 56, 221, 59, 0, 0, 0, 0, 4, 69, 1, 63, 128, 146, 134, 191, 26, 100, 156, 76, 4, 56, 221, 59, 0, 0, 0, 191, 24, 60, 190, 62, 128, 146, 134, 191, 206, 77, 178, 37, 204, 57, 221, 59, 0, 0, 0, 191, 24, 60, 190, 62, 128, 146, 134, 191, 230, 100, 156, 50, 204, 57, 221, 59, 0, 0, 0, 191, 240, 205, 157, 61, 154, 210, 11, 63, 218, 49, 165, 34, 204, 57, 184, 52, 0, 0, 0, 191, 240, 205, 157, 61, 154, 210, 11, 63, 215, 63, 167, 34, 204, 57, 184, 52, 0, 0, 0, 191, 240, 205, 157, 61, 154, 210, 11, 63, 237, 62, 150, 47, 204, 57, 184, 52, 0, 0, 0, 191, 240, 205, 157, 61, 154, 210, 11, 63, 236, 76, 151, 47, 204, 57, 184, 52, 0, 0, 0, 191, 204, 47, 144, 62, 128, 126, 78, 60, 211, 69, 173, 35, 204, 57, 59, 56, 0, 0, 0, 191, 204, 47, 144, 62, 128, 126, 78, 60, 215, 63, 169, 35, 204, 57, 59, 56, 0, 0, 0, 191, 204, 47, 144, 62, 128, 126, 78, 60, 233, 88, 154, 48, 204, 57, 59, 56, 0, 0, 0, 191, 204, 47, 144, 62, 128, 126, 78, 60, 236, 76, 152, 48, 204, 57, 59, 56, 0, 0, 0, 191, 192, 151, 192, 62, 24, 199, 7, 191, 206, 77, 178, 37, 204, 57, 18, 58, 0, 0, 0, 191, 192, 151, 192, 62, 24, 199, 7, 191, 211, 69, 175, 36, 204, 57, 18, 58, 0, 0, 0, 191, 192, 151, 192, 62, 24, 199, 7, 191, 230, 100, 156, 50, 204, 57, 18, 58, 0, 0, 0, 191, 192, 151, 192, 62, 24, 199, 7, 191, 233, 88, 156, 49, 204, 57, 18, 58, 0, 0, 0, 0, 32, 254, 57, 62, 200, 175, 26, 63, 237, 62, 150, 47, 255, 55, 184, 52, 0, 0, 0, 0, 32, 254, 57, 62, 200, 175, 26, 63, 236, 76, 150, 47, 255, 55, 184, 52, 0, 0, 0, 0, 32, 254, 57, 62, 200, 175, 26, 63, 20, 76, 161, 74, 255, 55, 184, 52, 0, 0, 0, 0, 32, 254, 57, 62, 200, 175, 26, 63, 19, 62, 162, 73, 255, 55, 184, 52, 0, 0, 0, 0, 92, 186, 209, 62, 192, 107, 59, 61, 233, 88, 153, 47, 1, 56, 67, 56, 0, 0, 0, 0, 92, 186, 209, 62, 192, 107, 59, 61, 236, 76, 151, 47, 1, 56, 67, 56, 0, 0, 0, 0, 92, 186, 209, 62, 192, 107, 59, 61, 20, 76, 160, 75, 1, 56, 67, 56, 0, 0, 0, 0, 92, 186, 209, 62, 192, 107, 59, 61, 23, 88, 159, 76, 1, 56, 67, 56, 0, 0, 0, 0, 36, 135, 1, 63, 100, 167, 6, 191, 230, 100, 156, 49, 2, 56, 18, 58, 0, 0, 0, 0, 36, 135, 1, 63, 100, 167, 6, 191, 233, 88, 154, 48, 2, 56, 18, 58, 0, 0, 0, 0, 36, 135, 1, 63, 100, 167, 6, 191, 23, 88, 157, 76, 2, 56, 18, 58, 0, 0, 0, 0, 36, 135, 1, 63, 100, 167, 6, 191, 26, 100, 156, 76, 2, 56, 18, 58, 0, 0, 0, 63, 240, 205, 157, 61, 154, 210, 11, 63, 20, 76, 162, 73, 107, 52, 184, 52, 0, 0, 0, 63, 240, 205, 157, 61, 154, 210, 11, 63, 19, 62, 162, 73, 107, 52, 184, 52, 0, 0, 0, 63, 240, 205, 157, 61, 154, 210, 11, 63, 41, 63, 186, 83, 107, 52, 184, 52, 0, 0, 0, 63, 240, 205, 157, 61, 154, 210, 11, 63, 38, 49, 188, 82, 107, 52, 184, 52, 0, 0, 0, 63, 204, 47, 144, 62, 128, 126, 78, 60, 20, 76, 161, 74, 107, 52, 62, 56, 0, 0, 0, 63, 204, 47, 144, 62, 128, 126, 78, 60, 23, 88, 161, 75, 107, 52, 62, 56, 0, 0, 0, 63, 204, 47, 144, 62, 128, 126, 78, 60, 41, 63, 184, 84, 107, 52, 62, 56, 0, 0, 0, 63, 204, 47, 144, 62, 128, 126, 78, 60, 45, 69, 183, 86, 107, 52, 62, 56, 0, 0, 0, 63, 192, 151, 192, 62, 24, 199, 7, 191, 23, 88, 159, 76, 107, 52, 18, 58, 0, 0, 0, 63, 192, 151, 192, 62, 24, 199, 7, 191, 26, 100, 157, 76, 107, 52, 18, 58, 0, 0, 0, 63, 192, 151, 192, 62, 24, 199, 7, 191, 45, 69, 181, 87, 107, 52, 18, 58, 0, 0, 0, 63, 192, 151, 192, 62, 24, 199, 7, 191, 50, 77, 180, 88, 107, 52, 18, 58 ),
+"array_index_data": PoolByteArray( 63, 0, 3, 0, 21, 0, 63, 0, 23, 0, 3, 0, 4, 0, 26, 0, 36, 0, 4, 0, 2, 0, 26, 0, 38, 0, 24, 0, 48, 0, 38, 0, 27, 0, 24, 0, 51, 0, 22, 0, 61, 0, 51, 0, 25, 0, 22, 0, 0, 0, 28, 0, 10, 0, 0, 0, 8, 0, 28, 0, 9, 0, 33, 0, 29, 0, 9, 0, 7, 0, 33, 0, 6, 0, 37, 0, 32, 0, 6, 0, 5, 0, 37, 0, 11, 0, 40, 0, 12, 0, 11, 0, 30, 0, 40, 0, 31, 0, 45, 0, 41, 0, 31, 0, 35, 0, 45, 0, 34, 0, 49, 0, 44, 0, 34, 0, 39, 0, 49, 0, 13, 0, 53, 0, 14, 0, 13, 0, 43, 0, 53, 0, 42, 0, 56, 0, 52, 0, 42, 0, 46, 0, 56, 0, 47, 0, 60, 0, 57, 0, 47, 0, 50, 0, 60, 0, 15, 0, 17, 0, 1, 0, 15, 0, 55, 0, 17, 0, 54, 0, 18, 0, 16, 0, 54, 0, 58, 0, 18, 0, 59, 0, 20, 0, 19, 0, 59, 0, 62, 0, 20, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 96,
+"material": ExtResource( 14 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 64
+}
 
 [sub_resource type="ViewportTexture" id=10]
 viewport_path = NodePath("ViewportContainer/Viewport")
@@ -75,7 +107,7 @@ autostart = true
 transform = Transform( 8.09201, 0, 0, 0, 8.09201, 0, 0, 0, 8.09201, -99.7277, 0, -363.796 )
 
 [node name="track_conection001" type="MeshInstance" parent="ViewportContainer/Viewport" index="4"]
-transform = Transform( -0.868621, 0, -0.495477, 0, 1, 0, 0.495477, 0, -0.868621, -60.4141, -3.00188, -208.292 )
+transform = Transform( 0.86934, 0, 0.494215, 0, 1, 0, -0.494215, 0, 0.86934, -64.8747, -4.52, -127.647 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../../..")
 material/0 = SubResource( 6 )
@@ -83,7 +115,8 @@ material/0 = SubResource( 6 )
 [node name="StaticBody" type="StaticBody" parent="ViewportContainer/Viewport/track_conection001" index="0"]
 
 [node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/track_conection001/StaticBody" index="0"]
-shape = SubResource( 7 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.58321, 0 )
+shape = SubResource( 12 )
 
 [node name="car_invoker" type="Spatial" parent="ViewportContainer/Viewport" index="5"]
 transform = Transform( 0.652958, 0, 0.757394, 0, 1, 0, -0.757394, 0, 0.652958, -8.71952, 2.34642, -7.22627 )
@@ -100,6 +133,7 @@ transform = Transform( 0.243683, 0, 0.969855, 0, 1, 0, -0.969855, 0, 0.243683, -
 [node name="no_collision_v2_event2_char1_v1" parent="ViewportContainer/Viewport" index="8" instance=ExtResource( 9 )]
 
 [node name="no_collision_v3_event2_char1_v1" parent="ViewportContainer/Viewport" index="9" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.59531, 0 )
 
 [node name="checkpoints" type="Spatial" parent="ViewportContainer/Viewport" index="10"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.056, -1.41652, -19.4851 )
@@ -322,28 +356,28 @@ transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 shape = SubResource( 11 )
 
 [node name="rampa_event1_char1_v2" parent="ViewportContainer/Viewport" index="11" instance=ExtResource( 7 )]
-transform = Transform( 0.275352, 0, -0.961343, 0, 1, 0, 0.961343, 0, 0.275352, -38.57, -4.5759, -154.376 )
+transform = Transform( 0.275352, 0, -0.961343, 0, 1, 0, 0.961343, 0, 0.275352, -38.57, -4.98662, -154.376 )
 
 [node name="RigidBody" parent="ViewportContainer/Viewport" index="12" instance=ExtResource( 11 )]
-transform = Transform( 0.750688, 0, -0.660657, 0, 1, 0, 0.660657, 0, 0.750688, 8.11332, -5.1363, 7.96992 )
+transform = Transform( 0.750688, 0, -0.660657, 0, 1, 0, 0.660657, 0, 0.750688, 8.11332, -4.30192, 7.96992 )
 
 [node name="RigidBody5" parent="ViewportContainer/Viewport" index="13" instance=ExtResource( 11 )]
-transform = Transform( 0.750688, 0, -0.660657, 0, 1, 0, 0.660657, 0, 0.750688, -46.4992, -2.22, -38.5111 )
+transform = Transform( 0.750688, 0, -0.660657, 0, 1, 0, 0.660657, 0, 0.750688, -46.4992, -4.25294, -38.5111 )
 
 [node name="RigidBody7" parent="ViewportContainer/Viewport" index="14" instance=ExtResource( 11 )]
-transform = Transform( -0.561607, 0, 0.827404, 0, 1, 0, -0.827404, 0, -0.561607, -102.639, -2.06267, -348.104 )
+transform = Transform( -0.561607, 0, 0.827404, 0, 1, 0, -0.827404, 0, -0.561607, -102.639, -4.62333, -348.104 )
 
 [node name="RigidBody3" parent="ViewportContainer/Viewport" index="15" instance=ExtResource( 11 )]
-transform = Transform( 0.891054, 0, -0.453897, 0, 1, 0, 0.453897, 0, 0.891054, -3.39532, -5.1363, -19.7741 )
+transform = Transform( 0.891054, 0, -0.453897, 0, 1, 0, 0.453897, 0, 0.891054, -3.39532, -4.65581, -19.7741 )
 
 [node name="RigidBody2" parent="ViewportContainer/Viewport" index="16" instance=ExtResource( 10 )]
-transform = Transform( 0.851352, 0, -0.524595, 0, 1, 0, 0.524595, 0, 0.851352, -5.17079, -3.19634, 6.078 )
+transform = Transform( 0.851352, 0, -0.524595, 0, 1, 0, 0.524595, 0, 0.851352, -5.17079, -4.00581, 6.078 )
 
 [node name="RigidBody4" parent="ViewportContainer/Viewport" index="17" instance=ExtResource( 10 )]
-transform = Transform( 0.665712, 0, -0.746208, 0, 1, 0, 0.746208, 0, 0.665712, -47.615, -2.0059, -34.985 )
+transform = Transform( 0.665712, 0, -0.746208, 0, 1, 0, 0.746208, 0, 0.665712, -47.615, -4.03884, -34.985 )
 
 [node name="RigidBody6" parent="ViewportContainer/Viewport" index="18" instance=ExtResource( 10 )]
-transform = Transform( 0.665712, 0, -0.746208, 0, 1, 0, 0.746208, 0, 0.665712, -40.7065, -1.3503, -112.357 )
+transform = Transform( 0.665712, 0, -0.746208, 0, 1, 0, 0.746208, 0, 0.665712, -40.7065, -4.55294, -112.357 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="ViewportContainer/Viewport" index="19"]
 environment = ExtResource( 13 )
@@ -353,6 +387,1016 @@ transform = Transform( 0.938046, -0.0907128, 0.334425, -0.288893, -0.737665, 0.6
 light_color = Color( 0.854902, 0.796078, 0.560784, 1 )
 shadow_enabled = true
 shadow_color = Color( 0.0980392, 0.0980392, 0.00784314, 1 )
+
+[node name="Spatial" type="Spatial" parent="ViewportContainer/Viewport" index="21"]
+
+[node name="planta1007" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial" index="0"]
+transform = Transform( 1.19463, 0.0150111, 0.806877, -0.133658, 1.42519, 0.171373, -0.795871, -0.216813, 1.18236, -102.01, -6.20647, -237.329 )
+mesh = SubResource( 13 )
+
+[node name="Plane057" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1007" index="0"]
+transform = Transform( 0.170494, -0.132172, 0.749587, 0, 0.768162, 0.135448, -0.761151, -0.029606, 0.167904, 0.853692, -1.08984, 0.172906 )
+mesh = SubResource( 14 )
+
+[node name="Plane058" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1007" index="1"]
+transform = Transform( -0.609158, -0.0185055, 0.10495, -6.33533e-09, 0.609015, 0.107386, -0.106569, 0.105779, -0.599904, 0.113752, -1.08124, -0.653934 )
+mesh = SubResource( 14 )
+
+[node name="Plane059" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1007" index="2"]
+transform = Transform( -0.102976, 0.123015, -0.697651, 6.93363e-08, 0.704983, 0.124308, 0.708413, 0.0178815, -0.101412, -0.771731, -1.01913, -0.100575 )
+mesh = SubResource( 14 )
+
+[node name="Plane060" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1007" index="3"]
+transform = Transform( 0.733375, -0.0187179, 0.106154, 2.55428e-08, 0.729993, 0.128717, -0.107792, -0.127349, 0.722233, 0.108789, -1.13159, 0.754828 )
+mesh = SubResource( 14 )
+
+[node name="Plane061" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1007" index="4"]
+transform = Transform( 0.872993, 0.302597, -0.22228, 1.41607e-08, 0.562596, 0.765883, 0.375464, -0.70357, 0.516824, -0.435897, -0.0316421, 0.984796 )
+mesh = SubResource( 14 )
+
+[node name="Plane062" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1007" index="5"]
+transform = Transform( -0.71508, 0.463624, -0.340566, 5.47023e-08, 0.543322, 0.739643, 0.575267, 0.576303, -0.423337, -0.694338, 0.0804946, -0.825093 )
+mesh = SubResource( 14 )
+
+[node name="Plane063" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1007" index="6"]
+transform = Transform( -0.368063, -0.565928, 0.415716, -2.36279e-08, 0.46936, 0.638956, -0.702207, 0.296632, -0.217898, 0.920751, 0.0185636, -0.507595 )
+mesh = SubResource( 14 )
+
+[node name="Plane064" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1007" index="7"]
+transform = Transform( 0.824511, -0.456031, 0.334988, 0, 0.592013, 0.805928, -0.565846, -0.664497, 0.488122, 0.676874, 0.00999406, 0.978661 )
+mesh = SubResource( 14 )
+
+[node name="planta1008" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial" index="1"]
+transform = Transform( 1.19463, 0.0150111, 0.806877, -0.133658, 1.42519, 0.171373, -0.795871, -0.216813, 1.18236, -98.9725, -6.20647, -242.937 )
+mesh = SubResource( 13 )
+
+[node name="Plane057" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1008" index="0"]
+transform = Transform( 0.170494, -0.132172, 0.749587, 0, 0.768162, 0.135448, -0.761151, -0.029606, 0.167904, 0.853692, -1.08984, 0.172906 )
+mesh = SubResource( 14 )
+
+[node name="Plane058" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1008" index="1"]
+transform = Transform( -0.609158, -0.0185055, 0.10495, -6.33533e-09, 0.609015, 0.107386, -0.106569, 0.105779, -0.599904, 0.113752, -1.08124, -0.653934 )
+mesh = SubResource( 14 )
+
+[node name="Plane059" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1008" index="2"]
+transform = Transform( -0.102976, 0.123015, -0.697651, 6.93363e-08, 0.704983, 0.124308, 0.708413, 0.0178815, -0.101412, -0.771731, -1.01913, -0.100575 )
+mesh = SubResource( 14 )
+
+[node name="Plane060" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1008" index="3"]
+transform = Transform( 0.733375, -0.0187179, 0.106154, 2.55428e-08, 0.729993, 0.128717, -0.107792, -0.127349, 0.722233, 0.108789, -1.13159, 0.754828 )
+mesh = SubResource( 14 )
+
+[node name="Plane061" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1008" index="4"]
+transform = Transform( 0.872993, 0.302597, -0.22228, 1.41607e-08, 0.562596, 0.765883, 0.375464, -0.70357, 0.516824, -0.435897, -0.0316421, 0.984796 )
+mesh = SubResource( 14 )
+
+[node name="Plane062" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1008" index="5"]
+transform = Transform( -0.71508, 0.463624, -0.340566, 5.47023e-08, 0.543322, 0.739643, 0.575267, 0.576303, -0.423337, -0.694338, 0.0804946, -0.825093 )
+mesh = SubResource( 14 )
+
+[node name="Plane063" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1008" index="6"]
+transform = Transform( -0.368063, -0.565928, 0.415716, -2.36279e-08, 0.46936, 0.638956, -0.702207, 0.296632, -0.217898, 0.920751, 0.0185636, -0.507595 )
+mesh = SubResource( 14 )
+
+[node name="Plane064" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1008" index="7"]
+transform = Transform( 0.824511, -0.456031, 0.334988, 0, 0.592013, 0.805928, -0.565846, -0.664497, 0.488122, 0.676874, 0.00999406, 0.978661 )
+mesh = SubResource( 14 )
+
+[node name="planta1009" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial" index="2"]
+transform = Transform( 1.19463, 0.0150111, 0.806877, -0.133658, 1.42519, 0.171373, -0.795871, -0.216813, 1.18236, -93.9725, -6.20647, -247.937 )
+mesh = SubResource( 13 )
+
+[node name="Plane057" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1009" index="0"]
+transform = Transform( 0.170494, -0.132172, 0.749587, 0, 0.768162, 0.135448, -0.761151, -0.029606, 0.167904, 0.853692, -1.08984, 0.172906 )
+mesh = SubResource( 14 )
+
+[node name="Plane058" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1009" index="1"]
+transform = Transform( -0.609158, -0.0185055, 0.10495, -6.33533e-09, 0.609015, 0.107386, -0.106569, 0.105779, -0.599904, 0.113752, -1.08124, -0.653934 )
+mesh = SubResource( 14 )
+
+[node name="Plane059" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1009" index="2"]
+transform = Transform( -0.102976, 0.123015, -0.697651, 6.93363e-08, 0.704983, 0.124308, 0.708413, 0.0178815, -0.101412, -0.771731, -1.01913, -0.100575 )
+mesh = SubResource( 14 )
+
+[node name="Plane060" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1009" index="3"]
+transform = Transform( 0.733375, -0.0187179, 0.106154, 2.55428e-08, 0.729993, 0.128717, -0.107792, -0.127349, 0.722233, 0.108789, -1.13159, 0.754828 )
+mesh = SubResource( 14 )
+
+[node name="Plane061" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1009" index="4"]
+transform = Transform( 0.872993, 0.302597, -0.22228, 1.41607e-08, 0.562596, 0.765883, 0.375464, -0.70357, 0.516824, -0.435897, -0.0316421, 0.984796 )
+mesh = SubResource( 14 )
+
+[node name="Plane062" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1009" index="5"]
+transform = Transform( -0.71508, 0.463624, -0.340566, 5.47023e-08, 0.543322, 0.739643, 0.575267, 0.576303, -0.423337, -0.694338, 0.0804946, -0.825093 )
+mesh = SubResource( 14 )
+
+[node name="Plane063" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1009" index="6"]
+transform = Transform( -0.368063, -0.565928, 0.415716, -2.36279e-08, 0.46936, 0.638956, -0.702207, 0.296632, -0.217898, 0.920751, 0.0185636, -0.507595 )
+mesh = SubResource( 14 )
+
+[node name="Plane064" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1009" index="7"]
+transform = Transform( 0.824511, -0.456031, 0.334988, 0, 0.592013, 0.805928, -0.565846, -0.664497, 0.488122, 0.676874, 0.00999406, 0.978661 )
+mesh = SubResource( 14 )
+
+[node name="planta1010" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial" index="3"]
+transform = Transform( 1.19463, 0.0150111, 0.806877, -0.133658, 1.42519, 0.171373, -0.795871, -0.216813, 1.18236, -97.7114, -6.20647, -250.508 )
+mesh = SubResource( 13 )
+
+[node name="Plane057" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1010" index="0"]
+transform = Transform( 0.170494, -0.132172, 0.749587, 0, 0.768162, 0.135448, -0.761151, -0.029606, 0.167904, 0.853692, -1.08984, 0.172906 )
+mesh = SubResource( 14 )
+
+[node name="Plane058" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1010" index="1"]
+transform = Transform( -0.609158, -0.0185055, 0.10495, -6.33533e-09, 0.609015, 0.107386, -0.106569, 0.105779, -0.599904, 0.113752, -1.08124, -0.653934 )
+mesh = SubResource( 14 )
+
+[node name="Plane059" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1010" index="2"]
+transform = Transform( -0.102976, 0.123015, -0.697651, 6.93363e-08, 0.704983, 0.124308, 0.708413, 0.0178815, -0.101412, -0.771731, -1.01913, -0.100575 )
+mesh = SubResource( 14 )
+
+[node name="Plane060" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1010" index="3"]
+transform = Transform( 0.733375, -0.0187179, 0.106154, 2.55428e-08, 0.729993, 0.128717, -0.107792, -0.127349, 0.722233, 0.108789, -1.13159, 0.754828 )
+mesh = SubResource( 14 )
+
+[node name="Plane061" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1010" index="4"]
+transform = Transform( 0.872993, 0.302597, -0.22228, 1.41607e-08, 0.562596, 0.765883, 0.375464, -0.70357, 0.516824, -0.435897, -0.0316421, 0.984796 )
+mesh = SubResource( 14 )
+
+[node name="Plane062" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1010" index="5"]
+transform = Transform( -0.71508, 0.463624, -0.340566, 5.47023e-08, 0.543322, 0.739643, 0.575267, 0.576303, -0.423337, -0.694338, 0.0804946, -0.825093 )
+mesh = SubResource( 14 )
+
+[node name="Plane063" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1010" index="6"]
+transform = Transform( -0.368063, -0.565928, 0.415716, -2.36279e-08, 0.46936, 0.638956, -0.702207, 0.296632, -0.217898, 0.920751, 0.0185636, -0.507595 )
+mesh = SubResource( 14 )
+
+[node name="Plane064" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1010" index="7"]
+transform = Transform( 0.824511, -0.456031, 0.334988, 0, 0.592013, 0.805928, -0.565846, -0.664497, 0.488122, 0.676874, 0.00999406, 0.978661 )
+mesh = SubResource( 14 )
+
+[node name="planta1011" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial" index="4"]
+transform = Transform( 1.19463, 0.0150111, 0.806877, -0.133658, 1.42519, 0.171373, -0.795871, -0.216813, 1.18236, -97.0103, -6.20647, -247.003 )
+mesh = SubResource( 13 )
+
+[node name="Plane057" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1011" index="0"]
+transform = Transform( 0.170494, -0.132172, 0.749587, 0, 0.768162, 0.135448, -0.761151, -0.029606, 0.167904, 0.853692, -1.08984, 0.172906 )
+mesh = SubResource( 14 )
+
+[node name="Plane058" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1011" index="1"]
+transform = Transform( -0.609158, -0.0185055, 0.10495, -6.33533e-09, 0.609015, 0.107386, -0.106569, 0.105779, -0.599904, 0.113752, -1.08124, -0.653934 )
+mesh = SubResource( 14 )
+
+[node name="Plane059" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1011" index="2"]
+transform = Transform( -0.102976, 0.123015, -0.697651, 6.93363e-08, 0.704983, 0.124308, 0.708413, 0.0178815, -0.101412, -0.771731, -1.01913, -0.100575 )
+mesh = SubResource( 14 )
+
+[node name="Plane060" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1011" index="3"]
+transform = Transform( 0.733375, -0.0187179, 0.106154, 2.55428e-08, 0.729993, 0.128717, -0.107792, -0.127349, 0.722233, 0.108789, -1.13159, 0.754828 )
+mesh = SubResource( 14 )
+
+[node name="Plane061" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1011" index="4"]
+transform = Transform( 0.872993, 0.302597, -0.22228, 1.41607e-08, 0.562596, 0.765883, 0.375464, -0.70357, 0.516824, -0.435897, -0.0316421, 0.984796 )
+mesh = SubResource( 14 )
+
+[node name="Plane062" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1011" index="5"]
+transform = Transform( -0.71508, 0.463624, -0.340566, 5.47023e-08, 0.543322, 0.739643, 0.575267, 0.576303, -0.423337, -0.694338, 0.0804946, -0.825093 )
+mesh = SubResource( 14 )
+
+[node name="Plane063" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1011" index="6"]
+transform = Transform( -0.368063, -0.565928, 0.415716, -2.36279e-08, 0.46936, 0.638956, -0.702207, 0.296632, -0.217898, 0.920751, 0.0185636, -0.507595 )
+mesh = SubResource( 14 )
+
+[node name="Plane064" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1011" index="7"]
+transform = Transform( 0.824511, -0.456031, 0.334988, 0, 0.592013, 0.805928, -0.565846, -0.664497, 0.488122, 0.676874, 0.00999406, 0.978661 )
+mesh = SubResource( 14 )
+
+[node name="planta1012" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial" index="5"]
+transform = Transform( 1.19463, 0.0150111, 0.806877, -0.133658, 1.42519, 0.171373, -0.795871, -0.216813, 1.18236, -96.0103, -6.20647, -243.003 )
+mesh = SubResource( 13 )
+
+[node name="Plane057" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1012" index="0"]
+transform = Transform( 0.170494, -0.132172, 0.749587, 0, 0.768162, 0.135448, -0.761151, -0.029606, 0.167904, 0.853692, -1.08984, 0.172906 )
+mesh = SubResource( 14 )
+
+[node name="Plane058" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1012" index="1"]
+transform = Transform( -0.609158, -0.0185055, 0.10495, -6.33533e-09, 0.609015, 0.107386, -0.106569, 0.105779, -0.599904, 0.113752, -1.08124, -0.653934 )
+mesh = SubResource( 14 )
+
+[node name="Plane059" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1012" index="2"]
+transform = Transform( -0.102976, 0.123015, -0.697651, 6.93363e-08, 0.704983, 0.124308, 0.708413, 0.0178815, -0.101412, -0.771731, -1.01913, -0.100575 )
+mesh = SubResource( 14 )
+
+[node name="Plane060" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1012" index="3"]
+transform = Transform( 0.733375, -0.0187179, 0.106154, 2.55428e-08, 0.729993, 0.128717, -0.107792, -0.127349, 0.722233, 0.108789, -1.13159, 0.754828 )
+mesh = SubResource( 14 )
+
+[node name="Plane061" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1012" index="4"]
+transform = Transform( 0.872993, 0.302597, -0.22228, 1.41607e-08, 0.562596, 0.765883, 0.375464, -0.70357, 0.516824, -0.435897, -0.0316421, 0.984796 )
+mesh = SubResource( 14 )
+
+[node name="Plane062" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1012" index="5"]
+transform = Transform( -0.71508, 0.463624, -0.340566, 5.47023e-08, 0.543322, 0.739643, 0.575267, 0.576303, -0.423337, -0.694338, 0.0804946, -0.825093 )
+mesh = SubResource( 14 )
+
+[node name="Plane063" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1012" index="6"]
+transform = Transform( -0.368063, -0.565928, 0.415716, -2.36279e-08, 0.46936, 0.638956, -0.702207, 0.296632, -0.217898, 0.920751, 0.0185636, -0.507595 )
+mesh = SubResource( 14 )
+
+[node name="Plane064" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1012" index="7"]
+transform = Transform( 0.824511, -0.456031, 0.334988, 0, 0.592013, 0.805928, -0.565846, -0.664497, 0.488122, 0.676874, 0.00999406, 0.978661 )
+mesh = SubResource( 14 )
+
+[node name="planta1013" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial" index="6"]
+transform = Transform( 1.19463, 0.0150111, 0.806877, -0.133658, 1.42519, 0.171373, -0.795871, -0.216813, 1.18236, -91.0103, -6.20647, -231.003 )
+mesh = SubResource( 13 )
+
+[node name="Plane057" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1013" index="0"]
+transform = Transform( 0.170494, -0.132172, 0.749587, 0, 0.768162, 0.135448, -0.761151, -0.029606, 0.167904, 0.853692, -1.08984, 0.172906 )
+mesh = SubResource( 14 )
+
+[node name="Plane058" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1013" index="1"]
+transform = Transform( -0.609158, -0.0185055, 0.10495, -6.33533e-09, 0.609015, 0.107386, -0.106569, 0.105779, -0.599904, 0.113752, -1.08124, -0.653934 )
+mesh = SubResource( 14 )
+
+[node name="Plane059" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1013" index="2"]
+transform = Transform( -0.102976, 0.123015, -0.697651, 6.93363e-08, 0.704983, 0.124308, 0.708413, 0.0178815, -0.101412, -0.771731, -1.01913, -0.100575 )
+mesh = SubResource( 14 )
+
+[node name="Plane060" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1013" index="3"]
+transform = Transform( 0.733375, -0.0187179, 0.106154, 2.55428e-08, 0.729993, 0.128717, -0.107792, -0.127349, 0.722233, 0.108789, -1.13159, 0.754828 )
+mesh = SubResource( 14 )
+
+[node name="Plane061" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1013" index="4"]
+transform = Transform( 0.872993, 0.302597, -0.22228, 1.41607e-08, 0.562596, 0.765883, 0.375464, -0.70357, 0.516824, -0.435897, -0.0316421, 0.984796 )
+mesh = SubResource( 14 )
+
+[node name="Plane062" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1013" index="5"]
+transform = Transform( -0.71508, 0.463624, -0.340566, 5.47023e-08, 0.543322, 0.739643, 0.575267, 0.576303, -0.423337, -0.694338, 0.0804946, -0.825093 )
+mesh = SubResource( 14 )
+
+[node name="Plane063" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1013" index="6"]
+transform = Transform( -0.368063, -0.565928, 0.415716, -2.36279e-08, 0.46936, 0.638956, -0.702207, 0.296632, -0.217898, 0.920751, 0.0185636, -0.507595 )
+mesh = SubResource( 14 )
+
+[node name="Plane064" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1013" index="7"]
+transform = Transform( 0.824511, -0.456031, 0.334988, 0, 0.592013, 0.805928, -0.565846, -0.664497, 0.488122, 0.676874, 0.00999406, 0.978661 )
+mesh = SubResource( 14 )
+
+[node name="planta1014" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial" index="7"]
+transform = Transform( 1.19463, 0.0150111, 0.806877, -0.133658, 1.42519, 0.171373, -0.795871, -0.216813, 1.18236, -93.1135, -6.20647, -234.04 )
+mesh = SubResource( 13 )
+
+[node name="Plane057" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1014" index="0"]
+transform = Transform( 0.170494, -0.132172, 0.749587, 0, 0.768162, 0.135448, -0.761151, -0.029606, 0.167904, 0.853692, -1.08984, 0.172906 )
+mesh = SubResource( 14 )
+
+[node name="Plane058" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1014" index="1"]
+transform = Transform( -0.609158, -0.0185055, 0.10495, -6.33533e-09, 0.609015, 0.107386, -0.106569, 0.105779, -0.599904, 0.113752, -1.08124, -0.653934 )
+mesh = SubResource( 14 )
+
+[node name="Plane059" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1014" index="2"]
+transform = Transform( -0.102976, 0.123015, -0.697651, 6.93363e-08, 0.704983, 0.124308, 0.708413, 0.0178815, -0.101412, -0.771731, -1.01913, -0.100575 )
+mesh = SubResource( 14 )
+
+[node name="Plane060" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1014" index="3"]
+transform = Transform( 0.733375, -0.0187179, 0.106154, 2.55428e-08, 0.729993, 0.128717, -0.107792, -0.127349, 0.722233, 0.108789, -1.13159, 0.754828 )
+mesh = SubResource( 14 )
+
+[node name="Plane061" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1014" index="4"]
+transform = Transform( 0.872993, 0.302597, -0.22228, 1.41607e-08, 0.562596, 0.765883, 0.375464, -0.70357, 0.516824, -0.435897, -0.0316421, 0.984796 )
+mesh = SubResource( 14 )
+
+[node name="Plane062" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1014" index="5"]
+transform = Transform( -0.71508, 0.463624, -0.340566, 5.47023e-08, 0.543322, 0.739643, 0.575267, 0.576303, -0.423337, -0.694338, 0.0804946, -0.825093 )
+mesh = SubResource( 14 )
+
+[node name="Plane063" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1014" index="6"]
+transform = Transform( -0.368063, -0.565928, 0.415716, -2.36279e-08, 0.46936, 0.638956, -0.702207, 0.296632, -0.217898, 0.920751, 0.0185636, -0.507595 )
+mesh = SubResource( 14 )
+
+[node name="Plane064" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1014" index="7"]
+transform = Transform( 0.824511, -0.456031, 0.334988, 0, 0.592013, 0.805928, -0.565846, -0.664497, 0.488122, 0.676874, 0.00999406, 0.978661 )
+mesh = SubResource( 14 )
+
+[node name="planta1015" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial" index="8"]
+transform = Transform( 1.19463, 0.0150111, 0.806877, -0.133658, 1.42519, 0.171373, -0.795871, -0.216813, 1.18236, -95.684, -6.20647, -236.144 )
+mesh = SubResource( 13 )
+
+[node name="Plane057" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1015" index="0"]
+transform = Transform( 0.170494, -0.132172, 0.749587, 0, 0.768162, 0.135448, -0.761151, -0.029606, 0.167904, 0.853692, -1.08984, 0.172906 )
+mesh = SubResource( 14 )
+
+[node name="Plane058" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1015" index="1"]
+transform = Transform( -0.609158, -0.0185055, 0.10495, -6.33533e-09, 0.609015, 0.107386, -0.106569, 0.105779, -0.599904, 0.113752, -1.08124, -0.653934 )
+mesh = SubResource( 14 )
+
+[node name="Plane059" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1015" index="2"]
+transform = Transform( -0.102976, 0.123015, -0.697651, 6.93363e-08, 0.704983, 0.124308, 0.708413, 0.0178815, -0.101412, -0.771731, -1.01913, -0.100575 )
+mesh = SubResource( 14 )
+
+[node name="Plane060" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1015" index="3"]
+transform = Transform( 0.733375, -0.0187179, 0.106154, 2.55428e-08, 0.729993, 0.128717, -0.107792, -0.127349, 0.722233, 0.108789, -1.13159, 0.754828 )
+mesh = SubResource( 14 )
+
+[node name="Plane061" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1015" index="4"]
+transform = Transform( 0.872993, 0.302597, -0.22228, 1.41607e-08, 0.562596, 0.765883, 0.375464, -0.70357, 0.516824, -0.435897, -0.0316421, 0.984796 )
+mesh = SubResource( 14 )
+
+[node name="Plane062" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1015" index="5"]
+transform = Transform( -0.71508, 0.463624, -0.340566, 5.47023e-08, 0.543322, 0.739643, 0.575267, 0.576303, -0.423337, -0.694338, 0.0804946, -0.825093 )
+mesh = SubResource( 14 )
+
+[node name="Plane063" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1015" index="6"]
+transform = Transform( -0.368063, -0.565928, 0.415716, -2.36279e-08, 0.46936, 0.638956, -0.702207, 0.296632, -0.217898, 0.920751, 0.0185636, -0.507595 )
+mesh = SubResource( 14 )
+
+[node name="Plane064" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1015" index="7"]
+transform = Transform( 0.824511, -0.456031, 0.334988, 0, 0.592013, 0.805928, -0.565846, -0.664497, 0.488122, 0.676874, 0.00999406, 0.978661 )
+mesh = SubResource( 14 )
+
+[node name="planta1016" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial" index="9"]
+transform = Transform( 1.19463, 0.0150111, 0.806877, -0.133658, 1.42519, 0.171373, -0.795871, -0.216813, 1.18236, -98.684, -6.20647, -237.144 )
+mesh = SubResource( 13 )
+
+[node name="Plane057" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1016" index="0"]
+transform = Transform( 0.170494, -0.132172, 0.749587, 0, 0.768162, 0.135448, -0.761151, -0.029606, 0.167904, 0.853692, -1.08984, 0.172906 )
+mesh = SubResource( 14 )
+
+[node name="Plane058" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1016" index="1"]
+transform = Transform( -0.609158, -0.0185055, 0.10495, -6.33533e-09, 0.609015, 0.107386, -0.106569, 0.105779, -0.599904, 0.113752, -1.08124, -0.653934 )
+mesh = SubResource( 14 )
+
+[node name="Plane059" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1016" index="2"]
+transform = Transform( -0.102976, 0.123015, -0.697651, 6.93363e-08, 0.704983, 0.124308, 0.708413, 0.0178815, -0.101412, -0.771731, -1.01913, -0.100575 )
+mesh = SubResource( 14 )
+
+[node name="Plane060" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1016" index="3"]
+transform = Transform( 0.733375, -0.0187179, 0.106154, 2.55428e-08, 0.729993, 0.128717, -0.107792, -0.127349, 0.722233, 0.108789, -1.13159, 0.754828 )
+mesh = SubResource( 14 )
+
+[node name="Plane061" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1016" index="4"]
+transform = Transform( 0.872993, 0.302597, -0.22228, 1.41607e-08, 0.562596, 0.765883, 0.375464, -0.70357, 0.516824, -0.435897, -0.0316421, 0.984796 )
+mesh = SubResource( 14 )
+
+[node name="Plane062" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1016" index="5"]
+transform = Transform( -0.71508, 0.463624, -0.340566, 5.47023e-08, 0.543322, 0.739643, 0.575267, 0.576303, -0.423337, -0.694338, 0.0804946, -0.825093 )
+mesh = SubResource( 14 )
+
+[node name="Plane063" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1016" index="6"]
+transform = Transform( -0.368063, -0.565928, 0.415716, -2.36279e-08, 0.46936, 0.638956, -0.702207, 0.296632, -0.217898, 0.920751, 0.0185636, -0.507595 )
+mesh = SubResource( 14 )
+
+[node name="Plane064" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1016" index="7"]
+transform = Transform( 0.824511, -0.456031, 0.334988, 0, 0.592013, 0.805928, -0.565846, -0.664497, 0.488122, 0.676874, 0.00999406, 0.978661 )
+mesh = SubResource( 14 )
+
+[node name="planta1017" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial" index="10"]
+transform = Transform( 1.19463, 0.0150111, 0.806877, -0.133658, 1.42519, 0.171373, -0.795871, -0.216813, 1.18236, -98.684, -6.20647, -237.144 )
+mesh = SubResource( 13 )
+
+[node name="Plane057" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1017" index="0"]
+transform = Transform( 0.170494, -0.132172, 0.749587, 0, 0.768162, 0.135448, -0.761151, -0.029606, 0.167904, 0.853692, -1.08984, 0.172906 )
+mesh = SubResource( 14 )
+
+[node name="Plane058" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1017" index="1"]
+transform = Transform( -0.609158, -0.0185055, 0.10495, -6.33533e-09, 0.609015, 0.107386, -0.106569, 0.105779, -0.599904, 0.113752, -1.08124, -0.653934 )
+mesh = SubResource( 14 )
+
+[node name="Plane059" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1017" index="2"]
+transform = Transform( -0.102976, 0.123015, -0.697651, 6.93363e-08, 0.704983, 0.124308, 0.708413, 0.0178815, -0.101412, -0.771731, -1.01913, -0.100575 )
+mesh = SubResource( 14 )
+
+[node name="Plane060" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1017" index="3"]
+transform = Transform( 0.733375, -0.0187179, 0.106154, 2.55428e-08, 0.729993, 0.128717, -0.107792, -0.127349, 0.722233, 0.108789, -1.13159, 0.754828 )
+mesh = SubResource( 14 )
+
+[node name="Plane061" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1017" index="4"]
+transform = Transform( 0.872993, 0.302597, -0.22228, 1.41607e-08, 0.562596, 0.765883, 0.375464, -0.70357, 0.516824, -0.435897, -0.0316421, 0.984796 )
+mesh = SubResource( 14 )
+
+[node name="Plane062" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1017" index="5"]
+transform = Transform( -0.71508, 0.463624, -0.340566, 5.47023e-08, 0.543322, 0.739643, 0.575267, 0.576303, -0.423337, -0.694338, 0.0804946, -0.825093 )
+mesh = SubResource( 14 )
+
+[node name="Plane063" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1017" index="6"]
+transform = Transform( -0.368063, -0.565928, 0.415716, -2.36279e-08, 0.46936, 0.638956, -0.702207, 0.296632, -0.217898, 0.920751, 0.0185636, -0.507595 )
+mesh = SubResource( 14 )
+
+[node name="Plane064" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1017" index="7"]
+transform = Transform( 0.824511, -0.456031, 0.334988, 0, 0.592013, 0.805928, -0.565846, -0.664497, 0.488122, 0.676874, 0.00999406, 0.978661 )
+mesh = SubResource( 14 )
+
+[node name="planta1018" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial" index="11"]
+transform = Transform( 1.19463, 0.0150111, 0.806877, -0.133658, 1.42519, 0.171373, -0.795871, -0.216813, 1.18236, -95.8798, -6.20647, -232.704 )
+mesh = SubResource( 13 )
+
+[node name="Plane057" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1018" index="0"]
+transform = Transform( 0.170494, -0.132172, 0.749587, 0, 0.768162, 0.135448, -0.761151, -0.029606, 0.167904, 0.853692, -1.08984, 0.172906 )
+mesh = SubResource( 14 )
+
+[node name="Plane058" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1018" index="1"]
+transform = Transform( -0.609158, -0.0185055, 0.10495, -6.33533e-09, 0.609015, 0.107386, -0.106569, 0.105779, -0.599904, 0.113752, -1.08124, -0.653934 )
+mesh = SubResource( 14 )
+
+[node name="Plane059" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1018" index="2"]
+transform = Transform( -0.102976, 0.123015, -0.697651, 6.93363e-08, 0.704983, 0.124308, 0.708413, 0.0178815, -0.101412, -0.771731, -1.01913, -0.100575 )
+mesh = SubResource( 14 )
+
+[node name="Plane060" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1018" index="3"]
+transform = Transform( 0.733375, -0.0187179, 0.106154, 2.55428e-08, 0.729993, 0.128717, -0.107792, -0.127349, 0.722233, 0.108789, -1.13159, 0.754828 )
+mesh = SubResource( 14 )
+
+[node name="Plane061" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1018" index="4"]
+transform = Transform( 0.872993, 0.302597, -0.22228, 1.41607e-08, 0.562596, 0.765883, 0.375464, -0.70357, 0.516824, -0.435897, -0.0316421, 0.984796 )
+mesh = SubResource( 14 )
+
+[node name="Plane062" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1018" index="5"]
+transform = Transform( -0.71508, 0.463624, -0.340566, 5.47023e-08, 0.543322, 0.739643, 0.575267, 0.576303, -0.423337, -0.694338, 0.0804946, -0.825093 )
+mesh = SubResource( 14 )
+
+[node name="Plane063" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1018" index="6"]
+transform = Transform( -0.368063, -0.565928, 0.415716, -2.36279e-08, 0.46936, 0.638956, -0.702207, 0.296632, -0.217898, 0.920751, 0.0185636, -0.507595 )
+mesh = SubResource( 14 )
+
+[node name="Plane064" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1018" index="7"]
+transform = Transform( 0.824511, -0.456031, 0.334988, 0, 0.592013, 0.805928, -0.565846, -0.664497, 0.488122, 0.676874, 0.00999406, 0.978661 )
+mesh = SubResource( 14 )
+
+[node name="planta1019" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial" index="12"]
+transform = Transform( 1.19463, 0.0150111, 0.806877, -0.133658, 1.42519, 0.171373, -0.795871, -0.216813, 1.18236, -92.3197, -6.20647, -238.209 )
+mesh = SubResource( 13 )
+
+[node name="Plane057" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1019" index="0"]
+transform = Transform( 0.170494, -0.132172, 0.749587, 0, 0.768162, 0.135448, -0.761151, -0.029606, 0.167904, 0.853692, -1.08984, 0.172906 )
+mesh = SubResource( 14 )
+
+[node name="Plane058" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1019" index="1"]
+transform = Transform( -0.609158, -0.0185055, 0.10495, -6.33533e-09, 0.609015, 0.107386, -0.106569, 0.105779, -0.599904, 0.113752, -1.08124, -0.653934 )
+mesh = SubResource( 14 )
+
+[node name="Plane059" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1019" index="2"]
+transform = Transform( -0.102976, 0.123015, -0.697651, 6.93363e-08, 0.704983, 0.124308, 0.708413, 0.0178815, -0.101412, -0.771731, -1.01913, -0.100575 )
+mesh = SubResource( 14 )
+
+[node name="Plane060" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1019" index="3"]
+transform = Transform( 0.733375, -0.0187179, 0.106154, 2.55428e-08, 0.729993, 0.128717, -0.107792, -0.127349, 0.722233, 0.108789, -1.13159, 0.754828 )
+mesh = SubResource( 14 )
+
+[node name="Plane061" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1019" index="4"]
+transform = Transform( 0.872993, 0.302597, -0.22228, 1.41607e-08, 0.562596, 0.765883, 0.375464, -0.70357, 0.516824, -0.435897, -0.0316421, 0.984796 )
+mesh = SubResource( 14 )
+
+[node name="Plane062" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1019" index="5"]
+transform = Transform( -0.71508, 0.463624, -0.340566, 5.47023e-08, 0.543322, 0.739643, 0.575267, 0.576303, -0.423337, -0.694338, 0.0804946, -0.825093 )
+mesh = SubResource( 14 )
+
+[node name="Plane063" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1019" index="6"]
+transform = Transform( -0.368063, -0.565928, 0.415716, -2.36279e-08, 0.46936, 0.638956, -0.702207, 0.296632, -0.217898, 0.920751, 0.0185636, -0.507595 )
+mesh = SubResource( 14 )
+
+[node name="Plane064" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1019" index="7"]
+transform = Transform( 0.824511, -0.456031, 0.334988, 0, 0.592013, 0.805928, -0.565846, -0.664497, 0.488122, 0.676874, 0.00999406, 0.978661 )
+mesh = SubResource( 14 )
+
+[node name="planta1020" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial" index="13"]
+transform = Transform( 1.19463, 0.0150111, 0.806877, -0.133658, 1.42519, 0.171373, -0.795871, -0.216813, 1.18236, -91.3197, -6.20647, -242.209 )
+mesh = SubResource( 13 )
+
+[node name="Plane057" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1020" index="0"]
+transform = Transform( 0.170494, -0.132172, 0.749587, 0, 0.768162, 0.135448, -0.761151, -0.029606, 0.167904, 0.853692, -1.08984, 0.172906 )
+mesh = SubResource( 14 )
+
+[node name="Plane058" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1020" index="1"]
+transform = Transform( -0.609158, -0.0185055, 0.10495, -6.33533e-09, 0.609015, 0.107386, -0.106569, 0.105779, -0.599904, 0.113752, -1.08124, -0.653934 )
+mesh = SubResource( 14 )
+
+[node name="Plane059" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1020" index="2"]
+transform = Transform( -0.102976, 0.123015, -0.697651, 6.93363e-08, 0.704983, 0.124308, 0.708413, 0.0178815, -0.101412, -0.771731, -1.01913, -0.100575 )
+mesh = SubResource( 14 )
+
+[node name="Plane060" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1020" index="3"]
+transform = Transform( 0.733375, -0.0187179, 0.106154, 2.55428e-08, 0.729993, 0.128717, -0.107792, -0.127349, 0.722233, 0.108789, -1.13159, 0.754828 )
+mesh = SubResource( 14 )
+
+[node name="Plane061" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1020" index="4"]
+transform = Transform( 0.872993, 0.302597, -0.22228, 1.41607e-08, 0.562596, 0.765883, 0.375464, -0.70357, 0.516824, -0.435897, -0.0316421, 0.984796 )
+mesh = SubResource( 14 )
+
+[node name="Plane062" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1020" index="5"]
+transform = Transform( -0.71508, 0.463624, -0.340566, 5.47023e-08, 0.543322, 0.739643, 0.575267, 0.576303, -0.423337, -0.694338, 0.0804946, -0.825093 )
+mesh = SubResource( 14 )
+
+[node name="Plane063" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1020" index="6"]
+transform = Transform( -0.368063, -0.565928, 0.415716, -2.36279e-08, 0.46936, 0.638956, -0.702207, 0.296632, -0.217898, 0.920751, 0.0185636, -0.507595 )
+mesh = SubResource( 14 )
+
+[node name="Plane064" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1020" index="7"]
+transform = Transform( 0.824511, -0.456031, 0.334988, 0, 0.592013, 0.805928, -0.565846, -0.664497, 0.488122, 0.676874, 0.00999406, 0.978661 )
+mesh = SubResource( 14 )
+
+[node name="planta1021" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial" index="14"]
+transform = Transform( 1.19463, 0.0150111, 0.806877, -0.133658, 1.42519, 0.171373, -0.795871, -0.216813, 1.18236, -90.3197, -6.20647, -246.209 )
+mesh = SubResource( 13 )
+
+[node name="Plane057" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1021" index="0"]
+transform = Transform( 0.170494, -0.132172, 0.749587, 0, 0.768162, 0.135448, -0.761151, -0.029606, 0.167904, 0.853692, -1.08984, 0.172906 )
+mesh = SubResource( 14 )
+
+[node name="Plane058" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1021" index="1"]
+transform = Transform( -0.609158, -0.0185055, 0.10495, -6.33533e-09, 0.609015, 0.107386, -0.106569, 0.105779, -0.599904, 0.113752, -1.08124, -0.653934 )
+mesh = SubResource( 14 )
+
+[node name="Plane059" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1021" index="2"]
+transform = Transform( -0.102976, 0.123015, -0.697651, 6.93363e-08, 0.704983, 0.124308, 0.708413, 0.0178815, -0.101412, -0.771731, -1.01913, -0.100575 )
+mesh = SubResource( 14 )
+
+[node name="Plane060" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1021" index="3"]
+transform = Transform( 0.733375, -0.0187179, 0.106154, 2.55428e-08, 0.729993, 0.128717, -0.107792, -0.127349, 0.722233, 0.108789, -1.13159, 0.754828 )
+mesh = SubResource( 14 )
+
+[node name="Plane061" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1021" index="4"]
+transform = Transform( 0.872993, 0.302597, -0.22228, 1.41607e-08, 0.562596, 0.765883, 0.375464, -0.70357, 0.516824, -0.435897, -0.0316421, 0.984796 )
+mesh = SubResource( 14 )
+
+[node name="Plane062" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1021" index="5"]
+transform = Transform( -0.71508, 0.463624, -0.340566, 5.47023e-08, 0.543322, 0.739643, 0.575267, 0.576303, -0.423337, -0.694338, 0.0804946, -0.825093 )
+mesh = SubResource( 14 )
+
+[node name="Plane063" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1021" index="6"]
+transform = Transform( -0.368063, -0.565928, 0.415716, -2.36279e-08, 0.46936, 0.638956, -0.702207, 0.296632, -0.217898, 0.920751, 0.0185636, -0.507595 )
+mesh = SubResource( 14 )
+
+[node name="Plane064" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1021" index="7"]
+transform = Transform( 0.824511, -0.456031, 0.334988, 0, 0.592013, 0.805928, -0.565846, -0.664497, 0.488122, 0.676874, 0.00999406, 0.978661 )
+mesh = SubResource( 14 )
+
+[node name="planta1022" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial" index="15"]
+transform = Transform( 1.19463, 0.0150111, 0.806877, -0.133658, 1.42519, 0.171373, -0.795871, -0.216813, 1.18236, -86.1135, -6.20647, -245.274 )
+mesh = SubResource( 13 )
+
+[node name="Plane057" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1022" index="0"]
+transform = Transform( 0.170494, -0.132172, 0.749587, 0, 0.768162, 0.135448, -0.761151, -0.029606, 0.167904, 0.853692, -1.08984, 0.172906 )
+mesh = SubResource( 14 )
+
+[node name="Plane058" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1022" index="1"]
+transform = Transform( -0.609158, -0.0185055, 0.10495, -6.33533e-09, 0.609015, 0.107386, -0.106569, 0.105779, -0.599904, 0.113752, -1.08124, -0.653934 )
+mesh = SubResource( 14 )
+
+[node name="Plane059" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1022" index="2"]
+transform = Transform( -0.102976, 0.123015, -0.697651, 6.93363e-08, 0.704983, 0.124308, 0.708413, 0.0178815, -0.101412, -0.771731, -1.01913, -0.100575 )
+mesh = SubResource( 14 )
+
+[node name="Plane060" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1022" index="3"]
+transform = Transform( 0.733375, -0.0187179, 0.106154, 2.55428e-08, 0.729993, 0.128717, -0.107792, -0.127349, 0.722233, 0.108789, -1.13159, 0.754828 )
+mesh = SubResource( 14 )
+
+[node name="Plane061" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1022" index="4"]
+transform = Transform( 0.872993, 0.302597, -0.22228, 1.41607e-08, 0.562596, 0.765883, 0.375464, -0.70357, 0.516824, -0.435897, -0.0316421, 0.984796 )
+mesh = SubResource( 14 )
+
+[node name="Plane062" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1022" index="5"]
+transform = Transform( -0.71508, 0.463624, -0.340566, 5.47023e-08, 0.543322, 0.739643, 0.575267, 0.576303, -0.423337, -0.694338, 0.0804946, -0.825093 )
+mesh = SubResource( 14 )
+
+[node name="Plane063" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1022" index="6"]
+transform = Transform( -0.368063, -0.565928, 0.415716, -2.36279e-08, 0.46936, 0.638956, -0.702207, 0.296632, -0.217898, 0.920751, 0.0185636, -0.507595 )
+mesh = SubResource( 14 )
+
+[node name="Plane064" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1022" index="7"]
+transform = Transform( 0.824511, -0.456031, 0.334988, 0, 0.592013, 0.805928, -0.565846, -0.664497, 0.488122, 0.676874, 0.00999406, 0.978661 )
+mesh = SubResource( 14 )
+
+[node name="planta1023" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial" index="16"]
+transform = Transform( 1.19463, 0.0150111, 0.806877, -0.133658, 1.42519, 0.171373, -0.795871, -0.216813, 1.18236, -88.9176, -6.20647, -248.546 )
+mesh = SubResource( 13 )
+
+[node name="Plane057" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1023" index="0"]
+transform = Transform( 0.170494, -0.132172, 0.749587, 0, 0.768162, 0.135448, -0.761151, -0.029606, 0.167904, 0.853692, -1.08984, 0.172906 )
+mesh = SubResource( 14 )
+
+[node name="Plane058" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1023" index="1"]
+transform = Transform( -0.609158, -0.0185055, 0.10495, -6.33533e-09, 0.609015, 0.107386, -0.106569, 0.105779, -0.599904, 0.113752, -1.08124, -0.653934 )
+mesh = SubResource( 14 )
+
+[node name="Plane059" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1023" index="2"]
+transform = Transform( -0.102976, 0.123015, -0.697651, 6.93363e-08, 0.704983, 0.124308, 0.708413, 0.0178815, -0.101412, -0.771731, -1.01913, -0.100575 )
+mesh = SubResource( 14 )
+
+[node name="Plane060" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1023" index="3"]
+transform = Transform( 0.733375, -0.0187179, 0.106154, 2.55428e-08, 0.729993, 0.128717, -0.107792, -0.127349, 0.722233, 0.108789, -1.13159, 0.754828 )
+mesh = SubResource( 14 )
+
+[node name="Plane061" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1023" index="4"]
+transform = Transform( 0.872993, 0.302597, -0.22228, 1.41607e-08, 0.562596, 0.765883, 0.375464, -0.70357, 0.516824, -0.435897, -0.0316421, 0.984796 )
+mesh = SubResource( 14 )
+
+[node name="Plane062" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1023" index="5"]
+transform = Transform( -0.71508, 0.463624, -0.340566, 5.47023e-08, 0.543322, 0.739643, 0.575267, 0.576303, -0.423337, -0.694338, 0.0804946, -0.825093 )
+mesh = SubResource( 14 )
+
+[node name="Plane063" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1023" index="6"]
+transform = Transform( -0.368063, -0.565928, 0.415716, -2.36279e-08, 0.46936, 0.638956, -0.702207, 0.296632, -0.217898, 0.920751, 0.0185636, -0.507595 )
+mesh = SubResource( 14 )
+
+[node name="Plane064" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1023" index="7"]
+transform = Transform( 0.824511, -0.456031, 0.334988, 0, 0.592013, 0.805928, -0.565846, -0.664497, 0.488122, 0.676874, 0.00999406, 0.978661 )
+mesh = SubResource( 14 )
+
+[node name="planta1024" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial" index="17"]
+transform = Transform( 1.19463, 0.0150111, 0.806877, -0.133658, 1.42519, 0.171373, -0.795871, -0.216813, 1.18236, -93.5912, -6.20647, -251.817 )
+mesh = SubResource( 13 )
+
+[node name="Plane057" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1024" index="0"]
+transform = Transform( 0.170494, -0.132172, 0.749587, 0, 0.768162, 0.135448, -0.761151, -0.029606, 0.167904, 0.853692, -1.08984, 0.172906 )
+mesh = SubResource( 14 )
+
+[node name="Plane058" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1024" index="1"]
+transform = Transform( -0.609158, -0.0185055, 0.10495, -6.33533e-09, 0.609015, 0.107386, -0.106569, 0.105779, -0.599904, 0.113752, -1.08124, -0.653934 )
+mesh = SubResource( 14 )
+
+[node name="Plane059" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1024" index="2"]
+transform = Transform( -0.102976, 0.123015, -0.697651, 6.93363e-08, 0.704983, 0.124308, 0.708413, 0.0178815, -0.101412, -0.771731, -1.01913, -0.100575 )
+mesh = SubResource( 14 )
+
+[node name="Plane060" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1024" index="3"]
+transform = Transform( 0.733375, -0.0187179, 0.106154, 2.55428e-08, 0.729993, 0.128717, -0.107792, -0.127349, 0.722233, 0.108789, -1.13159, 0.754828 )
+mesh = SubResource( 14 )
+
+[node name="Plane061" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1024" index="4"]
+transform = Transform( 0.872993, 0.302597, -0.22228, 1.41607e-08, 0.562596, 0.765883, 0.375464, -0.70357, 0.516824, -0.435897, -0.0316421, 0.984796 )
+mesh = SubResource( 14 )
+
+[node name="Plane062" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1024" index="5"]
+transform = Transform( -0.71508, 0.463624, -0.340566, 5.47023e-08, 0.543322, 0.739643, 0.575267, 0.576303, -0.423337, -0.694338, 0.0804946, -0.825093 )
+mesh = SubResource( 14 )
+
+[node name="Plane063" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1024" index="6"]
+transform = Transform( -0.368063, -0.565928, 0.415716, -2.36279e-08, 0.46936, 0.638956, -0.702207, 0.296632, -0.217898, 0.920751, 0.0185636, -0.507595 )
+mesh = SubResource( 14 )
+
+[node name="Plane064" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1024" index="7"]
+transform = Transform( 0.824511, -0.456031, 0.334988, 0, 0.592013, 0.805928, -0.565846, -0.664497, 0.488122, 0.676874, 0.00999406, 0.978661 )
+mesh = SubResource( 14 )
+
+[node name="planta1025" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial" index="18"]
+transform = Transform( 1.19463, 0.0150111, 0.806877, -0.133658, 1.42519, 0.171373, -0.795871, -0.216813, 1.18236, -90.7871, -6.20647, -252.285 )
+mesh = SubResource( 13 )
+
+[node name="Plane057" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1025" index="0"]
+transform = Transform( 0.170494, -0.132172, 0.749587, 0, 0.768162, 0.135448, -0.761151, -0.029606, 0.167904, 0.853692, -1.08984, 0.172906 )
+mesh = SubResource( 14 )
+
+[node name="Plane058" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1025" index="1"]
+transform = Transform( -0.609158, -0.0185055, 0.10495, -6.33533e-09, 0.609015, 0.107386, -0.106569, 0.105779, -0.599904, 0.113752, -1.08124, -0.653934 )
+mesh = SubResource( 14 )
+
+[node name="Plane059" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1025" index="2"]
+transform = Transform( -0.102976, 0.123015, -0.697651, 6.93363e-08, 0.704983, 0.124308, 0.708413, 0.0178815, -0.101412, -0.771731, -1.01913, -0.100575 )
+mesh = SubResource( 14 )
+
+[node name="Plane060" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1025" index="3"]
+transform = Transform( 0.733375, -0.0187179, 0.106154, 2.55428e-08, 0.729993, 0.128717, -0.107792, -0.127349, 0.722233, 0.108789, -1.13159, 0.754828 )
+mesh = SubResource( 14 )
+
+[node name="Plane061" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1025" index="4"]
+transform = Transform( 0.872993, 0.302597, -0.22228, 1.41607e-08, 0.562596, 0.765883, 0.375464, -0.70357, 0.516824, -0.435897, -0.0316421, 0.984796 )
+mesh = SubResource( 14 )
+
+[node name="Plane062" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1025" index="5"]
+transform = Transform( -0.71508, 0.463624, -0.340566, 5.47023e-08, 0.543322, 0.739643, 0.575267, 0.576303, -0.423337, -0.694338, 0.0804946, -0.825093 )
+mesh = SubResource( 14 )
+
+[node name="Plane063" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1025" index="6"]
+transform = Transform( -0.368063, -0.565928, 0.415716, -2.36279e-08, 0.46936, 0.638956, -0.702207, 0.296632, -0.217898, 0.920751, 0.0185636, -0.507595 )
+mesh = SubResource( 14 )
+
+[node name="Plane064" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1025" index="7"]
+transform = Transform( 0.824511, -0.456031, 0.334988, 0, 0.592013, 0.805928, -0.565846, -0.664497, 0.488122, 0.676874, 0.00999406, 0.978661 )
+mesh = SubResource( 14 )
+
+[node name="planta1026" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial" index="19"]
+transform = Transform( 1.19463, 0.0150111, 0.806877, -0.133658, 1.42519, 0.171373, -0.795871, -0.216813, 1.18236, -86.7871, -6.20647, -249.285 )
+mesh = SubResource( 13 )
+
+[node name="Plane057" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1026" index="0"]
+transform = Transform( 0.170494, -0.132172, 0.749587, 0, 0.768162, 0.135448, -0.761151, -0.029606, 0.167904, 0.853692, -1.08984, 0.172906 )
+mesh = SubResource( 14 )
+
+[node name="Plane058" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1026" index="1"]
+transform = Transform( -0.609158, -0.0185055, 0.10495, -6.33533e-09, 0.609015, 0.107386, -0.106569, 0.105779, -0.599904, 0.113752, -1.08124, -0.653934 )
+mesh = SubResource( 14 )
+
+[node name="Plane059" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1026" index="2"]
+transform = Transform( -0.102976, 0.123015, -0.697651, 6.93363e-08, 0.704983, 0.124308, 0.708413, 0.0178815, -0.101412, -0.771731, -1.01913, -0.100575 )
+mesh = SubResource( 14 )
+
+[node name="Plane060" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1026" index="3"]
+transform = Transform( 0.733375, -0.0187179, 0.106154, 2.55428e-08, 0.729993, 0.128717, -0.107792, -0.127349, 0.722233, 0.108789, -1.13159, 0.754828 )
+mesh = SubResource( 14 )
+
+[node name="Plane061" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1026" index="4"]
+transform = Transform( 0.872993, 0.302597, -0.22228, 1.41607e-08, 0.562596, 0.765883, 0.375464, -0.70357, 0.516824, -0.435897, -0.0316421, 0.984796 )
+mesh = SubResource( 14 )
+
+[node name="Plane062" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1026" index="5"]
+transform = Transform( -0.71508, 0.463624, -0.340566, 5.47023e-08, 0.543322, 0.739643, 0.575267, 0.576303, -0.423337, -0.694338, 0.0804946, -0.825093 )
+mesh = SubResource( 14 )
+
+[node name="Plane063" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1026" index="6"]
+transform = Transform( -0.368063, -0.565928, 0.415716, -2.36279e-08, 0.46936, 0.638956, -0.702207, 0.296632, -0.217898, 0.920751, 0.0185636, -0.507595 )
+mesh = SubResource( 14 )
+
+[node name="Plane064" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1026" index="7"]
+transform = Transform( 0.824511, -0.456031, 0.334988, 0, 0.592013, 0.805928, -0.565846, -0.664497, 0.488122, 0.676874, 0.00999406, 0.978661 )
+mesh = SubResource( 14 )
+
+[node name="planta1027" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial" index="20"]
+transform = Transform( 1.19463, 0.0150111, 0.806877, -0.133658, 1.42519, 0.171373, -0.795871, -0.216813, 1.18236, -82.7871, -6.20647, -251.285 )
+mesh = SubResource( 13 )
+
+[node name="Plane057" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1027" index="0"]
+transform = Transform( 0.170494, -0.132172, 0.749587, 0, 0.768162, 0.135448, -0.761151, -0.029606, 0.167904, 0.853692, -1.08984, 0.172906 )
+mesh = SubResource( 14 )
+
+[node name="Plane058" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1027" index="1"]
+transform = Transform( -0.609158, -0.0185055, 0.10495, -6.33533e-09, 0.609015, 0.107386, -0.106569, 0.105779, -0.599904, 0.113752, -1.08124, -0.653934 )
+mesh = SubResource( 14 )
+
+[node name="Plane059" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1027" index="2"]
+transform = Transform( -0.102976, 0.123015, -0.697651, 6.93363e-08, 0.704983, 0.124308, 0.708413, 0.0178815, -0.101412, -0.771731, -1.01913, -0.100575 )
+mesh = SubResource( 14 )
+
+[node name="Plane060" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1027" index="3"]
+transform = Transform( 0.733375, -0.0187179, 0.106154, 2.55428e-08, 0.729993, 0.128717, -0.107792, -0.127349, 0.722233, 0.108789, -1.13159, 0.754828 )
+mesh = SubResource( 14 )
+
+[node name="Plane061" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1027" index="4"]
+transform = Transform( 0.872993, 0.302597, -0.22228, 1.41607e-08, 0.562596, 0.765883, 0.375464, -0.70357, 0.516824, -0.435897, -0.0316421, 0.984796 )
+mesh = SubResource( 14 )
+
+[node name="Plane062" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1027" index="5"]
+transform = Transform( -0.71508, 0.463624, -0.340566, 5.47023e-08, 0.543322, 0.739643, 0.575267, 0.576303, -0.423337, -0.694338, 0.0804946, -0.825093 )
+mesh = SubResource( 14 )
+
+[node name="Plane063" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1027" index="6"]
+transform = Transform( -0.368063, -0.565928, 0.415716, -2.36279e-08, 0.46936, 0.638956, -0.702207, 0.296632, -0.217898, 0.920751, 0.0185636, -0.507595 )
+mesh = SubResource( 14 )
+
+[node name="Plane064" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1027" index="7"]
+transform = Transform( 0.824511, -0.456031, 0.334988, 0, 0.592013, 0.805928, -0.565846, -0.664497, 0.488122, 0.676874, 0.00999406, 0.978661 )
+mesh = SubResource( 14 )
+
+[node name="planta1028" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial" index="21"]
+transform = Transform( 1.19463, 0.0150111, 0.806877, -0.133658, 1.42519, 0.171373, -0.795871, -0.216813, 1.18236, -84.1892, -6.20647, -249.181 )
+mesh = SubResource( 13 )
+
+[node name="Plane057" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1028" index="0"]
+transform = Transform( 0.170494, -0.132172, 0.749587, 0, 0.768162, 0.135448, -0.761151, -0.029606, 0.167904, 0.853692, -1.08984, 0.172906 )
+mesh = SubResource( 14 )
+
+[node name="Plane058" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1028" index="1"]
+transform = Transform( -0.609158, -0.0185055, 0.10495, -6.33533e-09, 0.609015, 0.107386, -0.106569, 0.105779, -0.599904, 0.113752, -1.08124, -0.653934 )
+mesh = SubResource( 14 )
+
+[node name="Plane059" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1028" index="2"]
+transform = Transform( -0.102976, 0.123015, -0.697651, 6.93363e-08, 0.704983, 0.124308, 0.708413, 0.0178815, -0.101412, -0.771731, -1.01913, -0.100575 )
+mesh = SubResource( 14 )
+
+[node name="Plane060" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1028" index="3"]
+transform = Transform( 0.733375, -0.0187179, 0.106154, 2.55428e-08, 0.729993, 0.128717, -0.107792, -0.127349, 0.722233, 0.108789, -1.13159, 0.754828 )
+mesh = SubResource( 14 )
+
+[node name="Plane061" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1028" index="4"]
+transform = Transform( 0.872993, 0.302597, -0.22228, 1.41607e-08, 0.562596, 0.765883, 0.375464, -0.70357, 0.516824, -0.435897, -0.0316421, 0.984796 )
+mesh = SubResource( 14 )
+
+[node name="Plane062" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1028" index="5"]
+transform = Transform( -0.71508, 0.463624, -0.340566, 5.47023e-08, 0.543322, 0.739643, 0.575267, 0.576303, -0.423337, -0.694338, 0.0804946, -0.825093 )
+mesh = SubResource( 14 )
+
+[node name="Plane063" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1028" index="6"]
+transform = Transform( -0.368063, -0.565928, 0.415716, -2.36279e-08, 0.46936, 0.638956, -0.702207, 0.296632, -0.217898, 0.920751, 0.0185636, -0.507595 )
+mesh = SubResource( 14 )
+
+[node name="Plane064" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1028" index="7"]
+transform = Transform( 0.824511, -0.456031, 0.334988, 0, 0.592013, 0.805928, -0.565846, -0.664497, 0.488122, 0.676874, 0.00999406, 0.978661 )
+mesh = SubResource( 14 )
+
+[node name="planta1029" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial" index="22"]
+transform = Transform( 1.19463, 0.0150111, 0.806877, -0.133658, 1.42519, 0.171373, -0.795871, -0.216813, 1.18236, -97.1892, -6.20647, -239.181 )
+mesh = SubResource( 13 )
+
+[node name="Plane057" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1029" index="0"]
+transform = Transform( 0.170494, -0.132172, 0.749587, 0, 0.768162, 0.135448, -0.761151, -0.029606, 0.167904, 0.853692, -1.08984, 0.172906 )
+mesh = SubResource( 14 )
+
+[node name="Plane058" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1029" index="1"]
+transform = Transform( -0.609158, -0.0185055, 0.10495, -6.33533e-09, 0.609015, 0.107386, -0.106569, 0.105779, -0.599904, 0.113752, -1.08124, -0.653934 )
+mesh = SubResource( 14 )
+
+[node name="Plane059" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1029" index="2"]
+transform = Transform( -0.102976, 0.123015, -0.697651, 6.93363e-08, 0.704983, 0.124308, 0.708413, 0.0178815, -0.101412, -0.771731, -1.01913, -0.100575 )
+mesh = SubResource( 14 )
+
+[node name="Plane060" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1029" index="3"]
+transform = Transform( 0.733375, -0.0187179, 0.106154, 2.55428e-08, 0.729993, 0.128717, -0.107792, -0.127349, 0.722233, 0.108789, -1.13159, 0.754828 )
+mesh = SubResource( 14 )
+
+[node name="Plane061" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1029" index="4"]
+transform = Transform( 0.872993, 0.302597, -0.22228, 1.41607e-08, 0.562596, 0.765883, 0.375464, -0.70357, 0.516824, -0.435897, -0.0316421, 0.984796 )
+mesh = SubResource( 14 )
+
+[node name="Plane062" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1029" index="5"]
+transform = Transform( -0.71508, 0.463624, -0.340566, 5.47023e-08, 0.543322, 0.739643, 0.575267, 0.576303, -0.423337, -0.694338, 0.0804946, -0.825093 )
+mesh = SubResource( 14 )
+
+[node name="Plane063" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1029" index="6"]
+transform = Transform( -0.368063, -0.565928, 0.415716, -2.36279e-08, 0.46936, 0.638956, -0.702207, 0.296632, -0.217898, 0.920751, 0.0185636, -0.507595 )
+mesh = SubResource( 14 )
+
+[node name="Plane064" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1029" index="7"]
+transform = Transform( 0.824511, -0.456031, 0.334988, 0, 0.592013, 0.805928, -0.565846, -0.664497, 0.488122, 0.676874, 0.00999406, 0.978661 )
+mesh = SubResource( 14 )
+
+[node name="planta1030" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial" index="23"]
+transform = Transform( 1.19463, 0.0150111, 0.806877, -0.133658, 1.42519, 0.171373, -0.795871, -0.216813, 1.18236, -87.8419, -6.20647, -240.35 )
+mesh = SubResource( 13 )
+
+[node name="Plane057" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1030" index="0"]
+transform = Transform( 0.170494, -0.132172, 0.749587, 0, 0.768162, 0.135448, -0.761151, -0.029606, 0.167904, 0.853692, -1.08984, 0.172906 )
+mesh = SubResource( 14 )
+
+[node name="Plane058" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1030" index="1"]
+transform = Transform( -0.609158, -0.0185055, 0.10495, -6.33533e-09, 0.609015, 0.107386, -0.106569, 0.105779, -0.599904, 0.113752, -1.08124, -0.653934 )
+mesh = SubResource( 14 )
+
+[node name="Plane059" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1030" index="2"]
+transform = Transform( -0.102976, 0.123015, -0.697651, 6.93363e-08, 0.704983, 0.124308, 0.708413, 0.0178815, -0.101412, -0.771731, -1.01913, -0.100575 )
+mesh = SubResource( 14 )
+
+[node name="Plane060" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1030" index="3"]
+transform = Transform( 0.733375, -0.0187179, 0.106154, 2.55428e-08, 0.729993, 0.128717, -0.107792, -0.127349, 0.722233, 0.108789, -1.13159, 0.754828 )
+mesh = SubResource( 14 )
+
+[node name="Plane061" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1030" index="4"]
+transform = Transform( 0.872993, 0.302597, -0.22228, 1.41607e-08, 0.562596, 0.765883, 0.375464, -0.70357, 0.516824, -0.435897, -0.0316421, 0.984796 )
+mesh = SubResource( 14 )
+
+[node name="Plane062" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1030" index="5"]
+transform = Transform( -0.71508, 0.463624, -0.340566, 5.47023e-08, 0.543322, 0.739643, 0.575267, 0.576303, -0.423337, -0.694338, 0.0804946, -0.825093 )
+mesh = SubResource( 14 )
+
+[node name="Plane063" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1030" index="6"]
+transform = Transform( -0.368063, -0.565928, 0.415716, -2.36279e-08, 0.46936, 0.638956, -0.702207, 0.296632, -0.217898, 0.920751, 0.0185636, -0.507595 )
+mesh = SubResource( 14 )
+
+[node name="Plane064" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1030" index="7"]
+transform = Transform( 0.824511, -0.456031, 0.334988, 0, 0.592013, 0.805928, -0.565846, -0.664497, 0.488122, 0.676874, 0.00999406, 0.978661 )
+mesh = SubResource( 14 )
+
+[node name="planta1031" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial" index="24"]
+transform = Transform( 1.19463, 0.0150111, 0.806877, -0.133658, 1.42519, 0.171373, -0.795871, -0.216813, 1.18236, -82.701, -3.72185, -239.882 )
+mesh = SubResource( 13 )
+
+[node name="Plane057" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1031" index="0"]
+transform = Transform( 0.170494, -0.132172, 0.749587, 0, 0.768162, 0.135448, -0.761151, -0.029606, 0.167904, 0.853692, -1.08984, 0.172906 )
+mesh = SubResource( 14 )
+
+[node name="Plane058" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1031" index="1"]
+transform = Transform( -0.609158, -0.0185055, 0.10495, -6.33533e-09, 0.609015, 0.107386, -0.106569, 0.105779, -0.599904, 0.113752, -1.08124, -0.653934 )
+mesh = SubResource( 14 )
+
+[node name="Plane059" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1031" index="2"]
+transform = Transform( -0.102976, 0.123015, -0.697651, 6.93363e-08, 0.704983, 0.124308, 0.708413, 0.0178815, -0.101412, -0.771731, -1.01913, -0.100575 )
+mesh = SubResource( 14 )
+
+[node name="Plane060" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1031" index="3"]
+transform = Transform( 0.733375, -0.0187179, 0.106154, 2.55428e-08, 0.729993, 0.128717, -0.107792, -0.127349, 0.722233, 0.108789, -1.13159, 0.754828 )
+mesh = SubResource( 14 )
+
+[node name="Plane061" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1031" index="4"]
+transform = Transform( 0.872993, 0.302597, -0.22228, 1.41607e-08, 0.562596, 0.765883, 0.375464, -0.70357, 0.516824, -0.435897, -0.0316421, 0.984796 )
+mesh = SubResource( 14 )
+
+[node name="Plane062" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1031" index="5"]
+transform = Transform( -0.71508, 0.463624, -0.340566, 5.47023e-08, 0.543322, 0.739643, 0.575267, 0.576303, -0.423337, -0.694338, 0.0804946, -0.825093 )
+mesh = SubResource( 14 )
+
+[node name="Plane063" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1031" index="6"]
+transform = Transform( -0.368063, -0.565928, 0.415716, -2.36279e-08, 0.46936, 0.638956, -0.702207, 0.296632, -0.217898, 0.920751, 0.0185636, -0.507595 )
+mesh = SubResource( 14 )
+
+[node name="Plane064" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1031" index="7"]
+transform = Transform( 0.824511, -0.456031, 0.334988, 0, 0.592013, 0.805928, -0.565846, -0.664497, 0.488122, 0.676874, 0.00999406, 0.978661 )
+mesh = SubResource( 14 )
+
+[node name="planta1032" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial" index="25"]
+transform = Transform( 1.19463, 0.0150111, 0.806877, -0.133658, 1.42519, 0.171373, -0.795871, -0.216813, 1.18236, -80.8315, -3.72185, -242.687 )
+mesh = SubResource( 13 )
+
+[node name="Plane057" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1032" index="0"]
+transform = Transform( 0.170494, -0.132172, 0.749587, 0, 0.768162, 0.135448, -0.761151, -0.029606, 0.167904, 0.853692, -1.08984, 0.172906 )
+mesh = SubResource( 14 )
+
+[node name="Plane058" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1032" index="1"]
+transform = Transform( -0.609158, -0.0185055, 0.10495, -6.33533e-09, 0.609015, 0.107386, -0.106569, 0.105779, -0.599904, 0.113752, -1.08124, -0.653934 )
+mesh = SubResource( 14 )
+
+[node name="Plane059" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1032" index="2"]
+transform = Transform( -0.102976, 0.123015, -0.697651, 6.93363e-08, 0.704983, 0.124308, 0.708413, 0.0178815, -0.101412, -0.771731, -1.01913, -0.100575 )
+mesh = SubResource( 14 )
+
+[node name="Plane060" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1032" index="3"]
+transform = Transform( 0.733375, -0.0187179, 0.106154, 2.55428e-08, 0.729993, 0.128717, -0.107792, -0.127349, 0.722233, 0.108789, -1.13159, 0.754828 )
+mesh = SubResource( 14 )
+
+[node name="Plane061" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1032" index="4"]
+transform = Transform( 0.872993, 0.302597, -0.22228, 1.41607e-08, 0.562596, 0.765883, 0.375464, -0.70357, 0.516824, -0.435897, -0.0316421, 0.984796 )
+mesh = SubResource( 14 )
+
+[node name="Plane062" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1032" index="5"]
+transform = Transform( -0.71508, 0.463624, -0.340566, 5.47023e-08, 0.543322, 0.739643, 0.575267, 0.576303, -0.423337, -0.694338, 0.0804946, -0.825093 )
+mesh = SubResource( 14 )
+
+[node name="Plane063" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1032" index="6"]
+transform = Transform( -0.368063, -0.565928, 0.415716, -2.36279e-08, 0.46936, 0.638956, -0.702207, 0.296632, -0.217898, 0.920751, 0.0185636, -0.507595 )
+mesh = SubResource( 14 )
+
+[node name="Plane064" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1032" index="7"]
+transform = Transform( 0.824511, -0.456031, 0.334988, 0, 0.592013, 0.805928, -0.565846, -0.664497, 0.488122, 0.676874, 0.00999406, 0.978661 )
+mesh = SubResource( 14 )
+
+[node name="planta1033" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial" index="26"]
+transform = Transform( 1.19463, 0.0150111, 0.806877, -0.133658, 1.42519, 0.171373, -0.795871, -0.216813, 1.18236, -80.8315, -3.72185, -245.724 )
+mesh = SubResource( 13 )
+
+[node name="Plane057" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1033" index="0"]
+transform = Transform( 0.170494, -0.132172, 0.749587, 0, 0.768162, 0.135448, -0.761151, -0.029606, 0.167904, 0.853692, -1.08984, 0.172906 )
+mesh = SubResource( 14 )
+
+[node name="Plane058" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1033" index="1"]
+transform = Transform( -0.609158, -0.0185055, 0.10495, -6.33533e-09, 0.609015, 0.107386, -0.106569, 0.105779, -0.599904, 0.113752, -1.08124, -0.653934 )
+mesh = SubResource( 14 )
+
+[node name="Plane059" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1033" index="2"]
+transform = Transform( -0.102976, 0.123015, -0.697651, 6.93363e-08, 0.704983, 0.124308, 0.708413, 0.0178815, -0.101412, -0.771731, -1.01913, -0.100575 )
+mesh = SubResource( 14 )
+
+[node name="Plane060" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1033" index="3"]
+transform = Transform( 0.733375, -0.0187179, 0.106154, 2.55428e-08, 0.729993, 0.128717, -0.107792, -0.127349, 0.722233, 0.108789, -1.13159, 0.754828 )
+mesh = SubResource( 14 )
+
+[node name="Plane061" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1033" index="4"]
+transform = Transform( 0.872993, 0.302597, -0.22228, 1.41607e-08, 0.562596, 0.765883, 0.375464, -0.70357, 0.516824, -0.435897, -0.0316421, 0.984796 )
+mesh = SubResource( 14 )
+
+[node name="Plane062" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1033" index="5"]
+transform = Transform( -0.71508, 0.463624, -0.340566, 5.47023e-08, 0.543322, 0.739643, 0.575267, 0.576303, -0.423337, -0.694338, 0.0804946, -0.825093 )
+mesh = SubResource( 14 )
+
+[node name="Plane063" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1033" index="6"]
+transform = Transform( -0.368063, -0.565928, 0.415716, -2.36279e-08, 0.46936, 0.638956, -0.702207, 0.296632, -0.217898, 0.920751, 0.0185636, -0.507595 )
+mesh = SubResource( 14 )
+
+[node name="Plane064" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1033" index="7"]
+transform = Transform( 0.824511, -0.456031, 0.334988, 0, 0.592013, 0.805928, -0.565846, -0.664497, 0.488122, 0.676874, 0.00999406, 0.978661 )
+mesh = SubResource( 14 )
+
+[node name="planta1034" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial" index="27"]
+transform = Transform( 1.19463, 0.0150111, 0.806877, -0.133658, 1.42519, 0.171373, -0.795871, -0.216813, 1.18236, -80.8315, -3.72185, -245.724 )
+mesh = SubResource( 13 )
+
+[node name="Plane057" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1034" index="0"]
+transform = Transform( 0.170494, -0.132172, 0.749587, 0, 0.768162, 0.135448, -0.761151, -0.029606, 0.167904, 0.853692, -1.08984, 0.172906 )
+mesh = SubResource( 14 )
+
+[node name="Plane058" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1034" index="1"]
+transform = Transform( -0.609158, -0.0185055, 0.10495, -6.33533e-09, 0.609015, 0.107386, -0.106569, 0.105779, -0.599904, 0.113752, -1.08124, -0.653934 )
+mesh = SubResource( 14 )
+
+[node name="Plane059" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1034" index="2"]
+transform = Transform( -0.102976, 0.123015, -0.697651, 6.93363e-08, 0.704983, 0.124308, 0.708413, 0.0178815, -0.101412, -0.771731, -1.01913, -0.100575 )
+mesh = SubResource( 14 )
+
+[node name="Plane060" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1034" index="3"]
+transform = Transform( 0.733375, -0.0187179, 0.106154, 2.55428e-08, 0.729993, 0.128717, -0.107792, -0.127349, 0.722233, 0.108789, -1.13159, 0.754828 )
+mesh = SubResource( 14 )
+
+[node name="Plane061" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1034" index="4"]
+transform = Transform( 0.872993, 0.302597, -0.22228, 1.41607e-08, 0.562596, 0.765883, 0.375464, -0.70357, 0.516824, -0.435897, -0.0316421, 0.984796 )
+mesh = SubResource( 14 )
+
+[node name="Plane062" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1034" index="5"]
+transform = Transform( -0.71508, 0.463624, -0.340566, 5.47023e-08, 0.543322, 0.739643, 0.575267, 0.576303, -0.423337, -0.694338, 0.0804946, -0.825093 )
+mesh = SubResource( 14 )
+
+[node name="Plane063" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1034" index="6"]
+transform = Transform( -0.368063, -0.565928, 0.415716, -2.36279e-08, 0.46936, 0.638956, -0.702207, 0.296632, -0.217898, 0.920751, 0.0185636, -0.507595 )
+mesh = SubResource( 14 )
+
+[node name="Plane064" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1034" index="7"]
+transform = Transform( 0.824511, -0.456031, 0.334988, 0, 0.592013, 0.805928, -0.565846, -0.664497, 0.488122, 0.676874, 0.00999406, 0.978661 )
+mesh = SubResource( 14 )
 
 [node name="TextureRect" type="TextureRect" parent="." index="1"]
 anchor_right = 1.0

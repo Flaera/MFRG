@@ -13,20 +13,50 @@ onready var res_settings: Resource
 const STATIC_AXIS_VALUE: float = 0.00000
 
 
+func set_keymaps(res: Resource):
+	print("act=",res.act_buttons[0])
+	
+	var up = "g_up"
+	InputMap.action_erase_events(up)
+	InputMap.action_add_event(up,res.act_buttons[0][0])
+	
+	var down = "g_down"
+	InputMap.action_erase_events(down)
+	InputMap.action_add_event(down,res.act_buttons[1][0])
+	
+	var right = "g_right"
+	InputMap.action_erase_events(right)
+	InputMap.action_add_event(right,res.act_buttons[2][0])
+	
+	var left = "g_left"
+	InputMap.action_erase_events(left)
+	InputMap.action_add_event(left,res.act_buttons[3][0])
+	
+	var nitro = "g_nitro"
+	InputMap.action_erase_events(nitro)
+	InputMap.action_add_event(nitro,res.act_buttons[4][0])
+	
+	var brake = "g_brake"
+	InputMap.action_erase_events(brake)
+	InputMap.action_add_event(brake,res.act_buttons[5][0])
+	
+
+
 func _ready():
 	$CanvasLayer/PainelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList/Up.grab_focus()
-	set_process_unhandled_key_input(false)
-	set_process_unhandled_input(false)
-	set_process_input(false)
-	set_process(false)
-	set_physics_process(false)
-	set_physics_process_internal(false)
-	display_keys()
-	set_actions_names()
+	#set_process_unhandled_key_input(false)
+	#set_process_unhandled_input(false)
+	#set_process_input(false)
+	#set_process(false)
+	#set_physics_process(false)
+	#set_physics_process_internal(false)
+	
 	#get_parent().get_parent().get_parent().get_node("ControlMenu/ControlSettings/ViewportContainer").queue_free()
 	#get_parent().get_parent().get_parent().get_node("ControlMenu/ControlSettings/TextureRect").queue_free()
 	res_settings = ResourceLoader.load("res://resources/game_settings/game_settings.tres")
-	
+	set_keymaps(res_settings)
+	display_keys()
+	set_actions_names()
 
 
 
@@ -124,10 +154,10 @@ func set_flags_buttons_false():
 
 
 
-func _unhandled_input(event):
+func _input(event):
 	if (event.is_pressed()==true 
 	and (event is InputEventKey or (event is InputEventJoypadButton or event is InputEventJoypadMotion))):
-		if (b_up):
+		if (b_up==true and b_down==false and b_right==false and b_left==false and b_nitro==false and b_brake==false):
 			#print("UNHANDLED=",event.as_text())
 			InputMap.action_erase_events("g_up")
 			InputMap.action_add_event("g_up",event)
@@ -135,42 +165,42 @@ func _unhandled_input(event):
 			actions_list.get_parent().get_parent().focus_mode=Control.FOCUS_NONE
 			actions_list.get_node("Up").grab_focus()
 			b_up=false
-		elif (b_down):
+		elif (b_up==false and b_down==true and b_right==false and b_left==false and b_nitro==false and b_brake==false):
 			InputMap.action_erase_events("g_down")
 			InputMap.action_add_event("g_down",event)
 			actions_list.get_node("Down/HBoxContainer/LabelInput").text = "%s" % convert_actions2bnames(event.as_text())
 			actions_list.get_parent().get_parent().focus_mode=Control.FOCUS_NONE
 			actions_list.get_node("Down").grab_focus()
 			b_down=false
-		elif (b_right):
+		elif (b_up==false and b_down==false and b_right==true and b_left==false and b_nitro==false and b_brake==false):
 			InputMap.action_erase_events("g_right")
 			InputMap.action_add_event("g_right",event)
 			actions_list.get_node("Right/HBoxContainer/LabelInput").text = "%s" % convert_actions2bnames(event.as_text())
 			actions_list.get_parent().get_parent().focus_mode=Control.FOCUS_NONE
 			actions_list.get_node("Right").grab_focus()
 			b_right=false
-		elif (b_left):
+		elif (b_up==false and b_down==false and b_right==false and b_left==true and b_nitro==false and b_brake==false):
 			InputMap.action_erase_events("g_left")
 			InputMap.action_add_event("g_left",event)
 			actions_list.get_node("Left/HBoxContainer/LabelInput").text = "%s" % convert_actions2bnames(event.as_text())
 			actions_list.get_parent().get_parent().focus_mode=Control.FOCUS_NONE
 			actions_list.get_node("Left").grab_focus()
 			b_left=false
-		elif (b_nitro):
+		elif (b_up==false and b_down==false and b_right==false and b_left==false and b_nitro==true and b_brake==false):
 			InputMap.action_erase_events("g_nitro")
 			InputMap.action_add_event("g_nitro",event)
 			actions_list.get_node("Nitro/HBoxContainer/LabelInput").text = "%s" % convert_actions2bnames(event.as_text())
 			actions_list.get_parent().get_parent().focus_mode=Control.FOCUS_NONE
 			actions_list.get_node("Nitro").grab_focus()
 			b_nitro=false
-		elif (b_brake):
+		elif (b_up==false and b_down==false and b_right==false and b_left==false and b_nitro==false and b_brake==true):
 			InputMap.action_erase_events("g_brake")
 			InputMap.action_add_event("g_brake",event)
 			actions_list.get_node("Brake/HBoxContainer/LabelInput").text = "%s" % convert_actions2bnames(event.as_text())
 			actions_list.get_parent().get_parent().focus_mode=Control.FOCUS_NONE
 			actions_list.get_node("Brake").grab_focus()
 			b_brake=false
-		set_process_unhandled_input(false)
+		#set_process_unhandled_input(false)
 		display_keys()
 	
 	print("Saving keymap...")
@@ -189,56 +219,56 @@ func _on_Button_pressed():
 
 
 func _on_Up_pressed():
-	if (b_up==false):
+	if (b_up==false and b_down==false and b_right==false and b_left==false and b_nitro==false and b_brake==false):
 		#print("PRESSED")
 		actions_list.get_node("Up/HBoxContainer/LabelInput").text = "..."
 		b_up = true
-		set_process_unhandled_input(true)
+		#set_process_unhandled_input(true)
 		actions_list.get_parent().get_parent().focus_mode=Control.FOCUS_ALL
 		actions_list.get_parent().get_parent().grab_focus()
 
 
 func _on_Down_pressed():
-	if (b_down==false):
+	if (b_up==false and b_down==false and b_right==false and b_left==false and b_nitro==false and b_brake==false):
 		actions_list.get_node("Down/HBoxContainer/LabelInput").text = "..."
 		b_down = true
-		set_process_unhandled_input(true)
+		#set_process_unhandled_input(true)
 		actions_list.get_parent().get_parent().focus_mode=Control.FOCUS_ALL
 		actions_list.get_parent().get_parent().grab_focus()
 
 
 func _on_Right_pressed():
-	if (b_right==false):
+	if (b_up==false and b_down==false and b_right==false and b_left==false and b_nitro==false and b_brake==false):
 		actions_list.get_node("Right/HBoxContainer/LabelInput").text = "..."
 		b_right = true
-		set_process_unhandled_input(true)
+		#set_process_unhandled_input(true)
 		actions_list.get_parent().get_parent().focus_mode=Control.FOCUS_ALL
 		actions_list.get_parent().get_parent().grab_focus()
 
 
 func _on_Left_pressed():
-	if (b_left==false):
+	if (b_up==false and b_down==false and b_right==false and b_left==false and b_nitro==false and b_brake==false):
 		actions_list.get_node("Left/HBoxContainer/LabelInput").text = "..."
 		b_left = true
-		set_process_unhandled_input(true)
+		#set_process_unhandled_input(true)
 		actions_list.get_parent().get_parent().focus_mode=Control.FOCUS_ALL
 		actions_list.get_parent().get_parent().grab_focus()
 
 
 func _on_Nitro_pressed():
-	if (b_nitro==false):
+	if (b_up==false and b_down==false and b_right==false and b_left==false and b_nitro==false and b_brake==false):
 		actions_list.get_node("Nitro/HBoxContainer/LabelInput").text = "..."
 		b_nitro = true
-		set_process_unhandled_input(true)
+		#set_process_unhandled_input(true)
 		actions_list.get_parent().get_parent().focus_mode=Control.FOCUS_ALL
 		actions_list.get_parent().get_parent().grab_focus()
 
 
 func _on_Brake_pressed():
-	if (b_brake==false):
+	if (b_up==false and b_down==false and b_right==false and b_left==false and b_nitro==false and b_brake==false):
 		actions_list.get_node("Brake/HBoxContainer/LabelInput").text = "..."
 		b_brake = true
-		set_process_unhandled_input(true)
+		#set_process_unhandled_input(true)
 		actions_list.get_parent().get_parent().focus_mode=Control.FOCUS_ALL
 		actions_list.get_parent().get_parent().grab_focus()
 
