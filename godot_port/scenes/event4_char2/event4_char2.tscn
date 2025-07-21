@@ -35,8 +35,8 @@ surfaces/0 = {
 "vertex_count": 2190
 }
 
-[sub_resource type="ConvexPolygonShape" id=19]
-points = PoolVector3Array( -103.219, 0.892569, -3.97313, 54.469, 0.892569, 4.09138, 54.469, 0.892569, -12.0376, 9.98689, -1.80312, -107.772, -43.9438, -0.455277, 177.942, -204.317, -0.455277, 153.692, -122.091, -0.455277, -109.121, -107.247, 0.892569, 156.362, 54.469, -1.80312, -105.075, -43.9438, 0.892569, -76.7224, -204.317, -0.455277, 32.3874, 19.4102, -0.455277, 89.0076, -29.1249, -1.80312, -109.065, -119.406, 0.892569, 33.7643, -62.8158, -0.455277, -109.093, 36.9396, -0.455277, 47.1958, -68.2114, 0.892569, -68.6579, -188.131, -0.455277, -3.97313, -119.406, 0.892569, 153.692, -21.0188, 0.892569, -64.6115, -11.5955, 0.892569, 67.4273, -60.1053, 0.892569, -76.7224, -197.554, -0.455277, 14.9096, -35.8378, 0.892569, -74.0248, -115.353, 0.892569, 21.6535, -99.1665, 0.892569, -12.0376, -64.1583, 0.892569, -74.0248, -111.3, 0.892569, 12.2121 )
+[sub_resource type="BoxShape" id=22]
+extents = Vector3( 115.289, 1, 138.314 )
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "event4_char2_Plane"
@@ -220,7 +220,8 @@ skeleton = NodePath("../../..")
 [node name="StaticBody" type="StaticBody" parent="ViewportContainer/Viewport/track_curves001"]
 
 [node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/track_curves001/StaticBody"]
-shape = SubResource( 19 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.44, -1.8901, 0 )
+shape = SubResource( 22 )
 
 [node name="car_invoker" type="Spatial" parent="ViewportContainer/Viewport"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.90323, 1.71839, -9.37906 )

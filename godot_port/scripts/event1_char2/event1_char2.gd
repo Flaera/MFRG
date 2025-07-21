@@ -161,9 +161,7 @@ func _on_Area_body_entered(body):
 		loser=true
 
 
-
-
 func _on_Area0_body_entered(body):
 	if (curr_car_enemy.index_checkpoints<len_checkpoints and body==curr_car_enemy):
-		print("body=",body)
+		#print("body=",body)
 		curr_car_enemy.index_checkpoints+=1

@@ -153,7 +153,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.778, -0.627, 2.394 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 11 )
 
-[node name="RayCast" parent="." index="10"]
+[node name="RayCast" parent="." index="11"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [editable path="FrontLeftWheel"]

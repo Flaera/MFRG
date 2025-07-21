@@ -31,8 +31,8 @@ surfaces/0 = {
 "vertex_count": 10
 }
 
-[sub_resource type="ConcavePolygonShape" id=46]
-data = PoolVector3Array( -113.42, 0, 243.917, 18.2288, 0, -113.543, 160.628, 0, 77.7628, -113.42, 0, 243.917, -212.458, 0, 9.4833, 18.2288, 0, -113.543, -212.458, 0, 9.4833, 12.1727, 0, -261.993, 18.2288, 0, -113.543, -212.458, 0, 9.4833, -207.497, 0, -261.993, 12.1727, 0, -261.993, -113.42, 0, 243.917, -434.858, 0, 137.746, -212.458, 0, 9.4833, -113.42, 0, 243.917, -359.354, 0, 300.4, -434.858, 0, 137.746, -113.42, 0, 243.917, -318.687, 0, 474.931, -359.354, 0, 300.4, -113.42, 0, 243.917, -72.752, 0, 418.449, -318.687, 0, 474.931 )
+[sub_resource type="BoxShape" id=59]
+extents = Vector3( 173.253, 1.97999, 353.888 )
 
 [sub_resource type="ArrayMesh" id=45]
 resource_name = "event1_char1_Cube063"
@@ -754,9 +754,8 @@ render_target_update_mode = 3
 [node name="L_BACK_MAP" type="Label" parent="ViewportContainer/Viewport"]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_top = 185.0
+margin_top = -58.0
 margin_right = 347.0
-margin_bottom = 243.0
 theme = ExtResource( 12 )
 text = "BACK_TO_MAP_IN_EVENT"
 
@@ -786,8 +785,9 @@ skeleton = NodePath("../../..")
 
 [node name="StaticBody" type="StaticBody" parent="ViewportContainer/Viewport/ground002"]
 
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/ground002/StaticBody"]
-shape = SubResource( 46 )
+[node name="CollisionShape2" type="CollisionShape" parent="ViewportContainer/Viewport/ground002/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -120.571, -1.40619, 75.2002 )
+shape = SubResource( 59 )
 
 [node name="wall_invisible_collider" type="MeshInstance" parent="ViewportContainer/Viewport"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -106.699, 0, -336.753 )
@@ -2304,7 +2304,7 @@ skeleton = NodePath("../../..")
 transform = Transform( 8.09201, 0, 0, 0, 8.09201, 0, 0, 0, 8.09201, -311.837, 0, 503.172 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="ViewportContainer/Viewport"]
-transform = Transform( 0.938046, -0.0907128, 0.334425, -0.288893, -0.737665, 0.610239, 0.191337, -0.669046, -0.71817, -9.13218, 32.4818, -6.08812 )
+transform = Transform( 0.938046, -0.090713, 0.334425, -0.288893, -0.737665, 0.610239, 0.191337, -0.669046, -0.71817, -9.13218, 32.4818, -6.08812 )
 light_color = Color( 0.854902, 0.796078, 0.560784, 1 )
 shadow_enabled = true
 shadow_color = Color( 0.0980392, 0.0980392, 0.00784314, 1 )

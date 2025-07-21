@@ -56,6 +56,7 @@ func _ready():
 		OS.set_window_size(Res["1920x1080"])
 	#get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_VIEWPORT,SceneTree.STRETCH_ASPECT_KEEP,res_array[size])
 	
+	
 	set_keymaps(save_settings)
 
 

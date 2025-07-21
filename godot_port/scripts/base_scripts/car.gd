@@ -27,6 +27,7 @@ onready var canvas_layer = $Control/CanvasLayer
 onready var progress_bar = $Control/CanvasLayer/ProgressBar
 onready var velocimeter = $Control/CanvasLayer/velo
 onready var pointer = $Control/CanvasLayer/pointer
+onready var audio_sp_node = preload("res://assets/sounds_fx/car_banging.tscn")
 onready var interest: Array = [0,0,0,0,0,0,0]
 onready var danger: Array = [0,0,0,0,0,0,0]
 onready var event
@@ -35,6 +36,9 @@ onready var checkpoints
 onready var len_checkpoints: int
 onready var curr_checkpoint
 onready var index2: int = 0
+onready var timer_reverse_on: bool = false
+onready var timer_reverse: float = 0.0
+onready var nitro_launching: bool = true
 
 var car_phys: Cars
 var axis: Vector2 = Vector2(0.0,0.0)
@@ -42,7 +46,7 @@ var brake_pedal = false
 var nitro: bool
 var raycasts_by_name: Dictionary
 
-const WEIGHT = 1000
+const MASS = 100
 const MAX_DISTANCE = 100000
 const NO_COLLIDE = 200000
 
@@ -79,12 +83,14 @@ func _ready():
 			#set_raycasts()
 			disable_input()
 			
-	weight = WEIGHT
+	mass = MASS
 	#gravity_scale = 2.0
-	if (ResourceLoader.load("res://resources/saved_game/saved_game.tres").car_selected=="solo"):
-		gravity_scale=4.0
-		#weight=4.0
-		
+	var car_used = ResourceLoader.load("res://resources/saved_game/saved_game.tres").car_selected
+	if (car_used=="solo" or car_used=="roots"):
+		#gravity_scale=1.5
+		mass = 2*MASS
+	#weight=4.0
+	
 	
 	#set_process_input(true)
 	#set_process_unhandled_input(true)
@@ -132,10 +138,20 @@ func _physics_process(delta):
 		for particle in wheelParticles:
 			particle.emitting = abs(car_velocity) > 5
 		#prev_pos=translation
+		
+		#Sound engine:
+		if ($SoundsFX/AudioStreamPlayerMotor.playing==false):
+			$SoundsFX/AudioStreamPlayerMotor.play()
+		#Sound nitro:
+		 
+		
+		print("DEBUG==",nitro,"|",nitro_launching)
 	elif (car_mode==1):
 		look_at_checkpoint(delta)
 		axis.y = -1.0
-		
+		nitro=true
+	
+	
 
 
 
@@ -175,24 +191,40 @@ func set_danger():
 func look_at_checkpoint(_delta):
 	var index_in_array_rc = -1
 	for rc in range(0,len(raycasts)):
-		if (curr_checkpoint==raycasts[rc].get_collider()):
+		if (not(raycasts[rc].get_collider()==null) and raycasts[rc].get_collider().is_in_group("checkpoint_ia") and (curr_checkpoint==raycasts[rc].get_collider())):
 			index_in_array_rc=rc
-			if (index_in_array_rc==0):
-				steering=0.0
-			elif (index_in_array_rc>0 and index_in_array_rc<4):
-				steering = 0.6
-			elif (index_in_array_rc>3 and index_in_array_rc<7):
-				steering = -0.6
-			#print("RC=",raycasts[rc].get_collider().get_parent().name,"|ST=", steering)
-	if (index_in_array_rc==-1):
+	if (index_in_array_rc==0):
 		steering=0.0
-	
-	#var dist = translation.distance_to(curr_checkpoint.translation)
-	#if (dist<5 and index2<len(checkpoints)-1): index2+=1
+	elif (index_in_array_rc>0 and index_in_array_rc<4):
+		#if index_in_array_rc==1:
+		#	steering = -0.2
+		#if index_in_array_rc==2:
+		#	steering = -0.4
+		#if index_in_array_rc==3:
+		steering = -0.6
+	elif (index_in_array_rc>3 and index_in_array_rc<7):
+		#if index_in_array_rc==4:
+		#	steering = 0.2
+		#if index_in_array_rc==5:
+		#	steering = 0.4
+		#if index_in_array_rc==6:
+		steering = 0.6
+	elif (index_in_array_rc==-1):
+		steering=0.0
+	#print("DEBUG==",steering,"|",index_in_array_rc)
+	"""if (index_in_array_rc==0 and translation.dot(raycasts[index_in_array_rc].translation)<=1.0):
+		axis.y=1.0
+		timer_reverse_on = true
+		timer_reverse+=_delta
+		if (timer_reverse>=3.0):
+			axis.y=-1.0
+			timer_reverse=0.0
+			timer_reverse_on=false
+	print("DEBUG==",axis)
+	"""
 	if (index_checkpoints<len_checkpoints):
 		curr_checkpoint=checkpoints[index_checkpoints].get_node("Area0")
-	#print("|curr=",curr_checkpoint.get_parent().name)
-
+	
 
 
 func disable_input():
@@ -231,4 +263,8 @@ func enable():
 	mode = self.MODE_RIGID
 
 
+func _on_AreaSFX_body_entered(body):
+	if car_mode==0:
+		var audio_sp_instantiate = audio_sp_node.instance()
+		$SoundsFX.add_child(audio_sp_instantiate)
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=2]
+[gd_scene load_steps=102 format=2]
 
 [ext_resource path="res://resources/env/enviroment.tres" type="Environment" id=1]
 [ext_resource path="res://scenes/themeMFRGLabelDark.tres" type="Theme" id=2]
@@ -65,9 +65,6 @@ surfaces/0 = {
 "vertex_count": 128
 }
 
-[sub_resource type="ConvexPolygonShape" id=4]
-points = PoolVector3Array( -6.78489, -0.02655, -44.0938, 7.46335, -0.58905, 4.09375, -7.53665, -0.58905, 4.09375, 7.46335, -0.58905, -44.0938, 2.77658, 0.16095, 4.09375, 6.89953, -0.02655, -44.0938, -7.53665, -0.58905, -44.0938, -6.78489, -0.02655, 4.09375, -2.66194, 0.16095, -44.0938, 6.89953, -0.02655, 4.09375, 2.77658, 0.16095, -44.0938, -2.66194, 0.16095, 4.09375, -7.28036, -0.395143, 3.27042, -7.28036, -0.395143, -43.2704 )
-
 [sub_resource type="ArrayMesh" id=5]
 resource_name = "event1_char1_Plane356"
 surfaces/0 = {
@@ -82,15 +79,6 @@ surfaces/0 = {
 "skeleton_aabb": [  ],
 "vertex_count": 288
 }
-
-[sub_resource type="ConvexPolygonShape" id=6]
-points = PoolVector3Array( -2.16194, 0.3047, -108.16, 7.1631, -0.322883, -0.188499, 7.75629, -0.6553, 4.14902, -7.6029, -0.6553, 4.14902, 7.75629, -0.6553, -108.16, -7.6029, -0.6553, -108.16, -2.16194, 0.3047, 4.14902, 1.99659, 0.3047, -108.16, 1.99659, 0.3047, 4.14902, -7.16846, -0.32619, -104.983, -7.16846, -0.32619, 0.972319, 7.1631, -0.322883, -103.822 )
-
-[sub_resource type="ConvexPolygonShape" id=7]
-points = PoolVector3Array( -2.16194, 0.3047, -108.16, 7.1631, -0.322883, -0.188499, 7.75629, -0.6553, 4.14902, -7.6029, -0.6553, 4.14902, 7.75629, -0.6553, -108.16, -7.6029, -0.6553, -108.16, -2.16194, 0.3047, 4.14902, 1.99659, 0.3047, -108.16, 1.99659, 0.3047, 4.14902, -7.16846, -0.32619, -104.983, -7.16846, -0.32619, 0.972319, 7.1631, -0.322883, -103.822 )
-
-[sub_resource type="ConvexPolygonShape" id=8]
-points = PoolVector3Array( -2.16194, 0.3047, -108.16, 7.1631, -0.322883, -0.188499, 7.75629, -0.6553, 4.14902, -7.6029, -0.6553, 4.14902, 7.75629, -0.6553, -108.16, -7.6029, -0.6553, -108.16, -2.16194, 0.3047, 4.14902, 1.99659, 0.3047, -108.16, 1.99659, 0.3047, 4.14902, -7.16846, -0.32619, -104.983, -7.16846, -0.32619, 0.972319, 7.1631, -0.322883, -103.822 )
 
 [sub_resource type="ArrayMesh" id=9]
 resource_name = "event1_char1_Cube042"
@@ -137,8 +125,8 @@ surfaces/0 = {
 "vertex_count": 256
 }
 
-[sub_resource type="ConvexPolygonShape" id=12]
-points = PoolVector3Array( -20.4896, 1.46373, -113.718, -39.2554, -1.66014, -229.324, 27.9302, -1.66044, 31.5415, 248.169, -0.0983559, -229.324, 248.169, -1.66044, 58.0725, -39.2554, -1.66014, 58.0725, -29.8585, 1.46373, -165.261, 29.5058, -1.66044, -229.324, -32.9814, 1.46373, -110.595, 1.37107, 1.46373, -143.4, 1.37107, 1.46373, -162.138, -32.9814, 1.46373, -135.579, -26.7355, 1.46373, -110.595, -20.4896, 1.46373, -165.261 )
+[sub_resource type="BoxShape" id=67]
+extents = Vector3( 94.4308, 1, 110.408 )
 
 [sub_resource type="ArrayMesh" id=13]
 resource_name = "event1_char1_Plane351"
@@ -155,9 +143,6 @@ surfaces/0 = {
 "vertex_count": 1205
 }
 
-[sub_resource type="ConvexPolygonShape" id=14]
-points = PoolVector3Array( 14.9815, -1.61224, 1.48564, -7.19993, -2.14671, -11.0783, -7.46934, -2.28041, 10.7072, 16.315, -2.28041, -6.79985, -11.0805, -1.61224, 2.41953, 2.42536, -1.61224, -11.0783, 5.75897, -1.746, 11.109, 13.1092, -2.28041, 7.76654, -2.39137, -1.61224, 11.109, 7.49789, -2.28041, -10.809, -10.8111, -2.28041, 7.23228, -11.0805, -1.746, -5.73131, 16.7204, -1.87957, -6.26558, -11.0805, -2.14671, -7.19946, 7.49789, -2.28041, 10.7072, -11.0805, -1.8797, 6.96297, -2.38865, -1.61224, -11.0783, 13.6426, -1.8797, 7.09762, 15.5149, -1.61224, -1.85679, 6.96451, -1.8797, -11.0783, -5.73042, -1.746, 11.109, 2.41992, -1.61224, 11.109, 6.96451, -2.14665, 11.109, -11.0805, -1.61224, -2.39105, 13.776, -1.746, 6.16157, -5.7277, -1.746, -11.0783, 16.451, -1.74594, -5.06456, 16.7204, -2.01314, -5.73131, -6.93324, -2.14665, 11.109, -11.0805, -1.8797, -6.93233, 5.75897, -1.746, -11.0783, 14.576, -1.61224, 2.82131, -11.0805, -1.746, 5.75978, 7.2312, -2.14671, -11.0783, 13.5066, -2.14665, 7.36476, 16.7204, -2.14671, -6.53054, 16.451, -1.74594, -4.52812, 15.5149, -1.61224, -0.653598 )
-
 [sub_resource type="ArrayMesh" id=15]
 resource_name = "event1_char1_Plane350"
 surfaces/0 = {
@@ -173,9 +158,6 @@ surfaces/0 = {
 "vertex_count": 112
 }
 
-[sub_resource type="ConvexPolygonShape" id=16]
-points = PoolVector3Array( -7.19713, -0.0888954, -36.0813, 7.59775, -0.576553, 4.06951, -7.52275, -0.576489, 4.06951, 7.59775, -0.576553, -36.0813, 4.50734, 0.073742, 4.06951, 4.50734, 0.073742, -36.0813, -4.59663, 0.073742, 4.06951, -7.52275, -0.576489, -36.0813, 7.10932, -0.0888954, -36.0813, -4.59663, 0.073742, -36.0813, -7.19713, -0.0888954, 4.06951, 7.10932, -0.0888954, 4.06951 )
-
 [sub_resource type="ArrayMesh" id=17]
 resource_name = "event1_char1_Plane349"
 surfaces/0 = {
@@ -190,9 +172,6 @@ surfaces/0 = {
 "skeleton_aabb": [  ],
 "vertex_count": 257
 }
-
-[sub_resource type="ConvexPolygonShape" id=18]
-points = PoolVector3Array( 11.1356, -1.66721, 0.670714, -11.0798, -2.32827, -7.53011, -11.0798, -2.32835, 7.41134, 16.5602, -2.46062, -7.53011, 16.5602, -2.46055, 7.54458, -4.33485, -1.66721, 11.1166, -11.0798, -1.66729, -4.35601, 4.3933, -1.66729, -6.86755, 16.4249, -1.79956, 2.78435, -7.50577, -2.32835, 11.1166, 6.7742, -1.79956, 11.1166, 16.2951, -1.93184, -5.81073, -11.0798, -1.79956, 6.74878, 7.56693, -2.32827, 11.1166, -4.06971, -1.66729, -7.13221, 4.26073, -1.66721, 11.1166, 16.5602, -2.06388, 7.01344, 13.1187, -2.46055, 7.676, 16.5575, -1.79948, -2.63663, -11.0798, -1.79956, -6.73613, -11.0798, -1.66721, 4.37414, 13.1215, -2.46062, -7.39687, -6.84562, -1.79956, 11.1166, 16.5602, -2.06388, -7.00079, 16.5602, -1.93184, 5.69014, 10.3401, -1.66729, -2.24055, 10.3428, -1.66721, 2.51969, -10.6478, -2.06388, -7.23862, 16.2924, -1.79948, -2.89946, 11.2681, -1.66721, 0.274636, 16.5602, -1.79956, -0.25651 )
 
 [sub_resource type="ArrayMesh" id=19]
 resource_name = "event1_char1_Plane348"
@@ -1152,37 +1131,17 @@ shape = SubResource( 66 )
 transform = Transform( 5.36442e-07, 0, 1, 0, 1, 0, -1, 0, 5.36442e-07, 90.9804, 0, -49.1447 )
 mesh = SubResource( 3 )
 
-[node name="StaticBody" type="StaticBody" parent="ViewportContainer/Viewport/road006"]
-
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/road006/StaticBody"]
-shape = SubResource( 4 )
-
 [node name="road012" type="MeshInstance" parent="ViewportContainer/Viewport"]
 transform = Transform( -1.19209e-07, 0, -1, 0, 1, 0, 1, 0, -1.19209e-07, 121.008, 0.133081, 12.8696 )
 mesh = SubResource( 5 )
-
-[node name="StaticBody" type="StaticBody" parent="ViewportContainer/Viewport/road012"]
-
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/road012/StaticBody"]
-shape = SubResource( 6 )
 
 [node name="road011" type="MeshInstance" parent="ViewportContainer/Viewport"]
 transform = Transform( -1.19209e-07, 0, -1, 0, 1, 0, 1, 0, -1.19209e-07, 121.008, 0.133081, -48.9773 )
 mesh = SubResource( 5 )
 
-[node name="StaticBody" type="StaticBody" parent="ViewportContainer/Viewport/road011"]
-
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/road011/StaticBody"]
-shape = SubResource( 7 )
-
 [node name="road010" type="MeshInstance" parent="ViewportContainer/Viewport"]
 transform = Transform( -1.19209e-07, 0, -1, 0, 1, 0, 1, 0, -1.19209e-07, 121.008, 0.133081, -119.29 )
 mesh = SubResource( 5 )
-
-[node name="StaticBody" type="StaticBody" parent="ViewportContainer/Viewport/road010"]
-
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/road010/StaticBody"]
-shape = SubResource( 8 )
 
 [node name="Cube002" type="MeshInstance" parent="ViewportContainer/Viewport"]
 transform = Transform( -0.199881, 0, 0.97982, 0, 1, 0, -0.97982, 0, -0.199881, -44.4601, -0.217102, -6.17414 )
@@ -1198,34 +1157,20 @@ mesh = SubResource( 11 )
 [node name="StaticBody" type="StaticBody" parent="ViewportContainer/Viewport/ground_bg"]
 
 [node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/ground_bg/StaticBody"]
-shape = SubResource( 12 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 61.2241, -1.47927, -61.5126 )
+shape = SubResource( 67 )
 
 [node name="road008" type="MeshInstance" parent="ViewportContainer/Viewport"]
 transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 105.994, 1.71843, -119.168 )
 mesh = SubResource( 13 )
 
-[node name="StaticBody" type="StaticBody" parent="ViewportContainer/Viewport/road008"]
-
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/road008/StaticBody"]
-shape = SubResource( 14 )
-
 [node name="road007" type="MeshInstance" parent="ViewportContainer/Viewport"]
 transform = Transform( -1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 105.991, 0, -34.1338 )
 mesh = SubResource( 15 )
 
-[node name="StaticBody" type="StaticBody" parent="ViewportContainer/Viewport/road007"]
-
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/road007/StaticBody"]
-shape = SubResource( 16 )
-
 [node name="road005" type="MeshInstance" parent="ViewportContainer/Viewport"]
 transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 105.994, 1.71843, 12.8777 )
 mesh = SubResource( 17 )
-
-[node name="StaticBody" type="StaticBody" parent="ViewportContainer/Viewport/road005"]
-
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/road005/StaticBody"]
-shape = SubResource( 18 )
 
 [node name="road001" type="MeshInstance" parent="ViewportContainer/Viewport"]
 transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 8.12611, 1.71843, -128.444 )
@@ -2132,10 +2077,10 @@ transform = Transform( 0.768614, 0, -0.639713, 0, 1, 0, 0.639713, 0, 0.768614, 6
 transform = Transform( 0.768614, 0, -0.639713, 0, 1, 0, 0.639713, 0, 0.768614, 104.246, 1.19532, -15.7522 )
 
 [node name="saco_lixo_yellow3" parent="ViewportContainer/Viewport" instance=ExtResource( 40 )]
-transform = Transform( 0.768614, 0, -0.639713, 0, 1, 0, 0.639713, 0, 0.768614, -3.7544, 1.19532, -122.752 )
+transform = Transform( 0.768614, 0, -0.639713, 0, 1, 0, 0.639713, 0, 0.768614, -3.7544, 0.753944, -122.752 )
 
 [node name="saco_lixo_yellow4" parent="ViewportContainer/Viewport" instance=ExtResource( 40 )]
-transform = Transform( 0.768614, 0, -0.639713, 0, 1, 0, 0.639713, 0, 0.768614, -1.7544, 1.19532, -125.752 )
+transform = Transform( 0.768614, 0, -0.639713, 0, 1, 0, 0.639713, 0, 0.768614, -1.7544, 0.753944, -125.752 )
 
 [node name="saco_lixo_yellow5" parent="ViewportContainer/Viewport" instance=ExtResource( 40 )]
 transform = Transform( 0.768614, 0, -0.639713, 0, 1, 0, 0.639713, 0, 0.768614, -5.7544, 1.19532, -143.752 )
@@ -2171,22 +2116,22 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 1, -118 )
 transform = Transform( 0.768614, 0, -0.639713, 0, 1, 0, 0.639713, 0, 0.768614, 13.9505, 0.781873, -116.427 )
 
 [node name="saco_lixo_white5" parent="ViewportContainer/Viewport" instance=ExtResource( 39 )]
-transform = Transform( 0.768614, 0, -0.639713, 0, 1, 0, 0.639713, 0, 0.768614, -11.0495, 0.781873, -125.427 )
+transform = Transform( 0.768614, 0, -0.639713, 0, 1, 0, 0.639713, 0, 0.768614, -11.0495, 0.592016, -125.427 )
 
 [node name="saco_lixo_dark5" parent="ViewportContainer/Viewport" instance=ExtResource( 37 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.87253, 1, -122.956 )
 
 [node name="saco_lixo_dark6" parent="ViewportContainer/Viewport" instance=ExtResource( 37 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.127472, 1, -122.956 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.127472, 0.695862, -122.956 )
 
 [node name="saco_lixo_dark7" parent="ViewportContainer/Viewport" instance=ExtResource( 37 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.12747, 1, -123.956 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.12747, 0.558624, -123.956 )
 
 [node name="saco_lixo_dark8" parent="ViewportContainer/Viewport" instance=ExtResource( 37 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.12747, 1, -122.956 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.12747, 0.558624, -122.956 )
 
 [node name="saco_lixo_dark9" parent="ViewportContainer/Viewport" instance=ExtResource( 37 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.12747, 1, -124.956 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.12747, 0.558624, -124.956 )
 
 [node name="saco_lixo_green3" parent="ViewportContainer/Viewport" instance=ExtResource( 38 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 1, -115 )
@@ -2195,7 +2140,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 1, -115 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 1, -115 )
 
 [node name="saco_lixo_green5" parent="ViewportContainer/Viewport" instance=ExtResource( 38 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, -126 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.558624, -126 )
 
 [node name="box_papelao_big" parent="ViewportContainer/Viewport" instance=ExtResource( 32 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 101, 1, -59 )
@@ -2210,13 +2155,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 99, 1, -56 )
 transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 101, 1, -56 )
 
 [node name="box_papelao_big3" parent="ViewportContainer/Viewport" instance=ExtResource( 32 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, -129 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.558624, -129 )
 
 [node name="box_papelao_small4" parent="ViewportContainer/Viewport" instance=ExtResource( 41 )]
-transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -5, 1, -127 )
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -5, 0.558624, -127 )
 
 [node name="box_papelao_small5" parent="ViewportContainer/Viewport" instance=ExtResource( 41 )]
-transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -9, 1, -127 )
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -9, 0.558624, -127 )
 
 [node name="box_papelao_small3" parent="ViewportContainer/Viewport" instance=ExtResource( 41 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 103, 1, -56 )
@@ -2505,16 +2450,16 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -50 )
 transform = Transform( -0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 25.058, 0, -136.441 )
 
 [node name="tree_seca11" parent="ViewportContainer/Viewport" instance=ExtResource( 42 )]
-transform = Transform( -0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 29.8876, 0, -135.146 )
+transform = Transform( -0.248605, 0, -0.968605, 0, 1, 0, 0.968605, 0, -0.248605, 29.8847, 0, -135.114 )
 
 [node name="tree_seca12" parent="ViewportContainer/Viewport" instance=ExtResource( 9 )]
-transform = Transform( -0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 35.942, 0, -134.559 )
+transform = Transform( -0.248605, 0, -0.968605, 0, 1, 0, 0.968605, 0, -0.248605, 35.9449, 0, -134.591 )
 
 [node name="tree_seca8" parent="ViewportContainer/Viewport" instance=ExtResource( 9 )]
 transform = Transform( 0.482963, 0.258819, 0.836516, -0.12941, 0.965926, -0.224144, -0.866025, 0, 0.5, -5, 0, -77 )
 
 [node name="rampa_event1_char1_v2" parent="ViewportContainer/Viewport" instance=ExtResource( 43 )]
-transform = Transform( -4.37114e-08, 0, 1.664, 0, 1, 0, -1, 0, -7.27358e-08, 107, 0.464, -47.951 )
+transform = Transform( -4.37114e-08, 0, 1.664, 0, 1, 0, -1, 0, -7.27358e-08, 107, 0.16299, -47.951 )
 
 [node name="collisor_wall001" type="MeshInstance" parent="ViewportContainer/Viewport"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 118.312, 4.11738, -30.2406 )

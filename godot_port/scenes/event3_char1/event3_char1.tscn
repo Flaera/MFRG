@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://scenes/event3_char1/wall_event3_char1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/event3_char1/event3_char1_objects.tscn" type="PackedScene" id=2]
@@ -42,8 +42,8 @@ surfaces/0 = {
 "vertex_count": 557
 }
 
-[sub_resource type="ConvexPolygonShape" id=11]
-points = PoolVector3Array( 306.681, -0.0824, 766.999, -87.584, -3.93608, -165.637, 9.33409, -3.93608, -165.637, -159.445, -20.8077, 104.345, 734.754, -3.93608, 530.315, -112.34, -0.0824, 514.465, 72.6854, -20.8077, 57.9856, 287.607, -3.93608, 783.482, 648.944, -0.0824, 412.77, 515.388, -3.93608, 188.796, 726.244, -3.93608, 711.666, -191.37, -0.493144, 225.1, 31.4423, -0.661222, -123.108, -125.595, -3.93608, 521.861, -226.957, -3.93608, 218.433, 709.913, -0.0824, 697.678, 72.6854, -20.8077, 104.345, 119.112, -3.93608, -127.639, -159.445, -20.8077, 57.9856, -134.105, -3.93608, -93.8214, -95.1318, -0.769614, -53.5885, 718.127, -0.0824, 522.626, 338.288, -3.93608, 779.115, 739.009, -3.93608, 568.221, -210.032, -3.93608, 281.608, 528.059, -3.93608, 205.612, -69.5711, -0.849161, -88.1978, 722.084, -3.93608, 509.133, -179.287, -0.411792, 283.41, 722.234, -0.0824, 559.215, -108.764, -3.93608, -136, 308.504, -3.93608, 783.482, 730.499, -3.93608, 669.487, 663.082, -3.93608, 416.507, 335.431, -0.0824, 762.784, -150.935, -3.93608, 450.138 )
+[sub_resource type="BoxShape" id=18]
+extents = Vector3( 459.388, 1, 489.002 )
 
 [sub_resource type="ArrayMesh" id=3]
 resource_name = "event3_char1_Plane006"
@@ -64,9 +64,6 @@ albedo_texture = ExtResource( 4 )
 
 [sub_resource type="PlaneMesh" id=12]
 size = Vector2( 20, 65 )
-
-[sub_resource type="ConvexPolygonShape" id=13]
-points = PoolVector3Array( -10.1208, 0.120794, -32.6208, 10.176, 0.120794, 32.6208, -10.1208, 0.120794, 32.6208, 10.176, 0.120794, -32.6208 )
 
 [sub_resource type="SphereShape" id=14]
 radius = 0.5
@@ -160,7 +157,8 @@ mesh = SubResource( 10 )
 [node name="StaticBody" type="StaticBody" parent="ViewportContainer/Viewport/ground"]
 
 [node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/ground/StaticBody"]
-shape = SubResource( 11 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 195.75, -0.694252, 229.069 )
+shape = SubResource( 18 )
 
 [node name="track_line003" type="MeshInstance" parent="ViewportContainer/Viewport"]
 transform = Transform( -1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, -122.429, -2.04893, 25.5429 )
@@ -171,11 +169,6 @@ material/0 = SubResource( 4 )
 [node name="MeshInstance" type="MeshInstance" parent="ViewportContainer/Viewport/track_line003"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.05176e-05, -0.587338, -35 )
 mesh = SubResource( 12 )
-
-[node name="StaticBody" type="StaticBody" parent="ViewportContainer/Viewport/track_line003/MeshInstance"]
-
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/track_line003/MeshInstance/StaticBody"]
-shape = SubResource( 13 )
 
 [node name="car_invoker" type="Spatial" parent="ViewportContainer/Viewport"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.90323, 1.71839, -9.37906 )
