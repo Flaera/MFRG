@@ -217,7 +217,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1461, 0, 0 )
 mesh = SubResource( 18 )
 skeleton = NodePath("../../..")
 
-[node name="StaticBody" type="StaticBody" parent="ViewportContainer/Viewport/track_curves001"]
+[node name="StaticBody" type="StaticBody" parent="ViewportContainer/Viewport/track_curves001" groups=["ground"]]
 
 [node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/track_curves001/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.44, -1.8901, 0 )

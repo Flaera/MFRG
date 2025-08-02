@@ -11,5 +11,5 @@ dest_files=[ "res://.import/car_banging-vfinal.mp3-293bde68f26ce85f8659d30b52bb1
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

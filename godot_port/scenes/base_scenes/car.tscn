@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/car_parts/AIRaycast.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/car_parts/wheel.tscn" type="PackedScene" id=2]
@@ -8,10 +8,13 @@
 [ext_resource path="res://assets/sounds_fx/car_engine-vfinal.mp3" type="AudioStream" id=6]
 [ext_resource path="res://assets/sounds_fx/nitro-vfinal.mp3" type="AudioStream" id=7]
 
+[sub_resource type="PhysicsMaterial" id=11]
+
 [sub_resource type="BoxShape" id=10]
-extents = Vector3( 1.51352, 0.602344, 3.30695 )
+extents = Vector3( 2.09619, 0.961402, 3.97387 )
 
 [node name="Car" type="VehicleBody" groups=["Car"]]
+physics_material_override = SubResource( 11 )
 script = ExtResource( 5 )
 
 [node name="StateMachine" type="Node" parent="."]
@@ -19,83 +22,105 @@ script = ExtResource( 5 )
 [node name="Control" parent="." instance=ExtResource( 4 )]
 
 [node name="CarMesh" type="MeshInstance" parent="."]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0 )
 skeleton = NodePath("../..")
 
 [node name="FrontLeftWheel" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87959, -0.878698, 1.54511 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87959, -0.878698, 2.26487 )
 use_as_traction = false
 use_as_steering = true
+
+[node name="WheelMesh" parent="FrontLeftWheel" index="0"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
 
 [node name="BackLeftWheel" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87959, -0.878698, -2.42232 )
 
+[node name="WheelMesh" parent="BackLeftWheel" index="0"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
+
 [node name="FrontRightWheel" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.87959, -0.878698, 1.54511 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.87959, -0.878698, 2.26487 )
 use_as_traction = false
 use_as_steering = true
 
 [node name="WheelMesh" parent="FrontRightWheel" index="0"]
-transform = Transform( -1, 0, 0, 0, -1, 0, 0, 0, -1, 0, 0, 0 )
+transform = Transform( 1, 0, 8.74228e-08, 0, -1, 0, -8.74228e-08, 0, 1, 0, 0, 0 )
 
 [node name="BackRightWheel" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.87959, -0.878698, -2.42232 )
 
 [node name="WheelMesh" parent="BackRightWheel" index="0"]
-transform = Transform( -1, 0, 0, 0, -1, 0, 0, 0, -1, 0, 0, 0 )
+transform = Transform( 1, 0, 8.74228e-08, 0, -1, 0, -8.74228e-08, 0, 1, 0, 0, 0 )
 
 [node name="NitroParticles" parent="." instance=ExtResource( 3 )]
 
 [node name="CPUParticles" parent="NitroParticles" index="0"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
 direction = Vector3( 0, 0, 1 )
 
 [node name="NitroParticles2" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -1.16328, -1.11729, -3.86949 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16328, -1.11729, -3.86949 )
 
 [node name="CPUParticles" parent="NitroParticles2" index="0"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
 direction = Vector3( 0, 0, 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0562679, -0.342492 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.0562679, -0.342492 )
 shape = SubResource( 10 )
 
 [node name="SoundsFX" type="Spatial" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
 
 [node name="AreaSFX" type="Area" parent="SoundsFX"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="SoundsFX/AreaSFX"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0562679, -0.342492 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.0562679, -0.342492 )
 shape = SubResource( 10 )
 
 [node name="AudioStreamPlayerMotor" type="AudioStreamPlayer" parent="SoundsFX"]
 stream = ExtResource( 6 )
 volume_db = -19.5
+bus = "music"
 
 [node name="AudioStreamPlayerNitro" type="AudioStreamPlayer" parent="SoundsFX"]
 stream = ExtResource( 7 )
 volume_db = -16.25
+bus = "music"
 
 [node name="RayCast" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.426986, -2.72278 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.426986, 1.36126 )
+visible = false
 
 [node name="0" parent="RayCast" instance=ExtResource( 1 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
+cast_to = Vector3( 0, 0, -30 )
 
 [node name="30" parent="RayCast" instance=ExtResource( 1 )]
 transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 0, 0, 0 )
+cast_to = Vector3( 0, 0, -30 )
 
 [node name="60" parent="RayCast" instance=ExtResource( 1 )]
 transform = Transform( 0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 0, 0, 0 )
+cast_to = Vector3( 0, 0, -30 )
 
 [node name="90" parent="RayCast" instance=ExtResource( 1 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
+cast_to = Vector3( 0, 0, -30 )
 
 [node name="-30" parent="RayCast" instance=ExtResource( 1 )]
 transform = Transform( 0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 0, 0, 0 )
+cast_to = Vector3( 0, 0, -30 )
 
 [node name="-60" parent="RayCast" instance=ExtResource( 1 )]
 transform = Transform( 0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 0, 0, 0 )
+cast_to = Vector3( 0, 0, -30 )
 
 [node name="-90" parent="RayCast" instance=ExtResource( 1 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0 )
+cast_to = Vector3( 0, 0, -30 )
 
 [connection signal="body_entered" from="SoundsFX/AreaSFX" to="." method="_on_AreaSFX_body_entered"]
 

@@ -1095,7 +1095,7 @@ shape = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.628118, 0 )
 mesh = SubResource( 3 )
 
-[node name="StaticBody" type="StaticBody" parent="ViewportContainer/Viewport/ground"]
+[node name="StaticBody" type="StaticBody" parent="ViewportContainer/Viewport/ground" groups=["ground"]]
 
 [node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/ground/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.164224, 0 )

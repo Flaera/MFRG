@@ -1,11 +1,113 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://scripts/musics/music_controller.gd" type="Script" id=1]
-[ext_resource path="res://scenes/musics/all_tracks_v0.wav" type="AudioStream" id=2]
+[ext_resource path="res://scenes/musics/files/43100__devern__trippy-hip-hop-rap-loop.wav" type="AudioStream" id=2]
+[ext_resource path="res://scenes/musics/files/569879__theojt__mean-hip-hop-rap-beat.mp3" type="AudioStream" id=3]
+[ext_resource path="res://scenes/musics/files/619180__beetlemuse__fabulous-rap-loop.wav" type="AudioStream" id=4]
+[ext_resource path="res://scenes/musics/files/685775__viniciuscrazyhorse__indian-rap-72bpm.wav" type="AudioStream" id=5]
+[ext_resource path="res://scenes/musics/files/698100__theojt__rap-trap.wav" type="AudioStream" id=6]
+[ext_resource path="res://scenes/musics/files/9_Gangsta_track.wav" type="AudioStream" id=7]
+[ext_resource path="res://scenes/musics/files/12_Drive_Fast_track.wav" type="AudioStream" id=8]
+[ext_resource path="res://scenes/musics/files/20_No_rules_track.wav" type="AudioStream" id=9]
+[ext_resource path="res://scenes/musics/files/6_Cutscenes_track.wav" type="AudioStream" id=10]
+[ext_resource path="res://scenes/musics/files/4_Chillin'.wav" type="AudioStream" id=11]
+[ext_resource path="res://scenes/musics/files/15_Breaking_Free_track.wav" type="AudioStream" id=12]
+[ext_resource path="res://scenes/musics/files/16_Police_Pursuit_track.wav" type="AudioStream" id=13]
+[ext_resource path="res://scenes/musics/files/5_Chillin'_2_track.wav" type="AudioStream" id=14]
+[ext_resource path="res://scenes/musics/files/3_Cad_track.wav" type="AudioStream" id=15]
+[ext_resource path="res://scenes/musics/files/8_Nightclub_track.wav" type="AudioStream" id=16]
+[ext_resource path="res://scenes/musics/files/11_Lost_Souls_track.wav" type="AudioStream" id=17]
+[ext_resource path="res://scenes/musics/files/13_Street_Park_track.wav" type="AudioStream" id=18]
+[ext_resource path="res://scenes/musics/files/14_Silent_Heist_track.wav" type="AudioStream" id=19]
+[ext_resource path="res://scenes/musics/files/2_Modern western_B.wav" type="AudioStream" id=20]
+[ext_resource path="res://scenes/musics/files/1_Modern western.wav" type="AudioStream" id=21]
+[ext_resource path="res://scenes/musics/files/7_Cutscenes_2_track.wav" type="AudioStream" id=22]
 
 [node name="MusicController" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Musics" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Musics"]
+stream = ExtResource( 5 )
+bus = "music"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Musics"]
 stream = ExtResource( 2 )
+bus = "music"
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="Musics"]
+stream = ExtResource( 6 )
+bus = "music"
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="Musics"]
+stream = ExtResource( 3 )
+bus = "music"
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="Musics"]
+stream = ExtResource( 4 )
+bus = "music"
+
+[node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="Musics"]
+stream = ExtResource( 21 )
+bus = "music"
+
+[node name="AudioStreamPlayer7" type="AudioStreamPlayer" parent="Musics"]
+stream = ExtResource( 20 )
+bus = "music"
+
+[node name="AudioStreamPlayer8" type="AudioStreamPlayer" parent="Musics"]
+stream = ExtResource( 15 )
+bus = "music"
+
+[node name="AudioStreamPlayer9" type="AudioStreamPlayer" parent="Musics"]
+stream = ExtResource( 11 )
+bus = "music"
+
+[node name="AudioStreamPlayer10" type="AudioStreamPlayer" parent="Musics"]
+stream = ExtResource( 14 )
+bus = "music"
+
+[node name="AudioStreamPlayer11" type="AudioStreamPlayer" parent="Musics"]
+stream = ExtResource( 10 )
+bus = "music"
+
+[node name="AudioStreamPlayer12" type="AudioStreamPlayer" parent="Musics"]
+stream = ExtResource( 22 )
+bus = "music"
+
+[node name="AudioStreamPlayer13" type="AudioStreamPlayer" parent="Musics"]
+stream = ExtResource( 16 )
+bus = "music"
+
+[node name="AudioStreamPlayer14" type="AudioStreamPlayer" parent="Musics"]
+stream = ExtResource( 7 )
+bus = "music"
+
+[node name="AudioStreamPlayer15" type="AudioStreamPlayer" parent="Musics"]
+stream = ExtResource( 17 )
+bus = "music"
+
+[node name="AudioStreamPlayer16" type="AudioStreamPlayer" parent="Musics"]
+stream = ExtResource( 8 )
+bus = "music"
+
+[node name="AudioStreamPlayer17" type="AudioStreamPlayer" parent="Musics"]
+stream = ExtResource( 18 )
+bus = "music"
+
+[node name="AudioStreamPlayer18" type="AudioStreamPlayer" parent="Musics"]
+stream = ExtResource( 19 )
+bus = "music"
+
+[node name="AudioStreamPlayer19" type="AudioStreamPlayer" parent="Musics"]
+stream = ExtResource( 12 )
+bus = "music"
+
+[node name="AudioStreamPlayer20" type="AudioStreamPlayer" parent="Musics"]
+stream = ExtResource( 13 )
+bus = "music"
+
+[node name="AudioStreamPlayer21" type="AudioStreamPlayer" parent="Musics"]
+stream = ExtResource( 9 )
 bus = "music"

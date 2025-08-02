@@ -154,7 +154,7 @@ transform = Transform( 0.780779, 0, -0.624807, 0, 1, 0, 0.624807, 0, 0.780779, 2
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42.4449, -1.64625, -24.0596 )
 mesh = SubResource( 10 )
 
-[node name="StaticBody" type="StaticBody" parent="ViewportContainer/Viewport/ground"]
+[node name="StaticBody" type="StaticBody" parent="ViewportContainer/Viewport/ground" groups=["ground"]]
 
 [node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/ground/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 195.75, -0.694252, 229.069 )

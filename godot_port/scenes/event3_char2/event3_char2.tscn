@@ -18,7 +18,7 @@ extents = Vector3( 392.619, 0.748361, 179.916 )
 
 [node name="event3_char2" type="Spatial"]
 
-[node name="StaticBody" type="StaticBody" parent="."]
+[node name="StaticBody" type="StaticBody" parent="." groups=["ground"]]
 
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.444543, 0 )

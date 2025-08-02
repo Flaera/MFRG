@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/13_Street_Park_track.wav-a5d4c0850c1e4fae8a02da66bb6dc974.sample"
+
+[deps]
+
+source_file="res://scenes/musics/files/13_Street_Park_track.wav"
+dest_files=[ "res://.import/13_Street_Park_track.wav-a5d4c0850c1e4fae8a02da66bb6dc974.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

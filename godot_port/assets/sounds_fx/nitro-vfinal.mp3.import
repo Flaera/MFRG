@@ -11,5 +11,5 @@ dest_files=[ "res://.import/nitro-vfinal.mp3-60e679d3ed91d82d2f03edab93e79703.mp
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

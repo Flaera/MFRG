@@ -1154,7 +1154,7 @@ mesh = SubResource( 10 )
 [node name="ground_bg" type="MeshInstance" parent="ViewportContainer/Viewport"]
 mesh = SubResource( 11 )
 
-[node name="StaticBody" type="StaticBody" parent="ViewportContainer/Viewport/ground_bg"]
+[node name="StaticBody" type="StaticBody" parent="ViewportContainer/Viewport/ground_bg" groups=["ground"]]
 
 [node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/ground_bg/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 61.2241, -1.47927, -61.5126 )

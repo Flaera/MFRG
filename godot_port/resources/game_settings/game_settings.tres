@@ -41,7 +41,7 @@ unicode = 112
 [resource]
 script = ExtResource( 1 )
 index_resolution = 2
-sound_and_music_volume = -27
+sound_and_music_volume = 0
 color_legend = Color( 1, 1, 1, 1 )
 contrast_tex = 0.9
 contrast_3d = 1.0

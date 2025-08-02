@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/4_Chillin'.wav-41b79152f8511fa5b7998342fc69efe7.sample"
+
+[deps]
+
+source_file="res://scenes/musics/files/4_Chillin'.wav"
+dest_files=[ "res://.import/4_Chillin'.wav-41b79152f8511fa5b7998342fc69efe7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

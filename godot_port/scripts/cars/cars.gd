@@ -42,13 +42,13 @@ func setMove(var move_flag: bool):
 func move_car(axis, accel_dir,
  rpm0, rpm1, back_wheel1, back_wheel2):
 	if (axis.y>0.0 and abs(rpm0)<max_torque/2):
-		back_wheel1.engine_force += 1 * abs(accel_dir) * max_torque * abs(1-rpm0/max_rpm)
-		back_wheel2.engine_force += 1 * abs(accel_dir) * max_torque * abs(1-rpm1/max_rpm)
+		back_wheel1.engine_force += -1 * abs(accel_dir) * max_torque * abs(1-rpm0/max_rpm)
+		back_wheel2.engine_force += -1 * abs(accel_dir) * max_torque * abs(1-rpm1/max_rpm)
 		#last_gear = axis.y
 	#ACCELERATION:
 	elif (axis.y<0.0 and abs(rpm0)<max_torque*2.3):
-		back_wheel1.engine_force += -1 * abs(accel_dir) * max_torque * abs(1-rpm0/max_rpm)
-		back_wheel2.engine_force += -1 * abs(accel_dir) * max_torque * abs(1-rpm1/max_rpm)
+		back_wheel1.engine_force += 1 * abs(accel_dir) * max_torque * abs(1-rpm0/max_rpm)
+		back_wheel2.engine_force += 1 * abs(accel_dir) * max_torque * abs(1-rpm1/max_rpm)
 		#last_gear = axis.y
 	#TO STOP THE CAR:
 	else:

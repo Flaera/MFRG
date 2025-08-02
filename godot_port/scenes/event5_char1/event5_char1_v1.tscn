@@ -783,7 +783,7 @@ transform = Transform( 1.48113, 0, 0, 0, 1.48113, 0, 0, 0, 1.48113, 0, 0, 0 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../../..")
 
-[node name="StaticBody" type="StaticBody" parent="ViewportContainer/Viewport/ground002"]
+[node name="StaticBody" type="StaticBody" parent="ViewportContainer/Viewport/ground002" groups=["ground"]]
 
 [node name="CollisionShape2" type="CollisionShape" parent="ViewportContainer/Viewport/ground002/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -120.571, -1.40619, 75.2002 )

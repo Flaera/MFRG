@@ -15,7 +15,13 @@ export var max_rpm: float
 export var fully_nitro: float
 export var delta_nitro_inc: float
 export var delta_nitro_dec: float
+export var steering_speed: float = 0.8
+export (NodePath) var path_follow_node
+export var max_engine_force = 1200
+export var max_steering_angle = 0.3
+export var brake_force = 20
 
+onready var path_follow = get_node(path_follow_node)
 onready var backLeftWheel = $BackLeftWheel
 onready var backRightWheel = $BackRightWheel
 onready var nitroParticles = [$NitroParticles/CPUParticles, $NitroParticles2/CPUParticles]
@@ -28,13 +34,19 @@ onready var progress_bar = $Control/CanvasLayer/ProgressBar
 onready var velocimeter = $Control/CanvasLayer/velo
 onready var pointer = $Control/CanvasLayer/pointer
 onready var audio_sp_node = preload("res://assets/sounds_fx/car_banging.tscn")
-onready var interest: Array = [0,0,0,0,0,0,0]
-onready var danger: Array = [0,0,0,0,0,0,0]
+onready var interest: Array = [Vector3.ZERO,Vector3.ZERO,
+								Vector3.ZERO,Vector3.ZERO,
+								Vector3.ZERO,Vector3.ZERO,
+								Vector3.ZERO]
+onready var danger: Array = [Vector3.ZERO,Vector3.ZERO,
+								Vector3.ZERO,Vector3.ZERO,
+								Vector3.ZERO,Vector3.ZERO,
+								Vector3.ZERO]
 onready var event
-onready var index_checkpoints: int = 0
-onready var checkpoints
-onready var len_checkpoints: int
-onready var curr_checkpoint
+#onready var checkpoints
+#onready var index_checkpoints: int = 0
+#onready var len_checkpoints: int
+#onready var curr_checkpoint
 onready var index2: int = 0
 onready var timer_reverse_on: bool = false
 onready var timer_reverse: float = 0.0
@@ -65,16 +77,20 @@ func _ready():
 		MODES.PLAYER:
 			car_phys = Cars.new(acceleration, max_rpm, max_torque, fully_nitro)
 			canvas_layer.visible = true
+			print("Player=",car_mode)
 		MODES.AI:
 			event = get_parent().get_parent().get_parent().get_parent()
-			checkpoints = event.get_node("ViewportContainer/Viewport/checkpoints").get_children()
-			len_checkpoints = len(checkpoints)
-			curr_checkpoint = checkpoints[0].get_node("Area0")
+			#checkpoints = event.get_node("ViewportContainer/Viewport/checkpoints").get_children()
+			
+			#len_checkpoints = len(checkpoints)
+			#curr_checkpoint = checkpoints[0]
 			#set_raycasts()
 			canvas_layer.visible=false
 			#disable_particles()
 			car_phys = Cars.new(acceleration, max_rpm, max_torque, fully_nitro)
 			disable_input()
+			print("IA=",car_mode)
+			
 		MODES.STATIC:
 			canvas_layer.visible=false
 			disable_particles()
@@ -82,13 +98,14 @@ func _ready():
 			car_phys = Cars.new(acceleration, max_rpm, max_torque, fully_nitro)
 			#set_raycasts()
 			disable_input()
+			print("Static=",car_mode)
 			
-	mass = MASS
-	#gravity_scale = 2.0
+	#mass = MASS
+	#gravity_scale = 3.0
 	var car_used = ResourceLoader.load("res://resources/saved_game/saved_game.tres").car_selected
-	if (car_used=="solo" or car_used=="roots"):
-		#gravity_scale=1.5
-		mass = 2*MASS
+	if (car_used=="solo" or car_used=="sun"):
+		gravity_scale=2.0
+	#mass = 8*MASS
 	#weight=4.0
 	
 	
@@ -112,10 +129,10 @@ func _input(event):
 
 
 func _physics_process(delta):
-	var calc = car_phys.mainCarPhys(axis, nitro, backLeftWheel, backRightWheel,
-	 brake_pedal, brake, steering, delta, car_mode)
 	
 	if car_phys.move==true and car_mode==0:
+		var calc = car_phys.mainCarPhys(axis, nitro, backLeftWheel, backRightWheel,
+		brake_pedal, brake, steering, delta, car_mode)
 		#print("calc=",calc[1])
 		brake = calc[0]
 		steering = calc[1]
@@ -143,87 +160,99 @@ func _physics_process(delta):
 		if ($SoundsFX/AudioStreamPlayerMotor.playing==false):
 			$SoundsFX/AudioStreamPlayerMotor.play()
 		#Sound nitro:
-		 
+		if (nitro==true and nitro_launching==true):
+			$SoundsFX/AudioStreamPlayerNitro.play()
+			nitro_launching=false
+		if (Input.is_action_just_released("g_nitro")):
+			nitro_launching=true
+			
 		
-		print("DEBUG==",nitro,"|",nitro_launching)
-	elif (car_mode==1):
+		#print("DEBUG==",nitro,"|",nitro_launching)
+	elif (car_phys.move==true and car_mode==1):
 		look_at_checkpoint(delta)
-		axis.y = -1.0
+		var calc_ai = car_phys.mainCarPhys(axis, nitro, backLeftWheel, backRightWheel,
+		brake_pedal, brake, steering, delta, car_mode)
 		nitro=true
-	
-	
+		#if (index_checkpoints<len_checkpoints):
+		#	curr_checkpoint=checkpoints[index_checkpoints]
+		#progress_bar.value=calc_ai[2]
 
 
-
-func distance_2(origin: Vector3, target: Vector3):
-	var vec0 = Vector2(origin.x, origin.z)
-	var vec1 = Vector2(target.x, target.z)
-	var result = vec0.distance_to(vec1)
-	return result
-
-
-func set_interest():
-	interest = [-MAX_DISTANCE,-MAX_DISTANCE,
-	-MAX_DISTANCE,-MAX_DISTANCE,
-	-MAX_DISTANCE,-MAX_DISTANCE,
-	-MAX_DISTANCE]
-	#print(len(raycasts))
-	for rc in range(0,len(raycasts)):
-		if (raycasts[rc].is_colliding()==false):
-			interest[rc]=NO_COLLIDE
-		else:
-			var point_collider = raycasts[rc].get_collision_point().distance_to(translation)
-			interest[rc]=point_collider
-	
-
-
-func set_danger():
-	danger=[0,0,0,0,0,0,0]
-	for rc in range(0, len(raycasts)):
-		if (raycasts[rc].is_colliding()==false):
-			danger[rc]=NO_COLLIDE
-		else:
-			var point_collider = raycasts[rc].get_collision_point().distance_to(translation)
-			danger[rc]=point_collider
-
-
-
-func look_at_checkpoint(_delta):
-	var index_in_array_rc = -1
-	for rc in range(0,len(raycasts)):
-		if (not(raycasts[rc].get_collider()==null) and raycasts[rc].get_collider().is_in_group("checkpoint_ia") and (curr_checkpoint==raycasts[rc].get_collider())):
-			index_in_array_rc=rc
-	if (index_in_array_rc==0):
-		steering=0.0
-	elif (index_in_array_rc>0 and index_in_array_rc<4):
-		#if index_in_array_rc==1:
-		#	steering = -0.2
-		#if index_in_array_rc==2:
-		#	steering = -0.4
-		#if index_in_array_rc==3:
-		steering = -0.6
-	elif (index_in_array_rc>3 and index_in_array_rc<7):
-		#if index_in_array_rc==4:
-		#	steering = 0.2
-		#if index_in_array_rc==5:
-		#	steering = 0.4
-		#if index_in_array_rc==6:
-		steering = 0.6
-	elif (index_in_array_rc==-1):
-		steering=0.0
-	#print("DEBUG==",steering,"|",index_in_array_rc)
-	"""if (index_in_array_rc==0 and translation.dot(raycasts[index_in_array_rc].translation)<=1.0):
-		axis.y=1.0
-		timer_reverse_on = true
-		timer_reverse+=_delta
-		if (timer_reverse>=3.0):
-			axis.y=-1.0
-			timer_reverse=0.0
-			timer_reverse_on=false
-	print("DEBUG==",axis)
+func look_at_checkpoint(delta):
+	"""var dist: float = global_transform.origin.distance_to(curr_checkpoint.global_transform.origin)
+	if (dist<15.0 and index_checkpoints<len_checkpoints):
+		index_checkpoints+=1
+	set_danger()
+	set_interest()
+	var angle: float = choose_direction()
+	steering=(angle.y*delta)
+	print("DEBUG=",dist,"|",index_checkpoints)
 	"""
-	if (index_checkpoints<len_checkpoints):
-		curr_checkpoint=checkpoints[index_checkpoints].get_node("Area0")
+	#var dist: float = global_transform.origin.distance_to(curr_checkpoint.global_transform.origin)
+	#if dist < 15.0 and index_checkpoints < len_checkpoints:
+	#	index_checkpoints += 1
+
+	if not path_follow:
+		return
+
+	# Avança ao longo do caminho
+	path_follow.unit_offset += delta * 0.005
+	#print("POS_PATH=",path_follow.global_transform.origin)
+
+	# Obter direção do próximo ponto
+	var target_position = path_follow.global_transform.origin
+	var car_position = global_transform.origin
+	var direction_to_target = (target_position - car_position).normalized()
+	# Frente do carro (eixo -Z)
+	var forward = global_transform.basis.z
+	var angle = forward.angle_to(direction_to_target)
+	var cross = forward.cross(direction_to_target).y
+	var dot = forward.dot(direction_to_target)  # 🔥 chave para saber frente ou trás
+	#print("Dot:", forward.dot(direction_to_target))
+
+	steering = clamp(angle * sign(cross), -max_steering_angle, max_steering_angle)
+
+	# ✅ Só acelera se o alvo estiver NA FRENTE
+	if dot > 0.1 and abs(angle) < PI:
+		axis.y = -1
+		brake = 0
+		#print("IA acelerando")
+	else:
+		axis.y = 0
+		brake = brake_force
+		#print("IA freando ou ré evitada",dot)
+
+	axis.x = 0
+	
+	
+
+	"""
+	if (curr_checkpoint.global_transform.origin.distance_to(self.global_transform.origin)>1.0):
+		var dir = (curr_checkpoint.global_transform.origin-self.global_transform.origin).normalized()
+		var global_foward = global_transform.basis.z
+		var dot_product = global_foward.dot(dir)
+		if (dot_product>0):axis.y=1
+		else:axis.y=-1
+		var cross_product_y = global_transform.basis.z.cross(dir).y
+		var angle_to_target = atan2(cross_product_y, dot_product)
+		var target_steering = clamp(angle_to_target / PI * 0.5, -0.8, 0.8)
+		set_steering(lerp(get_steering(), target_steering, steering_speed))
+		print("DEBUG==","|",curr_checkpoint.global_transform.origin)
+		#print("DEBUG2==","|",self.position)
+	else:
+		axis.y=0.0
+		steering=0.0
+	"""
+
+
+func multiply_vector(vec1: Vector3, vec2: Vector3) -> float:
+	var a1=vec1[0]
+	var b1=vec1[1]
+	var c1=vec1[2]
+	var a2=vec2[0]
+	var b2=vec2[1]
+	var c2=vec2[2]
+	return sqrt(pow(a1*a2,2)+pow(b1*b2,2)+pow(c1*c2,2))
 	
 
 
@@ -264,7 +293,8 @@ func enable():
 
 
 func _on_AreaSFX_body_entered(body):
-	if car_mode==0:
+	if car_mode==0 and not(body.is_in_group("ground")):
+		print("BODY:",body)
 		var audio_sp_instantiate = audio_sp_node.instance()
 		$SoundsFX.add_child(audio_sp_instantiate)
 
