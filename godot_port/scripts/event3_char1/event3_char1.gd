@@ -12,7 +12,7 @@ onready var win: int = 0
 onready var golds: int = 0.0
 onready var time_end: float = 0.0
 onready var curr_car_enemy
-onready var len_checkpoints: int = len($ViewportContainer/Viewport/checkpoints.get_children())
+#onready var len_checkpoints: int = len($ViewportContainer/Viewport/checkpoints.get_children())
 onready var index_cp: int = 0
 onready var event_name0: String
 onready var save_file: Resource
@@ -39,10 +39,10 @@ func _ready():
 	#load enemy:
 	var car_loaded_enemy: Object = load("res://scenes/cars_updated/"+save_file.car_selected+".tscn")
 	#car_loaded_enemy.MODES.AI
-	curr_car_enemy = car_loaded_enemy.instance()
+	curr_car_enemy=$ViewportContainer/Viewport/car_invoker_enemy/caixa #car_loaded_enemy.instance()
 	curr_car_enemy.car_mode=1
 	#curr_car_enemy._ready()
-	get_node("ViewportContainer/Viewport/car_invoker_enemy").add_child(curr_car_enemy)
+	#get_node("ViewportContainer/Viewport/car_invoker_enemy").add_child(curr_car_enemy)
 
 	#camera = preload("res://scenes/camera/camera.scn")
 	#curr_cam = camera.instance()
@@ -159,6 +159,6 @@ func _on_Area_body_entered(body):
 
 
 func _on_Area0_body_entered(body):
-	if (curr_car_enemy.index_checkpoints<len_checkpoints and body==curr_car_enemy):
+	pass#if (curr_car_enemy.index_checkpoints<len_checkpoints and body==curr_car_enemy):
 		#print("body=",body)
-		curr_car_enemy.index_checkpoints+=1
+		#curr_car_enemy.index_checkpoints+=1

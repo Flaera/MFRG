@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=2]
+[gd_scene load_steps=104 format=2]
 
 [ext_resource path="res://resources/env/enviroment.tres" type="Environment" id=1]
 [ext_resource path="res://scenes/themeMFRGLabelDark.tres" type="Theme" id=2]
@@ -46,6 +46,13 @@
 [ext_resource path="res://assets/blender2.79_old/assets/assets_event1_char1/chegada_v2-Area-.tscn" type="PackedScene" id=44]
 [ext_resource path="res://assets/blender2.79_old/assets/event1_char1/block_event1_char1_v2.scn" type="PackedScene" id=45]
 [ext_resource path="res://themeAlphaTransTotal.tres" type="Theme" id=46]
+[ext_resource path="res://scenes/cars_updated/lilas.tscn" type="PackedScene" id=47]
+
+[sub_resource type="Curve3D" id=68]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -1.36068, -1.09299, -7.87054, 0, 0, 0, 0, 0, 0, -4.95059, -1.09299, -12.9617, 0, 0, 0, 0, 0, 0, -12.2592, -1.09299, -22.3265 ),
+"tilts": PoolRealArray( 0, 0, 0 )
+}
 
 [sub_resource type="SphereShape" id=66]
 radius = 0.5
@@ -944,14 +951,26 @@ one_shot = true
 autostart = true
 
 [node name="car_invoker" type="Spatial" parent="ViewportContainer/Viewport"]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13.0525, 1.09299, -2.7589 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13.0525, 1.09299, 0.708537 )
 
 [node name="Camera" type="Camera" parent="ViewportContainer/Viewport/car_invoker"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
+transform = Transform( -1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, 0, 0, 0 )
 current = true
 
 [node name="car_invoker_enemy" type="Spatial" parent="ViewportContainer/Viewport"]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13.0525, 1.09299, -5.7589 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13.0525, 1.09299, -7.18144 )
+
+[node name="Path" type="Path" parent="ViewportContainer/Viewport/car_invoker_enemy"]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -1.42254, 0, 0 )
+curve = SubResource( 68 )
+
+[node name="PathFollow" type="PathFollow" parent="ViewportContainer/Viewport/car_invoker_enemy/Path"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.36068, -1.09299, -7.87054 )
+loop = false
+
+[node name="lilas" parent="ViewportContainer/Viewport/car_invoker_enemy" instance=ExtResource( 47 )]
+speed_path = 0.007
+path_to_follow = NodePath("../Path/PathFollow")
 
 [node name="DirectionalLight" type="DirectionalLight" parent="ViewportContainer/Viewport"]
 transform = Transform( 0.938046, -0.090713, 0.334425, -0.288893, -0.737665, 0.610239, 0.191337, -0.669046, -0.71817, -9.13218, 32.4818, -6.08812 )

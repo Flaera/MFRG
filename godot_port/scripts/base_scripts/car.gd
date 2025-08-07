@@ -16,12 +16,14 @@ export var fully_nitro: float
 export var delta_nitro_inc: float
 export var delta_nitro_dec: float
 export var steering_speed: float = 0.8
-export (NodePath) var path_follow_node
 export var max_engine_force = 1200
 export var max_steering_angle = 0.3
 export var brake_force = 20
+export var speed_path: float = 0.0075
 
-onready var path_follow = get_node(path_follow_node)
+export (NodePath) var path_to_follow
+var path_follow_node
+
 onready var backLeftWheel = $BackLeftWheel
 onready var backRightWheel = $BackRightWheel
 onready var nitroParticles = [$NitroParticles/CPUParticles, $NitroParticles2/CPUParticles]
@@ -91,6 +93,8 @@ func _ready():
 			disable_input()
 			print("IA=",car_mode)
 			
+			if path_to_follow != null and has_node(path_to_follow):
+				path_follow_node = get_node(path_to_follow)
 		MODES.STATIC:
 			canvas_layer.visible=false
 			disable_particles()
@@ -170,12 +174,11 @@ func _physics_process(delta):
 		#print("DEBUG==",nitro,"|",nitro_launching)
 	elif (car_phys.move==true and car_mode==1):
 		look_at_checkpoint(delta)
+		nitro=true
 		var calc_ai = car_phys.mainCarPhys(axis, nitro, backLeftWheel, backRightWheel,
 		brake_pedal, brake, steering, delta, car_mode)
-		nitro=true
-		#if (index_checkpoints<len_checkpoints):
-		#	curr_checkpoint=checkpoints[index_checkpoints]
-		#progress_bar.value=calc_ai[2]
+		
+		
 
 
 func look_at_checkpoint(delta):
@@ -191,41 +194,45 @@ func look_at_checkpoint(delta):
 	#var dist: float = global_transform.origin.distance_to(curr_checkpoint.global_transform.origin)
 	#if dist < 15.0 and index_checkpoints < len_checkpoints:
 	#	index_checkpoints += 1
-
-	if not path_follow:
+	if path_follow_node == null:
 		return
+	
+	#var dist = path_follow_node.global_transform.origin.distance_to(self.global_transform.origin)
+	#if (dist>10.0):
+	path_follow_node.unit_offset += delta*speed_path
+	print("PATH=", path_follow_node.unit_offset,"|")
+	
+	# Pega posição do alvo
+	var target_pos = path_follow_node.global_transform.origin
+	
+	# Adiciona um leve offset adiante do ponto (opcional, ajustável)
+	target_pos += path_follow_node.transform.basis.z * 5.0
+	
+	# Vetores de direção
+	var to_target = (target_pos - global_transform.origin).normalized()
+	var forward = +global_transform.basis.z.normalized()  # Frente do carro (ajuste se necessário)
 
-	# Avança ao longo do caminho
-	path_follow.unit_offset += delta * 0.005
-	#print("POS_PATH=",path_follow.global_transform.origin)
-
-	# Obter direção do próximo ponto
-	var target_position = path_follow.global_transform.origin
-	var car_position = global_transform.origin
-	var direction_to_target = (target_position - car_position).normalized()
-	# Frente do carro (eixo -Z)
-	var forward = global_transform.basis.z
-	var angle = forward.angle_to(direction_to_target)
-	var cross = forward.cross(direction_to_target).y
-	var dot = forward.dot(direction_to_target)  # 🔥 chave para saber frente ou trás
-	#print("Dot:", forward.dot(direction_to_target))
-
-	steering = clamp(angle * sign(cross), -max_steering_angle, max_steering_angle)
-
-	# ✅ Só acelera se o alvo estiver NA FRENTE
-	if dot > 0.1 and abs(angle) < PI:
-		axis.y = -1
-		brake = 0
-		#print("IA acelerando")
+	# Alinhamento
+	var dot = forward.dot(to_target)
+	var angle = forward.cross(to_target).y  # Gira em torno do eixo Y (para direção lateral)
+	
+	# Suaviza o ângulo
+	steering = clamp(angle, -1, 1)
+	
+	# Decide aceleração/freio
+	if dot > 0.2:
+		axis.y = -1.0  # Acelera
+		brake = false
+	elif dot < -0.2:
+		axis.y = 1.0  # Dá ré se muito atrás (opcional)
+		brake = true
 	else:
-		axis.y = 0
-		brake = brake_force
-		#print("IA freando ou ré evitada",dot)
-
-	axis.x = 0
+		axis.y = 0.0
+		brake = false
 	
+	# DEBUG
+	#print("🚗 dot:", dot, " angle:", angle, " steering:", steering, " axis.y:", axis.y, " brake:", brake)
 	
-
 	"""
 	if (curr_checkpoint.global_transform.origin.distance_to(self.global_transform.origin)>1.0):
 		var dir = (curr_checkpoint.global_transform.origin-self.global_transform.origin).normalized()
@@ -293,8 +300,8 @@ func enable():
 
 
 func _on_AreaSFX_body_entered(body):
-	if car_mode==0 and not(body.is_in_group("ground")):
-		print("BODY:",body)
+	if car_mode==0 and body!=self and not(body.is_in_group("ground")):
+		#print("BODY:",body)
 		var audio_sp_instantiate = audio_sp_node.instance()
 		$SoundsFX.add_child(audio_sp_instantiate)
 

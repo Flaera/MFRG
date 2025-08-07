@@ -190,6 +190,10 @@ mesh = SubResource( 1 )
 transform = Transform( 0.364042, 0, 0.300868, 0, 0.857001, 0, -0.127165, 0, 0.861314, 461.881, 0.189121, 498.634 )
 mesh = SubResource( 1 )
 
+[node name="barraco3074" type="MeshInstance" parent="."]
+transform = Transform( 0.364042, 0, 0.300868, 0, 0.857001, 0, -0.127165, 0, 0.861314, 434.531, 0.189121, 501.328 )
+mesh = SubResource( 1 )
+
 [node name="barraco3055" type="MeshInstance" parent="."]
 transform = Transform( 0.364042, 0, 0.300868, 0, 0.857001, 0, -0.127165, 0, 0.861314, 459.394, 0.189121, 491.174 )
 mesh = SubResource( 1 )
@@ -204,6 +208,30 @@ mesh = SubResource( 1 )
 
 [node name="barraco3052" type="MeshInstance" parent="."]
 transform = Transform( 0.364042, 0, 0.300868, 0, 0.857001, 0, -0.127165, 0, 0.861314, 451.657, 0.189121, 467.687 )
+mesh = SubResource( 1 )
+
+[node name="barraco3075" type="MeshInstance" parent="."]
+transform = Transform( 0.364042, 0, 0.300868, 0, 0.857001, 0, -0.127165, 0, 0.861314, 427.415, 0.189121, 478.047 )
+mesh = SubResource( 1 )
+
+[node name="barraco3076" type="MeshInstance" parent="."]
+transform = Transform( 0.364042, 0, 0.300868, 0, 0.857001, 0, -0.127165, 0, 0.861314, 422.415, 0.189121, 495.047 )
+mesh = SubResource( 1 )
+
+[node name="barraco3077" type="MeshInstance" parent="."]
+transform = Transform( 0.364042, 0, 0.300868, 0, 0.857001, 0, -0.127165, 0, 0.861314, 433.415, 0.189121, 527.047 )
+mesh = SubResource( 1 )
+
+[node name="barraco3078" type="MeshInstance" parent="."]
+transform = Transform( 0.30944, 0, 0.5444, 0, 0.857001, 0, -0.230096, 0, 0.732128, 397.957, 0.189121, 430.251 )
+mesh = SubResource( 1 )
+
+[node name="barraco3079" type="MeshInstance" parent="."]
+transform = Transform( 0.30944, 0, 0.5444, 0, 0.857001, 0, -0.230096, 0, 0.732128, 412.047, 0.189121, 450.557 )
+mesh = SubResource( 1 )
+
+[node name="barraco3080" type="MeshInstance" parent="."]
+transform = Transform( 0.30944, 0, 0.5444, 0, 0.857001, 0, -0.230096, 0, 0.732128, 410.482, 0.189121, 383.771 )
 mesh = SubResource( 1 )
 
 [node name="barraco3051" type="MeshInstance" parent="."]
@@ -270,6 +298,38 @@ mesh = SubResource( 1 )
 transform = Transform( 0.262351, 0, 0.668653, 0, 0.857001, 0, -0.282612, 0, 0.620715, 380.059, 0.189121, 360.101 )
 mesh = SubResource( 1 )
 
+[node name="barraco3066" type="MeshInstance" parent="."]
+transform = Transform( 0.262351, 0, 0.668653, 0, 0.857001, 0, -0.282612, 0, 0.620715, 379.852, 0.189121, 349.534 )
+mesh = SubResource( 1 )
+
+[node name="barraco3067" type="MeshInstance" parent="."]
+transform = Transform( 0.190355, 0, -0.79344, 0, 0.857001, 0, 0.335355, 0, 0.450375, 375.545, 0.189121, 343.327 )
+mesh = SubResource( 1 )
+
+[node name="barraco3068" type="MeshInstance" parent="."]
+transform = Transform( 0.325307, 0, -0.489894, 0, 0.857001, 0, 0.207058, 0, 0.769668, 341.545, 0.189121, 319.327 )
+mesh = SubResource( 1 )
+
+[node name="barraco3069" type="MeshInstance" parent="."]
+transform = Transform( 0.325307, 0, -0.489894, 0, 0.857001, 0, 0.207058, 0, 0.769668, 344.239, 0.189121, 361.388 )
+mesh = SubResource( 1 )
+
+[node name="barraco3070" type="MeshInstance" parent="."]
+transform = Transform( 0.260359, 0, -0.672997, 0, 0.857001, 0, 0.284449, 0, 0.616002, 368.067, 0.189121, 404.486 )
+mesh = SubResource( 1 )
+
+[node name="barraco3071" type="MeshInstance" parent="."]
+transform = Transform( 0.260359, 0, -0.672997, 0, 0.857001, 0, 0.284449, 0, 0.616002, 371.797, 0.189121, 409.251 )
+mesh = SubResource( 1 )
+
+[node name="barraco3072" type="MeshInstance" parent="."]
+transform = Transform( 0.260359, 0, -0.672997, 0, 0.857001, 0, 0.284449, 0, 0.616002, 378.797, 0.189121, 410.251 )
+mesh = SubResource( 1 )
+
+[node name="barraco3073" type="MeshInstance" parent="."]
+transform = Transform( 0.230588, 0, -0.73126, 0, 0.857001, 0, 0.309074, 0, 0.545566, 439.797, 0.189121, 423.251 )
+mesh = SubResource( 1 )
+
 [node name="barraco1068" type="MeshInstance" parent="."]
 transform = Transform( 0.383046, 0, 0.353983, 0, 0.857001, 0, -0.283485, 0, 0.478302, 411.214, 0.500719, 440.849 )
 mesh = SubResource( 2 )
@@ -280,6 +340,18 @@ mesh = SubResource( 2 )
 
 [node name="barraco1066" type="MeshInstance" parent="."]
 transform = Transform( -0.260309, 0, 0.498421, 0, 0.857001, 0, -0.399158, 0, -0.325042, 420.898, 0.500719, 454.141 )
+mesh = SubResource( 2 )
+
+[node name="barraco1086" type="MeshInstance" parent="."]
+transform = Transform( -0.260309, 0, 0.498421, 0, 0.857001, 0, -0.399158, 0, -0.325042, 437.267, 0.500719, 406.278 )
+mesh = SubResource( 2 )
+
+[node name="barraco1087" type="MeshInstance" parent="."]
+transform = Transform( -0.260309, 0, 0.498421, 0, 0.857001, 0, -0.399158, 0, -0.325042, 420.069, 0.500719, 382.45 )
+mesh = SubResource( 2 )
+
+[node name="barraco1088" type="MeshInstance" parent="."]
+transform = Transform( -0.260309, 0, 0.498421, 0, 0.857001, 0, -0.399158, 0, -0.325042, 390.069, 0.500719, 443.45 )
 mesh = SubResource( 2 )
 
 [node name="barraco1065" type="MeshInstance" parent="."]
@@ -322,6 +394,42 @@ mesh = SubResource( 2 )
 transform = Transform( -0.0895175, 0, 0.58445, 0, 0.857001, 0, -0.468054, 0, -0.111779, 437.053, 0.500719, 485.457 )
 mesh = SubResource( 2 )
 
+[node name="barraco1093" type="MeshInstance" parent="."]
+transform = Transform( -0.0895175, 0, 0.58445, 0, 0.857001, 0, -0.468054, 0, -0.111779, 430.837, 0.500719, 486.907 )
+mesh = SubResource( 2 )
+
+[node name="barraco1094" type="MeshInstance" parent="."]
+transform = Transform( -0.0895175, 0, 0.58445, 0, 0.857001, 0, -0.468054, 0, -0.111779, 421.306, 0.500719, 465.773 )
+mesh = SubResource( 2 )
+
+[node name="barraco1095" type="MeshInstance" parent="."]
+transform = Transform( -0.0306054, 0, 0.593815, 0, 0.857001, 0, -0.475554, 0, -0.0382166, 469.791, 0.500719, 521.924 )
+mesh = SubResource( 2 )
+
+[node name="barraco1098" type="MeshInstance" parent="."]
+transform = Transform( -0.0306054, 0, 0.593815, 0, 0.857001, 0, -0.475554, 0, -0.0382166, 469.376, 0.500719, 504.727 )
+mesh = SubResource( 2 )
+
+[node name="barraco1099" type="MeshInstance" parent="."]
+transform = Transform( -0.0306054, 0, 0.593815, 0, 0.857001, 0, -0.475554, 0, -0.0382166, 472.376, 0.500719, 556.727 )
+mesh = SubResource( 2 )
+
+[node name="barraco1100" type="MeshInstance" parent="."]
+transform = Transform( -0.0306054, 0, 0.593815, 0, 0.857001, 0, -0.475554, 0, -0.0382166, 472.376, 0.500719, 549.727 )
+mesh = SubResource( 2 )
+
+[node name="barraco1101" type="MeshInstance" parent="."]
+transform = Transform( -0.0306054, 0, 0.593815, 0, 0.857001, 0, -0.475554, 0, -0.0382166, 438.376, 0.500719, 552.727 )
+mesh = SubResource( 2 )
+
+[node name="barraco1102" type="MeshInstance" parent="."]
+transform = Transform( -0.0306054, 0, 0.593815, 0, 0.857001, 0, -0.475554, 0, -0.0382166, 471.376, 0.500719, 514.727 )
+mesh = SubResource( 2 )
+
+[node name="barraco1096" type="MeshInstance" parent="."]
+transform = Transform( -0.0306054, 0, 0.593815, 0, 0.857001, 0, -0.475554, 0, -0.0382166, 469.791, 0.500719, 521.924 )
+mesh = SubResource( 2 )
+
 [node name="barraco1055" type="MeshInstance" parent="."]
 transform = Transform( -0.0895175, 0, 0.58445, 0, 0.857001, 0, -0.468054, 0, -0.111779, 442.027, 0.500719, 508.667 )
 mesh = SubResource( 2 )
@@ -338,6 +446,10 @@ mesh = SubResource( 2 )
 transform = Transform( -0.106147, 0, 0.580094, 0, 0.857001, 0, -0.464565, 0, -0.132544, 445.244, 0.500719, 526.082 )
 mesh = SubResource( 2 )
 
+[node name="barraco1097" type="MeshInstance" parent="."]
+transform = Transform( -0.106147, 0, 0.580094, 0, 0.857001, 0, -0.464565, 0, -0.132544, 439.65, 0.500719, 526.911 )
+mesh = SubResource( 2 )
+
 [node name="barraco1051" type="MeshInstance" parent="."]
 transform = Transform( -0.29165, 0, 0.470586, 0, 0.857001, 0, -0.376866, 0, -0.364178, 408.138, 0.500719, 436.177 )
 mesh = SubResource( 2 )
@@ -348,6 +460,42 @@ mesh = SubResource( 2 )
 
 [node name="barraco1049" type="MeshInstance" parent="."]
 transform = Transform( -0.278029, 0, 0.48327, 0, 0.857001, 0, -0.387024, 0, -0.347169, 401.643, 0.500719, 426.411 )
+mesh = SubResource( 2 )
+
+[node name="barraco1089" type="MeshInstance" parent="."]
+transform = Transform( -0.278029, 0, 0.48327, 0, 0.857001, 0, -0.387024, 0, -0.347169, 423.399, 0.500719, 401.961 )
+mesh = SubResource( 2 )
+
+[node name="barraco1090" type="MeshInstance" parent="."]
+transform = Transform( -0.278029, 0, 0.48327, 0, 0.857001, 0, -0.387024, 0, -0.347169, 431.399, 0.500719, 414.961 )
+mesh = SubResource( 2 )
+
+[node name="barraco1091" type="MeshInstance" parent="."]
+transform = Transform( -0.238834, 0, 0.514914, 0, 0.857001, 0, -0.412366, 0, -0.298227, 450.642, 0.500719, 447.961 )
+mesh = SubResource( 2 )
+
+[node name="barraco1092" type="MeshInstance" parent="."]
+transform = Transform( -0.178596, 0, 0.551673, 0, 0.857001, 0, -0.441805, 0, -0.223008, 460.173, 0.500719, 476.555 )
+mesh = SubResource( 2 )
+
+[node name="barraco1103" type="MeshInstance" parent="."]
+transform = Transform( -0.178596, 0, 0.551673, 0, 0.857001, 0, -0.441805, 0, -0.223008, 463.074, 0.500719, 482.771 )
+mesh = SubResource( 2 )
+
+[node name="barraco1104" type="MeshInstance" parent="."]
+transform = Transform( -0.178596, 0, 0.551673, 0, 0.857001, 0, -0.441805, 0, -0.223008, 465.074, 0.500719, 488.771 )
+mesh = SubResource( 2 )
+
+[node name="barraco1105" type="MeshInstance" parent="."]
+transform = Transform( -0.178596, 0, 0.551673, 0, 0.857001, 0, -0.441805, 0, -0.223008, 470.669, 0.500719, 486.492 )
+mesh = SubResource( 2 )
+
+[node name="barraco1106" type="MeshInstance" parent="."]
+transform = Transform( -0.178596, 0, 0.551673, 0, 0.857001, 0, -0.441805, 0, -0.223008, 468.669, 0.500719, 480.492 )
+mesh = SubResource( 2 )
+
+[node name="barraco1107" type="MeshInstance" parent="."]
+transform = Transform( -0.114813, 0, 0.577514, 0, 0.857001, 0, -0.462499, 0, -0.143365, 432.389, 0.500719, 492.87 )
 mesh = SubResource( 2 )
 
 [node name="barraco1048" type="MeshInstance" parent="."]
@@ -434,12 +582,36 @@ mesh = SubResource( 2 )
 transform = Transform( -0.399063, 0, 0.325225, 0, 0.857001, 0, -0.260455, 0, -0.498302, 332, 0.500718, 345.964 )
 mesh = SubResource( 2 )
 
+[node name="barraco1085" type="MeshInstance" parent="."]
+transform = Transform( -0.399063, 0, 0.325225, 0, 0.857001, 0, -0.260455, 0, -0.498302, 323.319, 0.500718, 349.315 )
+mesh = SubResource( 2 )
+
 [node name="barraco1027" type="MeshInstance" parent="."]
 transform = Transform( -0.399063, 0, 0.325225, 0, 0.857001, 0, -0.260455, 0, -0.498302, 326.115, 0.500718, 343.299 )
 mesh = SubResource( 2 )
 
 [node name="barraco1026" type="MeshInstance" parent="."]
 transform = Transform( -0.399063, 0, 0.325225, 0, 0.857001, 0, -0.260455, 0, -0.498302, 321.34, 0.500718, 340.19 )
+mesh = SubResource( 2 )
+
+[node name="barraco1080" type="MeshInstance" parent="."]
+transform = Transform( -0.399063, 0, 0.325225, 0, 0.857001, 0, -0.260455, 0, -0.498302, 295.297, 0.500718, 333.489 )
+mesh = SubResource( 2 )
+
+[node name="barraco1081" type="MeshInstance" parent="."]
+transform = Transform( -0.399063, 0, 0.325225, 0, 0.857001, 0, -0.260455, 0, -0.498302, 289.947, 0.500718, 329.814 )
+mesh = SubResource( 2 )
+
+[node name="barraco1082" type="MeshInstance" parent="."]
+transform = Transform( -0.399063, 0, 0.325225, 0, 0.857001, 0, -0.260455, 0, -0.498302, 257.964, 0.500718, 316.411 )
+mesh = SubResource( 2 )
+
+[node name="barraco1083" type="MeshInstance" parent="."]
+transform = Transform( -0.399063, 0, 0.325225, 0, 0.857001, 0, -0.260455, 0, -0.498302, 272.964, 0.500718, 325.411 )
+mesh = SubResource( 2 )
+
+[node name="barraco1084" type="MeshInstance" parent="."]
+transform = Transform( -0.399063, 0, 0.325225, 0, 0.857001, 0, -0.260455, 0, -0.498302, 319.964, 0.500718, 354.411 )
 mesh = SubResource( 2 )
 
 [node name="barraco4136" type="MeshInstance" parent="."]
@@ -522,6 +694,10 @@ mesh = SubResource( 3 )
 transform = Transform( -0.594956, 0, -0.0101635, 0, 0.857001, 0, 0.0101635, 0, -0.594956, 465.509, -0.346127, 529.461 )
 mesh = SubResource( 3 )
 
+[node name="barraco4150" type="MeshInstance" parent="."]
+transform = Transform( -0.594956, 0, -0.0101635, 0, 0.857001, 0, 0.0101635, 0, -0.594956, 473.175, -0.346127, 536.091 )
+mesh = SubResource( 3 )
+
 [node name="barraco4116" type="MeshInstance" parent="."]
 transform = Transform( 0.00118784, 0, -0.595042, 0, 0.857001, 0, 0.595042, 0, 0.00118784, 466.505, -0.346127, 536.074 )
 mesh = SubResource( 3 )
@@ -566,6 +742,18 @@ mesh = SubResource( 3 )
 transform = Transform( 0.595018, 0, 0.0054547, 0, 0.857001, 0, -0.0054547, 0, 0.595018, 466.434, -0.346127, 563.629 )
 mesh = SubResource( 3 )
 
+[node name="barraco4151" type="MeshInstance" parent="."]
+transform = Transform( 0.595018, 0, 0.0054547, 0, 0.857001, 0, -0.0054547, 0, 0.595018, 466.641, -0.346127, 569.223 )
+mesh = SubResource( 3 )
+
+[node name="barraco4152" type="MeshInstance" parent="."]
+transform = Transform( 0.595018, 0, 0.0054547, 0, 0.857001, 0, -0.0054547, 0, 0.595018, 438.641, -0.346127, 559.223 )
+mesh = SubResource( 3 )
+
+[node name="barraco4153" type="MeshInstance" parent="."]
+transform = Transform( 0.595018, 0, 0.0054547, 0, 0.857001, 0, -0.0054547, 0, 0.595018, 473.641, -0.346127, 542.223 )
+mesh = SubResource( 3 )
+
 [node name="barraco4105" type="MeshInstance" parent="."]
 transform = Transform( 0.450866, 0, 0.388325, 0, 0.857001, 0, -0.388325, 0, 0.450866, 374.66, -0.346127, 354.844 )
 mesh = SubResource( 3 )
@@ -588,6 +776,26 @@ mesh = SubResource( 3 )
 
 [node name="barraco4100" type="MeshInstance" parent="."]
 transform = Transform( -0.508675, 0, 0.308749, 0, 0.857001, 0, -0.308749, 0, -0.508675, 280.21, -0.346127, 290.023 )
+mesh = SubResource( 3 )
+
+[node name="barraco4145" type="MeshInstance" parent="."]
+transform = Transform( -0.508675, 0, 0.308749, 0, 0.857001, 0, -0.308749, 0, -0.508675, 280.565, -0.346127, 281.319 )
+mesh = SubResource( 3 )
+
+[node name="barraco4146" type="MeshInstance" parent="."]
+transform = Transform( -0.508675, 0, 0.308749, 0, 0.857001, 0, -0.308749, 0, -0.508675, 299.565, -0.346127, 283.319 )
+mesh = SubResource( 3 )
+
+[node name="barraco4147" type="MeshInstance" parent="."]
+transform = Transform( -0.508675, 0, 0.308749, 0, 0.857001, 0, -0.308749, 0, -0.508675, 308.092, -0.346127, 300.372 )
+mesh = SubResource( 3 )
+
+[node name="barraco4148" type="MeshInstance" parent="."]
+transform = Transform( -0.508675, 0, 0.308749, 0, 0.857001, 0, -0.308749, 0, -0.508675, 313.066, -0.346127, 292.378 )
+mesh = SubResource( 3 )
+
+[node name="barraco4149" type="MeshInstance" parent="."]
+transform = Transform( -0.508675, 0, 0.308749, 0, 0.857001, 0, -0.308749, 0, -0.508675, 313.066, -0.346127, 292.378 )
 mesh = SubResource( 3 )
 
 [node name="barraco4099" type="MeshInstance" parent="."]
@@ -660,6 +868,18 @@ mesh = SubResource( 5 )
 
 [node name="laje2081" type="MeshInstance" parent="."]
 transform = Transform( 0.538776, 0, 0.616599, 0, 0.933841, 0, -0.616599, 0, 0.538776, 225.489, -0.245212, 240.457 )
+mesh = SubResource( 5 )
+
+[node name="laje2114" type="MeshInstance" parent="."]
+transform = Transform( 0.242645, 0, 0.782047, 0, 0.933841, 0, -0.782047, 0, 0.242645, 263.682, -0.245212, 244.72 )
+mesh = SubResource( 5 )
+
+[node name="laje2115" type="MeshInstance" parent="."]
+transform = Transform( 0.242645, 0, 0.782047, 0, 0.933841, 0, -0.782047, 0, 0.242645, 271.676, -0.245212, 274.386 )
+mesh = SubResource( 5 )
+
+[node name="laje2116" type="MeshInstance" parent="."]
+transform = Transform( 0.242645, 0, 0.782047, 0, 0.933841, 0, -0.782047, 0, 0.242645, 271.676, -0.245212, 274.386 )
 mesh = SubResource( 5 )
 
 [node name="laje2080" type="MeshInstance" parent="."]
@@ -842,6 +1062,58 @@ mesh = SubResource( 5 )
 transform = Transform( 0.605516, 0, -0.551203, 0, 0.933841, 0, 0.551203, 0, 0.605516, 169.449, -0.245211, 326.18 )
 mesh = SubResource( 5 )
 
+[node name="laje2101" type="MeshInstance" parent="."]
+transform = Transform( 0.605516, 0, -0.551203, 0, 0.933841, 0, 0.551203, 0, 0.605516, 131.542, -0.245211, 370.357 )
+mesh = SubResource( 5 )
+
+[node name="laje2102" type="MeshInstance" parent="."]
+transform = Transform( 0.605516, 0, -0.551203, 0, 0.933841, 0, 0.551203, 0, 0.605516, 158.542, -0.245211, 395.357 )
+mesh = SubResource( 5 )
+
+[node name="laje2103" type="MeshInstance" parent="."]
+transform = Transform( 0.605516, 0, -0.551203, 0, 0.933841, 0, 0.551203, 0, 0.605516, 177.353, -0.245211, 373.696 )
+mesh = SubResource( 5 )
+
+[node name="laje2104" type="MeshInstance" parent="."]
+transform = Transform( 0.605516, 0, -0.551203, 0, 0.933841, 0, 0.551203, 0, 0.605516, 150.847, -0.245211, 339.78 )
+mesh = SubResource( 5 )
+
+[node name="laje2105" type="MeshInstance" parent="."]
+transform = Transform( 0.605516, 0, -0.551203, 0, 0.933841, 0, 0.551203, 0, 0.605516, 212.133, -0.245211, 326.634 )
+mesh = SubResource( 5 )
+
+[node name="laje2106" type="MeshInstance" parent="."]
+transform = Transform( 0.605516, 0, -0.551203, 0, 0.933841, 0, 0.551203, 0, 0.605516, 186.133, -0.245211, 283.634 )
+mesh = SubResource( 5 )
+
+[node name="laje2107" type="MeshInstance" parent="."]
+transform = Transform( 0.605516, 0, -0.551203, 0, 0.933841, 0, 0.551203, 0, 0.605516, 173.876, -0.245211, 307.616 )
+mesh = SubResource( 5 )
+
+[node name="laje2108" type="MeshInstance" parent="."]
+transform = Transform( -0.606995, 0, 0.549573, 0, 0.933841, 0, -0.549573, 0, -0.606995, 228.197, -0.245211, 295.404 )
+mesh = SubResource( 5 )
+
+[node name="laje2109" type="MeshInstance" parent="."]
+transform = Transform( -0.606995, 0, 0.549573, 0, 0.933841, 0, -0.549573, 0, -0.606995, 204.571, -0.245211, 330.222 )
+mesh = SubResource( 5 )
+
+[node name="laje2110" type="MeshInstance" parent="."]
+transform = Transform( -0.606995, 0, 0.549573, 0, 0.933841, 0, -0.549573, 0, -0.606995, 175.571, -0.245211, 299.222 )
+mesh = SubResource( 5 )
+
+[node name="laje2111" type="MeshInstance" parent="."]
+transform = Transform( -0.606995, 0, 0.549573, 0, 0.933841, 0, -0.549573, 0, -0.606995, 262.571, -0.245211, 269.222 )
+mesh = SubResource( 5 )
+
+[node name="laje2112" type="MeshInstance" parent="."]
+transform = Transform( -0.606995, 0, 0.549573, 0, 0.933841, 0, -0.549573, 0, -0.606995, 242.853, -0.245211, 247.727 )
+mesh = SubResource( 5 )
+
+[node name="laje2113" type="MeshInstance" parent="."]
+transform = Transform( -0.606995, 0, 0.549573, 0, 0.933841, 0, -0.549573, 0, -0.606995, 209.853, -0.245211, 253.727 )
+mesh = SubResource( 5 )
+
 [node name="laje2050" type="MeshInstance" parent="."]
 transform = Transform( 0.659714, 0, -0.485029, 0, 0.933841, 0, 0.485029, 0, 0.659714, 173.127, -0.245211, 321.223 )
 mesh = SubResource( 5 )
@@ -956,6 +1228,18 @@ mesh = SubResource( 4 )
 
 [node name="laje028" type="MeshInstance" parent="."]
 transform = Transform( -0.800508, 0, -0.172225, 0, 0.933841, 0, 0.172225, 0, -0.800508, 126.046, 0.325981, 405.658 )
+mesh = SubResource( 4 )
+
+[node name="laje084" type="MeshInstance" parent="."]
+transform = Transform( -0.800508, 0, -0.172225, 0, 0.933841, 0, 0.172225, 0, -0.800508, 128.041, 0.325981, 414.493 )
+mesh = SubResource( 4 )
+
+[node name="laje085" type="MeshInstance" parent="."]
+transform = Transform( -0.800508, 0, -0.172225, 0, 0.933841, 0, 0.172225, 0, -0.800508, 84.1492, 0.325981, 388.272 )
+mesh = SubResource( 4 )
+
+[node name="laje086" type="MeshInstance" parent="."]
+transform = Transform( -0.800508, 0, -0.172225, 0, 0.933841, 0, 0.172225, 0, -0.800508, 49.0927, 0.325981, 393.687 )
 mesh = SubResource( 4 )
 
 [node name="laje027" type="MeshInstance" parent="."]
@@ -1490,6 +1774,18 @@ mesh = SubResource( 1 )
 transform = Transform( 0.00574733, 0, 0.912249, 0, 0.857001, 0, -0.38557, 0, 0.013598, -110.615, 0.189118, 170.01 )
 mesh = SubResource( 1 )
 
+[node name="barraco3063" type="MeshInstance" parent="."]
+transform = Transform( 0.00574733, 0, 0.912249, 0, 0.857001, 0, -0.38557, 0, 0.013598, -101.66, 0.189118, 170.682 )
+mesh = SubResource( 1 )
+
+[node name="barraco3064" type="MeshInstance" parent="."]
+transform = Transform( 0.00574733, 0, 0.912249, 0, 0.857001, 0, -0.38557, 0, 0.013598, -101.66, 0.189118, 165.682 )
+mesh = SubResource( 1 )
+
+[node name="barraco3065" type="MeshInstance" parent="."]
+transform = Transform( 0.00574733, 0, 0.912249, 0, 0.857001, 0, -0.38557, 0, 0.013598, -99.0848, 0.189118, 153.592 )
+mesh = SubResource( 1 )
+
 [node name="barraco3015" type="MeshInstance" parent="."]
 transform = Transform( 0.00574733, 0, 0.912249, 0, 0.857001, 0, -0.38557, 0, 0.013598, -109.824, 0.189118, 159.472 )
 mesh = SubResource( 1 )
@@ -1500,6 +1796,14 @@ mesh = SubResource( 1 )
 
 [node name="laje2018" type="MeshInstance" parent="."]
 transform = Transform( -0.00274738, 0, -0.818821, 0, 0.933841, 0, 0.818821, 0, -0.00274738, -133.14, -0.245211, 168.503 )
+mesh = SubResource( 5 )
+
+[node name="laje2099" type="MeshInstance" parent="."]
+transform = Transform( -0.00274738, 0, -0.818821, 0, 0.933841, 0, 0.818821, 0, -0.00274738, -92.815, -0.245211, 172.405 )
+mesh = SubResource( 5 )
+
+[node name="laje2100" type="MeshInstance" parent="."]
+transform = Transform( 0.254658, 0, -0.778219, 0, 0.933841, 0, 0.778219, 0, 0.254658, -138.815, -0.245211, 234.405 )
 mesh = SubResource( 5 )
 
 [node name="laje2017" type="MeshInstance" parent="."]
@@ -1682,6 +1986,18 @@ mesh = SubResource( 5 )
 transform = Transform( -0.577595, 0, 0.143041, 0, 0.857001, 0, -0.143041, 0, -0.577595, -126.597, 0.167801, -37.2147 )
 mesh = SubResource( 8 )
 
+[node name="barraco2033" type="MeshInstance" parent="."]
+transform = Transform( -0.577595, 0, 0.143041, 0, 0.857001, 0, -0.143041, 0, -0.577595, -134.331, 0.167801, -40.8399 )
+mesh = SubResource( 8 )
+
+[node name="barraco2034" type="MeshInstance" parent="."]
+transform = Transform( -0.577595, 0, 0.143041, 0, 0.857001, 0, -0.143041, 0, -0.577595, -132.397, 0.167801, -59.2074 )
+mesh = SubResource( 8 )
+
+[node name="barraco2035" type="MeshInstance" parent="."]
+transform = Transform( -0.577595, 0, 0.143041, 0, 0.857001, 0, -0.143041, 0, -0.577595, -120.072, 0.167801, -105.851 )
+mesh = SubResource( 8 )
+
 [node name="barraco2018" type="MeshInstance" parent="."]
 transform = Transform( 0.125841, 0, 0.581584, 0, 0.857001, 0, -0.581584, 0, 0.125841, -125.05, 0.167801, -43.5962 )
 mesh = SubResource( 8 )
@@ -1766,6 +2082,26 @@ mesh = SubResource( 2 )
 transform = Transform( 0.576773, 0, -0.146321, 0, 0.857001, 0, 0.146321, 0, 0.576773, -110.925, 0.167801, -108.736 )
 mesh = SubResource( 8 )
 
+[node name="barraco2036" type="MeshInstance" parent="."]
+transform = Transform( 0.576773, 0, -0.146321, 0, 0.857001, 0, 0.146321, 0, 0.576773, -111.33, 0.167801, -126.775 )
+mesh = SubResource( 8 )
+
+[node name="barraco2037" type="MeshInstance" parent="."]
+transform = Transform( 0.576773, 0, -0.146321, 0, 0.857001, 0, 0.146321, 0, 0.576773, -69.3737, 0.167801, -152.922 )
+mesh = SubResource( 8 )
+
+[node name="barraco2038" type="MeshInstance" parent="."]
+transform = Transform( 0.576773, 0, -0.146321, 0, 0.857001, 0, 0.146321, 0, 0.576773, -40.3737, 0.167801, -128.922 )
+mesh = SubResource( 8 )
+
+[node name="barraco2039" type="MeshInstance" parent="."]
+transform = Transform( 0.576773, 0, -0.146321, 0, 0.857001, 0, 0.146321, 0, 0.576773, -44.3737, 0.167801, -144.922 )
+mesh = SubResource( 8 )
+
+[node name="barraco2040" type="MeshInstance" parent="."]
+transform = Transform( 0.576773, 0, -0.146321, 0, 0.857001, 0, 0.146321, 0, 0.576773, -32.3737, 0.167801, -92.9223 )
+mesh = SubResource( 8 )
+
 [node name="barraco1016" type="MeshInstance" parent="."]
 transform = Transform( 0.463511, 0, -0.138179, 0, 0.857001, 0, 0.11066, 0, 0.578777, -111.883, -0.304514, -103.491 )
 mesh = SubResource( 2 )
@@ -1784,6 +2120,42 @@ mesh = SubResource( 3 )
 
 [node name="barraco1015" type="MeshInstance" parent="."]
 transform = Transform( 0.463511, 0, -0.138179, 0, 0.857001, 0, 0.11066, 0, 0.578777, -108.526, -0.304514, -113.831 )
+mesh = SubResource( 2 )
+
+[node name="barraco1069" type="MeshInstance" parent="."]
+transform = Transform( 0.463511, 0, -0.138179, 0, 0.857001, 0, 0.11066, 0, 0.578777, -115.535, -0.304514, -115.764 )
+mesh = SubResource( 2 )
+
+[node name="barraco1077" type="MeshInstance" parent="."]
+transform = Transform( 0.463511, 0, -0.138179, 0, 0.857001, 0, 0.11066, 0, 0.578777, -115.535, -0.304514, -122.048 )
+mesh = SubResource( 2 )
+
+[node name="barraco1070" type="MeshInstance" parent="."]
+transform = Transform( 0.463511, 0, -0.138179, 0, 0.857001, 0, 0.11066, 0, 0.578777, -123.027, -0.304514, -115.039 )
+mesh = SubResource( 2 )
+
+[node name="barraco1071" type="MeshInstance" parent="."]
+transform = Transform( 0.463511, 0, -0.138179, 0, 0.857001, 0, 0.11066, 0, 0.578777, -125.443, -0.304514, -80.4795 )
+mesh = SubResource( 2 )
+
+[node name="barraco1072" type="MeshInstance" parent="."]
+transform = Transform( 0.463511, 0, -0.138179, 0, 0.857001, 0, 0.11066, 0, 0.578777, -132.443, -0.304514, -86.4795 )
+mesh = SubResource( 2 )
+
+[node name="barraco1073" type="MeshInstance" parent="."]
+transform = Transform( 0.463511, 0, -0.138179, 0, 0.857001, 0, 0.11066, 0, 0.578777, -97.4435, -0.304514, -42.4795 )
+mesh = SubResource( 2 )
+
+[node name="barraco1074" type="MeshInstance" parent="."]
+transform = Transform( 0.463511, 0, -0.138179, 0, 0.857001, 0, 0.11066, 0, 0.578777, -102.035, -0.304514, -20.9701 )
+mesh = SubResource( 2 )
+
+[node name="barraco1075" type="MeshInstance" parent="."]
+transform = Transform( 0.463511, 0, -0.138179, 0, 0.857001, 0, 0.11066, 0, 0.578777, -95.0353, -0.304514, -18.9701 )
+mesh = SubResource( 2 )
+
+[node name="barraco1076" type="MeshInstance" parent="."]
+transform = Transform( 0.463511, 0, -0.138179, 0, 0.857001, 0, 0.11066, 0, 0.578777, -88.0353, -0.304514, -31.9701 )
 mesh = SubResource( 2 )
 
 [node name="barraco1014" type="MeshInstance" parent="."]
@@ -1862,6 +2234,26 @@ mesh = SubResource( 9 )
 transform = Transform( 0.716689, 0, 0.39602, 0, 0.933841, 0, -0.39602, 0, 0.716689, -66.9542, -0.104713, -110.508 )
 mesh = SubResource( 4 )
 
+[node name="laje068" type="MeshInstance" parent="."]
+transform = Transform( 0.716689, 0, 0.39602, 0, 0.933841, 0, -0.39602, 0, 0.716689, -38.1723, -0.104713, -120.642 )
+mesh = SubResource( 4 )
+
+[node name="laje069" type="MeshInstance" parent="."]
+transform = Transform( 0.531962, 0, 0.622488, 0, 0.933841, 0, -0.622488, 0, 0.531962, -55.1723, -0.104713, -144.642 )
+mesh = SubResource( 4 )
+
+[node name="laje070" type="MeshInstance" parent="."]
+transform = Transform( 0.271407, 0, 0.772537, 0, 0.933841, 0, -0.772537, 0, 0.271407, -62.4691, -0.104713, -148.494 )
+mesh = SubResource( 4 )
+
+[node name="laje071" type="MeshInstance" parent="."]
+transform = Transform( 0.454543, 0, -0.681077, 0, 0.933841, 0, 0.681077, 0, 0.454543, -89.0214, -0.104713, -147.886 )
+mesh = SubResource( 4 )
+
+[node name="laje072" type="MeshInstance" parent="."]
+transform = Transform( 0.454543, 0, -0.681077, 0, 0.933841, 0, 0.681077, 0, 0.454543, -84.1569, -0.104713, -156.398 )
+mesh = SubResource( 4 )
+
 [node name="laje004" type="MeshInstance" parent="."]
 transform = Transform( -0.758419, 0, 0.308666, 0, 0.933841, 0, -0.308666, 0, -0.758419, -49.3866, 0.325978, -129.523 )
 mesh = SubResource( 4 )
@@ -1926,8 +2318,96 @@ mesh = SubResource( 4 )
 transform = Transform( -0.758419, 0, 0.308666, 0, 0.933841, 0, -0.308666, 0, -0.758419, -58.6095, 0.325978, 2.40353 )
 mesh = SubResource( 4 )
 
+[node name="laje073" type="MeshInstance" parent="."]
+transform = Transform( -0.818701, 0, -0.0142385, 0, 0.933841, 0, 0.0142385, 0, -0.818701, -100.464, 0.325978, 132.805 )
+mesh = SubResource( 4 )
+
+[node name="laje074" type="MeshInstance" parent="."]
+transform = Transform( -0.818701, 0, -0.0142385, 0, 0.933841, 0, 0.0142385, 0, -0.818701, -100.464, 0.325978, 140.417 )
+mesh = SubResource( 4 )
+
+[node name="laje075" type="MeshInstance" parent="."]
+transform = Transform( -0.818701, 0, -0.0142385, 0, 0.933841, 0, 0.0142385, 0, -0.818701, -100.464, 0.325978, 178.417 )
+mesh = SubResource( 4 )
+
+[node name="laje076" type="MeshInstance" parent="."]
+transform = Transform( -0.818701, 0, -0.0142385, 0, 0.933841, 0, 0.0142385, 0, -0.818701, -141.765, 0.325978, 162.482 )
+mesh = SubResource( 4 )
+
+[node name="laje077" type="MeshInstance" parent="."]
+transform = Transform( -0.818701, 0, -0.0142385, 0, 0.933841, 0, 0.0142385, 0, -0.818701, -147.765, 0.325978, 148.482 )
+mesh = SubResource( 4 )
+
+[node name="laje078" type="MeshInstance" parent="."]
+transform = Transform( -0.787013, 0, -0.22602, 0, 0.933841, 0, 0.22602, 0, -0.787013, -146.765, 0.325978, 206.482 )
+mesh = SubResource( 4 )
+
+[node name="laje079" type="MeshInstance" parent="."]
+transform = Transform( 0.789005, 0, 0.218964, 0, 0.933841, 0, -0.218964, 0, 0.789005, -116.196, 0.325978, 298.839 )
+mesh = SubResource( 4 )
+
+[node name="laje080" type="MeshInstance" parent="."]
+transform = Transform( -0.787013, 0, -0.22602, 0, 0.933841, 0, 0.22602, 0, -0.787013, -125.196, 0.325978, 266.839 )
+mesh = SubResource( 4 )
+
+[node name="laje081" type="MeshInstance" parent="."]
+transform = Transform( -0.787013, 0, -0.22602, 0, 0.933841, 0, 0.22602, 0, -0.787013, -80.1961, 0.325978, 262.839 )
+mesh = SubResource( 4 )
+
+[node name="laje082" type="MeshInstance" parent="."]
+transform = Transform( -0.787013, 0, -0.22602, 0, 0.933841, 0, 0.22602, 0, -0.787013, -57.1961, 0.325978, 322.839 )
+mesh = SubResource( 4 )
+
+[node name="laje083" type="MeshInstance" parent="."]
+transform = Transform( 0.751637, 0, 0.324832, 0, 0.933841, 0, -0.324832, 0, 0.751637, -67.8709, 0.325978, 306.164 )
+mesh = SubResource( 4 )
+
 [node name="laje2003" type="MeshInstance" parent="."]
 transform = Transform( -0.736704, 0, 0.357409, 0, 0.933841, 0, -0.357409, 0, -0.736704, -67.5367, -0.245211, -2.72064 )
+mesh = SubResource( 5 )
+
+[node name="laje2088" type="MeshInstance" parent="."]
+transform = Transform( -0.736704, 0, 0.357409, 0, 0.933841, 0, -0.357409, 0, -0.736704, -80.6343, -0.245211, -2.41604 )
+mesh = SubResource( 5 )
+
+[node name="laje2089" type="MeshInstance" parent="."]
+transform = Transform( -0.736704, 0, 0.357409, 0, 0.933841, 0, -0.357409, 0, -0.736704, -89.7722, -0.245211, -13.2292 )
+mesh = SubResource( 5 )
+
+[node name="laje2090" type="MeshInstance" parent="."]
+transform = Transform( -0.736704, 0, 0.357409, 0, 0.933841, 0, -0.357409, 0, -0.736704, -91.7722, -0.245211, -41.2292 )
+mesh = SubResource( 5 )
+
+[node name="laje2091" type="MeshInstance" parent="."]
+transform = Transform( -0.803277, 0, 0.158808, 0, 0.933841, 0, -0.158808, 0, -0.803277, -38.7722, -0.245211, -31.2292 )
+mesh = SubResource( 5 )
+
+[node name="laje2092" type="MeshInstance" parent="."]
+transform = Transform( -0.803277, 0, 0.158808, 0, 0.933841, 0, -0.158808, 0, -0.803277, -31.1573, -0.245211, -30.7723 )
+mesh = SubResource( 5 )
+
+[node name="laje2093" type="MeshInstance" parent="."]
+transform = Transform( -0.818816, 0, 0.00376083, 0, 0.933841, 0, -0.00376083, 0, -0.818816, -6.18045, -0.245211, -40.2148 )
+mesh = SubResource( 5 )
+
+[node name="laje2094" type="MeshInstance" parent="."]
+transform = Transform( -0.749354, 0, -0.330065, 0, 0.933841, 0, 0.330065, 0, -0.749354, -37.4055, -0.245211, -112.903 )
+mesh = SubResource( 5 )
+
+[node name="laje2095" type="MeshInstance" parent="."]
+transform = Transform( -0.818816, 0, 0.00376083, 0, 0.933841, 0, -0.00376083, 0, -0.818816, -50.5803, -0.245211, -139.049 )
+mesh = SubResource( 5 )
+
+[node name="laje2096" type="MeshInstance" parent="."]
+transform = Transform( -0.818816, 0, 0.00376083, 0, 0.933841, 0, -0.00376083, 0, -0.818816, -77.5803, -0.245211, -149.049 )
+mesh = SubResource( 5 )
+
+[node name="laje2097" type="MeshInstance" parent="."]
+transform = Transform( -0.73611, 0, 0.35863, 0, 0.933841, 0, -0.35863, 0, -0.73611, -95.9454, -0.245211, -139.468 )
+mesh = SubResource( 5 )
+
+[node name="laje2098" type="MeshInstance" parent="."]
+transform = Transform( -0.73611, 0, 0.35863, 0, 0.933841, 0, -0.35863, 0, -0.73611, -104.053, -0.245211, -136.023 )
 mesh = SubResource( 5 )
 
 [node name="barraco1012" type="MeshInstance" parent="."]
@@ -1944,6 +2424,14 @@ mesh = SubResource( 2 )
 
 [node name="barraco3005" type="MeshInstance" parent="."]
 transform = Transform( 0.370567, 0, 0.252369, 0, 0.857001, 0, -0.106666, 0, 0.876752, -85.1379, 0.189121, -24.2127 )
+mesh = SubResource( 1 )
+
+[node name="barraco3061" type="MeshInstance" parent="."]
+transform = Transform( 0.370567, 0, 0.252369, 0, 0.857001, 0, -0.106666, 0, 0.876752, -96.2551, 0.189121, -30.2546 )
+mesh = SubResource( 1 )
+
+[node name="barraco3062" type="MeshInstance" parent="."]
+transform = Transform( 0.370567, 0, 0.252369, 0, 0.857001, 0, -0.106666, 0, 0.876752, -90.2551, 0.189121, -49.2546 )
 mesh = SubResource( 1 )
 
 [node name="barraco3004" type="MeshInstance" parent="."]
@@ -1982,6 +2470,30 @@ mesh = SubResource( 2 )
 transform = Transform( -0.579487, 0, 0.13517, 0, 0.857001, 0, -0.13517, 0, -0.579487, -62.4705, -0.346129, -96.0277 )
 mesh = SubResource( 3 )
 
+[node name="barraco4139" type="MeshInstance" parent="."]
+transform = Transform( -0.579487, 0, 0.13517, 0, 0.857001, 0, -0.13517, 0, -0.579487, -70.9292, -0.346129, -96.0277 )
+mesh = SubResource( 3 )
+
+[node name="barraco4140" type="MeshInstance" parent="."]
+transform = Transform( -0.579487, 0, 0.13517, 0, 0.857001, 0, -0.13517, 0, -0.579487, -80.3547, -0.346129, -94.5776 )
+mesh = SubResource( 3 )
+
+[node name="barraco4141" type="MeshInstance" parent="."]
+transform = Transform( -0.579487, 0, 0.13517, 0, 0.857001, 0, -0.13517, 0, -0.579487, -82.3547, -0.346129, -88.5776 )
+mesh = SubResource( 3 )
+
+[node name="barraco4142" type="MeshInstance" parent="."]
+transform = Transform( -0.579487, 0, 0.13517, 0, 0.857001, 0, -0.13517, 0, -0.579487, -87.4299, -0.346129, -73.8353 )
+mesh = SubResource( 3 )
+
+[node name="barraco4143" type="MeshInstance" parent="."]
+transform = Transform( -0.579487, 0, 0.13517, 0, 0.857001, 0, -0.13517, 0, -0.579487, -91.2967, -0.346129, -57.4012 )
+mesh = SubResource( 3 )
+
+[node name="barraco4144" type="MeshInstance" parent="."]
+transform = Transform( -0.579487, 0, 0.13517, 0, 0.857001, 0, -0.13517, 0, -0.579487, -133.297, -0.346129, -51.4012 )
+mesh = SubResource( 3 )
+
 [node name="barraco4006" type="MeshInstance" parent="."]
 transform = Transform( -0.488465, 0, 0.339821, 0, 0.857001, 0, -0.339821, 0, -0.488465, -68.8913, -0.346129, -84.6129 )
 mesh = SubResource( 3 )
@@ -1998,12 +2510,24 @@ mesh = SubResource( 8 )
 transform = Transform( 0.0970615, 0, 0.582569, 0, 0.857001, 0, -0.466548, 0, 0.121199, -42.4663, 0.50071, -86.8933 )
 mesh = SubResource( 2 )
 
+[node name="barraco1079" type="MeshInstance" parent="."]
+transform = Transform( 0.0970615, 0, 0.582569, 0, 0.857001, 0, -0.466548, 0, 0.121199, -37.1964, 0.50071, -85.6772 )
+mesh = SubResource( 2 )
+
 [node name="barraco1005" type="MeshInstance" parent="."]
 transform = Transform( 0.217659, 0, 0.529348, 0, 0.857001, 0, -0.423925, 0, 0.271786, -45.7611, 0.50071, -80.2965 )
 mesh = SubResource( 2 )
 
+[node name="barraco1078" type="MeshInstance" parent="."]
+transform = Transform( 0.217659, 0, 0.529348, 0, 0.857001, 0, -0.423925, 0, 0.271786, -39.0723, 0.50071, -76.4454 )
+mesh = SubResource( 2 )
+
 [node name="barraco2004" type="MeshInstance" parent="."]
 transform = Transform( 0, 0, 0.595043, 0, 0.857001, 0, -0.595043, 0, 0, -40.8616, 0.167799, -94.6607 )
+mesh = SubResource( 8 )
+
+[node name="barraco2041" type="MeshInstance" parent="."]
+transform = Transform( 0, 0, 0.595043, 0, 0.857001, 0, -0.595043, 0, 0, -33.9702, 0.167799, -104.187 )
 mesh = SubResource( 8 )
 
 [node name="barraco1004" type="MeshInstance" parent="."]
@@ -2030,6 +2554,14 @@ mesh = SubResource( 3 )
 transform = Transform( -0.57537, 0, 0.151742, 0, 0.857001, 0, -0.151742, 0, -0.57537, -61.1292, -0.346129, -56.0759 )
 mesh = SubResource( 3 )
 
+[node name="barraco4137" type="MeshInstance" parent="."]
+transform = Transform( -0.57537, 0, 0.151742, 0, 0.857001, 0, -0.151742, 0, -0.57537, -81.1055, -0.346129, -59.2556 )
+mesh = SubResource( 3 )
+
+[node name="barraco4138" type="MeshInstance" parent="."]
+transform = Transform( -0.57537, 0, 0.151742, 0, 0.857001, 0, -0.151742, 0, -0.57537, -50.4954, -0.346129, -48.8256 )
+mesh = SubResource( 3 )
+
 [node name="barraco2001" type="MeshInstance" parent="."]
 transform = Transform( 0, 0, 0.595043, 0, 0.857001, 0, -0.595043, 0, 0, -62.9748, 0.167801, -48.4307 )
 mesh = SubResource( 8 )
@@ -2044,6 +2576,10 @@ mesh = SubResource( 1 )
 
 [node name="barraco3001" type="MeshInstance" parent="."]
 transform = Transform( 0.372307, 0, -0.237605, 0, 0.857001, 0, 0.100426, 0, 0.880867, -51.0647, 0.189121, -28.8356 )
+mesh = SubResource( 1 )
+
+[node name="barraco3060" type="MeshInstance" parent="."]
+transform = Transform( 0.372307, 0, -0.237605, 0, 0.857001, 0, 0.100426, 0, 0.880867, -52.7565, 0.189121, -42.1279 )
 mesh = SubResource( 1 )
 
 [node name="large_calcada006" type="MeshInstance" parent="."]
@@ -2134,6 +2670,30 @@ mesh = SubResource( 5 )
 transform = Transform( -0.798765, 0, 0.180135, 0, 0.933841, 0, -0.180135, 0, -0.798765, -30.8715, 0.325978, -22.4579 )
 mesh = SubResource( 4 )
 
+[node name="laje3" type="MeshInstance" parent="."]
+transform = Transform( -0.798765, 0, 0.180135, 0, 0.933841, 0, -0.180135, 0, -0.798765, -43.1971, 0.325978, -38.4086 )
+mesh = SubResource( 4 )
+
+[node name="laje4" type="MeshInstance" parent="."]
+transform = Transform( -0.798765, 0, 0.180135, 0, 0.933841, 0, -0.180135, 0, -0.798765, -13.4707, 0.325978, -31.4 )
+mesh = SubResource( 4 )
+
+[node name="laje5" type="MeshInstance" parent="."]
+transform = Transform( -0.798765, 0, 0.180135, 0, 0.933841, 0, -0.180135, 0, -0.798765, 4.65514, 0.325978, -39.1337 )
+mesh = SubResource( 4 )
+
+[node name="laje6" type="MeshInstance" parent="."]
+transform = Transform( -0.798765, 0, 0.180135, 0, 0.933841, 0, -0.180135, 0, -0.798765, -41.747, 0.325978, -61.1264 )
+mesh = SubResource( 4 )
+
+[node name="laje7" type="MeshInstance" parent="."]
+transform = Transform( -0.798765, 0, 0.180135, 0, 0.933841, 0, -0.180135, 0, -0.798765, -82.747, 0.325978, -80.1264 )
+mesh = SubResource( 4 )
+
+[node name="laje8" type="MeshInstance" parent="."]
+transform = Transform( -0.798765, 0, 0.180135, 0, 0.933841, 0, -0.180135, 0, -0.798765, -76.4634, 0.325978, -104.777 )
+mesh = SubResource( 4 )
+
 [node name="barraco4" type="MeshInstance" parent="."]
 transform = Transform( -0.0495559, 0, 0.592976, 0, 0.857001, 0, -0.592976, 0, -0.0495559, -4.62596, -0.346127, -32.1619 )
 mesh = SubResource( 3 )
@@ -2146,8 +2706,96 @@ mesh = SubResource( 1 )
 transform = Transform( 0, 0, 0.595043, 0, 0.857001, 0, -0.595043, 0, 0, 4.8291, 0.167807, -23.2611 )
 mesh = SubResource( 8 )
 
+[node name="barraco5" type="MeshInstance" parent="."]
+transform = Transform( 0, 0, 0.595043, 0, 0.857001, 0, -0.595043, 0, 0, -92.7408, 0.167807, 211.533 )
+mesh = SubResource( 8 )
+
+[node name="barraco6" type="MeshInstance" parent="."]
+transform = Transform( 0.194679, 0, 0.562295, 0, 0.857001, 0, -0.562295, 0, 0.194679, -37.8361, 0.167807, 374.851 )
+mesh = SubResource( 8 )
+
+[node name="barraco7" type="MeshInstance" parent="."]
+transform = Transform( 0.194679, 0, 0.562295, 0, 0.857001, 0, -0.562295, 0, 0.194679, -46.0211, 0.167807, 409.175 )
+mesh = SubResource( 8 )
+
+[node name="barraco8" type="MeshInstance" parent="."]
+transform = Transform( 0.194679, 0, 0.562295, 0, 0.857001, 0, -0.562295, 0, 0.194679, -67.2757, 0.167807, 400.726 )
+mesh = SubResource( 8 )
+
+[node name="barraco13" type="MeshInstance" parent="."]
+transform = Transform( -0.136889, 0, 0.579083, 0, 0.857001, 0, -0.579083, 0, -0.136889, -93.6788, 0.167807, 371.155 )
+mesh = SubResource( 8 )
+
+[node name="barraco14" type="MeshInstance" parent="."]
+transform = Transform( -0.136889, 0, 0.579083, 0, 0.857001, 0, -0.579083, 0, -0.136889, -99.3555, 0.167807, 372.871 )
+mesh = SubResource( 8 )
+
+[node name="barraco15" type="MeshInstance" parent="."]
+transform = Transform( -0.136889, 0, 0.579083, 0, 0.857001, 0, -0.579083, 0, -0.136889, -88.7942, 0.167807, 389.901 )
+mesh = SubResource( 8 )
+
+[node name="barraco9" type="MeshInstance" parent="."]
+transform = Transform( 0.194679, 0, 0.562295, 0, 0.857001, 0, -0.562295, 0, 0.194679, -15.2757, 0.167807, 419.726 )
+mesh = SubResource( 8 )
+
+[node name="barraco10" type="MeshInstance" parent="."]
+transform = Transform( 0.194679, 0, 0.562295, 0, 0.857001, 0, -0.562295, 0, 0.194679, -6.29858, 0.167807, 385.006 )
+mesh = SubResource( 8 )
+
+[node name="barraco16" type="MeshInstance" parent="."]
+transform = Transform( -0.16941, 0, 0.570418, 0, 0.857001, 0, -0.570418, 0, -0.16941, 39.8734, 0.167807, 395.837 )
+mesh = SubResource( 8 )
+
+[node name="barraco17" type="MeshInstance" parent="."]
+transform = Transform( -0.564059, 0, 0.189509, 0, 0.857001, 0, -0.189509, 0, -0.564059, 27.0479, 0.167807, 433.743 )
+mesh = SubResource( 8 )
+
+[node name="barraco18" type="MeshInstance" parent="."]
+transform = Transform( -0.574196, 0, -0.156124, 0, 0.857001, 0, 0.156124, 0, -0.574196, 67.5196, 0.167807, 426.333 )
+mesh = SubResource( 8 )
+
+[node name="barraco19" type="MeshInstance" parent="."]
+transform = Transform( -0.574196, 0, -0.156124, 0, 0.857001, 0, 0.156124, 0, -0.574196, 59.2542, 0.167807, 428.613 )
+mesh = SubResource( 8 )
+
+[node name="barraco20" type="MeshInstance" parent="."]
+transform = Transform( -0.554543, 0, -0.215773, 0, 0.857001, 0, 0.215773, 0, -0.554543, 122.527, 0.167807, 373.606 )
+mesh = SubResource( 8 )
+
+[node name="barraco21" type="MeshInstance" parent="."]
+transform = Transform( -0.554543, 0, -0.215773, 0, 0.857001, 0, 0.215773, 0, -0.554543, 109.416, 0.167807, 417.213 )
+mesh = SubResource( 8 )
+
+[node name="barraco11" type="MeshInstance" parent="."]
+transform = Transform( 0.194679, 0, 0.562295, 0, 0.857001, 0, -0.562295, 0, 0.194679, -11.2986, 0.167807, 382.006 )
+mesh = SubResource( 8 )
+
+[node name="barraco12" type="MeshInstance" parent="."]
+transform = Transform( 0.194679, 0, 0.562295, 0, 0.857001, 0, -0.562295, 0, 0.194679, -9.05432, 0.167807, 374.349 )
+mesh = SubResource( 8 )
+
 [node name="barraco1" type="MeshInstance" parent="."]
 transform = Transform( 0, 0, 0.595043, 0, 0.857001, 0, -0.476538, 0, 0, 10.7224, 0.500716, -22.8485 )
+mesh = SubResource( 2 )
+
+[node name="barraco22" type="MeshInstance" parent="."]
+transform = Transform( 0, 0, 0.595043, 0, 0.857001, 0, -0.476538, 0, 0, -0.745183, 0.500716, 13.0764 )
+mesh = SubResource( 2 )
+
+[node name="barraco23" type="MeshInstance" parent="."]
+transform = Transform( 0.227976, 0, 0.522532, 0, 0.857001, 0, -0.418468, 0, 0.284669, 295.936, 0.500716, 290.043 )
+mesh = SubResource( 2 )
+
+[node name="barraco24" type="MeshInstance" parent="."]
+transform = Transform( 0.227976, 0, 0.522532, 0, 0.857001, 0, -0.418468, 0, 0.284669, 311.645, 0.500716, 343.212 )
+mesh = SubResource( 2 )
+
+[node name="barraco25" type="MeshInstance" parent="."]
+transform = Transform( 0.227976, 0, 0.522532, 0, 0.857001, 0, -0.418468, 0, 0.284669, 357.229, 0.500716, 375.536 )
+mesh = SubResource( 2 )
+
+[node name="barraco26" type="MeshInstance" parent="."]
+transform = Transform( 0.227976, 0, 0.522532, 0, 0.857001, 0, -0.418468, 0, 0.284669, 388.229, 0.500716, 356.536 )
 mesh = SubResource( 2 )
 
 [node name="logic_point001" type="Spatial" parent="."]
