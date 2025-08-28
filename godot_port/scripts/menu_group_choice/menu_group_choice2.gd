@@ -2,8 +2,8 @@ extends Control
 
 
 onready var res_savefile: Resource = preload("res://resources/saved_game/saved_game.tres")
-onready var max_index: int = 3
-onready var anne_array = [0,1,2]
+onready var max_index: int = 4
+onready var anne_array = [0,1,2,3]
 onready var index_anne: int = 0
 
 
@@ -18,6 +18,7 @@ func _ready():
 	anne_array[0]=$ViewportContainer/Viewport/ControlAnneIndigena/SpriteAnneIndigena
 	anne_array[1]=$ViewportContainer/Viewport/ControlAnneIndigena/SpriteAnneIndigena2
 	anne_array[2]=$ViewportContainer/Viewport/ControlAnneIndigena/SpriteAnneIndigena3
+	anne_array[3]=$ViewportContainer/Viewport/ControlAnneIndigena/SpriteAnneIndigena4
 
 	get_node("ViewportContainer/Viewport/ButtonLeft").grab_focus()
 	

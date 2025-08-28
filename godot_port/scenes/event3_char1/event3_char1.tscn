@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://scenes/event3_char1/wall_event3_char1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/event3_char1/event3_char1_objects.tscn" type="PackedScene" id=2]
@@ -13,6 +13,12 @@
 [ext_resource path="res://assets/shader_water/shader_water.gdshader" type="Shader" id=11]
 [ext_resource path="res://assets/shader_water/water 0342normal.jpg" type="Texture" id=12]
 [ext_resource path="res://scenes/cars_updated/caixa.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/blender2.79_old/assets/assets_event1_char1/box_papelao_big_v2.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/blender2.79_old/assets/assets_event1_char1/saco_lixo_yellow.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/blender2.79_old/assets/assets_event1_char1/box_papelao_small_v2.tscn" type="PackedScene" id=16]
+[ext_resource path="res://assets/blender2.79_old/assets/assets_event1_char1/saco_lixo_white.tscn" type="PackedScene" id=17]
+[ext_resource path="res://assets/blender2.79_old/assets/assets_event1_char1/saco_lixo_dark.tscn" type="PackedScene" id=18]
+[ext_resource path="res://assets/blender2.79_old/assets/assets_event1_char1/saco_lixo_green.tscn" type="PackedScene" id=19]
 
 [sub_resource type="PlaneMesh" id=15]
 size = Vector2( 260, 260 )
@@ -68,15 +74,15 @@ size = Vector2( 20, 65 )
 
 [sub_resource type="Curve3D" id=19]
 _data = {
-"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -0.238839, -1.71839, 6.04395, 0, 0, 0, 0, 0, 0, -5.57929, -1.71839, 34.9155, 0, 0, 0, 0, 0, 0, -15.5295, -1.71839, 56.4502, 0, 0, 0, 0, 0, 0, -34.2836, -1.71839, 66.5774, 0, 0, 0, 0, 0, 0, -55.2251, -1.71839, 67.6206, 0, 0, 0, 0, 0, 0, -77.9913, -1.71839, 51.2197, 0, 0, 0, 0, 0, 0, -89.0842, -1.71839, 46.4318, 0, 0, 0, 0, 0, 0, -101.056, -1.71839, 46.4907, 0, 0, 0, 0, 0, 0, -114.759, -1.71839, 47.3342, 0, 0, 0, 0, 0, 0, -127.194, -1.71839, 59.2517, 0, 0, 0, 0, 0, 0, -131.34, -1.71839, 71.9465, 0, 0, 0, 0, 0, 0, -124.269, -1.71839, 82.5007, 0, 0, 0, 0, 0, 0, -111.542, -1.71839, 94.4796, 0, 0, 0, 0, 0, 0, -95.8288, -1.71839, 98.2812, 0, 0, 0, 0, 0, 0, -75.5538, -1.71839, 103.35, 0, 0, 0, 0, 0, 0, -61.1079, -1.71839, 106.645, 0, 0, 0, 0, 0, 0, -42.3535, -1.71839, 110.193, 0, 0, 0, 0, 0, 0, -22.4599, -1.71839, 114.654, 0, 0, 0, 0, 0, 0, 0.894906, -1.71839, 118.798, 0, 0, 0, 0, 0, 0, 23.0027, -1.71839, 118.632, 0, 0, 0, 0, 0, 0, 45.7923, -1.71839, 118.576, 0, 0, 0, 0, 0, 0, 73.1718, -1.71839, 119.767, 0, 0, 0, 0, 0, 0, 93.1113, -1.71839, 118.279, 0, 0, 0, 0, 0, 0, 146.442, -1.71839, 119.263, 0, 0, 0, 0, 0, 0, 199.713, -1.71839, 119.56, 0, 0, 0, 0, 0, 0, 256.98, -1.71839, 104.444, 0, 0, 0, 0, 0, 0, 303.109, -1.71839, 91.3491, 0, 0, 0, 0, 0, 0, 369.994, -1.71839, 75.8106, 0, 0, 0, 0, 0, 0, 385.255, -1.71839, 67.3799, 0, 0, 0, 0, 0, 0, 393.854, -1.71839, 39.7659, 0, 0, 0, 0, 0, 0, 405.714, -1.71839, 7.38829, 0, 0, 0, 0, 0, 0, 419.534, -1.71839, -30.6573, 0, 0, 0, 0, 0, 0, 419.534, -1.71839, -38.914, 0, 0, 0, 0, 0, 0, 416.328, -1.71839, -53.344, 0, 0, 0, 0, 0, 0, 408.292, -1.71839, -91.4373, 0, 0, 0, 0, 0, 0, 398.345, -1.71839, -133.064, 0, 0, 0, 0, 0, 0, 394.511, -1.71839, -143.47, 0, 0, 0, 0, 0, 0, 389.582, -1.71839, -147.167, 0, 0, 0, 0, 0, 0, 367.454, -1.71839, -164.969, 0, 0, 0, 0, 0, 0, 344.02, -1.71839, -180.123, 0, 0, 0, 0, 0, 0, 320.952, -1.71839, -193.43, 0, 0, 0, 0, 0, 0, 275.151, -1.71839, -225.941, 0, 0, 0, 0, 0, 0, 272.919, -1.71839, -234.866, 0, 0, 0, 0, 0, 0, 276.331, -1.71839, -243.998, 0, 0, 0, 0, 0, 0, 311.448, -1.71839, -294.293, 0, 0, 0, 0, 0, 0, 325.138, -1.71839, -315.721, 0, 0, 0, 0, 0, 0, 338.028, -1.71839, -339.906, 0, 0, 0, 0, 0, 0, 346.228, -1.71839, -352.125, 0, 0, 0, 0, 0, 0, 359.252, -1.71839, -367.722, 0, 0, 0, 0, 0, 0, 374.687, -1.71839, -380.745, 0, 0, 0, 0, 0, 0, 390.297, -1.71839, -395.479, 0, 0, 0, 0, 0, 0, 402.428, -1.71839, -403.888, 0, 0, 0, 0, 0, 0, 423.694, -1.71839, -419.355, 0, 0, 0, 0, 0, 0, 442.83, -1.71839, -431.091, 0, 0, 0, 0, 0, 0, 468.855, -1.71839, -444.614, 0, 0, 0, 0, 0, 0, 490.108, -1.71839, -452.596, 0, 0, 0, 0, 0, 0, 510.52, -1.71839, -458.719, 0, 0, 0, 0, 0, 0, 525.829, -1.71839, -461.271 ),
-"tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 0.842281, -1.71839, 4.62287, 0, 0, 0, 0, 0, 0, -3.42778, -1.71839, 20.7636, 0, 0, 0, 0, 0, 0, -7.32802, -1.71839, 34.5538, 0, 0, 0, 0, 0, 0, -15.5295, -1.71839, 56.4502, 0, 0, 0, 0, 0, 0, -34.2836, -1.71839, 66.5774, 0, 0, 0, 0, 0, 0, -47.2743, -1.71839, 66.6083, 0, 0, 0, 0, 0, 0, -59.8974, -1.71839, 62.5509, 0, 0, 0, 0, 0, 0, -74.536, -1.71839, 54.5775, 0, 0, 0, 0, 0, 0, -89.7231, -1.71839, 44.9116, 0, 0, 0, 0, 0, 0, -103.712, -1.71839, 45.6199, 0, 0, 0, 0, 0, 0, -111.68, -1.71839, 48.8071, 0, 0, 0, 0, 0, 0, -124.232, -1.71839, 48.8434, 0, 0, 0, 0, 0, 0, -128.055, -1.71839, 83.6308, 0, 0, 0, 0, 0, 0, -118.88, -1.71839, 90.8941, 0, 0, 0, 0, 0, 0, -108.384, -1.71839, 96.8447, 0, 0, 0, 0, 0, 0, -95.0777, -1.71839, 105.277, 0, 0, 0, 0, 0, 0, -75.8589, -1.71839, 109.331, 0, 0, 0, 0, 0, 0, -61.4792, -1.71839, 116.876, 0, 0, 0, 0, 0, 0, -42.7403, -1.71839, 115.831, 0, 0, 0, 0, 0, 0, -21.1379, -1.71839, 120.966, 0, 0, 0, 0, 0, 0, -0.066632, -1.71839, 124.153, 0, 0, 0, 0, 0, 0, 23.0027, -1.71839, 118.632, 0, 0, 0, 0, 0, 0, 45.7923, -1.71839, 118.576, 0, 0, 0, 0, 0, 0, 73.1718, -1.71839, 119.767, 0, 0, 0, 0, 0, 0, 93.1113, -1.71839, 118.279, 0, 0, 0, 0, 0, 0, 146.282, -1.71839, 124.29, 0, 0, 0, 0, 0, 0, 169.116, -1.71839, 127.258, 0, 0, 0, 0, 0, 0, 202.999, -1.71839, 120.165, 0, 0, 0, 0, 0, 0, 223.801, -1.71839, 121.327, 0, 0, 0, 0, 0, 0, 256.98, -1.71839, 104.444, 0, 0, 0, 0, 0, 0, 303.109, -1.71839, 91.3491, 0, 0, 0, 0, 0, 0, 370.687, -1.71839, 78.9881, 0, 0, 0, 0, 0, 0, 386.976, -1.71839, 64.5092, 0, 0, 0, 0, 0, 0, 393.854, -1.71839, 39.7659, 0, 0, 0, 0, 0, 0, 405.714, -1.71839, 7.38829, 0, 0, 0, 0, 0, 0, 415.874, -1.71839, -27.4259, 0, 0, 0, 0, 0, 0, 421.285, -1.71839, -37.9911, 0, 0, 0, 0, 0, 0, 415.359, -1.71839, -53.4523, 0, 0, 0, 0, 0, 0, 410.031, -1.71839, -92.1062, 0, 0, 0, 0, 0, 0, 409.802, -1.71839, -102.411, 0, 0, 0, 0, 0, 0, 405.122, -1.71839, -140.33, 0, 0, 0, 0, 0, 0, 398.351, -1.81214, -181.63, 0, 0, 0, 0, 0, 0, 399.485, -1.71839, -142.889, 0, 0, 0, 0, 0, 0, 367.454, -1.71839, -164.969, 0, 0, 0, 0, 0, 0, 344.02, -1.71839, -180.123, 0, 0, 0, 0, 0, 0, 320.952, -1.71839, -193.43, 0, 0, 0, 0, 0, 0, 275.151, -1.71839, -225.941, 0, 0, 0, 0, 0, 0, 272.919, -1.71839, -234.866, 0, 0, 0, 0, 0, 0, 276.331, -1.71839, -243.998, 0, 0, 0, 0, 0, 0, 311.448, -1.71839, -294.293, 0, 0, 0, 0, 0, 0, 325.138, -1.71839, -315.721, 0, 0, 0, 0, 0, 0, 338.028, -1.71839, -339.906, 0, 0, 0, 0, 0, 0, 346.228, -1.71839, -352.125, 0, 0, 0, 0, 0, 0, 359.252, -1.71839, -367.722, 0, 0, 0, 0, 0, 0, 374.687, -1.71839, -380.745, 0, 0, 0, 0, 0, 0, 390.297, -1.71839, -395.479, 0, 0, 0, 0, 0, 0, 402.428, -1.71839, -403.888, 0, 0, 0, 0, 0, 0, 423.694, -1.71839, -419.355, 0, 0, 0, 0, 0, 0, 442.83, -1.71839, -431.091, 0, 0, 0, 0, 0, 0, 468.855, -1.71839, -444.614, 0, 0, 0, 0, 0, 0, 490.108, -1.71839, -452.596, 0, 0, 0, 0, 0, 0, 510.52, -1.71839, -458.719, 0, 0, 0, 0, 0, 0, 525.829, -1.71839, -461.271 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
 }
 
-[sub_resource type="ProceduralSky" id=8]
+[sub_resource type="ProceduralSky" id=20]
 
 [sub_resource type="Environment" id=9]
 background_mode = 3
-background_sky = SubResource( 8 )
+background_sky = SubResource( 20 )
 background_color = Color( 0.243137, 0.541176, 0.588235, 1 )
 ambient_light_color = Color( 0.886275, 0.819608, 0.0862745, 1 )
 ambient_light_energy = 0.53
@@ -124,12 +130,440 @@ mesh = SubResource( 15 )
 material/0 = SubResource( 17 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="ViewportContainer/Viewport"]
-transform = Transform( 0.938046, -0.0907128, 0.334425, -0.288893, -0.737665, 0.610239, 0.191337, -0.669046, -0.71817, -9.13218, 32.4818, -6.08812 )
+transform = Transform( 0.938046, -0.090713, 0.334425, -0.288893, -0.737665, 0.610239, 0.191337, -0.669046, -0.71817, -9.13218, 32.4818, -6.08812 )
 light_color = Color( 0.854902, 0.796078, 0.560784, 1 )
 shadow_enabled = true
 shadow_color = Color( 0.0980392, 0.0980392, 0.00784314, 1 )
 
 [node name="wall" parent="ViewportContainer/Viewport" instance=ExtResource( 1 )]
+
+[node name="objects" type="Spatial" parent="ViewportContainer/Viewport"]
+
+[node name="saco_lixo_yellow3" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 15 )]
+transform = Transform( 0.768614, 0, -0.639713, 0, 1, 0, 0.639713, 0, 0.768614, -15.2467, -1.17574, -7.31023 )
+
+[node name="saco_lixo_white5" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 17 )]
+transform = Transform( 0.768614, 0, -0.639713, 0, 1, 0, 0.639713, 0, 0.768614, -22.5418, -1.33767, -9.98524 )
+
+[node name="saco_lixo_dark7" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 18 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -13.6197, -1.37106, -8.51424 )
+
+[node name="saco_lixo_dark15" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 18 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 219.327, -1.37106, 267.883 )
+
+[node name="saco_lixo_dark16" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 18 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 204.427, -1.37106, 309.32 )
+
+[node name="saco_lixo_dark17" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 18 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 142.567, -1.37106, 395.163 )
+
+[node name="saco_lixo_dark18" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 18 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 139.712, -1.37106, 394.973 )
+
+[node name="saco_lixo_dark19" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 18 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 137.428, -1.37106, 397.638 )
+
+[node name="saco_lixo_dark20" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 18 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 137.237, -1.37106, 395.018 )
+
+[node name="saco_lixo_dark21" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 18 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 292.554, -1.37106, 304.227 )
+
+[node name="saco_lixo_dark22" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 18 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 331.574, -1.37106, 341.533 )
+
+[node name="saco_lixo_dark23" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 18 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 399.144, -1.37106, 385.882 )
+
+[node name="saco_lixo_dark24" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 18 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 442.239, -1.37106, 491.517 )
+
+[node name="saco_lixo_dark25" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 18 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 442.599, -1.37106, 493.447 )
+
+[node name="saco_lixo_dark26" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 18 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 442.702, -1.37106, 495.454 )
+
+[node name="saco_lixo_dark27" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 18 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 444.088, -1.37106, 494.428 )
+
+[node name="saco_lixo_dark28" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 18 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 444.088, -1.37106, 492.428 )
+
+[node name="saco_lixo_green5" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.4923, -1.37106, -10.5582 )
+
+[node name="saco_lixo_yellow4" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 15 )]
+transform = Transform( 0.224587, 0, -0.974454, 0, 1, 0, 0.974454, 0, 0.224587, -72.9427, -1.17574, -24.3584 )
+
+[node name="saco_lixo_white6" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 17 )]
+transform = Transform( 0.224587, 0, -0.974454, 0, 1, 0, 0.974454, 0, 0.224587, -77.1304, -1.33767, -30.9035 )
+
+[node name="saco_lixo_dark8" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 18 )]
+transform = Transform( 0.605308, 0, 0.795991, 0, 1, 0, -0.795991, 0, 0.605308, -70.9189, -1.37106, -24.332 )
+
+[node name="saco_lixo_green6" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 19 )]
+transform = Transform( 0.795991, 0, -0.605308, 0, 1, 0, 0.605308, 0, 0.795991, -72.7642, -1.37106, -28.3031 )
+
+[node name="saco_lixo_yellow5" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 15 )]
+transform = Transform( -0.393419, 0, -0.919359, 0, 1, 0, 0.919359, 0, -0.393419, -122.551, -1.17574, 18.9405 )
+
+[node name="saco_lixo_white7" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 17 )]
+transform = Transform( -0.393419, 0, -0.919359, 0, 1, 0, 0.919359, 0, -0.393419, -122.072, -1.33767, 11.1852 )
+
+[node name="saco_lixo_dark9" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 18 )]
+transform = Transform( 0.999985, 0, 0.00549775, 0, 1, 0, -0.00549775, 0, 0.999985, -121.579, -1.37106, 13.2995 )
+
+[node name="saco_lixo_green7" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 19 )]
+transform = Transform( 0.285738, 0, -0.958308, 0, 1, 0, 0.958308, 0, 0.285738, -120.08, -1.37106, 15.8604 )
+
+[node name="saco_lixo_yellow6" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 15 )]
+transform = Transform( -0.393419, 0, -0.919359, 0, 1, 0, 0.919359, 0, -0.393419, -119.479, -1.17574, 12.2378 )
+
+[node name="saco_lixo_white8" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 17 )]
+transform = Transform( -0.393419, 0, -0.919359, 0, 1, 0, 0.919359, 0, -0.393419, -119.646, -1.33767, 8.75137 )
+
+[node name="saco_lixo_dark10" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 18 )]
+transform = Transform( 0.958308, 0, 0.285739, 0, 1, 0, -0.285739, 0, 0.958308, -117.86, -1.37106, 13.4529 )
+
+[node name="saco_lixo_green8" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 19 )]
+transform = Transform( 0.285738, 0, -0.958308, 0, 1, 0, 0.958308, 0, 0.285738, -117.008, -1.37106, 9.15775 )
+
+[node name="saco_lixo_yellow9" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 15 )]
+transform = Transform( -0.503662, 0, 0.863901, 0, 1, 0, -0.863901, 0, -0.503662, -109.823, -1.17574, 201.612 )
+
+[node name="saco_lixo_white11" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 17 )]
+transform = Transform( -0.503662, 0, 0.863901, 0, 1, 0, -0.863901, 0, -0.503662, -108.773, -1.33767, 208.137 )
+
+[node name="saco_lixo_dark13" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 18 )]
+transform = Transform( -0.591662, 0, -0.806186, 0, 1, 0, 0.806186, 0, -0.591662, -110.764, -1.37106, 207.272 )
+
+[node name="saco_lixo_green11" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 19 )]
+transform = Transform( -0.93977, 0, 0.341807, 0, 1, 0, -0.341807, 0, -0.93977, -108.823, -1.37106, 205.432 )
+
+[node name="saco_lixo_yellow11" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 15 )]
+transform = Transform( -0.503662, 0, 0.863901, 0, 1, 0, -0.863901, 0, -0.503662, -130.4, -1.17574, 209.707 )
+
+[node name="saco_lixo_green13" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 19 )]
+transform = Transform( -0.93977, 0, 0.341807, 0, 1, 0, -0.341807, 0, -0.93977, -129.4, -1.37106, 213.527 )
+
+[node name="saco_lixo_yellow12" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 15 )]
+transform = Transform( -0.503662, 0, 0.863901, 0, 1, 0, -0.863901, 0, -0.503662, -129.4, -1.17574, 205.707 )
+
+[node name="saco_lixo_green14" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 19 )]
+transform = Transform( -0.93977, 0, 0.341807, 0, 1, 0, -0.341807, 0, -0.93977, -127.488, -1.37106, 212.443 )
+
+[node name="saco_lixo_yellow10" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 15 )]
+transform = Transform( -0.503662, 0, 0.863901, 0, 1, 0, -0.863901, 0, -0.503662, -111.164, -1.17574, 209.592 )
+
+[node name="saco_lixo_white12" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 17 )]
+transform = Transform( -0.503662, 0, 0.863901, 0, 1, 0, -0.863901, 0, -0.503662, -108.264, -1.33767, 211.535 )
+
+[node name="saco_lixo_white13" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 17 )]
+transform = Transform( -0.503662, 0, 0.863901, 0, 1, 0, -0.863901, 0, -0.503662, -128.22, -1.33767, 209.895 )
+
+[node name="saco_lixo_yellow13" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 15 )]
+transform = Transform( -0.503662, 0, 0.863901, 0, 1, 0, -0.863901, 0, -0.503662, -65.7784, -1.17574, 347.691 )
+
+[node name="saco_lixo_green15" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 19 )]
+transform = Transform( -0.93977, 0, 0.341807, 0, 1, 0, -0.341807, 0, -0.93977, -64.7782, -1.37106, 351.511 )
+
+[node name="saco_lixo_yellow14" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 15 )]
+transform = Transform( -0.503662, 0, 0.863901, 0, 1, 0, -0.863901, 0, -0.503662, -64.7784, -1.17574, 343.691 )
+
+[node name="saco_lixo_green16" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 19 )]
+transform = Transform( -0.93977, 0, 0.341807, 0, 1, 0, -0.341807, 0, -0.93977, -62.867, -1.37106, 350.427 )
+
+[node name="saco_lixo_white14" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 17 )]
+transform = Transform( -0.503662, 0, 0.863901, 0, 1, 0, -0.863901, 0, -0.503662, -63.5989, -1.33767, 347.879 )
+
+[node name="saco_lixo_yellow17" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 15 )]
+transform = Transform( -0.503662, 0, 0.863901, 0, 1, 0, -0.863901, 0, -0.503662, -41.0068, -1.17574, 399.37 )
+
+[node name="saco_lixo_green19" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 19 )]
+transform = Transform( -0.93977, 0, 0.341807, 0, 1, 0, -0.341807, 0, -0.93977, -40.0066, -1.37106, 403.19 )
+
+[node name="saco_lixo_yellow18" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 15 )]
+transform = Transform( -0.503662, 0, 0.863901, 0, 1, 0, -0.863901, 0, -0.503662, -40.0068, -1.17574, 395.37 )
+
+[node name="saco_lixo_green20" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 19 )]
+transform = Transform( -0.93977, 0, 0.341807, 0, 1, 0, -0.341807, 0, -0.93977, -38.0954, -1.37106, 402.106 )
+
+[node name="saco_lixo_white16" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 17 )]
+transform = Transform( -0.503662, 0, 0.863901, 0, 1, 0, -0.863901, 0, -0.503662, -38.8273, -1.33767, 399.558 )
+
+[node name="saco_lixo_yellow19" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 15 )]
+transform = Transform( 0.786327, 0, -0.617811, 0, 1, 0, 0.617811, 0, 0.786327, 78.9882, -1.17574, 411.807 )
+
+[node name="saco_lixo_green21" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 19 )]
+transform = Transform( 0.999603, 0, 0.0281658, 0, 1, 0, -0.0281658, 0, 0.999603, 76.652, -1.37106, 408.623 )
+
+[node name="saco_lixo_yellow20" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 15 )]
+transform = Transform( 0.786327, 0, -0.617811, 0, 1, 0, 0.617811, 0, 0.786327, 79.531, -1.17574, 415.894 )
+
+[node name="saco_lixo_green22" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 19 )]
+transform = Transform( 0.999603, 0, 0.0281658, 0, 1, 0, -0.0281658, 0, 0.999603, 75.2741, -1.37106, 410.335 )
+
+[node name="saco_lixo_white17" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 17 )]
+transform = Transform( 0.786327, 0, -0.617811, 0, 1, 0, 0.617811, 0, 0.786327, 76.8927, -1.33767, 412.435 )
+
+[node name="saco_lixo_yellow21" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 15 )]
+transform = Transform( 0.786327, 0, -0.617811, 0, 1, 0, 0.617811, 0, 0.786327, 396.793, -1.17574, 381.182 )
+
+[node name="saco_lixo_green23" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 19 )]
+transform = Transform( 0.999603, 0, 0.0281658, 0, 1, 0, -0.0281658, 0, 0.999603, 394.457, -1.37106, 377.998 )
+
+[node name="saco_lixo_yellow22" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 15 )]
+transform = Transform( 0.786327, 0, -0.617811, 0, 1, 0, 0.617811, 0, 0.786327, 397.336, -1.17574, 385.269 )
+
+[node name="saco_lixo_green24" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 19 )]
+transform = Transform( 0.999603, 0, 0.0281658, 0, 1, 0, -0.0281658, 0, 0.999603, 393.079, -1.37106, 379.71 )
+
+[node name="saco_lixo_white18" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 17 )]
+transform = Transform( 0.786327, 0, -0.617811, 0, 1, 0, 0.617811, 0, 0.786327, 394.697, -1.33767, 381.81 )
+
+[node name="saco_lixo_yellow15" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 15 )]
+transform = Transform( 0.625428, 0, -0.780282, 0, 1, 0, 0.780282, 0, 0.625428, -88.8072, -1.17574, 359.785 )
+
+[node name="saco_lixo_green17" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 19 )]
+transform = Transform( 0.979869, 0, -0.199642, 0, 1, 0, 0.199642, 0, 0.979869, -90.3592, -1.37106, 356.154 )
+
+[node name="saco_lixo_yellow16" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 15 )]
+transform = Transform( 0.625428, 0, -0.780282, 0, 1, 0, 0.780282, 0, 0.625428, -89.207, -1.17574, 363.889 )
+
+[node name="saco_lixo_green18" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 19 )]
+transform = Transform( 0.979869, 0, -0.199642, 0, 1, 0, 0.199642, 0, 0.979869, -88.1646, -1.37106, 357.339 )
+
+[node name="saco_lixo_white15" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 17 )]
+transform = Transform( 0.625428, 0, -0.780282, 0, 1, 0, 0.780282, 0, 0.625428, -90.9906, -1.33767, 359.921 )
+
+[node name="saco_lixo_dark14" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 18 )]
+transform = Transform( -0.341807, 0, -0.93977, 0, 1, 0, 0.93977, 0, -0.341807, -113.104, -1.37106, 210.167 )
+
+[node name="saco_lixo_green12" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 19 )]
+transform = Transform( -0.93977, 0, 0.341807, 0, 1, 0, -0.341807, 0, -0.93977, -110.164, -1.37106, 213.411 )
+
+[node name="saco_lixo_yellow7" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 15 )]
+transform = Transform( -0.993613, 0, 0.112846, 0, 1, 0, -0.112846, 0, -0.993613, -83.4672, -1.17574, -140.152 )
+
+[node name="saco_lixo_white9" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 17 )]
+transform = Transform( -0.993613, 0, 0.112846, 0, 1, 0, -0.112846, 0, -0.993613, -75.901, -1.33767, -141.92 )
+
+[node name="saco_lixo_dark11" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 18 )]
+transform = Transform( 0.292422, 0, -0.956289, 0, 1, 0, 0.956289, 0, 0.292422, -77.7847, -1.37106, -140.841 )
+
+[node name="saco_lixo_green9" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 19 )]
+transform = Transform( -0.835894, 0, -0.548891, 0, 1, 0, 0.548891, 0, -0.835894, -79.8073, -1.37106, -138.669 )
+
+[node name="saco_lixo_yellow8" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 15 )]
+transform = Transform( -0.993613, 0, 0.112846, 0, 1, 0, -0.112846, 0, -0.993613, -76.1646, -1.17574, -139.134 )
+
+[node name="saco_lixo_white10" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 17 )]
+transform = Transform( -0.993613, 0, 0.112846, 0, 1, 0, -0.112846, 0, -0.993613, -72.8732, -1.33767, -140.296 )
+
+[node name="saco_lixo_dark12" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 18 )]
+transform = Transform( 0.548891, 0, -0.835894, 0, 1, 0, 0.835894, 0, 0.548891, -76.8637, -1.37106, -137.234 )
+
+[node name="saco_lixo_green10" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 19 )]
+transform = Transform( -0.835894, 0, -0.548891, 0, 1, 0, 0.548891, 0, -0.835894, -72.5047, -1.37106, -137.651 )
+
+[node name="box_papelao_big3" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4923, -1.37106, -13.5582 )
+
+[node name="box_papelao_small5" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -20.4923, -1.37106, -11.5582 )
+
+[node name="box_papelao_big4" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 14 )]
+transform = Transform( -0.435231, 0, -0.900319, 0, 1, 0, 0.900319, 0, -0.435231, -61.4577, -1.37106, -64.2957 )
+
+[node name="box_papelao_small6" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( 0.916391, 0, -0.400285, 0, 1, 0, 0.400285, 0, 0.916391, -60.2601, -1.37106, -65.4715 )
+
+[node name="box_papelao_big5" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 14 )]
+transform = Transform( 0.178665, 0, -0.98391, 0, 1, 0, 0.98391, 0, 0.178665, -62.8744, -1.37106, -102.987 )
+
+[node name="box_papelao_big6" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 14 )]
+transform = Transform( 0.178665, 0, -0.98391, 0, 1, 0, 0.98391, 0, 0.178665, -62.4504, -1.37106, -100.563 )
+
+[node name="box_papelao_small7" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( 0.976311, 0, 0.216372, 0, 1, 0, -0.216372, 0, 0.976311, -62.7009, -1.37106, -104.83 )
+
+[node name="box_papelao_small8" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( 0.976311, 0, 0.216372, 0, 1, 0, -0.216372, 0, 0.976311, -62.9433, -1.37106, -106.042 )
+
+[node name="box_papelao_big7" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 14 )]
+transform = Transform( -0.208919, 0, -0.977933, 0, 1, 0, 0.977933, 0, -0.208919, -123.327, -1.37106, -31.0744 )
+
+[node name="box_papelao_big8" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 14 )]
+transform = Transform( -0.208919, 0, -0.977933, 0, 1, 0, 0.977933, 0, -0.208919, -123.856, -1.37106, -28.6719 )
+
+[node name="box_papelao_big9" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 14 )]
+transform = Transform( -0.208919, 0, -0.977933, 0, 1, 0, 0.977933, 0, -0.208919, -122.341, -1.37106, -35.5782 )
+
+[node name="box_papelao_big10" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 14 )]
+transform = Transform( -0.208919, 0, -0.977933, 0, 1, 0, 0.977933, 0, -0.208919, -110.814, -1.37106, 108.349 )
+
+[node name="box_papelao_big11" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 14 )]
+transform = Transform( 0.028829, 0, -0.999584, 0, 1, 0, 0.999584, 0, 0.028829, -129.753, -1.37106, 156.928 )
+
+[node name="box_papelao_big12" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 14 )]
+transform = Transform( 0.028829, 0, -0.999584, 0, 1, 0, 0.999584, 0, 0.028829, -129.753, -1.37106, 154.373 )
+
+[node name="box_papelao_small9" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( 0.985244, 0, -0.171155, 0, 1, 0, 0.171155, 0, 0.985244, -122.465, -1.37106, -32.7136 )
+
+[node name="box_papelao_small10" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( 0.985244, 0, -0.171155, 0, 1, 0, 0.171155, 0, 0.985244, -122.228, -1.37106, -33.9264 )
+
+[node name="box_papelao_big13" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 14 )]
+transform = Transform( 0.240533, 0, -0.970641, 0, 1, 0, 0.970641, 0, 0.240533, -88.1047, -1.37106, 351.798 )
+
+[node name="box_papelao_big14" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 14 )]
+transform = Transform( 0.240533, 0, -0.970641, 0, 1, 0, 0.970641, 0, 0.240533, -87.5282, -1.37106, 354.19 )
+
+[node name="box_papelao_big15" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 14 )]
+transform = Transform( 0.240533, 0, -0.970641, 0, 1, 0, 0.970641, 0, 0.240533, -89.1917, -1.37106, 347.318 )
+
+[node name="box_papelao_small11" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( 0.960673, 0, 0.277684, 0, 1, 0, -0.277684, 0, 0.960673, -89.4129, -1.37106, 350.275 )
+
+[node name="box_papelao_small12" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( 0.960673, 0, 0.277684, 0, 1, 0, -0.277684, 0, 0.960673, -89.7314, -1.37106, 349.081 )
+
+[node name="box_papelao_big16" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 14 )]
+transform = Transform( -0.327878, 0, 0.94472, 0, 1, 0, -0.94472, 0, -0.327878, -91.064, -1.37106, 350.522 )
+
+[node name="box_papelao_big17" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 14 )]
+transform = Transform( -0.327878, 0, 0.94472, 0, 1, 0, -0.94472, 0, -0.327878, -91.8558, -1.37106, 348.193 )
+
+[node name="box_papelao_big18" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 14 )]
+transform = Transform( -0.327878, 0, 0.94472, 0, 1, 0, -0.94472, 0, -0.327878, -89.5737, -1.37106, 354.885 )
+
+[node name="box_papelao_small13" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( -0.931412, 0, -0.363967, 0, 1, 0, 0.363967, 0, -0.931412, -90.9518, -1.37106, 352.37 )
+
+[node name="box_papelao_small14" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( -0.931412, 0, -0.363967, 0, 1, 0, 0.363967, 0, -0.931412, -90.526, -1.37106, 353.53 )
+
+[node name="box_papelao_small18" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( -0.190655, 0, 0.981657, 0, 1, 0, -0.981657, 0, -0.190655, 54.4209, -1.37106, 415.861 )
+
+[node name="box_papelao_small19" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( -0.190655, 0, 0.981657, 0, 1, 0, -0.981657, 0, -0.190655, 53.2033, -1.37106, 416.071 )
+
+[node name="box_papelao_big19" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 14 )]
+transform = Transform( -0.970258, 0, -0.242074, 0, 1, 0, 0.242074, 0, -0.970258, 58.9976, -1.37106, 416.433 )
+
+[node name="box_papelao_big21" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 14 )]
+transform = Transform( -0.970258, 0, -0.242074, 0, 1, 0, 0.242074, 0, -0.970258, 141.027, -1.37106, 396.746 )
+
+[node name="box_papelao_big22" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 14 )]
+transform = Transform( -0.92043, 0, 0.390908, 0, 1, 0, -0.390908, 0, -0.92043, 291.57, -1.37106, 301.507 )
+
+[node name="box_papelao_big23" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 14 )]
+transform = Transform( -0.92043, 0, 0.390908, 0, 1, 0, -0.390908, 0, -0.92043, 289.37, -1.37106, 300.342 )
+
+[node name="box_papelao_big24" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 14 )]
+transform = Transform( -0.92043, 0, 0.390908, 0, 1, 0, -0.390908, 0, -0.92043, 290.535, -1.37106, 303.706 )
+
+[node name="box_papelao_big25" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 14 )]
+transform = Transform( -0.92043, 0, 0.390908, 0, 1, 0, -0.390908, 0, -0.92043, 288.336, -1.37106, 302.542 )
+
+[node name="box_papelao_big26" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 14 )]
+transform = Transform( -0.92043, 0, 0.390908, 0, 1, 0, -0.390908, 0, -0.92043, 336.328, -1.37106, 343.807 )
+
+[node name="box_papelao_big27" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 14 )]
+transform = Transform( -0.92043, 0, 0.390908, 0, 1, 0, -0.390908, 0, -0.92043, 334.129, -1.37106, 342.643 )
+
+[node name="box_papelao_big28" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 14 )]
+transform = Transform( -0.659202, 0, 0.751966, 0, 1, 0, -0.751966, 0, -0.659202, 394.127, -1.37106, 408.736 )
+
+[node name="box_papelao_big29" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 14 )]
+transform = Transform( -0.659202, 0, 0.751966, 0, 1, 0, -0.751966, 0, -0.659202, 392.652, -1.37106, 406.731 )
+
+[node name="box_papelao_big30" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 14 )]
+transform = Transform( -0.594949, 0, 0.803763, 0, 1, 0, -0.803763, 0, -0.594949, 442.616, -1.37106, 453.671 )
+
+[node name="box_papelao_big31" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 14 )]
+transform = Transform( -0.594949, 0, 0.803763, 0, 1, 0, -0.803763, 0, -0.594949, 441.311, -1.37106, 451.552 )
+
+[node name="box_papelao_small20" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( 0.279209, 0, -0.96023, 0, 1, 0, 0.96023, 0, 0.279209, 57.5634, -1.37106, 417.26 )
+
+[node name="box_papelao_small21" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( 0.607695, 0, 0.794171, 0, 1, 0, -0.794171, 0, 0.607695, 227.472, -1.37106, 249.464 )
+
+[node name="box_papelao_small22" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( 0.607695, 0, 0.794171, 0, 1, 0, -0.794171, 0, 0.607695, 226.507, -1.37106, 248.693 )
+
+[node name="box_papelao_small24" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( 0.607695, 0, 0.794171, 0, 1, 0, -0.794171, 0, 0.607695, 226.403, -1.37106, 250.728 )
+
+[node name="box_papelao_small25" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( 0.607695, 0, 0.794171, 0, 1, 0, -0.794171, 0, 0.607695, 225.438, -1.37106, 249.957 )
+
+[node name="box_papelao_small26" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( 0.607695, 0, 0.794171, 0, 1, 0, -0.794171, 0, 0.607695, 225.529, -1.37106, 251.894 )
+
+[node name="box_papelao_small27" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( 0.607695, 0, 0.794171, 0, 1, 0, -0.794171, 0, 0.607695, 224.563, -1.37106, 251.123 )
+
+[node name="box_papelao_small28" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( 0.607695, 0, 0.794171, 0, 1, 0, -0.794171, 0, 0.607695, 232.529, -1.37106, 254.894 )
+
+[node name="box_papelao_small29" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( 0.607695, 0, 0.794171, 0, 1, 0, -0.794171, 0, 0.607695, 231.563, -1.37106, 254.123 )
+
+[node name="box_papelao_small30" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( 0.607695, 0, 0.794171, 0, 1, 0, -0.794171, 0, 0.607695, 240.304, -1.37106, 286.095 )
+
+[node name="box_papelao_small31" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( 0.607695, 0, 0.794171, 0, 1, 0, -0.794171, 0, 0.607695, 239.339, -1.37106, 285.324 )
+
+[node name="box_papelao_small32" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( 0.607695, 0, 0.794171, 0, 1, 0, -0.794171, 0, 0.607695, 263.827, -1.37106, 283.665 )
+
+[node name="box_papelao_small33" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( 0.607695, 0, 0.794171, 0, 1, 0, -0.794171, 0, 0.607695, 262.861, -1.37106, 282.894 )
+
+[node name="box_papelao_small34" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( 0.669636, 0, 0.742689, 0, 1, 0, -0.742689, 0, 0.669636, 421.001, -1.37106, 446.721 )
+
+[node name="box_papelao_small35" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( 0.669636, 0, 0.742689, 0, 1, 0, -0.742689, 0, 0.669636, 420.101, -1.37106, 445.875 )
+
+[node name="box_papelao_small36" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( 0.938902, 0, 0.344184, 0, 1, 0, -0.344184, 0, 0.938902, 444.29, -1.37106, 456.271 )
+
+[node name="box_papelao_small37" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( 0.938902, 0, 0.344184, 0, 1, 0, -0.344184, 0, 0.938902, 443.889, -1.37106, 455.103 )
+
+[node name="box_papelao_small38" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( 0.938902, 0, 0.344184, 0, 1, 0, -0.344184, 0, 0.938902, 438.604, -1.37106, 480.735 )
+
+[node name="box_papelao_small39" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( 0.938902, 0, 0.344184, 0, 1, 0, -0.344184, 0, 0.938902, 438.203, -1.37106, 479.567 )
+
+[node name="box_papelao_small40" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( 0.938902, 0, 0.344184, 0, 1, 0, -0.344184, 0, 0.938902, 460.027, -1.37106, 502.819 )
+
+[node name="box_papelao_small41" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( 0.938902, 0, 0.344184, 0, 1, 0, -0.344184, 0, 0.938902, 459.625, -1.37106, 501.65 )
+
+[node name="box_papelao_big20" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 14 )]
+transform = Transform( -0.825064, 0, 0.565039, 0, 1, 0, -0.565039, 0, -0.825064, 230.082, -1.37106, 253.267 )
+
+[node name="box_papelao_small23" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( -0.532891, 0, -0.846184, 0, 1, 0, 0.846184, 0, -0.532891, 228.511, -1.37106, 252.744 )
+
+[node name="box_papelao_small15" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( 0.960673, 0, 0.277684, 0, 1, 0, -0.277684, 0, 0.960673, -86.4466, -1.37106, 350.236 )
+
+[node name="box_papelao_small16" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( -0.931412, 0, -0.363967, 0, 1, 0, 0.363967, 0, -0.931412, -86.0768, -1.37106, 352.659 )
+
+[node name="box_papelao_small17" parent="ViewportContainer/Viewport/objects" instance=ExtResource( 16 )]
+transform = Transform( -0.931412, 0, -0.363967, 0, 1, 0, 0.363967, 0, -0.931412, -85.651, -1.37106, 353.819 )
 
 [node name="event3_char1_objects" parent="ViewportContainer/Viewport" instance=ExtResource( 2 )]
 
@@ -197,10 +631,11 @@ transform = Transform( 1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -4.90323,
 curve = SubResource( 19 )
 
 [node name="PathFollow" type="PathFollow" parent="ViewportContainer/Viewport/car_invoker_enemy/Path"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.238839, -1.71839, 6.04395 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.842281, -1.71839, 4.62287 )
+loop = false
 
 [node name="caixa" parent="ViewportContainer/Viewport/car_invoker_enemy" instance=ExtResource( 13 )]
-speed_path = 0.015
+speed_path = 0.014
 path_to_follow = NodePath("../Path/PathFollow")
 
 [node name="Area" parent="ViewportContainer/Viewport" instance=ExtResource( 8 )]

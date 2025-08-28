@@ -29,12 +29,20 @@ skeleton = NodePath("../..")
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87959, -0.878698, 2.26487 )
 use_as_traction = false
 use_as_steering = true
+wheel_friction_slip = 100.5
+suspension_travel = 10.0
+suspension_stiffness = 25.0
+damping_relaxation = 1.0
 
 [node name="WheelMesh" parent="FrontLeftWheel" index="0"]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
 
 [node name="BackLeftWheel" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87959, -0.878698, -2.42232 )
+wheel_friction_slip = 100.5
+suspension_travel = 10.0
+suspension_stiffness = 25.0
+damping_relaxation = 1.0
 
 [node name="WheelMesh" parent="BackLeftWheel" index="0"]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
@@ -43,12 +51,20 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.87959, -0.878698, 2.26487 )
 use_as_traction = false
 use_as_steering = true
+wheel_friction_slip = 100.5
+suspension_travel = 10.0
+suspension_stiffness = 25.0
+damping_relaxation = 1.0
 
 [node name="WheelMesh" parent="FrontRightWheel" index="0"]
 transform = Transform( 1, 0, 8.74228e-08, 0, -1, 0, -8.74228e-08, 0, 1, 0, 0, 0 )
 
 [node name="BackRightWheel" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.87959, -0.878698, -2.42232 )
+wheel_friction_slip = 100.5
+suspension_travel = 10.0
+suspension_stiffness = 25.0
+damping_relaxation = 1.0
 
 [node name="WheelMesh" parent="BackRightWheel" index="0"]
 transform = Transform( 1, 0, 8.74228e-08, 0, -1, 0, -8.74228e-08, 0, 1, 0, 0, 0 )

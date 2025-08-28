@@ -20,7 +20,7 @@ onready var save_file: Resource
 
 func _ready():
 	# MUDAR O NOME DA VAR DO SAVED FILE RESOURCE LÀ EMBAIXO EM winPlay()!!
-	var event_name: String = "event2_char1_v1" # Deve ser mesmo nome do node e do file
+	var event_name: String = "event2_char2" # Deve ser mesmo nome do node e do file
 	#event_name0 = "event1_char1" # Deve ser o nome para progressao do game
 	var file_event = File.new()
 	file_event.open("res://data_files/event_name.txt", File.WRITE)
@@ -44,7 +44,7 @@ func _ready():
 	#load enemy:
 	#var car_loaded_enemy: Object = load("res://scenes/cars_updated/"+save_file.car_selected+".tscn")
 	#car_loaded_enemy.MODES.AI
-	curr_car_enemy = $ViewportContainer/Viewport/car_invoker_enemy/noturno
+	curr_car_enemy = $ViewportContainer/Viewport/car_invoker_enemy/lilas
 	curr_car_enemy.car_mode=1
 	#curr_car_enemy._ready()
 	#get_node("ViewportContainer/Viewport/car_invoker_enemy").add_child(curr_car_enemy)

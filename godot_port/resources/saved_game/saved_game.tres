@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-anne_id = 0
+anne_id = 2
 car_selected = "caixa"
 car0_in_garage = "caixa"
 car1_in_garage = "VAZIO"

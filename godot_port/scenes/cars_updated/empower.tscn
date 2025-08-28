@@ -77,11 +77,12 @@ delta_nitro_inc = 2.0
 delta_nitro_dec = 15.0
 
 [node name="CarMesh" parent="." index="2"]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.951278, 0 )
 mesh = SubResource( 32 )
 material/0 = SubResource( 6 )
 
 [node name="FrontLeftWheel" parent="." index="3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.47162, -0.546, 1.92897 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.47162, 0.405278, 1.92897 )
 wheel_radius = 0.47
 
 [node name="WheelMesh" parent="FrontLeftWheel" index="0"]
@@ -89,7 +90,7 @@ mesh = SubResource( 31 )
 material/0 = SubResource( 10 )
 
 [node name="BackLeftWheel" parent="." index="4"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4724, -0.432135, -1.96107 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4724, 0.519143, -1.96107 )
 wheel_radius = 0.545
 
 [node name="WheelMesh" parent="BackLeftWheel" index="0"]
@@ -97,7 +98,7 @@ mesh = SubResource( 33 )
 material/0 = SubResource( 10 )
 
 [node name="FrontRightWheel" parent="." index="5"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4439, -0.546, 1.92897 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4439, 0.405278, 1.92897 )
 wheel_radius = 0.47
 
 [node name="WheelMesh" parent="FrontRightWheel" index="0"]
@@ -105,7 +106,7 @@ mesh = SubResource( 31 )
 material/0 = SubResource( 10 )
 
 [node name="BackRightWheel" parent="." index="6"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4313, -0.432135, -1.96107 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4313, 0.519143, -1.96107 )
 wheel_radius = 0.545
 
 [node name="WheelMesh" parent="BackRightWheel" index="0"]
@@ -116,20 +117,22 @@ material/0 = SubResource( 10 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.736095, -0.649045, -3.75555 )
 
 [node name="CPUParticles" parent="NitroParticles" index="0"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.951278, 0 )
 direction = Vector3( 0, 0, -1 )
 
 [node name="NitroParticles2" parent="." index="8"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.738672, -0.642809, -3.75964 )
 
 [node name="CPUParticles" parent="NitroParticles2" index="0"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.951278, 0 )
 direction = Vector3( 0, 0, -1 )
 
 [node name="CollisionShape" parent="." index="9"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.951278, 0 )
 shape = SubResource( 15 )
 
 [node name="CollisionShape" parent="SoundsFX/AreaSFX" index="0"]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.20217e-08, 0.0207137, 0.012231 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.20217e-08, 0.971991, 0.012231 )
 
 [node name="RayCast" parent="." index="11"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )

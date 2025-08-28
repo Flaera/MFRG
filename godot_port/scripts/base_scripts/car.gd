@@ -60,7 +60,7 @@ var brake_pedal = false
 var nitro: bool
 var raycasts_by_name: Dictionary
 
-const MASS = 100
+const MASS = 1000
 const MAX_DISTANCE = 100000
 const NO_COLLIDE = 200000
 
@@ -105,12 +105,14 @@ func _ready():
 			print("Static=",car_mode)
 			
 	#mass = MASS
-	#gravity_scale = 3.0
-	var car_used = ResourceLoader.load("res://resources/saved_game/saved_game.tres").car_selected
-	if (car_used=="solo" or car_used=="sun"):
-		gravity_scale=2.0
+	#gravity_scale = 2.0
+	#var car_used = ResourceLoader.load("res://resources/saved_game/saved_game.tres").car_selected
+	#if (car_used=="solo" or car_used=="sun" or car_used=="caixa"):
+	gravity_scale=2.0
+	#else:
+	#	gravity_scale=1.0
 	#mass = 8*MASS
-	#weight=4.0
+	#weight=MASS
 	
 	
 	#set_process_input(true)
