@@ -1811,15 +1811,15 @@ transform = Transform( -0.00274738, 0, -0.818821, 0, 0.933841, 0, 0.818821, 0, -
 mesh = SubResource( 5 )
 
 [node name="Cube004" type="MeshInstance" parent="."]
-transform = Transform( 0.0402144, 0, -0.999191, 0, 1, 0, 0.999191, 0, 0.0402144, 4.63683, 0.0148477, -1.67937 )
+transform = Transform( 0.0402144, 0, -0.999191, 0, 1, 0, 0.999191, 0, 0.0402144, 4.63683, -1.50279, -1.67937 )
 mesh = SubResource( 7 )
 
 [node name="Cube002" type="MeshInstance" parent="."]
-transform = Transform( 0.0402144, 0, -0.999191, 0, 1, 0, 0.999191, 0, 0.0402144, 6.42876, 0.0148477, -5.86055 )
+transform = Transform( 0.0402144, 0, -0.999191, 0, 1, 0, 0.999191, 0, 0.0402144, 6.42876, -1.50279, -5.86055 )
 mesh = SubResource( 7 )
 
 [node name="Cube001" type="MeshInstance" parent="."]
-transform = Transform( 0.0402144, 0, -0.999191, 0, 1, 0, 0.999191, 0, 0.0402144, 6.2233, 0.0148477, -11.2616 )
+transform = Transform( 0.0402144, 0, -0.999191, 0, 1, 0, 0.999191, 0, 0.0402144, 6.2233, -1.50279, -11.2616 )
 mesh = SubResource( 7 )
 
 [node name="barraco4030" type="MeshInstance" parent="."]
@@ -2263,7 +2263,7 @@ transform = Transform( -0.983077, 0, -0.183192, 0, 1.0709, 0, 0.183192, 0, -0.98
 mesh = SubResource( 9 )
 
 [node name="large_calcada007" type="MeshInstance" parent="."]
-transform = Transform( 0.882567, 0, 0.470187, 0, 1, 0, -0.470187, 0, 0.882567, -43.8943, -1.42967, -116.403 )
+transform = Transform( 0.882567, 0, 0.470187, 0, 1, 0, -0.470187, 0, 0.882567, -43.8943, -2.21982, -116.403 )
 mesh = SubResource( 6 )
 
 [node name="barraco2010" type="MeshInstance" parent="."]
@@ -2583,11 +2583,11 @@ transform = Transform( 0.372307, 0, -0.237605, 0, 0.857001, 0, 0.100426, 0, 0.88
 mesh = SubResource( 1 )
 
 [node name="large_calcada006" type="MeshInstance" parent="."]
-transform = Transform( 0.837329, 0, 0.546699, 0, 1, 0, -0.546699, 0, 0.837329, -75.6396, -1.42967, -18.4936 )
+transform = Transform( 0.837329, 0, 0.546699, 0, 1, 0, -0.546699, 0, 0.837329, -75.6396, -2.02072, -18.4936 )
 mesh = SubResource( 6 )
 
 [node name="calcada007" type="MeshInstance" parent="."]
-transform = Transform( -0.776993, 0, -0.629509, 0, 1.0709, 0, 0.629509, 0, -0.776993, -57.9099, -0.295003, -27.7012 )
+transform = Transform( -0.776993, 0, -0.629509, 0, 1.0709, 0, 0.629509, 0, -0.776993, -57.9099, -2.02737, -27.7012 )
 mesh = SubResource( 9 )
 
 [node name="barraco1002" type="MeshInstance" parent="."]
@@ -2611,11 +2611,11 @@ transform = Transform( -0.818769, 0, -0.00959409, 0, 0.933841, 0, 0.00959409, 0,
 mesh = SubResource( 5 )
 
 [node name="large_calcada005" type="MeshInstance" parent="."]
-transform = Transform( 0.41689, 0, 0.908957, 0, 1, 0, -0.908957, 0, 0.41689, -61.0857, -1.42967, -6.2227 )
+transform = Transform( 0.41689, 0, 0.908957, 0, 1, 0, -0.908957, 0, 0.41689, -61.0857, -2.01575, -6.2227 )
 mesh = SubResource( 6 )
 
 [node name="calcada006" type="MeshInstance" parent="."]
-transform = Transform( -0.332577, 0, -0.943076, 0, 1.0709, 0, 0.943076, 0, -0.332577, -46.809, -0.295003, -2.33183 )
+transform = Transform( -0.332577, 0, -0.943076, 0, 1.0709, 0, 0.943076, 0, -0.332577, -46.809, -1.99112, -2.33183 )
 mesh = SubResource( 9 )
 
 [node name="calcada005" type="MeshInstance" parent="."]
@@ -2627,39 +2627,39 @@ transform = Transform( -0.263311, 0, -0.964711, 0, 1.0709, 0, 0.964711, 0, -0.26
 mesh = SubResource( 9 )
 
 [node name="calcada003" type="MeshInstance" parent="."]
-transform = Transform( -0.177672, 0, -0.98409, 0, 1.0709, 0, 0.98409, 0, -0.177672, -30.7141, -1.84808, -17.2281 )
+transform = Transform( -0.177672, 0, -0.98409, 0, 1.0709, 0, 0.98409, 0, -0.177672, -30.7141, -2.0036, -17.2281 )
 mesh = SubResource( 9 )
 
 [node name="large_calcada004" type="MeshInstance" parent="."]
-transform = Transform( -0.171816, 0, -0.985129, 0, 1, 0, 0.985129, 0, -0.171816, -33.519, -1.42968, 2.50962 )
+transform = Transform( -0.171816, 0, -0.985129, 0, 1, 0, 0.985129, 0, -0.171816, -33.519, -2.05176, 2.50962 )
 mesh = SubResource( 6 )
 
 [node name="calcada002" type="MeshInstance" parent="."]
-transform = Transform( 0.0143933, 0, -0.999896, 0, 1.0709, 0, 0.999896, 0, 0.0143933, -19.071, -0.295004, 2.6336 )
+transform = Transform( 0.0143933, 0, -0.999896, 0, 1.0709, 0, 0.999896, 0, 0.0143933, -19.071, -2.02834, 2.6336 )
 mesh = SubResource( 9 )
 
 [node name="calcada001" type="MeshInstance" parent="."]
-transform = Transform( 0.0143933, 0, -0.999896, 0, 1.0709, 0, 0.999896, 0, 0.0143933, -9.48259, -0.295004, 2.6336 )
+transform = Transform( 0.0143933, 0, -0.999896, 0, 1.0709, 0, 0.999896, 0, 0.0143933, -9.48259, -1.98221, 2.6336 )
 mesh = SubResource( 9 )
 
 [node name="large_calcada003" type="MeshInstance" parent="."]
-transform = Transform( 0.0325383, 0, -0.999471, 0, 1, 0, 0.999471, 0, 0.0325383, 14.4232, -1.42968, 3.87939 )
+transform = Transform( 0.0325383, 0, -0.999471, 0, 1, 0, 0.999471, 0, 0.0325383, 14.4232, -1.69608, 3.87939 )
 mesh = SubResource( 6 )
 
 [node name="large_calcada002" type="MeshInstance" parent="."]
-transform = Transform( 0.0325383, 0, -0.999471, 0, 1, 0, 0.999471, 0, 0.0325383, -16.7392, -1.42968, -17.3521 )
+transform = Transform( 0.0325383, 0, -0.999471, 0, 1, 0, 0.999471, 0, 0.0325383, -16.7392, -2.0519, -17.3521 )
 mesh = SubResource( 6 )
 
 [node name="large_calcada001" type="MeshInstance" parent="."]
-transform = Transform( 0.0325383, 0, -0.999471, 0, 1, 0, 0.999471, 0, 0.0325383, 1.41033, -1.42968, -17.0097 )
+transform = Transform( 0.0325383, 0, -0.999471, 0, 1, 0, 0.999471, 0, 0.0325383, 1.41033, -1.75873, -17.0097 )
 mesh = SubResource( 6 )
 
 [node name="large_calcada" type="MeshInstance" parent="."]
-transform = Transform( 0.0325383, 0, -0.999471, 0, 1, 0, 0.999471, 0, 0.0325383, 19.7311, -1.42968, -17.1809 )
+transform = Transform( 0.0325383, 0, -0.999471, 0, 1, 0, 0.999471, 0, 0.0325383, 19.7311, -1.69608, -17.1809 )
 mesh = SubResource( 6 )
 
 [node name="calcada" type="MeshInstance" parent="."]
-transform = Transform( 0.0143933, 0, -0.999896, 0, 1.0709, 0, 0.999896, 0, 0.0143933, 0.10584, -0.295005, 2.6336 )
+transform = Transform( 0.0143933, 0, -0.999896, 0, 1.0709, 0, 0.999896, 0, 0.0143933, 0.10584, -1.65235, 2.6336 )
 mesh = SubResource( 9 )
 
 [node name="laje2" type="MeshInstance" parent="."]

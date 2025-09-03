@@ -11,7 +11,7 @@
 [sub_resource type="PhysicsMaterial" id=11]
 
 [sub_resource type="BoxShape" id=10]
-extents = Vector3( 2.09619, 0.961402, 3.97387 )
+extents = Vector3( 1, 0.804415, 3.27032 )
 
 [node name="Car" type="VehicleBody" groups=["Car"]]
 physics_material_override = SubResource( 11 )

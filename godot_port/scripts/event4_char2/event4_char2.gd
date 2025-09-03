@@ -37,12 +37,13 @@ func _ready():
 	#curr_car._ready()
 	get_node("ViewportContainer/Viewport/car_invoker").add_child(curr_car)
 	#load enemy:
-	var car_loaded_enemy: Object = load("res://scenes/cars_updated/"+save_file.car_selected+".tscn")
+	#var car_loaded_enemy: Object = load("res://scenes/cars_updated/"+save_file.car_selected+".tscn")
 	#car_loaded_enemy.MODES.AI
-	curr_car_enemy = car_loaded_enemy.instance()
-	curr_car_enemy.car_mode=1
+	#curr_car_enemy = car_loaded_enemy.instance()
 	#curr_car_enemy._ready()
-	get_node("ViewportContainer/Viewport/car_invoker_enemy").add_child(curr_car_enemy)
+	curr_car_enemy=get_node("ViewportContainer/Viewport/car_invoker_enemy/roots")
+	curr_car_enemy.car_mode=1
+	curr_car_enemy.path_follow_node.unit_offset=0.0
 
 	#camera = preload("res://scenes/camera/camera.scn")
 	#curr_cam = camera.instance()
@@ -159,6 +160,7 @@ func _on_Area_body_entered(body):
 
 
 func _on_Area0_body_entered(body):
-	if (curr_car_enemy.index_checkpoints<len_checkpoints and body==curr_car_enemy):
-		#print("body=",body)
-		curr_car_enemy.index_checkpoints+=1
+	#if (curr_car_enemy.index_checkpoints<len_checkpoints and body==curr_car_enemy):
+	#	#print("body=",body)
+	#	curr_car_enemy.index_checkpoints+=1
+	pass

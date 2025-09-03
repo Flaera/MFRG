@@ -127,6 +127,16 @@ func _ready():
 	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent7/TextureRect").set_texture(unconfirmed)
 	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent7/TextureRect").rect_scale = Vector2(constant, constant)
 	
+	if int(saved_manager.event1_char3):
+		get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent8/TextureRect").set_texture(confirmed)
+	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent8/TextureRect").set_texture(unconfirmed)
+	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent8/TextureRect").rect_scale = Vector2(constant, constant)
+	
+	if int(saved_manager.event3_char2):
+		get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent9/TextureRect").set_texture(confirmed)
+	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent9/TextureRect").set_texture(unconfirmed)
+	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent9/TextureRect").rect_scale = Vector2(constant, constant)
+	
 	##############################################
 	
 	var select_lang = SelectLang.new()
@@ -190,4 +200,21 @@ func _on_ButtonEvent3_pressed():
 	get_tree().change_scene("res://scenes/event4_char2/event4_char2.tscn")
 
 
-##falta o 3 e o 5 da parte 2, o diogo ficou responsavel por essas pistas
+##falta o 5 da parte 2, o diogo ficou responsavel por essa pista
+
+
+func _on_ButtonEvent8_pressed():
+	get_tree().change_scene("res://scenes/event1_char3/event1_char3_copy_event2_char1_v1.tscn")
+
+
+func _on_ButtonEvent9_pressed():
+	get_tree().change_scene("res://scenes/event3_char2/event3_char2.tscn")
+
+
+func _on_ButtonEvent10_pressed():
+	get_tree().change_scene("res://scenes/event2_char3/event2_char3_copy_event3_char1.tscn")
+
+
+
+func _on_ButtonEvent11_pressed():
+	get_tree().change_scene("res://scenes/event3_char3/event3_char3_copy_event3_char2.tscn")

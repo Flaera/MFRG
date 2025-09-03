@@ -97,7 +97,7 @@ func mainCarPhys(axis, boost_button, back_wheel1, back_wheel2, brake_on,
 		 rpm0, rpm1, back_wheel1, back_wheel2)
 		#print("|",rpm0,"|")
 		if (brake_on==true):
-			brake_force += 1000*(acceleration/2)*delta_time
+			brake_force += 10*(acceleration/2)*delta_time
 		else:
 			brake_force = 0.0
 		#print("PLAYER")

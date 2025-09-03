@@ -5,8 +5,8 @@
 [resource]
 script = ExtResource( 1 )
 anne_id = 2
-car_selected = "caixa"
-car0_in_garage = "caixa"
+car_selected = "empower"
+car0_in_garage = "empower"
 car1_in_garage = "VAZIO"
 car2_in_garage = "VAZIO"
 gold = 9999999

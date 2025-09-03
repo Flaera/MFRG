@@ -650,3 +650,5 @@ margin_bottom = 40.0
 texture = SubResource( 6 )
 
 [connection signal="body_entered" from="ViewportContainer/Viewport/Area" to="." method="_on_Area_body_entered"]
+
+[editable path="ViewportContainer/Viewport/event3_char1_objects"]

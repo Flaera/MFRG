@@ -184,15 +184,6 @@ func _physics_process(delta):
 
 
 func look_at_checkpoint(delta):
-	"""var dist: float = global_transform.origin.distance_to(curr_checkpoint.global_transform.origin)
-	if (dist<15.0 and index_checkpoints<len_checkpoints):
-		index_checkpoints+=1
-	set_danger()
-	set_interest()
-	var angle: float = choose_direction()
-	steering=(angle.y*delta)
-	print("DEBUG=",dist,"|",index_checkpoints)
-	"""
 	#var dist: float = global_transform.origin.distance_to(curr_checkpoint.global_transform.origin)
 	#if dist < 15.0 and index_checkpoints < len_checkpoints:
 	#	index_checkpoints += 1
@@ -235,23 +226,6 @@ func look_at_checkpoint(delta):
 	# DEBUG
 	#print("🚗 dot:", dot, " angle:", angle, " steering:", steering, " axis.y:", axis.y, " brake:", brake)
 	
-	"""
-	if (curr_checkpoint.global_transform.origin.distance_to(self.global_transform.origin)>1.0):
-		var dir = (curr_checkpoint.global_transform.origin-self.global_transform.origin).normalized()
-		var global_foward = global_transform.basis.z
-		var dot_product = global_foward.dot(dir)
-		if (dot_product>0):axis.y=1
-		else:axis.y=-1
-		var cross_product_y = global_transform.basis.z.cross(dir).y
-		var angle_to_target = atan2(cross_product_y, dot_product)
-		var target_steering = clamp(angle_to_target / PI * 0.5, -0.8, 0.8)
-		set_steering(lerp(get_steering(), target_steering, steering_speed))
-		print("DEBUG==","|",curr_checkpoint.global_transform.origin)
-		#print("DEBUG2==","|",self.position)
-	else:
-		axis.y=0.0
-		steering=0.0
-	"""
 
 
 func multiply_vector(vec1: Vector3, vec2: Vector3) -> float:
