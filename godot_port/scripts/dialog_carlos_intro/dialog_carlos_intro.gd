@@ -8,13 +8,14 @@ var lenght: int
 var bg: Object
 var delta_time: float = 0.0
 var delta_inc: float = 0.0
-onready var anne = [preload("res://assets/blender2.79_old/assets/talk_scenes/characters/anne/indigena/08.png"),
-					preload("res://assets/blender2.79_old/assets/talk_scenes/characters/anne/lgbtqiapn+/Sprite-0002.png"),
-					preload("res://assets/blender2.79_old/assets/talk_scenes/characters/anne/afrodescendente/Sprite-001.png")]
+onready var anne = [preload("res://assets/blender2.79_old/assets/talk_scenes/characters/anne/new_anne_update/Anne1.png"),
+			preload("res://assets/blender2.79_old/assets/talk_scenes/characters/anne/new_anne_update/Anne2.png"),
+			preload("res://assets/blender2.79_old/assets/talk_scenes/characters/anne/new_anne_update/Anne3.png"),
+			preload("res://assets/blender2.79_old/assets/talk_scenes/characters/anne/new_anne_update/Anne4.png")]
 var char_load: Object
 var anne_id: int
 var anne_obj: Object
-onready var traf = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Traficante_armado.png")
+onready var traf = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/traf_armado/08.png")
 
 
 func setCharLocation(var character: Object, var pos: int):
@@ -41,7 +42,7 @@ func setCharLocation(var character: Object, var pos: int):
 		$CanvasLayer/Left.set_texture(null)
 
 func _ready():
-	char_load = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Carlos.png")
+	char_load = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/carlos/07.png")
 	bg = preload("res://assets/blender2.79_old/assets/talk_scenes/backgrounds/bg_carlos_intro.png") 
 	talk = preload("res://data_files/events_talks.gd").new().events_talks
 	index_dic = '4'

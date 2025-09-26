@@ -81,7 +81,6 @@ func _on_B_YES_pressed():
 	save_file.event2_char3 = 0
 	save_file.event3_char3 = 0
 	save_file.event4_char3 = 0
-	save_file.event5_char3 = 0
 
 	var save_status = ResourceSaver.save("res://resources/saved_game/saved_game.tres", save_file)
 	get_tree().change_scene("res://scenes/menu_group_choice/menu_group_choice2.scn")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/themeMFRG.tres" type="Theme" id=1]
 [ext_resource path="res://scripts/progress_game/progress_game.gd" type="Script" id=2]
 [ext_resource path="res://assets/fonts/BebasNeue-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/blender2.79_old/textures/tri/07.png" type="Texture" id=4]
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4
@@ -44,13 +45,21 @@ render_target_update_mode = 3
 
 [node name="CanvasLayer" type="CanvasLayer" parent="ViewportContainer/Viewport"]
 
+[node name="TextureRect4" type="TextureRect" parent="ViewportContainer/Viewport/CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+
 [node name="TextureRect" type="TextureRect" parent="ViewportContainer/Viewport/CanvasLayer"]
+visible = false
 margin_right = 338.0
 margin_bottom = 882.0
 rect_scale = Vector2( 1.846, 1.232 )
 texture = SubResource( 1 )
 
 [node name="TextureRect2" type="TextureRect" parent="ViewportContainer/Viewport/CanvasLayer"]
+visible = false
 margin_left = 640.0
 margin_right = 974.0
 margin_bottom = 1080.0
@@ -58,6 +67,7 @@ rect_scale = Vector2( 1.866, 1.268 )
 texture = SubResource( 2 )
 
 [node name="TextureRect3" type="TextureRect" parent="ViewportContainer/Viewport/CanvasLayer"]
+visible = false
 margin_left = 1280.0
 margin_right = 1618.0
 margin_bottom = 1080.0

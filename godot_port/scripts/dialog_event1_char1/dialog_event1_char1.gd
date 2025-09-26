@@ -8,9 +8,10 @@ var lenght: int
 var bg: Object
 var delta_time: float = 0.0
 var delta_inc: float = 0.0
-onready var anne = [preload("res://assets/blender2.79_old/assets/talk_scenes/characters/anne/indigena/08.png"),
-			preload("res://assets/blender2.79_old/assets/talk_scenes/characters/anne/lgbtqiapn+/Sprite-0002.png"),
-			preload("res://assets/blender2.79_old/assets/talk_scenes/characters/anne/afrodescendente/Sprite-001.png")]
+onready var anne = [preload("res://assets/blender2.79_old/assets/talk_scenes/characters/anne/new_anne_update/Anne1.png"),
+			preload("res://assets/blender2.79_old/assets/talk_scenes/characters/anne/new_anne_update/Anne2.png"),
+			preload("res://assets/blender2.79_old/assets/talk_scenes/characters/anne/new_anne_update/Anne3.png"),
+			preload("res://assets/blender2.79_old/assets/talk_scenes/characters/anne/new_anne_update/Anne4.png")]
 var char_load: Object
 var char_name: String
 var anne_id: int
@@ -33,8 +34,8 @@ func setCharText(anne_id,
 
 
 func _ready():
-	char_load = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Zu.png")
-	bg = preload("res://assets/blender2.79_old/assets/talk_scenes/backgrounds/bg_front_house_zu.png") 
+	char_load = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/zu/01.png")
+	bg = preload("res://assets/blender2.79_old/assets/talk_scenes/talk_scene_zu/07.png") 
 	talk = preload("res://data_files/events_talks.gd").new().events_talks
 	index_dic = '1'
 	index = 0

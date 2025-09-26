@@ -24,8 +24,7 @@ func _ready():
 	#file_state.close()
 	var condition0: bool = saved_manager.event1_char1 and saved_manager.event2_char1 and saved_manager.event3_char1 and saved_manager.event4_char1 and saved_manager.event5_char1
 	var condition1: bool = saved_manager.event1_char2 and saved_manager.event2_char2 and saved_manager.event3_char2 and saved_manager.event4_char2 and saved_manager.event5_char2
-	var condition2: bool = saved_manager.event1_char3 and saved_manager.event2_char3 and saved_manager.event3_char3 and saved_manager.event4_char3 and saved_manager.event5_char3
-	#print("event1char1=",saved_manager.event1_char1,";state=",saved_manager.state)
+	var condition2: bool = saved_manager.event1_char3 and saved_manager.event2_char3 and saved_manager.event3_char3 and saved_manager.event4_char3
 	#print("condition1=",saved_manager.event1_char1==false)
 	#print("condition2=",int(saved_manager.state)==int(0))
 	if (saved_manager.event1_char1==false and int(saved_manager.state)==int(0)):
@@ -137,6 +136,26 @@ func _ready():
 	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent9/TextureRect").set_texture(unconfirmed)
 	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent9/TextureRect").rect_scale = Vector2(constant, constant)
 	
+	if int(saved_manager.event5_char2):
+		get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent12/TextureRect").set_texture(confirmed)
+	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent12/TextureRect").set_texture(unconfirmed)
+	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent12/TextureRect").rect_scale = Vector2(constant, constant)
+	
+	if int(saved_manager.event2_char3):
+		get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent10/TextureRect").set_texture(confirmed)
+	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent10/TextureRect").set_texture(unconfirmed)
+	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent10/TextureRect").rect_scale = Vector2(constant, constant)
+	
+	if int(saved_manager.event3_char3):
+		get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent11/TextureRect").set_texture(confirmed)
+	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent11/TextureRect").set_texture(unconfirmed)
+	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent11/TextureRect").rect_scale = Vector2(constant, constant)
+	
+	if int(saved_manager.event4_char3):
+		get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent13/TextureRect").set_texture(confirmed)
+	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent13/TextureRect").set_texture(unconfirmed)
+	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent13/TextureRect").rect_scale = Vector2(constant, constant)
+	
 	##############################################
 	
 	var select_lang = SelectLang.new()
@@ -200,9 +219,6 @@ func _on_ButtonEvent3_pressed():
 	get_tree().change_scene("res://scenes/event4_char2/event4_char2.tscn")
 
 
-##falta o 5 da parte 2, o diogo ficou responsavel por essa pista
-
-
 func _on_ButtonEvent8_pressed():
 	get_tree().change_scene("res://scenes/event1_char3/event1_char3_copy_event2_char1_v1.tscn")
 
@@ -218,3 +234,12 @@ func _on_ButtonEvent10_pressed():
 
 func _on_ButtonEvent11_pressed():
 	get_tree().change_scene("res://scenes/event3_char3/event3_char3_copy_event3_char2.tscn")
+
+
+func _on_ButtonEvent12_pressed():
+	get_tree().change_scene("res://scenes/event5_char2/event5_char2_copy_event1_char1_v4.tscn")
+
+
+
+func _on_ButtonEvent13_pressed():
+	get_tree().change_scene("res://scenes/event4_char3/event4_char3_copy_event4_char2.tscn")

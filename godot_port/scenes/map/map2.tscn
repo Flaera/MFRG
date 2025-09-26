@@ -123,8 +123,8 @@ anims/map_anim_buttons2 = SubResource( 10 )
 [node name="PivotButtons" type="Control" parent="ViewportContainer/Viewport/CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 105600.0
-margin_bottom = 59400.0
+margin_right = 111360.0
+margin_bottom = 62640.0
 mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": true
@@ -444,6 +444,56 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
+[node name="ButtonEvent12" type="Button" parent="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents"]
+anchor_left = 36.475
+anchor_top = 7.225
+anchor_right = 36.475
+anchor_bottom = 7.225
+margin_left = 20.0
+margin_top = 200.0
+margin_right = 287.999
+margin_bottom = 462.0
+rect_scale = Vector2( 0.3, 0.3 )
+theme = ExtResource( 6 )
+icon = SubResource( 5 )
+icon_align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent12"]
+margin_right = 100.0
+margin_bottom = 100.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ButtonEvent13" type="Button" parent="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents"]
+anchor_left = 25.925
+anchor_top = 14.775
+anchor_right = 25.925
+anchor_bottom = 14.775
+margin_left = 20.0
+margin_top = 200.0
+margin_right = 287.999
+margin_bottom = 462.0
+rect_scale = Vector2( 0.3, 0.3 )
+theme = ExtResource( 6 )
+icon = SubResource( 5 )
+icon_align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent13"]
+margin_right = 100.0
+margin_bottom = 100.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -463,5 +513,7 @@ texture = SubResource( 8 )
 [connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent8" to="." method="_on_ButtonEvent8_pressed"]
 [connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent9" to="." method="_on_ButtonEvent9_pressed"]
 [connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent11" to="." method="_on_ButtonEvent11_pressed"]
+[connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent12" to="." method="_on_ButtonEvent12_pressed"]
+[connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent13" to="." method="_on_ButtonEvent13_pressed"]
 
 [editable path="ViewportContainer/Viewport/CanvasLayer/HBoxContainer"]
