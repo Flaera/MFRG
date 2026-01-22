@@ -5,6 +5,7 @@ onready var unconfirmed: Object = load("res://assets/blender2.79_old/textures/ev
 onready var confirmed: Object = load("res://assets/blender2.79_old/textures/event_icons/confirmed_icon.png")
 onready var intro_carlos_anne_scene_name: String = "res://scenes/dialog_carlos_intro/dialog_carlos_intro.scn"
 onready var intro_maria_anne_scene_name: String = "res://scenes/dialog_maria_intro/dialog_maria_intro.tscn"
+onready var intro_vitoria_anne_scene_name: String = "res://scenes/dialog_vitoria_intro/dialog_vitoria_intro.tscn"
 export var saved_manager: Resource
 
 
@@ -46,14 +47,12 @@ func _ready():
 		saved_manager.state = 3
 		ResourceSaver.save("res://resources/saved_game/saved_game.tres", saved_manager)
 		#Colocar cutscene
-		#var file_state0 = File.new()
-		#file_state0.open("res://data_files/progress_in_game.txt", File.WRITE)
-		#file_state0.store_string("3")
-		#file_state0.close()
+		get_tree().change_scene(intro_vitoria_anne_scene_name)
 	elif (condition0==true and condition1==true and condition2==true):
 		saved_manager.state = 4
 		ResourceSaver.save("res://resources/saved_game/saved_game.tres", saved_manager)
 		#Colocar cutscene final
+		get_tree().change_scene("res://scenes/dialog_end_game/dialog_end_game.tscn")
 	var acc: int = 0
 	var constant: float = 0.125
 	for i in get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents").get_children():
@@ -208,7 +207,7 @@ func _on_ButtonEvent5_pressed():
 
 
 func _on_ButtonEvent6_pressed():
-	get_tree().change_scene("res://scenes/event1_char2/event1_char2.tscn")
+	get_tree().change_scene("res://scenes/dialog_event1_char2/dialog_event1_char2.scn")
 
 
 func _on_ButtonEvent7_pressed():
@@ -224,7 +223,7 @@ func _on_ButtonEvent8_pressed():
 
 
 func _on_ButtonEvent9_pressed():
-	get_tree().change_scene("res://scenes/event3_char2/event3_char2.tscn")
+	get_tree().change_scene("res://scenes/dialog_event3_char2/dialog_event3_char2.scn")
 
 
 func _on_ButtonEvent10_pressed():

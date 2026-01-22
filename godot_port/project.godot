@@ -71,8 +71,9 @@ _global_script_class_icons={
 config/name="MFRG"
 run/main_scene="res://scenes/main_intro_game/main_intro_game.tscn"
 boot_splash/show_image=false
-config/icon="res://assets/blender2.79_old/assets/talk_scenes/characters/anne/indigena/new_icon.png"
-config/windows_native_icon="res://assets/blender2.79_old/assets/talk_scenes/characters/anne/indigena/new_icon.ico"
+config/icon="res://assets/blender2.79_old/assets/talk_scenes/characters/anne/final_logo/new_icon.png"
+config/macos_native_icon="res://assets/blender2.79_old/assets/talk_scenes/characters/anne/final_logo/new_icon.icns"
+config/windows_native_icon="res://assets/blender2.79_old/assets/talk_scenes/characters/anne/final_logo/new_icon.ico"
 
 [autoload]
 
@@ -149,6 +150,10 @@ g_down={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":16777234,"unicode":0,"echo":false,"script":null)
  ]
+}
+anyone_key_click={
+"deadzone": 0.5,
+"events": [  ]
 }
 
 [locale]

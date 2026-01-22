@@ -1,7 +1,8 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://scripts/shop/shop.gd" type="Script" id=1]
 [ext_resource path="res://scenes/themeMFRG.tres" type="Theme" id=2]
+[ext_resource path="res://assets/gimp/menus_arrows/arrow - Copia.png" type="Texture" id=3]
 [ext_resource path="res://assets/blender2.79_old/assets/assets_shop_cars/color_map_shop.png" type="Texture" id=4]
 [ext_resource path="res://scenes/golds/golds.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/themeMFRGLabelDark.tres" type="Theme" id=6]
@@ -11,10 +12,6 @@
 [sub_resource type="DynamicFont" id=19]
 size = 50
 font_data = ExtResource( 8 )
-
-[sub_resource type="StreamTexture" id=20]
-flags = 4
-load_path = "res://.import/arrow.png-a4a34ea04551cddb834540c85fb39619.stex"
 
 [sub_resource type="DynamicFont" id=21]
 size = 68
@@ -121,8 +118,10 @@ background_sky = SubResource( 12 )
 adjustment_enabled = true
 adjustment_contrast = 0.85
 
-[sub_resource type="BoxShape" id=35]
-extents = Vector3( 9.40172, 0.095104, 9.35985 )
+[sub_resource type="CubeMesh" id=38]
+
+[sub_resource type="SpatialMaterial" id=39]
+albedo_color = Color( 0.25098, 0.0980392, 0.0941176, 1 )
 
 [sub_resource type="ViewportTexture" id=36]
 viewport_path = NodePath("ViewportContainer/Viewport")
@@ -171,7 +170,7 @@ rect_rotation = 180.0
 focus_neighbour_left = NodePath("../ButtonRightShop")
 focus_neighbour_bottom = NodePath("../ButtonConfirmShop")
 theme = ExtResource( 6 )
-icon = SubResource( 20 )
+icon = ExtResource( 3 )
 
 [node name="ButtonLeftShop" type="Button" parent="ViewportContainer/Viewport/CanvasLayer/Control"]
 anchor_top = 1.0
@@ -184,7 +183,7 @@ rect_scale = Vector2( 2, 2 )
 focus_neighbour_left = NodePath("../ButtonRightShop")
 focus_neighbour_bottom = NodePath("../ButtonConfirmShop")
 theme = ExtResource( 2 )
-icon = SubResource( 20 )
+icon = ExtResource( 3 )
 
 [node name="ButtonRightShop" type="Button" parent="ViewportContainer/Viewport/CanvasLayer/Control"]
 anchor_left = 1.0
@@ -199,7 +198,7 @@ rect_scale = Vector2( 2, 2 )
 focus_neighbour_right = NodePath("../ButtonLeftShop")
 focus_neighbour_bottom = NodePath("../ButtonConfirmShop")
 theme = ExtResource( 2 )
-icon = SubResource( 20 )
+icon = ExtResource( 3 )
 
 [node name="ButtonConfirmShop" type="Button" parent="ViewportContainer/Viewport/CanvasLayer/Control"]
 anchor_left = 0.5
@@ -431,14 +430,19 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 46.6639, 10.6908, 43.574 )
 [node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/StaticBody2"]
 shape = SubResource( 37 )
 
+[node name="StaticBody3" type="StaticBody" parent="ViewportContainer/Viewport"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/StaticBody3"]
+shape = SubResource( 37 )
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="ViewportContainer/Viewport"]
 environment = SubResource( 34 )
 
-[node name="StaticBody" type="StaticBody" parent="ViewportContainer/Viewport"]
-
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0385498, 0 )
-shape = SubResource( 35 )
+[node name="BG_armario" type="MeshInstance" parent="ViewportContainer/Viewport"]
+transform = Transform( 0.0890267, 0, 0, 0, 1.65815, 0, 0, 0, 0.973388, 9.32788, 1.45338, 0 )
+mesh = SubResource( 38 )
+skeleton = NodePath("../../..")
+material/0 = SubResource( 39 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0

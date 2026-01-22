@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/02.png-f527010cb67694cc5153df735c5c1782.stex"
+path="res://.import/bg_lixao_juana.png-e2f6e724989e164ecb1c571cac3cea3c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/02.png"
-dest_files=[ "res://.import/02.png-f527010cb67694cc5153df735c5c1782.stex" ]
+source_file="res://assets/blender2.79_old/assets/talk_scenes/backgrounds/bg_lixao_juana.png"
+dest_files=[ "res://.import/bg_lixao_juana.png-e2f6e724989e164ecb1c571cac3cea3c.stex" ]
 
 [params]
 

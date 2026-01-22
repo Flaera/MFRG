@@ -1,1 +1,1 @@
-event2_char2
+event1_char2

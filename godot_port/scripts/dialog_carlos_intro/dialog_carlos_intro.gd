@@ -20,26 +20,26 @@ onready var traf = preload("res://assets/blender2.79_old/assets/talk_scenes/char
 
 func setCharLocation(var character: Object, var pos: int):
 	if (talk[index_dic][index][0]=="Carlos" and pos==1):
-		$CanvasLayer/Left.set_texture(character)
-		$CanvasLayer/Right.set_texture(null)
+		$ViewportContainer/Viewport/CanvasLayer/Left.set_texture(character)
+		$ViewportContainer/Viewport/CanvasLayer/Right.set_texture(null)
 	elif (talk[index_dic][index][0]=="Carlos" and pos==2):
-		$CanvasLayer/Right.set_texture(character)
-		$CanvasLayer/Left.set_texture(null)
+		$ViewportContainer/Viewport/CanvasLayer/Right.set_texture(character)
+		$ViewportContainer/Viewport/CanvasLayer/Left.set_texture(null)
 	elif (talk[index_dic][index][0]=="Anne" and pos==1):
-		$CanvasLayer/Left.set_texture(anne[anne_id])
-		$CanvasLayer/Right.set_texture(null)
+		$ViewportContainer/Viewport/CanvasLayer/Left.set_texture(anne[anne_id])
+		$ViewportContainer/Viewport/CanvasLayer/Right.set_texture(null)
 	elif (talk[index_dic][index][0]=="Anne" and pos==2):
-		$CanvasLayer/Right.set_texture(anne[anne_id])
-		$CanvasLayer/Left.set_texture(null)
+		$ViewportContainer/Viewport/CanvasLayer/Right.set_texture(anne[anne_id])
+		$ViewportContainer/Viewport/CanvasLayer/Left.set_texture(null)
 	elif (talk[index_dic][index][0]=="Traficante_Armado" and pos==1):
-		$CanvasLayer/Left.set_texture(traf)
-		$CanvasLayer/Right.set_texture(null)
+		$ViewportContainer/Viewport/CanvasLayer/Left.set_texture(traf)
+		$ViewportContainer/Viewport/CanvasLayer/Right.set_texture(null)
 	elif (talk[index_dic][index][0]=="Traficante_Armado" and pos==2):
-		$CanvasLayer/Right.set_texture(traf)
-		$CanvasLayer/Left.set_texture(null)
+		$ViewportContainer/Viewport/CanvasLayer/Right.set_texture(traf)
+		$ViewportContainer/Viewport/CanvasLayer/Left.set_texture(null)
 	elif (talk[index_dic][index][0]=="bg_only"):
-		$CanvasLayer/Right.set_texture(null)
-		$CanvasLayer/Left.set_texture(null)
+		$ViewportContainer/Viewport/CanvasLayer/Right.set_texture(null)
+		$ViewportContainer/Viewport/CanvasLayer/Left.set_texture(null)
 
 func _ready():
 	char_load = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/carlos/07.png")
@@ -49,8 +49,8 @@ func _ready():
 	index = 0
 	lenght = len(talk[index_dic])
 
-	$CanvasLayer/BG/TextureRectBG.set_texture(bg)
-	var bt = $CanvasLayer/ColorRect/VBoxContainer2/HBoxContainer/D_Button_CONTINUE
+	$ViewportContainer/Viewport/CanvasLayer/BG/TextureRectBG.set_texture(bg)
+	var bt = $ViewportContainer/Viewport/CanvasLayer/ColorRect/VBoxContainer2/HBoxContainer/D_Button_CONTINUE
 	bt.align=true
 	bt.grab_focus()
 
@@ -70,18 +70,18 @@ func _ready():
 	
 
 func changeScene():
-	if index==lenght:
-		index=-1
+	if index>=lenght:
+		#index=-1
 		get_tree().change_scene("res://scenes/map/map2.tscn")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	#print("index=", index, "len=",lenght)
+	print("index=", index, "len=",lenght)
 	changeScene()
 	
-	$CanvasLayer/ColorRect/VBoxContainer2/HBoxContainer/LabelNameCharacter.text=talk[index_dic][index][0]
-	var text_char = $CanvasLayer/ColorRect/VBoxContainer2/LabelText
+	$ViewportContainer/Viewport/CanvasLayer/ColorRect/VBoxContainer2/HBoxContainer/LabelNameCharacter.text=talk[index_dic][index][0]
+	var text_char = $ViewportContainer/Viewport/CanvasLayer/ColorRect/VBoxContainer2/LabelText
 	text_char.text="DiagCarlos"+String(index)
 	
 	if (delta_time<0.5):
@@ -99,7 +99,7 @@ func _on_D_Button_CONTINUE_pressed():
 	if (delta_inc<1.0):
 		delta_time = float(0.0)
 		delta_inc = float(1.0)
-	elif (delta_inc>=1.0 and index<lenght):
+	elif (delta_inc>=1.0):# and index<lenght):
 		index+=1
 		delta_inc = float(0.0)
 

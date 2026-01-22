@@ -25,17 +25,15 @@ var events_talks: Dictionary = {
 		 ["Anne", "Tá certo.", 1]
 		],
 	"3": [
-		["Anne", "Não tendi porque ali assumiu seu machismo.\nMachismo é algo estrutural e ruim.\nDeveria ser mortalmente evitado.", 1], 
-		["Moacir", "Exatamente por isso. É algo que esta em todos os lugares,\nem mim e você. Antes de olhar para os outros, eu olhei para\nmim mesmo e...", 2], 
-		["Moacir", "vi que precisava melhorar também se eu quisesse que não existisse\nestas coisas más; como racismo e xenofobia...", 2], 
-		["Moacir", "Mais do que apontar o dedo na cara de alguém,\neu resolvi mudar a mim mesmo.", 2], 
+		["bg_only", "Não tendi porque ali assumiu seu machismo.\nMachismo é algo estrutural e ruim.\nDeveria ser mortalmente evitado.", 1], 
+		["Anne", "", 1], 
+		["Moacir", "Exatamente por isso. É algo que esta em todos os lugares,\nem mim e você. Antes de olhar para os outros, eu olhei para\nmim mesmo e...", 2],
 		["Anne", "Mas...", 1],
 		["Moacir", "Você procura evitar tratar destas questões com seus colegas?", 2], 
 		["Anne", "Não. É que...", 1],
 		["Moacir", "Seu mundo nunca mudará, jovem.", 2], 
 		["Anne", "Tendi o que cê fez. Desculpa.", 1], 
-		["Moacir", "Tudo bem. Olhe para minha idade.\nTou quase um pai de santo já, então saber destas\ncoisas é fácil.", 2], 
-		["Moacir", "Além disso, ao sair do terreiro mais cedo vi você\nse impondo muito diante daquele jovem armado. Parabéns!", 2],
+		["Moacir", "Tudo bem. Olhe para minha idade.\nTou quase um pai de santo já, então saber destas\ncoisas é fácil.\nAlém disso, ao sair do terreiro mais cedo vi você\nse impondo muito diante daquele jovem armado. Parabéns!", 2],
 		["Anne", "Brigada!",1],
 		["Moacir", "Depois vo ter que falar com ele, por sinal;\nmas vamos ao que interessa.\nGostei d’ocê e cê quer vencer, né?", 2], 
 		["Anne", "Claro!", 1], 
@@ -105,5 +103,49 @@ var events_talks: Dictionary = {
 		["Anne","Hahaha! - ri Anne de tudo aquilo e complementa: Mulher o que foi aquilo que acabei de ver? Tu gosta de irritar ele?",1],
 		["Maria","Só um pouco. Hahaha! - Responde Maria gargalhando e continua: Vamos pras corridas?",2],
 		["Anne","Bora!",1]
-		]
+		],
+	"8": [
+		["Juana","Carlos, o Primeiro, fala:", 1],
+		["Anne", "O.",1],
+		["Juana","Que.", 2],
+		["Anne","Ahh.",1],
+		["Juana","Ago idade.",2],
+		["Anne","Repentinamente Ma:",1],
+		["Juana","E ai, Carlos. Essa é a novata?",2],
+		["Anne","Sim, sou eu. - Fala Anne.",1],
+		],
+	"9": [
+		["bg_only","Carlos, o Primeiro, fala:", 2],
+		["Vitoria", "O.",1],
+		["Anne","Que.", 2],
+		["Vitoria","Ahh.",1],
+		["Vitoria","Ago idade.",1],
+		["Vitoria","Repentinamente Ma:",1],
+		["Anne","E ai, Carlos. Essa é a novata?",2],
+		["Vitoria","Sim, sou eu. - Fala Anne.",1],
+		["Anne","Sim, sou eu. - Fala Anne.",2],
+		["Vitoria","Sim, sou eu. - Fala Anne.",1],
+		["bg_only","Sim, sou eu. - Fala Anne.",1]
+		],
+	"10": [
+		["Anne", "O.",1],
+		["Iua","Que.", 2],
+		["Anne","Ahh.",1],
+		["Iua","Ago idade.",2],
+		["Anne","Repentinamente Ma:",1],
+		["Iua","E ai, Carlos. Essa é a novata?",2],
+		["Anne","Sim, sou eu. - Fala Anne.",1],
+		["Iua","Carlos, o Primeiro, fala:", 2],
+		["Anne","Sim, sou eu. - Fala Anne.",1]
+		],
+	"11": [
+		["bg_only", "O.",1],
+		["Maria","Que.", 2],
+		["Vitoria","Ahh.",1],
+		["Anne","Ago idade.",2],
+		["bg_only","Repentinamente Ma:",1],
+		["bg_only","Repentinamente Ma:",1],
+		["Comandante da operação","Repentinamente Ma:",1],
+		["bg_only","Repentinamente Ma:",1],
+		["bg_only","Repentinamente Ma:",1]]
 }

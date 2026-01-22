@@ -102,6 +102,10 @@ func _ready():
 			car_phys = Cars.new(acceleration, max_rpm, max_torque, fully_nitro)
 			#set_raycasts()
 			disable_input()
+			axis_lock_angular_x=true
+			axis_lock_angular_z=true
+			axis_lock_linear_x=true
+			axis_lock_linear_z=true
 			print("Static=",car_mode)
 			
 	#mass = MASS

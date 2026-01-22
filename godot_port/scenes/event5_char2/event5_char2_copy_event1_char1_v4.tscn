@@ -1865,7 +1865,7 @@ mesh = SubResource( 54 )
 transform = Transform( 0.768614, 0, -0.639713, 0, 1, 0, 0.639713, 0, 0.768614, 107.281, 1.19532, -2 )
 
 [node name="saco_lixo_white" parent="ViewportContainer/Viewport" instance=ExtResource( 39 )]
-transform = Transform( 0.768614, 0, -0.639713, 0, 1, 0, 0.639713, 0, 0.768614, 98.9505, 0.781873, -39.4269 )
+transform = Transform( 0.768614, 0, -0.639713, 0, 1, 0, 0.639713, 0, 0.768614, 98.9505, 0.781873, -35.9325 )
 
 [node name="saco_lixo_white2" parent="ViewportContainer/Viewport" instance=ExtResource( 39 )]
 transform = Transform( 0.768614, 0, -0.639713, 0, 1, 0, 0.639713, 0, 0.768614, 109.95, 0.781873, -112.427 )
@@ -1895,7 +1895,7 @@ transform = Transform( 0.768614, 0, -0.639713, 0, 1, 0, 0.639713, 0, 0.768614, -
 transform = Transform( 0.768614, 0, -0.639713, 0, 1, 0, 0.639713, 0, 0.768614, -0.754402, 1.19532, -143.752 )
 
 [node name="saco_lixo_dark" parent="ViewportContainer/Viewport" instance=ExtResource( 37 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 102, 1, -41 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 102, 1, -37.5056 )
 
 [node name="saco_lixo_dark2" parent="ViewportContainer/Viewport" instance=ExtResource( 37 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 113, 1, -55 )
@@ -1907,7 +1907,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 104, 1,
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 70.8725, 1, -118.956 )
 
 [node name="saco_lixo_green" parent="ViewportContainer/Viewport" instance=ExtResource( 38 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 104, 1, -42 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 104, 1, -38.5056 )
 
 [node name="saco_lixo_green2" parent="ViewportContainer/Viewport" instance=ExtResource( 38 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 1, -118 )
@@ -2259,7 +2259,7 @@ transform = Transform( -0.248605, 0, -0.968605, 0, 1, 0, 0.968605, 0, -0.248605,
 transform = Transform( 0.482963, 0.258819, 0.836516, -0.12941, 0.965926, -0.224144, -0.866025, 0, 0.5, -5, 0, -77 )
 
 [node name="rampa_event1_char1_v2" parent="ViewportContainer/Viewport" instance=ExtResource( 43 )]
-transform = Transform( -4.37114e-08, 0, 1.664, 0, 1, 0, -1, 0, -7.27358e-08, 107, 0.16299, -47.951 )
+transform = Transform( -1.75676e-07, 0, 1.664, 0, 1, 0, -4.019, 0, -7.27358e-08, 107, 0, -47.951 )
 
 [node name="collisor_wall001" type="MeshInstance" parent="ViewportContainer/Viewport"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 118.312, 4.11738, -30.2406 )

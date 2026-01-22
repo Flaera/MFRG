@@ -25,4 +25,4 @@ event2_char3 = false
 event3_char3 = false
 event4_char3 = false
 event5_char3 = false
-state = 1
+state = 0

@@ -21,7 +21,7 @@ func _ready():
 
 
 func _on_B_NO_pressed():
-	get_node("/root/ControlMenu/VBoxContainer/ButtonNG").grab_focus()
+	get_node("/root/ControlMenu/ViewportContainer/Viewport/VBoxContainer/ButtonNG").grab_focus()
 	queue_free()
 
 
