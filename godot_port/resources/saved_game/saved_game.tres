@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-anne_id = 0
+anne_id = 1
 car_selected = "lilas"
 car0_in_garage = "lilas"
 car1_in_garage = "VAZIO"
@@ -25,4 +25,4 @@ event2_char3 = false
 event3_char3 = false
 event4_char3 = false
 event5_char3 = false
-state = 0
+state = 1

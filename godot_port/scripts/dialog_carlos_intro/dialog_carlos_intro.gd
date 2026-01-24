@@ -71,7 +71,7 @@ func _ready():
 
 func changeScene():
 	if index>=lenght:
-		#index=-1
+		index=-1
 		get_tree().change_scene("res://scenes/map/map2.tscn")
 
 
