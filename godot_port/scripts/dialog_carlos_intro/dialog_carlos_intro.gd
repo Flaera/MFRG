@@ -41,6 +41,7 @@ func setCharLocation(var character: Object, var pos: int):
 		$ViewportContainer/Viewport/CanvasLayer/Right.set_texture(null)
 		$ViewportContainer/Viewport/CanvasLayer/Left.set_texture(null)
 
+
 func _ready():
 	char_load = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/carlos/07.png")
 	bg = preload("res://assets/blender2.79_old/assets/talk_scenes/backgrounds/bg_carlos_intro.png") 

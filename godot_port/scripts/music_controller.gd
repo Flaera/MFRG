@@ -23,8 +23,10 @@ func _process(_delta):
 
 func music_play():
 	is_time_play = true
-	
+	print("istimeplay=", is_time_play)
 
 
 func music_pause():
 	is_time_play=false
+	print("istimeplay2=", is_time_play)
+	

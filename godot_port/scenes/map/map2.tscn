@@ -123,8 +123,8 @@ anims/map_anim_buttons2 = SubResource( 10 )
 [node name="PivotButtons" type="Control" parent="ViewportContainer/Viewport/CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 151680.0
-margin_bottom = 85320.0
+margin_right = 155520.0
+margin_bottom = 87480.0
 mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": true

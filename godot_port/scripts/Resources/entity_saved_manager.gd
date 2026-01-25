@@ -25,7 +25,6 @@ export var event1_char3: bool
 export var event2_char3: bool
 export var event3_char3: bool
 export var event4_char3: bool
-export var event5_char3: bool
 
 export var state: int
 

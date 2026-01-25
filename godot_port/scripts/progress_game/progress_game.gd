@@ -29,8 +29,7 @@ func _ready():
 						save_file.event1_char3,
 						save_file.event2_char3,
 						save_file.event3_char3,
-						save_file.event4_char3,
-						save_file.event5_char3]
+						save_file.event4_char3]
 	for i in events:
 		if (i==true):
 			amount_events_complete+=1
