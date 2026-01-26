@@ -23,7 +23,7 @@ var final_acc: int
 var prices: Array = []
 var money: int
 var cars_folder_path = "res://scenes/cars_updated"
-var res_savegame = ResourceLoader.load("res://resources/saved_game/saved_game.tres")
+var res_savegame = ResourceLoader.load("user://saved_game.tres")
 
 
 
@@ -148,7 +148,7 @@ func saveMoney(var less_money: int):
 	#file.open("res://data_files/gold.txt", File.WRITE)
 	#file.store_string(String(money))
 	#file.close()
-	ResourceSaver.save("res://resources/saved_game/saved_game.tres", res_savegame)
+	ResourceSaver.save("user://saved_game.tres", res_savegame)
 
 
 func _on_ButtonConfirmShop_pressed():
@@ -176,7 +176,7 @@ func _on_ButtonConfirmShop_pressed():
 		res_savegame.car0_in_garage = player_cars[0]
 		res_savegame.car1_in_garage = player_cars[1]
 		res_savegame.car2_in_garage = player_cars[2]
-		ResourceSaver.save("res://resources/saved_game/saved_game.tres", res_savegame)
+		ResourceSaver.save("user://saved_game.tres", res_savegame)
 		#var file = File.new()
 		#file.open("res://data_files/player_cars.txt", File.WRITE)
 		#var acc1: int = 0

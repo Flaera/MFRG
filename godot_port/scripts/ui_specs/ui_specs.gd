@@ -5,7 +5,7 @@ onready var RPM_texture = $CanvasLayer/Control/VBoxContainer/TextureProgressRPM
 onready var torque_texture = $CanvasLayer/Control/VBoxContainer/TextureProgressTORQUE
 onready var nitro_texture = $CanvasLayer/Control/VBoxContainer/TextureProgressNITRO
 #onready var car_name_label = $CanvasLayer/Control/VBoxContainer/L_CAR_NAME
-onready var res_savegame: Resource = ResourceLoader.load("res://resources/saved_game/saved_game.tres")
+onready var res_savegame: Resource = ResourceLoader.load("user://saved_game.tres")
 
 #var specs: Dictionary
 

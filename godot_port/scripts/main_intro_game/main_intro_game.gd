@@ -42,9 +42,21 @@ func set_keymaps(res: Resource):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var save_settings = load("res://resources/game_settings/game_settings.tres")
-	#var file_screen = File.new()
-	#file_screen.open("res://data_files/size_screen.txt", File.READ)
+	
+	var dir_class = Directory.new()
+	var save_settings
+	var save_game
+	
+	if (dir_class.file_exists("user://game_settings.tres")==null):
+		dir_class.copy("res://resources/game_settings/game_settings.tres","user://")
+	else:
+		save_settings = load("user://game_settings.tres")
+	
+	if (dir_class.file_exists("user://saved_game.tres")==null):
+		dir_class.copy("res://resources/saved_game/saved_game.tres","user://")
+	else:
+		save_game = load("user://saved_game.tres")
+		
 	var size = save_settings.index_resolution#int(file_screen.get_csv_line()[0])
 	#file_screen.close()
 	AudioServer.set_bus_volume_db(1,save_settings.sound_and_music_volume)

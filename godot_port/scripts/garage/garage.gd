@@ -1,7 +1,7 @@
 extends Spatial
 
 
-onready var res_savegame = ResourceLoader.load("res://resources/saved_game/saved_game.tres")
+onready var res_savegame = ResourceLoader.load("user://%APPDATA%/Godot/MFRG/saved_game.tres")
 onready var car_loaded_instancied: Object
 var rotate_y_angle: float = 0.0
 var car_loaded: Object
@@ -52,7 +52,7 @@ func _ready():
 
 func carSelect(var index: int):
 	res_savegame.car_selected=cars_list[index]
-	ResourceSaver.save("res://resources/saved_game/saved_game.tres",res_savegame)
+	ResourceSaver.save("user://saved_game.tres",res_savegame)
 	#if (cars_list[index]!="VAZIO"):
 		#var file = File.new()
 		#file.open("res://data_files/car_selected.txt",File.WRITE)
@@ -164,7 +164,7 @@ func sellCar(var index: int):
 		res_savegame.car1_in_garage = cars_list[1]
 		res_savegame.car2_in_garage = cars_list[2]
 		res_savegame.gold += int(price_to_sell)
-		ResourceSaver.save("res://resources/saved_game/saved_game.tres",res_savegame)
+		ResourceSaver.save("user://saved_game.tres",res_savegame)
 		loadCarList()
 		#carSelect(acc)
 		changeCar(acc2)

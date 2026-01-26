@@ -1,6 +1,6 @@
 extends Control
 
-onready var save_settings: Resource = preload("res://resources/game_settings/game_settings.tres")
+onready var save_settings: Resource = load("user://game_settings.tres")
 onready var select_lang = SelectLang.new()
 onready var control_settings_scn: PackedScene = preload("res://scenes/main_menu/controls_settings.tscn")
 var Res: Dictionary = {"640x360": Vector2(640,360),
@@ -47,7 +47,7 @@ func _on_OptionButton_item_selected(index):
 	#file_size.store_string(String(index))
 	#file_size.close()
 	save_settings.index_resolution=index
-	ResourceSaver.save("res://resources/game_settings/game_settings.tres", save_settings)
+	ResourceSaver.save("user://game_settings.tres", save_settings)
 	OS.set_window_size(size)
 	#print("==",size)
 	#get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_VIEWPORT,SceneTree.STRETCH_ASPECT_KEEP,size)
@@ -70,17 +70,17 @@ func _on_HSlider_value_changed(value):
 	#AudioServer.set_bus_volume_db(1,false)
 	AudioServer.set_bus_volume_db(1,value)
 	save_settings.sound_and_music_volume = value
-	ResourceSaver.save("res://resources/game_settings/game_settings.tres", save_settings)
+	ResourceSaver.save("user://game_settings.tres", save_settings)
 
 
 func _on_ColorPickerButton_color_changed(color):
 	save_settings.color_legend = color
-	ResourceSaver.save("res://resources/game_settings/game_settings.tres", save_settings)
+	ResourceSaver.save("user://game_settings.tres", save_settings)
 
 
 func _on_HSliderContrast_value_changed(value):
 	save_settings.contrast_tex = value
-	ResourceSaver.save("res://resources/game_settings/game_settings.tres", save_settings)
+	ResourceSaver.save("user://game_settings.tres", save_settings)
 	select_lang.contrast_in_texturesrects(get_node("."))
 	get_node("/root/ControlMenu").call("_ready")
 	$CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer2/HSliderContrastMenu.grab_focus()
@@ -88,7 +88,7 @@ func _on_HSliderContrast_value_changed(value):
 
 func _on_HSliderContrastMenu2_value_changed(value):
 	save_settings.contrast_3d = value
-	ResourceSaver.save("res://resources/game_settings/game_settings.tres", save_settings)
+	ResourceSaver.save("user://game_settings.tres", save_settings)
 
 
 func _on_B_CONTROLS_pressed():

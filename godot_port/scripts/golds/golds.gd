@@ -1,7 +1,7 @@
 extends HBoxContainer
 
 
-onready var save_file: Resource = preload("res://resources/saved_game/saved_game.tres")
+onready var save_file: Resource = load("user://saved_game.tres")
 
 
 func _ready():

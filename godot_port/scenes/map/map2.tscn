@@ -1,9 +1,8 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/themeMFRGLabelDark.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/golds/golds.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/map/map.gd" type="Script" id=3]
-[ext_resource path="res://resources/saved_game/saved_game.tres" type="Resource" id=4]
 [ext_resource path="res://assets/blender2.79_old/textures/map/map.png" type="Texture" id=5]
 [ext_resource path="res://scenes/themeMFRG.tres" type="Theme" id=6]
 
@@ -62,7 +61,6 @@ viewport_path = NodePath("ViewportContainer/Viewport")
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 3 )
-saved_manager = ExtResource( 4 )
 
 [node name="ViewportContainer" type="ViewportContainer" parent="."]
 anchor_right = 1.0
@@ -123,8 +121,8 @@ anims/map_anim_buttons2 = SubResource( 10 )
 [node name="PivotButtons" type="Control" parent="ViewportContainer/Viewport/CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 155520.0
-margin_bottom = 87480.0
+margin_right = 165120.0
+margin_bottom = 92880.0
 mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": true

@@ -6,7 +6,7 @@ onready var confirmed: Object = load("res://assets/blender2.79_old/textures/even
 onready var intro_carlos_anne_scene_name: String = "res://scenes/dialog_carlos_intro/dialog_carlos_intro.scn"
 onready var intro_maria_anne_scene_name: String = "res://scenes/dialog_maria_intro/dialog_maria_intro.tscn"
 onready var intro_vitoria_anne_scene_name: String = "res://scenes/dialog_vitoria_intro/dialog_vitoria_intro.tscn"
-export var saved_manager: Resource
+onready var saved_manager: Resource = ResourceLoader.load("user://saved_game.tres")
 
 
 
@@ -18,7 +18,6 @@ func _ready():
 	get_node("ViewportContainer/Viewport/CanvasLayer/AnimationPlayer").play("map_anim_buttons2")
 	#get_node("CanvasLayer/PivotButtons/PivotFuncButtons/ButtonShop").grab_focus()
 	
-	saved_manager = ResourceLoader.load("res://resources/saved_game/saved_game.tres")
 	#var file_state = File.new()
 	#file_state.open("res://data_files/progress_in_game.txt", File.READ)
 	#var state: int = int(file_state.get_csv_line()[0])
@@ -30,7 +29,7 @@ func _ready():
 	#print("condition2=",int(saved_manager.state)==int(0))
 	if (saved_manager.event1_char1==false and int(saved_manager.state)==int(0)):
 		saved_manager.state = 1
-		ResourceSaver.save("res://resources/saved_game/saved_game.tres", saved_manager)
+		ResourceSaver.save("user://saved_game.tres", saved_manager)
 		#cutscene da entrada da Anne no RUA
 		get_tree().change_scene(intro_carlos_anne_scene_name)
 		#add_child(intro_carlos_anne.instance())
@@ -40,17 +39,17 @@ func _ready():
 		#file_state0.close()
 	elif (condition0==true and condition1==false and condition2==false and saved_manager.state==1):
 		saved_manager.state = 2
-		ResourceSaver.save("res://resources/saved_game/saved_game.tres", saved_manager)
+		ResourceSaver.save("user://saved_game.tres", saved_manager)
 		#cutscene:
 		get_tree().change_scene(intro_maria_anne_scene_name)
 	elif (condition0==true and condition1==true and condition2==false and saved_manager.state==2):
 		saved_manager.state = 3
-		ResourceSaver.save("res://resources/saved_game/saved_game.tres", saved_manager)
+		ResourceSaver.save("user://saved_game.tres", saved_manager)
 		#Colocar cutscene
 		get_tree().change_scene(intro_vitoria_anne_scene_name)
 	elif (condition0==true and condition1==true and condition2==true):
 		saved_manager.state = 4
-		ResourceSaver.save("res://resources/saved_game/saved_game.tres", saved_manager)
+		ResourceSaver.save("user://saved_game.tres", saved_manager)
 		#Colocar cutscene final
 		get_tree().change_scene("res://scenes/dialog_end_game/dialog_end_game.tscn")
 	var acc: int = 0

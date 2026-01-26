@@ -53,7 +53,7 @@ func _ready():
 	
 	#get_parent().get_parent().get_parent().get_node("ControlMenu/ControlSettings/ViewportContainer").queue_free()
 	#get_parent().get_parent().get_parent().get_node("ControlMenu/ControlSettings/TextureRect").queue_free()
-	res_settings = ResourceLoader.load("res://resources/game_settings/game_settings.tres")
+	res_settings = ResourceLoader.load("user://game_settings.tres")
 	set_keymaps(res_settings)
 	display_keys()
 	set_actions_names()

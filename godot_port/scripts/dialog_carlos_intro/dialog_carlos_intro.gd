@@ -59,7 +59,7 @@ func _ready():
 	#file.open("res://data_files/style.txt", File.READ)
 	#anne_id = file.get_8()
 	#file.close()
-	var res = ResourceLoader.load("res://resources/saved_game/saved_game.tres")
+	var res = ResourceLoader.load("user://saved_game.tres")
 	anne_id = res.anne_id
 	print("talk=",talk[index_dic][index][0])
 	setCharLocation(char_load, talk[index_dic][index][2])

@@ -23,7 +23,7 @@ func _ready():
 	#var file = File.new()
 	#file.open("res://data_files/car_selected.txt",File.READ)
 	#var car = file.get_csv_line()[0]
-	save_file = preload("res://resources/saved_game/saved_game.tres")
+	save_file = load("user://%APPDATA%/Godot/MFRG/saved_game.tres")
 	#print("save=",save_file)
 	#Load car player:
 	car_loaded = load("res://scenes/cars_updated/"+save_file.car_selected+".tscn")

@@ -1,6 +1,6 @@
 extends Control
 
-onready var save_file = preload("res://resources/saved_game/saved_game.tres")
+onready var save_file = load("user://saved_game.tres")
 var ng_load: Object
 
 

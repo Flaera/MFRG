@@ -25,7 +25,7 @@ func _ready():
 	#var file = File.new()
 	#file.open("res://data_files/car_selected.txt",File.READ)
 	#var car = file.get_csv_line()[0]
-	save_file = preload("res://resources/saved_game/saved_game.tres")
+	save_file = load("user://saved_game.tres")
 	#print("save=",save_file)
 	#Load car player:
 	car_loaded = load("res://scenes/cars_updated/"+save_file.car_selected+".tscn")
@@ -101,7 +101,7 @@ func winPlay(_delta):
 			
 			#var save_file: Resource = load("res://resources/saved_game/saved_game.tres")
 			save_file.event4_char3 = true
-			ResourceSaver.save("res://resources/saved_game/saved_game.tres", save_file)
+			ResourceSaver.save("user://saved_game.tres", save_file)
 			"""var file_event = File.new()
 			file_event.open("res://data_files/"+event_name0+".txt", File.WRITE)
 			file_event.store_string("1")

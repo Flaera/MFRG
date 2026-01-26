@@ -3,7 +3,7 @@ class_name SelectLang
 
 
 func textInAllNodes(var node_parent):
-	var save_settings = load("res://resources/game_settings/game_settings.tres")
+	var save_settings = load("user://game_settings.tres")
 	for node in node_parent.get_children():
 		if (node.get_child_count()>0):
 			textInAllNodes(node)
@@ -15,7 +15,7 @@ func textInAllNodes(var node_parent):
 
 
 func contrast_in_texturesrects(mother_node):
-	var save_settings = load("res://resources/game_settings/game_settings.tres")
+	var save_settings = load("user://game_settings.tres")
 	var shader_contrast: Shader = load("res://scripts/shaders/shader_bcs.tres")
 	for node in mother_node.get_children():
 		if (node.get_child_count()>0):

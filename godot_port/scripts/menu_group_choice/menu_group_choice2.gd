@@ -1,7 +1,7 @@
 extends Control
 
 
-onready var res_savefile: Resource = preload("res://resources/saved_game/saved_game.tres")
+onready var res_savefile: Resource = load("user://saved_game.tres")
 onready var max_index: int = 4
 onready var anne_array = [0,1,2,3]
 onready var index_anne: int = 0
@@ -9,7 +9,7 @@ onready var index_anne: int = 0
 
 func saveStyle(var index: int):
 	res_savefile.anne_id=index
-	ResourceSaver.save("res://resources/saved_game/saved_game.tres", res_savefile)
+	ResourceSaver.save("user://saved_game.tres", res_savefile)
 
 
 func _ready():

@@ -1,13 +1,12 @@
 extends Node
 
 
-var save_file: Resource
+onready var save_file = ResourceLoader.load("user://saved_game.tres")
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node("ViewportContainer/Viewport/CanvasLayer/ColorRect/VBoxContainer/B_NO").grab_focus()
-	save_file = ResourceLoader.load("res://resources/saved_game/saved_game.tres")
 	
 	var select_lang = SelectLang.new()
 	select_lang.textInAllNodes(get_node("."))
@@ -82,6 +81,7 @@ func _on_B_YES_pressed():
 	save_file.event3_char3 = 0
 	save_file.event4_char3 = 0
 
-	ResourceSaver.save("res://resources/saved_game/saved_game.tres", save_file)
+	var error_saving_save = ResourceSaver.save("user://saved_game.tres", save_file)
+	print("error=", error_saving_save)
 	get_tree().change_scene("res://scenes/menu_group_choice/menu_group_choice2.scn")
 

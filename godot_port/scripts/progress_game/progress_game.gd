@@ -10,7 +10,7 @@ onready var delta_black_part: float = width_screen/amount_events
 onready var delta_black: float = 0.0
 onready var delta_time: float = 0.0
 onready var amount_events_complete: float = 0.0
-onready var save_file = preload("res://resources/saved_game/saved_game.tres")
+onready var save_file = load("user://saved_game.tres")
 onready var max_time_in_scene: float = 5.0
 
 
