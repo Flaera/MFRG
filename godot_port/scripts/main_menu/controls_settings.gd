@@ -210,7 +210,7 @@ func _input(event):
 	res_settings.act_buttons[3] = InputMap.get_action_list("g_left")
 	res_settings.act_buttons[4] = InputMap.get_action_list("g_nitro")
 	res_settings.act_buttons[5] = InputMap.get_action_list("g_brake")
-	ResourceSaver.save("res://resources/game_settings/game_settings.tres", res_settings)
+	ResourceSaver.save("user://game_settings.tres", res_settings)
 
 
 func _on_Button_pressed():

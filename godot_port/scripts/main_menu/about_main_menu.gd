@@ -4,7 +4,7 @@ extends Control
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-onready var save_file = load("user://%APPDATA%/Godot/MFRG/saved_game.tres")
+onready var save_file = load("user://saved_game.tres")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

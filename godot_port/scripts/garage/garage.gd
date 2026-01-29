@@ -1,7 +1,7 @@
 extends Spatial
 
 
-onready var res_savegame = ResourceLoader.load("user://%APPDATA%/Godot/MFRG/saved_game.tres")
+onready var res_savegame = ResourceLoader.load("user://saved_game.tres")
 onready var car_loaded_instancied: Object
 var rotate_y_angle: float = 0.0
 var car_loaded: Object

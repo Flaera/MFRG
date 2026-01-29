@@ -98,7 +98,7 @@ func winPlay(_delta):
 			
 			#var save_file: Resource = load("res://resources/saved_game/saved_game.tres")
 			save_file.event4_char1 = true
-			ResourceSaver.save("user://%APPDATA%/Godot/MFRG/saved_game.tres", save_file)
+			ResourceSaver.save("user://saved_game.tres", save_file)
 			"""var file_event = File.new()
 			file_event.open("res://data_files/"+event_name0+".txt", File.WRITE)
 			file_event.store_string("1")

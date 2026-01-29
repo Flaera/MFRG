@@ -72,7 +72,6 @@ config/name="MFRG"
 run/main_scene="res://scenes/main_intro_game/main_intro_game.tscn"
 boot_splash/show_image=false
 config/icon="res://assets/blender2.79_old/assets/talk_scenes/characters/anne/final_logo/new_icon.png"
-config/macos_native_icon="res://assets/blender2.79_old/assets/talk_scenes/characters/anne/final_logo/new_icon.icns"
 config/windows_native_icon="res://assets/blender2.79_old/assets/talk_scenes/characters/anne/final_logo/new_icon.ico"
 
 [autoload]
@@ -94,6 +93,7 @@ window/stretch/aspect="keep"
 [global]
 
 zoom=false
+rce=false
 
 [gui]
 

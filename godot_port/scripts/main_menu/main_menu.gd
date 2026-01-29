@@ -23,7 +23,7 @@ func _ready():
 
 func _on_ButtonNG_pressed():
 	var ng = ng_load.instance()
-	add_child(ng)
+	$ViewportContainer/Viewport.add_child(ng)
 
 
 func _on_ButtonContinue_pressed():

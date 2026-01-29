@@ -71,3 +71,4 @@ func _on_Button_EN_mouse_entered():
 
 func _on_Button_PT_BR_mouse_entered():
 	get_node("ViewportContainer/Viewport/ColorRect2/VBoxContainer/Button_PT_BR").grab_focus()
+
