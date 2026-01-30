@@ -5,6 +5,7 @@ onready var res_savefile: Resource = load("user://saved_game.tres")
 onready var max_index: int = 4
 onready var anne_array = [0,1,2,3]
 onready var index_anne: int = 0
+onready var select_lang
 
 
 func saveStyle(var index: int):
@@ -22,10 +23,13 @@ func _ready():
 
 	get_node("ViewportContainer/Viewport/ButtonLeft").grab_focus()
 	
-	var select_lang = SelectLang.new()
+	select_lang = SelectLang.new()
 	select_lang.textInAllNodes(get_node("."))
 	select_lang.contrast_in_texturesrects(get_node("."))
 
+
+func _exit_tree():
+	select_lang.free()
 
 
 func _process(delta):

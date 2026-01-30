@@ -1,12 +1,15 @@
 extends Control
 
 onready var save_file = load("user://saved_game.tres")
-var ng_load: Object
+onready var save_settings = load("user://game_settings.tres")
+var ng_load
+onready var select_lang = SelectLang.new()
+
 
 
 func _ready():
 	#$ViewportContainer/Viewport/VBoxContainer.visible=true
-	save_file.state
+	
 	ng_load = preload("res://scenes/main_menu/new_game_conf_screen.tscn")
 	var file_state = save_file.state
 	if (file_state==0):
@@ -14,10 +17,13 @@ func _ready():
 	else:
 		get_node("ViewportContainer/Viewport/VBoxContainer/ButtonContinue").grab_focus()
 
-	var select_lang = SelectLang.new()
 	select_lang.textInAllNodes(get_node("."))
 	
 	select_lang.contrast_in_texturesrects(get_node("."))
+	
+
+func _exit_tree():
+	select_lang.free()
 	
 
 
@@ -30,7 +36,7 @@ func _on_ButtonContinue_pressed():
 	var file_state = save_file.state
 	if (file_state==0):
 		var ng = ng_load.instance()
-		add_child(ng)
+		$ViewportContainer/Viewport.add_child(ng)
 	else:
 		get_tree().change_scene("res://scenes/progress_game/progress_game.tscn")
 
@@ -41,12 +47,11 @@ func _on_ButtonSettings_pressed():
 	var settings = settings_load.instance()
 	$ViewportContainer/Viewport/VBoxContainer.visible=false
 	$ViewportContainer/Viewport.add_child(settings)
-	$ViewportContainer/Viewport/ControlSettings/CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/ButtonEN.grab_focus()
 
 
 func _on_ButtonAbout_pressed():
 	var about_load = load("res://scenes/main_menu/about_main_menu.tscn")
-	add_child(about_load.instance())
+	$ViewportContainer/Viewport.add_child(about_load.instance())
 
 
 func _on_ButtonQuit_pressed():

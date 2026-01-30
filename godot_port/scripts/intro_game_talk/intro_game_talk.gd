@@ -8,6 +8,7 @@ var lenght: int
 var bg: Object
 var delta_time: float = 0.0
 var delta_inc: float = 0.0
+onready var select_lang
 
 
 func _ready():
@@ -23,10 +24,14 @@ func _ready():
 	get_node("ViewportContainer/Viewport/CanvasLayer/ColorRect/VBoxContainer2/HBoxContainer/ButtonContinue").grab_focus()
 	
 	#COLOCANDO COR PREDEFINIDA NA LEGENDA:
-	var select_lang = SelectLang.new()
+	select_lang = SelectLang.new()
 	select_lang.textInAllNodes(get_node("."))
 	
 	select_lang.contrast_in_texturesrects(get_node("."))
+
+
+func _exit_tree():
+	select_lang.free()
 
 
 func changeScene():

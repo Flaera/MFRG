@@ -13,7 +13,12 @@ func _ready():
 	$CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/OptionButton.add_item("640x360",0)
 	$CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/OptionButton.add_item("1280x720",1)
 	$CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/OptionButton.add_item("1920x1080",2)
-	$CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/ButtonEN.grab_focus()
+	"""if (TranslationServer.get_locale() == "en_US"):
+		print("aqui")
+		$CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/ButtonEN.grab_focus()
+	elif (TranslationServer.get_locale()=="pt_BR"):
+		$CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/ButtonPT.grab_focus()
+	print("language=",TranslationServer.get_locale())"""
 	#var file_screen = File.new()
 	#file_screen.open("res://data_files/size_screen.txt", File.READ)
 	var index: int = save_settings.index_resolution#int(file_screen.get_csv_line()[0])
@@ -27,6 +32,12 @@ func _ready():
 	select_lang.contrast_in_texturesrects(get_node("."))
 
 	$CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer2/HSliderContrastMenu2.value = save_settings.contrast_3d
+
+	$CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/OptionButton.grab_focus()
+
+
+func _exit_tree():
+	select_lang.free()
 
 
 func quit():

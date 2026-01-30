@@ -8,6 +8,7 @@ var Res: Dictionary = {"640x360": Vector2(640,360),
 var res_array: Array = [Vector2(640,360),
 	Vector2(1280,720),
 	Vector2(1920,1080)]
+onready var dir_class
 
 
 func set_keymaps(res: Resource):
@@ -43,10 +44,10 @@ func set_keymaps(res: Resource):
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
-	var dir_class = Directory.new()
+	
 	var save_settings
 	var save_game
-	
+	dir_class = Directory.new()
 	if (dir_class.file_exists("user://game_settings.tres")==null):
 		dir_class.copy("res://resources/game_settings/game_settings.tres","user://")
 	else:
@@ -56,7 +57,8 @@ func _ready():
 		dir_class.copy("res://resources/saved_game/saved_game.tres","user://")
 	else:
 		save_game = load("user://saved_game.tres")
-		
+	#dir_class.free()
+	
 	var size = save_settings.index_resolution#int(file_screen.get_csv_line()[0])
 	#file_screen.close()
 	AudioServer.set_bus_volume_db(1,save_settings.sound_and_music_volume)
@@ -75,4 +77,4 @@ func _ready():
 func _process(_delta):
 	time += _delta
 	if (time>5):
-		get_tree().change_scene("res://scenes/select_lang/select_lang.tscn")
+		get_tree().change_scene("res://scenes/main_intro_game/main_intro_warning_ia.tscn")

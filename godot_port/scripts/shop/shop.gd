@@ -24,7 +24,8 @@ var prices: Array = []
 var money: int
 var cars_folder_path = "res://scenes/cars_updated"
 var res_savegame = ResourceLoader.load("user://saved_game.tres")
-
+onready var select_lang
+onready var contrast3d
 
 
 func loadCarList():
@@ -85,13 +86,19 @@ func _ready():
 	
 	loadMoney()
 	
-	var select_lang = SelectLang.new()
+	select_lang = SelectLang.new()
 	select_lang.textInAllNodes(get_node("."))
 	
 	select_lang.contrast_in_texturesrects(get_node("."))
 	
-	Contrast3D.new().contrast_3d(get_node("."))
+	contrast3d = Contrast3D.new()
+	contrast3d.contrast_3d(get_node("."))
 
+
+func _exit_tree():
+	select_lang.free()
+	contrast3d.free()
+	
 
 
 func changeCar(var index: int, var previous_index: int):

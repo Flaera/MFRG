@@ -12,6 +12,7 @@ onready var delta_time: float = 0.0
 onready var amount_events_complete: float = 0.0
 onready var save_file = load("user://saved_game.tres")
 onready var max_time_in_scene: float = 5.0
+onready var select_lang
 
 
 # Called when the node enters the scene tree for the first time.
@@ -34,10 +35,14 @@ func _ready():
 		if (i==true):
 			amount_events_complete+=1
 			
-	var select_lang = SelectLang.new()
+	select_lang = SelectLang.new()
 	select_lang.textInAllNodes(get_node("."))
 	
 	select_lang.contrast_in_texturesrects(get_node("."))
+
+
+func _exit_tree():
+	select_lang.free()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

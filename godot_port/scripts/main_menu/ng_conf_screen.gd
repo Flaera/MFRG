@@ -2,16 +2,20 @@ extends Node
 
 
 onready var save_file = ResourceLoader.load("user://saved_game.tres")
-
+onready var select_lang
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node("ViewportContainer/Viewport/CanvasLayer/ColorRect/VBoxContainer/B_NO").grab_focus()
 	
-	var select_lang = SelectLang.new()
+	select_lang = SelectLang.new()
 	select_lang.textInAllNodes(get_node("."))
 
 	select_lang.contrast_in_texturesrects(get_node("."))
+
+
+func _exit_tree():
+	select_lang.free()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

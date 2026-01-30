@@ -16,6 +16,8 @@ onready var curr_car_enemy
 onready var index_cp: int = 0
 onready var event_name0: String
 onready var save_file: Resource
+onready var select_lang
+onready var contrast3d
 
 
 func _ready():
@@ -58,12 +60,18 @@ func _ready():
 	get_node("ViewportContainer/Viewport/Timer").start(timer) #time in seconds
 	get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label2/AnimationPlayer").play("anim_run_init_event")
 	
-	var select_lang = SelectLang.new()
+	select_lang = SelectLang.new()
 	select_lang.textInAllNodes(get_node("."))
 	
 	select_lang.contrast_in_texturesrects(get_node("."))
 
-	Contrast3D.new().contrast_3d(get_node("."))
+	contrast3d = Contrast3D.new()
+	contrast3d.contrast_3d(get_node("."))
+
+
+func _exit_tree():
+	select_lang.free()
+	contrast3d.free()
 
 
 func camTransform():

@@ -7,7 +7,7 @@ onready var intro_carlos_anne_scene_name: String = "res://scenes/dialog_carlos_i
 onready var intro_maria_anne_scene_name: String = "res://scenes/dialog_maria_intro/dialog_maria_intro.tscn"
 onready var intro_vitoria_anne_scene_name: String = "res://scenes/dialog_vitoria_intro/dialog_vitoria_intro.tscn"
 onready var saved_manager: Resource = ResourceLoader.load("user://saved_game.tres")
-
+onready var select_lang
 
 
 func _ready():
@@ -156,10 +156,15 @@ func _ready():
 	
 	##############################################
 	
-	var select_lang = SelectLang.new()
+	select_lang = SelectLang.new()
 	select_lang.textInAllNodes(get_node("."))
 	
 	select_lang.contrast_in_texturesrects(get_node("."))
+
+
+
+func _exit_tree():
+	select_lang.free()
 
 
 #func _input(event):

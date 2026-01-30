@@ -17,6 +17,7 @@ var char_name: String
 var anne_id: int
 var anne_obj: Object
 onready var carlos = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/carlos/07.png")
+onready var select_lang
 
 
 func setCharLocation(var character: Object, var pos: int):
@@ -71,6 +72,11 @@ func _ready():
 	
 	select_lang.contrast_in_texturesrects(get_node("."))
 	
+
+
+func _exit_tree():
+	select_lang.free()
+
 
 func changeScene():
 	if index==lenght:

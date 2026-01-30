@@ -5,7 +5,7 @@ onready var RPM_texture = $CanvasLayer/Control/VBoxContainer/TextureProgressRPM
 onready var torque_texture = $CanvasLayer/Control/VBoxContainer/TextureProgressTORQUE
 onready var nitro_texture = $CanvasLayer/Control/VBoxContainer/TextureProgressNITRO
 onready var car_name_label = $CanvasLayer/Control/VBoxContainer/L_CAR_NAME
-
+onready var select_lang
 var specs: Dictionary
 var acc: int
 
@@ -13,11 +13,14 @@ func _ready():
 	specs = preload("res://data_files/cars_specs.gd").new().specs
 	acc = 0
 	
-	var select_lang = SelectLang.new()
+	select_lang = SelectLang.new()
 	select_lang.textInAllNodes(get_node("."))
 	
 	select_lang.contrast_in_texturesrects(get_node("."))
 
+
+func _exit_tree():
+	select_lang.free()
 
 
 func rulerThree(var maxim: float, var current: float):

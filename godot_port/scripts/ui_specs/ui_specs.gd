@@ -6,19 +6,23 @@ onready var torque_texture = $CanvasLayer/Control/VBoxContainer/TextureProgressT
 onready var nitro_texture = $CanvasLayer/Control/VBoxContainer/TextureProgressNITRO
 #onready var car_name_label = $CanvasLayer/Control/VBoxContainer/L_CAR_NAME
 onready var res_savegame: Resource = ResourceLoader.load("user://saved_game.tres")
-
+onready var select_lang
 #var specs: Dictionary
 
 
 func _ready():
 	#specs = preload("res://data_files/cars_specs.gd").new().specs
 	
-	var select_lang = SelectLang.new()
+	select_lang = SelectLang.new()
 	select_lang.textInAllNodes(get_node("."))
 	
 	select_lang.contrast_in_texturesrects(get_node("."))
 
 
+
+func _exit_tree():
+	select_lang.free()
+	
 
 
 func rulerThree(var maxim: float, var current: float):

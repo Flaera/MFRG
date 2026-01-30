@@ -16,6 +16,7 @@ var char_load: Object
 var char_name: String
 var anne_id: int
 var path_event: String
+onready var select_lang
 
 
 func setCharText(anne_id,
@@ -57,11 +58,14 @@ func _ready():
 	setCharText(anne_id, char_load, talk[index_dic][index][2])
 	path_event = "res://scenes/event1_char2/event1_char2.tscn"
 	
-	var select_lang = SelectLang.new()
+	select_lang = SelectLang.new()
 	select_lang.textInAllNodes(get_node("."))
 
 	select_lang.contrast_in_texturesrects(get_node("."))
 
+
+func _exit_tree():
+	select_lang.free()
 
 
 func changeScene():

@@ -8,7 +8,8 @@ var car_loaded: Object
 var cars_list = []
 var acc: int
 var cars: Dictionary = {}
-
+onready var select_lang
+onready var contrast3d
 
 
 func loadCarList():
@@ -42,12 +43,19 @@ func _ready():
 	#get_node("ViewportContainer/Viewport/CanvasLayer/VBoxContainer/HBoxContainer"+String(acc)+"/B_CARRO_"+String(acc+1)).grab_focus()
 	
 	
-	var select_lang = SelectLang.new()
+	select_lang = SelectLang.new()
 	select_lang.textInAllNodes(get_node("."))
 	
 	select_lang.contrast_in_texturesrects(get_node("."))
 
-	Contrast3D.new().contrast_3d(get_node("."))
+	contrast3d = Contrast3D.new()
+	contrast3d.contrast_3d(get_node("."))
+
+
+
+func _exit_tree():
+	select_lang.free()
+	contrast3d.free()
 
 
 func carSelect(var index: int):
