@@ -47,16 +47,9 @@ func _ready():
 	
 	var save_settings
 	var save_game
-	dir_class = Directory.new()
-	if (dir_class.file_exists("user://game_settings.tres")==null):
-		dir_class.copy("res://resources/game_settings/game_settings.tres","user://")
-	else:
-		save_settings = load("user://game_settings.tres")
-	
-	if (dir_class.file_exists("user://saved_game.tres")==null):
-		dir_class.copy("res://resources/saved_game/saved_game.tres","user://")
-	else:
-		save_game = load("user://saved_game.tres")
+	#dir_class = Directory.new()
+	save_settings = load("user://game_settings.tres")
+	save_game = load("user://saved_game.tres")
 	#dir_class.free()
 	
 	var size = save_settings.index_resolution#int(file_screen.get_csv_line()[0])
