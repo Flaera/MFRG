@@ -1,0 +1,16 @@
+[gd_resource type="Shader" format=2]
+
+[resource]
+code = "shader_type canvas_item;
+
+uniform float contrast : hint_range(0, 2) = 1.0;
+
+void fragment() {
+    vec4 color = texture(TEXTURE, UV);  // Obtém a cor do pixel original
+    color.rgb = (color.rgb - 0.5) * contrast + 0.5;  // Aplica o contraste
+    
+    // Garante que o resultado esteja dentro do intervalo [0, 1]
+    color.rgb = clamp(color.rgb, 0.0, 1.0);
+    
+    COLOR = vec4(color.rgb, color.a);  // Define a cor final do fragmento
+}"

@@ -8,61 +8,64 @@ var lenght: int
 var bg: Object
 var delta_time: float = 0.0
 var delta_inc: float = 0.0
-var anne0: Object = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Anne0.png")
-var anne1: Object = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Anne1.png")
-var anne2: Object = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Anne2.png")
-var anne3: Object = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Anne3.png")
-var anne4: Object = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Anne4.png")
-var anne5: Object = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Anne5.png")
-var anne6: Object = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Anne6.png")
-var anne7: Object = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Anne7.png")
-var anne8: Object = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Anne8.png")
-var anne9: Object = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Anne9.png")
-var anne10: Object = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Anne10.png")
-var anne = [anne0,anne1,anne2,anne3,anne4,anne5,anne6,
-anne7,anne8,anne9,anne10]
+onready var anne = [preload("res://assets/blender2.79_old/assets/talk_scenes/characters/anne/new_anne_update/Anne1.png"),
+			preload("res://assets/blender2.79_old/assets/talk_scenes/characters/anne/new_anne_update/Anne2.png"),
+			preload("res://assets/blender2.79_old/assets/talk_scenes/characters/anne/new_anne_update/Anne3.png"),
+			preload("res://assets/blender2.79_old/assets/talk_scenes/characters/anne/new_anne_update/Anne4.png")]
 var char_load: Object
 var char_name: String
 var anne_id: int
 var path_event: String
+onready var select_lang
 
 
 func setCharText(anne_id,
  var character: Object, var pos: int):
-	get_node("CanvasLayer/Left/TextureRectBG").set_texture(null)
-	get_node("CanvasLayer/Right/TextureRectBG").set_texture(null)
+	get_node("ViewportContainer/Viewport/CanvasLayer/Left/TextureRectBG").set_texture(null)
+	get_node("ViewportContainer/Viewport/CanvasLayer/Right/TextureRectBG").set_texture(null)
 	if (talk[index_dic][index][0]==char_name and pos==1):
-		get_node("CanvasLayer/Left/TextureRectBG").set_texture(character)
+		get_node("ViewportContainer/Viewport/CanvasLayer/Left/TextureRectBG").set_texture(character)
 	elif (talk[index_dic][index][0]=="Anne" and pos==1):
-		get_node("CanvasLayer/Left/TextureRectBG").set_texture(anne[anne_id])
+		get_node("ViewportContainer/Viewport/CanvasLayer/Left/TextureRectBG").set_texture(anne[anne_id])
 	elif (talk[index_dic][index][0]==char_name and pos==2):
-		get_node("CanvasLayer/Right/TextureRectBG").set_texture(character)
+		get_node("ViewportContainer/Viewport/CanvasLayer/Right/TextureRectBG").set_texture(character)
 	elif (talk[index_dic][index][0]=="Anne" and pos==2):
-		get_node("CanvasLayer/Right/TextureRectBG").set_texture(anne[anne_id])
+		get_node("ViewportContainer/Viewport/CanvasLayer/Right/TextureRectBG").set_texture(anne[anne_id])
 	
 
 
 func _ready():
-	char_load = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/Zu.png")
-	bg = preload("res://assets/blender2.79_old/assets/talk_scenes/backgrounds/bg_front_house_zu.png") 
+	char_load = preload("res://assets/blender2.79_old/assets/talk_scenes/characters/zu/01.png")
+	bg = preload("res://assets/blender2.79_old/assets/talk_scenes/talk_scene_zu/07.png") 
 	talk = preload("res://data_files/events_talks.gd").new().events_talks
 	index_dic = '1'
 	index = 0
 	lenght = len(talk[index_dic])
 
-	get_node("CanvasLayer/BG/TextureRectBG").set_texture(bg)
-	var bt = get_node("CanvasLayer/ColorRect/VBoxContainer2/HBoxContainer/D_Button_CONTINUE")
+	get_node("ViewportContainer/Viewport/CanvasLayer/BG/TextureRectBG").set_texture(bg)
+	var bt = get_node("ViewportContainer/Viewport/CanvasLayer/ColorRect/VBoxContainer2/HBoxContainer/D_Button_CONTINUE")
 	bt.align=true
 	bt.grab_focus()
 
-	var file = File.new()
-	file.open("res://data_files/style.txt", File.READ)
-	anne_id = file.get_8()
-	file.close()
+	#var file = File.new()
+	#file.open("res://data_files/style.txt", File.READ)
+	#anne_id = file.get_8()
+	#file.close()
+	var res = ResourceLoader.load("user://saved_game.tres")
+	anne_id = res.anne_id
 	char_name = "Zu"
 	print("talk=",talk[index_dic][index][0])
 	setCharText(anne_id, char_load, talk[index_dic][index][2])
-	path_event = "res://scenes/event1_char1/event1_char1_v3.scn"
+	path_event = "res://scenes/event1_char1/event1_char1_v4.tscn"
+	
+	select_lang = SelectLang.new()
+	select_lang.textInAllNodes(get_node("."))
+
+	select_lang.contrast_in_texturesrects(get_node("."))
+
+
+func _exit_tree():
+	select_lang.free()
 
 
 func changeScene():
@@ -75,8 +78,8 @@ func _process(_delta):
 	#print("index=", index, "len=",lenght)
 	changeScene()
 	
-	get_node("CanvasLayer/ColorRect/VBoxContainer2/HBoxContainer/LabelNameCharacter").text=talk[index_dic][index][0]
-	var text_char = get_node("CanvasLayer/ColorRect/VBoxContainer2/LabelText")
+	get_node("ViewportContainer/Viewport/CanvasLayer/ColorRect/VBoxContainer2/HBoxContainer/LabelNameCharacter").text=talk[index_dic][index][0]
+	var text_char = get_node("ViewportContainer/Viewport/CanvasLayer/ColorRect/VBoxContainer2/LabelText")
 	text_char.text="DiagZu"+String(index)
 	
 	if (delta_time<0.5):

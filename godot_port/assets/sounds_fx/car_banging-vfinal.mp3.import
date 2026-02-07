@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/car_banging-vfinal.mp3-293bde68f26ce85f8659d30b52bb11cc.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds_fx/car_banging-vfinal.mp3"
+dest_files=[ "res://.import/car_banging-vfinal.mp3-293bde68f26ce85f8659d30b52bb11cc.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

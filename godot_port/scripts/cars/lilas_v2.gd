@@ -7,9 +7,15 @@ var brake_pedal = false
 var nitro: bool
 
 func _ready():
-	var data: Array = load("res://data_files/cars_specs.gd").new().specs["lilas"]
+	var data: Resource = load("res://resources/cars/lilas.tres")
 	#print(data[2])
-	car_phys = Cars.new(float(data[1]),float(data[2]),float(data[3]),float(data[4]))
+	car_phys = Cars.new(
+		data.acceleration,
+		data.max_rpm,
+		data.nitro_max,
+		data.fully_nitro)
+	get_node("lilas_asset").mesh = data.mesh
+	set("lilas_asset/material", data.material)
 	#cp_load.new(data[2],data[3],data[4],data[5])
 	get_node("Control/CanvasLayer").visible = car_phys.getMove()
 	weight = 1000

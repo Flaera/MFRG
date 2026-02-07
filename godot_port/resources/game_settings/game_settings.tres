@@ -1,0 +1,48 @@
+[gd_resource type="Resource" load_steps=8 format=2]
+
+[ext_resource path="res://scripts/Resources/entity_game_settings.gd" type="Script" id=1]
+
+[sub_resource type="InputEventKey" id=7]
+pressed = true
+scancode = 87
+physical_scancode = 87
+unicode = 119
+
+[sub_resource type="InputEventKey" id=8]
+pressed = true
+scancode = 83
+physical_scancode = 83
+unicode = 115
+
+[sub_resource type="InputEventKey" id=9]
+pressed = true
+scancode = 68
+physical_scancode = 68
+unicode = 100
+
+[sub_resource type="InputEventKey" id=10]
+pressed = true
+scancode = 65
+physical_scancode = 65
+unicode = 97
+
+[sub_resource type="InputEventKey" id=11]
+pressed = true
+scancode = 32
+physical_scancode = 32
+unicode = 32
+
+[sub_resource type="InputEventKey" id=12]
+pressed = true
+scancode = 80
+physical_scancode = 80
+unicode = 112
+
+[resource]
+script = ExtResource( 1 )
+index_resolution = 2
+sound_and_music_volume = -25
+color_legend = Color( 1, 1, 1, 1 )
+contrast_tex = 0.9
+contrast_3d = 1.0
+act_buttons = [ [ SubResource( 7 ) ], [ SubResource( 8 ) ], [ SubResource( 9 ) ], [ SubResource( 10 ) ], [ SubResource( 11 ) ], [ SubResource( 12 ) ] ]

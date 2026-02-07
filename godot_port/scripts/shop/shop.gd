@@ -1,8 +1,20 @@
 extends Spatial
 
+onready var car_invoker = $ViewportContainer/Viewport/car_invoker
+onready var label_prices = $ViewportContainer/Viewport/CanvasLayer/Control2/LabelPrices
+onready var button_right = $ViewportContainer/Viewport/CanvasLayer/Control/ButtonRightShop
+onready var rot_cam = $ViewportContainer/Viewport/rot_cam
+onready var timer_warning = $ViewportContainer/Viewport/CanvasLayer/TimerWarning
+onready var car_already_garage = $ViewportContainer/Viewport/CanvasLayer/CAR_ALREYD_GARAGE
+onready var no_space_hollow = $ViewportContainer/Viewport/CanvasLayer/NO_SPACE_HOLLOW
+onready var car_bought = $ViewportContainer/Viewport/CanvasLayer/CAR_BUIED
+onready var no_money = $ViewportContainer/Viewport/CanvasLayer/NO_MONEY
+onready var UI = $ViewportContainer/Viewport/Control
+onready var pre_car_invoker = $ViewportContainer/Viewport/pre_car_invoker
 
 var cars: Dictionary
-var car_loaded: Object
+var car_loaded: Car
+var car_unloaded: Car
 var cars_list: Array = []
 var player_cars: Array = []
 var car_in_shop: String
@@ -10,68 +22,117 @@ var acc: int = 0
 var final_acc: int
 var prices: Array = []
 var money: int
+var cars_folder_path = "res://scenes/cars_updated"
+var res_savegame = ResourceLoader.load("user://saved_game.tres")
+onready var select_lang
+onready var contrast3d
 
 
 func loadCarList():
-	var file = File.new()
-	file.open("res://data_files/cars_list.txt", File.READ_WRITE)
-	for i in cars.keys():
-		file.store_string((i+"\n"))
-		acc+=1
-	cars_list = file.get_as_text().rsplit("\n")
-	file.close()
-	#print(cars_list)
-	final_acc = acc-1
-	acc = 0
+	var directory = Directory.new()
+	if directory.open(cars_folder_path) == OK:
+		directory.list_dir_begin()
+		var file_name = directory.get_next()
+		
+		while file_name != "":
+			if file_name.ends_with(".tscn"):
+				var file_path = cars_folder_path + "/" + file_name
+				cars_list.append(load(file_path).instance() as Car)
+				
+			file_name = directory.get_next()
+		
+		directory.list_dir_end()
+		for car in cars_list:
+			car.car_mode=2
+			car._ready()
+		spawnCars()
+	#directory.free()
+
+
+func spawnCars():
+	for car in cars_list:
+		#car.get_node("CollisionShape").disabled=true
+		car.transform = pre_car_invoker.transform
+		car_invoker.add_child(car)
+	changeCar(0, cars_list.size()-1)
 
 
 func loadMoney():
-	var file = File.new()
-	file.open("res://data_files/gold.txt", File.READ)
-	money = int(file.get_csv_line()[0])
-	file.close()
-	print(money)
+	#var file = File.new()
+	#file.open("res://data_files/gold.txt", File.READ)
+	#money = int(file.get_csv_line()[0])
+	#file.close()
+	money = res_savegame.gold
+	#print(money)
 
 
 func updatePrice():
-	get_node("CanvasLayer/Control2/LabelPrices").text = String(prices[acc])
+	label_prices.text = String(car_loaded.price)
 
 
 func _ready():
-	get_node("CanvasLayer/Control/ButtonRightShop").grab_focus()
+	button_right.grab_focus()
 	cars = preload("res://data_files/cars_specs.gd").new().specs
 	loadCarList()
 	for i in cars.keys():
 		prices.append(cars[i][0])
-	car_loaded = load("res://scenes/cars/"+cars_list[acc]+"_only_asset.tscn")
-	get_node("car_invoker").add_child(car_loaded.instance())
-	updatePrice()
+	car_loaded = cars_list[acc]
+	if (car_invoker.get_children()==[]):
+		print("CAR INVOKER=",car_invoker.get_children())
+		car_invoker.add_child(car_loaded)
+		updatePrice()
 	
-	var file2 = File.new()
-	file2.open("res://data_files/player_cars.txt", File.READ)
-	player_cars = file2.get_as_text().rsplit("\n")
+	#var file2 = File.new()
+	#file2.open("res://data_files/player_cars.txt", File.READ)
+	#player_cars = file2.get_as_text().rsplit("\n")
+	player_cars = [res_savegame.car0_in_garage,res_savegame.car1_in_garage,res_savegame.car2_in_garage]
+	
 	loadMoney()
+	
+	select_lang = SelectLang.new()
+	select_lang.textInAllNodes(get_node("."))
+	
+	select_lang.contrast_in_texturesrects(get_node("."))
+	
+	contrast3d = Contrast3D.new()
+	contrast3d.contrast_3d(get_node("."))
+	
 
 
-func changeCar(var index: int):
-	get_node("car_invoker").get_child(0).queue_free()
-	car_loaded = load("res://scenes/cars/"+cars_list[index]+"_only_asset.tscn")
-	get_node("car_invoker").add_child(car_loaded.instance())
+func _exit_tree():
+	select_lang.free()
+	contrast3d.free()
+	
+	
+
+
+func changeCar(var index: int, var previous_index: int):
+	car_loaded = cars_list[index]
+	car_loaded.transform = car_invoker.transform
+	#car_loaded.disable_input()
+	#car_loaded.enable()
+	car_loaded.visible=true
+	#car_loaded.get_node("CollisionShape").disabled=false
+	car_unloaded = cars_list[previous_index]
+	#car_unloaded.disable_input()
+	#car_unloaded.disable()
+	car_unloaded.visible=false
+	#car_unloaded.get_node("CollisionShape").disabled=true
+	car_unloaded.transform = pre_car_invoker.transform
 	updatePrice()
+	UI.changeUIProperties(cars_list[index])
+	
 
 
 func _process(_delta):
-	get_node("rot_cam").rotation_degrees.y += _delta*10
-	var file = File.new()
-	file.open("res://data_files/car_in_shop.txt", File.WRITE)
-	file.store_string(cars_list[acc])
+	rot_cam.rotation_degrees.y += _delta*10
 	
 	#print(get_node("CanvasLayer/TimerWarning").time_left)
-	if (get_node("CanvasLayer/TimerWarning").time_left<=0.0):
-		get_node("CanvasLayer/CAR_ALREYD_GARAGE").visible=false
-		get_node("CanvasLayer/NO_SPACE_HOLLOW").visible=false
-		get_node("CanvasLayer/CAR_BUIED").visible=false
-		get_node("CanvasLayer/NO_MONEY").visible=false
+	if (timer_warning.time_left<=0.0):
+		car_already_garage.visible=false
+		no_space_hollow.visible=false
+		car_bought.visible=false
+		no_money.visible=false
 
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().change_scene("res://scenes/map/map2.tscn")
@@ -80,55 +141,67 @@ func _process(_delta):
 func _on_ButtonLeftShop_pressed():
 	acc -= 1
 	if (acc<0):
-		acc = final_acc
-	changeCar(acc)
+		acc = cars_list.size()-1
+		changeCar(acc,0)
+		return
+	changeCar(acc, acc+1)
 
 
 func _on_ButtonRightShop_pressed():
 	acc+=1
-	if (acc>final_acc): acc = 0
-	changeCar(acc)
+	#print("ACC: ", acc)
+	if (acc>cars_list.size()-1): acc = 0
+	changeCar(acc, acc-1)
 
 
 func saveMoney(var less_money: int):
-	var file: File = File.new()
-	money -= less_money
-	file.open("res://data_files/gold.txt", File.WRITE)
-	file.store_string(String(money))
-	file.close()
+	#var file: File = File.new()
+	res_savegame.gold = money-less_money
+	#file.open("res://data_files/gold.txt", File.WRITE)
+	#file.store_string(String(money))
+	#file.close()
+	ResourceSaver.save("user://saved_game.tres", res_savegame)
 
 
 func _on_ButtonConfirmShop_pressed():
 	print("--",cars_list,"--",player_cars)
-	if (cars_list[acc] in player_cars):
+	car_already_garage.visible=false
+	no_space_hollow.visible=false
+	no_money.visible=false
+	car_bought.visible=false
+	if (cars_list[acc].name in player_cars):
 		print("Carro já comprado")
-		get_node("CanvasLayer/CAR_ALREYD_GARAGE").visible=true
-		get_node("CanvasLayer/TimerWarning").start(5)
+		car_already_garage.visible=true
+		timer_warning.start(5)
 	elif (len(player_cars)>=3 and not("VAZIO" in player_cars)):
 		print("Não há espaço vazio para carros na sua garagem")
-		get_node("CanvasLayer/NO_SPACE_HOLLOW").visible=true
-		get_node("CanvasLayer/TimerWarning").start(5)
+		no_space_hollow.visible=true
+		timer_warning.start(5)
 	elif (prices[acc]>money):
 		print("DEBUGGER: ", money, "--", prices[acc])
-		get_node("CanvasLayer/NO_MONEY").visible=true
-		get_node("CanvasLayer/TimerWarning").start(5)
+		no_money.visible=true
+		timer_warning.start(5)
 	elif (("VAZIO" in player_cars) and (prices[acc]<=money)):
 		print("Carro comprado")
-		get_node("CanvasLayer/CAR_BUIED").visible=true
-		get_node("CanvasLayer/TimerWarning").start(5)
+		car_bought.visible=true
+		timer_warning.start(5)
 		for i in range(len(player_cars)):
 			if (player_cars[i]=="VAZIO"):
-				player_cars[i] = cars_list[acc]
+				player_cars[i] = cars_list[acc].name
 				break
-		var file = File.new()
-		file.open("res://data_files/player_cars.txt", File.WRITE)
-		var acc1: int = 0
-		for j in player_cars:
-			if (acc1<2):
-				file.store_string(j+"\n")
-			elif (acc1==2):
-				file.store_string(j)
-			acc1+=1
+		res_savegame.car0_in_garage = player_cars[0]
+		res_savegame.car1_in_garage = player_cars[1]
+		res_savegame.car2_in_garage = player_cars[2]
+		ResourceSaver.save("user://saved_game.tres", res_savegame)
+		#var file = File.new()
+		#file.open("res://data_files/player_cars.txt", File.WRITE)
+		#var acc1: int = 0
+		#for j in player_cars:
+		#	if (acc1<2):
+		#		file.store_string(j+"\n")
+		#	elif (acc1==2):
+		#		file.store_string(j)
+		#	acc1+=1
 		saveMoney(prices[acc])
 		loadCarList()
 		loadMoney()

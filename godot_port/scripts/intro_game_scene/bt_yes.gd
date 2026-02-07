@@ -7,4 +7,4 @@ func _ready():
 
 
 func go_style_scene():
-	get_tree().change_scene("res://scenes/menu_group_choice/menu_group_choice.scn")
+	get_tree().change_scene("res://scenes/menu_group_choice/menu_group_choice2.scn")

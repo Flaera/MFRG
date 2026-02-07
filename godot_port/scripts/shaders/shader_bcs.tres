@@ -1,0 +1,51 @@
+[gd_resource type="Shader" format=2]
+
+[resource]
+code = "shader_type canvas_item;
+
+uniform float brightness : hint_range(-1.0, 1.0, 0.01) = 0.0;
+uniform float contrast : hint_range(-10.0, 10.0, 0.01) = 1.0;
+uniform float saturation : hint_range(-10.0, 10.0, 0.01) = 1.0;
+
+
+mat4 matrix_brightness(float b){
+	return mat4(
+		vec4(1,0,0,0),
+		vec4(0,1,0,0),
+		vec4(0,0,1,0),
+		vec4(b,b,b,1)
+	);
+}
+
+
+mat4 matrix_contrast(float c){
+	float t = (1.0-c) * 2.0;
+	return mat4(
+		vec4(c,0,0,0),
+		vec4(0,c,0,0),
+		vec4(0,0,c,0),
+		vec4(t,t,t,1)
+	);
+}
+
+
+mat4 matrix_saturation(float s){
+	vec3 luminance = vec3(0.3086, 0.6094, 0.0820);
+	float sr = (1.0-s)*luminance.r;
+	float sg = (1.0-s)*luminance.g;
+	float sb = (1.0-s)*luminance.b;
+	return mat4(
+		vec4(s+sr,sr,sr,0),
+		vec4(sg,s+sg,sg,0),
+		vec4(sb,sb,s+sb,0),
+		vec4(0,0,0,1)
+	);
+}
+
+
+void fragment() {
+	vec4 color = texture(TEXTURE, UV);
+	mat4 matrix = matrix_brightness(brightness) * matrix_contrast(contrast)
+		* matrix_saturation(saturation);
+	COLOR = color*matrix;
+}"

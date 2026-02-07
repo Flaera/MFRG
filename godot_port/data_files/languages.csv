@@ -75,7 +75,7 @@ LABEL_NEW_GAME,Quer iniciar uma nova jogatina? Seu progresso será perdido e uma
 PROLOGUE,PROLÓGO,PROLOGUE
 LABEL_PROLOGUE,"Bem-vindo a Favela do Baixo do São Francisco. A presente história se inicia quando Anne começa a correr nas pistas do evento anual chamado de Rua dentro da favela. Este evento reúne vários corredores para competir pelas primeiras colocações do Rua, quanto mais alto se colocar mais dinheiro ganhará. Cansada da vida como mecânica, Anne já comprometida pela contaminação pela exposição ao lixão local acabou optando pelo Rua para conseguir dinheiro. Porém ao entrar no evento ela se depara com vários problemas, como machismo por parte dos colegas masculinos do Rua, incompreensão da população da própria favela em relação aos indígenas da floresta próxima a comunidade, desrespeito ao povo LGBTQIAPN+ por não entenderem a natureza do indivíduo e predominância de adversárias(os) brancas(os). Além dos desafios da própria comunidade marginalizada. A comunidade foi formada recentemente também surgiu após a expulsão dos moradores e reapropriação das terras do antigo cortiço Cabeça de Gato, que ficava próximo ao Lixão da cidade. Após serem expulsos para as margens do antigo rio poluído da cidade, o festival Rua é recomeçado e as corridas voltam a acontecer desta vez naquela região. É nesse momento que Anne se aventura no Rua.","Welcome to Favela do Baixo do São Francisco. The present story begins when Anne starts running on the tracks at the annual event called Street inside the favela. This event brings together several runners to compete for the top places in STREET, the higher you place, the more money you will earn. Tired of life as a mechanic, Anne, already compromised by contamination from exposure to the local landfill, ended up opting for STREET to get money. However, upon entering the event, she is faced with several problems, such as machismo on the part of STREET’s male colleagues, misunderstanding of the population of the favela itself in relation to the indigenous people of the forest close to the community, disrespect towards the LGBTQIAPN+ people for not understanding the nature of the individual and predominance of white opponents. In addition to the challenges of the marginalized community itself. The community was formed recently and also emerged after the expulsion of residents and reappropriation of the land of the old Cabeça de Gato tenement, which was close to the city's Dump. After being expelled to the banks of the city's old polluted river, the STREET festival restarts and the races take place again this time in that region. It is at this moment that Anne ventures into STREET."
 DiagCarlos0,"Opa, gata! Tudo bom?","Oops, babe! All is well?"
-DiagCarlos1,Tudo. Boa tarde!,All. Good afternoon!
+DiagCarlos1,Tudo. Boa tarde!,All. Good evening!!!
 DiagCarlos2,Boa!,Good!
 DiagCarlos3,"Quê que essa mulé quer, hein?","What does this woman want, huh?"
 DiagCarlos4,Sua bitch?,Your bitch?
@@ -96,6 +96,143 @@ ABOUT_TEXT,"PROJETO MFRG\nProjeto independente, com fins lucrativos e de softwar
 VAZIO,Vazio,Empty
 empower,Empower,Empower
 solo,Solo,Ground
-PRESS_ESC_TO_BACK,Pressione ESC para voltar ao menu,Press ESC to back to MENU
+PRESS_ESC_TO_BACK,Pressione ESC ou B/BOLA para voltar ao menu,Press ESC or B/CIRCLE to back to MENU
 LABEL_SOUND_MUSIC,Som e música,Sound and music
 sun,Sol,Sun
+COLOR_LEGEND_SELECTOR,Cor da legenda,Legend color
+CONTRAST_MENU,Contraste do menu e das cutscenes,Contrast of menu and cutscenes
+CONTRAST_3D,Contraste do mundo 3D,Contrast of 3D world
+exu,Exu,Exu
+B_CONTROLS,Controles,Controls
+B_UP_FRONT,Acelerar,Accelerate
+B_DOWN_REVERSE,Marcha reversa,Reverse gear
+B_RIGHT,Direita,Right
+B_LEFT,Esquerda,Left
+B_NITRO,Lançar impulso de nitro,Launch nitro impulse
+B_BRAKE,Frear,Brake
+CONTROLLER START,CONTROLE START,CONTROLLER START
+CONTROLLER SELECT,CONTROLE SELECT,CONTROLLER SELECT
+CONTROLLER A/CROSS,CONTROLE A/CRUZ,CONTROLLER A/CROSS
+CONTROLLER B/CIRCLE,CONTROLE B/BOLA,CONTROLLER B/CIRCLE
+CONTROLLER X/SQUARE,CONTROLE X/QUADRADO,CONTROLLER X/SQUARE
+CONTROLLER Y/TRIANGLE,CONTROLE Y/TRIÂNGULO,CONTROLLER Y/TRIANGLE
+CONTROLLER ARROW UP,CONTROLE SETA PRA CIMA,CONTROLLER ARROW UP
+CONTROLLER ARROW DOWN,CONTROLE SETA PRA BAIXO,CONTROLLER ARROW DOWN
+CONTROLLER ARROW LEFT,CONTROLE SETA ESQUERDA,CONTROLLER ARROW LEFT
+CONTROLLER ARROW RIGHT,CONTROLE SETA DIREITA,CONTROLLER ARROW RIGHT
+CONTROLLER RIGHT AXIS BUTTON,CONTROLE BOTÃO DE ANALÓGICO DIREITO,CONTROLLER RIGHT AXIS BUTTON
+CONTROLLER LEFT AXIS BUTTON,CONTROLE BOTÃO DE ANALÓGICO ESQUERDO,CONTROLLER LEFT AXIS BUTTON
+CONTROLLER UNABLE INPUT. TRY AGAIN.,CONTROLE ENTRADA NÃO SUPORTADA. TENTE NOVAMENTE.,CONTROLLER UNABLE INPUT. TRY AGAIN.
+CONTROLLER UP IN RIGHT AXIS,CONTROLE PARA CIMA EM EIXO DIREITO,CONTROLLER UP IN RIGHT AXIS
+CONTROLLER DOWN IN RIGHT AXIS,CONTROLE PARA BAIXO EM EIXO DIREITO,CONTROLLER DOWN IN RIGHT AXIS
+CONTROLLER RIGHT IN RIGHT AXIS,CONTROLE PARA DIREITA EM EIXO DIREITO,CONTROLLER RIGHT IN RIGHT AXIS
+CONTROLLER LEFT IN RIGHT AXIS,CONTROLE PARA ESQUERDA EM EIXO DIREITO,CONTROLLER LEFT IN RIGHT AXIS
+CONTROLLER UP IN LEFT AXIS,CONTROLE PARA CIMA EM EIXO ESQUERDO,CONTROLLER UP IN LEFT AXIS
+CONTROLLER DOWN IN LEFT AXIS,CONTROLE PARA BAIXO EM EIXO ESQUERDO,CONTROLLER DOWN IN LEFT AXIS
+CONTROLLER LEFT IN LEFT AXIS,CONTROLE PARA ESQUERDA EM EIXO ESQUERDO,CONTROLLER LEFT IN LEFT AXIS
+CONTROLLER RIGHT IN LEFT AXIS,CONTROLE PARA DIREITA EM EIXO ESQUERDO,CONTROLLER RIGHT IN LEFT AXIS
+CONTROLLER R1,CONTROLE R1,CONTROLLER R1
+CONTROLLER L1,CONTROLE L1,CONTROLLER L1
+CONTROLLER R2,CONTROLE R2,CONTROLLER R2
+CONTROLLER L2,CONTROLE L2,CONTROLLER L2
+BACK_TO_MAP_IN_EVENT,PRESSIONE ENTER OU START PARA VOLTAR PARA O MAPA,PRESS ENTER OR START TO BACK MAP
+TUTO_PRESS,Pressione,Press
+TUTO0,para acelerar.,to accelerate.
+TUTO1,para controlar o carro.,to control the car.
+TUTO2,se bateu para dar marcha ré.,if hit to make gear reverse.
+TUTO3,se precisar frear.,if need brake the car.
+TUTO4,impulsionar o carro com o nitro.,to impulse the car with nitro fully.
+TUTO5,Vá e vença a corrida,Go and win the race.
+DiagMaria0,"Carlos, o Primeiro, fala:","Carlos, the First, beguin speak:"
+DiagMaria1,Agora sobe de nível.,Now you level up.
+DiagMaria2,O que isso significa? - Pergunta Anne.,What’s matter? – ask Anne to Carlos.
+DiagMaria3,"Que Maria te guiará a partir de agora. Ela é a Segunda e muito boa pixadora, além de ser ótima corredora nas pistas do RUA. Quanto a você parabéns por ter melhorado e nunca deixe isso te cegar. Nunca se esqueça de onde veio e quem são os seus.","May Maria guide you from now on. She is the Second and a very good graffiti artist, in addition to being a great runner on the street RUA. As for you, congratulations for improving and never let this blind you. Never forget where you came from and who yours are."
+DiagMaria4,"Ahh, que fofo. Obrigada, nunca vou me esquecer das pessoas que conheci aqui na comunidade. A fama é o de menos quando se trata de ajudar a comunidade.","Ahh, how sweet. Thank you, I will never forget the people I met here in the community. Fame is the least of it when it comes to helping the community. "
+DiagMaria5,"Agora você me lembrou a Terceira. Ela é a melhor gestora e pilota que já conheci, mas nunca deixou o RUA pelos campeonatos estaduais e internacionais da grande cidade.","Now you reminded me of Terceira. She is the best manager and driver I have ever met, but she never left Rua for the state and international championships of the big city. "
+DiagMaria6,Repentinamente Maria chega de carro e  fala ao abrir a porta de seu carro:,Suddenly Maria arrives by car and says as she opens the door of her car:
+DiagMaria7,"E ai, Carlos. Essa é a novata?","Hey Carlos, is this the new girl? "
+DiagMaria8,"Sim, sou eu. - Fala Anne.","Yes, it's me. - Say Anne "
+DiagMaria9,"Oxi! Então bora logo fazer umas pixações e correr por aí. Sou a Segunda, administro as corridas de nível 2 e realmente acompanho os pilotos do RUA que ficam comigo,…","Hey! So let's start doing some graffiti and running around. I'm Segunda, I manage the level 2 races and I really follow the Rua drivers who stay with me,… "
+DiagMaria10,"A Segunda,  Maria, complementa:","The Second one, Maria, adds: "
+DiagMaria11,Diferente de certas pessoas aqui…,Unlike some people here… 
+DiagMaria12,Até parece que não faço meu trabalho – responde Carlos.,It's as if I'm not doing my job – Carlos replies. 
+DiagMaria13,Claro que não faz. Não vejo tu perto de piloto nenhum.,Of course not. I don't see you near any pilot. 
+DiagMaria14,"Hum, tenho ocupações e não ganho o mesmo que você – fala Carlos constestando.","Hmm, I have jobs and I don't earn the same as you – says Carlos in protest. "
+DiagMaria15,"Ficou brabinho, foi?","Got a little mad, huh? "
+DiagMaria16,"Não, não mesmo. Jamais. Seu ego que subiu a cabeça.","No, not at all. Never. Your ego got to your head. "
+DiagMaria17,"Não, num é ego não é dever.","No, it's not ego, it's duty. "
+DiagMaria18,Tá. Sei – fala Carlos ao sair de cena.,Okay. I know – says Carlos as he leaves the scene. 
+DiagMaria19,"Hahaha! - ri Anne de tudo aquilo e complementa:
+Mulher o que foi aquilo que acabei de ver? Tu gosta de irritar ele?","Hahaha! - Anne laughed at all that and added:
+Woman, what was that I just saw? Do you like to irritate him? "
+DiagMaria20,"Só um pouco. Hahaha! - Responde Maria gargalhando e continua:
+Vamos pras corridas?","Just a little. Hahaha! - Maria responds laughing and continues:
+Shall we go racing? "
+DiagMaria21,Bora!,Let’s go!
+DiagMoacir0,"Anne chega de carro no barraco de Moacir e chama por ele na porta, este atende, eles se cumprimentam e chama a moça para entrar pra ela esperar, porque ele esta um pouco ocupado. Moacir começa a conversar com a jovem enquanto ele termina de fazer o almoço. Então a conversa chega até este ponto:","Anne arrives at Moacir's shack by car and calls out to him at the door. He answers, they greet each other, and he invites the girl inside to wait, as he's a little busy. Moacir starts chatting with the young woman while he finishes making lunch. The conversation then reaches this point:"
+DiagMoacir1,Não tendi porque ali assumiu seu machismo. Machismo é algo estrutural e ruim. Deveria ser mortalmente evitado.,I didn't understand because he admitted his machism. Machism is structural and bad. It should be mortally avoided.
+DiagMoacir2,"Exatamente por isso. É algo que esta em todos os lugares, em mim e você. Antes de olhar para os outros, eu olhei para mim mesmo e vi que precisava melhorar também se eu quisesse que não existisse estas coisas más; como racismo e xenofobia. Mais do que apontar o dedo na cara de alguém, eu resolvi mudar a mim mesmo.","Exactly for that reason. It's something that's everywhere, in me and you. Before looking at others, I looked at myself and realized that I needed to improve too if I wanted these bad things to disappear, like racism and xenophobia. Rather than point the finger at anyone, I decided to change myself."
+DiagMoacir3,Mas… - Anne então para e ele aproveita para perguntar:,But… - Anne then stops and he takes the opportunity to ask:
+DiagMoacir4,Você procura evitar tratar destas questões com seus colegas?,Do you try to avoid discussing these issues with your colleagues?
+DiagMoacir5,Não. É que…,No. It's just that…
+DiagMoacir6,"Seu mundo nunca mudará, jovem.","Your world will never change, young girl."
+DiagMoacir7,Tendi o que cê fez. Desculpa.,I understand what you did. I'm sorry. 
+DiagMoacir8,"Tudo bem. Olhe para minha idade. Tou quase um pai de santo já, então saber destas coisas é fácil. Além disso, ao sair do terreiro mais cedo vi você se impondo muito diante daquele jovem armado. Parabéns!","Okay. Look at my age. I'm almost a holy man already, so knowing these things is easy. Besides, when I left the terreiro earlier, I saw you standing up for yourself in front of that armed young man. Congratulations!"
+DiagMoacir9,Brigada!!,Thanks!!
+DiagMoacir10,"Depois vo ter que falar com ele, por sinal; mas vamos ao que interessa. Gostei d’ocê e cê quer vencer, né?","I'll have to talk to him later, by the way; but let's get to the point. I like you and you want to win, right?"
+DiagMoacir11,Claro!,Of course!!
+DiagMoacir12,Então vamos nos preparar para o Rua.,So let's get ready for the Rua.
+DiagJuana0,Então tu conhece o Moacir?,So you know Moacir? 
+DiagJuana1,"Sim, ele não é legal?","Yes, isn't he cool?"
+DiagJuana2,É sim. Infelizmente tenho uma notícia pra ti sobre o traficante chato que te importunou.,"Yes, he is. Unfortunately, I have some news for you about that annoying drug dealer who bothered you."
+DiagJuana3,O que foi?,What is it?
+DiagJuana4,Aqui entre nós as pessoas que são do Rua não são sempre as pessoas dos traficantes e tem a influência da milícia aqui no Vale. Em resumo pessoas com discursos fortes como tu podem acabar morrendo…,"Between us, the people who are from the streets aren't always the drug dealers' people, and there's the militia's influence here in the Valley. In short, people with strong speeches like yours can end up dying…"
+DiagJuana5,"Não se preocupe, pelo menos eu fui um terço feliz pensando em um mundo melhor.","Don't worry, at least I was a third happy thinking about a better world."
+DiagJuana6,Eu conheço essa música. Gostei de ti!! Vamos acertar as coisas pra correr?,I know that song. I like you!! Let's settle things so we can run?
+DiagJuana7,Bora!,Let's go! 
+Juana,Juana,Juana
+Vitoria,Vitória Safira,Victory Saphire
+DiagVitoria0,Anne e Vitoria estão assistindo um por do Sol de frente pra favela sentadas na parte de trás de uma pickup abandonada. É possível ver parte do lixão e a favela deste ponto do mapa. Depois elas começam a conversar.,"Anne and Vitoria are watching a sunset overlooking the favela, sitting in the back of an abandoned pickup truck. Part of the garbage dump and the favela are visible from this point on the map. Then they start talking. "
+DiagVitoria1,Minha gente antes mesmo das favelas e da escravatura adorava o Sol e mesmo durante a noite ele nos ilumina.,"My people, even before the favelas and slavery, worshipped the sun, and even at night it illuminates us. "
+DiagVitoria2,Vem cá! Você é adepta alguma religião que adora o Sol? É?,Come here! Are you a follower of any religion that worships the sun? Are you? 
+DiagVitoria3,Hahahahahah!,Hahahahahah! 
+DiagVitoria4,"Não, mulé. Ta viajando, é?","No, girl. Are you tripping? "
+DiagVitoria5,"O povo Maya, Asteca e Egípcio da antiguidade foram fortes nações que cultuavam o Sol e foram formadas por indígenas, negras e negros em maioria. É mais por esse caminho.","The ancient Mayan, Aztec, and Egyptian peoples were strong nations that worshipped the sun and were mostly made up of indigenous people, black people, and black men and women. It's more along those lines. "
+DiagVitoria6,O Sol te faz lembrar os nossos ancestrais? - diz Anne um pouco envergonhada por ter entendido somente agora.,"Does the sun remind you of our ancestors? - says Anne, a little embarrassed for having understood only now. "
+DiagVitoria7,"Isso. Agora ocê pegou minha ideia. Ele nos dá vigor, (Vitória respira fundo) mas também apodrece o esgoto como dito na música de Racionais. Será que ele nos abençoa com esta luz ou nós amaldiçoa?","That's it. Now you get my idea. It gives us vigor, (Vitoria takes a deep breath) but it also rots the sewer, as said in the Racionais MC's song. Does it bless us with this light or curse us?"
+DiagVitoria8,Cê quer dizer que o Sol também tem seu lado ruim?,You mean the sun also has its bad side?
+DiagVitoria9,"Não sei, quero dizer que ele apenas esta aí. É nesse ponto que meu pensamento cai sobre aquela paisagem linda a frente, iluminada pelo Sol, mas acho que não também. Gosto de pensar que todos os dias ele esta ai pra provar pra nós guerreiras e guerreiros que somos fortes e inabaláveis não importando qual condição estejamos; seja com calçado, veste, ouro, prata, glória, beleza ou jogado na rua como esgoto. É nossa provação de força.","I don't know, I mean it's just there. It's at this point that my thoughts fall on that beautiful landscape ahead, illuminated by the sun, but I don't think so either. I like to think that every day it's there to prove to us warriors that we are strong and unwavering no matter what condition we are in; whether with shoes, clothes, gold, silver, glory, beauty, or thrown in the street like sewage. It's our test of strength. "
+DiagVitoria10,Elas conversam mais um pouco sobre o mundo e as suas vivências e então se despendem com a promessa de que a Vitória acompanharia Anne a partir daquele momento.,They talk a little more about the world and their experiences and then part ways with the promise that Vitória would accompany Anne from that moment on. 
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+DiagIua2+0,"Oi, Iuá!","Hi, Iuá! "
+DiagIua2+1,Oi! Então quer dizer que você passou pra corridas de nível 2 da Maria?,"Hi! So, does that mean you've advanced to Maria's level 2 races? "
+DiagIua2+2,Sim!,Yes!
+DiagIua2+3,"Infelizmente, você agora é alvo da milícia e dos traficantes da comunidade. Você tá ciente disso já?","Unfortunately, you're now a target of the militia and drug traffickers in the community. Are you aware of this? "
+DiagIua2+4,"Sim, estou. Só cansei de ficar calada.","Yes, I am. I just got tired of staying quiet. "
+DiagIua2+5,Que bom! Vamos pro seu desafio?,That's great! Shall we go to your challenge? 
+DiagIua2+6,Bora!,Let’s go!
+DiagIua2+7,"Antes disso só gostaria de dizer que você é muito querida por mim, esta fazendo isso pra não que voltar pro lixão para catar reciclável e também é uma ótima corredora.","Before that, I just wanted to say that you're very dear to me, you're doing this so you don't have to go back to the garbage dump to collect recyclables, and you're also a great runner. "
+DiagIua2+8,"Ahh, que fofa! Também penso o mesmo de ti.","Aww, how sweet! I think the same of you. "
+Iua,Iuá,Iuá
+,,
+,,
+,,
+,,
+DiagFinal0,Você esta na visão da Anne,You are in Anne's vision 
+DiagFinal1,"Parabéns, campeã!","Congratulations, champion! "
+DiagFinal2,Parabéns! Ocê conseguiu conquistar todas as corridas do RUA habilitando você a levar o prêmio do RUA.,"Congratulations! You managed to win all the RUA races, qualifying you to take the RUA prize. "
+DiagFinal3,"Brigada, gente!","Thank you, everyone! "
+DiagFinal4,"Tudo estava indo bem com a vitória de Anne, mas surge um caveirão atirando pra todos os lados inesperadamente.\nEra uma operação policial. Anne é alvejada.\nA Terceira manda a Segunda fugir imediatamente enquanto pega Anne ainda ferida no colo e a leva para seu carro.\nInfelizmente, ela não consegue partir com o carro a tempo, ela não consegue partir com o carro porque o motor e os pneus do carro são furados por tiros.","Everything was going well with Anne's victory, but a police armored vehicle unexpectedly appears, shooting in all directions. It was a police operation. Anne is shot. The Third-party officer orders the Second-party officer to flee immediately while picking up the still-wounded Anne and carrying her to her car. Unfortunately, she can't leave in time because the car's engine and tires are punctured by gunfire. "
+DiagFinal5,Vitória e Anne são cercadas pelos policiais do BOPE. Surge uma mulher também do BOPE.,Victory and Anne are surrounded by BOPE police officers. A woman appears also from BOPE. 
+DiagFinal6,Atirem pra matar. Elas são o alvo principal.,Shoot to kill. They are the primary target. 
+DiagFinal7,Vitória e Anne nunca mais foram vistas na comunidade. Naquele dia 67 pessoas morreram na comunidade.,"Victory and Anne were never seen in the community again. On that day, 67 people died in the favela. "
+DiagFinal8,…,…

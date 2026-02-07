@@ -3,6 +3,7 @@
 [ext_resource path="res://assets/blender2.79_old/cars_models/caixa/texture_maps/base_color_map.png" type="Texture" id=1]
 [ext_resource path="res://scenes/cars/caixa_only_asset.escn" type="PackedScene" id=2]
 
+
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.272483, 0.734398, 0.371546, 1 )
 

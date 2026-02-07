@@ -3,6 +3,7 @@
 [ext_resource path="res://scenes/cars/lilas_only_asset.escn" type="PackedScene" id=1]
 [ext_resource path="res://assets/blender2.79_old/textures/lilas_colormap.png" type="Texture" id=2]
 
+
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.565962, 0.161624, 0.903545, 1 )
 

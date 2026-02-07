@@ -1,5 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
+[ext_resource path="res://assets/blender2.79_old/textures/color_box_papelao.png" type="Texture" id=1]
+
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.903545, 0.903545, 0.903545, 1 )
 
@@ -18,12 +20,8 @@ surfaces/0 = {
 "vertex_count": 24
 }
 
-[sub_resource type="StreamTexture" id=4]
-flags = 4
-load_path = "res://.import/color_box_papelao.png-ff625ef98912ccfaeb6c071736f7d020.stex"
-
 [sub_resource type="SpatialMaterial" id=5]
-albedo_texture = SubResource( 4 )
+albedo_texture = ExtResource( 1 )
 
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 1, 0.620507, 0.512914 )
