@@ -6,7 +6,7 @@ onready var select_lang
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	get_node("ViewportContainer/Viewport/CanvasLayer/ColorRect/VBoxContainer/B_NO").grab_focus()
+	get_node("CanvasLayer/ColorRect/VBoxContainer/B_NO").grab_focus()
 	
 	select_lang = SelectLang.new()
 	select_lang.textInAllNodes(get_node("."))

@@ -46,6 +46,7 @@ func loadCarList():
 			car.car_mode=2
 			car._ready()
 		spawnCars()
+	#directory.free()
 
 
 func spawnCars():
@@ -76,8 +77,10 @@ func _ready():
 	for i in cars.keys():
 		prices.append(cars[i][0])
 	car_loaded = cars_list[acc]
-	car_invoker.add_child(car_loaded)
-	updatePrice()
+	if (car_invoker.get_children()==[]):
+		print("CAR INVOKER=",car_invoker.get_children())
+		car_invoker.add_child(car_loaded)
+		updatePrice()
 	
 	#var file2 = File.new()
 	#file2.open("res://data_files/player_cars.txt", File.READ)
@@ -93,11 +96,13 @@ func _ready():
 	
 	contrast3d = Contrast3D.new()
 	contrast3d.contrast_3d(get_node("."))
+	
 
 
 func _exit_tree():
 	select_lang.free()
 	contrast3d.free()
+	
 	
 
 
@@ -160,6 +165,10 @@ func saveMoney(var less_money: int):
 
 func _on_ButtonConfirmShop_pressed():
 	print("--",cars_list,"--",player_cars)
+	car_already_garage.visible=false
+	no_space_hollow.visible=false
+	no_money.visible=false
+	car_bought.visible=false
 	if (cars_list[acc].name in player_cars):
 		print("Carro já comprado")
 		car_already_garage.visible=true

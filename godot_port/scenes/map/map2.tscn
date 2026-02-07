@@ -121,8 +121,8 @@ anims/map_anim_buttons2 = SubResource( 10 )
 [node name="PivotButtons" type="Control" parent="ViewportContainer/Viewport/CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 165120.0
-margin_bottom = 92880.0
+margin_right = 168960.0
+margin_bottom = 95040.0
 mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": true
@@ -142,6 +142,8 @@ margin_top = 612.0
 margin_right = 453.0
 margin_bottom = 874.0
 rect_scale = Vector2( 0.3, 0.3 )
+hint_tooltip = "Loja de carros usados
+Used car dealership"
 theme = ExtResource( 6 )
 icon = SubResource( 2 )
 icon_align = 1
@@ -155,6 +157,8 @@ margin_top = 863.0
 margin_right = 397.0
 margin_bottom = 883.0
 rect_scale = Vector2( 0.3, 0.3 )
+hint_tooltip = "Garage
+Garagem"
 theme = ExtResource( 6 )
 icon = SubResource( 3 )
 icon_align = 1

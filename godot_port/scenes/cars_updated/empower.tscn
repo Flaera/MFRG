@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/base_scenes/car.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/blender2.79_old/cars_models/empower/textures/color_map_main.png" type="Texture" id=2]
@@ -19,13 +19,6 @@ surfaces/0 = {
 "skeleton_aabb": [  ],
 "vertex_count": 1476
 }
-
-[sub_resource type="StreamTexture" id=5]
-flags = 4
-load_path = "res://.import/color_map_main.png-078a46de73c5020761e3bab6589373c9.stex"
-
-[sub_resource type="SpatialMaterial" id=6]
-albedo_texture = SubResource( 5 )
 
 [sub_resource type="SpatialMaterial" id=30]
 albedo_color = Color( 0.30475, 0.30475, 0.30475, 1 )
@@ -79,7 +72,6 @@ delta_nitro_dec = 15.0
 [node name="CarMesh" parent="." index="2"]
 transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.951278, 0 )
 mesh = SubResource( 32 )
-material/0 = SubResource( 6 )
 
 [node name="FrontLeftWheel" parent="." index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.47162, 0.405278, 1.92897 )

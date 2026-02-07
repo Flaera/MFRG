@@ -1181,37 +1181,46 @@ shape = SubResource( 67 )
 
 [node name="road008" type="MeshInstance" parent="ViewportContainer/Viewport"]
 transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 105.994, 1.71843, -119.168 )
+visible = false
 mesh = SubResource( 13 )
 
 [node name="road007" type="MeshInstance" parent="ViewportContainer/Viewport"]
 transform = Transform( -1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 105.991, 0, -34.1338 )
+visible = false
 mesh = SubResource( 15 )
 
 [node name="road005" type="MeshInstance" parent="ViewportContainer/Viewport"]
 transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 105.994, 1.71843, 12.8777 )
+visible = false
 mesh = SubResource( 17 )
 
 [node name="road001" type="MeshInstance" parent="ViewportContainer/Viewport"]
 transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 8.12611, 1.71843, -128.444 )
+visible = false
 mesh = SubResource( 19 )
 
 [node name="road004" type="MeshInstance" parent="ViewportContainer/Viewport"]
 transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 105.994, 1.71843, -49.1452 )
+visible = false
 mesh = SubResource( 20 )
 
 [node name="road" type="MeshInstance" parent="ViewportContainer/Viewport"]
+visible = false
 mesh = SubResource( 21 )
 
 [node name="road002" type="MeshInstance" parent="ViewportContainer/Viewport"]
 transform = Transform( 0, 0, -1, 0, 1, 0, 1, 0, 0, 27.4409, 0, -128.012 )
+visible = false
 mesh = SubResource( 22 )
 
 [node name="road003" type="MeshInstance" parent="ViewportContainer/Viewport"]
 transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 105.994, 0, -104.157 )
+visible = false
 mesh = SubResource( 3 )
 
 [node name="road009" type="MeshInstance" parent="ViewportContainer/Viewport"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 106.026, 0, -134.2 )
+visible = false
 mesh = SubResource( 5 )
 
 [node name="tree_seca3002" type="MeshInstance" parent="ViewportContainer/Viewport"]

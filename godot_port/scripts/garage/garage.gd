@@ -40,8 +40,8 @@ func _ready():
 	car_loaded_instancied.car_mode=2
 	car_loaded_instancied.transform=get_node("ViewportContainer/Viewport/invoker").transform
 	get_node("ViewportContainer/Viewport/invoker").add_child(car_loaded_instancied)
-	#get_node("ViewportContainer/Viewport/CanvasLayer/VBoxContainer/HBoxContainer"+String(acc)+"/B_CARRO_"+String(acc+1)).grab_focus()
-	
+	$ViewportContainer/Viewport/Control.change_car_props(car_loaded_instancied)
+	$ViewportContainer/Viewport/CanvasLayer/VBoxContainer/HBoxContainer0/B_CARRO_1.grab_focus()
 	
 	select_lang = SelectLang.new()
 	select_lang.textInAllNodes(get_node("."))
@@ -133,6 +133,7 @@ func _on_B_CARRO_3_mouse_entered():
 	if (cars_list[2]!="VAZIO"):
 		changeCar(2)
 	acc = 2
+
 
 func sellCar(var index: int):
 	var progress: bool = false

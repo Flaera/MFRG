@@ -39,22 +39,26 @@ func _ready():
 		#file_state0.close()
 	elif (condition0==true and condition1==false and condition2==false and saved_manager.state==1):
 		saved_manager.state = 2
+		print("MAP PASS - MARIA!!")
 		ResourceSaver.save("user://saved_game.tres", saved_manager)
 		#cutscene:
 		get_tree().change_scene(intro_maria_anne_scene_name)
 	elif (condition0==true and condition1==true and condition2==false and saved_manager.state==2):
 		saved_manager.state = 3
 		ResourceSaver.save("user://saved_game.tres", saved_manager)
+		print("MAP PASS - Vitoria!!")
 		#Colocar cutscene
 		get_tree().change_scene(intro_vitoria_anne_scene_name)
-	elif (condition0==true and condition1==true and condition2==true):
+	elif (condition0==true and condition1==true and condition2==true and saved_manager.state==3):
 		saved_manager.state = 4
 		ResourceSaver.save("user://saved_game.tres", saved_manager)
 		#Colocar cutscene final
 		get_tree().change_scene("res://scenes/dialog_end_game/dialog_end_game.tscn")
 	var acc: int = 0
 	var constant: float = 0.125
-	for i in get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents").get_children():
+	var node_childs=$ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents.get_children()
+	print("NODES=",node_childs)
+	for i in node_childs:
 		if (saved_manager.state==0 or saved_manager.state==1):
 			if (acc==0 and saved_manager.event1_char1==false):
 				i.visible = true
@@ -62,18 +66,14 @@ func _ready():
 				i.visible = true
 			else:
 				i.visible = false
-		elif (saved_manager.state==2 or saved_manager.state==3 or saved_manager.state==4):
+		elif (saved_manager.state==2):
 			if (acc>=0 and acc<=9):
 				i.visible = true
 			else:
 				i.visible = false
-		elif (saved_manager.state==5 or saved_manager.state==6):
+		elif (saved_manager.state==3 or saved_manager.state>=4):
 			if (acc>=0 and acc<=14):
 				i.visible = true
-			else:
-				i.visible = false
-		elif (saved_manager.state>=7):
-			i.visible = true
 		acc+=1
 	
 	##############################################

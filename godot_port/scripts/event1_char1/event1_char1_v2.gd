@@ -41,7 +41,7 @@ func _ready():
 	curr_car.car_mode=0
 	#curr_car.car_mode
 	#curr_car._ready()
-	get_node("ViewportContainer/Viewport/car_invoker").add_child(curr_car)
+	$ViewportContainer/Viewport/car_invoker.add_child(curr_car)
 	#load enemy:
 	var car_loaded_enemy: Object = $ViewportContainer/Viewport/car_invoker_enemy/lilas
 	#car_loaded_enemy.MODES.AI
@@ -54,10 +54,11 @@ func _ready():
 	#curr_cam = camera.instance()
 	#get_node("ViewportContainer/Viewport/car_invoker").add_child(curr_cam)
 	curr_cam = $ViewportContainer/Viewport/car_invoker/Camera
+	camTransform()
 	
 	timer = 120.0
-	get_node("ViewportContainer/Viewport/Timer").start(timer) #time in seconds
-	get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label2/AnimationPlayer").play("anim_run_init_event")
+	$ViewportContainer/Viewport/Timer.start(timer) #time in seconds
+	$ViewportContainer/Viewport/CanvasLayer/Control/Control/Label2/AnimationPlayer.play("anim_run_init_event")
 	
 	select_lang = SelectLang.new()
 	select_lang.textInAllNodes(get_node("."))
@@ -203,6 +204,9 @@ func _process(_delta):
 	playerLoserOrWin(_delta, time)
 
 	tutorial(_delta)
+	
+	if (Input.is_action_just_pressed("ui_cancel")):
+		get_tree().change_scene("res://scenes/map/map2.tscn")
 
 
 func _on_Area_body_entered(body):

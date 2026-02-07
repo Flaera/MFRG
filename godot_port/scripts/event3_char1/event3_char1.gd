@@ -153,6 +153,8 @@ func _process(_delta):
 
 	playerLoserOrWin(_delta, time)
 	
+	if (Input.is_action_just_pressed("ui_cancel")):
+		get_tree().change_scene("res://scenes/map/map2.tscn")
 	#curr_car_enemy.speed_path=path_values[index_checkpoint]
 
 

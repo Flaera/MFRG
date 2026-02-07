@@ -153,6 +153,10 @@ func _process(_delta):
 
 	playerLoserOrWin(_delta, time)
 
+	if (Input.is_action_just_pressed("ui_cancel")):
+		get_tree().change_scene("res://scenes/map/map2.tscn")
+
+
 
 func _on_Area_body_entered(body):
 	if (get_node("ViewportContainer/Viewport/Timer").time_left<timer-0.05 and (body==curr_car)):

@@ -51,6 +51,7 @@ func _ready():
 	index_dic = '7'
 	index = 0
 	lenght = len(talk[index_dic])
+	#print("DEBUG=", lenght)
 
 	$ViewportContainer/Viewport/CanvasLayer/BG/TextureRectBG.set_texture(bg)
 	var bt = $ViewportContainer/Viewport/CanvasLayer/ColorRect/VBoxContainer2/HBoxContainer/D_Button_CONTINUE
@@ -67,7 +68,7 @@ func _ready():
 	print("talk=",talk[index_dic][index][0])
 	setCharLocation(char_load, talk[index_dic][index][2])
 
-	var select_lang = SelectLang.new()
+	select_lang = SelectLang.new()
 	select_lang.textInAllNodes(get_node("."))
 	
 	select_lang.contrast_in_texturesrects(get_node("."))
@@ -79,6 +80,7 @@ func _exit_tree():
 
 
 func changeScene():
+	#print("INDO PRO MAP MARIA=", index,"/",lenght)
 	if index==lenght:
 		index=-1
 		get_tree().change_scene("res://scenes/map/map2.tscn")

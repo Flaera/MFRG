@@ -13,9 +13,9 @@ func _ready():
 	ng_load = preload("res://scenes/main_menu/new_game_conf_screen.tscn")
 	var file_state = save_file.state
 	if (file_state==0):
-		get_node("ViewportContainer/Viewport/VBoxContainer/ButtonNG").grab_focus()
+		$ViewportContainer/Viewport/VBoxContainer/ButtonNG.grab_focus()
 	else:
-		get_node("ViewportContainer/Viewport/VBoxContainer/ButtonContinue").grab_focus()
+		$ViewportContainer/Viewport/VBoxContainer/ButtonContinue.grab_focus()
 
 	select_lang.textInAllNodes(get_node("."))
 	
