@@ -102,7 +102,7 @@ func winPlay(_delta):
 			#var file_golds = File.new()
 			#file_golds.open("res://data_files/gold.txt", File.READ)
 			#curr_golds = int(file_golds.get_csv_line()[0])+golds
-			curr_golds = save_file.gold+golds
+			curr_golds = int(save_file.gold)+int(golds)
 			print(curr_golds)
 			#file_golds.close()
 			#var file_golds1 = File.new()
