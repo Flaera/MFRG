@@ -46,7 +46,7 @@ func _ready():
 	#load enemy:
 	#var car_loaded_enemy: Object = load("res://scenes/cars_updated/"+save_file.car_selected+".tscn")
 	#car_loaded_enemy.MODES.AI
-	curr_car_enemy = $ViewportContainer/Viewport/car_invoker_enemy/noturno
+	curr_car_enemy = $ViewportContainer/Viewport/car_invoker_enemy/lilas
 	curr_car_enemy.car_mode=1
 	#curr_car_enemy._ready()
 	#get_node("ViewportContainer/Viewport/car_invoker_enemy").add_child(curr_car_enemy)
