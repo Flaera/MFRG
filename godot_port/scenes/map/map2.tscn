@@ -121,8 +121,8 @@ anims/map_anim_buttons2 = SubResource( 10 )
 [node name="PivotButtons" type="Control" parent="ViewportContainer/Viewport/CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 168960.0
-margin_bottom = 95040.0
+margin_right = 209280.0
+margin_bottom = 117720.0
 mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": true
@@ -157,8 +157,8 @@ margin_top = 863.0
 margin_right = 397.0
 margin_bottom = 883.0
 rect_scale = Vector2( 0.3, 0.3 )
-hint_tooltip = "Garage
-Garagem"
+hint_tooltip = "Garagem
+Garage"
 theme = ExtResource( 6 )
 icon = SubResource( 3 )
 icon_align = 1
@@ -238,15 +238,11 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="ButtonEvent10" type="Button" parent="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents"]
-anchor_left = 2.85
-anchor_top = -1.2
-anchor_right = 2.85
-anchor_bottom = -1.2
-margin_left = 582.0
-margin_top = 581.0
-margin_right = 850.0
-margin_bottom = 843.0
+[node name="ButtonEvent3" type="Button" parent="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents"]
+margin_left = 912.0
+margin_top = 652.0
+margin_right = 1180.0
+margin_bottom = 914.0
 rect_scale = Vector2( 0.3, 0.3 )
 theme = ExtResource( 6 )
 icon = SubResource( 5 )
@@ -255,7 +251,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="TextureRect" type="TextureRect" parent="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent10"]
+[node name="TextureRect" type="TextureRect" parent="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent3"]
 margin_right = 100.0
 margin_bottom = 100.0
 mouse_filter = 2
@@ -351,27 +347,6 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="ButtonEvent3" type="Button" parent="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents"]
-margin_left = 912.0
-margin_top = 652.0
-margin_right = 1180.0
-margin_bottom = 914.0
-rect_scale = Vector2( 0.3, 0.3 )
-theme = ExtResource( 6 )
-icon = SubResource( 5 )
-icon_align = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="TextureRect" type="TextureRect" parent="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent3"]
-margin_right = 100.0
-margin_bottom = 100.0
-mouse_filter = 2
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
 [node name="ButtonEvent8" type="Button" parent="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents"]
 anchor_left = 3.225
 anchor_top = 0.6
@@ -415,6 +390,31 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent9"]
+margin_right = 100.0
+margin_bottom = 100.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ButtonEvent10" type="Button" parent="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents"]
+anchor_left = 2.85
+anchor_top = -1.2
+anchor_right = 2.85
+anchor_bottom = -1.2
+margin_left = 582.0
+margin_top = 581.0
+margin_right = 850.0
+margin_bottom = 843.0
+rect_scale = Vector2( 0.3, 0.3 )
+theme = ExtResource( 6 )
+icon = SubResource( 5 )
+icon_align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent10"]
 margin_right = 100.0
 margin_bottom = 100.0
 mouse_filter = 2
@@ -507,14 +507,14 @@ texture = SubResource( 8 )
 [connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent0" to="." method="_on_ButtonEvent0_pressed"]
 [connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent1" to="." method="_on_ButtonEvent1_pressed"]
 [connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent2" to="." method="_on_ButtonEvent2_pressed"]
-[connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent10" to="." method="_on_ButtonEvent10_pressed"]
+[connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent3" to="." method="_on_ButtonEvent3_pressed"]
 [connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent4" to="." method="_on_ButtonEvent4_pressed"]
 [connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent5" to="." method="_on_ButtonEvent5_pressed"]
 [connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent6" to="." method="_on_ButtonEvent6_pressed"]
 [connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent7" to="." method="_on_ButtonEvent7_pressed"]
-[connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent3" to="." method="_on_ButtonEvent3_pressed"]
 [connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent8" to="." method="_on_ButtonEvent8_pressed"]
 [connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent9" to="." method="_on_ButtonEvent9_pressed"]
+[connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent10" to="." method="_on_ButtonEvent10_pressed"]
 [connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent11" to="." method="_on_ButtonEvent11_pressed"]
 [connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent12" to="." method="_on_ButtonEvent12_pressed"]
 [connection signal="pressed" from="ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent13" to="." method="_on_ButtonEvent13_pressed"]

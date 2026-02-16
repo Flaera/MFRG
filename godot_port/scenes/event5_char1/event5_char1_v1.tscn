@@ -775,10 +775,6 @@ environment = ExtResource( 13 )
 [node name="car_invoker" type="Spatial" parent="ViewportContainer/Viewport"]
 transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -112.151, 1.71839, -335.249 )
 
-[node name="Camera" type="Camera" parent="ViewportContainer/Viewport/car_invoker"]
-transform = Transform( -1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, 0, 0, 0 )
-current = true
-
 [node name="car_invoker_enemy" type="Spatial" parent="ViewportContainer/Viewport"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -112.151, 1.71839, -328.194 )
 
@@ -794,9 +790,6 @@ loop = false
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0 )
 speed_path = 0.02
 path_to_follow = NodePath("../Path/PathFollow")
-
-[node name="Camera" type="Camera" parent="ViewportContainer/Viewport/car_invoker_enemy/roots"]
-transform = Transform( -1, 1.31134e-07, 4.37114e-08, 4.37114e-08, -4.37114e-08, 1, 1.31134e-07, 1, 4.37114e-08, 0, 34.8594, 0 )
 
 [node name="ground002" type="MeshInstance" parent="ViewportContainer/Viewport"]
 transform = Transform( 1.48113, 0, 0, 0, 1.48113, 0, 0, 0, 1.48113, 0, 0, 0 )
@@ -2083,6 +2076,10 @@ transform = Transform( 0.938046, -0.090713, 0.334425, -0.288893, -0.737665, 0.61
 light_color = Color( 0.854902, 0.796078, 0.560784, 1 )
 shadow_enabled = true
 shadow_color = Color( 0.0980392, 0.0980392, 0.00784314, 1 )
+
+[node name="Camera" type="Camera" parent="ViewportContainer/Viewport"]
+transform = Transform( 1, 0, 0, 0, 0.173648, 0.984808, 0, -0.984808, 0.173648, 16.9975, 1.09299, -3.23645 )
+current = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0

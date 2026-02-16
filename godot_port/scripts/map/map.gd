@@ -72,7 +72,7 @@ func _ready():
 			else:
 				i.visible = false
 		elif (saved_manager.state==3 or saved_manager.state>=4):
-			if (acc>=0 and acc<=14):
+			if (acc>=0 and acc<=13):
 				i.visible = true
 		acc+=1
 	
@@ -100,59 +100,60 @@ func _ready():
 	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent2/TextureRect").rect_scale = Vector2(constant, constant)
 	
 	if int(saved_manager.event4_char1):
-		get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent4/TextureRect").set_texture(confirmed)
-	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent4/TextureRect").set_texture(unconfirmed)
-	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent4/TextureRect").rect_scale = Vector2(constant, constant)
-	
-	if int(saved_manager.event5_char1):
-		get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent5/TextureRect").set_texture(confirmed)
-	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent5/TextureRect").set_texture(unconfirmed)
-	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent5/TextureRect").rect_scale = Vector2(constant, constant)
-	
-	if int(saved_manager.event4_char2):
 		get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent3/TextureRect").set_texture(confirmed)
 	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent3/TextureRect").set_texture(unconfirmed)
 	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent3/TextureRect").rect_scale = Vector2(constant, constant)
 	
+	if int(saved_manager.event5_char1):
+		get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent4/TextureRect").set_texture(confirmed)
+	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent4/TextureRect").set_texture(unconfirmed)
+	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent4/TextureRect").rect_scale = Vector2(constant, constant)
+	
 	if int(saved_manager.event1_char2):
+		get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent5/TextureRect").set_texture(confirmed)
+	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent5/TextureRect").set_texture(unconfirmed)
+	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent5/TextureRect").rect_scale = Vector2(constant, constant)
+	
+	if int(saved_manager.event2_char2):
 		get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent6/TextureRect").set_texture(confirmed)
 	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent6/TextureRect").set_texture(unconfirmed)
 	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent6/TextureRect").rect_scale = Vector2(constant, constant)
 	
-	if int(saved_manager.event2_char2):
+	if int(saved_manager.event3_char2):
 		get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent7/TextureRect").set_texture(confirmed)
 	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent7/TextureRect").set_texture(unconfirmed)
 	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent7/TextureRect").rect_scale = Vector2(constant, constant)
-	
-	if int(saved_manager.event1_char3):
+
+	if int(saved_manager.event4_char2):
 		get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent8/TextureRect").set_texture(confirmed)
 	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent8/TextureRect").set_texture(unconfirmed)
 	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent8/TextureRect").rect_scale = Vector2(constant, constant)
 	
-	if int(saved_manager.event3_char2):
+	if int(saved_manager.event5_char2):
 		get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent9/TextureRect").set_texture(confirmed)
 	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent9/TextureRect").set_texture(unconfirmed)
 	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent9/TextureRect").rect_scale = Vector2(constant, constant)
 	
-	if int(saved_manager.event5_char2):
-		get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent12/TextureRect").set_texture(confirmed)
-	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent12/TextureRect").set_texture(unconfirmed)
-	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent12/TextureRect").rect_scale = Vector2(constant, constant)
-	
-	if int(saved_manager.event2_char3):
+	if int(saved_manager.event1_char3):
 		get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent10/TextureRect").set_texture(confirmed)
 	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent10/TextureRect").set_texture(unconfirmed)
 	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent10/TextureRect").rect_scale = Vector2(constant, constant)
 	
-	if int(saved_manager.event3_char3):
+	if int(saved_manager.event2_char3):
 		get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent11/TextureRect").set_texture(confirmed)
 	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent11/TextureRect").set_texture(unconfirmed)
 	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent11/TextureRect").rect_scale = Vector2(constant, constant)
+	
+	if int(saved_manager.event3_char3):
+		get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent12/TextureRect").set_texture(confirmed)
+	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent12/TextureRect").set_texture(unconfirmed)
+	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent12/TextureRect").rect_scale = Vector2(constant, constant)
 	
 	if int(saved_manager.event4_char3):
 		get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent13/TextureRect").set_texture(confirmed)
 	else:get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent13/TextureRect").set_texture(unconfirmed)
 	get_node("ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents/ButtonEvent13/TextureRect").rect_scale = Vector2(constant, constant)
+	
 	
 	##############################################
 	
@@ -202,45 +203,53 @@ func _on_ButtonEvent2_pressed():
 	get_tree().change_scene("res://scenes/event3_char1/event3_char1.tscn")
 
 
-func _on_ButtonEvent4_pressed():
+func _on_ButtonEvent3_pressed():
 	get_tree().change_scene("res://scenes/event4_char1/event4_char1.tscn")
 
 
-func _on_ButtonEvent5_pressed():
+func _on_ButtonEvent4_pressed():
 	get_tree().change_scene("res://scenes/event5_char1/event5_char1_v1.tscn")
+	
 
 
-func _on_ButtonEvent6_pressed():
+func _on_ButtonEvent5_pressed():
 	get_tree().change_scene("res://scenes/dialog_event1_char2/dialog_event1_char2.scn")
 
 
-func _on_ButtonEvent7_pressed():
+func _on_ButtonEvent6_pressed():
 	get_tree().change_scene("res://scenes/event2_char2/event2_char2.tscn")
 	
+
+
+func _on_ButtonEvent7_pressed():
+	get_tree().change_scene("res://scenes/dialog_event3_char2/dialog_event3_char2.scn")
 	
-func _on_ButtonEvent3_pressed():
-	get_tree().change_scene("res://scenes/event4_char2/event4_char2.tscn")
 
 
 func _on_ButtonEvent8_pressed():
-	get_tree().change_scene("res://scenes/event1_char3/event1_char3_copy_event2_char1_v1.tscn")
+	get_tree().change_scene("res://scenes/event4_char2/event4_char2.tscn")
+	
 
 
 func _on_ButtonEvent9_pressed():
-	get_tree().change_scene("res://scenes/dialog_event3_char2/dialog_event3_char2.scn")
+	get_tree().change_scene("res://scenes/event5_char2/event5_char2_copy_event1_char1_v4.tscn")
 
 
 func _on_ButtonEvent10_pressed():
-	get_tree().change_scene("res://scenes/event2_char3/event2_char3_copy_event3_char1.tscn")
+	get_tree().change_scene("res://scenes/event1_char3/event1_char3_copy_event2_char1_v1.tscn")
+	
+	
+	
 
 
 
 func _on_ButtonEvent11_pressed():
-	get_tree().change_scene("res://scenes/event3_char3/event3_char3_copy_event3_char2.tscn")
+	get_tree().change_scene("res://scenes/event2_char3/event2_char3_copy_event3_char1.tscn")
+	
 
 
 func _on_ButtonEvent12_pressed():
-	get_tree().change_scene("res://scenes/event5_char2/event5_char2_copy_event1_char1_v4.tscn")
+	get_tree().change_scene("res://scenes/event3_char3/event3_char3_copy_event3_char2.tscn")
 
 
 

@@ -72,10 +72,8 @@ func updatePrice():
 
 func _ready():
 	button_right.grab_focus()
-	cars = preload("res://data_files/cars_specs.gd").new().specs
+	#cars = preload("res://data_files/cars_specs.gd").new().specs
 	loadCarList()
-	for i in cars.keys():
-		prices.append(cars[i][0])
 	car_loaded = cars_list[acc]
 	if (car_invoker.get_children()==[]):
 		print("CAR INVOKER=",car_invoker.get_children())
@@ -125,6 +123,8 @@ func changeCar(var index: int, var previous_index: int):
 
 
 func _process(_delta):
+	car_loaded=cars_list[acc]
+	
 	rot_cam.rotation_degrees.y += _delta*10
 	
 	#print(get_node("CanvasLayer/TimerWarning").time_left)
@@ -156,7 +156,10 @@ func _on_ButtonRightShop_pressed():
 
 func saveMoney(var less_money: int):
 	#var file: File = File.new()
-	res_savegame.gold = money-less_money
+	if (int(money)>=int(less_money)):
+		res_savegame.gold = int(money)-int(less_money)
+	else:
+		pass
 	#file.open("res://data_files/gold.txt", File.WRITE)
 	#file.store_string(String(money))
 	#file.close()
@@ -177,11 +180,11 @@ func _on_ButtonConfirmShop_pressed():
 		print("Não há espaço vazio para carros na sua garagem")
 		no_space_hollow.visible=true
 		timer_warning.start(5)
-	elif (prices[acc]>money):
-		print("DEBUGGER: ", money, "--", prices[acc])
+	elif (car_loaded.price>money):
+		print("DEBUGGER: ", money, "--", car_loaded.price)
 		no_money.visible=true
 		timer_warning.start(5)
-	elif (("VAZIO" in player_cars) and (prices[acc]<=money)):
+	elif (("VAZIO" in player_cars) and (car_loaded.price<=money)):
 		print("Carro comprado")
 		car_bought.visible=true
 		timer_warning.start(5)
@@ -202,7 +205,7 @@ func _on_ButtonConfirmShop_pressed():
 		#	elif (acc1==2):
 		#		file.store_string(j)
 		#	acc1+=1
-		saveMoney(prices[acc])
+		saveMoney(car_loaded.price)
 		loadCarList()
 		loadMoney()
 		print("Update cars_list=",cars_list)

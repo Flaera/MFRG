@@ -22,6 +22,7 @@ onready var ctuto = $ViewportContainer/Viewport/checkpoints_tutorial.get_childre
 onready var controls = ControlsSettings.new()
 onready var select_lang
 onready var contrast3d
+onready var event_one_time: int = 0
 
 
 func _ready():
@@ -53,12 +54,14 @@ func _ready():
 	#camera = preload("res://scenes/camera/camera.scn")
 	#curr_cam = camera.instance()
 	#get_node("ViewportContainer/Viewport/car_invoker").add_child(curr_cam)
-	curr_cam = $ViewportContainer/Viewport/car_invoker/Camera
+	curr_cam = $ViewportContainer/Viewport/Camera
 	camTransform()
 	
 	timer = 120.0
 	$ViewportContainer/Viewport/Timer.start(timer) #time in seconds
 	$ViewportContainer/Viewport/CanvasLayer/Control/Control/Label2/AnimationPlayer.play("anim_run_init_event")
+	
+	event_one_time = false
 	
 	select_lang = SelectLang.new()
 	select_lang.textInAllNodes(get_node("."))
@@ -75,13 +78,12 @@ func _exit_tree():
 
 
 func camTransform():
-	#var cam = get_node("Camera")
-	curr_cam.translation[0] = curr_car.translation[0]
-	curr_cam.translation[2] = curr_car.translation[2]
-	curr_cam.translation[1] = 38.0
-	#curr_cam.rotation_degrees[0] = -90.0
-	#curr_cam.rotation_degrees[1] = 180.0
-	#curr_cam.rotation_degrees[2] = 0.0
+	curr_cam.global_translation[0] = curr_car.global_translation[0]
+	curr_cam.global_translation[2] = curr_car.global_translation[2]
+	curr_cam.global_translation[1] = 38.0
+	curr_cam.global_rotation[1] = deg2rad(180)+curr_car.global_rotation[1]
+	print("DEBUG=",curr_cam.global_rotation[1])
+
 
 
 func winPlay(_delta):
@@ -89,11 +91,11 @@ func winPlay(_delta):
 		get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label/AnimationPlayer").play("anim_you_win")
 		get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label4/AnimationPlayer").play("anim_you_win_golds")
 		win=2
-	elif (loser==false and get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label/AnimationPlayer").is_playing()):
-		golds = lerp(golds,pts,0.1)
+	elif (loser==false and win==2 and get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label/AnimationPlayer").is_playing()):
+		golds = lerp(golds,pts,100*_delta)
 		win=3
 	elif (loser==false and win==3):
-		golds = lerp(golds,pts,0.1)
+		golds = lerp(golds,pts,100*_delta)
 		time_end += _delta
 		if (time_end>=7.0):
 			var curr_golds: int = 0
@@ -125,19 +127,22 @@ func winPlay(_delta):
 
 func playerLoserOrWin(_delta, var time: float):
 	#Loser by oponent first:
-	if (loser==true and !get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label3/AnimationPlayer").is_playing()):
+	if (event_one_time==0 and loser==true and !get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label3/AnimationPlayer").is_playing()):
 		get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label3/AnimationPlayer").play("anim_loser_event")
-	elif (loser==true and get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label3/AnimationPlayer").is_playing()):
+		event_one_time=1
+	elif (event_one_time==1 and loser==true and get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label3/AnimationPlayer").is_playing()):
 		time_end+=_delta
 		if (time_end>=1.5):
 			get_tree().change_scene("res://scenes/progress_game/progress_game.tscn")
 	#Loser per time out:
-	if (time<=0.0 and loser==false):
+	if (event_one_time==0 and time<=0.0 and loser==false):
 		get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label3/AnimationPlayer").play("anim_loser_event")
 		loser = true
-	elif (time<=0.0 and loser==true and
+		event_one_time=1
+	elif (event_one_time==1 and time<=0.0 and loser==true and
 	!get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label3/AnimationPlayer").is_playing()):
 		get_tree().change_scene("res://scenes/progress_game/progress_game.tscn")
+	
 	
 	winPlay(_delta)
 
@@ -194,11 +199,10 @@ func tutorial(delta):
 
 func _process(_delta):
 	camTransform()
-	var time = get_node("ViewportContainer/Viewport/Timer").time_left
-	var minutes = String(int(time/60))
-	var seconds = String(int(time)%60)
-	get_node("ViewportContainer/Viewport/CanvasLayer/Control/Label").text = minutes+":"+seconds
-
+	var time = $ViewportContainer/Viewport/Timer.time_left
+	var minutes = int(time/60)
+	var seconds = int(time)%60
+	$ViewportContainer/Viewport/CanvasLayer/Control/Label.text = "%02d:%02d" % [minutes,seconds]
 	get_node("ViewportContainer/Viewport/Area/AnimationPlayer").play("anim_end_event")
 
 	playerLoserOrWin(_delta, time)
