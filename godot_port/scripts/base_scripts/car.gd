@@ -197,7 +197,7 @@ func look_at_checkpoint(delta):
 	#var dist = path_follow_node.global_transform.origin.distance_to(self.global_transform.origin)
 	#if (dist>10.0):
 	path_follow_node.unit_offset += delta*speed_path
-	print("PATH=", path_follow_node.unit_offset,"|")
+	#print("PATH=", path_follow_node.unit_offset,"|")
 	
 	# Pega posição do alvo
 	var target_pos = path_follow_node.global_transform.origin

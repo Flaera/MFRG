@@ -135,10 +135,6 @@ shape = SubResource( 12 )
 [node name="car_invoker" type="Spatial" parent="ViewportContainer/Viewport" index="6"]
 transform = Transform( -0.756436, 0, -0.654068, 0, 1, 0, 0.654068, 0, -0.756436, -8.71952, -5.32915, -2.93938 )
 
-[node name="Camera" type="Camera" parent="ViewportContainer/Viewport/car_invoker" index="0"]
-transform = Transform( -0.756436, -0.654068, -2.85902e-08, 0, -4.37114e-08, 1, -0.654068, 0.756436, 3.30649e-08, 0, 0, 0 )
-current = true
-
 [node name="car_invoker_enemy" type="Spatial" parent="ViewportContainer/Viewport" index="7"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.35359, -2.98273, -14.0518 )
 
@@ -1737,6 +1733,10 @@ mesh = SubResource( 14 )
 [node name="Plane064" type="MeshInstance" parent="ViewportContainer/Viewport/Spatial/planta1048" index="7"]
 transform = Transform( 0.824511, -0.456031, 0.334988, 0, 0.592013, 0.805928, -0.565846, -0.664497, 0.488122, 0.676874, 0.00999406, 0.978661 )
 mesh = SubResource( 14 )
+
+[node name="Camera" type="Camera" parent="ViewportContainer/Viewport" index="22"]
+transform = Transform( 1, 0, 0, 0, 0.173648, 0.984808, 0, -0.984808, 0.173648, 16.9975, 1.09299, -3.23645 )
+current = true
 
 [node name="TextureRect" type="TextureRect" parent="." index="1"]
 anchor_right = 1.0

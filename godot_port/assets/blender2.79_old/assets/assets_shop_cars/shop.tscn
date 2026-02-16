@@ -104,8 +104,8 @@ surfaces/0 = {
 [sub_resource type="SpatialMaterial" id=32]
 albedo_texture = ExtResource( 4 )
 
-[sub_resource type="ConcavePolygonShape" id=33]
-data = PoolVector3Array( -9.3882, -0.1784, -9.3882, -9.3882, -0.1784, 9.3882, -9.3882, 8.2473, 9.3882, 9.3882, -0.1784, -9.3882, -9.3882, -0.1784, -9.3882, -9.3882, 8.2473, -9.3882, 9.3882, -0.1784, 9.3882, 9.3882, -0.1784, -9.3882, 9.3882, 8.2473, -9.3882, -9.3882, -0.1784, 9.3882, 9.3882, -0.1784, 9.3882, 9.3882, 8.2473, 9.3882, -9.3882, -0.1784, 9.3882, -9.3882, -0.1784, -9.3882, 9.3882, -0.1784, -9.3882, 9.3882, 8.2473, 9.3882, 9.3882, 8.2473, -9.3882, -9.3882, 8.2473, -9.3882, -9.3882, -0.1784, -9.3882, -9.3882, 8.2473, 9.3882, -9.3882, 8.2473, -9.3882, 9.3882, -0.1784, -9.3882, -9.3882, 8.2473, -9.3882, 9.3882, 8.2473, -9.3882, 9.3882, -0.1784, 9.3882, 9.3882, 8.2473, -9.3882, 9.3882, 8.2473, 9.3882, -9.3882, -0.1784, 9.3882, 9.3882, 8.2473, 9.3882, -9.3882, 8.2473, 9.3882, -9.3882, -0.1784, 9.3882, 9.3882, -0.1784, -9.3882, 9.3882, -0.1784, 9.3882, 9.3882, 8.2473, 9.3882, -9.3882, 8.2473, -9.3882, -9.3882, 8.2473, 9.3882 )
+[sub_resource type="BoxShape" id=40]
+extents = Vector3( 0.322233, 20.7375, 9.32194 )
 
 [sub_resource type="BoxShape" id=37]
 extents = Vector3( 33.7589, 0.236063, 30.9811 )
@@ -406,8 +406,21 @@ material/0 = SubResource( 32 )
 
 [node name="StaticBody" type="StaticBody" parent="ViewportContainer/Viewport/Cube002"]
 
-[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/Cube002/StaticBody"]
-shape = SubResource( 33 )
+[node name="wallcollision_right" type="CollisionShape" parent="ViewportContainer/Viewport/Cube002/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.41533, 0, 0 )
+shape = SubResource( 40 )
+
+[node name="wallcollision_left" type="CollisionShape" parent="ViewportContainer/Viewport/Cube002/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.50465, 0, 0 )
+shape = SubResource( 40 )
+
+[node name="wallcollision_right2" type="CollisionShape" parent="ViewportContainer/Viewport/Cube002/StaticBody"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 9.10221 )
+shape = SubResource( 40 )
+
+[node name="wallcollision_left2" type="CollisionShape" parent="ViewportContainer/Viewport/Cube002/StaticBody"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -9.20836 )
+shape = SubResource( 40 )
 
 [node name="rot_cam" type="Spatial" parent="ViewportContainer/Viewport"]
 
@@ -419,13 +432,13 @@ size = 6.0
 near = 0.1
 
 [node name="car_invoker" type="Spatial" parent="ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.02238, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.40104, 0 )
 
 [node name="pre_car_invoker" type="Spatial" parent="ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 46.6639, 15.3033, 43.574 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 46.6639, 33.2651, 43.574 )
 
 [node name="StaticBody2" type="StaticBody" parent="ViewportContainer/Viewport"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 46.6639, 10.6908, 43.574 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 46.6639, 22.9375, 43.574 )
 
 [node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/StaticBody2"]
 shape = SubResource( 37 )

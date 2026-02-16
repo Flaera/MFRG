@@ -893,10 +893,6 @@ autostart = true
 [node name="car_invoker" type="Spatial" parent="ViewportContainer/Viewport"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13.0525, 1.09299, 0.708537 )
 
-[node name="Camera" type="Camera" parent="ViewportContainer/Viewport/car_invoker"]
-transform = Transform( -1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, 0, 0, 0 )
-current = true
-
 [node name="car_invoker_enemy" type="Spatial" parent="ViewportContainer/Viewport"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13.0525, 1.09299, -7.18144 )
 
@@ -917,9 +913,6 @@ transform = Transform( 0.938046, -0.090713, 0.334425, -0.288893, -0.737665, 0.61
 light_color = Color( 0.854902, 0.796078, 0.560784, 1 )
 shadow_enabled = true
 shadow_color = Color( 0.0980392, 0.0980392, 0.00784314, 1 )
-
-[node name="Camera2" type="Camera" parent="ViewportContainer/Viewport"]
-transform = Transform( -0.0595038, -0.881179, -0.469023, 0.983321, -0.13264, 0.124446, -0.17187, -0.453795, 0.874374, 12.5879, 1.5582, 2.2411 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="ViewportContainer/Viewport"]
 environment = ExtResource( 1 )
@@ -2270,6 +2263,10 @@ mesh = SubResource( 63 )
 
 [node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/collisor_wall001/StaticBody"]
 shape = SubResource( 64 )
+
+[node name="Camera" type="Camera" parent="ViewportContainer/Viewport"]
+transform = Transform( 1, 0, 0, 0, 0.173648, 0.984808, 0, -0.984808, 0.173648, 16.9975, 1.09299, -3.23645 )
+current = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 40.0

@@ -644,6 +644,10 @@ transform = Transform( 8.09201, 0, 0, 0, 8.09201, 0, 0, 0, 8.09201, 454.606, 0, 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="ViewportContainer/Viewport"]
 environment = SubResource( 9 )
 
+[node name="Camera" type="Camera" parent="ViewportContainer/Viewport"]
+transform = Transform( 1, 0, 0, 0, 0.173648, 0.984808, 0, -0.984808, 0.173648, 16.9975, 1.09299, -3.23645 )
+current = true
+
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
