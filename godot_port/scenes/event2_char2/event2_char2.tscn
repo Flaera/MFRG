@@ -7,7 +7,7 @@
 [ext_resource path="res://scenes/ui_event/ui2_event.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/blender2.79_old/assets/assets_event1_char1/chegada_v2-Area-.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/event1_char1/rampa_event1_char1_v2.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scripts/event2_char1/event2_char1_v1.gd" type="Script" id=8]
+[ext_resource path="res://scripts/event2_char2/event2_char2.gd" type="Script" id=8]
 [ext_resource path="res://scenes/event2_char1/no_collision_v2_event2_char1_v1.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/blender2.79_old/assets/assets_event1_char1/car_abandoned2.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/blender2.79_old/assets/assets_event1_char1/car_abandoned1.tscn" type="PackedScene" id=11]
@@ -100,7 +100,7 @@ mesh = SubResource( 12 )
 shape = SubResource( 13 )
 
 [node name="Camera" type="Camera" parent="ViewportContainer/Viewport" index="7"]
-transform = Transform( 1, 0, 0, 0, 0.173648, 0.984808, 0, -0.984808, 0.173648, 16.9975, 1.09299, -3.23645 )
+transform = Transform( -0.43196, -0.888191, 0.156612, 0, 0.173648, 0.984808, -0.901893, 0.425397, -0.075009, -92.8423, 1.09299, -321.588 )
 current = true
 
 [node name="car_invoker" type="Spatial" parent="ViewportContainer/Viewport" index="8"]

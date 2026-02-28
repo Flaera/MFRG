@@ -12,7 +12,7 @@ onready var win: int = 0
 onready var golds: int = 0.0
 onready var time_end: float = 0.0
 onready var curr_car_enemy
-onready var len_checkpoints: int = len($ViewportContainer/Viewport/checkpoints.get_children())
+#onready var len_checkpoints: int = len($ViewportContainer/Viewport/checkpoints.get_children())
 onready var index_cp: int = 0
 onready var event_name0: String
 onready var save_file: Resource
@@ -22,12 +22,9 @@ onready var contrast3d
 
 func _ready():
 	# MUDAR O NOME DA VAR DO SAVED FILE RESOURCE LÀ EMBAIXO EM winPlay()!!
-	var event_name: String = "event2_char2" # Deve ser mesmo nome do node e do file
+	#var event_name: String = "event2_char2" # Deve ser mesmo nome do node e do file
 	#event_name0 = "event1_char1" # Deve ser o nome para progressao do game
-	var file_event = File.new()
-	file_event.open("res://data_files/event_name.txt", File.WRITE)
-	file_event.store_string(event_name)
-	file_event.close()
+	
 
 	#var file = File.new()
 	#file.open("res://data_files/car_selected.txt",File.READ)
@@ -44,17 +41,12 @@ func _ready():
 	#curr_car._ready()
 	get_node("ViewportContainer/Viewport/car_invoker").add_child(curr_car)
 	#load enemy:
-	var car_loaded_enemy: Object = load("res://scenes/cars_updated/"+save_file.car_selected+".tscn")
-	#car_loaded_enemy.MODES.AI
-	curr_car_enemy = car_loaded_enemy.instance()
+	curr_car_enemy = $ViewportContainer/Viewport/car_invoker_enemy/noturno
 	curr_car_enemy.car_mode=1
-	#curr_car_enemy._ready()
-	get_node("ViewportContainer/Viewport/car_invoker_enemy").add_child(curr_car_enemy)
-
 	#camera = preload("res://scenes/camera/camera.scn")
 	#curr_cam = camera.instance()
 	#get_node("ViewportContainer/Viewport/car_invoker").add_child(curr_cam)
-	curr_cam = $ViewportContainer/Viewport/car_invoker/Camera
+	curr_cam = $ViewportContainer/Viewport/Camera
 	
 	timer = 60.0
 	get_node("ViewportContainer/Viewport/Timer").start(timer) #time in seconds
@@ -75,13 +67,12 @@ func _exit_tree():
 
 
 func camTransform():
-	#var cam = get_node("Camera")
-	curr_cam.translation[0] = curr_car.translation[0]
-	curr_cam.translation[2] = curr_car.translation[2]
-	curr_cam.translation[1] = 38.0
-	#curr_cam.rotation_degrees[0] = -90.0
-	#curr_cam.rotation_degrees[1] = 180.0
-	#curr_cam.rotation_degrees[2] = 0.0
+	curr_cam.global_translation[0] = curr_car.global_translation[0]
+	curr_cam.global_translation[2] = curr_car.global_translation[2]
+	curr_cam.global_translation[1] = 38.0
+	curr_cam.global_rotation[1] = deg2rad(180)+curr_car.global_rotation[1]
+
+
 
 
 func winPlay(_delta):
@@ -151,10 +142,10 @@ func _input(event):
 func _process(_delta):
 	camTransform()
 	var time = get_node("ViewportContainer/Viewport/Timer").time_left
-	var minutes = String(int(time/60))
-	var seconds = String(int(time)%60)
-	get_node("ViewportContainer/Viewport/CanvasLayer/Control/Label").text = minutes+":"+seconds
-
+	var minutes = int(time/60)
+	var seconds = int(time)%60
+	$ViewportContainer/Viewport/CanvasLayer/Control/Label.text = "%02d:%02d" % [minutes,seconds]
+	
 	get_node("ViewportContainer/Viewport/Area/AnimationPlayer").play("anim_end_event")
 
 	playerLoserOrWin(_delta, time)
@@ -172,6 +163,6 @@ func _on_Area_body_entered(body):
 
 
 func _on_Area0_body_entered(body):
-	if (curr_car_enemy.index_checkpoints<len_checkpoints and body==curr_car_enemy):
+	pass#if (curr_car_enemy.index_checkpoints<len_checkpoints and body==curr_car_enemy):
 		#print("body=",body)
-		curr_car_enemy.index_checkpoints+=1
+		#curr_car_enemy.index_checkpoints+=1

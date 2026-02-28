@@ -75,6 +75,7 @@ func _ready():
 func _exit_tree():
 	select_lang.free()
 	contrast3d.free()
+	controls.free()
 
 
 func camTransform():
