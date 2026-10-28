@@ -9,7 +9,7 @@ onready var loser: bool = false
 onready var pts: float = 0.0
 onready var timer: float
 onready var win: int = 0
-onready var golds: int = 0.0
+onready var golds: int = 0
 onready var time_end: float = 0.0
 onready var curr_car_enemy
 onready var checkpoints = $ViewportContainer/Viewport/checkpoints.get_children()
@@ -122,7 +122,7 @@ func winPlay(_delta):
 			file_event.close()"""
 			
 			get_tree().change_scene("res://scenes/progress_game/progress_game.tscn")
-		get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label4").text = String(golds)+" golds"
+		get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label4").text = str(golds)+" golds"
 
 
 func playerLoserOrWin(_delta, var time: float):

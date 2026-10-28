@@ -111,7 +111,7 @@ func winPlay(_delta):
 			file_event.close()"""
 			
 			get_tree().change_scene("res://scenes/progress_game/progress_game.tscn")
-		get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label4").text = String(golds)+" golds"
+		get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label4").text = str(golds)+" golds"
 
 
 func playerLoserOrWin(_delta, var time: float):

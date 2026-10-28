@@ -44,25 +44,48 @@ func set_keymaps(res: Resource):
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
-	
 	var save_settings
 	var save_game
 	#dir_class = Directory.new()
+	
 	save_settings = load("user://game_settings.tres")
-	save_game = load("user://saved_game.tres")
+	save_game = load("user://saved_settings.tres")
+	
+	if (!ResourceLoader.exists("user://game_settings.tres")
+	and !ResourceLoader.exists("user://saved_settings.tres")):
+		var dir = Directory.new()
+		save_settings = dir.copy("res://resources/game_settings/game_settings.tres","user://game_settings.tres")
+		save_game = dir.copy("res://resources/saved_game/saved_game.tres","user://saved_game.tres")
+		print("Save=",save_game)
+		save_settings = load("user://game_settings.tres")
+		save_game = load("user://saved_settings.tres")
 	#dir_class.free()
 	
-	var size = save_settings.index_resolution#int(file_screen.get_csv_line()[0])
-	#file_screen.close()
-	AudioServer.set_bus_volume_db(1,save_settings.sound_and_music_volume)
+	var music: int = -1
+	var audio_channel_music = (save_settings.sound_and_music_volume)
+	if (save_settings.sound_and_music_volume!=null and audio_channel_music>=int(-80) and audio_channel_music<=int(1)):
+		music = int(audio_channel_music)
+	else:
+		music = int(-21)
+	AudioServer.set_bus_volume_db(1,music)
+	
+	var size: int = -1
+	if (save_settings.index_resolution!=null and (save_settings.index_resolution==0 or 
+	save_settings.index_resolution==1 or 
+	save_settings.index_resolution==2)):
+		size = int(save_settings.index_resolution)#int(file_screen.get_csv_line()[0])
+	else:
+		pass
+	print("SIZE==", size)
 	if (size==0):
 		OS.set_window_size(Res["640x360"])
 	elif (size==1):
 		OS.set_window_size(Res["1280x720"])
 	elif (size==2):
 		OS.set_window_size(Res["1920x1080"])
+	else:
+		OS.set_window_size(Res["1920x1080"])
 	#get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_VIEWPORT,SceneTree.STRETCH_ASPECT_KEEP,res_array[size])
-	
 	
 	set_keymaps(save_settings)
 
