@@ -49,12 +49,12 @@ func _ready():
 
 func _on_Button_EN_pressed():
 	#get_tree().change_scene("res://scenes/intro_game_scene/intro_game_scene1.scn")
-	get_tree().change_scene("res://scenes/intro_game_talk/intro_game_talk.scn")
+	Transition.play_fade("res://scenes/intro_game_talk/intro_game_talk.scn")
 
 
 func _on_Button_PT_BR_pressed():
 	#get_tree().change_scene("res://scenes/intro_game_scene/intro_game_scene1.scn")
-	get_tree().change_scene("res://scenes/intro_game_talk/intro_game_talk.scn")
+	Transition.play_fade("res://scenes/intro_game_talk/intro_game_talk.scn")
 
 
 func _on_Button_EN_focus_entered():

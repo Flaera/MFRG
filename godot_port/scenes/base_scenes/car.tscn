@@ -99,12 +99,12 @@ shape = SubResource( 10 )
 [node name="AudioStreamPlayerMotor" type="AudioStreamPlayer" parent="SoundsFX"]
 stream = ExtResource( 6 )
 volume_db = -19.5
-bus = "music"
+bus = "sfx"
 
 [node name="AudioStreamPlayerNitro" type="AudioStreamPlayer" parent="SoundsFX"]
 stream = ExtResource( 7 )
 volume_db = -16.25
-bus = "music"
+bus = "sfx"
 
 [node name="RayCast" type="Spatial" parent="."]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.426986, 1.36126 )

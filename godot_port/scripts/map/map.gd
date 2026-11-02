@@ -48,12 +48,12 @@ func _ready():
 		ResourceSaver.save("user://saved_game.tres", saved_manager)
 		print("MAP PASS - Vitoria!!")
 		#Colocar cutscene
-		get_tree().change_scene(intro_vitoria_anne_scene_name)
+		Transition.play_fade(intro_vitoria_anne_scene_name)
 	elif (condition0==true and condition1==true and condition2==true and saved_manager.state==3):
 		saved_manager.state = 4
 		ResourceSaver.save("user://saved_game.tres", saved_manager)
 		#Colocar cutscene final
-		get_tree().change_scene("res://scenes/dialog_end_game/dialog_end_game.tscn")
+		Transition.play_fade("res://scenes/dialog_end_game/dialog_end_game.tscn")
 	var acc: int = 0
 	var constant: float = 0.125
 	var node_childs=$ViewportContainer/Viewport/CanvasLayer/PivotButtons/PivotEvents.get_children()
@@ -178,65 +178,65 @@ func _unhandled_input(event):
 
 func _process(_delta):
 	if (Input.is_action_just_pressed("ui_cancel")):
-		get_tree().change_scene("res://scenes/main_menu/main_menu.scn")
+		Transition.play_fade("res://scenes/main_menu/main_menu.scn")
 	
 
 
 func _on_ButtonShop_pressed():
-	get_tree().change_scene("res://assets/blender2.79_old/assets/assets_shop_cars/shop.tscn")
+	Transition.play_fade("res://assets/blender2.79_old/assets/assets_shop_cars/shop.tscn")
 
 
 func _on_ButtonGarage_pressed():
-	get_tree().change_scene("res://assets/blender2.79_old/assets/garage/garage.tscn")
+	Transition.play_fade("res://assets/blender2.79_old/assets/garage/garage.tscn")
 
 
 
 func _on_ButtonEvent0_pressed():
-	get_tree().change_scene("res://scenes/dialog_event1_char1/dialog_event1_char1.scn")
+	Transition.play_fade("res://scenes/dialog_event1_char1/dialog_event1_char1.scn")
 
 
 func _on_ButtonEvent1_pressed():
-	get_tree().change_scene("res://scenes/dialog_event2_char1/dialog_event2_char1.scn")
+	Transition.play_fade("res://scenes/dialog_event2_char1/dialog_event2_char1.scn")
 
 
 func _on_ButtonEvent2_pressed():
-	get_tree().change_scene("res://scenes/event3_char1/event3_char1.tscn")
+	Transition.play_fade("res://scenes/event3_char1/event3_char1.tscn")
 
 
 func _on_ButtonEvent3_pressed():
-	get_tree().change_scene("res://scenes/event4_char1/event4_char1.tscn")
+	Transition.play_fade("res://scenes/event4_char1/event4_char1.tscn")
 
 
 func _on_ButtonEvent4_pressed():
-	get_tree().change_scene("res://scenes/event5_char1/event5_char1_v1.tscn")
+	Transition.play_fade("res://scenes/event5_char1/event5_char1_v1.tscn")
 	
 
 
 func _on_ButtonEvent5_pressed():
-	get_tree().change_scene("res://scenes/dialog_event1_char2/dialog_event1_char2.scn")
+	Transition.play_fade("res://scenes/dialog_event1_char2/dialog_event1_char2.scn")
 
 
 func _on_ButtonEvent6_pressed():
-	get_tree().change_scene("res://scenes/event2_char2/event2_char2.tscn")
+	Transition.play_fade("res://scenes/event2_char2/event2_char2.tscn")
 	
 
 
 func _on_ButtonEvent7_pressed():
-	get_tree().change_scene("res://scenes/dialog_event3_char2/dialog_event3_char2.scn")
+	Transition.play_fade("res://scenes/dialog_event3_char2/dialog_event3_char2.scn")
 	
 
 
 func _on_ButtonEvent8_pressed():
-	get_tree().change_scene("res://scenes/event4_char2/event4_char2.tscn")
+	Transition.play_fade("res://scenes/event4_char2/event4_char2.tscn")
 	
 
 
 func _on_ButtonEvent9_pressed():
-	get_tree().change_scene("res://scenes/event5_char2/event5_char2_copy_event1_char1_v4.tscn")
+	Transition.play_fade("res://scenes/event5_char2/event5_char2_copy_event1_char1_v4.tscn")
 
 
 func _on_ButtonEvent10_pressed():
-	get_tree().change_scene("res://scenes/event1_char3/event1_char3_copy_event2_char1_v1.tscn")
+	Transition.play_fade("res://scenes/event1_char3/event1_char3_copy_event2_char1_v1.tscn")
 	
 	
 	
@@ -244,14 +244,14 @@ func _on_ButtonEvent10_pressed():
 
 
 func _on_ButtonEvent11_pressed():
-	get_tree().change_scene("res://scenes/event2_char3/event2_char3_copy_event3_char1.tscn")
+	Transition.play_fade("res://scenes/event2_char3/event2_char3_copy_event3_char1.tscn")
 	
 
 
 func _on_ButtonEvent12_pressed():
-	get_tree().change_scene("res://scenes/event3_char3/event3_char3_copy_event3_char2.tscn")
+	Transition.play_fade("res://scenes/event3_char3/event3_char3_copy_event3_char2.tscn")
 
 
 
 func _on_ButtonEvent13_pressed():
-	get_tree().change_scene("res://scenes/event4_char3/event4_char3_copy_event4_char2.tscn")
+	Transition.play_fade("res://scenes/event4_char3/event4_char3_copy_event4_char2.tscn")

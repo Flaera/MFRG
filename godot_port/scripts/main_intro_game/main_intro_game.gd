@@ -93,4 +93,4 @@ func _ready():
 func _process(_delta):
 	time += _delta
 	if (time>5):
-		get_tree().change_scene("res://scenes/main_intro_game/main_intro_warning_ia.tscn")
+		Transition.play_fade("res://scenes/main_intro_game/intro_laguna.tscn")

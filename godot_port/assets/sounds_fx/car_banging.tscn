@@ -26,6 +26,7 @@ tracks/0/keys = {
 stream = ExtResource( 1 )
 volume_db = -9.749
 autoplay = true
+bus = "sfx"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "dead_soundfx_anim"

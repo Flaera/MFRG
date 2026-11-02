@@ -10,9 +10,9 @@ var Res: Dictionary = {"640x360": Vector2(640,360),
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/OptionButton.add_item("640x360",0)
-	$CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/OptionButton.add_item("1280x720",1)
-	$CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/OptionButton.add_item("1920x1080",2)
+	$CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/VBoxContainer/OptionButton.add_item("640x360",0)
+	$CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/VBoxContainer/OptionButton.add_item("1280x720",1)
+	$CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/VBoxContainer/OptionButton.add_item("1920x1080",2)
 	"""if (TranslationServer.get_locale() == "en_US"):
 		print("aqui")
 		$CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/ButtonEN.grab_focus()
@@ -22,18 +22,22 @@ func _ready():
 	#var file_screen = File.new()
 	#file_screen.open("res://data_files/size_screen.txt", File.READ)
 	var index: int = save_settings.index_resolution#int(file_screen.get_csv_line()[0])
-	$CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/OptionButton.selected = index
-	AudioServer.set_bus_volume_db(1,save_settings.sound_and_music_volume)
-	$CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/HSlider.value = save_settings.sound_and_music_volume
+	$CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/VBoxContainer/OptionButton.selected = index
 	
+	AudioServer.set_bus_volume_db(1,save_settings.sound_and_music_volume)
+	$CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer3/VBoxContainer/HSlider.value = save_settings.sound_and_music_volume
+	
+	AudioServer.set_bus_volume_db(2,save_settings.sfx_volume)
+	$CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer4/VBoxContainer/HSliderSFX.value = save_settings.sfx_volume
+		
 	select_lang.textInAllNodes(get_node("."))
 	
-	$CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer2/HSliderContrastMenu.value = save_settings.contrast_tex
+	$CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer5/HSliderContrastMenu.value = save_settings.contrast_tex
 	select_lang.contrast_in_texturesrects(get_node("."))
 
-	$CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer2/HSliderContrastMenu2.value = save_settings.contrast_3d
+	$CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer5/HSliderContrastMenu2.value = save_settings.contrast_3d
 
-	$CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/OptionButton.grab_focus()
+	$CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/VBoxContainer/OptionButton.grab_focus()
 
 
 func _exit_tree():
@@ -52,7 +56,7 @@ func _process(_delta):
 
 
 func _on_OptionButton_item_selected(index):
-	var size = Res[$CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/OptionButton.get_item_text(index)]
+	var size = Res[$CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/VBoxContainer/OptionButton.get_item_text(index)]
 	#var file_size = File.new()
 	#file_size.open("res://data_files/size_screen.txt", File.WRITE)
 	#file_size.store_string(String(index))
@@ -94,7 +98,7 @@ func _on_HSliderContrast_value_changed(value):
 	ResourceSaver.save("user://game_settings.tres", save_settings)
 	select_lang.contrast_in_texturesrects(get_node("."))
 	get_node("/root/ControlMenu").call("_ready")
-	$CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer2/HSliderContrastMenu.grab_focus()
+	$CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer5/HSliderContrastMenu.grab_focus()
 
 
 func _on_HSliderContrastMenu2_value_changed(value):
@@ -104,4 +108,12 @@ func _on_HSliderContrastMenu2_value_changed(value):
 
 func _on_B_CONTROLS_pressed():
 	#add_child(control_settings_scn.instance())
-	get_tree().change_scene("res://scenes/main_menu/controls_settings.tscn")
+	Transition.play_fade("res://scenes/main_menu/controls_settings.tscn")
+
+
+func _on_HSliderSFX_value_changed(value):
+	print("value=",value)
+	#AudioServer.set_bus_volume_db(1,false)
+	AudioServer.set_bus_volume_db(2,value)
+	save_settings.sfx_volume = value
+	ResourceSaver.save("user://game_settings.tres", save_settings)

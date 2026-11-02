@@ -51,5 +51,5 @@ func _process(delta):
 	get_node("ViewportContainer/Viewport/CanvasLayer/ColorRect").rect_position.x = delta_black
 	delta_time+=delta
 	if (delta_time>=max_time_in_scene):
-		get_tree().change_scene("res://scenes/map/map2.tscn")
+		Transition.play_fade("res://scenes/map/map2.tscn")
 	#print("delta_scene_progression=",delta_time)

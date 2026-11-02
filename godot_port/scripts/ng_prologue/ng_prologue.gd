@@ -26,4 +26,4 @@ func _exit_tree():
 
 
 func _on_Button_pressed():
-	get_tree().change_scene("res://scenes/progress_game/progress_game.tscn")
+	Transition.play_fade("res://scenes/progress_game/progress_game.tscn")

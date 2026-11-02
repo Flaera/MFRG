@@ -60,4 +60,4 @@ func _on_ButtonRight_pressed():
 
 func _on_ButtonConfirm_pressed():
 	saveStyle(index_anne)
-	get_tree().change_scene("res://scenes/ng_prologue/ng_prologue.tscn")
+	Transition.play_fade("res://scenes/ng_prologue/ng_prologue.tscn")

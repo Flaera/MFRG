@@ -12,4 +12,4 @@ func _ready():
 func _process(_delta):
 	time += _delta
 	if (time>5):
-		get_tree().change_scene("res://scenes/select_lang/select_lang.tscn")
+		Transition.play_fade("res://scenes/select_lang/select_lang.tscn")

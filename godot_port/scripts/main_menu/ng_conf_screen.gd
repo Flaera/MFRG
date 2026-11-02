@@ -87,5 +87,5 @@ func _on_B_YES_pressed():
 
 	var error_saving_save = ResourceSaver.save("user://saved_game.tres", save_file)
 	print("error=", error_saving_save)
-	get_tree().change_scene("res://scenes/menu_group_choice/menu_group_choice2.scn")
+	Transition.play_fade("res://scenes/menu_group_choice/menu_group_choice2.scn")
 

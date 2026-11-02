@@ -38,7 +38,7 @@ func _on_ButtonContinue_pressed():
 		var ng = ng_load.instance()
 		$ViewportContainer/Viewport.add_child(ng)
 	else:
-		get_tree().change_scene("res://scenes/progress_game/progress_game.tscn")
+		Transition.play_fade("res://scenes/progress_game/progress_game.tscn")
 
 
 
