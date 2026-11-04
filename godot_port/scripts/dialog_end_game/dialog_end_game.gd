@@ -72,7 +72,7 @@ func changeScene():
 		state_end=1
 		$AnimationPlayer.play("fallin_game_end")
 	if index==4 and $AnimationPlayer.is_playing()==false and state_end==1:
-		#get_tree().change_scene("res://scenes/map/map2.tscn")
+		#Transition.play_fade("res://scenes/map/map2.tscn")
 		$AnimationPlayer.play("fallout_game_end")
 		state_end=2
 		bg = load("res://assets/blender2.79_old/assets/talk_scenes/backgrounds/final/final02.png")
@@ -86,7 +86,7 @@ func changeScene():
 	if (state_end==4 and $AnimationPlayer.is_playing()==false):
 		MusicController.music_play()
 		var credits_scene_path = "res://scenes/credits/credits.tscn"
-		get_tree().change_scene(credits_scene_path)
+		Transition.play_fade(credits_scene_path)
 		
 		
 	$ViewportContainer/Viewport/CanvasLayer/BG/TextureRectBG.set_texture(bg)

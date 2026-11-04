@@ -7,7 +7,7 @@ func change_save():
 	var res = ResourceLoader.load("res://resources/saved_game/saved_game.tres")
 	res.state = 8
 	ResourceSaver.save("res://resources/saved_game/saved_game.tres",res)
-	get_tree().change_scene("res://scenes/main_menu/main_menu.scn")
+	Transition.play_fade("res://scenes/main_menu/main_menu.scn")
 
 
 # Called when the node enters the scene tree for the first time.

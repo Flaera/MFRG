@@ -86,7 +86,8 @@ func mainCarPhys(axis, boost_button, back_wheel1, back_wheel2, brake_on,
 		#print(" -- ", accel, " -- ", 33.02*0.001885*max_rpm)
 		
 		var rpm_medium = (rpm0+rpm1)/2
-		car_velocity = abs(int((rpm_medium)/1.785714286))#abs(int(33.02*0.001885*rpm_medium))
+		print("rpmm=",rpm_medium)
+		car_velocity = abs(int((rpm_medium)/5))#abs(int(33.02*0.001885*rpm_medium))
 		#if (rpm0>=max_torque or rpm1>=max_torque):
 		#	back_wheel1.engine_force = max_torque
 		#	back_wheel2.engine_force = max_torque

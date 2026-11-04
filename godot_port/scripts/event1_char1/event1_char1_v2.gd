@@ -55,7 +55,7 @@ func _ready():
 	#curr_cam = camera.instance()
 	#get_node("ViewportContainer/Viewport/car_invoker").add_child(curr_cam)
 	curr_cam = $ViewportContainer/Viewport/Camera
-	camTransform()
+	camTransform(0.0)
 	
 	timer = 120.0
 	$ViewportContainer/Viewport/Timer.start(timer) #time in seconds
@@ -77,12 +77,18 @@ func _exit_tree():
 	contrast3d.free()
 
 
-func camTransform():
+func camTransform(delta):
 	curr_cam.global_translation[0] = curr_car.global_translation[0]
 	curr_cam.global_translation[2] = curr_car.global_translation[2]
 	curr_cam.global_translation[1] = 38.0
-	curr_cam.global_rotation[1] = deg2rad(180)+curr_car.global_rotation[1]
-	print("DEBUG=",curr_cam.global_rotation[1])
+	#curr_cam.global_rotation[1] = deg2rad(180)+curr_car.global_rotation[1]
+	var target_rotation = deg2rad(180) + curr_car.global_rotation[1]
+	curr_cam.global_rotation[1] = lerp_angle(
+		curr_cam.global_rotation[1],
+		target_rotation,
+		1.2 * delta
+		)
+	#print("DEBUG=", curr_cam.global_rotation[1])
 
 
 
@@ -121,7 +127,7 @@ func winPlay(_delta):
 			file_event.store_string("1")
 			file_event.close()"""
 			
-			get_tree().change_scene("res://scenes/progress_game/progress_game.tscn")
+			Transition.play_fade("res://scenes/progress_game/progress_game.tscn")
 		get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label4").text = str(golds)+" golds"
 
 
@@ -133,7 +139,7 @@ func playerLoserOrWin(_delta, var time: float):
 	elif (event_one_time==1 and loser==true and get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label3/AnimationPlayer").is_playing()):
 		time_end+=_delta
 		if (time_end>=1.5):
-			get_tree().change_scene("res://scenes/progress_game/progress_game.tscn")
+			Transition.play_fade("res://scenes/progress_game/progress_game.tscn")
 	#Loser per time out:
 	if (event_one_time==0 and time<=0.0 and loser==false):
 		get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label3/AnimationPlayer").play("anim_loser_event")
@@ -141,7 +147,7 @@ func playerLoserOrWin(_delta, var time: float):
 		event_one_time=1
 	elif (event_one_time==1 and time<=0.0 and loser==true and
 	!get_node("ViewportContainer/Viewport/CanvasLayer/Control/Control/Label3/AnimationPlayer").is_playing()):
-		get_tree().change_scene("res://scenes/progress_game/progress_game.tscn")
+		Transition.play_fade("res://scenes/progress_game/progress_game.tscn")
 	
 	
 	winPlay(_delta)
@@ -149,7 +155,7 @@ func playerLoserOrWin(_delta, var time: float):
 
 func _input(event):
 	if ((event is InputEventKey and event.scancode==KEY_ENTER) or (event is InputEventJoypadButton and event.button_index==JOY_START)):
-		get_tree().change_scene("res://scenes/progress_game/progress_game.tscn")
+		Transition.play_fade("res://scenes/progress_game/progress_game.tscn")
 		
 
 
@@ -198,7 +204,7 @@ func tutorial(delta):
 
 
 func _process(_delta):
-	camTransform()
+	camTransform(_delta)
 	var time = $ViewportContainer/Viewport/Timer.time_left
 	var minutes = int(time/60)
 	var seconds = int(time)%60
@@ -210,7 +216,7 @@ func _process(_delta):
 	tutorial(_delta)
 	
 	if (Input.is_action_just_pressed("ui_cancel")):
-		get_tree().change_scene("res://scenes/map/map2.tscn")
+		Transition.play_fade("res://scenes/map/map2.tscn")
 
 
 func _on_Area_body_entered(body):

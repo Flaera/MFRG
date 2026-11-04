@@ -31,55 +31,56 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -630.0
-margin_top = -427.0
-margin_right = 640.0
-margin_bottom = 427.0
+margin_left = -650.0
+margin_top = -437.0
+margin_right = 650.0
+margin_bottom = 437.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="VScrollBar" parent="CanvasLayer/VBoxContainer"]
-margin_right = 1270.0
-margin_bottom = 748.0
-rect_clip_content = true
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/VBoxContainer"]
+margin_right = 1300.0
+margin_bottom = 768.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/ScrollContainer"]
+margin_right = 1288.0
+margin_bottom = 1828.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer"]
-margin_right = 1270.0
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_right = 1288.0
 margin_bottom = 260.0
+alignment = 1
 
-[node name="LabelLang" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer2"]
-margin_right = 1270.0
+[node name="LabelLang" type="Label" parent="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer2"]
+margin_right = 1288.0
 margin_bottom = 84.0
 theme = ExtResource( 1 )
 text = "Label_Lang"
 align = 1
 valign = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer2"]
 margin_top = 88.0
-margin_right = 1270.0
+margin_right = 1288.0
 margin_bottom = 260.0
 alignment = 1
 
-[node name="ButtonEN" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer2/VBoxContainer"]
-margin_right = 1270.0
+[node name="ButtonEN" type="Button" parent="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer2/VBoxContainer"]
+margin_right = 1288.0
 margin_bottom = 84.0
 focus_neighbour_right = NodePath("../../B_CONTROLS")
 focus_neighbour_bottom = NodePath("../ButtonPT")
 theme = ExtResource( 1 )
 text = "B_Lang_EN"
 
-[node name="ButtonPT" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer2/VBoxContainer"]
+[node name="ButtonPT" type="Button" parent="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer2/VBoxContainer"]
 margin_top = 88.0
-margin_right = 1270.0
+margin_right = 1288.0
 margin_bottom = 172.0
 focus_neighbour_top = NodePath("../ButtonEN")
 focus_neighbour_right = NodePath("../../B_CONTROLS")
@@ -87,62 +88,82 @@ focus_neighbour_bottom = NodePath("../../../VBoxContainer/VBoxContainer/OptionBu
 theme = ExtResource( 1 )
 text = "B_Lang_PT_BR"
 
-[node name="LabelHollow3" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="LabelHollow3" type="Label" parent="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer"]
 margin_top = 264.0
-margin_right = 1270.0
+margin_right = 1288.0
 margin_bottom = 278.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer"]
 margin_top = 282.0
-margin_right = 1270.0
+margin_right = 1288.0
 margin_bottom = 486.0
+alignment = 1
 
-[node name="LabelResolution" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_right = 1270.0
+[node name="LabelResolution" type="Label" parent="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer"]
+margin_right = 1288.0
 margin_bottom = 84.0
 theme = ExtResource( 1 )
 text = "LABEL_RESOLUTION"
 align = 1
 valign = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer"]
 margin_top = 88.0
-margin_right = 1270.0
+margin_right = 1288.0
 margin_bottom = 204.0
 
-[node name="OptionButton" type="OptionButton" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/VBoxContainer"]
-margin_right = 1270.0
+[node name="OptionButton" type="OptionButton" parent="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer/VBoxContainer"]
+margin_right = 1288.0
 margin_bottom = 116.0
 focus_neighbour_top = NodePath("../../../VBoxContainer2/VBoxContainer/ButtonPT")
 focus_neighbour_right = NodePath("../../../VBoxContainer2/B_CONTROLS")
 focus_neighbour_bottom = NodePath("../../../VBoxContainer3/VBoxContainer/HSlider")
 theme = ExtResource( 1 )
 
-[node name="LabelHollow" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="LabelHollow" type="Label" parent="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer"]
 margin_top = 490.0
-margin_right = 1270.0
+margin_right = 1288.0
 margin_bottom = 504.0
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer"]
 margin_top = 508.0
-margin_right = 1270.0
-margin_bottom = 712.0
+margin_right = 1288.0
+margin_bottom = 624.0
+alignment = 1
 
-[node name="LABELSOUND" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer3"]
-margin_right = 1270.0
+[node name="CheckButton" type="CheckButton" parent="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+margin_left = 437.0
+margin_right = 851.0
+margin_bottom = 116.0
+theme = ExtResource( 1 )
+text = " Fullscreen: "
+
+[node name="LabelHollow5" type="Label" parent="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 628.0
+margin_right = 1288.0
+margin_bottom = 642.0
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 646.0
+margin_right = 1288.0
+margin_bottom = 850.0
+alignment = 1
+
+[node name="LABELSOUND" type="Label" parent="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer3"]
+margin_right = 1288.0
 margin_bottom = 84.0
 theme = ExtResource( 1 )
 text = "LABEL_SOUND_MUSIC"
 align = 1
 valign = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer3"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer3"]
 margin_top = 88.0
-margin_right = 1270.0
+margin_right = 1288.0
 margin_bottom = 204.0
 
-[node name="HSlider" type="HSlider" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer3/VBoxContainer"]
-margin_right = 1270.0
+[node name="HSlider" type="HSlider" parent="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer3/VBoxContainer"]
+margin_right = 1288.0
 margin_bottom = 116.0
 focus_neighbour_top = NodePath("../../../VBoxContainer/VBoxContainer/OptionButton")
 focus_neighbour_right = NodePath("../../../VBoxContainer2/B_CONTROLS")
@@ -151,31 +172,32 @@ theme = ExtResource( 1 )
 min_value = -80.0
 max_value = 0.0
 
-[node name="LabelHollow2" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer"]
-margin_top = 716.0
-margin_right = 1270.0
-margin_bottom = 730.0
+[node name="LabelHollow2" type="Label" parent="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 854.0
+margin_right = 1288.0
+margin_bottom = 868.0
 
-[node name="VBoxContainer4" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer"]
-margin_top = 734.0
-margin_right = 1270.0
-margin_bottom = 938.0
+[node name="VBoxContainer4" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 872.0
+margin_right = 1288.0
+margin_bottom = 1076.0
+alignment = 1
 
-[node name="LABELSOUND_SFX" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer4"]
-margin_right = 1270.0
+[node name="LABELSOUND_SFX" type="Label" parent="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer4"]
+margin_right = 1288.0
 margin_bottom = 84.0
 theme = ExtResource( 1 )
 text = "LABEL_SOUND_SFX"
 align = 1
 valign = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer4"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer4"]
 margin_top = 88.0
-margin_right = 1270.0
+margin_right = 1288.0
 margin_bottom = 204.0
 
-[node name="HSliderSFX" type="HSlider" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer4/VBoxContainer"]
-margin_right = 1270.0
+[node name="HSliderSFX" type="HSlider" parent="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer4/VBoxContainer"]
+margin_right = 1288.0
 margin_bottom = 116.0
 focus_neighbour_top = NodePath("../../../VBoxContainer/VBoxContainer/OptionButton")
 focus_neighbour_right = NodePath("../../../VBoxContainer2/B_CONTROLS")
@@ -184,60 +206,61 @@ theme = ExtResource( 1 )
 min_value = -80.0
 max_value = 0.0
 
-[node name="LabelHollow4" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer"]
-margin_top = 942.0
-margin_right = 1270.0
-margin_bottom = 956.0
+[node name="LabelHollow4" type="Label" parent="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 1080.0
+margin_right = 1288.0
+margin_bottom = 1094.0
 
-[node name="VBoxContainer5" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer"]
-margin_top = 960.0
-margin_right = 1270.0
-margin_bottom = 1690.0
+[node name="VBoxContainer5" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 1098.0
+margin_right = 1288.0
+margin_bottom = 1828.0
+alignment = 1
 
-[node name="B_CONTROLS" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer5"]
-margin_right = 1270.0
+[node name="B_CONTROLS" type="Button" parent="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer5"]
+margin_right = 1288.0
 margin_bottom = 84.0
 focus_neighbour_left = NodePath("../VBoxContainer/ButtonEN")
 focus_neighbour_bottom = NodePath("../ColorPickerButton")
 theme = ExtResource( 1 )
 text = "B_CONTROLS"
 
-[node name="LabelHollow9" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer5"]
+[node name="LabelHollow9" type="Label" parent="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer5"]
 margin_top = 88.0
-margin_right = 1270.0
+margin_right = 1288.0
 margin_bottom = 102.0
 
-[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer5"]
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer5"]
 margin_top = 106.0
-margin_right = 1270.0
+margin_right = 1288.0
 margin_bottom = 190.0
 theme = ExtResource( 1 )
 text = "COLOR_LEGEND_SELECTOR"
 
-[node name="ColorPickerButton" type="ColorPickerButton" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer5"]
+[node name="ColorPickerButton" type="ColorPickerButton" parent="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer5"]
 margin_top = 194.0
-margin_right = 1270.0
+margin_right = 1288.0
 margin_bottom = 278.0
 focus_neighbour_left = NodePath("../VBoxContainer/ButtonEN")
 focus_neighbour_top = NodePath("../B_CONTROLS")
 focus_neighbour_bottom = NodePath("../HSliderContrastMenu")
 theme = ExtResource( 1 )
 
-[node name="LabelHollow8" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer5"]
+[node name="LabelHollow8" type="Label" parent="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer5"]
 margin_top = 282.0
-margin_right = 1270.0
+margin_right = 1288.0
 margin_bottom = 296.0
 
-[node name="Label2" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer5"]
+[node name="Label2" type="Label" parent="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer5"]
 margin_top = 300.0
-margin_right = 1270.0
+margin_right = 1288.0
 margin_bottom = 384.0
 theme = ExtResource( 1 )
 text = "CONTRAST_MENU"
 
-[node name="HSliderContrastMenu" type="HSlider" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer5"]
+[node name="HSliderContrastMenu" type="HSlider" parent="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer5"]
 margin_top = 388.0
-margin_right = 1270.0
+margin_right = 1288.0
 margin_bottom = 504.0
 focus_neighbour_left = NodePath("../VBoxContainer/ButtonEN")
 focus_neighbour_top = NodePath("../ColorPickerButton")
@@ -248,22 +271,22 @@ max_value = 1.0
 step = 0.1
 value = 0.1
 
-[node name="LabelHollow7" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer5"]
+[node name="LabelHollow7" type="Label" parent="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer5"]
 margin_top = 508.0
-margin_right = 1270.0
+margin_right = 1288.0
 margin_bottom = 522.0
 
-[node name="Label3" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer5"]
+[node name="Label3" type="Label" parent="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer5"]
 margin_top = 526.0
-margin_right = 1270.0
+margin_right = 1288.0
 margin_bottom = 610.0
 theme = ExtResource( 1 )
 text = "CONTRAST_3D"
 autowrap = true
 
-[node name="HSliderContrastMenu2" type="HSlider" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer5"]
+[node name="HSliderContrastMenu2" type="HSlider" parent="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer5"]
 margin_top = 614.0
-margin_right = 1270.0
+margin_right = 1288.0
 margin_bottom = 730.0
 focus_neighbour_left = NodePath("../VBoxContainer/ButtonEN")
 focus_neighbour_top = NodePath("../HSliderContrastMenu")
@@ -275,14 +298,14 @@ step = 0.1
 value = 1.0
 
 [node name="LabelHollow2" type="Label" parent="CanvasLayer/VBoxContainer"]
-margin_top = 752.0
-margin_right = 1270.0
-margin_bottom = 766.0
+margin_top = 772.0
+margin_right = 1300.0
+margin_bottom = 786.0
 
 [node name="ButtonBack" type="Button" parent="CanvasLayer/VBoxContainer"]
-margin_top = 770.0
-margin_right = 1270.0
-margin_bottom = 854.0
+margin_top = 790.0
+margin_right = 1300.0
+margin_bottom = 874.0
 theme = ExtResource( 1 )
 text = "B_BACK"
 
@@ -303,13 +326,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 texture = SubResource( 1 )
 
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer2/VBoxContainer/ButtonEN" to="." method="_on_ButtonEN_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer2/VBoxContainer/ButtonPT" to="." method="_on_ButtonPT_pressed"]
-[connection signal="item_selected" from="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/VBoxContainer/OptionButton" to="." method="_on_OptionButton_item_selected"]
-[connection signal="value_changed" from="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer3/VBoxContainer/HSlider" to="." method="_on_HSlider_value_changed"]
-[connection signal="value_changed" from="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer4/VBoxContainer/HSliderSFX" to="." method="_on_HSliderSFX_value_changed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer5/B_CONTROLS" to="." method="_on_B_CONTROLS_pressed"]
-[connection signal="color_changed" from="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer5/ColorPickerButton" to="." method="_on_ColorPickerButton_color_changed"]
-[connection signal="value_changed" from="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer5/HSliderContrastMenu" to="." method="_on_HSliderContrast_value_changed"]
-[connection signal="value_changed" from="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer5/HSliderContrastMenu2" to="." method="_on_HSliderContrastMenu2_value_changed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer2/VBoxContainer/ButtonEN" to="." method="_on_ButtonEN_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer2/VBoxContainer/ButtonPT" to="." method="_on_ButtonPT_pressed"]
+[connection signal="item_selected" from="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer/VBoxContainer/OptionButton" to="." method="_on_OptionButton_item_selected"]
+[connection signal="toggled" from="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/CheckButton" to="." method="_on_CheckButton_toggled"]
+[connection signal="value_changed" from="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer3/VBoxContainer/HSlider" to="." method="_on_HSlider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer4/VBoxContainer/HSliderSFX" to="." method="_on_HSliderSFX_value_changed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer5/B_CONTROLS" to="." method="_on_B_CONTROLS_pressed"]
+[connection signal="color_changed" from="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer5/ColorPickerButton" to="." method="_on_ColorPickerButton_color_changed"]
+[connection signal="value_changed" from="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer5/HSliderContrastMenu" to="." method="_on_HSliderContrast_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer5/HSliderContrastMenu2" to="." method="_on_HSliderContrastMenu2_value_changed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/ButtonBack" to="." method="_on_ButtonBack_pressed"]

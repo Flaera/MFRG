@@ -133,7 +133,13 @@ shape = SubResource( 14 )
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.91213e-08, 1.29049, -0.233131 )
 
 [node name="RayCast" parent="." index="11"]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.566226, -1.05239 )
+
+[node name="0" parent="RayCast" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="30" parent="RayCast" index="1"]
+transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 0, 0, 0 )
 
 [editable path="FrontLeftWheel"]
 [editable path="BackLeftWheel"]

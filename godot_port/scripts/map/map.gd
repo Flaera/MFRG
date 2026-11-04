@@ -31,7 +31,7 @@ func _ready():
 		saved_manager.state = 1
 		ResourceSaver.save("user://saved_game.tres", saved_manager)
 		#cutscene da entrada da Anne no RUA
-		get_tree().change_scene(intro_carlos_anne_scene_name)
+		Transition.play_fade(intro_carlos_anne_scene_name)
 		#add_child(intro_carlos_anne.instance())
 		#var file_state0 = File.new()
 		#file_state0.open("res://data_files/progress_in_game.txt", File.WRITE)
@@ -42,7 +42,7 @@ func _ready():
 		print("MAP PASS - MARIA!!")
 		ResourceSaver.save("user://saved_game.tres", saved_manager)
 		#cutscene:
-		get_tree().change_scene(intro_maria_anne_scene_name)
+		Transition.play_fade(intro_maria_anne_scene_name)
 	elif (condition0==true and condition1==true and condition2==false and saved_manager.state==2):
 		saved_manager.state = 3
 		ResourceSaver.save("user://saved_game.tres", saved_manager)

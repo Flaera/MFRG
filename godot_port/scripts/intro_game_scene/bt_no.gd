@@ -7,4 +7,4 @@ func _ready():
 
 
 func go_game():
-	get_tree().change_scene("res://scenes/intro_game_talk/intro_game_talk.scn")
+	Transition.play_fade("res://scenes/intro_game_talk/intro_game_talk.scn")

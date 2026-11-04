@@ -135,7 +135,7 @@ func _process(_delta):
 		no_money.visible=false
 
 	if Input.is_action_just_pressed("ui_cancel"):
-		get_tree().change_scene("res://scenes/map/map2.tscn")
+		Transition.play_fade("res://scenes/map/map2.tscn")
 
 
 func _on_ButtonLeftShop_pressed():
@@ -212,4 +212,4 @@ func _on_ButtonConfirmShop_pressed():
 
 
 func _on_ButtonQuit_pressed():
-	get_tree().change_scene("res://scenes/map/map2.tscn")
+	Transition.play_fade("res://scenes/map/map2.tscn")

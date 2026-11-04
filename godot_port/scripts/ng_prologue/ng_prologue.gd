@@ -22,7 +22,7 @@ func _exit_tree():
 
 #func _process(delta):
 #	if (Input.is_action_just_pressed("ui_cancel")):
-#		get_tree().change_scene("res://scenes/main_menu/main_menu.scn")
+#		Transition.play_fade("res://scenes/main_menu/main_menu.scn")
 
 
 func _on_Button_pressed():

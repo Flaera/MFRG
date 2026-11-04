@@ -53,19 +53,19 @@ margin_top = -86.0
 margin_right = 250.0
 margin_bottom = 86.0
 
-[node name="Button_EN" type="Button" parent="ViewportContainer/Viewport/ColorRect2/VBoxContainer"]
+[node name="Button_PT_BR" type="Button" parent="ViewportContainer/Viewport/ColorRect2/VBoxContainer"]
 margin_right = 500.0
 margin_bottom = 84.0
 theme = ExtResource( 1 )
-text = "B_Lang_EN"
+text = "B_Lang_PT_BR"
 icon_align = 1
 
-[node name="Button_PT_BR" type="Button" parent="ViewportContainer/Viewport/ColorRect2/VBoxContainer"]
+[node name="Button_EN" type="Button" parent="ViewportContainer/Viewport/ColorRect2/VBoxContainer"]
 margin_top = 88.0
 margin_right = 500.0
 margin_bottom = 172.0
 theme = ExtResource( 1 )
-text = "B_Lang_PT_BR"
+text = "B_Lang_EN"
 icon_align = 1
 
 [node name="ColorRect" type="ColorRect" parent="ViewportContainer/Viewport"]
@@ -86,9 +86,9 @@ anchor_bottom = 1.0
 rect_min_size = Vector2( 1920, 1080 )
 texture = SubResource( 2 )
 
-[connection signal="focus_entered" from="ViewportContainer/Viewport/ColorRect2/VBoxContainer/Button_EN" to="." method="_on_Button_EN_focus_entered"]
-[connection signal="mouse_entered" from="ViewportContainer/Viewport/ColorRect2/VBoxContainer/Button_EN" to="." method="_on_Button_EN_mouse_entered"]
-[connection signal="pressed" from="ViewportContainer/Viewport/ColorRect2/VBoxContainer/Button_EN" to="." method="_on_Button_EN_pressed"]
 [connection signal="focus_entered" from="ViewportContainer/Viewport/ColorRect2/VBoxContainer/Button_PT_BR" to="." method="_on_Button_PT_BR_focus_entered"]
 [connection signal="mouse_entered" from="ViewportContainer/Viewport/ColorRect2/VBoxContainer/Button_PT_BR" to="." method="_on_Button_PT_BR_mouse_entered"]
 [connection signal="pressed" from="ViewportContainer/Viewport/ColorRect2/VBoxContainer/Button_PT_BR" to="." method="_on_Button_PT_BR_pressed"]
+[connection signal="focus_entered" from="ViewportContainer/Viewport/ColorRect2/VBoxContainer/Button_EN" to="." method="_on_Button_EN_focus_entered"]
+[connection signal="mouse_entered" from="ViewportContainer/Viewport/ColorRect2/VBoxContainer/Button_EN" to="." method="_on_Button_EN_mouse_entered"]
+[connection signal="pressed" from="ViewportContainer/Viewport/ColorRect2/VBoxContainer/Button_EN" to="." method="_on_Button_EN_pressed"]

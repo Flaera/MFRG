@@ -39,7 +39,7 @@ func _on_quit_map_pressed():
 	#print("voltar para o mapa")
 	get_tree().paused = false
 	get_node("CanvasLayer").visible = true
-	get_parent().get_tree().change_scene("res://scenes/map/map2.tscn")
+	get_parent().Transition.play_fade("res://scenes/map/map2.tscn")
 
 
 

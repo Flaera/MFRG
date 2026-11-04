@@ -37,8 +37,8 @@ func contrast_in_texturesrects(mother_node):
 func _ready():
 	MusicController.music_play()
 	
-	TranslationServer.set_locale("en_ES")
-	get_node("ViewportContainer/Viewport/ColorRect2/VBoxContainer/Button_EN").grab_focus()
+	TranslationServer.set_locale("pt_BR")
+	get_node("ViewportContainer/Viewport/ColorRect2/VBoxContainer/Button_PT_BR").grab_focus()
 	
 	#Color text:
 	textInAllNodes(get_node("."))

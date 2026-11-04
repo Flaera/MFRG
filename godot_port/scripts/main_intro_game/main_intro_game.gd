@@ -2,9 +2,9 @@ extends Control
 
 
 var time: float = 0.0
-var Res: Dictionary = {"640x360": Vector2(640,360),
+var Res: Dictionary = {"1920x1080": Vector2(1920,1080),
 "1280x720": Vector2(1280,720),
-"1920x1080": Vector2(1920,1080)}
+"640x360": Vector2(640,360)}
 var res_array: Array = [Vector2(640,360),
 	Vector2(1280,720),
 	Vector2(1920,1080)]
@@ -69,6 +69,14 @@ func _ready():
 		music = int(-21)
 	AudioServer.set_bus_volume_db(1,music)
 	
+	var sfx: int = -1
+	var audio_sfx = save_settings.sfx_volume
+	if (save_settings.sfx_volume!=null and audio_sfx>=-80 and audio_sfx<=1):
+		sfx = audio_sfx
+	else:
+		sfx = -21
+	AudioServer.set_bus_volume_db(2,sfx)
+	
 	var size: int = -1
 	if (save_settings.index_resolution!=null and (save_settings.index_resolution==0 or 
 	save_settings.index_resolution==1 or 
@@ -85,7 +93,13 @@ func _ready():
 		OS.set_window_size(Res["1920x1080"])
 	else:
 		OS.set_window_size(Res["1920x1080"])
+	yield(get_tree(), "idle_frame")
+	var screen = OS.get_screen_size()
+	var pos = (screen - OS.get_window_size()) / 2
+	OS.set_window_position(pos)
 	#get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_VIEWPORT,SceneTree.STRETCH_ASPECT_KEEP,res_array[size])
+	
+	OS.window_fullscreen=bool(save_settings.flag_window)
 	
 	set_keymaps(save_settings)
 

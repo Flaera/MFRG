@@ -123,6 +123,12 @@ shape = SubResource( 9 )
 [node name="CollisionShape" parent="SoundsFX/AreaSFX" index="0"]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.16244e-08, 1.47855, 0.00995836 )
 
+[node name="RayCast" parent="." index="11"]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.01438, -0.742697 )
+
+[node name="0" parent="RayCast" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
 [editable path="FrontLeftWheel"]
 [editable path="BackLeftWheel"]
 [editable path="FrontRightWheel"]

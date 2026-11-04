@@ -72,7 +72,7 @@ func _exit_tree():
 func changeScene():
 	if index==lenght:
 		index=-1
-		get_tree().change_scene(path_event)
+		Transition.play_fade(path_event)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

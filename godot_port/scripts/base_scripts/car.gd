@@ -284,4 +284,35 @@ func _on_AreaSFX_body_entered(body):
 		#print("BODY:",body)
 		var audio_sp_instantiate = audio_sp_node.instance()
 		$SoundsFX.add_child(audio_sp_instantiate)
+		
+	if ((car_mode == 0 or car_mode == 1) and body != self and not body.is_in_group("ground")):
+		var menor_distancia = 10
+		var melhor_ponto = Vector3.ZERO
+		var encontrou = false
+		
+		for i in $RayCast.get_children():
+			if i is RayCast:
+				i.force_raycast_update()
+				if i.is_colliding() and i.get_collider() == body:
+					var pos = i.get_collision_point()
+					var distancia = global_translation.distance_to(pos)
+					#print("RayCast: ", i.name, " Ponto: ", pos, " Distância: ", distancia)
+					if distancia < menor_distancia:
+						menor_distancia = distancia
+						melhor_ponto = pos
+						encontrou = true
+			if encontrou and menor_distancia < 5.0:
+				var sparks = $SoundsFX/AreaSFX/CollisionShape/CPUParticlesShockSparkles
 
+				sparks.emitting = false
+				sparks.global_translation = melhor_ponto
+				sparks.restart()
+				sparks.emitting = true
+
+				$SoundsFX/AreaSFX/CollisionShape/TimerToSparkles.start()
+
+
+
+
+func _on_TimerToSparkles_timeout():
+	$SoundsFX/AreaSFX/CollisionShape/CPUParticlesShockSparkles.emitting = false#pass # Replace with function body.

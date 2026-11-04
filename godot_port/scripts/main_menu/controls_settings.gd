@@ -214,7 +214,7 @@ func _input(event):
 
 
 func _on_Button_pressed():
-	#get_tree().change_scene("res://scenes/main_menu/main_menu.scn")
+	#Transition.play_fade("res://scenes/main_menu/main_menu.scn")
 	Transition.play_fade("res://scenes/main_menu/main_menu.scn")
 
 

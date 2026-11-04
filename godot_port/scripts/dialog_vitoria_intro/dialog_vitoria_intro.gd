@@ -75,7 +75,7 @@ func _exit_tree():
 func changeScene():
 	if index==lenght:
 		index=-1
-		get_tree().change_scene("res://scenes/map/map2.tscn")
+		Transition.play_fade("res://scenes/map/map2.tscn")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

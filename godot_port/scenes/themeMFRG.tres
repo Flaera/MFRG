@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=27 format=2]
+[gd_resource type="Theme" load_steps=29 format=2]
 
 [ext_resource path="res://assets/fonts/BebasNeue-Regular.ttf" type="DynamicFontData" id=2]
 
@@ -33,6 +33,14 @@ corner_radius_top_left = 40
 corner_radius_top_right = 40
 corner_radius_bottom_right = 40
 corner_radius_bottom_left = 40
+
+[sub_resource type="StreamTexture" id=28]
+flags = 4
+load_path = "res://.import/icon_settings3_checker_button_off.png-ee505ea657768db56a0eafa9ec7fd35f.stex"
+
+[sub_resource type="StreamTexture" id=29]
+flags = 4
+load_path = "res://.import/icon_settings3_checker_button_on.png-d9fee189453ac9b199aa768b06e1ca1c.stex"
 
 [sub_resource type="StyleBoxFlat" id=24]
 bg_color = Color( 0.0745098, 0.721569, 0.909804, 1 )
@@ -113,6 +121,8 @@ Button/styles/focus = SubResource( 5 )
 Button/styles/hover = SubResource( 6 )
 Button/styles/normal = SubResource( 7 )
 Button/styles/pressed = SubResource( 8 )
+CheckButton/icons/off = SubResource( 28 )
+CheckButton/icons/on = SubResource( 29 )
 ColorPickerButton/styles/focus = SubResource( 24 )
 ColorPickerButton/styles/hover = SubResource( 25 )
 ColorPickerButton/styles/normal = SubResource( 26 )
