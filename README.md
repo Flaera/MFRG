@@ -1,6 +1,18 @@
 #PROJETO MFRG
 
-    1. STATUS: FASE 3 EM ANDAMENTO – EXPORTAÇÃO PARA GODOT.
+Últimas melhorias:
+    • Adicionado transições de fade-in e fade-out entre cenas;
+    • UI dos botões diferenciadas dos Títulos nos nôs Label, com a adição de arredondamento das quinas dos botões;
+    • Implementado diferenciação entre sons e músicas no jogo;
+    • Foco no público brasileiro quanto a seleção de linguagem, título na Steam e no Itch.io, com descrições também em português-brasileiro;
+    • Jogo configurado para iniciar com configurações de som que a ou o player definiu;
+    • Ajuste de resoluções com centralização da tela ao mudar de resolução;
+    • Partículas de colisão adicionadas;
+    • Modo fullscreen implementada como opção nas configurações;
+    • Vídeo de fundo do Menu Principal corrigido, adicionado e reeditado; e
+    • Bug do velocímetro com medições muito acima corrigido.
+
+    1. STATUS: FINALIZADO – EXPORTAÇÃO PARA WINDOWS, Steam e Itch.io concluídas.
        
     2. DESCRIÇÃO RESUMIDA
 
