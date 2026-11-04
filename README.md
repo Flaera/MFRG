@@ -1,6 +1,6 @@
 #PROJETO MFRG
 
-Últimas melhorias:
+#Últimas melhorias:
 
     • Adicionado transições de fade-in e fade-out entre cenas;
     • UI dos botões diferenciadas dos Títulos nos nôs Label, com a adição de arredondamento das quinas dos botões;
@@ -12,6 +12,7 @@
     • Modo fullscreen implementada como opção nas configurações;
     • Vídeo de fundo do Menu Principal corrigido, adicionado e reeditado; e
     • Bug do velocímetro com medições muito acima corrigido.
+_
 
     1. STATUS: FINALIZADO – EXPORTAÇÃO PARA WINDOWS, Steam e Itch.io concluídas.
        
