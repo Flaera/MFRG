@@ -1,6 +1,7 @@
 #PROJETO MFRG
 
 Últimas melhorias:
+
     • Adicionado transições de fade-in e fade-out entre cenas;
     • UI dos botões diferenciadas dos Títulos nos nôs Label, com a adição de arredondamento das quinas dos botões;
     • Implementado diferenciação entre sons e músicas no jogo;
